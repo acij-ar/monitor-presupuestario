@@ -22,3 +22,9 @@ circle.dot.credito_presupuestado,
 g.y.grid + g.legends + g.legends + g.legends > rect {
     fill: #FF83F6!important;
 }
+
+
+.dropdown .dropdown-menu {
+    left: unset;
+    right: 0;
+}
