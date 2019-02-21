@@ -1,0 +1,24 @@
+path.line.credito_vigente {
+    stroke: #0181FF!important;
+}
+circle.dot.credito_vigente,
+g.y.grid + g.legends > rect {
+    fill: #0181FF!important;
+}
+
+
+path.line.credito_devengado {
+    stroke: #7CFCDA!important;
+}
+circle.dot.credito_devengado,
+g.y.grid + g.legends + g.legends > rect {
+    fill: #7CFCDA!important;
+}
+
+path.line.credito_presupuestado {
+    stroke: #FF83F6!important;
+}
+circle.dot.credito_presupuestado,
+g.y.grid + g.legends + g.legends + g.legends > rect {
+    fill: #FF83F6!important;
+}
