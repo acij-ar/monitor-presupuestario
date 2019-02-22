@@ -704,7 +704,7 @@
                         getDataTree: function(t) {
                             var e, a, n, o = this;
                             0 === this.treeDeep ? (n = "root", a = "jurisdiccion_desc", e = "".concat(i.a, "/jurisdiccion?anio=").concat(this.selectedYear)) : (n = t, a = "programa_desc", e = "".concat(i.a, "/programa/").concat(t, "?anio=").concat(this.selectedYear)), r.j(e).then(function(t) {
-                                _updateChartSelector(t);
+                                window._updateChartSelector ? _updateChartSelector(t) : null;
                                 t.forEach(function(t) {
                                     t.name = t[a], t.parent = "", t.credito_vigente = t.credito_vigente * t.tasa_ajuste_inflacion, t.credito_devengado = t.credito_devengado * t.tasa_ajuste_inflacion, t.credito_presupuestado = t.credito_presupuestado * t.tasa_ajuste_inflacion
                                 });
