@@ -437,7 +437,7 @@
                         a = t._self._c || e;
                     return a("div", {
                         staticClass: "p"
-                    }, [a("div", [1 == t.data.length ? a("h2", {
+                    }, [a("p", { staticClass: "monitor-chart-preffix"}), a("select", { staticClass: "monitor-chart-selector"}), a("div", [1 == t.data.length ? a("h2", {
                         staticClass: "is-pulled-left"
                     }, [t._v("Spam")]) : t.diff > 0 ? a("h2", {
                         staticClass: "is-pulled-left"
@@ -697,12 +697,14 @@
                         }
                     },
                     created: function() {
-                        this.getDataTree(!0)
+                        this.getDataTree(!0);
+                        window._loadChartData = this.getDataEvolution;
                     },
                     methods: {
                         getDataTree: function(t) {
                             var e, a, n, o = this;
                             0 === this.treeDeep ? (n = "root", a = "jurisdiccion_desc", e = "".concat(i.a, "/jurisdiccion?anio=").concat(this.selectedYear)) : (n = t, a = "programa_desc", e = "".concat(i.a, "/programa/").concat(t, "?anio=").concat(this.selectedYear)), r.j(e).then(function(t) {
+                                _updateChartSelector(t);
                                 t.forEach(function(t) {
                                     t.name = t[a], t.parent = "", t.credito_vigente = t.credito_vigente * t.tasa_ajuste_inflacion, t.credito_devengado = t.credito_devengado * t.tasa_ajuste_inflacion, t.credito_presupuestado = t.credito_presupuestado * t.tasa_ajuste_inflacion
                                 });
@@ -741,7 +743,7 @@
                             0 === this.treeDeep ? (this.treeDeep = 1, this.getDataTree(t)) : this.getDataActivity(e, a)
                         },
                         onMouseoverChild: function(t, e, a) {
-                            this.getDataEvolution(t, e, a)
+                            //this.getDataEvolution(t, e, a);
                         }
                     }
                 },

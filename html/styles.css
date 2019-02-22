@@ -2,3 +2,11 @@
     left: unset;
     right: 0;
 }
+
+.monitor-chart-preffix:before {
+    content: 'Seleccione un Ministerio o programa para ver su evolución presupuestaria:'
+}
+
+.monitor-chart-selector {
+    margin-bottom: 10px;
+}
