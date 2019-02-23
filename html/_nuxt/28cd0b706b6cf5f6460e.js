@@ -733,6 +733,7 @@
                             var a = this,
                                 n = "".concat(i.a, "/actividad/tabla/").concat(t, "/").concat(e);
                             r.j(n).then(function(t) {
+                                window._monitorTableDownloadData = t;
                                 a.programs = t
                             })
                         },
