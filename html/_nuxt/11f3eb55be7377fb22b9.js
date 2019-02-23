@@ -247,6 +247,17 @@
                             }).duration(s).ease(o.c).attr("r", 5)
                         },
                         plotLegends: function() {
+                            o.o[0] = '#0041FF';
+                            o.o[1] = '#8200FF';
+                            o.o[2] = '#FF00E1';
+                            o.o[3] = '#00FFBC';
+                            o.o[4] = '#2C2662';
+                            o.o[5] = '#0181FF';
+                            o.o[6] = '#AF7AF9';
+                            o.o[7] = '#FF83F6';
+                            o.o[8] = '#7CFCDA';
+                            o.o[9] = '#3B404C';
+
                             var t = this,
                                 e = [{
                                     name: "grupo 1",
