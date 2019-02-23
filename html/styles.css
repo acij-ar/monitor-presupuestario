@@ -14,3 +14,25 @@ a.dropdown-item:nth-child(3) {
 .monitor-chart-selector {
     margin-bottom: 10px;
 }
+
+
+.monitor-download-chart:before {
+    content: 'Descargar'
+}
+
+.monitor-download-chart {
+    cursor: pointer;
+    border: solid 1px #ccc;
+    border-radius: 4px;
+    padding: 5px 10px;
+    display: inline-block;
+    height: 36px;
+}
+
+.monitor-download-chart:hover {
+    background: #fafafa;
+}
+
+.monitor-download-chart:active {
+    background: #f5f5f5;
+}

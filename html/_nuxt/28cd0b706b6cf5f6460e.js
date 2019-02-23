@@ -535,7 +535,7 @@
                             },
                             expression: "isPaginated"
                         }
-                    }, [t._v("Paginable")])], 1)], 1), t._v(" "), a("b-table", {
+                    }, [t._v("Paginable")])], 1), a("span", { staticClass: "monitor-download-chart"})], 1), t._v(" "), a("b-table", {
                         attrs: {
                             data: t.data,
                             paginated: t.isPaginated,
