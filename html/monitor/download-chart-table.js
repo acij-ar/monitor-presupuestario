@@ -13,9 +13,27 @@
     }
 
     function _downloadMonitorTableData() {
-        console.log('clicked');
         if (window._monitorTableDownloadData && window._monitorTableDownloadData.length > 0) {
-            var data = JSON.stringify(_monitorTableDownloadData, null, 2);
+            var headers = [];
+            for (var i=0; i<_monitorTableDownloadData.length; i++) {
+                var rowObject = _monitorTableDownloadData[i];
+                for (var variable in rowObject) {
+                    if (rowObject.hasOwnProperty(variable) && headers.indexOf(variable) < 0) {
+                        headers.push(variable)
+                    }
+                }
+            }
+            var rows = [headers.join(',')];
+            for (var n=0; n<_monitorTableDownloadData.length; n++) {
+                var row = [];
+                for (var j=0; j<headers.length; j++) {
+                    var header = headers[j];
+                    var value = _monitorTableDownloadData[n][header];
+                    row.push(value === undefined ? '' : value)
+                }
+                rows.push(row.join(','))
+            }
+            var data = rows.join('\n');
             _triggerDownload('datos.json', data)
         }
     }
