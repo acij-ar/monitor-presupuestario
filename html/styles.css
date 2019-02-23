@@ -3,6 +3,10 @@
     right: 0;
 }
 
+a.dropdown-item:nth-child(3) {
+    display: none;
+}
+
 .monitor-chart-preffix:before {
     content: 'Seleccione un Ministerio o programa para ver su evolución presupuestaria:'
 }
