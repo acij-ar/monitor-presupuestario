@@ -34,18 +34,35 @@
                 rows.push(row.join(','))
             }
             var data = rows.join('\n');
-            _triggerDownload('datos.json', data)
+            _triggerDownload('datos.csv', data)
         }
     }
 
-    function _bindSelector() {
-        var selector = document.querySelector('.monitor-download-chart');
-        if (!selector) {
-            setTimeout(_bindSelector, 500);
-        } else {
-            selector.addEventListener('click', _downloadMonitorTableData);
-        }
+    function _downloadMonitorTreemapData() {
+        console.log('treemap data')
     }
 
-    _bindSelector();
+    function _downloadMonitorChartData() {
+        console.log('monitor chart data')
+    }
+
+    function _downloadComparadorChartData() {
+        console.log('comparador chart data')
+    }
+
+    function _bindSelector(selector, callback) {
+        var element = document.querySelector(selector);
+        if (element && element.getAttribute('data-callback') !== 'set') {
+            element.addEventListener('click', callback);
+            element.setAttribute('data-callback', 'set');
+        }
+        setTimeout(function () {
+            _bindSelector(selector, callback)
+        }, 1000);
+    }
+
+    _bindSelector('.monitor-download-chart', _downloadMonitorTableData);
+    _bindSelector('div.is-pulled-left + .dropdown .dropdown-menu a:nth-child(2)', _downloadMonitorTreemapData);
+    _bindSelector('h2.is-pulled-left + .dropdown .dropdown-menu a:nth-child(2)', _downloadMonitorChartData);
+    _bindSelector('.field + .dropdown .dropdown-menu a:nth-child(2)', _downloadComparadorChartData);
 })();
