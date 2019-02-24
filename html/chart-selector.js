@@ -2,7 +2,7 @@
     function _bindSelector(selector, callback) {
         var element = document.querySelector(selector);
         if (element && element.getAttribute('data-callback') !== 'set') {
-            element.addEventListener('click', callback);
+            element.addEventListener('change', callback);
             element.setAttribute('data-callback', 'set');
         }
         setTimeout(function () {
