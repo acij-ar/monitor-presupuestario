@@ -44,7 +44,6 @@
         var jurisdiction = selectedOption.getAttribute('data-jurisdiction');
         var program = selectedOption.getAttribute('data-program');
         var id = selectedOption.getAttribute('data-id') ? parseInt(selectedOption.getAttribute('data-id')) : undefined;
-        console.log(program, jurisdiction, id);
         _loadChartData(program, jurisdiction, id);
     }
 })();

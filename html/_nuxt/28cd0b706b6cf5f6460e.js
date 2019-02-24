@@ -704,6 +704,7 @@
                         getDataTree: function(t) {
                             var e, a, n, o = this;
                             0 === this.treeDeep ? (n = "root", a = "jurisdiccion_desc", e = "".concat(i.a, "/jurisdiccion?anio=").concat(this.selectedYear)) : (n = t, a = "programa_desc", e = "".concat(i.a, "/programa/").concat(t, "?anio=").concat(this.selectedYear)), r.j(e).then(function(t) {
+                                window._treeMapData = t;
                                 window._updateChartSelector ? _updateChartSelector(t) : null;
                                 t.forEach(function(t) {
                                     t.name = t[a], t.parent = "", t.credito_vigente = t.credito_vigente * t.tasa_ajuste_inflacion, t.credito_devengado = t.credito_devengado * t.tasa_ajuste_inflacion, t.credito_presupuestado = t.credito_presupuestado * t.tasa_ajuste_inflacion
@@ -722,6 +723,7 @@
                         getDataEvolution: function(t, e, a) {
                             var n, o = this;
                             n = 0 === this.treeDeep ? "".concat(i.a, "/jurisdiccion?juri_nombre=").concat(t) : "".concat(i.a, "/programa/").concat(e, "?prog_id=").concat(a), r.j(n).then(function(e) {
+                                window._monitorChartData = e;
                                 e.forEach(function(t) {
                                     t.credito_presupuestado = t.credito_presupuestado * t.tasa_ajuste_inflacion, t.credito_vigente = t.credito_vigente * t.tasa_ajuste_inflacion, t.credito_devengado = t.credito_devengado * t.tasa_ajuste_inflacion
                                 });

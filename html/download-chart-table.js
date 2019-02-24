@@ -12,11 +12,10 @@
         document.body.removeChild(element);
     }
 
-    function _downloadMonitorTableData() {
-        if (window._monitorTableDownloadData && window._monitorTableDownloadData.length > 0) {
-            var headers = [];
-            for (var i=0; i<_monitorTableDownloadData.length; i++) {
-                var rowObject = _monitorTableDownloadData[i];
+    function json2csv(jsonData) {
+         var headers = [];
+            for (var i=0; i<jsonData.length; i++) {
+                var rowObject = jsonData[i];
                 for (var variable in rowObject) {
                     if (rowObject.hasOwnProperty(variable) && headers.indexOf(variable) < 0) {
                         headers.push(variable)
@@ -24,30 +23,41 @@
                 }
             }
             var rows = [headers.join(',')];
-            for (var n=0; n<_monitorTableDownloadData.length; n++) {
+            for (var n=0; n<jsonData.length; n++) {
                 var row = [];
                 for (var j=0; j<headers.length; j++) {
                     var header = headers[j];
-                    var value = _monitorTableDownloadData[n][header];
+                    var value = jsonData[n][header];
                     row.push(value === undefined ? '' : value)
                 }
                 rows.push(row.join(','))
             }
             var data = rows.join('\n');
             _triggerDownload('datos.csv', data)
+    }
+
+    function _downloadMonitorTableData() {
+        if (window._monitorTableDownloadData && window._monitorTableDownloadData.length > 0) {
+           json2csv(_monitorTableDownloadData);
         }
     }
 
     function _downloadMonitorTreemapData() {
-        console.log('treemap data')
+        if (window._treeMapData && window._treeMapData.length > 0) {
+           json2csv(_treeMapData);
+        }
     }
 
     function _downloadMonitorChartData() {
-        console.log('monitor chart data')
+        if (window._monitorChartData && window._monitorChartData.length > 0) {
+           json2csv(_monitorChartData);
+        }
     }
 
     function _downloadComparadorChartData() {
-        console.log('comparador chart data')
+        if (window._comparadorChartData && window._comparadorChartData.length > 0) {
+           json2csv(_comparadorChartData);
+        }
     }
 
     function _bindSelector(selector, callback) {

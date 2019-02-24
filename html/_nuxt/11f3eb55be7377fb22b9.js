@@ -393,6 +393,7 @@
                         search: function() {
                             var t = this;
                             "" !== this.words && (this.loading = !0, o.j("".concat(i.a, "/buscar?q=").concat(this.words, "&filtro=").concat(this.filterBy)).then(function(e) {
+                                window._comparadorChartData = e;
                                 e.forEach(function(t) {
                                     t.credito_vigente = t.credito_vigente * t.tasa_ajuste_inflacion, t.credito_devengado = t.credito_devengado * t.tasa_ajuste_inflacion, t.credito_presupuestado = t.credito_presupuestado * t.tasa_ajuste_inflacion
                                 }), t.data = e, t.loading = !1
