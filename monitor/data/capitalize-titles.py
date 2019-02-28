@@ -18,7 +18,7 @@ def write_presupuesto(presupuesto):
 
 
 def capitalize_rows(presupuesto):
-    for row in presupuesto:
+    for row in presupuesto[1:]:
         row[5] = row[5][0].upper() + row[5][1:]
         row[7] = row[7][0].upper() + row[7][1:]
 
