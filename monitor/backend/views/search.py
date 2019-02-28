@@ -42,6 +42,12 @@ def filter_by_juri(args, result):
         result.append({
             'tipo': 'jurisdiccion',
             'jurisdiccion_desc': row.jurisdiccion_desc,
+            'entidad_desc': row.entidad_desc,
+            'entidad_id': row.entidad_id,
+            'programa_desc': row.programa_desc,
+            'programa_id': row.programa_id,
+            'actividad_desc': row.actividad_desc,
+            'actividad_id': row.actividad_id,
             'ejercicio_presupuestario': row.ejercicio_presupuestario,
             'credito_presupuestado': row.credito_presupuestado,
             'credito_vigente': row.credito_vigente,
@@ -73,6 +79,10 @@ def filter_by_entidad(args, result):
             'jurisdiccion_desc': row.jurisdiccion_desc,
             'entidad_desc': row.entidad_desc,
             'entidad_id': row.entidad_id,
+            'programa_desc': row.programa_desc,
+            'programa_id': row.programa_id,
+            'actividad_desc': row.actividad_desc,
+            'actividad_id': row.actividad_id,
             'ejercicio_presupuestario': row.ejercicio_presupuestario,
             'credito_presupuestado': row.credito_presupuestado,
             'credito_vigente': row.credito_vigente,
@@ -106,6 +116,8 @@ def filter_by_program(args, result):
             'entidad_id': row.entidad_id,
             'programa_desc': row.programa_desc,
             'programa_id': row.programa_id,
+            'actividad_desc': row.actividad_desc,
+            'actividad_id': row.actividad_id,
             'ejercicio_presupuestario': row.ejercicio_presupuestario,
             'credito_presupuestado': row.credito_presupuestado,
             'credito_vigente': row.credito_vigente,
@@ -159,7 +171,7 @@ class Search(Resource):
         """
         result = []
         args = parser.parse_args()
-        args['q'] = args['q']
+        args['q'] = args['q'].lower()
 
         if args['filtro'] == 'todos':
             filter_by_juri(args, result)
