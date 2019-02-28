@@ -159,7 +159,7 @@ class Search(Resource):
         """
         result = []
         args = parser.parse_args()
-        args['q'] = args['q'].lower()
+        args['q'] = args['q']
 
         if args['filtro'] == 'todos':
             filter_by_juri(args, result)
