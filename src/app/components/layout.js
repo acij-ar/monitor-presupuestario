@@ -1,4 +1,4 @@
-const layout = (renderedComponente, props) => `
+const layout = (renderedComponente, clientScript, props) => `
 <!doctype html>
 <html lang="es-ar">
 <head>
@@ -7,7 +7,7 @@ const layout = (renderedComponente, props) => `
 </head>
 <body>
     <div id="root">${renderedComponente}</div>
-    <script src="/static/client.js"></script>
+    <script src="/static/${clientScript}"></script>
 </body>
 </html>
 `;

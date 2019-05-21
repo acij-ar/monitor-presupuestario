@@ -33,7 +33,10 @@ const serverConfig = {
 const clientConfig = {
     target: 'web',
     entry: {
-        'client.js': path.resolve(__dirname, 'src/client.js')
+        'home.js': path.resolve(__dirname, 'src/app/client/home.js'),
+        'monitor.js': path.resolve(__dirname, 'src/app/client/monitor.js'),
+        'comparator.js': path.resolve(__dirname, 'src/app/client/comparator.js'),
+        'about.js': path.resolve(__dirname, 'src/app/client/about.js'),
     },
     module: {
         rules: [js]
