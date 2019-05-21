@@ -1,0 +1,22 @@
+{
+  "name": "monitor-presupuestario",
+  "version": "1.0.0",
+  "description": "Sitio del Monitor Presupuestario: [monitorpresupuestario.acij.org.ar](http://monitorpresupuestario.acij.org.ar/)",
+  "main": "index.js",
+  "scripts": {
+    "start-dev": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acij-ar/monitor-presupuestario.git"
+  },
+  "author": "ignacio.nh@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acij-ar/monitor-presupuestario/issues"
+  },
+  "homepage": "https://github.com/acij-ar/monitor-presupuestario#readme",
+  "dependencies": {
+    "express": "^4.17.0"
+  }
+}
