@@ -13,7 +13,6 @@ const js = {
 };
 
 const serverConfig = {
-    mode: 'development',
     target: 'node',
     node: {
         __dirname: false
@@ -32,7 +31,6 @@ const serverConfig = {
 };
 
 const clientConfig = {
-    mode: 'development',
     target: 'web',
     entry: {
         'home.js': path.resolve(__dirname, 'src/public/home.js')
