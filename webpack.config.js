@@ -17,9 +17,9 @@ const serverConfig = {
     node: {
         __dirname: false
     },
-    externals: [nodeExternals()],
+    externals: [nodeExternals()], // TODO: is this necessary?
     entry: {
-        'index.js': path.resolve(__dirname, 'src/index.js')
+        'server.js': path.resolve(__dirname, 'src/server.js')
     },
     module: {
         rules: [js]
@@ -33,13 +33,13 @@ const serverConfig = {
 const clientConfig = {
     target: 'web',
     entry: {
-        'home.js': path.resolve(__dirname, 'src/public/home.js')
+        'client.js': path.resolve(__dirname, 'src/client.js')
     },
     module: {
         rules: [js]
     },
     output: {
-        path: path.resolve(__dirname, 'dist/public'),
+        path: path.resolve(__dirname, 'dist'),
         filename: '[name]'
     }
 };
