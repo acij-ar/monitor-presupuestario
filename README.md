@@ -17,6 +17,7 @@ Sitio del Monitor Presupuestario: [monitorpresupuestario.acij.org.ar](http://mon
 user with settings. It can also be several sticky headers that follow the user only when a specific graph is showing
 - Global switch toggle for inflation adjustment 
 - Global switch toggle for font size 
+- Improve favicon legibility 
 
 ### Graphs an analysis
 
