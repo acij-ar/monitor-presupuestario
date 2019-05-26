@@ -36,13 +36,12 @@ Horizontally choosing different or all the entities at the same level and compar
 - Process manager for express vs linux service
 - Nginx proxy_pass to react server only in /test
 - Webpack.
-    - Babel. ES6 to basic js 
-    - Compile jsx
     - Polyfills
     - Analytics
     - Newrelic
-    - Asset management. Scss, img, fonts
 - Google spreadsheet integration
+- Import components from old site version? [nuxt-buefy](https://buefy.github.io/#/documentation) 
+- Import icons from old site version? : Font awesome and Material design icons
 
 ### React components
 - Duplicate the actual site
