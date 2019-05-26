@@ -1,4 +1,5 @@
 const React = require('react');
+require('./index.scss');
 
 const App = () => (
     <React.Fragment>

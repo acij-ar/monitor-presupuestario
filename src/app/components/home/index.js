@@ -1,8 +1,9 @@
 const React = require('react');
+require('./index.scss');
 
 const App = () => (
     <React.Fragment>
-        <h1>Acerca de</h1>
+        <h1>Home2</h1>
     </React.Fragment>
 );
 

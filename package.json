@@ -20,15 +20,21 @@
   },
   "homepage": "https://github.com/acij-ar/monitor-presupuestario#readme",
   "dependencies": {
+    "autoprefixer": "^9.5.1",
+    "css-loader": "^2.1.1",
     "express": "^4.17.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "sass-loader": "^7.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
-    "@babel/core": "^7.4.4",
     "babel-loader": "^8.0.6",
+    "mini-css-extract-plugin": "^0.6.0",
     "nodemon": "^1.19.0",
     "webpack": "^4.32.0",
     "webpack-cli": "^3.3.2",
