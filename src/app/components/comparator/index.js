@@ -1,10 +1,11 @@
 const React = require('react');
+const Page = require('../page');
 require('./index.scss');
 
 const App = () => (
-    <React.Fragment>
+    <Page>
         <h1>Comparador</h1>
-    </React.Fragment>
+    </Page>
 );
 
 module.exports = App;
