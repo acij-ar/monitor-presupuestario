@@ -4,7 +4,9 @@ require('./index.scss');
 
 const Page = ({ children }) => ([
     <Header />,
-    children
+    <div id="main">
+        { children }
+    </div>
 ]);
 
 module.exports = Page;

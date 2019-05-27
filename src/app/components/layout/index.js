@@ -13,7 +13,7 @@ const layout = ({ renderedComponent, clientName, props }) => `
     
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <link rel="stylesheet" href="./static/${clientName}.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="root">${renderedComponent}</div>
