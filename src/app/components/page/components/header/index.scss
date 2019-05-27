@@ -6,6 +6,7 @@
 
   #header-content {
     position: relative;
+    z-index: 1;
   }
 
   #header-logo {
@@ -20,9 +21,12 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    font-size: 18px;
 
+    img {
+      height: 1em;
+    }
   }
-
 }
 
 @media (max-width: 767px) {
@@ -106,6 +110,12 @@
           border-left: #01ffbb solid 4px;
         }
       }
+
+      #twitter,
+      #facebook,
+      #github {
+        display: inline-block;
+      }
     }
 
     #header-menu-toggle:checked ~ #header-menu-links {
@@ -149,15 +159,15 @@
 
         a {
           color: white;
-          font-size: 18px;
           font-weight: 300;
-          padding: 10px;
+          padding: 10px 10px 7px 10px;
           margin-left: 10px;
-        }
-      }
+          border-bottom: solid 3px transparent;
 
-      img {
-        height: 1em;
+          &:hover {
+            border-bottom-color: #01ffbb;
+          }
+        }
       }
     }
   }

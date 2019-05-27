@@ -1,0 +1,23 @@
+#background-768 {
+  width: 100%;
+}
+
+#background-1920 {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #background-768 {
+    display: none;
+  }
+
+  #background-1920 {
+    padding-top: 56%;
+    display: block;
+    width: 100%;
+    background-image: url('/static/portada-1920.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
