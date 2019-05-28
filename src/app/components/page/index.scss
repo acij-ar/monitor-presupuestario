@@ -6,13 +6,25 @@ html, body {
 body {
   font-family: 'Rubik', sans-serif;
   background: #f0f0f0;
+  color: #f0f0f0;
+  font-weight: 300;
 }
 
 a {
   text-decoration: none;
 }
 
-#main {
+.monitor-content {
   max-width: 1200px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.monitor-highlight {
+  background: #0081ff;
+}
+
+h1, p {
+  margin: 0;
 }
