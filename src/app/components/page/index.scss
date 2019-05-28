@@ -5,7 +5,7 @@ html, body {
 
 body {
   font-family: 'Rubik', sans-serif;
-  background: #f0f0f0;
+  background: #fafafa;
   color: #f0f0f0;
   font-weight: 300;
 }
@@ -19,12 +19,21 @@ a {
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
+  padding: 32px 12px;
 }
 
 .monitor-highlight {
   background: #0081ff;
 }
 
-h1, p {
+p {
   margin: 0;
+}
+
+h1 {
+  margin: 0 0 20px 0;
+}
+
+h2 {
+  margin: 0 0 12px 0;
 }
