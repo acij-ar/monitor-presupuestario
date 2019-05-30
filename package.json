@@ -21,6 +21,7 @@
   "homepage": "https://github.com/acij-ar/monitor-presupuestario#readme",
   "dependencies": {
     "autoprefixer": "^9.5.1",
+    "axios": "^0.18.0",
     "css-loader": "^2.1.1",
     "express": "^4.17.0",
     "node-sass": "^4.12.0",
