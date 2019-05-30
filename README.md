@@ -18,6 +18,7 @@ user with settings. It can also be several sticky headers that follow the user o
 - Global switch toggle for inflation adjustment 
 - Global switch toggle for font size 
 - Improve favicon legibility 
+- Add link to the google spreadsheet used as DB
 
 ### Graphs an analysis
 
@@ -60,3 +61,8 @@ Horizontally choosing different or all the entities at the same level and compar
 - Proptypes
 - Unit tests
 - E2E tests
+
+## Other links
+
+- [Cuántos ministros tuvo cada presidente](https://www.cronista.com/economiapolitica/Gabinete-corto-o-ampliado-cuantos-ministros-tuvo-cada-presidente-desde-1983-20180904-0033.html)
+- [Recharts documentation](http://recharts.org/en-US)
