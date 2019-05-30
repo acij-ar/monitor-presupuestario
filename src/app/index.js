@@ -8,13 +8,16 @@ const Comparator = require('./components/comparator');
 const About = require('./components/about');
 const layout = require('./components/layout');
 
+const treemap = require('./controllers/treemap');
+
 const router = express.Router();
 
 const render = (req, res) => {
     const Component = res.locals.component;
     const html = layout({
         renderedComponent: ReactDOMServer.renderToString(<Component />),
-        clientName: res.locals.client
+        clientName: res.locals.client,
+        props: res.locals.props,
     });
     res.send(html)
 };
@@ -52,7 +55,7 @@ const setAboutComponent = (req, res, next) => {
 };
 
 router.get('/', setHomeComponent, render);
-router.get('/monitor', setMonitorComponent, render);
+router.get('/monitor', setMonitorComponent, treemap, render);
 router.get('/comparador', setComparatorComponent, render);
 router.get('/acerca-de', setAboutComponent, render);
 

@@ -1,8 +1,9 @@
 const React = require('react');
 const Page = require('../page');
+const { Treemap, ResponsiveContainer } = require('recharts');
 require('./index.scss');
 
-const App = () => (
+const App = ({ data }) => (
     <Page>
         <div className="monitor-highlight">
             <div className="monitor-content">
@@ -19,6 +20,17 @@ const App = () => (
         </div>
 
         <div className="monitor-content monitor-treemap">
+            <ResponsiveContainer width="100%" aspect={3}>
+                {/* TODO: add placeholder for client first load */}
+                <Treemap
+                    data={data}
+                    dataKey="credito_vigente"
+                    ratio={4 / 3}
+                    stroke="#fff"
+                    fill="#8884d8"
+                    isAnimationActive={false}
+                />
+            </ResponsiveContainer>
         </div>
     </Page>
 );
