@@ -15,7 +15,7 @@ const router = express.Router();
 const render = (req, res) => {
     const Component = res.locals.component;
     const html = layout({
-        renderedComponent: ReactDOMServer.renderToString(<Component />),
+        renderedComponent: ReactDOMServer.renderToString(<Component {...res.locals.props} />),
         clientName: res.locals.client,
         props: res.locals.props,
     });

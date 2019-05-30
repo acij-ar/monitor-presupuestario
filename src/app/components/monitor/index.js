@@ -3,7 +3,7 @@ const Page = require('../page');
 const { Treemap, ResponsiveContainer } = require('recharts');
 require('./index.scss');
 
-const App = ({ data }) => (
+const App = ({ treemapData }) => (
     <Page>
         <div className="monitor-highlight">
             <div className="monitor-content">
@@ -23,8 +23,8 @@ const App = ({ data }) => (
             <ResponsiveContainer width="100%" aspect={3}>
                 {/* TODO: add placeholder for client first load */}
                 <Treemap
-                    data={data}
-                    dataKey="credito_vigente"
+                    data={treemapData['2019']}
+                    dataKey="credito_presupuestado"
                     ratio={4 / 3}
                     stroke="#fff"
                     fill="#8884d8"
