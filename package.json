@@ -7,7 +7,7 @@
     "watch": "webpack --watch --mode development",
     "build": "webpack --mode development",
     "dist": "webpack --mode production",
-    "start-dev": "nodemon dist/server.js"
+    "start-dev": "nodemon $NODE_DEBUG_OPTION dist/server.js"
   },
   "repository": {
     "type": "git",
