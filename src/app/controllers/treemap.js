@@ -8,7 +8,7 @@ const treemap = (req, res, next) => {
         .then((responses) => {
             const data = {};
             years.map((year, index) => {
-                data[year] = responses[index].data
+                data[year] = responses[index].data.map(({ jurisdiccion_desc: name, ...data }) => ({ name, ...data }));
             });
             res.locals.props = {
                 treemapData: data
