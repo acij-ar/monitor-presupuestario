@@ -65,4 +65,5 @@ Horizontally choosing different or all the entities at the same level and compar
 ## Other links
 
 - [Cuántos ministros tuvo cada presidente](https://www.cronista.com/economiapolitica/Gabinete-corto-o-ampliado-cuantos-ministros-tuvo-cada-presidente-desde-1983-20180904-0033.html)
-- [Recharts documentation](http://recharts.org/en-US)
+- Charts: [Recharts](http://recharts.org/en-US), [Nivo](https://nivo.rocks/), [React vis](https://uber.github.io/react-vis/),
+[Victory](https://formidable.com/open-source/victory/), [React Charts2](https://github.com/jerairrest/react-chartjs-2)
