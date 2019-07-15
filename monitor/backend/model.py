@@ -7,6 +7,8 @@ from pydrive.drive import GoogleDrive
 # https://stackoverflow.com/questions/24419188/automating-pydrive-verification-process
 # https://pythonhosted.org/PyDrive/filemanagement.html#download-file-content
 
+print('Initilizing pydrive')
+
 gauth = GoogleAuth()
 gauth.LoadCredentialsFile("credentials.json")
 if gauth.credentials is None:
@@ -18,6 +20,7 @@ else:
 gauth.SaveCredentialsFile("credentials.json")
 drive = GoogleDrive(gauth)
 
+print('Pydrive initilized')
 
 files = [
     '1cTGxXnGG1nvVwW4BXhk7jrX1LeAHp3tb',  # 2007
@@ -38,9 +41,10 @@ files = [
 df = pd.DataFrame()
 
 for file_id in files:
+    print('Downloading file ' + file_id)
     drive_file = drive.CreateFile({'id': file_id})
     file_content = drive_file.GetContentString()
-    file_df = pd.read_csv(StringIO(file_content))
+    file_df = pd.read_csv(StringIO(file_content), decimal=',')
     file_df = file_df[[
         'ejercicio_presupuestario',
         'jurisdiccion_desc',
@@ -56,7 +60,17 @@ for file_id in files:
         'credito_devengado',
         'credito_pagado'
     ]]
+    numeric_columns = [
+        'credito_presupuestado',
+        'credito_vigente',
+        'credito_comprometido',
+        'credito_devengado',
+        'credito_pagado'
+    ]
+    for column in numeric_columns:
+        file_df[column] = file_df[column] * 1e6
     df = pd.concat([df, file_df])
 
 df_inflacion = pd.read_csv('data/inflacion.csv')
 
+print('All datasets loaded')
