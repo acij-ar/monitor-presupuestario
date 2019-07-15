@@ -7,6 +7,7 @@ from backend.views.search import Search
 from backend.views.programs import Program
 from backend.views.jurisdictions import Jurisdiction
 from backend.views.activities import Activity, ActivityTable
+from backend.views.model_update import DatasetUpdater
 
 # The WSGI compliant web application object
 app = Flask(__name__)
@@ -29,3 +30,4 @@ api.add_resource(Jurisdiction, '/jurisdiccion')
 api.add_resource(Program, '/programa/<string:juri_name>')
 api.add_resource(Activity, '/actividad/<string:juri_name>/<int:prog_id>')
 api.add_resource(ActivityTable, '/actividad/tabla/<string:juri_name>/<int:prog_id>')
+api.add_resource(DatasetUpdater, '/actualizar_dataset')
