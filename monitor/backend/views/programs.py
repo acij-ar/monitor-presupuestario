@@ -1,7 +1,7 @@
 import pandas as pd
 from flask_restful import Resource, reqparse, abort
 
-from backend.model import df, df_inflacion
+from backend.model import dataset
 
 # Query parameters parser
 parser = reqparse.RequestParser()
@@ -27,9 +27,9 @@ error_message = '"anio" o "programa_nombre" o "programa_id"' \
 
 class Program(Resource):
     def get(self, juri_name):
-        """
+        df = dataset.df
+        df_inflacion = dataset.df_inflacion
 
-        """
         args = parser.parse_args()
         dd = df[df['jurisdiccion_desc'] == juri_name]
 

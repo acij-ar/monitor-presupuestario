@@ -3,7 +3,7 @@ from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 from flask_restful import Resource, reqparse, abort
 
-from backend.model import df, df_inflacion
+from backend.model import dataset
 
 # Query parameters parser
 parser = reqparse.RequestParser()
@@ -25,6 +25,8 @@ def get_ratio(ele, search):
 
 
 def filter_by_juri(args, result):
+    df = dataset.df
+    df_inflacion = dataset.df_inflacion
     # Por juri
     df['ratio'] = df['jurisdiccion_desc'].apply(get_ratio,
                                                 search=args['q'])
@@ -60,6 +62,8 @@ def filter_by_juri(args, result):
 
 
 def filter_by_entidad(args, result):
+    df = dataset.df
+    df_inflacion = dataset.df_inflacion
     # Por programa
     df['ratio'] = df['entidad_desc'].apply(get_ratio, search=args['q'])
     df_filter = df[df['ratio'] >= 80]
@@ -95,6 +99,8 @@ def filter_by_entidad(args, result):
 
 
 def filter_by_program(args, result):
+    df = dataset.df
+    df_inflacion = dataset.df_inflacion
     # Por programa
     df['ratio'] = df['programa_desc'].apply(get_ratio, search=args['q'])
     df_filter = df[df['ratio'] >= 80]
@@ -130,6 +136,8 @@ def filter_by_program(args, result):
 
 
 def filter_by_activity(args, result):
+    df = dataset.df
+    df_inflacion = dataset.df_inflacion
     # Por actividad
     df['ratio'] = df['actividad_desc'].apply(get_ratio, search=args['q'])
     df_filter = df[df['ratio'] >= 80]
@@ -166,9 +174,6 @@ def filter_by_activity(args, result):
 
 class Search(Resource):
     def get(self):
-        """
-
-        """
         result = []
         args = parser.parse_args()
         args['q'] = args['q'].lower()

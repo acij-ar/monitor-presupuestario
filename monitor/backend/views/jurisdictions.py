@@ -1,7 +1,7 @@
 import pandas as pd
 from flask_restful import Resource, reqparse, abort
 
-from backend.model import df, df_inflacion
+from backend.model import dataset
 
 # Query parameters parser
 parser = reqparse.RequestParser()
@@ -21,9 +21,9 @@ columns_to_sum = ['credito_presupuestado', 'credito_vigente',
 
 class Jurisdiction(Resource):
     def get(self):
-        """
+        df = dataset.df
+        df_inflacion = dataset.df_inflacion
 
-        """
         args = parser.parse_args()
 
         # Validate the parameters

@@ -7,21 +7,6 @@ from pydrive.drive import GoogleDrive
 # https://stackoverflow.com/questions/24419188/automating-pydrive-verification-process
 # https://pythonhosted.org/PyDrive/filemanagement.html#download-file-content
 
-print('Initilizing pydrive')
-
-gauth = GoogleAuth()
-gauth.LoadCredentialsFile("credentials.json")
-if gauth.credentials is None:
-    gauth.LocalWebserverAuth()
-elif gauth.access_token_expired:
-    gauth.Refresh()
-else:
-    gauth.Authorize()
-gauth.SaveCredentialsFile("credentials.json")
-drive = GoogleDrive(gauth)
-
-print('Pydrive initilized')
-
 files = [
     '1cTGxXnGG1nvVwW4BXhk7jrX1LeAHp3tb',  # 2007
     '15VvixVddZqvzUfKTEu-LCo2Ik0Io4k5Z',  # 2008
@@ -38,39 +23,65 @@ files = [
     '1zv_DaTi17EZomXv6DalNKlnEvzCjRDap',  # 2019
 ]
 
-df = pd.DataFrame()
 
-for file_id in files:
-    print('Downloading file ' + file_id)
-    drive_file = drive.CreateFile({'id': file_id})
-    file_content = drive_file.GetContentString()
-    file_df = pd.read_csv(StringIO(file_content), decimal=',')
-    file_df = file_df[[
-        'ejercicio_presupuestario',
-        'jurisdiccion_desc',
-        'entidad_id',
-        'entidad_desc',
-        'programa_id',
-        'programa_desc',
-        'actividad_id',
-        'actividad_desc',
-        'credito_presupuestado',
-        'credito_vigente',
-        'credito_comprometido',
-        'credito_devengado',
-        'credito_pagado'
-    ]]
-    numeric_columns = [
-        'credito_presupuestado',
-        'credito_vigente',
-        'credito_comprometido',
-        'credito_devengado',
-        'credito_pagado'
-    ]
-    for column in numeric_columns:
-        file_df[column] = file_df[column] * 1e6
-    df = pd.concat([df, file_df])
+class Dataset:
+    def __init__(self):
+        self.df = self.load_from_drive()
+        self.df_inflacion = pd.read_csv('data/inflacion.csv')
 
-df_inflacion = pd.read_csv('data/inflacion.csv')
+    @staticmethod
+    def load_from_drive():
+        print('Initilizing pydrive')
 
-print('All datasets loaded')
+        gauth = GoogleAuth()
+        gauth.LoadCredentialsFile("credentials.json")
+        if gauth.credentials is None:
+            gauth.LocalWebserverAuth()
+        elif gauth.access_token_expired:
+            gauth.Refresh()
+        else:
+            gauth.Authorize()
+        gauth.SaveCredentialsFile("credentials.json")
+        drive = GoogleDrive(gauth)
+
+        print('Pydrive initilized')
+
+        df = pd.DataFrame()
+
+        for file_id in files:
+            print('Downloading file ' + file_id)
+            drive_file = drive.CreateFile({'id': file_id})
+            file_content = drive_file.GetContentString()
+            file_df = pd.read_csv(StringIO(file_content), decimal=',')
+            file_df = file_df[[
+                'ejercicio_presupuestario',
+                'jurisdiccion_desc',
+                'entidad_id',
+                'entidad_desc',
+                'programa_id',
+                'programa_desc',
+                'actividad_id',
+                'actividad_desc',
+                'credito_presupuestado',
+                'credito_vigente',
+                'credito_comprometido',
+                'credito_devengado',
+                'credito_pagado'
+            ]]
+            numeric_columns = [
+                'credito_presupuestado',
+                'credito_vigente',
+                'credito_comprometido',
+                'credito_devengado',
+                'credito_pagado'
+            ]
+            for column in numeric_columns:
+                file_df[column] = file_df[column] * 1e6
+            df = pd.concat([df, file_df])
+
+        print('All datasets loaded')
+
+        return df
+
+
+dataset = Dataset()
