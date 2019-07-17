@@ -86,7 +86,13 @@ class Program(Resource):
             by = ['ejercicio_presupuestario']
 
         # Get the program name
-        desc = df_filter.drop_duplicates(subset=subset)[c]
+
+        desc = df_filter.drop_duplicates(subset=subset)
+        tmp_df = pd.DataFrame()
+        for column in c:
+            if column in desc:
+                tmp_df[column] = desc[column]
+        desc = tmp_df
         desc = desc.reset_index(drop=True)
 
         df_filter = df_filter.groupby(by)[columns_to_sum].sum()
