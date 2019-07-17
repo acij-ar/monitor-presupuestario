@@ -25,6 +25,14 @@ error_message = '"anio" o "programa_nombre" o "programa_id"' \
                 + ' tiene que ser declarado'
 
 
+def subset_df(original_df, columns):
+    tmp_df = pd.DataFrame()
+    for column in columns:
+        if column in original_df:
+            tmp_df[column] = original_df[column]
+    return tmp_df
+
+
 class Program(Resource):
     def get(self, juri_name):
         df = dataset.df
@@ -88,11 +96,7 @@ class Program(Resource):
         # Get the program name
 
         desc = df_filter.drop_duplicates(subset=subset)
-        tmp_df = pd.DataFrame()
-        for column in c:
-            if column in desc:
-                tmp_df[column] = desc[column]
-        desc = tmp_df
+        desc = subset_df(desc, c)
         desc = desc.reset_index(drop=True)
 
         df_filter = df_filter.groupby(by)[columns_to_sum].sum()
@@ -106,7 +110,7 @@ class Program(Resource):
                  'credito_vigente', 'credito_comprometido',
                  'credito_devengado', 'credito_pagado']
         df_filter = pd.merge(df_filter, desc, on=subset)
-        df_filter = df_filter[order]
+        df_filter = subset_df(df_filter, order)
 
         # Agrego taza de inflacion
         df_filter = pd.merge(df_filter, df_inflacion,
