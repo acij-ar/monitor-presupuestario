@@ -5,7 +5,9 @@ from backend.model import dataset
 
 class DatasetUpdater(Resource):
     def get(self, year):
+        file_path = './data/' + year + '.csv'
         drive_client = DriveClient()
-        drive_client.download_file_by_year(year, './data/' + year + '.csv')
+        drive_client.download_file_by_year(year, file_path)
+        dataset.clean_file(file_path)
         dataset.update_dataset()
         return {"result": "success"}
