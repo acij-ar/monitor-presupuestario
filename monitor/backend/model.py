@@ -27,7 +27,8 @@ class Dataset:
     @staticmethod
     def clean_file(file_path):
         file_df = pd.read_csv(file_path, decimal=',')
-        file_df = file_df[[
+        clean_df = pd.DataFrame()
+        not_numeric_columns = [
             'ejercicio_presupuestario',
             'jurisdiccion_desc',
             'entidad_id',
@@ -35,13 +36,15 @@ class Dataset:
             'programa_id',
             'programa_desc',
             'actividad_id',
-            'actividad_desc',
-            'credito_presupuestado',
-            'credito_vigente',
-            'credito_comprometido',
-            'credito_devengado',
-            'credito_pagado'
-        ]]
+            'actividad_desc'
+        ]
+
+        for column in not_numeric_columns:
+            if column in file_df:
+                clean_df[column] = file_df[column]
+            else:
+                print(column + ' not in dataframe')
+
         numeric_columns = [
             'credito_presupuestado',
             'credito_vigente',
@@ -50,8 +53,11 @@ class Dataset:
             'credito_pagado'
         ]
         for column in numeric_columns:
-            file_df[column] = file_df[column] * 1e6
-        file_df.to_csv(file_path)
+            if column in file_df:
+                clean_df[column] = file_df[column] * 1e6
+                clean_df.to_csv(file_path)
+            else:
+                print(column + ' not in dataframe')
 
 
 dataset = Dataset()
