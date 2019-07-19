@@ -56,20 +56,22 @@ class Treemap extends React.Component {
 
         return (
             <React.Fragment>
-                <select onChange={this.onYearChange} defaultValue={this.state.selectedYear}>
-                    { availableYears.map(year => (
-                        <option key={year} defaultValue={year}>
-                            { year }
-                        </option>
-                    ))}
-                </select>
-                <select onChange={this.onKeyChange} defaultValue={this.state.selectedKey}>
-                    { availableKeys.map(({ key, name }) => (
-                        <option key={key} value={key}>
-                            { name }
-                        </option>
-                    ))}
-                </select>
+                <div className="monitor-treemap-selectors">
+                    <select onChange={this.onYearChange} defaultValue={this.state.selectedYear}>
+                        { availableYears.map(year => (
+                            <option key={year} defaultValue={year}>
+                                { year }
+                            </option>
+                        ))}
+                    </select>
+                    <select onChange={this.onKeyChange} defaultValue={this.state.selectedKey}>
+                        { availableKeys.map(({ key, name }) => (
+                            <option key={key} value={key}>
+                                { name }
+                            </option>
+                        ))}
+                    </select>
+                </div>
                 <ResponsiveContainer width="100%" aspect={3}>
                     {/* TODO: add placeholder for client first load */}
                     <RechartsTreemap

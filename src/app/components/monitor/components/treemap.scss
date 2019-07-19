@@ -8,3 +8,12 @@
     margin-left: 10px;
   }
 }
+
+.monitor-treemap-selectors {
+  text-align: right;
+  margin: 5px 0;
+
+  select + select {
+    margin-left: 10px;
+  }
+}
