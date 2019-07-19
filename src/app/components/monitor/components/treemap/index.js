@@ -47,11 +47,7 @@ class Treemap extends React.Component {
     }
 
     downloadData() {
-        const rows = [
-            ["nombre", "valor"],
-            ...this.state.data.map(dataPoint => [dataPoint.name, dataPoint[this.state.selectedKey]])
-        ];
-        downloadData(rows, 'treemap.csv');
+        downloadData(this.state.data, 'treemap.csv');
     }
 
     render() {
