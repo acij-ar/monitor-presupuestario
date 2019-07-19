@@ -1,10 +1,10 @@
 const React = require('react');
-const { Treemap: RechartsTreemap, ResponsiveContainer } = require('recharts');
 const _ = require('lodash');
-const availableYears = require('../../../helpers/available-years');
-const availableKeys = require('../../../helpers/available-keys');
-const downloadChart = require('../../../helpers/download-chart');
-const downloadData = require('../../../helpers/download-csv');
+const availableYears = require('../../../../helpers/available-years');
+const availableKeys = require('../../../../helpers/available-keys');
+const downloadChart = require('../../../../helpers/download-chart');
+const downloadData = require('../../../../helpers/download-csv');
+const Chart = require('./chart');
 
 class Treemap extends React.Component {
     constructor(props) {
@@ -22,7 +22,9 @@ class Treemap extends React.Component {
 
     dataForState() {
         const dataForYear = this.props.data[this.state.selectedYear];
-        return _.sortBy(dataForYear, dataPoint => -dataPoint[this.state.selectedKey]);
+        const sortedYearData = _.sortBy(dataForYear, dataPoint => -dataPoint[this.state.selectedKey]);
+        const dataRows = sortedYearData.map(dataPoint => [dataPoint.name, "root", dataPoint[this.state.selectedKey]]);
+        return [['name', 'parent', 'value'], ['root', null, _.sum(dataRows.map(row => row[2]))], ...dataRows]
     }
 
     setDataForState() {
@@ -56,7 +58,7 @@ class Treemap extends React.Component {
 
         return (
             <React.Fragment>
-                <div className="monitor-treemap-selectors">
+                <div id="monitor-treemap-controls">
                     <select onChange={this.onYearChange} defaultValue={this.state.selectedYear}>
                         { availableYears.map(year => (
                             <option key={year} defaultValue={year}>
@@ -71,22 +73,10 @@ class Treemap extends React.Component {
                             </option>
                         ))}
                     </select>
-                </div>
-                <ResponsiveContainer width="100%" aspect={3}>
-                    {/* TODO: add placeholder for client first load */}
-                    <RechartsTreemap
-                        data={this.state.data}
-                        dataKey={this.state.selectedKey}
-                        ratio={4 / 3}
-                        stroke="#fff"
-                        fill="#8884d8"
-                        isAnimationActive={false}
-                    />
-                </ResponsiveContainer>
-                <div className="monitor-treemap-download">
                     <span className="monitor-link" onClick={this.downloadData}>Descargar datos</span>
                     <span className="monitor-link" onClick={Treemap.downloadImage}>Descargar gráfico</span>
                 </div>
+                <Chart data={this.state.data} />
             </React.Fragment>
         )
     }
