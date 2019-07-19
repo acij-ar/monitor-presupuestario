@@ -2,6 +2,7 @@ const React = require('react');
 const { Treemap: RechartsTreemap, ResponsiveContainer } = require('recharts');
 const _ = require('lodash');
 const years = require('../../../helpers/available-years');
+const downloadChart = require('../../../helpers/download-chart');
 
 class Treemap extends React.Component {
     constructor(props) {
@@ -16,6 +17,10 @@ class Treemap extends React.Component {
 
     onChange(e) {
         this.setState({ selectedYear: e.target.value });
+    }
+
+    static downloadImage() {
+        downloadChart('.monitor-treemap svg')
     }
 
     render() {
@@ -43,6 +48,9 @@ class Treemap extends React.Component {
                         isAnimationActive={false}
                     />
                 </ResponsiveContainer>
+                <div className="monitor-treemap-download">
+                    <span onClick={Treemap.downloadImage}>Descargar gráfico</span>
+                </div>
             </React.Fragment>
         )
     }
