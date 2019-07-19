@@ -3,4 +3,8 @@
   font-size: 12px;
   margin: 5px 0;
   color: #222;
+
+  .monitor-link + .monitor-link {
+    margin-left: 10px;
+  }
 }

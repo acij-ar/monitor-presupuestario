@@ -37,3 +37,12 @@ h1 {
 h2 {
   margin: 0 0 12px 0;
 }
+
+.monitor-link {
+  color: #006dd9;
+  cursor: pointer;
+
+  &:hover {
+    color: #0081ff;
+  }
+}
