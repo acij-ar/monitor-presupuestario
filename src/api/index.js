@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const DataClient = require('../data');
 
-router.get('/', (req, res) => {
-    res.send('ping');
+router.get('/ping', (req, res) => {
+    res.send('pong');
 });
 
 module.exports = router;
