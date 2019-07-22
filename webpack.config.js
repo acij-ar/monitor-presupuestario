@@ -33,7 +33,8 @@ const plugins = [
 const serverConfig = {
     target: 'node',
     node: {
-        __dirname: false
+        __dirname: true,
+        __filename: true,
     },
     externals: [nodeExternals()], // TODO: is this necessary?
     entry: {

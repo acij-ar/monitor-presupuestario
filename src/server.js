@@ -5,8 +5,6 @@ const apiRouter = require('./api');
 
 const app = express();
 
-// After webpack __dirname == dist/
-
 const clientFolderPath = path.join(__dirname);
 app.use('/static', express.static(clientFolderPath));
 
