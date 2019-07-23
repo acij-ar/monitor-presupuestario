@@ -5,7 +5,7 @@ const apiRouter = require('./api');
 
 const app = express();
 
-const clientFolderPath = path.join(__dirname);
+const clientFolderPath = path.join(__dirname, '..', 'dist');
 app.use('/static', express.static(clientFolderPath));
 
 const staticFolderPath = path.join(__dirname, '..', 'public');
