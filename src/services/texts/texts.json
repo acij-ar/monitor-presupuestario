@@ -1,29 +1,10 @@
-[
-  {
-    "id": "monitor",
-    "texts": [
-      {
-        "id": "title",
-        "content": "Monitor"
-      },
-      {
-        "id": "description",
-        "ref": "Descripción",
-        "content": "En esta sección podés comparar la participación de las asignaciones presupuestarias nacionales por jurisdicción, programa o actividad desde el año 2007 en relación con el presupuesto total para el año seleccionado. El treemap mostrará la participación de la jurisdicción seleccionada en relación a todas las jurisdicciones, del programa dentro de su jurisdicción, y de la actividad respecto del programa al que pertenece. La información se encuentra sistematizada tal como el Estado Nacional la publica en su sitio de Presupuesto Abierto."
-      }
-    ]
+{
+  "monitor": {
+    "title": "Monitor",
+    "description": "En esta sección podés comparar la participación de las asignaciones presupuestarias nacionales por jurisdicción, programa o actividad desde el año 2007 en relación con el presupuesto total para el año seleccionado. El treemap mostrará la participación de la jurisdicción seleccionada en relación a todas las jurisdicciones, del programa dentro de su jurisdicción, y de la actividad respecto del programa al que pertenece. La información se encuentra sistematizada tal como el Estado Nacional la publica en su sitio de Presupuesto Abierto."
   },
-  {
-    "id": "comparator",
-    "texts": [
-      {
-        "id": "title",
-        "content": "Comparador"
-      },
-      {
-        "id": "description",
-        "content": "En esta sección podés comparar las asignaciones presupuestarias nacionales por jurisdicción, programa o actividad desde el año 2007 en relación con otras jurisdicciones, programas o actividades. Podés seleccionar el presupuesto distribuido por el PEN, el presupuesto vigente y el presupuesto devengado, ajustados por inflación."
-      }
-    ]
+  "comparator": {
+    "title": "Comparador",
+    "description": "En esta sección podés comparar las asignaciones presupuestarias nacionales por jurisdicción, programa o actividad desde el año 2007 en relación con otras jurisdicciones, programas o actividades. Podés seleccionar el presupuesto distribuido por el PEN, el presupuesto vigente y el presupuesto devengado, ajustados por inflación."
   }
-]
+}
