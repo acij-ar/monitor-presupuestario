@@ -1,15 +1,14 @@
 const React = require('react');
 const Page = require('../../components/page');
 const Treemap = require('./components/treemap');
-const Texts = require('../../../services/texts');
 require('./index.scss');
 
-const App = ({ treemapData }) => (
+const App = ({ treemapData, title, description }) => (
     <Page>
         <div className="monitor-highlight">
             <div className="monitor-content">
-                <h1>{ Texts.content.monitor.title }</h1>
-                <p>{ Texts.content.monitor.description }</p>
+                <h1>{ title }</h1>
+                <p>{ description }</p>
             </div>
         </div>
 

@@ -3,8 +3,11 @@ const ReactDOMServer = require('react-dom/server');
 const Monitor = require('./view');
 const layout = require('../../components/layout');
 const data = require('./treemap-data.json');
+const Texts = require('../../../services/texts');
 
 const render = (req, res) => {
+    res.locals.props.title = Texts.content.monitor.title;
+    res.locals.props.description = Texts.content.monitor.description;
     const html = layout({
         renderedComponent: ReactDOMServer.renderToString(<Monitor {...res.locals.props} />),
         clientName: 'monitor',

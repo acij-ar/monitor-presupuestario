@@ -1,5 +1,4 @@
 const React = require('react');
-const Texts = require('../../../../services/texts');
 
 class TextsForm extends React.Component {
     constructor(props) {
@@ -7,22 +6,23 @@ class TextsForm extends React.Component {
     }
 
     render() {
+        const { texts } = this.props;
         return (
             <div className="monitor-content monitor-admin">
                 <div className="monitor-admin-page-section">
                     <h2>Monitor</h2>
                     <h3>Título</h3>
-                    <input value={Texts.content.monitor.title}/>
+                    <input defaultValue={texts.monitor.title}/>
                     <h3>Descripción</h3>
-                    <textarea>{Texts.content.monitor.description}</textarea>
+                    <textarea>{texts.monitor.description}</textarea>
                 </div>
 
                 <div className="monitor-admin-page-section">
                     <h2>Comparador</h2>
                     <h3>Título</h3>
-                    <input value={Texts.content.comparator.title}/>
+                    <input value={texts.comparator.title}/>
                     <h3>Descripción</h3>
-                    <textarea>{Texts.content.comparator.description}</textarea>
+                    <textarea>{texts.comparator.description}</textarea>
                 </div>
             </div>
         )

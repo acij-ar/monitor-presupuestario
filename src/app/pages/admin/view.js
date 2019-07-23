@@ -3,14 +3,14 @@ const Page = require('../../components/page');
 const TextsForm = require('./components/texts-form');
 require('./index.scss');
 
-const App = () => (
+const App = ({ texts }) => (
     <Page>
         <div className="monitor-highlight">
             <div className="monitor-content">
                 <h1>Admin</h1>
             </div>
         </div>
-        <TextsForm />
+        <TextsForm texts={texts}/>
     </Page>
 );
 
