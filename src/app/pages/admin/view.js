@@ -1,5 +1,7 @@
 const React = require('react');
 const Page = require('../../components/page');
+const TextsForm = require('./components/texts-form');
+require('./index.scss');
 
 const App = () => (
     <Page>
@@ -8,9 +10,7 @@ const App = () => (
                 <h1>Admin</h1>
             </div>
         </div>
-
-        <div className="monitor-content">
-        </div>
+        <TextsForm />
     </Page>
 );
 

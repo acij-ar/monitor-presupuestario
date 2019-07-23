@@ -1,0 +1,19 @@
+.monitor-admin {
+  color: #444;
+
+  h2, h3, input, textarea {
+    margin: 0 0 10px;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: solid 1px #ccc;
+    border-radius: 4px;
+  }
+}
+
+.monitor-admin-page-section {
+  margin-bottom: 20px;
+}
