@@ -1,12 +1,14 @@
-const textsFile = require('./texts.json');
+const fs = require('fs');
+const path = require('path');
 
 class Texts {
     constructor() {
-        this.rawFile = textsFile;
-        this.updateContent();
+        this.filePath = path.join(__dirname, 'texts.json');
+        this.rawFile = JSON.parse(fs.readFileSync(this.filePath));
+        this.parseContent();
     }
 
-    updateContent() {
+    parseContent() {
         const monitorSection = this.rawFile.find(section => section.id === 'monitor');
         const comparatorSection = this.rawFile.find(section => section.id === 'comparator');
         const getText = (section, textId) => section.texts.find(text => text.id === textId).content;
@@ -20,6 +22,12 @@ class Texts {
                 description: getText(comparatorSection, 'description'),
             }
         }
+    }
+
+    saveNewContent(newContent) {
+        this.rawFile = newContent;
+        fs.writeFileSync(this.filePath, JSON.stringify(newContent, null, 2));
+        this.parseContent();
     }
 }
 
