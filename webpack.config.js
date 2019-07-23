@@ -55,6 +55,7 @@ const clientConfig = {
         'monitor': path.resolve(__dirname, 'src/app/client/monitor'),
         'comparator': path.resolve(__dirname, 'src/app/client/comparator'),
         'about': path.resolve(__dirname, 'src/app/client/about'),
+        'admin': path.resolve(__dirname, 'src/app/client/admin'),
     },
     module: { rules },
     plugins,

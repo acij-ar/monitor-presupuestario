@@ -1,16 +1,18 @@
 const express = require('express');
 const React = require('react');
 
-const { render: homeController } = require('./pages/home');
-const { render: monitorController, fetchTreemapData } = require('./pages/monitor');
-const { render: comparatorController } = require('./pages/comparator');
-const { render: aboutController } = require('./pages/about');
+const { render: renderHome } = require('./pages/home');
+const { render: renderMonitor, fetchTreemapData } = require('./pages/monitor');
+const { render: renderComparator } = require('./pages/comparator');
+const { render: renderAbout } = require('./pages/about');
+const { render: renderAdmin } = require('./pages/admin');
 
 const router = express.Router();
 
-router.get('/', homeController);
-router.get('/monitor', fetchTreemapData, monitorController);
-router.get('/comparador', comparatorController);
-router.get('/acerca-de', aboutController);
+router.get('/', renderHome);
+router.get('/monitor', fetchTreemapData, renderMonitor);
+router.get('/comparador', renderComparator);
+router.get('/acerca-de', renderAbout);
+router.get('/admin', renderAdmin);
 
 module.exports = router;
