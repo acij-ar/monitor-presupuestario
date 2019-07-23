@@ -1,0 +1,34 @@
+[
+  {
+    "id": "monitor",
+    "page": "Monitor",
+    "texts": [
+      {
+        "id": "title",
+        "ref": "Titulo",
+        "content": ""
+      },
+      {
+        "id": "description",
+        "ref": "Descripción",
+        "content": ""
+      }
+    ]
+  },
+  {
+    "id": "comparator",
+    "page": "Comparador",
+    "texts": [
+      {
+        "id": "title",
+        "ref": "Titulo",
+        "content": ""
+      },
+      {
+        "id": "description",
+        "ref": "Descripción",
+        "content": ""
+      }
+    ]
+  }
+]
