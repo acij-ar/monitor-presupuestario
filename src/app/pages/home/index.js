@@ -12,4 +12,6 @@ const render = (req, res) => {
     res.send(html)
 };
 
-module.exports = render;
+module.exports = {
+    render,
+};
