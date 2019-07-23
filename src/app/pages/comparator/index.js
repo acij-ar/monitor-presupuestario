@@ -1,6 +1,6 @@
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
-const Comparator = require('../../components/comparator');
+const Comparator = require('./view');
 const layout = require('../../components/layout');
 
 const render = (req, res) => {

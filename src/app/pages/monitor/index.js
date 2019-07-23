@@ -1,6 +1,6 @@
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
-const Monitor = require('../../components/monitor');
+const Monitor = require('./view');
 const layout = require('../../components/layout');
 const data = require('./treemap-data.json');
 

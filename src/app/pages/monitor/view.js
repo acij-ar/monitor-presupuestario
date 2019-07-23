@@ -1,5 +1,5 @@
 const React = require('react');
-const Page = require('../page');
+const Page = require('../../components/page');
 const Treemap = require('./components/treemap');
 require('./index.scss');
 
