@@ -6,8 +6,7 @@ const Texts = require('../../../services/texts');
 
 const render = (req, res) => {
     res.locals.props = {
-        title: Texts.content.comparator.title,
-        description: Texts.content.comparator.description,
+        ...Texts.content.comparator
     };
     const html = layout({
         renderedComponent: ReactDOMServer.renderToString(<Comparator {...res.locals.props} />),

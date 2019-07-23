@@ -61,6 +61,55 @@ class TextsForm extends React.Component {
                         this.onTextChange();
                     }}/>
                 </div>
+
+                <div className="monitor-admin-page-section">
+                    <h2>Acerca de</h2>
+                    <h3>Presupuesto para los derechos</h3>
+                    <input value={texts.about.rights.title} onChange={e => {
+                        this.state.texts.about.rights.title = e.target.value;
+                        this.onTextChange();
+                    }}/>
+                    <h3>Contenido</h3>
+                    <textarea value={texts.about.rights.content} onChange={e => {
+                        this.state.texts.about.rights.content = e.target.value;
+                        this.onTextChange();
+                    }}/>
+
+                    <h3>Metodologia</h3>
+                    <input value={texts.about.methodology.title} onChange={e => {
+                        this.state.texts.about.methodology.title = e.target.value;
+                        this.onTextChange();
+                    }}/>
+                    <h3>Contenido</h3>
+                    <textarea value={texts.about.methodology.content} onChange={e => {
+                        this.state.texts.about.methodology.content = e.target.value;
+                        this.onTextChange();
+                    }}/>
+
+                    <h3>Publicación de la información</h3>
+                    <input value={texts.about.information.title} onChange={e => {
+                        this.state.texts.about.information.title = e.target.value;
+                        this.onTextChange();
+                    }}/>
+                    <h3>Contenido</h3>
+                    <textarea value={texts.about.information.content} onChange={e => {
+                        this.state.texts.about.information.content = e.target.value;
+                        this.onTextChange();
+                    }}/>
+
+                    <h3>Glosario</h3>
+                    <input value={texts.about.dictionary.title} onChange={e => {
+                        this.state.texts.about.dictionary.title = e.target.value;
+                        this.onTextChange();
+                    }}/>
+                    <h3>Contenido</h3>
+                    <textarea value={texts.about.dictionary.content} onChange={e => {
+                        this.state.texts.about.dictionary.content = e.target.value;
+                        this.onTextChange();
+                    }}/>
+                </div>
+
+
                 <button onClick={this.saveTexts}>Guardar</button>
                 { this.state.saveSuccessfull && <span>✅</span>}
                 { this.state.saveError && <span>❌</span>}
