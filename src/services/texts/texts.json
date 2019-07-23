@@ -1,11 +1,9 @@
 [
   {
     "id": "monitor",
-    "page": "Monitor",
     "texts": [
       {
         "id": "title",
-        "ref": "Titulo",
         "content": "Monitor"
       },
       {
@@ -17,16 +15,13 @@
   },
   {
     "id": "comparator",
-    "page": "Comparador",
     "texts": [
       {
         "id": "title",
-        "ref": "Titulo",
         "content": "Comparador"
       },
       {
         "id": "description",
-        "ref": "Descripción",
         "content": "En esta sección podés comparar las asignaciones presupuestarias nacionales por jurisdicción, programa o actividad desde el año 2007 en relación con otras jurisdicciones, programas o actividades. Podés seleccionar el presupuesto distribuido por el PEN, el presupuesto vigente y el presupuesto devengado, ajustados por inflación."
       }
     ]
