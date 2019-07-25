@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const DatasetUpdater = require('../services/data/dataset-updater');
+const datasetUpdater = require('../services/data/dataset-updater');
 const Texts = require('../services/texts');
 
 router.use(express.json());
@@ -15,7 +15,7 @@ router.post('/admin/texts', (req, res) => {
 });
 
 router.post('/admin/update_dataset/:filename', (req, res) => {
-    DatasetUpdater.updateDataset(req.params.filename);
+    datasetUpdater.updateDataset(req.params.filename);
     res.json({ job_status: 'started' });
 });
 
