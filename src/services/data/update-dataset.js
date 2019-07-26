@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
-const files = require('./files');
+const availableDatasets = require('../available-datasets');
 const googleDriveClient = require('./google-drive-client');
 const datasetCleaner = require('./cleaner');
 
 module.exports = (datasetFilename) => {
-    const fileId = files.find(file => file.filename === datasetFilename).id;
+    const fileId = availableDatasets.find(file => file.filename === datasetFilename).id;
     const dataFolder = path.join(__dirname, '..', '..', '..', 'data');
     const rawFilePath = path.join(dataFolder, 'raw', datasetFilename);
     console.log(`Downloading ${fileId} to ${rawFilePath}`);
