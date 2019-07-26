@@ -9,6 +9,9 @@ const numericColumns = datasetColumns.filter(column => column.isNumeric).map(col
 const extractData = ({ filename }) => {
     const datasetPath = path.join(__dirname, '..', '..', '..', 'data', 'cleaned', filename);
     const yearData = {};
+    if (!fs.existsSync(datasetPath)) {
+        return Promise.resolve(null)
+    }
     return new Promise(resolve => {
         fs.createReadStream(datasetPath)
             .pipe(csv.parse({headers: true}))
@@ -36,7 +39,9 @@ module.exports = () => {
     Promise.all(promises).then(yearData => {
         const outputJson = {};
         yearData.map(data => {
-            outputJson[data[0]['ejercicio_presupuestario']] = data;
+            if (yearData) {
+                outputJson[data[0]['ejercicio_presupuestario']] = data;
+            }
         });
         const outputPath = path.join(__dirname, 'treemap-data.json');
         fs.writeFileSync(outputPath, JSON.stringify(outputJson, null, 2));
