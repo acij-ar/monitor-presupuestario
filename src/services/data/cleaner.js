@@ -20,15 +20,18 @@ module.exports = ({rawFilePath, cleanedFilePath}) => {
     const csvWriter = CSVWriteStream({headers});
     csvWriter.pipe(outputStream);
 
-    fs.createReadStream(rawFilePath)
-        .pipe(csv.parse({headers: true}))
-        .on('data', row => {
-            numeric_columns.map(columnName => row[columnName] = parseNumericValue(row[columnName]));
-            csvWriter.write(row);
-        })
-        .on('end', () => {
-            csvWriter.end();
-            console.log(`Finished cleaning file ${cleanedFilePath}`);
-        });
+    return new Promise(resolve => {
+        fs.createReadStream(rawFilePath)
+            .pipe(csv.parse({headers: true}))
+            .on('data', row => {
+                numeric_columns.map(columnName => row[columnName] = parseNumericValue(row[columnName]));
+                csvWriter.write(row);
+            })
+            .on('end', () => {
+                csvWriter.end();
+                console.log(`Finished cleaning file ${cleanedFilePath}`);
+                resolve();
+            });
 
+    })
 };
