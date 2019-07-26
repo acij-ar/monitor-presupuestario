@@ -2,18 +2,19 @@ const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
 const path = require('path');
+const oauthClient = require('./oauth-client');
 
-const token_path = path.join(__dirname, '..', '..', '..', '..', 'token.json');
+const token_path = path.join(__dirname, 'token.json');
 
 class GoogleDriveClient {
     async init() {
-        const oAuth2Client = GoogleDriveClient.initOAuthClient();
+        const oAuth2Client = oauthClient();
         const token = GoogleDriveClient.getToken();
         if (token) {
             oAuth2Client.setCredentials(token);
         } else {
             const scopes = ['https://www.googleapis.com/auth/drive.readonly', 'https://www.googleapis.com/auth/drive.metadata.readonly'];
-            const authUrl = oAuth2Client.generateAuthUrl({access_type: 'offline', scope: scopes});
+            const authUrl = oAuth2Client.generateAuthUrl({access_type: 'offline', scope: scopes, prompt: 'consent'});
             console.log('Authorize this app by visiting this url:', authUrl);
             const code = await GoogleDriveClient.codeFromStandardInput();
             const token = await GoogleDriveClient.getTokenFromCode(oAuth2Client, code);
@@ -22,18 +23,6 @@ class GoogleDriveClient {
             console.log('Token stored to', token_path);
         }
         this.client = google.drive({version: 'v3', auth: oAuth2Client});
-    }
-
-    static initOAuthClient() {
-        const credentials = GoogleDriveClient.getCredentials();
-        const {client_secret, client_id, redirect_uris} = credentials.web;
-        return new google.auth.OAuth2(client_id, client_secret, redirect_uris[0]);
-    }
-
-    static getCredentials() {
-        const credentials_path = path.join(__dirname, '..', '..', '..', '..', 'credentials.json');
-        const credentialsContent = fs.readFileSync(credentials_path);
-        return JSON.parse(credentialsContent);
     }
 
     static getToken() {
@@ -67,6 +56,28 @@ class GoogleDriveClient {
                 rl.close();
                 resolve(code)
             });
+        })
+    }
+
+    downloadFile({ fileId, outputPath }) {
+        const dest = fs.createWriteStream(outputPath);
+        return new Promise((resolve, reject) => {
+            this.client.files.get(
+                {fileId, alt: 'media'},
+                {responseType: 'stream'},
+                (err, res) => {
+                    if (err) {
+                        throw err;
+                    }
+                    res.data
+                        .on('end', () => {
+                            console.log(`File ${fileId} downloaded successfully`);
+                            resolve();
+                        })
+                        .on('error', reject)
+                        .pipe(dest)
+                }
+            )
         })
     }
 }

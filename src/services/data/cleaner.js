@@ -3,6 +3,7 @@ const fs = require('fs');
 const CSVWriteStream = require('csv-write-stream');
 
 module.exports = ({rawFilePath, cleanedFilePath}) => {
+    console.log(`Cleaning file ${rawFilePath}`);
     const not_numeric_columns = [
         'ejercicio_presupuestario',
         'jurisdiccion_desc',
