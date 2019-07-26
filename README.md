@@ -44,16 +44,10 @@ Horizontally choosing different or all the entities at the same level and compar
 - Import components from old site version? [nuxt-buefy](https://buefy.github.io/#/documentation) 
 - Import icons from old site version? : Font awesome and Material design icons
 
-### React components
-- Duplicate the actual site
-    - Header
-    - Footer
-    - Home
-    - About page
-    - Monitor
-    - Comparador
-- Re-think the actual site
-    - Only one page. Landing with dynamic sections
+### Setup
+
+https://console.developers.google.com/apis/credentials
+
 
 ### Testing and code style
 
