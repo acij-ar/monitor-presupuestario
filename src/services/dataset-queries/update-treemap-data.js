@@ -42,5 +42,3 @@ module.exports = () => {
         fs.writeFileSync(outputPath, JSON.stringify(outputJson, null, 2));
     })
 };
-
-module.exports();
