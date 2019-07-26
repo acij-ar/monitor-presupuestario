@@ -12,14 +12,14 @@ module.exports = (datasetFilename) => {
     console.log(`Downloading ${fileId} to ${rawFilePath}`);
 
     return googleDriveClient.downloadFile({ fileId, outputPath: rawFilePath })
-        .then(() => {
+        .then(async () => {
             const cleanedFilePath = path.join(dataFolder, 'cleaned', datasetFilename);
             if (datasetFilename === 'inflacion.csv') {
                 console.log('Skipping cleaning routine');
                 fs.copyFileSync(rawFilePath, cleanedFilePath)
             } else {
-                datasetCleaner({ rawFilePath, cleanedFilePath });
+                await datasetCleaner({ rawFilePath, cleanedFilePath });
             }
-            datasetQueries();
+            datasetQueries.update();
         });
 };
