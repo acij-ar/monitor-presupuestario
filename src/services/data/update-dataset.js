@@ -3,6 +3,7 @@ const path = require('path');
 const availableDatasets = require('../available-datasets');
 const googleDriveClient = require('./google-drive-client');
 const datasetCleaner = require('./cleaner');
+const datasetQueries = require('../dataset-queries');
 
 module.exports = (datasetFilename) => {
     const fileId = availableDatasets.find(file => file.filename === datasetFilename).id;
@@ -19,5 +20,6 @@ module.exports = (datasetFilename) => {
             } else {
                 datasetCleaner({ rawFilePath, cleanedFilePath });
             }
+            datasetQueries();
         });
 };

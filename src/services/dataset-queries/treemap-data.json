@@ -1,0 +1,2575 @@
+{
+  "2007": [
+    {
+      "name": "Poder Legislativo Nacional",
+      "ejercicio_presupuestario": "2007",
+      "credito_presupuestado": 701116858,
+      "credito_vigente": 811470525,
+      "credito_comprometido": 791525340,
+      "credito_devengado": 790289958,
+      "credito_pagado": 701995471
+    },
+    {
+      "name": "Poder Judicial de la Nación",
+      "ejercicio_presupuestario": "2007",
+      "credito_presupuestado": 1565098867,
+      "credito_vigente": 1643892093,
+      "credito_comprometido": 1545193031,
+      "credito_devengado": 1545193031,
+      "credito_pagado": 1492466365
+    },
+    {
+      "name": "Ministerio Público",
+      "ejercicio_presupuestario": "2007",
+      "credito_presupuestado": 383057805,
+      "credito_vigente": 404583733,
+      "credito_comprometido": 397607080,
+      "credito_devengado": 394426586,
+      "credito_pagado": 351982784
+    },
+    {
+      "name": "Presidencia de la Nación",
+      "ejercicio_presupuestario": "2007",
+      "credito_presupuestado": 996347902,
+      "credito_vigente": 1191979580,
+      "credito_comprometido": 1094476075,
+      "credito_devengado": 1088195102,
+      "credito_pagado": 968336405
+    },
+    {
+      "name": "Jefatura de Gabinete de Ministros",
+      "ejercicio_presupuestario": "2007",
+      "credito_presupuestado": 624857596,
+      "credito_vigente": 706985601,
+      "credito_comprometido": 569732098,
+      "credito_devengado": 564507513,
+      "credito_pagado": 484596620
+    },
+    {
+      "name": "Ministerio del Interior",
+      "ejercicio_presupuestario": "2007",
+      "credito_presupuestado": 5421108399,
+      "credito_vigente": 6336145549,
+      "credito_comprometido": 6235921513,
+      "credito_devengado": 6207493198,
+      "credito_pagado": 5549367590
+    },
+    {
+      "name": "Ministerio de Relac. Exteriores, Comercio Internac. y Culto",
+      "ejercicio_presupuestario": "2007",
+      "credito_presupuestado": 1054529504,
+      "credito_vigente": 1188147783,
+      "credito_comprometido": 1160676636,
+      "credito_devengado": 1152563487,
+      "credito_pagado": 1011299678
+    },
+    {
+      "name": "Ministerio de Justicia  y Derechos Humanos",
+      "ejercicio_presupuestario": "2007",
+      "credito_presupuestado": 812836763,
+      "credito_vigente": 959059422,
+      "credito_comprometido": 830544378,
+      "credito_devengado": 824126870,
+      "credito_pagado": 761758922
+    },
+    {
+      "name": "Ministerio de Defensa",
+      "ejercicio_presupuestario": "2007",
+      "credito_presupuestado": 6488279605,
+      "credito_vigente": 7592861138,
+      "credito_comprometido": 7457129501,
+      "credito_devengado": 7420930665,
+      "credito_pagado": 6400042746
+    },
+    {
+      "name": "Ministerio de Economía y Producción",
+      "ejercicio_presupuestario": "2007",
+      "credito_presupuestado": 1952777080,
+      "credito_vigente": 3919677507,
+      "credito_comprometido": 3546298569,
+      "credito_devengado": 3506011952,
+      "credito_pagado": 2988761998
+    },
+    {
+      "name": "Ministerio de Planificación Federal, Inversión Publica y Ser",
+      "ejercicio_presupuestario": "2007",
+      "credito_presupuestado": 14287368307,
+      "credito_vigente": 25137180889,
+      "credito_comprometido": 24272053187,
+      "credito_devengado": 24259696195,
+      "credito_pagado": 21624439467
+    },
+    {
+      "name": "Ministerio de Educación, Ciencia y Tecnología",
+      "ejercicio_presupuestario": "2007",
+      "credito_presupuestado": 8215357215,
+      "credito_vigente": 10391631700,
+      "credito_comprometido": 10328375503,
+      "credito_devengado": 10326388400,
+      "credito_pagado": 9151896503
+    },
+    {
+      "name": "Ministerio de Trabajo, Empleo y Seguridad Social",
+      "ejercicio_presupuestario": "2007",
+      "credito_presupuestado": 44912827655,
+      "credito_vigente": 56601572569,
+      "credito_comprometido": 54107284318,
+      "credito_devengado": 54087683164,
+      "credito_pagado": 53137547704
+    },
+    {
+      "name": "Ministerio de Salud",
+      "ejercicio_presupuestario": "2007",
+      "credito_presupuestado": 2470872842,
+      "credito_vigente": 2894322870,
+      "credito_comprometido": 2811749430,
+      "credito_devengado": 2797752686,
+      "credito_pagado": 2384470998
+    },
+    {
+      "name": "Ministerio de Desarrollo Social",
+      "ejercicio_presupuestario": "2007",
+      "credito_presupuestado": 5456457876,
+      "credito_vigente": 6322144207,
+      "credito_comprometido": 6173992376,
+      "credito_devengado": 6149994086,
+      "credito_pagado": 5802926271
+    },
+    {
+      "name": "Servicio de la Deuda Pública",
+      "ejercicio_presupuestario": "2007",
+      "credito_presupuestado": 13977443000,
+      "credito_vigente": 17500260207,
+      "credito_comprometido": 17134556961,
+      "credito_devengado": 17134555134,
+      "credito_pagado": 17134554914
+    },
+    {
+      "name": "Obligaciones a Cargo del Tesoro",
+      "ejercicio_presupuestario": "2007",
+      "credito_presupuestado": 3901027659,
+      "credito_vigente": 4696877523,
+      "credito_comprometido": 4171254853,
+      "credito_devengado": 4171254853,
+      "credito_pagado": 3335420490
+    }
+  ],
+  "2008": [
+    {
+      "name": "Poder Legislativo Nacional",
+      "ejercicio_presupuestario": "2008",
+      "credito_presupuestado": 885668446,
+      "credito_vigente": 1107926967,
+      "credito_comprometido": 1067768889,
+      "credito_devengado": 1066076193,
+      "credito_pagado": 953055881
+    },
+    {
+      "name": "Poder Judicial de la Nación",
+      "ejercicio_presupuestario": "2008",
+      "credito_presupuestado": 1892359122,
+      "credito_vigente": 2264714130,
+      "credito_comprometido": 2113552525,
+      "credito_devengado": 2113552525,
+      "credito_pagado": 2021526654
+    },
+    {
+      "name": "Ministerio Público",
+      "ejercicio_presupuestario": "2008",
+      "credito_presupuestado": 524694360,
+      "credito_vigente": 566974579,
+      "credito_comprometido": 555238539,
+      "credito_devengado": 553545432,
+      "credito_pagado": 492475584
+    },
+    {
+      "name": "Presidencia de la Nación",
+      "ejercicio_presupuestario": "2008",
+      "credito_presupuestado": 1406917348,
+      "credito_vigente": 1608367112,
+      "credito_comprometido": 1430114853,
+      "credito_devengado": 1424943035,
+      "credito_pagado": 1260471422
+    },
+    {
+      "name": "Jefatura de Gabinete de Ministros",
+      "ejercicio_presupuestario": "2008",
+      "credito_presupuestado": 764735990,
+      "credito_vigente": 1135715090,
+      "credito_comprometido": 958542254,
+      "credito_devengado": 952362415,
+      "credito_pagado": 762481212
+    },
+    {
+      "name": "Ministerio del Interior",
+      "ejercicio_presupuestario": "2008",
+      "credito_presupuestado": 585021232,
+      "credito_vigente": 671116618,
+      "credito_comprometido": 641356004,
+      "credito_devengado": 639183288,
+      "credito_pagado": 557415253
+    },
+    {
+      "name": "Ministerio de Relaciones Exteriores, Comercio Internacional",
+      "ejercicio_presupuestario": "2008",
+      "credito_presupuestado": 1335097551,
+      "credito_vigente": 1411340344,
+      "credito_comprometido": 1346895466,
+      "credito_devengado": 1318484800,
+      "credito_pagado": 1183753671
+    },
+    {
+      "name": "Ministerio de Justicia, Seguridad  y Derechos Humanos",
+      "ejercicio_presupuestario": "2008",
+      "credito_presupuestado": 7497834430,
+      "credito_vigente": 8596361858,
+      "credito_comprometido": 8146953379,
+      "credito_devengado": 8113409639,
+      "credito_pagado": 7187097651
+    },
+    {
+      "name": "Ministerio de Defensa",
+      "ejercicio_presupuestario": "2008",
+      "credito_presupuestado": 8224876481,
+      "credito_vigente": 9511923718,
+      "credito_comprometido": 9138858195,
+      "credito_devengado": 9098225601,
+      "credito_pagado": 7710289179
+    },
+    {
+      "name": "Ministerio de Economia y Finanzas Publicas",
+      "ejercicio_presupuestario": "2008",
+      "credito_presupuestado": 3805858108,
+      "credito_vigente": 7157473923,
+      "credito_comprometido": 6408858462,
+      "credito_devengado": 6367438584,
+      "credito_pagado": 5250669086
+    },
+    {
+      "name": "Ministerio de Planificación Federal, Inversión Pública y Ser",
+      "ejercicio_presupuestario": "2008",
+      "credito_presupuestado": 23235933806,
+      "credito_vigente": 36924629507,
+      "credito_comprometido": 35043043523,
+      "credito_devengado": 35014881294,
+      "credito_pagado": 30942633882
+    },
+    {
+      "name": "Ministerio de Educación",
+      "ejercicio_presupuestario": "2008",
+      "credito_presupuestado": 9304650511,
+      "credito_vigente": 11726380018,
+      "credito_comprometido": 11578697623,
+      "credito_devengado": 11576167943,
+      "credito_pagado": 10162610428
+    },
+    {
+      "name": "Ministerio de Ciencia, Tecnología e Innovación Productiva",
+      "ejercicio_presupuestario": "2008",
+      "credito_presupuestado": 1137633933,
+      "credito_vigente": 1244953128,
+      "credito_comprometido": 1124862065,
+      "credito_devengado": 1124855015,
+      "credito_pagado": 1037870835
+    },
+    {
+      "name": "Ministerio de Trabajo, Empleo y Seguridad Social",
+      "ejercicio_presupuestario": "2008",
+      "credito_presupuestado": 63254660783,
+      "credito_vigente": 74007413553,
+      "credito_comprometido": 69784535342,
+      "credito_devengado": 69763580879,
+      "credito_pagado": 69460319615
+    },
+    {
+      "name": "Ministerio de Salud",
+      "ejercicio_presupuestario": "2008",
+      "credito_presupuestado": 3538973846,
+      "credito_vigente": 4107504366,
+      "credito_comprometido": 3762326619,
+      "credito_devengado": 3729382952,
+      "credito_pagado": 3142065727
+    },
+    {
+      "name": "Ministerio de Desarrollo Social",
+      "ejercicio_presupuestario": "2008",
+      "credito_presupuestado": 7617862298,
+      "credito_vigente": 8789968455,
+      "credito_comprometido": 8718468449,
+      "credito_devengado": 8684509364,
+      "credito_pagado": 8093761615
+    },
+    {
+      "name": "Servicio de la Deuda Pública",
+      "ejercicio_presupuestario": "2008",
+      "credito_presupuestado": 19068553000,
+      "credito_vigente": 22659794066,
+      "credito_comprometido": 21602277545,
+      "credito_devengado": 21529839790,
+      "credito_pagado": 21526120581
+    },
+    {
+      "name": "Obligaciones a Cargo del Tesoro",
+      "ejercicio_presupuestario": "2008",
+      "credito_presupuestado": 7405130338,
+      "credito_vigente": 12242861115,
+      "credito_comprometido": 9904967603,
+      "credito_devengado": 9904967603,
+      "credito_pagado": 8430169379
+    }
+  ],
+  "2009": [
+    {
+      "name": "Poder Legislativo Nacional",
+      "ejercicio_presupuestario": "2009",
+      "credito_presupuestado": 1202732739,
+      "credito_vigente": 1411574351,
+      "credito_comprometido": 1378266751,
+      "credito_devengado": 1375399674,
+      "credito_pagado": 1221664736
+    },
+    {
+      "name": "Poder Judicial de la Nación",
+      "ejercicio_presupuestario": "2009",
+      "credito_presupuestado": 2577064353,
+      "credito_vigente": 2914004747,
+      "credito_comprometido": 2668217094,
+      "credito_devengado": 2668217094,
+      "credito_pagado": 2570122915
+    },
+    {
+      "name": "Ministerio Público",
+      "ejercicio_presupuestario": "2009",
+      "credito_presupuestado": 708122439,
+      "credito_vigente": 727140892,
+      "credito_comprometido": 710944777,
+      "credito_devengado": 698262360,
+      "credito_pagado": 630494178
+    },
+    {
+      "name": "Presidencia de la Nación",
+      "ejercicio_presupuestario": "2009",
+      "credito_presupuestado": 1400401047,
+      "credito_vigente": 1476270682,
+      "credito_comprometido": 1333185164,
+      "credito_devengado": 1324675965,
+      "credito_pagado": 1172671617
+    },
+    {
+      "name": "Jefatura de Gabinete de Ministros",
+      "ejercicio_presupuestario": "2009",
+      "credito_presupuestado": 1169296342,
+      "credito_vigente": 2306718533,
+      "credito_comprometido": 1941434591,
+      "credito_devengado": 1920661864,
+      "credito_pagado": 1555510041
+    },
+    {
+      "name": "Ministerio del Interior",
+      "ejercicio_presupuestario": "2009",
+      "credito_presupuestado": 995392260,
+      "credito_vigente": 1367750100,
+      "credito_comprometido": 1318597962,
+      "credito_devengado": 1308978789,
+      "credito_pagado": 1138988044
+    },
+    {
+      "name": "Ministerio de Relaciones Exteriores, Comercio Internacional",
+      "ejercicio_presupuestario": "2009",
+      "credito_presupuestado": 1634844891,
+      "credito_vigente": 1650845724,
+      "credito_comprometido": 1540165791,
+      "credito_devengado": 1503425208,
+      "credito_pagado": 1324504357
+    },
+    {
+      "name": "Ministerio de Justicia, Seguridad  y Derechos Humanos",
+      "ejercicio_presupuestario": "2009",
+      "credito_presupuestado": 9719549204,
+      "credito_vigente": 12026269918,
+      "credito_comprometido": 11716087051,
+      "credito_devengado": 11657690471,
+      "credito_pagado": 10175152076
+    },
+    {
+      "name": "Ministerio de Defensa",
+      "ejercicio_presupuestario": "2009",
+      "credito_presupuestado": 10703079731,
+      "credito_vigente": 12002258729,
+      "credito_comprometido": 11430970035,
+      "credito_devengado": 11391291623,
+      "credito_pagado": 10127004302
+    },
+    {
+      "name": "Ministerio de Economía y Finanzas Públicas",
+      "ejercicio_presupuestario": "2009",
+      "credito_presupuestado": 1088610813,
+      "credito_vigente": 1113515751,
+      "credito_comprometido": 931725775,
+      "credito_devengado": 902879927,
+      "credito_pagado": 768061467
+    },
+    {
+      "name": "Ministerio de Producción",
+      "ejercicio_presupuestario": "2009",
+      "credito_presupuestado": 7117170938,
+      "credito_vigente": 5924109273,
+      "credito_comprometido": 5219850315,
+      "credito_devengado": 5175461245,
+      "credito_pagado": 3791199510
+    },
+    {
+      "name": "Ministerio de Planificación Federal, Inversión Pública y Ser",
+      "ejercicio_presupuestario": "2009",
+      "credito_presupuestado": 36248064968,
+      "credito_vigente": 42449813530,
+      "credito_comprometido": 41351565484,
+      "credito_devengado": 41299773130,
+      "credito_pagado": 36824054317
+    },
+    {
+      "name": "Ministerio de Educación",
+      "ejercicio_presupuestario": "2009",
+      "credito_presupuestado": 12687203307,
+      "credito_vigente": 14781268152,
+      "credito_comprometido": 14703376021,
+      "credito_devengado": 14679345212,
+      "credito_pagado": 12792020181
+    },
+    {
+      "name": "Ministerio de Ciencia, Tecnología e Innovación Productiva",
+      "ejercicio_presupuestario": "2009",
+      "credito_presupuestado": 1766268660,
+      "credito_vigente": 1859342578,
+      "credito_comprometido": 1676805258,
+      "credito_devengado": 1676805258,
+      "credito_pagado": 1506477212
+    },
+    {
+      "name": "Ministerio de Trabajo, Empleo y Seguridad Social",
+      "ejercicio_presupuestario": "2009",
+      "credito_presupuestado": 89560647431,
+      "credito_vigente": 97776641813,
+      "credito_comprometido": 91778416759,
+      "credito_devengado": 91592372031,
+      "credito_pagado": 90656262358
+    },
+    {
+      "name": "Ministerio de Salud",
+      "ejercicio_presupuestario": "2009",
+      "credito_presupuestado": 4758018177,
+      "credito_vigente": 6037597137,
+      "credito_comprometido": 5651509476,
+      "credito_devengado": 5603306168,
+      "credito_pagado": 4534717623
+    },
+    {
+      "name": "Ministerio de Desarrollo Social",
+      "ejercicio_presupuestario": "2009",
+      "credito_presupuestado": 10285197859,
+      "credito_vigente": 12794476429,
+      "credito_comprometido": 12657063047,
+      "credito_devengado": 12613115506,
+      "credito_pagado": 11368301598
+    },
+    {
+      "name": "Servicio de la Deuda Pública",
+      "ejercicio_presupuestario": "2009",
+      "credito_presupuestado": 24512553000,
+      "credito_vigente": 28433861910,
+      "credito_comprometido": 26009037373,
+      "credito_devengado": 26008201139,
+      "credito_pagado": 26007903580
+    },
+    {
+      "name": "Obligaciones a Cargo del Tesoro",
+      "ejercicio_presupuestario": "2009",
+      "credito_presupuestado": 15705491129,
+      "credito_vigente": 17356790095,
+      "credito_comprometido": 16514275601,
+      "credito_devengado": 16514199101,
+      "credito_pagado": 14612951168
+    }
+  ],
+  "2010": [
+    {
+      "name": "Poder Legislativo Nacional",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 1532091128,
+      "credito_vigente": 1976864478,
+      "credito_comprometido": 1881200197,
+      "credito_devengado": 1878528804,
+      "credito_pagado": 1762110170
+    },
+    {
+      "name": "Poder Judicial de la Nación",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 3399380251,
+      "credito_vigente": 3760390433,
+      "credito_comprometido": 3464405164,
+      "credito_devengado": 3464405164,
+      "credito_pagado": 3341103828
+    },
+    {
+      "name": "Ministerio Público",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 863101616,
+      "credito_vigente": 978296779,
+      "credito_comprometido": 960995185,
+      "credito_devengado": 957914430,
+      "credito_pagado": 911663132
+    },
+    {
+      "name": "Presidencia de la Nación",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 1693962688,
+      "credito_vigente": 1985239071,
+      "credito_comprometido": 1768313995,
+      "credito_devengado": 1759438625,
+      "credito_pagado": 1600308482
+    },
+    {
+      "name": "Jefatura de Gabinete de Ministros",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 2391758866,
+      "credito_vigente": 2830753964,
+      "credito_comprometido": 2190813021,
+      "credito_devengado": 2189257558,
+      "credito_pagado": 1775615215
+    },
+    {
+      "name": "Ministerio del Interior",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 1045320387,
+      "credito_vigente": 1555989488,
+      "credito_comprometido": 1529256474,
+      "credito_devengado": 1526846520,
+      "credito_pagado": 1345369868
+    },
+    {
+      "name": "Ministerio de Relaciones Exteriores, Comercio Internacional",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 1986021024,
+      "credito_vigente": 2218554427,
+      "credito_comprometido": 2057204014,
+      "credito_devengado": 2020252301,
+      "credito_pagado": 1671887489
+    },
+    {
+      "name": "Ministerio de Justicia y Derechos Humanos",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 13282001263,
+      "credito_vigente": 18530905221,
+      "credito_comprometido": 17921539049,
+      "credito_devengado": 17833565376,
+      "credito_pagado": 16463102106
+    },
+    {
+      "name": "Ministerio de Defensa",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 12605512793,
+      "credito_vigente": 14309161386,
+      "credito_comprometido": 13868847006,
+      "credito_devengado": 13791792369,
+      "credito_pagado": 12585380753
+    },
+    {
+      "name": "Ministerio de Economía y Finanzas Públicas",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 1376158899,
+      "credito_vigente": 1892408167,
+      "credito_comprometido": 1693731873,
+      "credito_devengado": 1671762985,
+      "credito_pagado": 1516961166
+    },
+    {
+      "name": "Ministerio de Industria y Turismo",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 1110537143,
+      "credito_vigente": 1251302749,
+      "credito_comprometido": 1049169275,
+      "credito_devengado": 1035033660,
+      "credito_pagado": 907961494
+    },
+    {
+      "name": "Ministerio de Agricultura, Ganadería y Pesca",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 5167973119,
+      "credito_vigente": 5964021010,
+      "credito_comprometido": 5713662021,
+      "credito_devengado": 5696490271,
+      "credito_pagado": 4951099933
+    },
+    {
+      "name": "Ministerio de Planificación Federal, Inversión Pública y Ser",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 38830177914,
+      "credito_vigente": 56771136898,
+      "credito_comprometido": 56069317112,
+      "credito_devengado": 56014185670,
+      "credito_pagado": 48962365158
+    },
+    {
+      "name": "Ministerio de Educación",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 15612757570,
+      "credito_vigente": 18277151785,
+      "credito_comprometido": 17896009753,
+      "credito_devengado": 17892984195,
+      "credito_pagado": 15531401230
+    },
+    {
+      "name": "Ministerio de Ciencia, Tecnología e Innovación Productiva",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 2115730404,
+      "credito_vigente": 2246169222,
+      "credito_comprometido": 2019565693,
+      "credito_devengado": 2019531105,
+      "credito_pagado": 1836171394
+    },
+    {
+      "name": "Ministerio de Trabajo, Empleo y Seguridad Social",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 104660679747,
+      "credito_vigente": 123137363575,
+      "credito_comprometido": 119556977562,
+      "credito_devengado": 119547635479,
+      "credito_pagado": 119181855164
+    },
+    {
+      "name": "Ministerio de Salud",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 5665272335,
+      "credito_vigente": 7119290371,
+      "credito_comprometido": 6846234220,
+      "credito_devengado": 6824679871,
+      "credito_pagado": 6050952873
+    },
+    {
+      "name": "Ministerio de Desarrollo Social",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 14393319134,
+      "credito_vigente": 18440871341,
+      "credito_comprometido": 18166687137,
+      "credito_devengado": 18115265904,
+      "credito_pagado": 15398764986
+    },
+    {
+      "name": "Servicio de la Deuda Pública",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 26575553000,
+      "credito_vigente": 26615558780,
+      "credito_comprometido": 23669894311,
+      "credito_devengado": 23669894310,
+      "credito_pagado": 23669894310
+    },
+    {
+      "name": "Obligaciones a Cargo del Tesoro",
+      "ejercicio_presupuestario": "2010",
+      "credito_presupuestado": 21472113999,
+      "credito_vigente": 31882171608,
+      "credito_comprometido": 31124663610,
+      "credito_devengado": 31124663610,
+      "credito_pagado": 27493151686
+    }
+  ],
+  "2011": [
+    {
+      "name": "Poder Legislativo Nacional",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 2185227546,
+      "credito_vigente": 2788831545,
+      "credito_comprometido": 2693224639,
+      "credito_devengado": 2689897027,
+      "credito_pagado": 2464156516
+    },
+    {
+      "name": "Poder Judicial de la Nación",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 5031338742,
+      "credito_vigente": 5441838740,
+      "credito_comprometido": 4797867821,
+      "credito_devengado": 4797867821,
+      "credito_pagado": 4485661051
+    },
+    {
+      "name": "Ministerio Público",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 1235811850,
+      "credito_vigente": 1354946943,
+      "credito_comprometido": 1343086147,
+      "credito_devengado": 1339912327,
+      "credito_pagado": 1253943727
+    },
+    {
+      "name": "Presidencia de la Nación",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 1874401066,
+      "credito_vigente": 2430120108,
+      "credito_comprometido": 2152436259,
+      "credito_devengado": 2136051305,
+      "credito_pagado": 1917340134
+    },
+    {
+      "name": "Jefatura de Gabinete de Ministros",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 3161591434,
+      "credito_vigente": 4006225970,
+      "credito_comprometido": 3626877311,
+      "credito_devengado": 3586393509,
+      "credito_pagado": 2835456067
+    },
+    {
+      "name": "Ministerio del Interior",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 2289613100,
+      "credito_vigente": 3524843171,
+      "credito_comprometido": 3239475682,
+      "credito_devengado": 3236709358,
+      "credito_pagado": 3050248152
+    },
+    {
+      "name": "Ministerio de Relaciones Exteriores, Comercio Internacional",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 2258812565,
+      "credito_vigente": 2519056818,
+      "credito_comprometido": 2387627635,
+      "credito_devengado": 2373539709,
+      "credito_pagado": 2026724792
+    },
+    {
+      "name": "Ministerio de Justicia y Derechos Humanos",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 2922061586,
+      "credito_vigente": 3872538750,
+      "credito_comprometido": 3500569630,
+      "credito_devengado": 3487662756,
+      "credito_pagado": 3277980518
+    },
+    {
+      "name": "Ministerio de Seguridad",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 16903476046,
+      "credito_vigente": 19089593498,
+      "credito_comprometido": 18679886574,
+      "credito_devengado": 18450841539,
+      "credito_pagado": 17771442123
+    },
+    {
+      "name": "Ministerio de Defensa",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 15286215853,
+      "credito_vigente": 17537487549,
+      "credito_comprometido": 16962713042,
+      "credito_devengado": 16849477484,
+      "credito_pagado": 15581054657
+    },
+    {
+      "name": "Ministerio de Economía y Finanzas Públicas",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 1444977873,
+      "credito_vigente": 3848776891,
+      "credito_comprometido": 2528297596,
+      "credito_devengado": 2481351800,
+      "credito_pagado": 2287359262
+    },
+    {
+      "name": "Ministerio de Industria",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 645190052,
+      "credito_vigente": 713116292,
+      "credito_comprometido": 676349060,
+      "credito_devengado": 669825093,
+      "credito_pagado": 587672171
+    },
+    {
+      "name": "Ministerio de Agricultura, Ganadería y Pesca",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 5822951006,
+      "credito_vigente": 4571665006,
+      "credito_comprometido": 4368113387,
+      "credito_devengado": 4333748761,
+      "credito_pagado": 3883965725
+    },
+    {
+      "name": "Ministerio de Turismo",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 607597878,
+      "credito_vigente": 911441906,
+      "credito_comprometido": 778153985,
+      "credito_devengado": 766738867,
+      "credito_pagado": 672913395
+    },
+    {
+      "name": "Ministerio de Planificación Federal, Inversión Pública y Ser",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 58712614314,
+      "credito_vigente": 82137000966,
+      "credito_comprometido": 79191565074,
+      "credito_devengado": 79076181080,
+      "credito_pagado": 67050894484
+    },
+    {
+      "name": "Ministerio de Educación",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 19962137102,
+      "credito_vigente": 24372737090,
+      "credito_comprometido": 24208255953,
+      "credito_devengado": 24185866140,
+      "credito_pagado": 21369267294
+    },
+    {
+      "name": "Ministerio de Ciencia, Tecnología e Innovación Productiva",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 2571677968,
+      "credito_vigente": 2823123915,
+      "credito_comprometido": 2758197959,
+      "credito_devengado": 2758192850,
+      "credito_pagado": 2343022013
+    },
+    {
+      "name": "Ministerio de Trabajo, Empleo y Seguridad Social",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 145575567681,
+      "credito_vigente": 165943971380,
+      "credito_comprometido": 161658590949,
+      "credito_devengado": 161637631170,
+      "credito_pagado": 161163242952
+    },
+    {
+      "name": "Ministerio de Salud",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 7503300919,
+      "credito_vigente": 9142836804,
+      "credito_comprometido": 8732113305,
+      "credito_devengado": 8672820511,
+      "credito_pagado": 7558899898
+    },
+    {
+      "name": "Ministerio de Desarrollo Social",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 19883210247,
+      "credito_vigente": 23670045483,
+      "credito_comprometido": 23304054857,
+      "credito_devengado": 23261337029,
+      "credito_pagado": 21547619362
+    },
+    {
+      "name": "Servicio de la Deuda Pública",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 36265553000,
+      "credito_vigente": 45108104464,
+      "credito_comprometido": 41378378807,
+      "credito_devengado": 41378378807,
+      "credito_pagado": 41378378807
+    },
+    {
+      "name": "Obligaciones a Cargo del Tesoro",
+      "ejercicio_presupuestario": "2011",
+      "credito_presupuestado": 28273205676,
+      "credito_vigente": 43183074396,
+      "credito_comprometido": 42377779898,
+      "credito_devengado": 42377779898,
+      "credito_pagado": 35635148349
+    }
+  ],
+  "2012": [
+    {
+      "name": "Poder Legislativo Nacional",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 3082913101,
+      "credito_vigente": 4024852364,
+      "credito_comprometido": 3963768327,
+      "credito_devengado": 3959219419,
+      "credito_pagado": 3651293366
+    },
+    {
+      "name": "Poder Judicial de la Nación",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 6007830714,
+      "credito_vigente": 6747830716,
+      "credito_comprometido": 6258636157,
+      "credito_devengado": 6258636157,
+      "credito_pagado": 5955435770
+    },
+    {
+      "name": "Ministerio Público",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 1674927906,
+      "credito_vigente": 1872912399,
+      "credito_comprometido": 1824629950,
+      "credito_devengado": 1822401948,
+      "credito_pagado": 1720316433
+    },
+    {
+      "name": "Presidencia de la Nación",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 2744379446,
+      "credito_vigente": 3142975770,
+      "credito_comprometido": 2823021586,
+      "credito_devengado": 2798338893,
+      "credito_pagado": 2505877567
+    },
+    {
+      "name": "Jefatura de Gabinete de Ministros",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 3533561101,
+      "credito_vigente": 4693874206,
+      "credito_comprometido": 3766378054,
+      "credito_devengado": 3755032797,
+      "credito_pagado": 2986227491
+    },
+    {
+      "name": "Ministerio del Interior y Transporte",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 4027059574,
+      "credito_vigente": 17073809527,
+      "credito_comprometido": 14359155593,
+      "credito_devengado": 14342610805,
+      "credito_pagado": 12351409126
+    },
+    {
+      "name": "Ministerio de Relaciones Exteriores y Culto",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 2874140496,
+      "credito_vigente": 3082279737,
+      "credito_comprometido": 2911100124,
+      "credito_devengado": 2898892938,
+      "credito_pagado": 2517655264
+    },
+    {
+      "name": "Ministerio de Justicia y Derechos Humanos",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 4208010878,
+      "credito_vigente": 5262310323,
+      "credito_comprometido": 4465024878,
+      "credito_devengado": 4424638919,
+      "credito_pagado": 4177769590
+    },
+    {
+      "name": "Ministerio de Seguridad",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 22308526550,
+      "credito_vigente": 24273260953,
+      "credito_comprometido": 23669569293,
+      "credito_devengado": 23543479301,
+      "credito_pagado": 22542252666
+    },
+    {
+      "name": "Ministerio de Defensa",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 19695697352,
+      "credito_vigente": 22414271664,
+      "credito_comprometido": 21679946484,
+      "credito_devengado": 21561346276,
+      "credito_pagado": 19586158258
+    },
+    {
+      "name": "Ministerio de Economía y Finanzas Públicas",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 4785192349,
+      "credito_vigente": 4951476763,
+      "credito_comprometido": 3051216726,
+      "credito_devengado": 3025460942,
+      "credito_pagado": 2684808384
+    },
+    {
+      "name": "Ministerio de Industria",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 1311866318,
+      "credito_vigente": 1241907212,
+      "credito_comprometido": 1085737622,
+      "credito_devengado": 1079708288,
+      "credito_pagado": 877154752
+    },
+    {
+      "name": "Ministerio de Agricultura, Ganadería y Pesca",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 5818627940,
+      "credito_vigente": 6675805184,
+      "credito_comprometido": 5843018575,
+      "credito_devengado": 5772310732,
+      "credito_pagado": 5114547568
+    },
+    {
+      "name": "Ministerio de Turismo",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 940196978,
+      "credito_vigente": 1245384015,
+      "credito_comprometido": 1001858869,
+      "credito_devengado": 987703463,
+      "credito_pagado": 838652243
+    },
+    {
+      "name": "Ministerio de Planificación Federal, Inversión Pública y Servicios",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 73780790671,
+      "credito_vigente": 77136099253,
+      "credito_comprometido": 72936217866,
+      "credito_devengado": 72817191722,
+      "credito_pagado": 63886341118
+    },
+    {
+      "name": "Ministerio de Educación",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 27385849871,
+      "credito_vigente": 30830814698,
+      "credito_comprometido": 30755815482,
+      "credito_devengado": 30738665865,
+      "credito_pagado": 26827963964
+    },
+    {
+      "name": "Ministerio de Ciencia, Tecnología e Innovación Productiva",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 3096516113,
+      "credito_vigente": 3702579971,
+      "credito_comprometido": 3593572017,
+      "credito_devengado": 3593571417,
+      "credito_pagado": 3163092838
+    },
+    {
+      "name": "Ministerio de Trabajo, Empleo y Seguridad Social",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 194094026401,
+      "credito_vigente": 217420293974,
+      "credito_comprometido": 211545436873,
+      "credito_devengado": 211305863660,
+      "credito_pagado": 210527483405
+    },
+    {
+      "name": "Ministerio de Salud",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 10136984156,
+      "credito_vigente": 12233700533,
+      "credito_comprometido": 10996976188,
+      "credito_devengado": 10931581803,
+      "credito_pagado": 9723656849
+    },
+    {
+      "name": "Ministerio de Desarrollo Social",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 27485352883,
+      "credito_vigente": 33402212112,
+      "credito_comprometido": 32823088819,
+      "credito_devengado": 32806677255,
+      "credito_pagado": 31016663174
+    },
+    {
+      "name": "Servicio de la Deuda Pública",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 45010000000,
+      "credito_vigente": 50331670869,
+      "credito_comprometido": 47879143302,
+      "credito_devengado": 47879143302,
+      "credito_pagado": 47879143302
+    },
+    {
+      "name": "Obligaciones a Cargo del Tesoro",
+      "ejercicio_presupuestario": "2012",
+      "credito_presupuestado": 41127502037,
+      "credito_vigente": 56826361136,
+      "credito_comprometido": 55530441349,
+      "credito_devengado": 55530441349,
+      "credito_pagado": 51336381912
+    }
+  ],
+  "2013": [
+    {
+      "name": "Poder Legislativo Nacional",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 4246947019,
+      "credito_vigente": 5527127470,
+      "credito_comprometido": 5437525778,
+      "credito_devengado": 5434927102,
+      "credito_pagado": 5122569534
+    },
+    {
+      "name": "Poder Judicial de la Nación",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 7126018357,
+      "credito_vigente": 8676603869,
+      "credito_comprometido": 8379994619,
+      "credito_devengado": 8379994619,
+      "credito_pagado": 7779531986
+    },
+    {
+      "name": "Ministerio Público",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 2081570823,
+      "credito_vigente": 2550906682,
+      "credito_comprometido": 2536148712,
+      "credito_devengado": 2533655281,
+      "credito_pagado": 2401957512
+    },
+    {
+      "name": "Presidencia de la Nación",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 3424108805,
+      "credito_vigente": 4229687748,
+      "credito_comprometido": 3840320540,
+      "credito_devengado": 3829938098,
+      "credito_pagado": 3439485071
+    },
+    {
+      "name": "Jefatura de Gabinete de Ministros",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 4556667238,
+      "credito_vigente": 6425500662,
+      "credito_comprometido": 5333371355,
+      "credito_devengado": 5272435567,
+      "credito_pagado": 4542396965
+    },
+    {
+      "name": "Ministerio del Interior y Transporte",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 25885818901,
+      "credito_vigente": 34939421978,
+      "credito_comprometido": 32577232624,
+      "credito_devengado": 32507466674,
+      "credito_pagado": 29977892430
+    },
+    {
+      "name": "Ministerio de Relaciones Exteriores y Culto",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 2879419822,
+      "credito_vigente": 3017121955,
+      "credito_comprometido": 2857773584,
+      "credito_devengado": 2841716267,
+      "credito_pagado": 2534579071
+    },
+    {
+      "name": "Ministerio de Justicia y Derechos Humanos",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 5459611548,
+      "credito_vigente": 6089422248,
+      "credito_comprometido": 5508151219,
+      "credito_devengado": 5441917895,
+      "credito_pagado": 5143054272
+    },
+    {
+      "name": "Ministerio de Seguridad",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 25805760234,
+      "credito_vigente": 32276090071,
+      "credito_comprometido": 31309402187,
+      "credito_devengado": 31166883016,
+      "credito_pagado": 29763711917
+    },
+    {
+      "name": "Ministerio de Defensa",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 27113776610,
+      "credito_vigente": 31830501615,
+      "credito_comprometido": 30953571124,
+      "credito_devengado": 30798528644,
+      "credito_pagado": 27556724899
+    },
+    {
+      "name": "Ministerio de Economía y Finanzas Públicas",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 3992598760,
+      "credito_vigente": 11278740944,
+      "credito_comprometido": 9468774679,
+      "credito_devengado": 9395116118,
+      "credito_pagado": 7304508566
+    },
+    {
+      "name": "Ministerio de Industria",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 1544298319,
+      "credito_vigente": 1764398318,
+      "credito_comprometido": 1575632769,
+      "credito_devengado": 1549567126,
+      "credito_pagado": 1226843908
+    },
+    {
+      "name": "Ministerio de Agricultura, Ganadería y Pesca",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 6995455505,
+      "credito_vigente": 8086553780,
+      "credito_comprometido": 7498180642,
+      "credito_devengado": 7458066275,
+      "credito_pagado": 6800397497
+    },
+    {
+      "name": "Ministerio de Turismo",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 1352870325,
+      "credito_vigente": 1692828534,
+      "credito_comprometido": 1426325804,
+      "credito_devengado": 1421372800,
+      "credito_pagado": 1152636125
+    },
+    {
+      "name": "Ministerio de Planificación Federal, Inversión Pública y Servicios",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 57134011119,
+      "credito_vigente": 89388064498,
+      "credito_comprometido": 86178411047,
+      "credito_devengado": 86135550351,
+      "credito_pagado": 75345544239
+    },
+    {
+      "name": "Ministerio de Educación",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 34462285465,
+      "credito_vigente": 38966649577,
+      "credito_comprometido": 38891882299,
+      "credito_devengado": 38827449573,
+      "credito_pagado": 32847751416
+    },
+    {
+      "name": "Ministerio de Ciencia, Tecnología e Innovación Productiva",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 4118942747,
+      "credito_vigente": 4994033998,
+      "credito_comprometido": 4928309430,
+      "credito_devengado": 4923012226,
+      "credito_pagado": 4238134964
+    },
+    {
+      "name": "Ministerio de Trabajo, Empleo y Seguridad Social",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 253555375960,
+      "credito_vigente": 286996808228,
+      "credito_comprometido": 281806006983,
+      "credito_devengado": 281608751092,
+      "credito_pagado": 279564169725
+    },
+    {
+      "name": "Ministerio de Salud",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 12736980893,
+      "credito_vigente": 16119683260,
+      "credito_comprometido": 15616806491,
+      "credito_devengado": 15547884405,
+      "credito_pagado": 13661605247
+    },
+    {
+      "name": "Ministerio de Desarrollo Social",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 35878957021,
+      "credito_vigente": 43390262159,
+      "credito_comprometido": 42972367746,
+      "credito_devengado": 42971742425,
+      "credito_pagado": 41893800981
+    },
+    {
+      "name": "Servicio de la Deuda Pública",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 55495000000,
+      "credito_vigente": 48498398825,
+      "credito_comprometido": 44699282412,
+      "credito_devengado": 44695736626,
+      "credito_pagado": 44695736626
+    },
+    {
+      "name": "Obligaciones a Cargo del Tesoro",
+      "ejercicio_presupuestario": "2013",
+      "credito_presupuestado": 52866241999,
+      "credito_vigente": 93410977490,
+      "credito_comprometido": 88193166002,
+      "credito_devengado": 88193166002,
+      "credito_pagado": 74987939301
+    }
+  ],
+  "2014": [
+    {
+      "name": "Poder Legislativo Nacional",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 5884887790,
+      "credito_vigente": 7796535124,
+      "credito_comprometido": 7678741040,
+      "credito_devengado": 7672456272,
+      "credito_pagado": 7136493036
+    },
+    {
+      "name": "Poder Judicial de la Nación",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 9197042980,
+      "credito_vigente": 11924877205,
+      "credito_comprometido": 11317121712,
+      "credito_devengado": 11317121712,
+      "credito_pagado": 10168264070
+    },
+    {
+      "name": "Ministerio Público",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 2821623528,
+      "credito_vigente": 3725282438,
+      "credito_comprometido": 3596397170,
+      "credito_devengado": 3593337859,
+      "credito_pagado": 3434001046
+    },
+    {
+      "name": "Presidencia de la Nación",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 4374507771,
+      "credito_vigente": 5836798865,
+      "credito_comprometido": 5485537446,
+      "credito_devengado": 5461450191,
+      "credito_pagado": 4625663068
+    },
+    {
+      "name": "Jefatura de Gabinete de Ministros",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 5496354015,
+      "credito_vigente": 8028503257,
+      "credito_comprometido": 7380227128,
+      "credito_devengado": 7320120426,
+      "credito_pagado": 6259224469
+    },
+    {
+      "name": "Ministerio del Interior y Transporte",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 29500947614,
+      "credito_vigente": 42965088697,
+      "credito_comprometido": 41174649339,
+      "credito_devengado": 41127191015,
+      "credito_pagado": 38682449553
+    },
+    {
+      "name": "Ministerio de Relaciones Exteriores y Culto",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 3575527038,
+      "credito_vigente": 4765281701,
+      "credito_comprometido": 4580230558,
+      "credito_devengado": 4553137635,
+      "credito_pagado": 3860899354
+    },
+    {
+      "name": "Ministerio de Justicia y Derechos Humanos",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 6701282567,
+      "credito_vigente": 8267605110,
+      "credito_comprometido": 7411238302,
+      "credito_devengado": 7396680430,
+      "credito_pagado": 6867841406
+    },
+    {
+      "name": "Ministerio de Seguridad",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 36293786973,
+      "credito_vigente": 49559513709,
+      "credito_comprometido": 48494320150,
+      "credito_devengado": 48459526831,
+      "credito_pagado": 46366350468
+    },
+    {
+      "name": "Ministerio de Defensa",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 35103169475,
+      "credito_vigente": 45181426562,
+      "credito_comprometido": 44463313647,
+      "credito_devengado": 44347619042,
+      "credito_pagado": 39813201391
+    },
+    {
+      "name": "Ministerio de Economía y Finanzas Públicas",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 9016929878,
+      "credito_vigente": 17958293430,
+      "credito_comprometido": 15209804738,
+      "credito_devengado": 15177732520,
+      "credito_pagado": 14354529862
+    },
+    {
+      "name": "Ministerio de Industria",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 1809334564,
+      "credito_vigente": 2075331420,
+      "credito_comprometido": 1805947184,
+      "credito_devengado": 1782587451,
+      "credito_pagado": 1558517538
+    },
+    {
+      "name": "Ministerio de Agricultura, Ganadería y Pesca",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 8727198252,
+      "credito_vigente": 10275937674,
+      "credito_comprometido": 9480102501,
+      "credito_devengado": 9388992986,
+      "credito_pagado": 8513570147
+    },
+    {
+      "name": "Ministerio de Turismo",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 1742717964,
+      "credito_vigente": 2245166137,
+      "credito_comprometido": 2011026948,
+      "credito_devengado": 1988027010,
+      "credito_pagado": 1688630083
+    },
+    {
+      "name": "Ministerio de Planificación Federal, Inversión Pública y Servicios",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 83379434520,
+      "credito_vigente": 143437371457,
+      "credito_comprometido": 141869623531,
+      "credito_devengado": 141863755874,
+      "credito_pagado": 129715608339
+    },
+    {
+      "name": "Ministerio de Educación",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 45669706958,
+      "credito_vigente": 52504992544,
+      "credito_comprometido": 52310577211,
+      "credito_devengado": 52216502691,
+      "credito_pagado": 44625369441
+    },
+    {
+      "name": "Ministerio de Ciencia, Tecnología e Innovación Productiva",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 5578022049,
+      "credito_vigente": 7359140039,
+      "credito_comprometido": 7238035284,
+      "credito_devengado": 7238035282,
+      "credito_pagado": 6406555271
+    },
+    {
+      "name": "Ministerio de Trabajo, Empleo y Seguridad Social",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 340989748709,
+      "credito_vigente": 382658780543,
+      "credito_comprometido": 376355867361,
+      "credito_devengado": 376239331184,
+      "credito_pagado": 374146772917
+    },
+    {
+      "name": "Ministerio de Salud",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 16307231033,
+      "credito_vigente": 22371045293,
+      "credito_comprometido": 21702162344,
+      "credito_devengado": 21598109340,
+      "credito_pagado": 19283424675
+    },
+    {
+      "name": "Ministerio de Desarrollo Social",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 48822237281,
+      "credito_vigente": 62651454578,
+      "credito_comprometido": 61580470508,
+      "credito_devengado": 61578485875,
+      "credito_pagado": 59186011483
+    },
+    {
+      "name": "Servicio de la Deuda Pública",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 77212000000,
+      "credito_vigente": 91648877726,
+      "credito_comprometido": 86861770219,
+      "credito_devengado": 86858559358,
+      "credito_pagado": 86858559358
+    },
+    {
+      "name": "Obligaciones a Cargo del Tesoro",
+      "ejercicio_presupuestario": "2014",
+      "credito_presupuestado": 81377992519,
+      "credito_vigente": 181522127984,
+      "credito_comprometido": 177185421706,
+      "credito_devengado": 177185421706,
+      "credito_pagado": 168127281025
+    }
+  ],
+  "2015": [
+    {
+      "name": "Poder Legislativo Nacional",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 8153112102,
+      "credito_vigente": 11013348728,
+      "credito_comprometido": 10878565861,
+      "credito_devengado": 10864736157,
+      "credito_pagado": 10114761729
+    },
+    {
+      "name": "Poder Judicial de la Nación",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 12843492989,
+      "credito_vigente": 16187863424,
+      "credito_comprometido": 15657789356,
+      "credito_devengado": 15657789356,
+      "credito_pagado": 14999149447
+    },
+    {
+      "name": "Ministerio Público",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 4234686977,
+      "credito_vigente": 5649562712,
+      "credito_comprometido": 5436227703,
+      "credito_devengado": 5434366852,
+      "credito_pagado": 5167326892
+    },
+    {
+      "name": "Presidencia de la Nación",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 3953926530,
+      "credito_vigente": 5122755170,
+      "credito_comprometido": 4589315939,
+      "credito_devengado": 4568191150,
+      "credito_pagado": 4346740869
+    },
+    {
+      "name": "Jefatura de Gabinete de Ministros",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 7854096738,
+      "credito_vigente": 11403752543,
+      "credito_comprometido": 10167338122,
+      "credito_devengado": 10115609277,
+      "credito_pagado": 9226842990
+    },
+    {
+      "name": "Ministerio del Interior y Transporte",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 44102491408,
+      "credito_vigente": 58493012223,
+      "credito_comprometido": 49054636825,
+      "credito_devengado": 49034562101,
+      "credito_pagado": 43498384846
+    },
+    {
+      "name": "Ministerio de Relaciones Exteriores y Culto",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 5536326425,
+      "credito_vigente": 5531456094,
+      "credito_comprometido": 5010352004,
+      "credito_devengado": 4978535043,
+      "credito_pagado": 4428154032
+    },
+    {
+      "name": "Ministerio de Justicia y Derechos Humanos",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 9007683680,
+      "credito_vigente": 13824710075,
+      "credito_comprometido": 12418504432,
+      "credito_devengado": 12405061676,
+      "credito_pagado": 11442123754
+    },
+    {
+      "name": "Ministerio de Seguridad",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 54889510670,
+      "credito_vigente": 66242890319,
+      "credito_comprometido": 64216362787,
+      "credito_devengado": 63967184948,
+      "credito_pagado": 61051219680
+    },
+    {
+      "name": "Ministerio de Defensa",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 50383635601,
+      "credito_vigente": 57832854087,
+      "credito_comprometido": 56544028543,
+      "credito_devengado": 56367270137,
+      "credito_pagado": 50660946097
+    },
+    {
+      "name": "Ministerio de Economía y Finanzas Públicas",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 28566791288,
+      "credito_vigente": 21946731260,
+      "credito_comprometido": 20497191042,
+      "credito_devengado": 20414894324,
+      "credito_pagado": 19108236565
+    },
+    {
+      "name": "Ministerio de Industria",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 2429937912,
+      "credito_vigente": 2768508436,
+      "credito_comprometido": 2547284415,
+      "credito_devengado": 2529288504,
+      "credito_pagado": 2308817222
+    },
+    {
+      "name": "Ministerio de Agricultura, Ganadería y Pesca",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 11428493026,
+      "credito_vigente": 13312314059,
+      "credito_comprometido": 12501110440,
+      "credito_devengado": 12342562519,
+      "credito_pagado": 11490344578
+    },
+    {
+      "name": "Ministerio de Turismo",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 2329292980,
+      "credito_vigente": 2879616482,
+      "credito_comprometido": 2369103067,
+      "credito_devengado": 2321122563,
+      "credito_pagado": 2065364069
+    },
+    {
+      "name": "Ministerio de Planificación Federal, Inversión Pública y Servicios",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 153225894415,
+      "credito_vigente": 192535505406,
+      "credito_comprometido": 187828000047,
+      "credito_devengado": 187527782003,
+      "credito_pagado": 167287832552
+    },
+    {
+      "name": "Ministerio de Educación",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 60696829423,
+      "credito_vigente": 70540441013,
+      "credito_comprometido": 70311048563,
+      "credito_devengado": 70246795415,
+      "credito_pagado": 60186136918
+    },
+    {
+      "name": "Ministerio de Ciencia, Tecnología e Innovación Productiva",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 7919673308,
+      "credito_vigente": 9289726604,
+      "credito_comprometido": 8985374811,
+      "credito_devengado": 8974002047,
+      "credito_pagado": 7792341321
+    },
+    {
+      "name": "Ministerio de Cultura",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 2083823376,
+      "credito_vigente": 2877185868,
+      "credito_comprometido": 2730196790,
+      "credito_devengado": 2720905464,
+      "credito_pagado": 2428286341
+    },
+    {
+      "name": "Ministerio de Trabajo, Empleo y Seguridad Social",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 456283588598,
+      "credito_vigente": 561611076832,
+      "credito_comprometido": 548175152143,
+      "credito_devengado": 547827289428,
+      "credito_pagado": 544282606169
+    },
+    {
+      "name": "Ministerio de Salud",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 24796343643,
+      "credito_vigente": 35741510609,
+      "credito_comprometido": 33813622382,
+      "credito_devengado": 33711342715,
+      "credito_pagado": 29221538521
+    },
+    {
+      "name": "Ministerio de Desarrollo Social",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 69348734305,
+      "credito_vigente": 84591707187,
+      "credito_comprometido": 82886751040,
+      "credito_devengado": 82884520877,
+      "credito_pagado": 81723911208
+    },
+    {
+      "name": "Servicio de la Deuda Pública",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 96272000000,
+      "credito_vigente": 112880384881,
+      "credito_comprometido": 109437764557,
+      "credito_devengado": 109437764557,
+      "credito_pagado": 109437764557
+    },
+    {
+      "name": "Obligaciones a Cargo del Tesoro",
+      "ejercicio_presupuestario": "2015",
+      "credito_presupuestado": 135334393387,
+      "credito_vigente": 137199154470,
+      "credito_comprometido": 117930516945,
+      "credito_devengado": 117330516945,
+      "credito_pagado": 105761575342
+    }
+  ],
+  "2016": [
+    {
+      "name": "Poder Legislativo Nacional",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 12685846106,
+      "credito_vigente": 14399388793,
+      "credito_comprometido": 14208111230,
+      "credito_devengado": 14182272735,
+      "credito_pagado": 13190373439
+    },
+    {
+      "name": "Poder Judicial de la Nación",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 16550027233,
+      "credito_vigente": 23516444887,
+      "credito_comprometido": 22360979097,
+      "credito_devengado": 22360979097,
+      "credito_pagado": 21586741081
+    },
+    {
+      "name": "Ministerio Público",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 5665730134,
+      "credito_vigente": 7815671616,
+      "credito_comprometido": 7734103843,
+      "credito_devengado": 7729597814,
+      "credito_pagado": 7394494462
+    },
+    {
+      "name": "Presidencia de la Nación",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 6634981029,
+      "credito_vigente": 7353082938,
+      "credito_comprometido": 6486887399,
+      "credito_devengado": 6470735297,
+      "credito_pagado": 6067804489
+    },
+    {
+      "name": "Jefatura de Gabinete de Ministros",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 7131833636,
+      "credito_vigente": 4463925361,
+      "credito_comprometido": 3814085381,
+      "credito_devengado": 3794659596,
+      "credito_pagado": 3337954074
+    },
+    {
+      "name": "Ministerio de Modernización",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 708037015,
+      "credito_vigente": 1884500005,
+      "credito_comprometido": 1623910716,
+      "credito_devengado": 1619036497,
+      "credito_pagado": 1019367267
+    },
+    {
+      "name": "Ministerio del Interior, Obras Públicas y Vivienda",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 50417826500,
+      "credito_vigente": 49068098003,
+      "credito_comprometido": 43144767891,
+      "credito_devengado": 43115831362,
+      "credito_pagado": 36638736307
+    },
+    {
+      "name": "Ministerio de Relaciones Exteriores y Culto",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 6325566260,
+      "credito_vigente": 7856996650,
+      "credito_comprometido": 6979676654,
+      "credito_devengado": 6970370312,
+      "credito_pagado": 6176050533
+    },
+    {
+      "name": "Ministerio de Justicia y Derechos Humanos",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 13243387471,
+      "credito_vigente": 15221892256,
+      "credito_comprometido": 13814482810,
+      "credito_devengado": 13754026873,
+      "credito_pagado": 12843351277
+    },
+    {
+      "name": "Ministerio de Seguridad",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 74437264948,
+      "credito_vigente": 92651724587,
+      "credito_comprometido": 89572286695,
+      "credito_devengado": 88685195325,
+      "credito_pagado": 84229467310
+    },
+    {
+      "name": "Ministerio de Defensa",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 67784215928,
+      "credito_vigente": 77492939499,
+      "credito_comprometido": 75351213310,
+      "credito_devengado": 74654136110,
+      "credito_pagado": 67577999466
+    },
+    {
+      "name": "Ministerio de Hacienda y Finanzas Públicas",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 4883925946,
+      "credito_vigente": 4680905792,
+      "credito_comprometido": 3700546680,
+      "credito_devengado": 3630024714,
+      "credito_pagado": 3395249023
+    },
+    {
+      "name": "Ministerio de Producción",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 9926566336,
+      "credito_vigente": 8851155547,
+      "credito_comprometido": 8281971338,
+      "credito_devengado": 8251624452,
+      "credito_pagado": 7228198809
+    },
+    {
+      "name": "Ministerio de Agroindustria",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 15163251890,
+      "credito_vigente": 17308068992,
+      "credito_comprometido": 15774207966,
+      "credito_devengado": 15715258192,
+      "credito_pagado": 14112202869
+    },
+    {
+      "name": "Ministerio de Turismo",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 1824287996,
+      "credito_vigente": 2041794505,
+      "credito_comprometido": 1689948628,
+      "credito_devengado": 1634614493,
+      "credito_pagado": 1296656304
+    },
+    {
+      "name": "Ministerio de Transporte",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 71538645995,
+      "credito_vigente": 90348847874,
+      "credito_comprometido": 85132478146,
+      "credito_devengado": 85130230845,
+      "credito_pagado": 78811680248
+    },
+    {
+      "name": "Ministerio de Energía y Minería",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 100375991435,
+      "credito_vigente": 218417682478,
+      "credito_comprometido": 205657350451,
+      "credito_devengado": 205647984066,
+      "credito_pagado": 201236905658
+    },
+    {
+      "name": "Ministerio de Comunicaciones",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 2507829974,
+      "credito_vigente": 2507923171,
+      "credito_comprometido": 1893448575,
+      "credito_devengado": 1865917178,
+      "credito_pagado": 1638241130
+    },
+    {
+      "name": "Ministerio de Educación y Deportes",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 83969068185,
+      "credito_vigente": 97667260920,
+      "credito_comprometido": 96752275900,
+      "credito_devengado": 96712572361,
+      "credito_pagado": 83540797468
+    },
+    {
+      "name": "Ministerio de Ciencia, Tecnología e Innovación Productiva",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 11789545124,
+      "credito_vigente": 14888289611,
+      "credito_comprometido": 14284566391,
+      "credito_devengado": 14273588346,
+      "credito_pagado": 12421410370
+    },
+    {
+      "name": "Ministerio de Cultura",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 3072348968,
+      "credito_vigente": 3536365026,
+      "credito_comprometido": 3037329601,
+      "credito_devengado": 3029646412,
+      "credito_pagado": 2433660434
+    },
+    {
+      "name": "Ministerio de Trabajo, Empleo y Seguridad Social",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 647178902306,
+      "credito_vigente": 812000417384,
+      "credito_comprometido": 796658134531,
+      "credito_devengado": 796458457902,
+      "credito_pagado": 791240864004
+    },
+    {
+      "name": "Ministerio de Salud",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 37214313282,
+      "credito_vigente": 45969113146,
+      "credito_comprometido": 43675183346,
+      "credito_devengado": 43623526380,
+      "credito_pagado": 37913919698
+    },
+    {
+      "name": "Ministerio de Medio Ambiente y Desarrollo Sustentable",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 3740037348,
+      "credito_vigente": 4697476120,
+      "credito_comprometido": 4084463572,
+      "credito_devengado": 4045151269,
+      "credito_pagado": 3540706029
+    },
+    {
+      "name": "Ministerio de Desarrollo Social",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 90058997794,
+      "credito_vigente": 106868126234,
+      "credito_comprometido": 103942711792,
+      "credito_devengado": 103940789132,
+      "credito_pagado": 102135769955
+    },
+    {
+      "name": "Servicio de la Deuda Pública",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 103969738000,
+      "credito_vigente": 321891935173,
+      "credito_comprometido": 306469153606,
+      "credito_devengado": 306469043619,
+      "credito_pagado": 306469043619
+    },
+    {
+      "name": "Obligaciones a Cargo del Tesoro",
+      "ejercicio_presupuestario": "2016",
+      "credito_presupuestado": 121329467652,
+      "credito_vigente": 162282917017,
+      "credito_comprometido": 157348005379,
+      "credito_devengado": 157347953527,
+      "credito_pagado": 147387823258
+    }
+  ],
+  "2017": [
+    {
+      "name": "Poder Legislativo Nacional",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 15791209338,
+      "credito_vigente": 18286581732,
+      "credito_comprometido": 18027011349,
+      "credito_devengado": 18002628602,
+      "credito_pagado": 16497543819
+    },
+    {
+      "name": "Poder Judicial de la Nación",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 23805621986,
+      "credito_vigente": 30483549885,
+      "credito_comprometido": 29712312374,
+      "credito_devengado": 29712312374,
+      "credito_pagado": 28674038264
+    },
+    {
+      "name": "Ministerio Público",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 7724379735,
+      "credito_vigente": 10701209014,
+      "credito_comprometido": 10515335666,
+      "credito_devengado": 10513183435,
+      "credito_pagado": 10048945475
+    },
+    {
+      "name": "Presidencia de la Nación",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 6769275332,
+      "credito_vigente": 7466178700,
+      "credito_comprometido": 6671233998,
+      "credito_devengado": 6653302444,
+      "credito_pagado": 6023070242
+    },
+    {
+      "name": "Jefatura de Gabinete de Ministros",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 6480713589,
+      "credito_vigente": 8544019086,
+      "credito_comprometido": 7317607584,
+      "credito_devengado": 7313247032,
+      "credito_pagado": 6942534208
+    },
+    {
+      "name": "Ministerio de Modernización",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 2054969101,
+      "credito_vigente": 2222588948,
+      "credito_comprometido": 1814059313,
+      "credito_devengado": 1812836397,
+      "credito_pagado": 1601854895
+    },
+    {
+      "name": "Ministerio del Interior, Obras Públicas y Vivienda",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 57493831825,
+      "credito_vigente": 61810091520,
+      "credito_comprometido": 59712054259,
+      "credito_devengado": 59624162980,
+      "credito_pagado": 56121854977
+    },
+    {
+      "name": "Ministerio de Relaciones Exteriores y Culto",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 8274069183,
+      "credito_vigente": 10749389438,
+      "credito_comprometido": 9475283497,
+      "credito_devengado": 9427057499,
+      "credito_pagado": 8126294469
+    },
+    {
+      "name": "Ministerio de Justicia y Derechos Humanos",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 18621272035,
+      "credito_vigente": 19700989631,
+      "credito_comprometido": 18749480997,
+      "credito_devengado": 18743844138,
+      "credito_pagado": 17607976419
+    },
+    {
+      "name": "Ministerio de Seguridad",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 97472624041,
+      "credito_vigente": 110524204463,
+      "credito_comprometido": 105654799305,
+      "credito_devengado": 105250239343,
+      "credito_pagado": 99686302500
+    },
+    {
+      "name": "Ministerio de Defensa",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 94031916476,
+      "credito_vigente": 106957090384,
+      "credito_comprometido": 102072787879,
+      "credito_devengado": 101563687463,
+      "credito_pagado": 94093232554
+    },
+    {
+      "name": "Ministerio de Hacienda y Finanzas Públicas",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 6363262597,
+      "credito_vigente": 5995266541,
+      "credito_comprometido": 5073149846,
+      "credito_devengado": 5029532377,
+      "credito_pagado": 4601604351
+    },
+    {
+      "name": "Ministerio de Producción",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 9577477569,
+      "credito_vigente": 9186723903,
+      "credito_comprometido": 8162534857,
+      "credito_devengado": 8078885970,
+      "credito_pagado": 7077445822
+    },
+    {
+      "name": "Ministerio de Agroindustria",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 16784406312,
+      "credito_vigente": 20723511932,
+      "credito_comprometido": 19495749458,
+      "credito_devengado": 19353721795,
+      "credito_pagado": 17711782676
+    },
+    {
+      "name": "Ministerio de Turismo",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 2307769340,
+      "credito_vigente": 2645510583,
+      "credito_comprometido": 2338077312,
+      "credito_devengado": 2261009168,
+      "credito_pagado": 1996909323
+    },
+    {
+      "name": "Ministerio de Transporte",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 96479023084,
+      "credito_vigente": 112230865016,
+      "credito_comprometido": 111494887186,
+      "credito_devengado": 111386371452,
+      "credito_pagado": 99495361143
+    },
+    {
+      "name": "Ministerio de Energía y Minería",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 153664625401,
+      "credito_vigente": 134651207850,
+      "credito_comprometido": 126394332917,
+      "credito_devengado": 125926936814,
+      "credito_pagado": 121497730678
+    },
+    {
+      "name": "Ministerio de Comunicaciones",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 2870598487,
+      "credito_vigente": 3217537676,
+      "credito_comprometido": 3101663099,
+      "credito_devengado": 3074093009,
+      "credito_pagado": 2793923972
+    },
+    {
+      "name": "Ministerio de Educación y Deportes",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 130950629959,
+      "credito_vigente": 136516111299,
+      "credito_comprometido": 134940088236,
+      "credito_devengado": 134856426007,
+      "credito_pagado": 118139778348
+    },
+    {
+      "name": "Ministerio de Ciencia, Tecnología e Innovación Productiva",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 13956608315,
+      "credito_vigente": 17623475906,
+      "credito_comprometido": 17444281306,
+      "credito_devengado": 17444281299,
+      "credito_pagado": 15226816213
+    },
+    {
+      "name": "Ministerio de Cultura",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 3555883096,
+      "credito_vigente": 4252487578,
+      "credito_comprometido": 4056966588,
+      "credito_devengado": 4053516269,
+      "credito_pagado": 3628084991
+    },
+    {
+      "name": "Ministerio de Trabajo, Empleo y Seguridad Social",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 1015356574191,
+      "credito_vigente": 1099961663688,
+      "credito_comprometido": 1086895662112,
+      "credito_devengado": 1086651533978,
+      "credito_pagado": 1083968972212
+    },
+    {
+      "name": "Ministerio de Salud",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 46267702424,
+      "credito_vigente": 54498560288,
+      "credito_comprometido": 52674647101,
+      "credito_devengado": 52238894511,
+      "credito_pagado": 47128974366
+    },
+    {
+      "name": "Ministerio de Ambiente y Desarrollo Sustentable",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 5744008844,
+      "credito_vigente": 6428252354,
+      "credito_comprometido": 6050696609,
+      "credito_devengado": 6026591178,
+      "credito_pagado": 5675327818
+    },
+    {
+      "name": "Ministerio de Desarrollo Social",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 131178725146,
+      "credito_vigente": 138270761093,
+      "credito_comprometido": 133475870668,
+      "credito_devengado": 133458967545,
+      "credito_pagado": 131827570739
+    },
+    {
+      "name": "Servicio de la Deuda Pública",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 247328000000,
+      "credito_vigente": 335479869868,
+      "credito_comprometido": 324308514878,
+      "credito_devengado": 324308514878,
+      "credito_pagado": 324308514878
+    },
+    {
+      "name": "Obligaciones a Cargo del Tesoro",
+      "ejercicio_presupuestario": "2017",
+      "credito_presupuestado": 142753722750,
+      "credito_vigente": 164387117851,
+      "credito_comprometido": 161238751426,
+      "credito_devengado": 161238751426,
+      "credito_pagado": 151618076278
+    }
+  ],
+  "2018": [
+    {
+      "name": "Poder Legislativo Nacional",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 20304596821,
+      "credito_vigente": 21998951747,
+      "credito_comprometido": 21865574834,
+      "credito_devengado": 21863767492,
+      "credito_pagado": 20314874323
+    },
+    {
+      "name": "Poder Judicial de la Nación",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 34366029835,
+      "credito_vigente": 38848237285,
+      "credito_comprometido": 38089254599,
+      "credito_devengado": 38089254599,
+      "credito_pagado": 36682749929
+    },
+    {
+      "name": "Ministerio Público",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 11878189164,
+      "credito_vigente": 13578041522,
+      "credito_comprometido": 13548606589,
+      "credito_devengado": 13546856964,
+      "credito_pagado": 12807952517
+    },
+    {
+      "name": "Presidencia de la Nación",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 94923539531,
+      "credito_vigente": 112579845042,
+      "credito_comprometido": 109106443018,
+      "credito_devengado": 109080602460,
+      "credito_pagado": 108199170949
+    },
+    {
+      "name": "Jefatura de Gabinete de Ministros",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 6553866205,
+      "credito_vigente": 7783518654,
+      "credito_comprometido": 7009273625,
+      "credito_devengado": 7001050060,
+      "credito_pagado": 6402970172
+    },
+    {
+      "name": "Ministerio de Modernización",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 5192357128,
+      "credito_vigente": 5419310421,
+      "credito_comprometido": 5077831329,
+      "credito_devengado": 5062172480,
+      "credito_pagado": 4622779008
+    },
+    {
+      "name": "Ministerio del Interior, Obras Públicas y Vivienda",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 60821347334,
+      "credito_vigente": 70459016210,
+      "credito_comprometido": 67570868421,
+      "credito_devengado": 67562399635,
+      "credito_pagado": 59009772346
+    },
+    {
+      "name": "Ministerio de Relaciones Exteriores y Culto",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 8503339258,
+      "credito_vigente": 12555770701,
+      "credito_comprometido": 12248965080,
+      "credito_devengado": 12248197907,
+      "credito_pagado": 11248755493
+    },
+    {
+      "name": "Ministerio de Justicia y Derechos Humanos",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 21125225838,
+      "credito_vigente": 22432661822,
+      "credito_comprometido": 21951004152,
+      "credito_devengado": 21947138993,
+      "credito_pagado": 20422227837
+    },
+    {
+      "name": "Ministerio de Seguridad",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 120935208257,
+      "credito_vigente": 132280442759,
+      "credito_comprometido": 128942136188,
+      "credito_devengado": 128887339187,
+      "credito_pagado": 121846613552
+    },
+    {
+      "name": "Ministerio de Defensa",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 116406488637,
+      "credito_vigente": 124663546341,
+      "credito_comprometido": 122737980286,
+      "credito_devengado": 122617188660,
+      "credito_pagado": 115766529556
+    },
+    {
+      "name": "Ministerio de Hacienda",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 4942949405,
+      "credito_vigente": 5548195770,
+      "credito_comprometido": 4679140571,
+      "credito_devengado": 4627305505,
+      "credito_pagado": 4285110508
+    },
+    {
+      "name": "Ministerio de Producción",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 8343001748,
+      "credito_vigente": 10526010706,
+      "credito_comprometido": 9205906938,
+      "credito_devengado": 9091398799,
+      "credito_pagado": 6963765943
+    },
+    {
+      "name": "Ministerio de Agroindustria",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 17283456654,
+      "credito_vigente": 18579668595,
+      "credito_comprometido": 17937579828,
+      "credito_devengado": 17857254163,
+      "credito_pagado": 16061697555
+    },
+    {
+      "name": "Ministerio de Turismo",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 2608233538,
+      "credito_vigente": 2578491503,
+      "credito_comprometido": 2282712858,
+      "credito_devengado": 2213029238,
+      "credito_pagado": 2007165219
+    },
+    {
+      "name": "Ministerio de Transporte",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 97797723389,
+      "credito_vigente": 125826306760,
+      "credito_comprometido": 124492327480,
+      "credito_devengado": 124217281286,
+      "credito_pagado": 109094968025
+    },
+    {
+      "name": "Ministerio de Energía",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 101201053130,
+      "credito_vigente": 152767251654,
+      "credito_comprometido": 145960990615,
+      "credito_devengado": 145810045707,
+      "credito_pagado": 138429924122
+    },
+    {
+      "name": "Ministerio de Finanzas",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 2180342964,
+      "credito_vigente": 2136269099,
+      "credito_comprometido": 1880604065,
+      "credito_devengado": 1870032977,
+      "credito_pagado": 1604741641
+    },
+    {
+      "name": "Ministerio de Educación",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 163227296303,
+      "credito_vigente": 173090597922,
+      "credito_comprometido": 164318028499,
+      "credito_devengado": 164142393020,
+      "credito_pagado": 146686296797
+    },
+    {
+      "name": "Ministerio de Ciencia, Tecnología e Innovación Productiva",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 19270975100,
+      "credito_vigente": 19593762473,
+      "credito_comprometido": 19268821407,
+      "credito_devengado": 19253354390,
+      "credito_pagado": 17430679861
+    },
+    {
+      "name": "Ministerio de Cultura",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 4480607295,
+      "credito_vigente": 4474852147,
+      "credito_comprometido": 4115710295,
+      "credito_devengado": 4079638884,
+      "credito_pagado": 3684474289
+    },
+    {
+      "name": "Ministerio de Trabajo, Empleo y Seguridad Social",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 1329919258632,
+      "credito_vigente": 1436531278996,
+      "credito_comprometido": 1415420676276,
+      "credito_devengado": 1415157787265,
+      "credito_pagado": 1411048470108
+    },
+    {
+      "name": "Ministerio de Salud",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 56485605935,
+      "credito_vigente": 53055588701,
+      "credito_comprometido": 50862317056,
+      "credito_devengado": 50709283063,
+      "credito_pagado": 46123803076
+    },
+    {
+      "name": "Ministerio de Ambiente y Desarrollo Sustentable",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 5881719514,
+      "credito_vigente": 7631936412,
+      "credito_comprometido": 7135555816,
+      "credito_devengado": 7111297611,
+      "credito_pagado": 6641172484
+    },
+    {
+      "name": "Ministerio de Desarrollo Social",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 53281404216,
+      "credito_vigente": 59822718507,
+      "credito_comprometido": 57041825365,
+      "credito_devengado": 56994331558,
+      "credito_pagado": 52508123283
+    },
+    {
+      "name": "Servicio de la Deuda Pública",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 406387000000,
+      "credito_vigente": 557132254907,
+      "credito_comprometido": 553475514391,
+      "credito_devengado": 553475514391,
+      "credito_pagado": 553475514391
+    },
+    {
+      "name": "Obligaciones a Cargo del Tesoro",
+      "ejercicio_presupuestario": "2018",
+      "credito_presupuestado": 104495500685,
+      "credito_vigente": 187340487293,
+      "credito_comprometido": 174422111603,
+      "credito_devengado": 174422111603,
+      "credito_pagado": 159846871792
+    }
+  ],
+  "2019": [
+    {
+      "name": "Poder Legislativo Nacional",
+      "ejercicio_presupuestario": "2019",
+      "credito_presupuestado": 360870971372,
+      "credito_vigente": 151143994372,
+      "credito_comprometido": 109168649823,
+      "credito_devengado": 106499009475,
+      "credito_pagado": 72465629893
+    },
+    {
+      "name": "Poder Judicial de la Nación",
+      "ejercicio_presupuestario": "2019",
+      "credito_presupuestado": 165216192631,
+      "credito_vigente": 168559196633,
+      "credito_comprometido": 52947779668,
+      "credito_devengado": 33385321562,
+      "credito_pagado": 33059404478
+    },
+    {
+      "name": "Ministerio Público",
+      "ejercicio_presupuestario": "2019",
+      "credito_presupuestado": 21990957815,
+      "credito_vigente": 75533998524,
+      "credito_comprometido": 10257676771,
+      "credito_devengado": 9292536653,
+      "credito_pagado": 8559252382
+    },
+    {
+      "name": "Presidencia de la Nación",
+      "ejercicio_presupuestario": "2019",
+      "credito_presupuestado": 4549828474691,
+      "credito_vigente": 4525647120382,
+      "credito_comprometido": 311384119168,
+      "credito_devengado": 284201397214,
+      "credito_pagado": 287048422055
+    },
+    {
+      "name": "Jefatura de Gabinete de Ministros",
+      "ejercicio_presupuestario": "2019",
+      "credito_presupuestado": 147709904665,
+      "credito_vigente": 230060846062,
+      "credito_comprometido": 29576724946,
+      "credito_devengado": 20149478480,
+      "credito_pagado": 18420656386
+    },
+    {
+      "name": "Ministerio del Interior, Obras Públicas y Vivienda",
+      "ejercicio_presupuestario": "2019",
+      "credito_presupuestado": 2092986311907,
+      "credito_vigente": 2404668930225,
+      "credito_comprometido": 355816615722,
+      "credito_devengado": 338077436018,
+      "credito_pagado": 329067375760
+    },
+    {
+      "name": "Ministerio de Relaciones Exteriores y Culto",
+      "ejercicio_presupuestario": "2019",
+      "credito_presupuestado": 261328909529,
+      "credito_vigente": 320663517992,
+      "credito_comprometido": 115949292858,
+      "credito_devengado": 54507314839,
+      "credito_pagado": 33092381221
+    },
+    {
+      "name": "Ministerio de Justicia y Derechos Humanos",
+      "ejercicio_presupuestario": "2019",
+      "credito_presupuestado": 3087847134806,
+      "credito_vigente": 3105973035764,
+      "credito_comprometido": 65475841312,
+      "credito_devengado": 61389484288,
+      "credito_pagado": 48960184061
+    },
+    {
+      "name": "Ministerio de Seguridad",
+      "ejercicio_presupuestario": "2019",
+      "credito_presupuestado": 927461444321,
+      "credito_vigente": 907447954323,
+      "credito_comprometido": 383761512034,
+      "credito_devengado": 140686081261,
+      "credito_pagado": 172628466919
+    },
+    {
+      "name": "Ministerio de Defensa",
+      "ejercicio_presupuestario": "2019",
+      "credito_presupuestado": 703024292935,
+      "credito_vigente": 509871906363,
+      "credito_comprometido": 365225445591,
+      "credito_devengado": 146989976224,
+      "credito_pagado": 110288011729
+    },
+    {
+      "name": "Ministerio de Hacienda",
+      "ejercicio_presupuestario": "2019",
+      "credito_presupuestado": 564183291899,
+      "credito_vigente": 836490878005,
+      "credito_comprometido": 394990805979,
+      "credito_devengado": 81615761160,
+      "credito_pagado": 55849411666
+    },
+    {
+      "name": "Ministerio de Producción y Trabajo",
+      "ejercicio_presupuestario": "2019",
+      "credito_presupuestado": 1122510117649,
+      "credito_vigente": 794416532918,
+      "credito_comprometido": 133705617283,
+      "credito_devengado": 102117257564,
+      "credito_pagado": 95362030983
+    },
+    {
+      "name": "Ministerio de Transporte",
+      "ejercicio_presupuestario": "2019",
+      "credito_presupuestado": 1780119318189,
+      "credito_vigente": 317002882058,
+      "credito_comprometido": 140124608644,
+      "credito_devengado": 88780146001,
+      "credito_pagado": 80385406429
+    },
+    {
+      "name": "Ministerio de Educación, Cultura, Ciencia y Tecnología",
+      "ejercicio_presupuestario": "2019",
+      "credito_presupuestado": 1307366071338,
+      "credito_vigente": 1405809396784,
+      "credito_comprometido": 845749223674,
+      "credito_devengado": 783729245863,
+      "credito_pagado": 237214229179
+    },
+    {
+      "name": "Ministerio de Salud y Desarrollo Social",
+      "ejercicio_presupuestario": "2019",
+      "credito_presupuestado": 172431507876942,
+      "credito_vigente": 176920666810544,
+      "credito_comprometido": 1113082588581,
+      "credito_devengado": 958828330710,
+      "credito_pagado": 849404772515
+    },
+    {
+      "name": "Servicio de la Deuda Pública",
+      "ejercicio_presupuestario": "2019",
+      "credito_presupuestado": 745652000000,
+      "credito_vigente": 748022366616,
+      "credito_comprometido": 141129190051034,
+      "credito_devengado": 280351204365,
+      "credito_pagado": 274103773982
+    },
+    {
+      "name": "Obligaciones a Cargo del Tesoro",
+      "ejercicio_presupuestario": "2019",
+      "credito_presupuestado": 61726060544909,
+      "credito_vigente": 62299171038496,
+      "credito_comprometido": 2806415821358,
+      "credito_devengado": 2806415821358,
+      "credito_pagado": 2604586772883
+    }
+  ]
+}

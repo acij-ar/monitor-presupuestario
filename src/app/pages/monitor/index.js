@@ -2,7 +2,7 @@ const React = require('react');
 const ReactDOMServer = require('react-dom/server');
 const Monitor = require('./view');
 const layout = require('../../components/layout');
-const data = require('./treemap-data.json');
+const data = require('../../../services/dataset-queries/treemap-data.json');
 const Texts = require('../../../services/texts');
 
 const render = (req, res) => {
