@@ -9,26 +9,45 @@ class DatasetForm extends React.Component {
             processingDataset: false,
             updateError: false,
             saveSuccessfull: false,
+            datasets: this.props.datasets,
         };
+        this.checkStatus = this.checkStatus.bind(this);
     }
 
     updateDataset(dataset) {
+        this.state.processingDataset = true;
         this.state.updateError = false;
         this.state.saveSuccessfull = false;
         this.setState(this.state);
         axios.post(`/api/admin/update_dataset/${dataset}`)
-            .then(() => {
-                this.state.processingDataset = true;
-                this.setState(this.state);
-            })
+            .then(this.checkStatus)
             .catch(() => {
+                this.state.processingDataset = false;
                 this.state.updateError = true;
                 this.setState(this.state);
             })
     }
 
+    checkStatus() {
+        axios.get('/api/admin/dataset_job_status')
+            .then(({data}) => {
+                if (data.result) {
+                    this.setState({
+                        datasets: data.result,
+                        processingDataset: false,
+                        saveSuccessfull: true,
+                    })
+                } else {
+                    setTimeout(this.checkStatus, 5e3)
+                }
+            })
+            .catch(() => {
+                setTimeout(this.checkStatus, 5e3)
+            })
+    }
+
     render() {
-        const {datasets} = this.props;
+        const {datasets, processingDataset, updateError, saveSuccessfull} = this.state;
         return (
             <div className="monitor-content monitor-admin">
                 <div className="monitor-admin-page-section">
@@ -49,7 +68,7 @@ class DatasetForm extends React.Component {
                                 <td>{lines || '-'}</td>
                                 <td>{lastModified || '-'}</td>
                                 <td>
-                                    <button onClick={() => this.updateDataset(filename)}>
+                                    <button onClick={() => this.updateDataset(filename)} disabled={processingDataset}>
                                         {lines ? 'Actualizar' : 'Descargar'}
                                     </button>
                                 </td>
@@ -59,8 +78,9 @@ class DatasetForm extends React.Component {
                         </tbody>
                     </table>
                     <div>
-                        {this.state.saveSuccessfull && <span>✅</span>}
-                        {this.state.saveError && <span>❌</span>}
+                        {processingDataset && 'Descargando...'}
+                        {saveSuccessfull && 'Descarga exitosa ✅'}
+                        {updateError && 'Error al descargar ❌'}
                     </div>
                 </div>
             </div>
