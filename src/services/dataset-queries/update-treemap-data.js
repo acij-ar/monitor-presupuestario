@@ -6,14 +6,13 @@ const fs = require('fs');
 
 const numericColumns = datasetColumns.filter(column => column.isNumeric).map(column => column.name);
 
-const extractData = ({ filename }) => {
-    const datasetPath = path.join(__dirname, '..', '..', '..', 'data', 'cleaned', filename);
+const extractData = ({ filePath }) => {
     const yearData = {};
-    if (!fs.existsSync(datasetPath)) {
+    if (!fs.existsSync(filePath)) {
         return Promise.resolve(null)
     }
     return new Promise(resolve => {
-        fs.createReadStream(datasetPath)
+        fs.createReadStream(filePath)
             .pipe(csv.parse({headers: true}))
             .on('data', row => {
                 if (!yearData[row['jurisdiccion_desc']]) {
@@ -35,11 +34,11 @@ const extractData = ({ filename }) => {
 };
 
 module.exports = () => {
-    const promises = availableDatasets.filter(dataset => dataset.isYearDataset).map(extractData);
-    Promise.all(promises).then(yearData => {
+    const dataPromises = availableDatasets.filter(dataset => dataset.isYearDataset).map(extractData);
+    Promise.all(dataPromises).then(yearData => {
         const outputJson = {};
         yearData.map(data => {
-            if (yearData) {
+            if (data) {
                 outputJson[data[0]['ejercicio_presupuestario']] = data;
             }
         });
