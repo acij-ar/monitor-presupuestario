@@ -1,5 +1,6 @@
 const React = require('react');
 const axios = require('axios');
+require('./dataset-form.scss');
 
 class DatasetForm extends React.Component {
     constructor(props) {
@@ -32,12 +33,31 @@ class DatasetForm extends React.Component {
             <div className="monitor-content monitor-admin">
                 <div className="monitor-admin-page-section">
                     <h2>Datasets</h2>
-                    {datasets.map(({filename}) => (
-                        <p key={filename}>
-                            <span>{filename}: </span>
-                            <button onClick={() => this.updateDataset(filename)}>Actualizar</button>
-                        </p>
-                    ))}
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Dataset</th>
+                            <th>Número de filas</th>
+                            <th>Última actualización</th>
+                            <th/>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {datasets.map(({filename, lastModified, lines}) => (
+                            <tr key={filename}>
+                                <td>{filename}</td>
+                                <td>{lines || '-'}</td>
+                                <td>{lastModified || '-'}</td>
+                                <td>
+                                    <button onClick={() => this.updateDataset(filename)}>
+                                        {lines ? 'Actualizar' : 'Descargar'}
+                                    </button>
+                                </td>
+                            </tr>
+
+                        ))}
+                        </tbody>
+                    </table>
                     <div>
                         {this.state.saveSuccessfull && <span>✅</span>}
                         {this.state.saveError && <span>❌</span>}
