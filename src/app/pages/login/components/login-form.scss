@@ -1,0 +1,20 @@
+.monitor-login {
+  color: #444;
+
+  h2, h3, input, textarea {
+    margin: 0 0 10px;
+  }
+
+  input {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: solid 1px #ccc;
+    border-radius: 4px;
+    display: block;
+    width: 300px;
+  }
+
+  .monitor-login-feedback {
+    margin-left: 10px;
+  }
+}
