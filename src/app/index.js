@@ -6,6 +6,7 @@ const { render: renderMonitor, fetchTreemapData } = require('./pages/monitor');
 const { render: renderComparator } = require('./pages/comparator');
 const { render: renderAbout } = require('./pages/about');
 const { render: renderAdmin, authenticate } = require('./pages/admin');
+const { render: renderLogin, redirectIfAlreadyLoggedIn } = require('./pages/login');
 
 const router = express.Router();
 
@@ -14,5 +15,6 @@ router.get('/monitor', fetchTreemapData, renderMonitor);
 router.get('/comparador', renderComparator);
 router.get('/acerca-de', renderAbout);
 router.get('/admin', authenticate, renderAdmin);
+router.get('/login', redirectIfAlreadyLoggedIn, renderLogin);
 
 module.exports = router;
