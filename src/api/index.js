@@ -32,7 +32,7 @@ router.get('/admin/dataset_job_status', async (req, res) => {
 });
 
 router.post('/admin/login', (req, res) => {
-    if (doLogin(req)) {
+    if (doLogin(req, res)) {
         res.sendStatus(200)
     } else {
         res.sendStatus(401)
