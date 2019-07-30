@@ -3,6 +3,7 @@ const router = express.Router();
 const datasetUpdater = require('../services/dataset-updater');
 const Texts = require('../services/texts');
 const datasetsStats = require('../services/dataset-stats');
+const doLogin = require('../services/authentication/do-login');
 
 router.use(express.json());
 
@@ -27,6 +28,14 @@ router.get('/admin/dataset_job_status', async (req, res) => {
         res.json({ processing: true });
     } else {
         res.json({ result: await datasetsStats()})
+    }
+});
+
+router.post('/admin/login', (req, res) => {
+    if (doLogin(req)) {
+        res.sendStatus(200)
+    } else {
+        res.sendStatus(401)
     }
 });
 
