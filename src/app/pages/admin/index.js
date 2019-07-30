@@ -4,6 +4,15 @@ const Admin = require('./view');
 const layout = require('../../components/layout');
 const Texts = require('../../../services/texts');
 const datasetsStats = require('../../../services/dataset-stats');
+const userIsLoggedIn = require('../../../services/authentication/user-is-logged');
+
+const authenticate = (req, res, next) => {
+    if (userIsLoggedIn(req)) {
+        next();
+    } else {
+        res.redirect('/login')
+    }
+};
 
 const render = async (req, res) => {
     res.locals.props = {
@@ -20,4 +29,5 @@ const render = async (req, res) => {
 
 module.exports = {
     render,
+    authenticate,
 };
