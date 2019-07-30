@@ -25,7 +25,7 @@ class DatasetUpdater {
                 } else {
                     await datasetCleaner(dataset);
                 }
-                datasetQueries.update();
+                await datasetQueries.update();
                 this.processing = false;
             });
     }

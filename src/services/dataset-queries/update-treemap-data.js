@@ -35,7 +35,7 @@ const extractData = ({ filePath }) => {
 
 module.exports = () => {
     const dataPromises = availableDatasets.filter(dataset => dataset.isYearDataset).map(extractData);
-    Promise.all(dataPromises).then(yearData => {
+    return Promise.all(dataPromises).then(yearData => {
         const outputJson = {};
         yearData.map(data => {
             if (data) {

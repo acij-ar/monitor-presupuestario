@@ -13,9 +13,9 @@ class DatasetQueries {
         this._treeMapData = loadJSON('treemap-data.json');
     }
 
-    update() {
+    async update() {
         console.log('Starting data queries');
-        updateTreeMapQueries();
+        await updateTreeMapQueries();
         this._treeMapData = loadJSON('treemap-data.json');
         console.log('Finished data queries');
     }
