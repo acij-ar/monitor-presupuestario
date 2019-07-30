@@ -33,16 +33,15 @@ const extractData = ({ filePath }) => {
     })
 };
 
-module.exports = () => {
+module.exports = async () => {
     const dataPromises = availableDatasets.filter(dataset => dataset.isYearDataset).map(extractData);
-    return Promise.all(dataPromises).then(yearData => {
-        const outputJson = {};
-        yearData.map(data => {
-            if (data) {
-                outputJson[data[0]['ejercicio_presupuestario']] = data;
-            }
-        });
-        const outputPath = path.join(__dirname, 'treemap-data.json');
-        fs.writeFileSync(outputPath, JSON.stringify(outputJson, null, 2));
-    })
+    const yearData = await Promise.all(dataPromises);
+    const outputJson = {};
+    yearData.map(data => {
+        if (data) {
+            outputJson[data[0]['ejercicio_presupuestario']] = data;
+        }
+    });
+    const outputPath = path.join(__dirname, 'treemap-data.json');
+    fs.writeFileSync(outputPath, JSON.stringify(outputJson, null, 2));
 };

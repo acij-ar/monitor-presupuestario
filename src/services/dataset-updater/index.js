@@ -9,7 +9,7 @@ class DatasetUpdater {
         this.processing = false;
     }
 
-    updateDataset(datasetFilename) {
+    async updateDataset(datasetFilename) {
         if (this.processing) {
             return;
         }
@@ -17,17 +17,15 @@ class DatasetUpdater {
         const dataset = availableDatasets.find(file => file.filename === datasetFilename);
         const {id: fileId, rawPath, filePath} = dataset;
         console.log(`Downloading ${fileId} to ${rawPath}`);
-        return googleDriveClient.downloadFile({fileId, outputPath: rawPath})
-            .then(async () => {
-                if (datasetFilename === 'inflacion.csv') {
-                    console.log('Skipping cleaning routine');
-                    fs.copyFileSync(rawPath, filePath)
-                } else {
-                    await datasetCleaner(dataset);
-                }
-                await datasetQueries.update();
-                this.processing = false;
-            });
+        await googleDriveClient.downloadFile({fileId, outputPath: rawPath});
+        if (datasetFilename === 'inflacion.csv') {
+            console.log('Skipping cleaning routine');
+            fs.copyFileSync(rawPath, filePath)
+        } else {
+            await datasetCleaner(dataset);
+        }
+        await datasetQueries.update();
+        this.processing = false;
     }
 }
 
