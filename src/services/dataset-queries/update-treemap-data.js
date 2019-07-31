@@ -1,5 +1,6 @@
-const availableDatasets = require('../available-datasets');
-const datasetColumns = require('../dataset-columns');
+const { datasets } = require('../../config');
+const availableDatasets = datasets.files;
+const datasetColumns = datasets.columns;
 const csv = require('fast-csv');
 const path = require('path');
 const fs = require('fs');

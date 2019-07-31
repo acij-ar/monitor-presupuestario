@@ -1,7 +1,8 @@
 const fs = require('fs');
-const availableDatasets = require('../available-datasets');
+const availableDatasets = require('../../config').datasets.files;
 const googleDriveClient = require('./google-drive-client');
 const datasetCleaner = require('./cleaner');
+const csv2json = require('./csv2json');
 const datasetQueries = require('../dataset-queries');
 
 class DatasetUpdater {
@@ -24,6 +25,7 @@ class DatasetUpdater {
         } else {
             await datasetCleaner(dataset);
         }
+        await csv2json();
         await datasetQueries.update();
         this.processing = false;
     }

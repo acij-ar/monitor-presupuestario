@@ -1,5 +1,5 @@
 const fs = require('fs');
-const datasets = require('./available-datasets');
+const datasets = require('../config').datasets.files;
 const countLinesInFile = require('count-lines-in-file');
 
 const numberOfLines = (filePath) => (

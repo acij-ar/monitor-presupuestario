@@ -1,7 +1,7 @@
 const csv = require('fast-csv');
 const fs = require('fs');
 const CSVWriteStream = require('csv-write-stream');
-const columns = require('../dataset-columns');
+const columns = require('../../config').datasets.columns;
 
 const parseNumericValue = numericString => {
     if (numericString.includes(',')) {
