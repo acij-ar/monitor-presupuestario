@@ -37,7 +37,8 @@
     "react-dom": "^16.8.6",
     "react-google-charts": "^3.0.14",
     "recharts": "^1.6.2",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "sqlite3": "^4.0.9"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",

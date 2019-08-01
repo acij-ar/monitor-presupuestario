@@ -6,7 +6,7 @@ const finalFolderPath = path.join(dataFolderPath, 'cleaned');
 
 module.exports = {
     db: {
-        path: path.join(dataFolderPath, 'db.json'),
+        path: path.join(dataFolderPath, 'db.sqlite'),
     },
     datasets: {
         files: [
@@ -154,7 +154,7 @@ module.exports = {
             {
                 name: 'programa_desc',
                 isCategory: true,
-                categoryLevel: 3,
+                categoryLevel: 2,
                 isNumeric: false,
             },
             {
@@ -164,7 +164,7 @@ module.exports = {
             {
                 name: 'actividad_desc',
                 isCategory: true,
-                categoryLevel: 2,
+                categoryLevel: 3,
                 isNumeric: false,
             },
             {
