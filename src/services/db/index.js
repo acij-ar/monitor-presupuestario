@@ -1,6 +1,6 @@
 const sqlite3 = require('sqlite3');
 const { path } = require('../../config').db;
-const createTablesQueries = require('./queries/create-tables');
+const createTablesIfNotExistQueries = require('./queries/create-tables');
 
 class DataBase {
     constructor() {
@@ -10,11 +10,9 @@ class DataBase {
                 throw err
             }
         });
-        this.createTables();
-    }
-
-    createTables() {
-        createTablesQueries.map(query => this.sqlite.run(query));
+        this.sqlite.serialize(() => {
+            createTablesIfNotExistQueries.map(query => this.sqlite.run(query));
+        });
     }
 }
 

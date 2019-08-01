@@ -64,7 +64,7 @@ module.exports = [
         )
     `,
     `
-        CREATE TABLE IF NOT EXISTS jurisdicciones(
+        CREATE TABLE IF NOT EXISTS inflacion(
             year INTEGER NOT NULL,
             inflacion REAL NOT NULL,
             UNIQUE(year)
