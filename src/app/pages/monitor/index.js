@@ -2,7 +2,7 @@ const React = require('react');
 const ReactDOMServer = require('react-dom/server');
 const Monitor = require('./view');
 const layout = require('../../components/layout');
-const datasetQueries = require('../../../services/dataset-queries');
+const db = require('../../../services/db');
 const Texts = require('../../../services/texts');
 
 const render = (req, res) => {
@@ -18,7 +18,7 @@ const render = (req, res) => {
 
 const fetchTreemapData = (req, res, next) => {
     res.locals.props = {
-        treemapData: datasetQueries.treeMapData(),
+        treemapData: db.treeMapData(),
     };
     next();
 };
