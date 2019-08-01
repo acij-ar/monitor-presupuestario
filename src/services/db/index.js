@@ -1,10 +1,21 @@
 const sqlite3 = require('sqlite3');
 const { path } = require('../../config').db;
+const createTablesQueries = require('./queries/create-tables');
 
-const db = new sqlite3.Database(path, sqlite3.OPEN_READWRITE, (err) => {
-    if (err) {
-        throw error
+class DataBase {
+    constructor() {
+        this.sqlite = new sqlite3.Database(path, (err) => {
+            if (err) {
+                console.log(path);
+                throw err
+            }
+        });
+        this.createTables();
     }
-});
 
-module.exports = db;
+    createTables() {
+        createTablesQueries.map(query => this.sqlite.run(query));
+    }
+}
+
+module.exports = new DataBase;
