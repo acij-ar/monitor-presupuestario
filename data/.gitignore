@@ -1,3 +1,4 @@
 *.csv
 *.sqlite3
 *.json
+*.sqlite3-journal

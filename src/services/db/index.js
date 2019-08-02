@@ -1,29 +1,26 @@
-const sqlite3 = require('sqlite3');
+const sqlite = require('sqlite');
 const {path} = require('../../config').db;
 const createTablesIfNotExistQueries = require('./queries/create-tables');
 const dropTableQueries = require('./queries/drop-tables');
 
 class DataBase {
     constructor() {
-        this.sqlite = new sqlite3.Database(path, (err) => {
-            if (err) {
-                console.log(path);
-                throw err
-            }
-        });
-        this.createTablesIfNotExist();
+        this.initPromise = this.init();
+    }
+
+    async init() {
+        this.sqlite = await sqlite.open(path);
+        await this.createTablesIfNotExist();
     }
 
     createTablesIfNotExist() {
-        this.sqlite.serialize(() => {
-            createTablesIfNotExistQueries.map(query => this.sqlite.run(query));
-        });
+        const createTablesPromises = createTablesIfNotExistQueries.map(query => this.sqlite.run(query));
+        return Promise.all(createTablesPromises)
     }
 
     dropTables() {
-        this.sqlite.serialize(() => {
-            dropTableQueries.map(query => this.sqlite.run(query));
-        });
+        const dropTablePromises = dropTableQueries.map(query => this.sqlite.run(query));
+        return Promise.all(dropTablePromises);
     }
 }
 
