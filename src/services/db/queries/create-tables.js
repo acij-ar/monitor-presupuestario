@@ -1,3 +1,4 @@
+// TODO: add columns with adjusted inflation budgets
 module.exports = [
     `
         CREATE TABLE IF NOT EXISTS jurisdicciones(
