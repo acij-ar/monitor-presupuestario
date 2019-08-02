@@ -7,6 +7,7 @@ const finalFolderPath = path.join(dataFolderPath, 'cleaned');
 module.exports = {
     db: {
         path: path.join(dataFolderPath, 'db.sqlite3'),
+        jsonPath: path.join(dataFolderPath, 'db.json'),
     },
     datasets: {
         files: [
