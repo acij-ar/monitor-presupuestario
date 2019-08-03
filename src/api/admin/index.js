@@ -4,26 +4,33 @@ const datasetUpdater = require('../../services/dataset-updater');
 const Texts = require('../../services/texts');
 const datasetsStats = require('../../services/dataset-stats');
 const doLogin = require('../../services/authentication/do-login');
+const userIsLoggedIn = require('../../services/authentication/user-is-logged');
 
-// TODO: add authentication to these apis
+const requireLogin = (req, res, next) => {
+    if (userIsLoggedIn(req)) {
+        next();
+    } else {
+        res.sendStatus(401);
+    }
+};
 
-router.post('/texts', (req, res) => {
+router.post('/texts', requireLogin, (req, res) => {
     Texts.saveNewContent(req.body.texts);
-    res.json({ success: true });
+    res.json({success: true});
 });
 
-router.post('/update_dataset/:filename', (req, res) => {
-    const { filename } = req.params;
+router.post('/update_dataset/:filename', requireLogin, (req, res) => {
+    const {filename} = req.params;
     console.log(`Received request to update ${filename}`);
     datasetUpdater.updateDataset(filename);
-    res.json({ job_status: 'started' });
+    res.json({job_status: 'started'});
 });
 
-router.get('/dataset_job_status', async (req, res) => {
+router.get('/dataset_job_status', requireLogin, async (req, res) => {
     if (datasetUpdater.processing) {
-        res.json({ processing: true });
+        res.json({processing: true});
     } else {
-        res.json({ result: await datasetsStats()})
+        res.json({result: await datasetsStats()})
     }
 });
 
