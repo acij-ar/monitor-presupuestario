@@ -12,7 +12,7 @@ const layout = ({ renderedComponent, clientName, props }) => `
     <script>window.__INITIAL__DATA__ = ${JSON.stringify(props)}</script>
     
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
-    <link rel="stylesheet" href="./static/${clientName}.css"/>
+    <link rel="stylesheet" href="/static/${clientName}.css"/>
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400&display=swap" rel="stylesheet">
 </head>
 <body>
