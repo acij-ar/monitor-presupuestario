@@ -1,13 +1,14 @@
 const React = require('react');
 require('./index.scss');
 
+// TODO: improve click-ability of mobile menu
 const Header = () => (
     <div id="header">
         <div id="header-content">
             <a id="header-logo" href="/" />
 
             <input type="checkbox" id="header-menu-toggle" />
-            <label htmlFor="header-menu-toggle" id="header-menu" /> {/* TODO: improve click-ability */}
+            <label htmlFor="header-menu-toggle" id="header-menu" />
 
             <ul id="header-menu-links">
                 <li id="home">

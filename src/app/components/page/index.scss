@@ -46,3 +46,13 @@ h2 {
     color: #0081ff;
   }
 }
+
+#main {
+  padding-top: 44px;
+}
+
+@media (min-width: 768px) {
+  #main {
+    padding-top: 60px;
+  }
+}
