@@ -20,11 +20,6 @@ const Header = () => (
                         MONITOR
                     </a>
                 </li>
-                <li id="comparator">
-                    <a href="/comparador">
-                        COMPARADOR
-                    </a>
-                </li>
                 <li id="about">
                     <a href="/acerca-de">
                         ACERCA DE

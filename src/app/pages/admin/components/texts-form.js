@@ -49,20 +49,6 @@ class TextsForm extends React.Component {
                 </div>
 
                 <div className="monitor-admin-page-section">
-                    <h2>Comparador</h2>
-                    <h3>Título</h3>
-                    <input value={texts.comparator.title} onChange={e => {
-                        this.state.texts.comparator.title = e.target.value;
-                        this.onTextChange();
-                    }}/>
-                    <h3>Descripción</h3>
-                    <textarea value={texts.comparator.description} onChange={e => {
-                        this.state.texts.comparator.description = e.target.value;
-                        this.onTextChange();
-                    }}/>
-                </div>
-
-                <div className="monitor-admin-page-section">
                     <h2>Acerca de</h2>
                     <h3>Presupuesto para los derechos</h3>
                     <input value={texts.about.rights.title} onChange={e => {

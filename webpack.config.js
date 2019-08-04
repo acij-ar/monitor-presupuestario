@@ -53,7 +53,6 @@ const clientConfig = {
     entry: {
         'home': path.resolve(__dirname, 'src/app/client/home'),
         'monitor': path.resolve(__dirname, 'src/app/client/monitor'),
-        'comparator': path.resolve(__dirname, 'src/app/client/comparator'),
         'about': path.resolve(__dirname, 'src/app/client/about'),
         'admin': path.resolve(__dirname, 'src/app/client/admin'),
         'login': path.resolve(__dirname, 'src/app/client/login'),
