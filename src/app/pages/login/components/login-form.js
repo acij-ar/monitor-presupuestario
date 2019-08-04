@@ -14,11 +14,18 @@ class TextsForm extends React.Component {
         };
         this.attemptLogin = this.attemptLogin.bind(this);
         this.onPasswordChange = this.onPasswordChange.bind(this);
+        this.onKeyDown = this.onKeyDown.bind(this);
     }
 
     onPasswordChange(event) {
         this.state.password = event.target.value;
         this.setState(this.state);
+    }
+
+    onKeyDown(e) {
+        if(e.key === 'Enter') {
+            this.attemptLogin();
+        }
     }
 
     attemptLogin() {
@@ -45,7 +52,7 @@ class TextsForm extends React.Component {
             <div className="monitor-content monitor-login">
                 <div className="monitor-login-page-section">
                     <h2>Ingresar</h2>
-                    Contraseña <input type="password" value={password} onChange={this.onPasswordChange}/>
+                    Contraseña <input type="password" value={password} onChange={this.onPasswordChange} onKeyDown={this.onKeyDown}/>
                     <button onClick={this.attemptLogin} disabled={waitingResponse}>Ingresar</button>
                     <span className="monitor-login-feedback">
                         {loginSuccessfull && '✅'}
