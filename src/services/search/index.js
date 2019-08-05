@@ -1,6 +1,6 @@
 const elasticlunr = require('elasticlunr');
 const db = require('../db');
-const uid = require('uid');
+const _ = require('lodash');
 
 class SearchService {
     constructor() {
@@ -9,7 +9,7 @@ class SearchService {
 
     async init() {
         this.index = elasticlunr();
-        this.index.addField('name');
+        this.index.addField('asciiName');
         this.index.setRef('uid');
         await db.initPromise;
         const tables = ['jurisdicciones', 'entidades', 'programas', 'actividades'];
@@ -22,7 +22,13 @@ class SearchService {
         const processedResults = {};
         results.map(({name, year, id}) => {
             if (!processedResults[name]) {
-                processedResults[name] = {variants: [], table, uid: uid(), name};
+                processedResults[name] = {
+                    table,
+                    name,
+                    asciiName: _.deburr(name),
+                    variants: [],
+                    uid: `${table}-${name}`,
+                };
             }
             processedResults[name].variants.push({year, id})
         });
@@ -30,7 +36,9 @@ class SearchService {
     }
 
     search(searchString) {
-        return this.index.search(searchString).map(({ref}) => this.index.documentStore.getDoc(ref));
+        const deburredSearchString = _.deburr(searchString);
+        const refResults = this.index.search(deburredSearchString);
+        return refResults.map(({ref}) => this.index.documentStore.getDoc(ref));
     }
 }
 

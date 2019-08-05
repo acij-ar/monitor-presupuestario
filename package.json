@@ -40,8 +40,7 @@
     "react-select": "^3.0.4",
     "recharts": "^1.6.2",
     "sass-loader": "^7.1.0",
-    "sqlite": "^3.0.3",
-    "uid": "0.0.2"
+    "sqlite": "^3.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
@@ -53,5 +52,8 @@
     "webpack": "^4.32.0",
     "webpack-cli": "^3.3.2",
     "webpack-node-externals": "^1.7.2"
+  },
+  "peerDependencies": {
+    "lodash": "*"
   }
 }
