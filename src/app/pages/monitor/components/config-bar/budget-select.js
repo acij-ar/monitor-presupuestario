@@ -10,6 +10,7 @@ const BudgetSelect = ({value, onChange}) => (
         onChange={onChange}
         isSearchable
         className="monitor-config-bar-budgets-select"
+        isMulti
     />
 );
 

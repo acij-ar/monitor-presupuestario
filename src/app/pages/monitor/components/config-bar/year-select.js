@@ -10,6 +10,7 @@ const YearSelect = ({ value, onChange}) => (
         onChange={onChange}
         isSearchable
         className="monitor-config-bar-years-select"
+        isMulti
     />
 );
 

@@ -32,6 +32,7 @@ class EntitySelect extends React.Component {
                 isSearchable
                 className="monitor-config-bar-entities-select"
                 cacheOptions
+                isMulti
             />
         )
     }

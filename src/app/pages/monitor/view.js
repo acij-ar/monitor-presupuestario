@@ -11,33 +11,33 @@ require('./index.scss');
 class App extends React.Component {
     constructor(props) {
         super(props);
-        const defaultYear = availableYears[0];
+        const defaultYears = [availableYears[0], availableYears[1]];
         const defaultBudget = availableBudgets[0];
         this.state = {
-            selectedYear: defaultYear,
-            selectedBudget: defaultBudget,
-            selectedEntity: null,
+            selectedYears: defaultYears,
+            selectedBudgets: [defaultBudget],
+            selectedEntities: [],
         };
-        this.onSelectedEntityChange = this.onSelectedEntityChange.bind(this);
-        this.onSelectedYearChange = this.onSelectedYearChange.bind(this);
-        this.onSelectedBudgetChange = this.onSelectedBudgetChange.bind(this);
+        this.onSelectedEntitiesChange = this.onSelectedEntitiesChange.bind(this);
+        this.onSelectedYearsChange = this.onSelectedYearsChange.bind(this);
+        this.onSelectedBudgetsChange = this.onSelectedBudgetsChange.bind(this);
     }
 
-    onSelectedEntityChange(selectedEntity) {
-        this.setState({selectedEntity})
+    onSelectedEntitiesChange(selectedEntities) {
+        this.setState({selectedEntities})
     }
 
-    onSelectedYearChange(selectedYear) {
-        this.setState({selectedYear});
+    onSelectedYearsChange(selectedYears) {
+        this.setState({selectedYears});
     }
 
-    onSelectedBudgetChange(selectedBudget) {
-        this.setState({selectedBudget});
+    onSelectedBudgetsChange(selectedBudgets) {
+        this.setState({selectedBudgets});
     }
 
     render() {
         const {title, description} = this.props;
-        const {selectedYear, selectedBudget, selectedEntity} = this.state;
+        const {selectedYears, selectedBudgets, selectedEntities} = this.state;
         return (
             <Page>
                 <div className="monitor-highlight">
@@ -49,9 +49,9 @@ class App extends React.Component {
 
                 <div className="monitor-config-bar">
                     <div className="monitor-config-bar-content">
-                        <EntitySelect value={selectedEntity} onChange={this.onSelectedEntityChange}/>
-                        <YearSelect value={selectedYear} onChange={this.onSelectedYearChange}/>
-                        <BudgetSelect value={selectedBudget} onChange={this.onSelectedBudgetChange}/>
+                        <EntitySelect value={selectedEntities} onChange={this.onSelectedEntitiesChange}/>
+                        <YearSelect value={selectedYears} onChange={this.onSelectedYearsChange}/>
+                        <BudgetSelect value={selectedBudgets} onChange={this.onSelectedBudgetsChange}/>
                     </div>
                 </div>
 
