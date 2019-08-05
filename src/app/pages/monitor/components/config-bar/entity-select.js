@@ -1,24 +1,33 @@
 const React = require('react');
-const Select = require('react-select').default;
+const AsyncSelect = require('react-select/async').default;
+const axios = require('axios');
 
 class EntitySelect extends React.Component {
     constructor(props) {
         super(props);
         this.state = {options: []};
-        this.loadOptions();
     }
 
-    loadOptions() {
-        console.log('loading');
+    componentDidMount() {
+        axios.get('/api/db/juris-list').then(response => {
+            this.setState({options: response.data})
+        })
+    }
+
+    static onInputSearch(searchInput) {
+        const params = {q: searchInput};
+        return axios.get('/api/db/search', {params}).then(response => response.data)
     }
 
     render() {
         const {value, onChange} = this.props;
         return (
-            <Select
+            <AsyncSelect
                 placeholder="Dependencias del presupuesto"
                 value={value}
                 onChange={onChange}
+                defaultOptions={this.state.options}
+                loadOptions={EntitySelect.onInputSearch}
                 isSearchable
                 className="monitor-config-bar-entities-select"
                 cacheOptions

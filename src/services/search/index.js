@@ -1,6 +1,7 @@
 const elasticlunr = require('elasticlunr');
 const db = require('../db');
 const _ = require('lodash');
+const resultsToListForSelect = require('../helpers/results-to-list-for-select');
 
 class SearchService {
     constructor() {
@@ -10,29 +11,17 @@ class SearchService {
     async init() {
         this.index = elasticlunr();
         this.index.addField('asciiName');
-        this.index.setRef('uid');
+        this.index.setRef('value');
         await db.initPromise;
-        const tables = ['jurisdicciones', 'entidades', 'programas', 'actividades'];
+        const tables = ['jurisdicciones', 'programas', 'actividades'];
         const documentsPromises = tables.map(table => this.addDocuments(table));
         return Promise.all(documentsPromises)
     }
 
     async addDocuments(table) {
         const results = await db.sqlite.all(`SELECT year, name, id FROM ${table}`);
-        const processedResults = {};
-        results.map(({name, year, id}) => {
-            if (!processedResults[name]) {
-                processedResults[name] = {
-                    table,
-                    name,
-                    asciiName: _.deburr(name),
-                    variants: [],
-                    uid: `${table}-${name}`,
-                };
-            }
-            processedResults[name].variants.push({year, id})
-        });
-        Object.values(processedResults).map(searchableDocument => this.index.addDoc(searchableDocument));
+        const processedResults = resultsToListForSelect({results, table});
+        processedResults.map(searchableDocument => this.index.addDoc(searchableDocument));
     }
 
     search(searchString) {
