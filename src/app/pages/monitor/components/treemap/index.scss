@@ -1,9 +1,17 @@
-#monitor-treemap-controls {
-  padding: 0 16px 0 5px;
-  text-align: right;
+.monitor-treemap {
+  padding: 32px 12px;
 
-  .monitor-link {
-    font-size: 12px;
-    margin-left: 10px;
+  #monitor-treemap-controls {
+    padding: 0 16px 0 5px;
+    text-align: right;
+
+    .monitor-link {
+      font-size: 12px;
+      margin-left: 10px;
+    }
+  }
+
+  .monitor-treemap-chart-container {
+    min-height: 500px;
   }
 }

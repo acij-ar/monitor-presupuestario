@@ -38,6 +38,9 @@ class App extends React.Component {
     render() {
         const {title, description} = this.props;
         const {selectedYears, selectedBudgets, selectedEntities} = this.state;
+        const onlyOneCaseSelected = selectedYears && selectedYears.length === 1 &&
+            selectedBudgets && selectedBudgets.length === 1 &&
+            selectedEntities && selectedEntities.length === 1;
         return (
             <Page>
                 <div className="monitor-highlight">
@@ -55,7 +58,15 @@ class App extends React.Component {
                     </div>
                 </div>
 
-                <Treemap {...this.state}/>
+                {
+                    onlyOneCaseSelected &&
+                    <Treemap
+                        year={selectedYears[0].value}
+                        budgetType={selectedBudgets[0].value}
+                        parentName={selectedEntities[0].label}
+                        parentTable={selectedEntities[0].table}
+                    />
+                }
             </Page>
         );
     }

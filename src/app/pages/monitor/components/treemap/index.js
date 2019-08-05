@@ -7,20 +7,32 @@ const axios = require('axios');
 class Treemap extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {data: []};
-        this.downloadData = this.downloadData.bind(this);
+        this.state = {};
+        this.downloadUserData = this.downloadUserData.bind(this);
     }
 
     componentDidMount() {
-        const params = this.props;
+        this.downloadTreemapData();
+    }
+
+    componentDidUpdate() {
+        if (this.props !== this.state.props) {
+            this.downloadTreemapData();
+        }
+    }
+
+    downloadTreemapData() {
+        const {parentTable, parentName, year, budgetType} = this.props;
+        const params = {parentTable, parentName, year, budgetType};
         axios.get('/api/db/treemap', {params})
+            .then(response => this.setState({...response.data, props: this.props}));
     }
 
     static downloadImage() {
         downloadChart('.monitor-treemap svg', 'treemap.png');
     }
 
-    downloadData() {
+    downloadUserData() {
         downloadData(this.state.data, 'treemap.csv');
     }
 
@@ -28,9 +40,11 @@ class Treemap extends React.Component {
 
         return (
             <div className="monitor-content monitor-treemap">
-                <Chart data={this.state.data}/>
+                <div className="monitor-treemap-chart-container">
+                    {this.state.data && <Chart data={this.state.data}/>}
+                </div>
                 <div id="monitor-treemap-controls">
-                    <span className="monitor-link" onClick={this.downloadData}>Descargar datos</span>
+                    <span className="monitor-link" onClick={this.downloadUserData}>Descargar datos</span>
                     <span className="monitor-link" onClick={Treemap.downloadImage}>Descargar gráfico</span>
                 </div>
             </div>
