@@ -12,7 +12,9 @@ module.exports = ({ results, table }) => {
                 value: `${table}-${name}`,
             };
         }
-        processedResults[name].variants.push({year, id})
+        if (year && id) {
+            processedResults[name].variants.push({year, id})
+        }
     });
     return Object.values(processedResults);
 };
