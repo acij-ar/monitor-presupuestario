@@ -1,41 +1,43 @@
 const React = require('react');
 const Page = require('../../components/page');
 const Treemap = require('./components/treemap');
-const Select = require('react-select').default;
 const availableYears = require('./helpers/available-years');
 const availableBudgets = require('./helpers/available-budgets');
+const EntitySelect = require('./components/config-bar/entity-select');
+const YearSelect = require('./components/config-bar/year-select');
+const BudgetSelect = require('./components/config-bar/budget-select');
 require('./index.scss');
 
 class App extends React.Component {
     constructor(props) {
         super(props);
-
-        const lastYear = availableYears[availableYears.length - 1];
+        const defaultYear = availableYears[0];
         const defaultBudget = availableBudgets[0];
         this.state = {
-            selectedYears: [lastYear],
-            selectedBudgets: [defaultBudget],
-            selectedEntities: [],
+            selectedYear: defaultYear,
+            selectedBudget: defaultBudget,
+            selectedEntity: null,
         };
-        this.onSelectedEntitiesChange = this.onSelectedEntitiesChange.bind(this);
-        this.onSelectedYearsChange = this.onSelectedYearsChange.bind(this);
-        this.onSelectedBudgetTypesChange = this.onSelectedBudgetTypesChange.bind(this);
+        this.onSelectedEntityChange = this.onSelectedEntityChange.bind(this);
+        this.onSelectedYearChange = this.onSelectedYearChange.bind(this);
+        this.onSelectedBudgetChange = this.onSelectedBudgetChange.bind(this);
     }
 
-    onSelectedEntitiesChange(selectedEntities) {
-        this.setState({selectedEntities})
+    onSelectedEntityChange(selectedEntity) {
+        this.setState({selectedEntity})
     }
 
-    onSelectedYearsChange(selectedYears) {
-        this.setState({selectedYears});
+    onSelectedYearChange(selectedYear) {
+        this.setState({selectedYear});
     }
 
-    onSelectedBudgetTypesChange(selectedBudgets) {
-        this.setState({selectedBudgets});
+    onSelectedBudgetChange(selectedBudget) {
+        this.setState({selectedBudget});
     }
 
     render() {
         const {treemapData, title, description} = this.props;
+        const {selectedYear, selectedBudget, selectedEntity} = this.state;
         return (
             <Page>
                 <div className="monitor-highlight">
@@ -47,39 +49,9 @@ class App extends React.Component {
 
                 <div className="monitor-config-bar">
                     <div className="monitor-config-bar-content">
-                        <Select
-                            name="entities"
-                            placeholder="Dependencias del presupuesto"
-                            value={this.state.selectedEntities}
-                            options={availableYears}
-                            onChange={this.onSelectedEntitiesChange}
-                            isMulti
-                            isSearchable
-                            closeMenuOnSelect={false}
-                            className="monitor-config-bar-entities-select"
-                        />
-                        <Select
-                            name="years"
-                            placeholder="Años disponibles"
-                            value={this.state.selectedYears}
-                            options={availableYears}
-                            onChange={this.onSelectedYearsChange}
-                            isMulti
-                            isSearchable
-                            closeMenuOnSelect={false}
-                            className="monitor-config-bar-years-select"
-                        />
-                        <Select
-                            name="budget"
-                            placeholder="Tipos de presupuesto"
-                            value={this.state.selectedBudgets}
-                            options={availableBudgets}
-                            onChange={this.onSelectedBudgetTypesChange}
-                            isMulti
-                            isSearchable
-                            closeMenuOnSelect={false}
-                            className="monitor-config-bar-budgets-select"
-                        />
+                        <EntitySelect value={selectedEntity} onChange={this.onSelectedEntityChange}/>
+                        <YearSelect value={selectedYear} onChange={this.onSelectedYearChange}/>
+                        <BudgetSelect value={selectedBudget} onChange={this.onSelectedBudgetChange}/>
                     </div>
                 </div>
 
