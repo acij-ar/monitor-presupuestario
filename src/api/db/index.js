@@ -9,8 +9,9 @@ router.get('/search', async (req, res) => {
     res.json(results)
 });
 
-router.get('/juris-list', async (req, res) => {
-    const results = await searchList('jurisdicciones');
+router.get('/search-list', async (req, res) => {
+    const {table} = req.query;
+    const results = await searchList({table});
     res.json(results)
 });
 
