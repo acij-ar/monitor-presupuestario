@@ -26,7 +26,7 @@ class SearchService {
 
     search(searchString) {
         const deburredSearchString = _.deburr(searchString);
-        const refResults = this.index.search(deburredSearchString);
+        const refResults = this.index.search(deburredSearchString, {expand: true});
         return refResults.map(({ref}) => this.index.documentStore.getDoc(ref));
     }
 }
