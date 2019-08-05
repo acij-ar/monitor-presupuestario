@@ -52,7 +52,14 @@ class TextsForm extends React.Component {
             <div className="monitor-content monitor-login">
                 <div className="monitor-login-page-section">
                     <h2>Ingresar</h2>
-                    Contraseña <input type="password" value={password} onChange={this.onPasswordChange} onKeyDown={this.onKeyDown}/>
+                    Contraseña
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={this.onPasswordChange}
+                        onKeyDown={this.onKeyDown}
+                        autoFocus
+                    />
                     <button onClick={this.attemptLogin} disabled={waitingResponse}>Ingresar</button>
                     <span className="monitor-login-feedback">
                         {loginSuccessfull && '✅'}
