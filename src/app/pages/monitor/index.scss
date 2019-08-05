@@ -1,5 +1,35 @@
 @import 'components/treemap/index';
 
+.monitor-config-bar {
+  position: sticky;
+  width: 100%;
+  top: 44px;
+  border-bottom: solid 1px #ddd;
+  background: white;
+  z-index: 1;
+
+  @media (min-width: 768px) {
+    top: 60px;
+  }
+
+  .monitor-config-bar-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+
+  .monitor-config-bar-years-select,
+  .monitor-config-bar-budgets-select,
+  .monitor-config-bar-entities-select {
+    width: 300px;
+    margin: 10px 20px;
+    display: inline-block;
+    text-align: left;
+    color: #333;
+  }
+}
+
 .monitor-treemap {
   padding: 32px 12px;
   min-height: 500px;

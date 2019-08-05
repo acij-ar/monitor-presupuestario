@@ -1,18 +1,13 @@
 const React = require('react');
 const _ = require('lodash');
-const availableYears = require('../../../../helpers/available-years');
-const availableKeys = require('../../../../helpers/available-keys');
-const downloadChart = require('../../../../helpers/download-chart');
-const downloadData = require('../../../../helpers/download-csv');
+const downloadChart = require('../../helpers/download-chart');
+const downloadData = require('../../helpers/download-csv');
 const Chart = require('./chart');
 
 class Treemap extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            selectedYear: availableYears[availableYears.length - 1],
-            selectedKey: availableKeys[0].key,
-        };
+        this.state = {};
         this.state.data = this.dataForState();
 
         this.onYearChange = this.onYearChange.bind(this);
@@ -56,14 +51,14 @@ class Treemap extends React.Component {
             <React.Fragment>
                 <div id="monitor-treemap-controls">
                     <select onChange={this.onYearChange} defaultValue={this.state.selectedYear}>
-                        { availableYears.map(year => (
+                        { [].map(year => (
                             <option key={year} defaultValue={year}>
                                 { year }
                             </option>
                         ))}
                     </select>
                     <select onChange={this.onKeyChange} defaultValue={this.state.selectedKey}>
-                        { availableKeys.map(({ key, name }) => (
+                        { [].map(({ key, name }) => (
                             <option key={key} value={key}>
                                 { name }
                             </option>

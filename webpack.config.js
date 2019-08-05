@@ -2,6 +2,7 @@ const nodeExternals = require('webpack-node-externals');
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+// TODO: autobind class methods
 const rules = [{
     test: /\.scss$/,
     use: [

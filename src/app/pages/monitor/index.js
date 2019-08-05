@@ -18,7 +18,7 @@ const render = (req, res) => {
 
 const fetchTreemapData = (req, res, next) => {
     res.locals.props = {
-        treemapData: db.treeMapData(),
+        treemapData: []
     };
     next();
 };
