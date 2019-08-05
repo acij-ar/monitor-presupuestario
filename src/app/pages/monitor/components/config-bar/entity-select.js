@@ -33,6 +33,7 @@ class EntitySelect extends React.Component {
                 className="monitor-config-bar-entities-select"
                 cacheOptions
                 isMulti
+                closeMenuOnSelect={false}
             />
         )
     }

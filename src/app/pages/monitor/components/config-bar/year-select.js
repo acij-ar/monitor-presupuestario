@@ -11,6 +11,7 @@ const YearSelect = ({ value, onChange}) => (
         isSearchable
         className="monitor-config-bar-years-select"
         isMulti
+        closeMenuOnSelect={false}
     />
 );
 
