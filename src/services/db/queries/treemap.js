@@ -2,14 +2,15 @@ const db = require('..');
 const _ = require('lodash');
 
 module.exports = async ({parentTable, parentName, year, budgetType}) => {
-    const {id: parentId} = await db.sqlite.get(
+    const parentResult = await db.sqlite.get(
         `SELECT id FROM ${parentTable} WHERE year = ? AND name = ?`,
         [year, parentName],
     );
     const title = `${parentName} (${budgetType} ${year})`;
-    if (!parentId) {
+    if (!parentResult) {
         return {title};
     }
+    const {id: parentId} = parentResult;
     const childTable = parentTable === 'jurisdicciones' ? 'programas' : 'actividades';
     const pkColumn = parentTable === 'jurisdicciones' ? 'jurisdiccion_id' : 'programa_id';
     const results = await db.sqlite.all(
