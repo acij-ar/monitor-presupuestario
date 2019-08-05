@@ -36,7 +36,7 @@ class App extends React.Component {
     }
 
     render() {
-        const {treemapData, title, description} = this.props;
+        const {title, description} = this.props;
         const {selectedYear, selectedBudget, selectedEntity} = this.state;
         return (
             <Page>
@@ -55,10 +55,7 @@ class App extends React.Component {
                     </div>
                 </div>
 
-                <div className="monitor-content monitor-treemap">
-                    <Treemap data={treemapData}/>
-                    <Treemap data={treemapData}/>
-                </div>
+                <Treemap {...this.state}/>
             </Page>
         );
     }

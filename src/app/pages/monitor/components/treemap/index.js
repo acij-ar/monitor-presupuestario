@@ -1,40 +1,19 @@
 const React = require('react');
-const _ = require('lodash');
 const downloadChart = require('../../helpers/download-chart');
 const downloadData = require('../../helpers/download-csv');
 const Chart = require('./chart');
+const axios = require('axios');
 
 class Treemap extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
-        this.state.data = this.dataForState();
-
-        this.onYearChange = this.onYearChange.bind(this);
-        this.onKeyChange = this.onKeyChange.bind(this);
+        this.state = {data: []};
         this.downloadData = this.downloadData.bind(this);
     }
 
-    dataForState() {
-        const dataForYear = this.props.data[this.state.selectedYear];
-        const sortedYearData = _.sortBy(dataForYear, dataPoint => -dataPoint[this.state.selectedKey]);
-        const dataRows = sortedYearData.map(dataPoint => [dataPoint.name, "root", dataPoint[this.state.selectedKey]]);
-        return [['name', 'parent', 'value'], ['root', null, _.sum(dataRows.map(row => row[2]))], ...dataRows]
-    }
-
-    setDataForState() {
-        this.state.data = this.dataForState();
-        this.setState(this.state);
-    }
-
-    onYearChange(e) {
-        this.state.selectedYear = e.target.value;
-        this.setDataForState();
-    }
-
-    onKeyChange(e) {
-        this.state.selectedKey = e.target.value;
-        this.setDataForState();
+    componentDidMount() {
+        const params = this.props;
+        axios.get('/api/db/treemap', {params})
     }
 
     static downloadImage() {
@@ -48,27 +27,13 @@ class Treemap extends React.Component {
     render() {
 
         return (
-            <React.Fragment>
+            <div className="monitor-content monitor-treemap">
+                <Chart data={this.state.data}/>
                 <div id="monitor-treemap-controls">
-                    <select onChange={this.onYearChange} defaultValue={this.state.selectedYear}>
-                        { [].map(year => (
-                            <option key={year} defaultValue={year}>
-                                { year }
-                            </option>
-                        ))}
-                    </select>
-                    <select onChange={this.onKeyChange} defaultValue={this.state.selectedKey}>
-                        { [].map(({ key, name }) => (
-                            <option key={key} value={key}>
-                                { name }
-                            </option>
-                        ))}
-                    </select>
                     <span className="monitor-link" onClick={this.downloadData}>Descargar datos</span>
                     <span className="monitor-link" onClick={Treemap.downloadImage}>Descargar gráfico</span>
                 </div>
-                <Chart data={this.state.data} />
-            </React.Fragment>
+            </div>
         )
     }
 }

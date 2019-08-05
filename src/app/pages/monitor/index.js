@@ -2,12 +2,11 @@ const React = require('react');
 const ReactDOMServer = require('react-dom/server');
 const Monitor = require('./view');
 const layout = require('../../components/layout');
-const db = require('../../../services/db');
 const Texts = require('../../../services/texts');
 
 const render = (req, res) => {
-    res.locals.props.title = Texts.content.monitor.title;
-    res.locals.props.description = Texts.content.monitor.description;
+    const {title, description} = Texts.content.monitor;
+    res.locals.props = {title, description};
     const html = layout({
         renderedComponent: ReactDOMServer.renderToString(<Monitor {...res.locals.props} />),
         clientName: 'monitor',
@@ -16,14 +15,6 @@ const render = (req, res) => {
     res.send(html)
 };
 
-const fetchTreemapData = (req, res, next) => {
-    res.locals.props = {
-        treemapData: []
-    };
-    next();
-};
-
 module.exports = {
     render,
-    fetchTreemapData,
 };
