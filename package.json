@@ -40,7 +40,8 @@
     "react-select": "^3.0.4",
     "recharts": "^1.6.2",
     "sass-loader": "^7.1.0",
-    "sqlite": "^3.0.3"
+    "sqlite": "^3.0.3",
+    "uid": "0.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",

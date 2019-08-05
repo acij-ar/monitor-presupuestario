@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const listEntities = require('../../services/db/queries/list-entities');
+const SearchService = require('../../services/search');
 
-router.get('/list-entities', async (req, res) => {
-    const entityList = await listEntities();
-    res.json(entityList)
+router.get('/search', async (req, res) => {
+    const searchString = req.query.q;
+    const results = SearchService.search(searchString);
+    res.json(results)
 });
 
 module.exports = router;
