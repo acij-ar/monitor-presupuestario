@@ -1,5 +1,5 @@
 const React = require('react');
-const { Chart: ReactGoogleChart } = require('react-google-charts');
+const {Chart: ReactGoogleChart} = require('react-google-charts');
 
 const Chart = ({data, title}) => (
     <ReactGoogleChart
@@ -16,6 +16,11 @@ const Chart = ({data, title}) => (
             showScale: false,
             headerHeight: 0,
             highlightOnMouseOver: false,
+            generateTooltip: (row) => (`
+                <div style="background:#fafafa; border: solid 1px #aaa; color: #333;">
+                    <p>${data[row+1][0]} $${data[row][2]}</p>
+                </div>
+            `),
         }}
     />
 );

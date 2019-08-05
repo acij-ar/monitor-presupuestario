@@ -67,6 +67,8 @@ class App extends React.Component {
                         parentTable={selectedEntities[0].table}
                     />
                 }
+
+                <div style={{minHeight: '500px'}} />
             </Page>
         );
     }
