@@ -9,5 +9,6 @@ module.exports = async () => {
     await db.createTablesIfNotExist();
     await updateBudgetTables();
     await updateInflationTable();
+    // TODO: wait for all inserts and then close and reconnect to the db?
     console.log('Finished updating db');
 };
