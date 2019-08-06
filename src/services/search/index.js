@@ -3,6 +3,8 @@ const db = require('../db');
 const _ = require('lodash');
 const resultsToListForSelect = require('../helpers/results-to-list-for-select');
 
+// TODO configure language https://github.com/MihaiValentin/lunr-languages
+
 class SearchService {
     constructor() {
         this.init();
@@ -27,7 +29,9 @@ class SearchService {
     search(searchString) {
         const deburredSearchString = _.deburr(searchString);
         const refResults = this.index.search(deburredSearchString, {expand: true});
-        return refResults.map(({ref}) => this.index.documentStore.getDoc(ref));
+        return refResults
+            .filter(result => result.score > 0.1) // TODO validate
+            .map(({ref}) => this.index.documentStore.getDoc(ref));
     }
 }
 
