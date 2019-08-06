@@ -1,4 +1,3 @@
-// TODO: add columns with adjusted inflation budgets
 module.exports = [
     `
         CREATE TABLE IF NOT EXISTS jurisdicciones(
@@ -10,6 +9,14 @@ module.exports = [
             credito_comprometido INTEGER DEFAULT 0 NOT NULL,
             credito_devengado INTEGER DEFAULT 0 NOT NULL,
             credito_pagado INTEGER DEFAULT 0 NOT NULL,
+            credito_original INTEGER DEFAULT 0 NOT NULL,
+            credito_presupuestado_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_vigente_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_comprometido_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_devengado_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_pagado_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_original_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_original_posiblemente_modificado BOOLEAN DEFAULT 0 NOT NULL,
             UNIQUE(year, name)
         )
     `,
@@ -24,6 +31,14 @@ module.exports = [
             credito_comprometido INTEGER DEFAULT 0 NOT NULL,
             credito_devengado INTEGER DEFAULT 0 NOT NULL,
             credito_pagado INTEGER DEFAULT 0 NOT NULL,
+            credito_original INTEGER DEFAULT 0 NOT NULL,
+            credito_presupuestado_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_vigente_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_comprometido_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_devengado_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_pagado_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_original_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_original_posiblemente_modificado BOOLEAN DEFAULT 0 NOT NULL,
             CONSTRAINT foreign_key_jurisdiccion FOREIGN KEY (jurisdiccion_id) REFERENCES jurisdicciones (id),
             UNIQUE(year, jurisdiccion_id, name)
         )
@@ -40,6 +55,14 @@ module.exports = [
             credito_comprometido INTEGER DEFAULT 0 NOT NULL,
             credito_devengado INTEGER DEFAULT 0 NOT NULL,
             credito_pagado INTEGER DEFAULT 0 NOT NULL,
+            credito_original INTEGER DEFAULT 0 NOT NULL,
+            credito_presupuestado_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_vigente_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_comprometido_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_devengado_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_pagado_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_original_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_original_posiblemente_modificado BOOLEAN DEFAULT 0 NOT NULL,
             CONSTRAINT foreign_key_jurisdiccion FOREIGN KEY (jurisdiccion_id) REFERENCES jurisdicciones (id),
             CONSTRAINT foreign_key_entidad FOREIGN KEY (entidad_id) REFERENCES entidades (id),
             UNIQUE(year, jurisdiccion_id, entidad_id, name)
@@ -58,6 +81,14 @@ module.exports = [
             credito_comprometido INTEGER DEFAULT 0 NOT NULL,
             credito_devengado INTEGER DEFAULT 0 NOT NULL,
             credito_pagado INTEGER DEFAULT 0 NOT NULL,
+            credito_original INTEGER DEFAULT 0 NOT NULL,
+            credito_presupuestado_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_vigente_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_comprometido_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_devengado_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_pagado_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_original_ajustado INTEGER DEFAULT 0 NOT NULL,
+            credito_original_posiblemente_modificado BOOLEAN DEFAULT 0 NOT NULL,
             CONSTRAINT foreign_key_jurisdiccion FOREIGN KEY (jurisdiccion_id) REFERENCES jurisdicciones (id),
             CONSTRAINT foreign_key_entidad FOREIGN KEY (entidad_id) REFERENCES entidades (id),
             CONSTRAINT foreign_key_programa FOREIGN KEY (programa_id) REFERENCES programas (id),
