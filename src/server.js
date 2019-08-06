@@ -10,11 +10,13 @@ const app = express();
 
 app.use(cookieParser());
 
+// TODO: configure cache maxAge and inmutable after js and css files have hashed filenames
 const clientFolderPath = path.join(__dirname, '..', 'dist');
 app.use('/static', express.static(clientFolderPath));
 
 const staticFolderPath = path.join(__dirname, '..', 'public');
-app.use('/static', express.static(staticFolderPath));
+const staticMiddleware = express.static(staticFolderPath, {maxAge: '1y', immutable: true});
+app.use('/static', staticMiddleware);
 
 
 app.use('/', appRouter);
