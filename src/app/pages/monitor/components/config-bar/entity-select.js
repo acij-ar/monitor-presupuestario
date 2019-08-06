@@ -16,8 +16,20 @@ class EntitySelect extends React.Component {
     }
 
     static onInputSearch(searchInput) {
+        if (searchInput.trim().length < 2) {
+            return Promise.resolve([])
+        }
+        if (this.cancellationSource) {
+            this.cancellationSource.cancel();
+        }
+        this.cancellationSource = axios.CancelToken.source();
+        const cancelToken = this.cancellationSource.token;
         const params = {q: searchInput};
-        return axios.get('/api/db/search', {params}).then(response => response.data)
+        return axios.get('/api/db/search', {params, cancelToken})
+            .then(response => {
+                this.cancellationSource = null;
+                return response.data
+            })
     }
 
     render() {
