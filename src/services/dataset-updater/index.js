@@ -16,16 +16,16 @@ class DatasetUpdater {
         }
         this.processing = true;
         const dataset = availableDatasets.find(file => file.filename === datasetFilename);
-        const {id: fileId, rawPath, filePath} = dataset;
+        const {id: fileId, rawPath, filePath, isYearDataset} = dataset;
 
         console.log(`Downloading ${fileId} to ${rawPath}`);
         await googleDriveClient.downloadFile({fileId, outputPath: rawPath});
 
-        if (datasetFilename === 'inflacion.csv') {
+        if (isYearDataset) {
+            await datasetCleaner(dataset);
+        } else {
             console.log('Skipping cleaning routine');
             fs.copyFileSync(rawPath, filePath)
-        } else {
-            await datasetCleaner(dataset);
         }
 
         await csv2json();

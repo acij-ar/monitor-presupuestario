@@ -122,6 +122,13 @@ module.exports = {
                 rawPath: path.join(rawDataFolderPath, 'inflacion.csv'),
                 filePath: path.join(finalFolderPath, 'inflacion.csv'),
             },
+            {
+                id: '12BTAmrKzSg5-9biUlcOVSbkYeP0zbuI4',
+                filename: 'presupuesto-original-2019.csv',
+                isYearDataset: false,
+                rawPath: path.join(rawDataFolderPath, 'presupuesto-original-2019.csv'),
+                filePath: path.join(finalFolderPath, 'presupuesto-original-2019.csv'),
+            }
         ],
         columns: [
             {
