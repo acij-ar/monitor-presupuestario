@@ -1,4 +1,3 @@
-const fs = require('fs');
 const availableDatasets = require('../../config').datasets.files;
 const googleDriveClient = require('./google-drive-client');
 const datasetCleaner = require('./cleaner');
@@ -16,18 +15,9 @@ class DatasetUpdater {
         }
         this.processing = true;
         const dataset = availableDatasets.find(file => file.filename === datasetFilename);
-        const {id: fileId, rawPath, filePath, isYearDataset} = dataset;
-
-        console.log(`Downloading ${fileId} to ${rawPath}`);
+        const {id: fileId, rawPath} = dataset;
         await googleDriveClient.downloadFile({fileId, outputPath: rawPath});
-
-        if (isYearDataset) {
-            await datasetCleaner(dataset);
-        } else {
-            console.log('Skipping cleaning routine');
-            fs.copyFileSync(rawPath, filePath)
-        }
-
+        await datasetCleaner(dataset);
         await csv2json();
         await dbUpdater();
 

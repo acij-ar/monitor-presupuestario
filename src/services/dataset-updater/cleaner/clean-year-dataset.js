@@ -1,16 +1,8 @@
 const csv = require('fast-csv');
 const fs = require('fs');
 const CSVWriteStream = require('csv-write-stream');
-const columns = require('../../config').datasets.columns;
-
-const parseNumericValue = numericString => {
-    if (numericString.includes(',')) {
-        const [ integerString, decimalString ] = numericString.split(',');
-        const decimalValue = parseFloat(`0.${decimalString}`) * 1e6;
-        return parseInt(integerString) * 1e6 + Math.floor(decimalValue)
-    }
-    return parseInt(numericString) * 1e6;
-};
+const { datasets: { columns } } = require('../../../config');
+const parseNumericValue = require('./parse-numeric-value');
 
 module.exports = ({rawPath, filePath}) => {
     console.log(`Cleaning file ${rawPath}`);

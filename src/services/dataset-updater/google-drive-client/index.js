@@ -60,6 +60,7 @@ class GoogleDriveClient {
     }
 
     downloadFile({ fileId, outputPath }) {
+        console.log(`Downloading ${fileId} to ${outputPath}`);
         const dest = fs.createWriteStream(outputPath);
         return new Promise((resolve, reject) => {
             this.client.files.get(
