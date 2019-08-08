@@ -1,8 +1,6 @@
 const csv = require('fast-csv');
-const fs = require('fs');
-const {datasets, db} = require('../../config');
+const {datasets} = require('../../../config');
 
-const files = datasets.files.filter(({isYearDataset}) => isYearDataset);
 const categories = datasets.columns
     .filter(({categoryLevel}) => typeof categoryLevel === 'number')
     .sort((datasetA, datasetB) => datasetA.categoryLevel - datasetB.categoryLevel)
@@ -35,7 +33,7 @@ const processRowIntoDb = ({row, dbObject}) => {
     })
 };
 
-const processDatasetIntoDB = ({filePath, dbObject}) => (
+module.exports = ({filePath, dbObject}) => (
     new Promise(resolve => (
         fs.createReadStream(filePath)
             .pipe(csv.parse({headers: true}))
@@ -47,19 +45,3 @@ const processDatasetIntoDB = ({filePath, dbObject}) => (
             })
     ))
 );
-
-module.exports = async () => {
-    console.log(`Processing csv files into json db`);
-    const dbObject = {};
-    files.map(({year}) => {
-        dbObject[year] = {};
-        numericColumns.map(column => {
-            dbObject[year][column] = 0;
-        })
-    });
-    const processPromises = files.map(({filePath, year}) => processDatasetIntoDB({filePath, dbObject: dbObject[year]}));
-    await Promise.all(processPromises);
-    const dbString = JSON.stringify(dbObject, null, 2);
-    fs.writeFileSync(db.jsonPath, dbString);
-    console.log('Finished processing csv into json db');
-};
