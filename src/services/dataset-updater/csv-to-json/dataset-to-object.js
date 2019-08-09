@@ -1,3 +1,4 @@
+const fs = require('fs');
 const csv = require('fast-csv');
 const {datasets} = require('../../../config');
 
@@ -9,39 +10,51 @@ const numericColumns = datasets.columns
     .filter(({isNumeric}) => isNumeric)
     .map(({name}) => name);
 
-const processRowIntoDb = ({row, dbObject}) => {
-    let scopedDb = dbObject;
+const addNumericColumns = ({scopedObject, row, inflation}) => (
     numericColumns.map(column => {
-        row[column] = parseInt(row[column]);
-        scopedDb[column] += row[column];
-    });
+        scopedObject[column] += row[column];
+        scopedObject[`${column}_ajustado`] += Math.floor(row[column] * inflation);
+    })
+);
+
+const processRowIntoObject = ({row, dbObject, inflation}) => {
+    let scopedObject = dbObject;
+    addNumericColumns({row, scopedObject, inflation});
+    scopedObject = scopedObject.dependencias;
     categories.map((category, index) => {
         const entityName = row[category];
-        if (!scopedDb[entityName]) {
-            scopedDb[entityName] = {};
-            if (index !== categories.length -1) {
-                scopedDb[entityName].dependencies = {};
+        if (!scopedObject[entityName]) {
+            scopedObject[entityName] = {};
+            if (index !== categories.length - 1) {
+                scopedObject[entityName].dependencias = {};
             }
             numericColumns.map(column => {
-                scopedDb[entityName][column] = 0;
+                scopedObject[entityName][column] = 0;
+                scopedObject[entityName][`${column}_ajustado`] = 0;
             })
         }
-        numericColumns.map(column => {
-            scopedDb[entityName][column] += row[column];
-        });
-        scopedDb = scopedDb[entityName].dependencies;
+        addNumericColumns({row, scopedObject: scopedObject[entityName], inflation});
+        scopedObject = scopedObject[entityName].dependencias;
     })
 };
 
-module.exports = ({filePath, dbObject}) => (
-    new Promise(resolve => (
+module.exports = async ({filePath, dbObject, inflation, jsonPath}) => {
+    const processPromise = new Promise(resolve => (
         fs.createReadStream(filePath)
             .pipe(csv.parse({headers: true}))
             .on('data', row => {
-                processRowIntoDb({row, dbObject})
+                numericColumns.map(column => {
+                    row[column] = parseInt(row[column]);
+                });
+                processRowIntoObject({row, dbObject, inflation})
             })
             .on('end', () => {
                 resolve();
             })
-    ))
-);
+    ));
+    await processPromise;
+    console.log(`Writing ${jsonPath}`);
+    const dbString = JSON.stringify(dbObject, null, 2);
+    fs.writeFileSync(jsonPath, dbString);
+    console.log(`Finished processing ${jsonPath}`);
+};
