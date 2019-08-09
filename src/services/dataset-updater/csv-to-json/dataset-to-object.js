@@ -10,12 +10,14 @@ const numericColumns = datasets.columns
     .filter(({isNumeric}) => isNumeric)
     .map(({name}) => name);
 
-const addNumericColumns = ({scopedObject, row, inflation}) => (
+const addNumericColumns = ({scopedObject, row, inflation}) => {
     numericColumns.map(column => {
         scopedObject[column] += row[column];
         scopedObject[`${column}_ajustado`] += Math.floor(row[column] * inflation);
-    })
-);
+    });
+    scopedObject['credito_original'] = scopedObject['credito_presupuestado'];
+    scopedObject['credito_original_ajustado'] = scopedObject['credito_presupuestado_ajustado'];
+};
 
 const processRowIntoObject = ({row, dbObject, inflation}) => {
     let scopedObject = dbObject;
@@ -31,6 +33,8 @@ const processRowIntoObject = ({row, dbObject, inflation}) => {
             numericColumns.map(column => {
                 scopedObject[entityName][column] = 0;
                 scopedObject[entityName][`${column}_ajustado`] = 0;
+                scopedObject[entityName]['credito_original'] = 0;
+                scopedObject[entityName]['credito_original_ajustado'] = 0;
             })
         }
         addNumericColumns({row, scopedObject: scopedObject[entityName], inflation});
