@@ -2,9 +2,10 @@ const loadInflationDataset = require('../load-inflation-dataset');
 const db = require('../../../db');
 
 const baseColumns = [
-    'name', 'year', 'credito_presupuestado', 'credito_vigente', 'credito_comprometido',
+    'name', 'year', 'credito_presupuestado', 'credito_vigente', 'credito_comprometido', 'credito_original',
     'credito_devengado', 'credito_pagado', 'credito_presupuestado_ajustado', 'credito_vigente_ajustado',
     'credito_comprometido_ajustado', 'credito_devengado_ajustado', 'credito_pagado_ajustado',
+    'credito_original_ajustado', 'credito_original_posiblemente_modificado',
 ];
 
 class InsertWithInflation {
@@ -13,6 +14,7 @@ class InsertWithInflation {
     }
 
     insert({tableName, extraColumns = [], object}) {
+        object.credito_original_posiblemente_modificado = !!object.credito_original_posiblemente_modificado;
         const columns = [...extraColumns, ...baseColumns];
         const insertColumns = columns.join(', ');
         const objectWithInflation = this.calculateInflationColumns(object);
