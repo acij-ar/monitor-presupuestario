@@ -3,6 +3,7 @@ const googleDriveClient = require('./google-drive-client');
 const datasetCleaner = require('./cleaner');
 const csv2json = require('./csv-to-json');
 const dbUpdater = require('./db-updater');
+const updateOriginalBudget = require('./update-original-budget');
 
 class DatasetUpdater {
     constructor() {
@@ -19,6 +20,7 @@ class DatasetUpdater {
         await googleDriveClient.downloadFile({fileId, outputPath: rawPath});
         await datasetCleaner(dataset);
         await csv2json();
+        await updateOriginalBudget();
         await dbUpdater();
 
         this.processing = false;
