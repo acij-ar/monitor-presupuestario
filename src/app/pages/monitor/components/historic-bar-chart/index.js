@@ -20,8 +20,8 @@ class HistoricBarChar extends React.Component {
 
     downloadBarChartData() {
         const {selectedYears, selectedBudgets, selectedEntities} = this.props;
-        const params = {selectedYears, selectedBudgets, selectedEntities};
-        axios.get('/api/db/bar-chart', {params})
+        const data = {selectedYears, selectedBudgets, selectedEntities};
+        axios.post('/api/db/bar-chart', data)
             .then(response => this.setState({config: response.data, props: this.props}));
     }
 
