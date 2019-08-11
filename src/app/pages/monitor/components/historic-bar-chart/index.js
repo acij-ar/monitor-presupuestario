@@ -2,7 +2,7 @@ const React = require('react');
 const axios = require('axios');
 const ReactHighcharts = require('react-highcharts');
 
-class BarChar extends React.Component {
+class HistoricBarChar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -37,5 +37,5 @@ class BarChar extends React.Component {
     }
 }
 
-module.exports = BarChar;
+module.exports = HistoricBarChar;
 
