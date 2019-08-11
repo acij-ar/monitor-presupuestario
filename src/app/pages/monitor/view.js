@@ -6,6 +6,7 @@ const availableBudgets = require('./helpers/available-budgets');
 const EntitySelect = require('./components/config-bar/entity-select');
 const YearSelect = require('./components/config-bar/year-select');
 const BudgetSelect = require('./components/config-bar/budget-select');
+const BarChart = require('./components/bar-chart');
 require('./index.scss');
 
 class App extends React.Component {
@@ -58,6 +59,12 @@ class App extends React.Component {
                     </div>
                 </div>
 
+                <BarChart
+                    selectedYears={selectedYears}
+                    selectedBudgets={selectedBudgets}
+                    selectedEntities={selectedEntities}
+                />
+
                 {
                     onlyOneCaseSelected &&
                     <Treemap
@@ -67,8 +74,6 @@ class App extends React.Component {
                         parentTable={selectedEntities[0].table}
                     />
                 }
-
-                <div style={{minHeight: '500px'}} />
             </Page>
         );
     }
