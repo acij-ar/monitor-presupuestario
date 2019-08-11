@@ -3,6 +3,22 @@ const db = require('../../../db');
 const {datasets: { files }} = require('../../../../config');
 const insertWithInflation = require('./insert-with-inflation');
 
+const updateYear = async ({jsonPath, year}) => {
+    const jsonContent = fs.readFileSync(jsonPath);
+    const jsonDB = JSON.parse(jsonContent);
+    jsonDB.year = year;
+    jsonDB.name = year;
+    await insertWithInflation.insert({tableName: 'años', object: jsonDB});
+    const jurisdictionPromsies = Object.keys(jsonDB.dependencias).map(jurisdiccion => (
+        updateJurisdiction({
+            name: jurisdiccion,
+            year: year,
+            ...jsonDB.dependencias[jurisdiccion]
+        })
+    ));
+    return Promise.all(jurisdictionPromsies)
+};
+
 const updateJurisdiction = async (jurisdiccion) => {
     const {lastID} = await insertWithInflation.insert({tableName: 'jurisdicciones', object: jurisdiccion});
     const entityInsertPromises = Object.keys(jurisdiccion.dependencias).map(entidad => (
@@ -55,17 +71,6 @@ const updateActivity = (activity) => {
 module.exports = async() => {
     await db.initPromise;
     await insertWithInflation.init();
-    const updatePromises = files.filter(({isYearDataset}) => isYearDataset).map(({jsonPath, year}) => {
-        const jsonContent = fs.readFileSync(jsonPath);
-        const jsonDB = JSON.parse(jsonContent);
-        const jurisdictionPromsies = Object.keys(jsonDB.dependencias).map(jurisdiccion => (
-            updateJurisdiction({
-                name: jurisdiccion,
-                year: year,
-                ...jsonDB.dependencias[jurisdiccion]
-            })
-        ));
-        return Promise.all(jurisdictionPromsies)
-    });
+    const updatePromises = files.filter(({isYearDataset}) => isYearDataset).map(updateYear);
     await Promise.all(updatePromises);
 };

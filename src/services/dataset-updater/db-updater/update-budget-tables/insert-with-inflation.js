@@ -26,7 +26,7 @@ class InsertWithInflation {
     calculateInflationColumns(object) {
         const inflationRate = this.inflation[object.year];
         const budgetColumns = [
-            'credito_presupuestado', 'credito_vigente', 'credito_comprometido', 'credito_devengado', 'credito_pagado'
+            'credito_presupuestado', 'credito_vigente', 'credito_comprometido', 'credito_devengado', 'credito_pagado', 'credito_original'
         ];
         budgetColumns.map(column => {
             object[`${column}_ajustado`] = (object[column] || 0) * inflationRate;
