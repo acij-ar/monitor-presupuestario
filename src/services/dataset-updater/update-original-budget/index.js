@@ -1,5 +1,6 @@
 const fs = require('fs');
 const csv = require('fast-csv');
+const _ = require('lodash');
 const {datasets: { files }} = require('../../../config');
 const loadInflationDataset = require('../db-updater/load-inflation-dataset');
 
@@ -28,7 +29,7 @@ const updateBudgetInObject = ({correction, jsonObject, inflation}) => {
     const budgetCorrection = parseInt(correction.aumento);
     let targetObject = jsonObject;
     ['jurisdiccion', 'entidad', 'programa', 'actividad'].map(category => {
-        const targetName = correction[category];
+        const targetName = _.deburr(correction[category]);
         if (targetName && targetObject.dependencias[targetName]) {
             targetObject = targetObject.dependencias[targetName];
             if (!isNaN(budgetCorrection)) {

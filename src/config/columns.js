@@ -1,3 +1,5 @@
+// TODO: all uses of the credito_* columns should come from here
+
 module.exports = [
     {
         name: 'jurisdiccion_desc',

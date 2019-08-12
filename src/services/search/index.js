@@ -12,7 +12,7 @@ class SearchService {
 
     async init() {
         this.index = elasticlunr();
-        this.index.addField('asciiName');
+        this.index.addField('label');
         this.index.setRef('value');
         await db.initPromise;
         const tables = ['jurisdicciones', 'programas', 'actividades'];

@@ -1,6 +1,7 @@
 const fs = require('fs');
 const csv = require('fast-csv');
 const {datasets} = require('../../../config');
+const _ = require('lodash');
 
 const categories = datasets.columns
     .filter(({categoryLevel}) => typeof categoryLevel === 'number')
@@ -24,7 +25,7 @@ const processRowIntoObject = ({row, dbObject, inflation}) => {
     addNumericColumns({row, scopedObject, inflation});
     scopedObject = scopedObject.dependencias;
     categories.map((category, index) => {
-        const entityName = row[category];
+        const entityName = _.deburr(row[category]);
         if (!scopedObject[entityName]) {
             scopedObject[entityName] = {};
             if (index !== categories.length - 1) {
@@ -43,7 +44,7 @@ const processRowIntoObject = ({row, dbObject, inflation}) => {
 };
 
 module.exports = async ({filePath, dbObject, inflation, jsonPath}) => {
-    const processPromise = new Promise(resolve => (
+    await new Promise(resolve => (
         fs.createReadStream(filePath)
             .pipe(csv.parse({headers: true}))
             .on('data', row => {
@@ -56,7 +57,6 @@ module.exports = async ({filePath, dbObject, inflation, jsonPath}) => {
                 resolve();
             })
     ));
-    await processPromise;
     console.log(`Writing ${jsonPath}`);
     const dbString = JSON.stringify(dbObject, null, 2);
     fs.writeFileSync(jsonPath, dbString);

@@ -7,7 +7,6 @@ module.exports = ({ results, table }) => {
             processedResults[name] = {
                 table,
                 label: name,
-                asciiName: _.deburr(name),
                 variants: [],
                 value: `${table}-${name}`,
             };
