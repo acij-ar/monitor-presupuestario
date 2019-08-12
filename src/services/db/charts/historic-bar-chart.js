@@ -6,15 +6,15 @@ const availableBudgets = require('../../../app/pages/monitor/helpers/available-b
 module.exports = async ({selectedYears, selectedBudgets, selectedEntities}) => {
     const years = _.sortBy((selectedYears || availableYears).map(year => year.label));
     const budgets = (selectedBudgets || availableBudgets).map(budget => budget.value);
-    const entities = selectedEntities || [{table: 'años', label: 'Presupuesto total'}];
+    const entities = selectedEntities || [{table: 'años', name: 'Presupuesto total'}];
 
     const series = [];
-    const seriesPromises = entities.map(({table, label}) => (
-        db.sqlite.all(`SELECT year, ${budgets.join(', ')} FROM ${table} WHERE name = ? ORDER BY year ASC`, label)
+    const seriesPromises = entities.map(({table, name}) => (
+        db.sqlite.all(`SELECT year, ${budgets.join(', ')} FROM ${table} WHERE name = ? ORDER BY year ASC`, name)
             .then((results) => {
                 budgets.map(budget => {
                     const serie = {
-                        name: `${label} - ${budget}`,
+                        name: `${name} - ${budget}`,
                         data: [],
                     };
                     const budgetByYear = {};
