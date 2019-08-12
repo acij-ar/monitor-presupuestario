@@ -12,7 +12,6 @@ module.exports = async ({selectedYears, selectedBudgets, selectedEntities}) => {
     const seriesPromises = entities.map(({table, label}) => (
         db.sqlite.all(`SELECT year, ${budgets.join(', ')} FROM ${table} WHERE name = ? ORDER BY year ASC`, label)
             .then((results) => {
-                console.log(results);
                 budgets.map(budget => {
                     const serie = {
                         name: `${label} - ${budget}`,

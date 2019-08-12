@@ -33,7 +33,7 @@ const updateBudgetInObject = ({correction, jsonObject, inflation}) => {
             targetObject = targetObject.dependencias[targetName];
             if (!isNaN(budgetCorrection)) {
                 targetObject.credito_original += budgetCorrection;
-                targetObject.credito_original_ajustado += Math.floor(budgetCorrection * inflation);
+                targetObject.credito_original_ajustado += budgetCorrection * inflation;
             }
         } else if (targetName) {
             console.log(`Warning: can't find ${JSON.stringify(correction, null, 2)}`)

@@ -13,7 +13,7 @@ const numericColumns = datasets.columns
 const addNumericColumns = ({scopedObject, row, inflation}) => {
     numericColumns.map(column => {
         scopedObject[column] += row[column];
-        scopedObject[`${column}_ajustado`] += Math.floor(row[column] * inflation);
+        scopedObject[`${column}_ajustado`] += row[column] * inflation;
     });
     scopedObject['credito_original'] = scopedObject['credito_presupuestado'];
     scopedObject['credito_original_ajustado'] = scopedObject['credito_presupuestado_ajustado'];
