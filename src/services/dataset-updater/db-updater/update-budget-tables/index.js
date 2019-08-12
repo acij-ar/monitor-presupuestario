@@ -7,7 +7,7 @@ const updateYear = async ({jsonPath, year}) => {
     const jsonContent = fs.readFileSync(jsonPath);
     const jsonDB = JSON.parse(jsonContent);
     jsonDB.year = year;
-    jsonDB.name = year;
+    jsonDB.name = 'Presupuesto total';
     await insertWithInflation.insert({tableName: 'años', object: jsonDB});
     const jurisdictionPromsies = Object.keys(jsonDB.dependencias).map(jurisdiccion => (
         updateJurisdiction({

@@ -24,7 +24,7 @@ router.get('/treemap', async (req, res) => {
 
 router.post('/bar-chart', async (req, res) => {
     const {selectedYears, selectedBudgets, selectedEntities} = req.body;
-    const barchartData = await ChartsData.barchart({selectedYears, selectedBudgets, selectedEntities});
+    const barchartData = await ChartsData.historicBarchart({selectedYears, selectedBudgets, selectedEntities});
     res.json(barchartData)
 });
 
