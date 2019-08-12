@@ -1,6 +1,6 @@
 const path = require('path');
 
-const dataFolderPath = path.join(__dirname, '..', 'data');
+const dataFolderPath = path.join(__dirname, '..', '..', 'data');
 const rawDataFolderPath = path.join(dataFolderPath, 'raw');
 const finalFolderPath = path.join(dataFolderPath, 'cleaned');
 const jsonFolderPath = path.join(dataFolderPath, 'json');
