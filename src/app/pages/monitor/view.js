@@ -1,8 +1,6 @@
 const React = require('react');
 const Page = require('../../components/page');
 const Treemap = require('./components/treemap');
-const availableYears = require('./helpers/available-years');
-const availableBudgets = require('./helpers/available-budgets');
 const EntitySelect = require('./components/config-bar/entity-select');
 const YearSelect = require('./components/config-bar/year-select');
 const BudgetSelect = require('./components/config-bar/budget-select');
@@ -12,12 +10,10 @@ require('./index.scss');
 class App extends React.Component {
     constructor(props) {
         super(props);
-        const defaultYears = [availableYears[0], availableYears[1]];
-        const defaultBudget = availableBudgets[0];
         this.state = {
-            selectedYears: defaultYears,
-            selectedBudgets: [defaultBudget],
-            selectedEntities: [],
+            selectedYears: null,
+            selectedBudgets: null,
+            selectedEntities: null,
         };
         this.onSelectedEntitiesChange = this.onSelectedEntitiesChange.bind(this);
         this.onSelectedYearsChange = this.onSelectedYearsChange.bind(this);
@@ -25,15 +21,21 @@ class App extends React.Component {
     }
 
     onSelectedEntitiesChange(selectedEntities) {
-        this.setState({selectedEntities})
+        this.setState({
+            selectedEntities: selectedEntities && selectedEntities.length ? selectedEntities : null,
+        })
     }
 
     onSelectedYearsChange(selectedYears) {
-        this.setState({selectedYears});
+        this.setState({
+            selectedYears: selectedYears && selectedYears.length ? selectedYears : null,
+        });
     }
 
     onSelectedBudgetsChange(selectedBudgets) {
-        this.setState({selectedBudgets});
+        this.setState({
+            selectedBudgets: selectedBudgets && selectedBudgets.length ? selectedBudgets : null,
+        });
     }
 
     render() {
