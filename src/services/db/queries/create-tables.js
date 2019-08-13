@@ -115,12 +115,5 @@ module.exports = [
             CONSTRAINT foreign_key_programa FOREIGN KEY (programa_id) REFERENCES programas (id),
             UNIQUE(year, jurisdiccion_id, entidad_id, programa_id, name)
         )
-    `,
-    `
-        CREATE TABLE IF NOT EXISTS inflacion(
-            year INTEGER NOT NULL,
-            inflacion REAL NOT NULL,
-            UNIQUE(year)
-        )
     `
 ];
