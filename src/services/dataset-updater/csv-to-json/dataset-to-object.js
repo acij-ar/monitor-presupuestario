@@ -57,7 +57,6 @@ module.exports = async ({filePath, dbObject, inflation, jsonPath}) => {
                 resolve();
             })
     ));
-    console.log(`Writing ${jsonPath}`);
     const dbString = JSON.stringify(dbObject, null, 2);
     fs.writeFileSync(jsonPath, dbString);
     console.log(`Finished processing ${jsonPath}`);

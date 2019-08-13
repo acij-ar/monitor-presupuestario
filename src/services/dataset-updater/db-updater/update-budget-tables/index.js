@@ -71,6 +71,13 @@ const updateActivity = (activity) => {
 module.exports = async() => {
     await db.initPromise;
     await insertWithInflation.init();
-    const updatePromises = files.filter(({isYearDataset}) => isYearDataset).map(updateYear);
-    await Promise.all(updatePromises);
+    let fileIndex = 0;
+    while (fileIndex < files.length) {
+        const file = files[fileIndex];
+        if (file.isYearDataset) {
+            console.log(`Updating db for year ${file.year}`);
+            await updateYear(file)
+        }
+        fileIndex += 1;
+    }
 };
