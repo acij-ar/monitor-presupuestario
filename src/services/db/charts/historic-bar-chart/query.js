@@ -1,4 +1,4 @@
-const db = require('..');
+const db = require('../..');
 const _ = require('lodash');
 const availableYears = require('../../../../app/pages/monitor/helpers/available-years');
 const availableBudgets = require('../../../../app/pages/monitor/helpers/available-budgets');
