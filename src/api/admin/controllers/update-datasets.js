@@ -10,7 +10,7 @@ const updateDataset = (req, res) => {
 
 const jobStatus = async (req, res) => {
     if (datasetUpdater.processing) {
-        res.json({processing: true});
+        res.json({processing: true, step: datasetUpdater.step});
     } else {
         res.json({result: await datasetsStats()})
     }
