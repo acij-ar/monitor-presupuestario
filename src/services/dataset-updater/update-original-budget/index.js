@@ -28,6 +28,10 @@ const markAllChildrenAsPossiblyModified = (jsonObject) => {
 const updateBudgetInObject = ({correction, jsonObject, inflation}) => {
     const budgetCorrection = parseInt(correction.aumento);
     let targetObject = jsonObject;
+    if (!isNaN(budgetCorrection)) {
+        targetObject.credito_original += budgetCorrection;
+        targetObject.credito_original_ajustado += budgetCorrection * inflation;
+    }
     ['jurisdiccion', 'entidad', 'programa', 'actividad'].map(category => {
         const targetName = _.deburr(correction[category]);
         if (targetName && targetObject.dependencias[targetName]) {
