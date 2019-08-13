@@ -16,24 +16,23 @@ class DatasetUpdater {
             return;
         }
         this.processing = true;
-        this.step = 'Iniciando descarga';
+        this.step = 'Descargando (paso 1 de 5)';
 
         const dataset = availableDatasets.find(file => file.filename === datasetFilename);
         const {id: fileId, rawPath} = dataset;
 
-        this.step = 'Descargando';
         await googleDriveClient.downloadFile({fileId, outputPath: rawPath});
 
-        this.step = 'Limpiando dataset';
+        this.step = 'Limpiando datasets (paso 2 de 5)';
         await datasetCleaner(dataset);
 
-        this.step = 'Convirtiendo csv a json';
+        this.step = 'Convirtiendo CSVs a JSON (paso 3 de 5)';
         await csv2json();
 
-        this.step = 'Actualizando presupuesto original';
+        this.step = 'Actualizando presupuesto original (paso 4 de 5)';
         await updateOriginalBudget();
 
-        this.step = 'Actualizando presupuesto original';
+        this.step = 'Actualizando base de datos (paso 5 de 5)';
         await dbUpdater();
 
         this.processing = false;

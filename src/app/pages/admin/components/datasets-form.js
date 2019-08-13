@@ -10,6 +10,7 @@ class DatasetForm extends React.Component {
             updateError: false,
             saveSuccessfull: false,
             datasets: this.props.datasets,
+            step: null,
         };
         this.checkStatus = this.checkStatus.bind(this);
     }
@@ -38,7 +39,8 @@ class DatasetForm extends React.Component {
                         saveSuccessfull: true,
                     })
                 } else {
-                    setTimeout(this.checkStatus, 5e3)
+                    setTimeout(this.checkStatus, 5e3);
+                    this.setState({step: data.step});
                 }
             })
             .catch(() => {
@@ -78,7 +80,7 @@ class DatasetForm extends React.Component {
                         </tbody>
                     </table>
                     <div>
-                        {processingDataset && 'Descargando...'}
+                        {processingDataset && this.state.step}
                         {saveSuccessfull && 'Descarga exitosa ✅'}
                         {updateError && 'Error al descargar ❌'}
                     </div>
