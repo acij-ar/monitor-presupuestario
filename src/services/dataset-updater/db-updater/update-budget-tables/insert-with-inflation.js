@@ -11,16 +11,26 @@ const baseColumns = [
 class InsertWithInflation {
     async init() {
         this.inflation = await loadInflationDataset();
+        this.statements = {};
+    }
+
+    getStatement({tableName, columns}) {
+        if (this.statements[tableName]) {
+            return this.statements[tableName]
+        }
+        const insertColumns = columns.join(', ');
+        const placeholders = columns.map(() => '?').join(', ');
+        const statement = db.sqlite.prepare(`INSERT INTO ${tableName}(${insertColumns}) VALUES(${placeholders})`);
+        this.statements[tableName] = statement;
+        return statement
     }
 
     insert({tableName, extraColumns = [], object}) {
         object.credito_original_posiblemente_modificado = object.credito_original_posiblemente_modificado ? 1 : 0;
         const columns = [...extraColumns, ...baseColumns];
-        const insertColumns = columns.join(', ');
         const objectWithInflation = this.calculateInflationColumns(object);
         const values = columns.map(column => objectWithInflation[column]);
-        const placeholders = values.map(() => '?').join(', ');
-        return db.sqlite.prepare(`INSERT INTO ${tableName}(${insertColumns}) VALUES(${placeholders})`).run(values)
+        return this.getStatement({tableName, columns}).run(values)
     }
 
     calculateInflationColumns(object) {
