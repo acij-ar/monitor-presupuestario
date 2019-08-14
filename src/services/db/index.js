@@ -1,7 +1,8 @@
 const Database = require('better-sqlite3');
 const {path} = require('../../config').db;
 const createTablesIfNotExistQueries = require('./queries/create-tables');
-const { db: dbConfig } = require('../../config');
+const { db: { tables } } = require('../../config');
+const _ = require('lodash');
 
 // TODO: improve performance in servhttps://www.npmjs.com/package/better-sqlite3
 
@@ -16,7 +17,9 @@ class DataBase {
     }
 
     dropTables() {
-        dbConfig.tables.map(table => this.sqlite.prepare(`DROP TABLE IF EXISTS ${table.name}`));
+        _.sortBy(tables, 'dropOrder').map(table =>
+            this.sqlite.prepare(`DROP TABLE IF EXISTS ${table.name}`).run()
+        );
     }
 }
 

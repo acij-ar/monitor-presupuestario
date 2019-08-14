@@ -29,10 +29,6 @@ module.exports = async () => {
         dbObject: dbObject[year],
         inflation: inflation[year]
     });
-    let fileIndex = 0;
-    while (fileIndex < files.length) {
-        const file = files[fileIndex];
-        await processDataset(file);
-        fileIndex += 1;
-    }
+    const processPromises = files.map(processDataset);
+    await Promise.all(processPromises);
 };

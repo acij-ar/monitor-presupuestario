@@ -14,7 +14,7 @@ class InsertWithInflation {
     }
 
     insert({tableName, extraColumns = [], object}) {
-        object.credito_original_posiblemente_modificado = !!object.credito_original_posiblemente_modificado;
+        object.credito_original_posiblemente_modificado = object.credito_original_posiblemente_modificado ? 1 : 0;
         const columns = [...extraColumns, ...baseColumns];
         const insertColumns = columns.join(', ');
         const objectWithInflation = this.calculateInflationColumns(object);
