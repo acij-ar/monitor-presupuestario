@@ -69,7 +69,6 @@ const updateActivity = (activity) => {
 };
 
 module.exports = async() => {
-    await db.initPromise;
     await insertWithInflation.init();
     let fileIndex = 0;
     while (fileIndex < files.length) {

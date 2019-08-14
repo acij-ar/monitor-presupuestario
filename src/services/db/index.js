@@ -1,26 +1,23 @@
-const sqlite = require('sqlite');
+const Database = require('better-sqlite3');
 const {path} = require('../../config').db;
 const createTablesIfNotExistQueries = require('./queries/create-tables');
-const dropTableQueries = require('./queries/drop-tables');
+const { db: dbConfig } = require('../../config');
+
+// TODO: improve performance in servhttps://www.npmjs.com/package/better-sqlite3
 
 class DataBase {
     constructor() {
-        this.initPromise = this.init();
-    }
-
-    async init() {
-        this.sqlite = await sqlite.open(path);
-        await this.createTablesIfNotExist();
+        this.sqlite = new Database(path);
+        this.createTablesIfNotExist();
     }
 
     createTablesIfNotExist() {
-        const createTablesPromises = createTablesIfNotExistQueries.map(query => this.sqlite.run(query));
-        return Promise.all(createTablesPromises)
+        createTablesIfNotExistQueries.map(query => this.sqlite.prepare(query).run());
     }
 
     dropTables() {
-        const dropTablePromises = dropTableQueries.map(query => this.sqlite.run(query));
-        return Promise.all(dropTablePromises);
+        const statement = this.sqlite.prepare('DROP TABLE IF EXISTS $name');
+        dbConfig.tables.map(table => statement.run(table));
     }
 }
 

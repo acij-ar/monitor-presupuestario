@@ -3,7 +3,6 @@ const db = require('../../db');
 
 module.exports = async () => {
     console.log('Started updating db');
-    await db.initPromise;
     await db.dropTables();
     await db.createTablesIfNotExist();
     await updateBudgetTables();

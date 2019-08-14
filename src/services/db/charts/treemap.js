@@ -13,8 +13,17 @@ module.exports = async ({parentTable, parentName, year, budgetType}) => {
     const {id: parentId} = parentResult;
     const childTable = parentTable === 'jurisdicciones' ? 'programas' : 'actividades';
     const pkColumn = parentTable === 'jurisdicciones' ? 'jurisdiccion_id' : 'programa_id';
+    const joinTable = parentTable === 'jurisdicciones' ? 'entidades' : parentTable;
     const results = await db.sqlite.all(
-        `SELECT name, id, ${budgetType} FROM ${childTable} WHERE year = ? AND ${pkColumn} = ? ORDER BY ${budgetType} DESC`,
+        `SELECT 
+            ${childTable}.name, 
+            ${childTable}.id, 
+            ${childTable}.${budgetType},
+            ${joinTable}.name AS parentName
+        FROM ${childTable} 
+        INNER JOIN ${joinTable} ON ${joinTable}.id = ${childTable}.${pkColumn}
+        WHERE ${childTable}.year = ? AND ${childTable}.${pkColumn} = ? 
+        ORDER BY ${childTable}.${budgetType} DESC`,
         [year, parentId]
     );
 
@@ -22,7 +31,7 @@ module.exports = async ({parentTable, parentName, year, budgetType}) => {
         data: [
             ['name', 'parent', 'value'],
             ['root', null, _.sumBy(results, budgetType)],
-            ...results.map(result => [result.name, 'root', result[budgetType]])
+            ...results.map(result => [`${result.name} (${result.parentName})`, 'root', result[budgetType]])
         ],
         title,
     }
