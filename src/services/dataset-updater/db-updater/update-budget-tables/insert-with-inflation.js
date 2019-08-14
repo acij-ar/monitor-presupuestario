@@ -20,7 +20,7 @@ class InsertWithInflation {
         const objectWithInflation = this.calculateInflationColumns(object);
         const values = columns.map(column => objectWithInflation[column]);
         const placeholders = values.map(() => '?').join(', ');
-        return db.sqlite.run(`INSERT INTO ${tableName}(${insertColumns}) VALUES(${placeholders})`, values)
+        return db.sqlite.prepare(`INSERT INTO ${tableName}(${insertColumns}) VALUES(${placeholders})`).run(values)
     }
 
     calculateInflationColumns(object) {

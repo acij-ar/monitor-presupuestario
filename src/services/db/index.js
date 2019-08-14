@@ -16,8 +16,7 @@ class DataBase {
     }
 
     dropTables() {
-        const statement = this.sqlite.prepare('DROP TABLE IF EXISTS $name');
-        dbConfig.tables.map(table => statement.run(table));
+        dbConfig.tables.map(table => this.sqlite.prepare(`DROP TABLE IF EXISTS ${table.name}`));
     }
 }
 
