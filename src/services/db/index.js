@@ -9,6 +9,7 @@ const _ = require('lodash');
 class DataBase {
     constructor() {
         this.sqlite = new Database(path);
+        this.sqlite.pragma('journal_mode = WAL');
         this.createTablesIfNotExist();
     }
 
