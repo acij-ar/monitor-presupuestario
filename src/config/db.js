@@ -12,6 +12,7 @@ module.exports = {
         {
             name: 'jurisdicciones',
             isSearchable: true,
+            isDefaultTableForSearchSuggestions: true,
             dropOrder: 3,
         },
         {

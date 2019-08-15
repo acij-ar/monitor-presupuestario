@@ -14,7 +14,7 @@ class SearchService {
 
         dbConfig.tables.filter(table => table.isSearchable).map(table => {
             const results = db.sqlite.prepare(`SELECT year, name, id FROM ${table.name}`).all();
-            const processedResults = resultsToListForSelect({results, table});
+            const processedResults = resultsToListForSelect({results, tableName: table.name});
             processedResults.map(searchableDocument => this.index.addDoc(searchableDocument));
         });
     }

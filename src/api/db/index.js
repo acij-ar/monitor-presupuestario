@@ -10,9 +10,8 @@ router.get('/search', async (req, res) => {
     res.json(results)
 });
 
-router.get('/search-list', async (req, res) => {
-    const {table} = req.query;
-    const results = await searchList({table});
+router.get('/default-search-list', async (req, res) => {
+    const results = await searchList();
     res.json(results)
 });
 

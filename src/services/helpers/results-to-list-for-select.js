@@ -1,14 +1,14 @@
 const _ = require('lodash');
 
-module.exports = ({ results, table }) => {
+module.exports = ({ results, tableName }) => {
     const processedResults = {};
     results.map(({name, year, id}) => {
         if (!processedResults[name]) {
             processedResults[name] = {
-                table,
+                table: tableName,
                 name,
                 variants: [],
-                value: `${table}-${name}`,
+                value: `${tableName}-${name}`,
             };
         }
         if (year && id) {

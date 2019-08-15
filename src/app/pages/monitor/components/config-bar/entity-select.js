@@ -9,8 +9,7 @@ class EntitySelect extends React.Component {
     }
 
     componentDidMount() {
-        const params = {table: 'jurisdicciones'};
-        axios.get('/api/db/search-list', {params}).then(response => {
+        axios.get('/api/db/default-search-list').then(response => {
             this.setState({options: response.data})
         })
     }
