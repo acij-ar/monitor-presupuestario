@@ -17,4 +17,21 @@ module.exports = ({ data, name }) => ({
     credits: {
         enabled: false
     },
+    exporting: {
+        buttons: {
+            contextButton: {
+                menuItems: [
+                    'printChart',
+                    'separator',
+                    'downloadPNG',
+                    'downloadJPEG',
+                    'downloadPDF',
+                    'downloadSVG',
+                    'separator',
+                    'downloadCSV',
+                    'downloadXLS',
+                ],
+            },
+        },
+    },
 });
