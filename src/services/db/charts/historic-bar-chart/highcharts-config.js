@@ -1,6 +1,6 @@
 module.exports = ({ years, series }) => ({
     chart: { type: 'column', height: '400px' },
-    title: {text: 'Presupuesto'},
+    title: {text: null},
     xAxis: {
         categories: years,
         crosshair: true
