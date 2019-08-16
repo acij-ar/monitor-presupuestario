@@ -9,27 +9,26 @@ class HistoricBarChar extends React.Component {
     }
 
     componentDidMount() {
-        this.downloadBarChartData();
+        this.downloadChartData();
     }
 
     componentDidUpdate() {
         if (this.props !== this.state.props) {
-            this.downloadBarChartData();
+            this.downloadChartData();
         }
     }
 
-    downloadBarChartData() {
+    downloadChartData() {
         const {selectedYears, selectedBudgets, selectedEntities} = this.props;
         const data = {selectedYears, selectedBudgets, selectedEntities};
-        axios.post('/api/db/bar-chart', data)
+        axios.post(this.props.endpoint, data)
             .then(response => this.setState({config: response.data, props: this.props}));
     }
 
     render() {
-
         return (
-            <div className="monitor-content monitor-bar-chart">
-                <div className="monitor-bar-chart-container">
+            <div className={`monitor-content monitor-${this.props.name}`}>
+                <div className={`monitor-${this.props.name}-container`}>
                     { this.state.config && <ReactHighcharts config={this.state.config} />}
                 </div>
             </div>

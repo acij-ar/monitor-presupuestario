@@ -1,10 +1,9 @@
 const React = require('react');
 const Page = require('../../components/page');
-const Treemap = require('./components/treemap');
 const EntitySelect = require('./components/config-bar/entity-select');
 const YearSelect = require('./components/config-bar/year-select');
 const BudgetSelect = require('./components/config-bar/budget-select');
-const HistoricBarChart = require('./components/historic-bar-chart');
+const BaseChart = require('./components/charts/base-chart');
 require('./index.scss');
 
 class App extends React.Component {
@@ -41,9 +40,6 @@ class App extends React.Component {
     render() {
         const {title, description} = this.props;
         const {selectedYears, selectedBudgets, selectedEntities} = this.state;
-        const onlyOneCaseSelected = selectedYears && selectedYears.length === 1 &&
-            selectedBudgets && selectedBudgets.length === 1 &&
-            selectedEntities && selectedEntities.length === 1;
         return (
             <Page>
                 <div className="monitor-highlight">
@@ -60,22 +56,13 @@ class App extends React.Component {
                         <BudgetSelect value={selectedBudgets} onChange={this.onSelectedBudgetsChange}/>
                     </div>
                 </div>
-
-                <HistoricBarChart
+                <BaseChart
+                    name="historic-bar-chart"
+                    endpoint="/api/db/historic-bar-chart"
                     selectedYears={selectedYears}
                     selectedBudgets={selectedBudgets}
                     selectedEntities={selectedEntities}
                 />
-
-                {
-                    onlyOneCaseSelected &&
-                    <Treemap
-                        year={selectedYears[0].value}
-                        budgetType={selectedBudgets[0].value}
-                        parentName={selectedEntities[0].label}
-                        parentTable={selectedEntities[0].table}
-                    />
-                }
             </Page>
         );
     }
