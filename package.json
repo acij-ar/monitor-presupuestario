@@ -28,7 +28,6 @@
     "cookie-parser": "^1.4.4",
     "count-lines-in-file": "^1.1.0",
     "css-loader": "^2.1.1",
-    "csv-parser": "^2.3.0",
     "csv-write-stream": "^2.0.0",
     "elasticlunr": "^0.9.5",
     "express": "^4.17.0",
@@ -38,12 +37,9 @@
     "postcss-loader": "^3.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-google-charts": "^3.0.14",
     "react-highcharts": "^16.0.2",
     "react-select": "^3.0.4",
-    "recharts": "^1.6.2",
-    "sass-loader": "^7.1.0",
-    "sqlite": "^3.0.3"
+    "sass-loader": "^7.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
