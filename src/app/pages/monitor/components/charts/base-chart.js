@@ -14,6 +14,8 @@ class HistoricBarChar extends React.Component {
 
     componentDidUpdate() {
         if (this.props !== this.state.props) {
+            this.state.props = this.props;
+            this.setState(this.state);
             this.downloadChartData();
         }
     }
@@ -22,7 +24,7 @@ class HistoricBarChar extends React.Component {
         const {selectedYears, selectedBudgets, selectedEntities} = this.props;
         const data = {selectedYears, selectedBudgets, selectedEntities};
         axios.post(this.props.endpoint, data)
-            .then(response => this.setState({config: response.data, props: this.props}));
+            .then(response => this.setState({config: response.data}));
     }
 
     render() {

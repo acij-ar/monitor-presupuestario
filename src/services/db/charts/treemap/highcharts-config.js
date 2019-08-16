@@ -1,42 +1,17 @@
-module.exports = () => ({
-    colorAxis: {
-        minColor: '#FFFFFF',
-        maxColor: '#00FF00'
-    },
+module.exports = ({ data, name }) => ({
     series: [{
         type: 'treemap',
         layoutAlgorithm: 'squarified',
-        data: [{
-            name: 'A',
-            value: 6,
-            colorValue: 1
-        }, {
-            name: 'B',
-            value: 6,
-            colorValue: 2
-        }, {
-            name: 'C',
-            value: 4,
-            colorValue: 3
-        }, {
-            name: 'D',
-            value: 3,
-            colorValue: 4
-        }, {
-            name: 'E',
-            value: 2,
-            colorValue: 5
-        }, {
-            name: 'F',
-            value: 2,
-            colorValue: 6
-        }, {
-            name: 'G',
-            value: 1,
-            colorValue: 7
-        }]
+        name,
+        data,
     }],
-    title: {
-        text: 'Highcharts Treemap'
-    }
+    tooltip: {
+        headerFormat: '<span style="font-size:12px">{series.name}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{point.name}: </td>' +
+            '<td style="padding:0 0 0 10px; text-align: right"><b>$ {point.value:,.0f}</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    title: {text: null}
 });

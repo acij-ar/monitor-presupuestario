@@ -16,8 +16,8 @@ router.get('/default-search-list', async (req, res) => {
 });
 
 router.post('/treemap', async (req, res) => {
-    const {selectedYears, selectedBudgets, selectedEntities} = req.body;
-    const barchartData = await ChartsData.treemap({selectedYears, selectedBudgets, selectedEntities});
+    const {selectedYear, selectedBudget, selectedEntity} = req.body;
+    const barchartData = await ChartsData.treemap({selectedYear, selectedBudget, selectedEntity});
     res.json(barchartData)
 });
 

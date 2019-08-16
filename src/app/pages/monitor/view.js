@@ -4,6 +4,7 @@ const EntitySelect = require('./components/config-bar/entity-select');
 const YearSelect = require('./components/config-bar/year-select');
 const BudgetSelect = require('./components/config-bar/budget-select');
 const BaseChart = require('./components/charts/base-chart');
+const CarrouselChart = require('./components/charts/carrousel-chart');
 require('./index.scss');
 
 class App extends React.Component {
@@ -56,7 +57,7 @@ class App extends React.Component {
                         <BudgetSelect value={selectedBudgets} onChange={this.onSelectedBudgetsChange}/>
                     </div>
                 </div>
-                <BaseChart
+                <CarrouselChart
                     name="treemap"
                     endpoint="/api/db/treemap"
                     selectedYears={selectedYears}
