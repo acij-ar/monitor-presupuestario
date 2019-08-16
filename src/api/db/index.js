@@ -15,13 +15,13 @@ router.get('/default-search-list', async (req, res) => {
     res.json(results)
 });
 
-router.get('/treemap', async (req, res) => {
-    const {parentTable, parentName, year, budgetType} = req.query;
-    const treemapData = await ChartsData.treemap({parentTable, parentName, year, budgetType});
-    res.json(treemapData)
+router.post('/treemap', async (req, res) => {
+    const {selectedYears, selectedBudgets, selectedEntities} = req.body;
+    const barchartData = await ChartsData.treemap({selectedYears, selectedBudgets, selectedEntities});
+    res.json(barchartData)
 });
 
-router.post('/bar-chart', async (req, res) => {
+router.post('/historic-bar-chart', async (req, res) => {
     const {selectedYears, selectedBudgets, selectedEntities} = req.body;
     const barchartData = await ChartsData.historicBarchart({selectedYears, selectedBudgets, selectedEntities});
     res.json(barchartData)

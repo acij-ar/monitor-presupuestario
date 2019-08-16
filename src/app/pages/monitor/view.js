@@ -57,6 +57,13 @@ class App extends React.Component {
                     </div>
                 </div>
                 <BaseChart
+                    name="treemap"
+                    endpoint="/api/db/treemap"
+                    selectedYears={selectedYears}
+                    selectedBudgets={selectedBudgets}
+                    selectedEntities={selectedEntities}
+                />
+                <BaseChart
                     name="historic-bar-chart"
                     endpoint="/api/db/historic-bar-chart"
                     selectedYears={selectedYears}
