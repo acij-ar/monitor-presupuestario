@@ -1,26 +1,35 @@
 const _ = require('lodash');
 
-module.exports = ({ results, tableName }) => {
-    const processedResults = {};
-    results.map(({name, year, id}) => {
-        if (!processedResults[name]) {
-            processedResults[name] = {
-                table: tableName,
-                name,
-                variants: [],
-                value: `${tableName}-${name}`,
-            };
-        }
-        if (year && id) {
-            processedResults[name].variants.push({year, id})
-        }
-    });
-    Object.keys(processedResults).map(name => {
-        const years = processedResults[name].variants.map(({year}) => year);
+const updateLabelsWithYearsAndTableName = ({results, table}) => {
+    Object.keys(results).map(name => {
+        const years = results[name].variants.map(({year}) => year);
         const minYear = _.min(years);
         const maxYear = _.max(years);
         const yearsDescription = minYear === maxYear ? `${minYear}` : `${minYear} - ${maxYear}`;
-        processedResults[name].label = `${name} (${yearsDescription})`;
+        results[name].label = `${name} (${table.singularName} ${yearsDescription})`;
     });
-    return Object.values(processedResults);
+};
+
+const groupResultsByNameAndTable = ({results, table}) => {
+    const groupedResults = {};
+    results.map(({name, year, id}) => {
+        if (!groupedResults[name]) {
+            groupedResults[name] = {
+                table: table.name,
+                name,
+                variants: [],
+                value: `${table.name}-${name}`,
+            };
+        }
+        if (year && id) {
+            groupedResults[name].variants.push({year, id})
+        }
+    });
+    return groupedResults;
+};
+
+module.exports = ({results, table}) => {
+    const groupedResults = groupResultsByNameAndTable({results, table});
+    updateLabelsWithYearsAndTableName({results: groupedResults, table});
+    return Object.values(groupedResults);
 };

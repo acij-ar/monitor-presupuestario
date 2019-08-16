@@ -14,21 +14,25 @@ module.exports = {
             isSearchable: true,
             isDefaultTableForSearchSuggestions: true,
             dropOrder: 3,
+            singularName: 'jurisdicción',
         },
         {
             name: 'entidades',
             isSearchable: true,
             dropOrder: 2,
+            singularName: 'entidad',
         },
         {
             name: 'programas',
             isSearchable: true,
             dropOrder: 1,
+            singularName: 'programa',
         },
         {
             name: 'actividades',
             isSearchable: true,
             dropOrder: 0,
+            singularName: 'actividad',
         },
     ]
 };
