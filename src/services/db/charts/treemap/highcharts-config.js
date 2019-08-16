@@ -13,5 +13,8 @@ module.exports = ({ data, name }) => ({
         shared: true,
         useHTML: true
     },
-    title: {text: null}
+    title: {text: null},
+    credits: {
+        enabled: false
+    },
 });

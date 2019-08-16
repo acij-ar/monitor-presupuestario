@@ -26,4 +26,7 @@ module.exports = ({ years, series }) => ({
         }
     },
     series,
+    credits: {
+        enabled: false
+    },
 });
