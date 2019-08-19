@@ -7,7 +7,7 @@ const {db: {tables}} = require('../../../../config');
 
 module.exports = ({selectedYear, selectedBudget, selectedEntity}) => {
     const year = (selectedYear || availableYears[0]).label;
-    const {value: budgetValue, label: budgetName} = (selectedBudget || availableBudgets[0]);
+    const {value: budgetValue, label: budgetName, color} = (selectedBudget || availableBudgets[0]);
     const entity = (selectedEntity || {table: 'años', name: 'Presupuesto total'});
     const tableConfig = tables.find(table => table.name === entity.table);
 
@@ -38,6 +38,6 @@ module.exports = ({selectedYear, selectedBudget, selectedEntity}) => {
         name = `${parentName} - ${year} ${budgetName}`;
     }
 
-    return {name, data};
+    return {name, data, color};
 
 };
