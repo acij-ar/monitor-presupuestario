@@ -12,6 +12,9 @@ const YearSelect = ({ value, onChange}) => (
         className="monitor-config-bar-years-select"
         isMulti
         closeMenuOnSelect={false}
+        styles={{
+            valueContainer: provided => ({ ...provided, flexWrap: 'nowrap'})
+        }}
     />
 );
 
