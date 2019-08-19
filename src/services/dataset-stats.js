@@ -13,7 +13,7 @@ module.exports = () => {
         let lastModified;
         let lines;
         if (fs.existsSync(filePath)) {
-            lastModified = fs.statSync(filePath).mtime.toString();
+            lastModified = fs.statSync(filePath).mtime.toString(); // TODO: convert to locale
             lines = await numberOfLines(filePath)
         }
         return {
