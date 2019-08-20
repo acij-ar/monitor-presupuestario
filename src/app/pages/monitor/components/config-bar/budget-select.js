@@ -12,6 +12,9 @@ const BudgetSelect = ({value, onChange}) => (
         className="monitor-config-bar-budgets-select"
         isMulti
         closeMenuOnSelect={false}
+        styles={{
+            valueContainer: provided => ({ ...provided, flexWrap: 'nowrap'})
+        }}
     />
 );
 

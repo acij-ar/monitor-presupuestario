@@ -45,6 +45,9 @@ class EntitySelect extends React.Component {
                 cacheOptions
                 isMulti
                 closeMenuOnSelect={false}
+                styles={{
+                    valueContainer: provided => ({ ...provided, flexWrap: 'nowrap'})
+                }}
             />
         )
     }

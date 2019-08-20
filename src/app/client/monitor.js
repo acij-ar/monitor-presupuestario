@@ -1,10 +1,8 @@
 const ReactHighcharts = require('react-highcharts');
-const Treemap = require('highcharts/modules/treemap');
-const Exporting = require('highcharts/modules/exporting');
-const ExportData = require('highcharts/modules/export-data');
-Treemap(ReactHighcharts.Highcharts);
-Exporting(ReactHighcharts.Highcharts);
-ExportData(ReactHighcharts.Highcharts);
+require('highcharts/modules/treemap')(ReactHighcharts.Highcharts);
+require('highcharts/modules/exporting')(ReactHighcharts.Highcharts);
+require('highcharts/modules/export-data')(ReactHighcharts.Highcharts);
+require('highcharts/modules/pattern-fill')(ReactHighcharts.Highcharts);
 ReactHighcharts.Highcharts.setOptions({
     lang: {
         loading: 'Cargando...',
@@ -25,8 +23,8 @@ ReactHighcharts.Highcharts.setOptions({
         printChart: 'Imprimir',
         resetZoom: 'Reiniciar zoom',
         resetZoomTitle: 'Reiniciar zoom',
-        thousandsSep: ",",
-        decimalPoint: '.'
+        thousandsSep: ".",
+        decimalPoint: ',',
     }
 });
 

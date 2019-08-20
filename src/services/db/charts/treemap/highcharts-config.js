@@ -1,7 +1,8 @@
-module.exports = ({ data, name }) => ({
+module.exports = ({ data, name, color }) => ({
     series: [{
         type: 'treemap',
         layoutAlgorithm: 'squarified',
+        color,
         name,
         data,
     }],
