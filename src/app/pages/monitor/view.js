@@ -3,7 +3,7 @@ const Page = require('../../components/page');
 const EntitySelect = require('./components/config-bar/entity-select');
 const YearSelect = require('./components/config-bar/year-select');
 const BudgetSelect = require('./components/config-bar/budget-select');
-const BaseChart = require('./components/charts/base-chart');
+const SingleChart = require('./components/charts/single-chart');
 const CarrouselChart = require('./components/charts/carrousel-chart');
 require('./index.scss');
 
@@ -58,14 +58,12 @@ class App extends React.Component {
                     </div>
                 </div>
                 <CarrouselChart
-                    name="treemap"
                     endpoint="/api/db/treemap"
                     selectedYears={selectedYears}
                     selectedBudgets={selectedBudgets}
                     selectedEntities={selectedEntities}
                 />
-                <BaseChart
-                    name="historic-bar-chart"
+                <SingleChart
                     endpoint="/api/db/historic-bar-chart"
                     selectedYears={selectedYears}
                     selectedBudgets={selectedBudgets}
