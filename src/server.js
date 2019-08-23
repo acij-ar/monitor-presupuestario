@@ -11,6 +11,8 @@ const app = express();
 app.use(cookieParser());
 
 // TODO: configure cache maxAge and inmutable after js and css files have hashed filenames
+// Check this to configure hashed filenames https://github.com/manuelbieh/react-ssr-setup
+
 const clientFolderPath = path.join(__dirname, '..', 'dist');
 app.use('/static', express.static(clientFolderPath));
 
