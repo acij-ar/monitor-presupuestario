@@ -1,6 +1,7 @@
 const React = require('react');
 const axios = require('axios');
 const ReactHighcharts = require('react-highcharts');
+const ShareButtons = require('./share-buttons');
 
 class Chart extends React.Component {
   constructor(props) {
@@ -27,7 +28,12 @@ class Chart extends React.Component {
   }
 
   render() {
-    return this.state.config ? <ReactHighcharts config={this.state.config}/> : null
+    return this.state.config ?
+      <React.Fragment>
+        <ShareButtons />
+        <ReactHighcharts config={this.state.config}/>
+      </React.Fragment> :
+      null
   }
 }
 

@@ -1,3 +1,6 @@
-.monitor-chart-container {
+@import './share-buttons';
+
+.monitor-chart {
   height: 400px;
+  position: relative;
 }

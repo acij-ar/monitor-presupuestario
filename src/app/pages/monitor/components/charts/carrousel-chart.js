@@ -36,8 +36,8 @@ class CarrouselChart extends React.Component {
 
     render() {
         return (
-            <div className={`monitor-content monitor-${this.props.name}`}>
-                <div className={`monitor-${this.props.name}-container`}>
+            <div className={`monitor-content monitor-chart-container`}>
+                <div className={`monitor-chart`}>
                     <Chart data={this.state.data} endpoint={this.props.endpoint} />
                 </div>
             </div>
