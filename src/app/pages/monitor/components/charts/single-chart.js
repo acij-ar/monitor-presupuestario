@@ -2,15 +2,17 @@ const React = require('react');
 const Chart = require('./chart');
 
 class SingleChart extends React.PureComponent {
-    render() {
-        return (
-            <div className={`monitor-content monitor-chart-container`}>
-                <div className={`monitor-chart`}>
-                    <Chart {...this.props} />
-                </div>
-            </div>
-        )
-    }
+  render() {
+    const {selectedYears, selectedBudgets, selectedEntities, endpoint} = this.props;
+    const data = {selectedYears, selectedBudgets, selectedEntities};
+    return (
+      <div className={`monitor-content monitor-chart-container`}>
+        <div className={`monitor-chart`}>
+          <Chart data={data} endpoint={endpoint} />
+        </div>
+      </div>
+    )
+  }
 }
 
 module.exports = SingleChart;

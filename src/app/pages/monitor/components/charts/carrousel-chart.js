@@ -16,7 +16,6 @@ class CarrouselChart extends React.Component {
             this.updateSelectedFromList('selectedBudgets', 'selectedBudget');
             this.updateSelectedFromList('selectedEntities', 'selectedEntity');
             this.setState(this.state);
-            this.downloadChartData();
         }
     }
 
