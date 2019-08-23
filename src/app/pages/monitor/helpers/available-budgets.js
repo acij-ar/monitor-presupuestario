@@ -9,7 +9,7 @@ module.exports = [
     {
         label: 'Crédito original',
         value: 'credito_original_ajustado',
-        color: '#1aadce'
+        color: '#e600c8'
     },
     /*
     {
@@ -21,12 +21,12 @@ module.exports = [
     {
         label: 'Crédito vigente',
         value: 'credito_vigente_ajustado',
-        color: '#74B862'
+        color: '#0ce6ae'
     },
     {
         label: 'Crédito devengado',
         value: 'credito_devengado_ajustado',
-        color: '#EEC049'
+        color: '#0039eb'
     },
     /*
     {
