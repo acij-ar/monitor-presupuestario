@@ -1,4 +1,6 @@
-.monitor-historic-bar-chart-container,
-.monitor-treemap-container {
+@import './share-buttons';
+
+.monitor-chart {
   height: 400px;
+  position: relative;
 }

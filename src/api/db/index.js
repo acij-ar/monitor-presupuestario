@@ -4,26 +4,26 @@ const SearchService = require('../../services/search');
 const searchList = require('../../services/db/queries/list-for-select');
 const ChartsData = require('../../services/db/charts');
 
-router.get('/search', async (req, res) => {
+router.get('/search', (req, res) => {
     const searchString = req.query.q;
     const results = SearchService.search(searchString);
     res.json(results)
 });
 
-router.get('/default-search-list', async (req, res) => {
-    const results = await searchList();
+router.get('/default-search-list', (req, res) => {
+    const results = searchList();
     res.json(results)
 });
 
-router.post('/treemap', async (req, res) => {
+router.post('/treemap', (req, res) => {
     const {selectedYear, selectedBudget, selectedEntity} = req.body;
-    const barchartData = await ChartsData.treemap({selectedYear, selectedBudget, selectedEntity});
-    res.json(barchartData)
+    const treemapData = ChartsData.treemap({selectedYear, selectedBudget, selectedEntity});
+    res.json(treemapData)
 });
 
-router.post('/historic-bar-chart', async (req, res) => {
+router.post('/historic-bar-chart', (req, res) => {
     const {selectedYears, selectedBudgets, selectedEntities} = req.body;
-    const barchartData = await ChartsData.historicBarchart({selectedYears, selectedBudgets, selectedEntities});
+    const barchartData = ChartsData.historicBarchart({selectedYears, selectedBudgets, selectedEntities});
     res.json(barchartData)
 });
 

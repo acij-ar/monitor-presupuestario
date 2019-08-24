@@ -4,8 +4,8 @@ const resultsToListForSelect = require('../../helpers/results-to-list-for-select
 
 // TODO: save this results. Reset them only after db-update
 
-module.exports = async () => {
+module.exports = () => {
     const table = tables.find(table => table.isDefaultTableForSearchSuggestions);
-    const results = await db.sqlite.prepare(`SELECT DISTINCT name, id, year FROM ${table.name}`).all();
+    const results = db.sqlite.prepare(`SELECT DISTINCT name, id, year FROM ${table.name}`).all();
     return resultsToListForSelect({table, results})
 };

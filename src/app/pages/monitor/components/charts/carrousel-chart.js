@@ -1,15 +1,12 @@
 const React = require('react');
-const axios = require('axios');
-const ReactHighcharts = require('react-highcharts');
+const Chart = require('./chart');
 
-class HistoricBarChar extends React.Component {
+class CarrouselChart extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
-    }
-
-    componentDidMount() {
-        this.downloadChartData();
+        this.state = {
+            data: {}
+        };
     }
 
     componentDidUpdate() {
@@ -19,41 +16,33 @@ class HistoricBarChar extends React.Component {
             this.updateSelectedFromList('selectedBudgets', 'selectedBudget');
             this.updateSelectedFromList('selectedEntities', 'selectedEntity');
             this.setState(this.state);
-            this.downloadChartData();
         }
     }
 
     updateSelectedFromList(listName, selectedName) {
         const haveAvailableOptions = this.props[listName] && this.props[listName].length >= 0;
         const haveOnlyOneOption = this.props[listName] && this.props[listName].length === 1;
-        const haveOptionSelected = !!this.state[selectedName];
+        const haveOptionSelected = !!this.state.data[selectedName];
         if (haveAvailableOptions && (haveOnlyOneOption || !haveOptionSelected)) {
-            this.state[selectedName] = this.props[listName][0];
+            this.state.data[selectedName] = this.props[listName][0];
             return
         }
-        const selectedOptionIsInAvailableOptions = (this.props[listName] || []).find(option => option.value === this.state[selectedName].value)
+        const selectedOptionIsInAvailableOptions = (this.props[listName] || []).find(option => option.value === this.state.data[selectedName].value)
         if (!haveAvailableOptions || !selectedOptionIsInAvailableOptions) {
-            this.state[selectedName] = null;
+            this.state.data[selectedName] = null;
         }
-    }
-
-    downloadChartData() {
-        const {selectedYear, selectedBudget, selectedEntity} = this.state;
-        const data = {selectedYear, selectedBudget, selectedEntity};
-        axios.post(this.props.endpoint, data)
-            .then(response => this.setState({config: response.data}));
     }
 
     render() {
         return (
-            <div className={`monitor-content monitor-${this.props.name}`}>
-                <div className={`monitor-${this.props.name}-container`}>
-                    { this.state.config && <ReactHighcharts config={this.state.config} />}
+            <div className={`monitor-content monitor-chart-container`}>
+                <div className={`monitor-chart`}>
+                    <Chart data={this.state.data} endpoint={this.props.endpoint} />
                 </div>
             </div>
         )
     }
 }
 
-module.exports = HistoricBarChar;
+module.exports = CarrouselChart;
 
