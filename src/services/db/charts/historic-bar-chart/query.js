@@ -13,7 +13,7 @@ module.exports = ({selectedYears, selectedBudgets, selectedEntities}) => {
     const series = [];
     entities.map(({table, name}, index) => {
         // TODO: filter by ids instead of names
-        const results = db.sqlite.prepare(`SELECT year, ${budgetsValues} FROM ${table} WHERE name = ? ORDER BY year ASC`).all(name);
+        const results = db.prepare(`SELECT year, ${budgetsValues} FROM ${table} WHERE name = ? ORDER BY year ASC`).all(name);
         selectedBudgets.map(budget => {
             const serie = {
                 name: `${name} - ${budget.label}`,
