@@ -8,12 +8,11 @@ module.exports = ({selectedYears, selectedBudgets, selectedEntities}) => {
     const years = _.sortBy((selectedYears || availableYears).map(year => year.label));
     selectedBudgets = selectedBudgets || availableBudgets;
     const budgetsValues = selectedBudgets.map(budget => budget.value).join(', ');
-    const entities = selectedEntities || [{table: 'años', name: 'Presupuesto total'}];
+    const entities = selectedEntities || [{name: 'Presupuesto total', id: 1}];
 
     const series = [];
-    entities.map(({table, name}, index) => {
-        // TODO: filter by ids instead of names
-        const results = db.sqlite.prepare(`SELECT year, ${budgetsValues} FROM ${table} WHERE name = ? ORDER BY year ASC`).all(name);
+    entities.map(({name, id}, index) => {
+        const results = db.prepare(`SELECT year, ${budgetsValues} FROM entidades JOIN presupuestos ON entidades.id = entity_id WHERE entidades.id = ? ORDER BY year ASC`).all(id);
         selectedBudgets.map(budget => {
             const serie = {
                 name: `${name} - ${budget.label}`,
