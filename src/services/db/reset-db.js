@@ -1,16 +1,17 @@
 const db = require('./index');
 
 module.exports = () => {
-    db.sqlite.prepare('DROP TABLE IF EXISTS entidades').run();
-    db.sqlite.prepare('DROP TABLE IF EXISTS presupuestos').run();
-    db.sqlite.prepare(`CREATE TABLE entidades(
+    db.prepare('DROP TABLE IF EXISTS presupuestos').run();
+    db.prepare('DROP TABLE IF EXISTS entidades').run();
+    db.prepare(`CREATE TABLE entidades(
         id              INTEGER PRIMARY KEY AUTOINCREMENT,
         name            TEXT NOT NULL,
-        entity_type     TEXT NOT NULL
-        parent_id       INTEGER,
+        entity_type     TEXT NOT NULL,
+        parent_id       INTEGER NOT NULL,
         UNIQUE(name, parent_id)
     )`).run();
-    db.sqlite.prepare(`CREATE TABLE presupuestos(
+    db.prepare(`CREATE TABLE presupuestos(
+        id                                          INTEGER PRIMARY KEY AUTOINCREMENT,
         entity_id                                   INTEGER NOT NULL,
         year                                        INTEGER NOT NULL,
         credito_presupuestado                       INTEGER NOT NULL,
@@ -19,14 +20,8 @@ module.exports = () => {
         credito_devengado                           INTEGER NOT NULL,
         credito_pagado                              INTEGER NOT NULL,
         credito_original                            INTEGER NOT NULL,
-        credito_presupuestado_ajustado              INTEGER NOT NULL,
-        credito_vigente_ajustado                    INTEGER NOT NULL,
-        credito_comprometido_ajustado               INTEGER NOT NULL,
-        credito_devengado_ajustado                  INTEGER NOT NULL,
-        credito_pagado_ajustado                     INTEGER NOT NULL,
-        credito_original_ajustado                   INTEGER NOT NULL,
         credito_original_posiblemente_modificado    BOOLEAN NOT NULL,
         CONSTRAINT foreign_key_entity FOREIGN KEY (entity_id) REFERENCES entidades (id),
         UNIQUE(year, entity_id)
-    )`);
+    )`).run();
 };

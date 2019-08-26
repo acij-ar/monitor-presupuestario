@@ -1,11 +1,28 @@
-const updateBudgetTables = require('./update-budget-tables');
-const db = require('../../db');
+const resetDB = require('../../db/reset-db');
+const fs = require('fs');
+const {datasets: {files}} = require('../../../config');
+const loadInflationDataset = require('./load-inflation-dataset');
+const prepareStatements = require('./prepare-statements');
+const updateInDB = require('./update-in-db');
+
+const yearFiles = files.filter(file => file.isYearDataset);
 
 module.exports = async () => {
     console.log('Started updating db');
-    db.dropTables();
-    db.createTablesIfNotExist();
-    await updateBudgetTables();
-    // TODO: wait for all inserts and then close and reconnect to the db?
+    resetDB();
+    const inflation = await loadInflationDataset();
+    const statements = prepareStatements();
+
+    yearFiles.map(file => {
+        const {jsonPath, year} = file;
+        const jsonContent = fs.readFileSync(jsonPath);
+        const jsonDB = {'Presupuesto total': JSON.parse(jsonContent)};
+        const yearInflation = inflation[year];
+        console.log(`Updating year ${year} in db`);
+        updateInDB({jsonDB, statements, year, yearInflation});
+    });
+
     console.log('Finished updating db');
 };
+
+module.exports();
