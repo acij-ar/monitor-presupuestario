@@ -27,5 +27,11 @@ router.post('/historic-bar-chart', (req, res) => {
     res.json(barchartData)
 });
 
+router.post('/decomposition-bar-chart', (req, res) => {
+    const {selectedYear, selectedBudget, selectedEntity} = req.body;
+    const barchartData = ChartsData.decompositionBarchart({selectedYear, selectedBudget, selectedEntity});
+    res.json(barchartData)
+});
+
 
 module.exports = router;
