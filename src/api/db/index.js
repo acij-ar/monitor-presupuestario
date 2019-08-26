@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const SearchService = require('../../services/search');
-const searchList = require('../../services/db/queries/list-for-select');
+const defaultSearchList = require('../../services/db/queries/default-search-list');
 const ChartsData = require('../../services/db/charts');
 
 router.get('/search', (req, res) => {
@@ -11,7 +11,7 @@ router.get('/search', (req, res) => {
 });
 
 router.get('/default-search-list', (req, res) => {
-    const results = searchList();
+    const results = defaultSearchList();
     res.json(results)
 });
 

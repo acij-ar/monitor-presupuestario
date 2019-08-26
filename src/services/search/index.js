@@ -1,7 +1,6 @@
 const elasticlunr = require('elasticlunr');
 const db = require('../db');
 const _ = require('lodash');
-const { db: dbConfig } = require('../../config');
 const resultsToListForSelect = require('../helpers/results-to-list-for-select');
 
 // TODO configure language https://github.com/MihaiValentin/lunr-languages
@@ -9,14 +8,12 @@ const resultsToListForSelect = require('../helpers/results-to-list-for-select');
 class SearchService {
     constructor() {
         this.index = elasticlunr();
-        this.index.addField('label');
-        this.index.setRef('value');
+        this.index.addField('name');
+        this.index.setRef('id');
 
-        dbConfig.tables.filter(table => table.isSearchable).map(table => {
-            const results = db.prepare(`SELECT year, name, id FROM ${table.name}`).all();
-            const processedResults = resultsToListForSelect({results, table});
-            processedResults.map(searchableDocument => this.index.addDoc(searchableDocument));
-        });
+        const results = db.prepare(`SELECT year, name, entity_type, entidades.id AS id FROM entidades JOIN presupuestos ON entidades.id = entity_id`).all();
+        const processedResults = resultsToListForSelect({results});
+        processedResults.map(searchableDocument => this.index.addDoc(searchableDocument));
     }
 
     search(searchString) {

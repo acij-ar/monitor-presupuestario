@@ -1,35 +1,28 @@
 const _ = require('lodash');
 
-const updateLabelsWithYearsAndTableName = ({results, table}) => {
+const updateLabelsWithYearsAndTableName = ({results}) => {
     Object.keys(results).map(name => {
-        const years = results[name].variants.map(({year}) => year);
+        const {years, entityType} = results[name];
         const minYear = _.min(years);
         const maxYear = _.max(years);
         const yearsDescription = minYear === maxYear ? `${minYear}` : `${minYear} - ${maxYear}`;
-        results[name].label = `${name} (${table.singularName} ${yearsDescription})`;
+        results[name].label = `${name} (${entityType} ${yearsDescription})`;
     });
 };
 
-const groupResultsByNameAndTable = ({results, table}) => {
+const groupResultsByNameAndTable = ({results}) => {
     const groupedResults = {};
-    results.map(({name, year, id}) => {
+    results.map(({name, year, id, entity_type: entityType}) => {
         if (!groupedResults[name]) {
-            groupedResults[name] = {
-                table: table.name,
-                name,
-                variants: [],
-                value: `${table.name}-${name}`,
-            };
+            groupedResults[name] = {name, id, entityType, years: []};
         }
-        if (year && id) {
-            groupedResults[name].variants.push({year, id})
-        }
+        groupedResults[name].years.push(year)
     });
     return groupedResults;
 };
 
-module.exports = ({results, table}) => {
-    const groupedResults = groupResultsByNameAndTable({results, table});
-    updateLabelsWithYearsAndTableName({results: groupedResults, table});
+module.exports = ({results}) => {
+    const groupedResults = groupResultsByNameAndTable({results});
+    updateLabelsWithYearsAndTableName({results: groupedResults});
     return Object.values(groupedResults);
 };

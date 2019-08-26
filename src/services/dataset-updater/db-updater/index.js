@@ -24,5 +24,3 @@ module.exports = async () => {
 
     console.log('Finished updating db');
 };
-
-module.exports();
