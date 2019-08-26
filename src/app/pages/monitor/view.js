@@ -58,6 +58,20 @@ class App extends React.Component {
           </div>
         </div>
 
+        <CarrouselChart
+          endpoint="/api/db/treemap"
+          selectedYears={selectedYears}
+          selectedBudgets={selectedBudgets}
+          selectedEntities={selectedEntities}
+        />
+
+        <SingleChart
+          endpoint="/api/db/historic-bar-chart"
+          selectedYears={selectedYears}
+          selectedBudgets={selectedBudgets}
+          selectedEntities={selectedEntities}
+        />
+
         {selectedEntities && selectedEntities.length > 0 ?
           <div className="monitor-content">
             <div className="monitor-disclaimer">
@@ -68,18 +82,6 @@ class App extends React.Component {
             </div>
           </div> : null}
 
-        <CarrouselChart
-          endpoint="/api/db/treemap"
-          selectedYears={selectedYears}
-          selectedBudgets={selectedBudgets}
-          selectedEntities={selectedEntities}
-        />
-        <SingleChart
-          endpoint="/api/db/historic-bar-chart"
-          selectedYears={selectedYears}
-          selectedBudgets={selectedBudgets}
-          selectedEntities={selectedEntities}
-        />
       </Page>
     );
   }
