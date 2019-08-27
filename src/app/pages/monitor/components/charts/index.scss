@@ -4,3 +4,39 @@
   height: 400px;
   position: relative;
 }
+
+.monitor-chart-with-switches {
+  padding-right: 70px;
+  padding-left: 70px;
+
+  .monitor-chart-switchs {
+    position: absolute;
+    top: 50%;
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+
+    .monitor-chart-switch {
+      margin-bottom: 20px;
+      cursor: pointer;
+      &:hover {
+        font-weight: 500;
+        color: #333;
+      }
+    }
+
+    svg {
+      vertical-align: middle;
+    }
+  }
+
+  .monitor-chart-switchs:first-child {
+    left: 20px;
+    transform: translate(-50%, -50%);
+  }
+
+  .monitor-chart-switchs:last-child {
+    right: 20px;
+    transform: translate(50%, -50%);
+  }
+}
