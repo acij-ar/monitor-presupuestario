@@ -14,7 +14,7 @@ module.exports = ({ data, name, color }) => ({
         shared: true,
         useHTML: true
     },
-    title: {text: null},
+    title: {text: name},
     credits: {
         enabled: false
     },
@@ -33,6 +33,11 @@ module.exports = ({ data, name, color }) => ({
                     'downloadXLS',
                 ],
             },
+        },
+    },
+    plotOptions: {
+        series: {
+            animation: false,
         },
     },
 });

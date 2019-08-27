@@ -8,7 +8,10 @@ module.exports = ({ years, series }) => ({
     yAxis: {
         min: 0,
         title: {
-            text: 'Presupuesto (millones de pesos)'
+            text: 'Presupuesto en pesos'
+        },
+        labels: {
+            format: '${value:,.0f}'
         }
     },
     tooltip: {
@@ -23,7 +26,10 @@ module.exports = ({ years, series }) => ({
         column: {
             pointPadding: 0.2,
             borderWidth: 0
-        }
+        },
+        series: {
+            animation: false,
+        },
     },
     series,
     credits: {
