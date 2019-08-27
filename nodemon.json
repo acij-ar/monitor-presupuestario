@@ -1,0 +1,12 @@
+{
+  "verbose": false,
+  "ignore": [
+    "data/**/*",
+    "devops/**/*",
+    "public/**/*",
+    "src/**/*"
+  ],
+  "events": {
+    "restart": "echo \"App restarted due to changes in: '$FILENAME'\""
+  }
+}
