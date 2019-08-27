@@ -2,8 +2,6 @@ const db = require('../..');
 const availableYears = require('../../../../app/pages/monitor/helpers/available-years');
 const availableBudgets = require('../../../../app/pages/monitor/helpers/available-budgets');
 
-// TODO: combinations of year and entity may not exists. Handle these cases
-
 module.exports = ({selectedYear, selectedBudget, selectedEntity}) => {
     const year = (selectedYear || availableYears[0]).label;
     const {value: budgetValue, label: budgetName, color} = (selectedBudget || availableBudgets[0]);

@@ -18,7 +18,13 @@ router.get('/default-search-list', (req, res) => {
 router.post('/treemap', (req, res) => {
     const {selectedYear, selectedBudget, selectedEntity} = req.body;
     const treemapData = ChartsData.treemap({selectedYear, selectedBudget, selectedEntity});
-    res.json(treemapData)
+    const hasData = treemapData && treemapData.series && treemapData.series[0] &&
+      treemapData.series[0].data && treemapData.series[0].data.length;
+    if (hasData) {
+        res.json(treemapData)
+    } else {
+        res.sendStatus(400)
+    }
 });
 
 router.post('/historic-bar-chart', (req, res) => {
