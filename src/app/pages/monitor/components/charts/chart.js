@@ -6,7 +6,7 @@ const ShareButtons = require('./share-buttons');
 class Chart extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {props};
   }
 
   componentDidMount() {
