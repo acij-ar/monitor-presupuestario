@@ -7,7 +7,10 @@ module.exports = ({ data, name, color }) => ({
         data,
         allowDrillToNode: true,
         dataLabels: {
-            enabled: false
+            enabled: false,
+            style: {
+                textOverflow: "ellipsis"
+            }
         },
         levelIsConstant: false,
         levels: [{

@@ -27,6 +27,7 @@ ReactHighcharts.Highcharts.setOptions({
         decimalPoint: ',',
     }
 });
+ReactHighcharts.Highcharts.SVGElement.prototype.textProps.push("textOverflow");
 
 const React = require('react');
 const ReactDOM = require('react-dom');
