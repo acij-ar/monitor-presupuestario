@@ -38,6 +38,7 @@
     "node-sass": "^4.12.0",
     "postcss-loader": "^3.0.0",
     "react": "^16.8.6",
+    "react-beautiful-dnd": "^11.0.5",
     "react-dom": "^16.8.6",
     "react-highcharts": "^16.0.2",
     "react-select": "^3.0.4",
