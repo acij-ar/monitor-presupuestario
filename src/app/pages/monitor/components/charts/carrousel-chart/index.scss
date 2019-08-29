@@ -1,6 +1,6 @@
 .monitor-chart-with-switches {
-  padding-right: 70px;
-  padding-left: 70px;
+  margin-right: 70px;
+  margin-left: 70px;
 
   .monitor-chart-switchs {
     position: absolute;
@@ -24,12 +24,12 @@
   }
 
   .monitor-chart-switchs:first-child {
-    left: 20px;
-    transform: translate(-50%, -50%);
+    left: -20px;
+    transform: translate(-100%, -50%);
   }
 
   .monitor-chart-switchs:last-child {
-    right: 20px;
-    transform: translate(50%, -50%);
+    right: -20px;
+    transform: translate(100%, -50%);
   }
 }
