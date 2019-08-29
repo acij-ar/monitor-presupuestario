@@ -14,13 +14,13 @@
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+    display: flex;
   }
-
 
   .monitor-config-bar-years-select,
   .monitor-config-bar-budgets-select,
   .monitor-config-bar-entities-select {
-    width: 300px;
+    flex: 1;
     margin: 10px 20px;
     display: inline-block;
     text-align: left;
