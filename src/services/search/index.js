@@ -8,7 +8,7 @@ const resultsToListForSelect = require('../helpers/results-to-list-for-select');
 class SearchService {
     constructor() {
         this.index = elasticlunr();
-        this.index.addField('name');
+        this.index.addField('label');
         this.index.setRef('id');
 
         const results = db.prepare(`SELECT year, name, entity_type, entidades.id AS id FROM entidades JOIN presupuestos ON entidades.id = entity_id`).all();
