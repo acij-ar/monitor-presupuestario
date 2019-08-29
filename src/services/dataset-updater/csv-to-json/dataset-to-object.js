@@ -20,12 +20,26 @@ const addNumericColumns = ({scopedObject, row, inflation}) => {
     scopedObject['credito_original_ajustado'] = scopedObject['credito_presupuestado_ajustado'];
 };
 
+const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+const normalizeName = (name) => {
+    const deburredName = _.deburr(name);
+    if (deburredName.toUpperCase() === deburredName) {
+        const lowerCaseName = deburredName.toLowerCase();
+        return capitalizeFirstLetter(lowerCaseName)
+    }
+    return deburredName;
+};
+
 const processRowIntoObject = ({row, dbObject, inflation}) => {
     let scopedObject = dbObject;
     addNumericColumns({row, scopedObject, inflation});
     scopedObject = scopedObject.dependencias;
     categories.map((category, index) => {
-        const entityName = _.deburr(row[category]);
+        const rawName = row[category];
+        const entityName = normalizeName(rawName);
         if (!scopedObject[entityName]) {
             scopedObject[entityName] = {};
             if (index !== categories.length - 1) {
