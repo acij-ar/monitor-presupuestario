@@ -9,7 +9,8 @@ module.exports = ({ data, name, color }) => ({
         dataLabels: {
             enabled: false,
             style: {
-                textOverflow: "ellipsis"
+                textOverflow: "ellipsis",
+                textOutline: 'none',
             }
         },
         levelIsConstant: false,
