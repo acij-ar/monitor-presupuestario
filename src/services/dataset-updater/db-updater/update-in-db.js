@@ -1,6 +1,6 @@
 const entityTypes = ['presupuesto', 'jurisdiccion', 'entidad', 'programa', 'actividad'];
-const updateInDB = ({jsonDB, year, yearInflation, statements, parentId = 0, entityTypeIndex = 0}) => {
-    const {searchEntity, insertEntity, insertBudget} = statements;
+const updateInDB = ({jsonDB, year, yearInflation, statements, parentId = 0, entityTypeIndex = 0, ancestors = []}) => {
+    const {searchEntity, insertEntity, insertBudget, searchRelationship, insertRelationship} = statements;
     const entityType = entityTypes[entityTypeIndex];
 
     Object.keys(jsonDB).map(entityName => {
@@ -23,6 +23,13 @@ const updateInDB = ({jsonDB, year, yearInflation, statements, parentId = 0, enti
         credito_original_posiblemente_modificado = credito_original_posiblemente_modificado ? 1 : 0;
         insertBudget.run(id, year, credito_presupuestado, credito_vigente, credito_comprometido, credito_devengado,
             credito_pagado, credito_original, credito_original_posiblemente_modificado);
+        const parentIds = ancestors.concat([id]);
+        parentIds.map(parentId => {
+            const result = searchRelationship.get(parentId, id);
+            if (!result) {
+                insertRelationship.run(parentId, id)
+            }
+        });
         if (dependencias) {
             updateInDB({
                 jsonDB: dependencias,
@@ -30,7 +37,8 @@ const updateInDB = ({jsonDB, year, yearInflation, statements, parentId = 0, enti
                 yearInflation,
                 statements,
                 parentId: id,
-                entityTypeIndex: entityTypeIndex + 1
+                entityTypeIndex: entityTypeIndex + 1,
+                ancestors: parentIds,
             })
         }
     });
