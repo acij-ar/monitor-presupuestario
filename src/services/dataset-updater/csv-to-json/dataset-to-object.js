@@ -1,7 +1,7 @@
 const fs = require('fs');
 const csv = require('fast-csv');
 const {datasets} = require('../../../config');
-const _ = require('lodash');
+const normalizeName = require('./normalize-name');
 
 const categories = datasets.columns
     .filter(({categoryLevel}) => typeof categoryLevel === 'number')
@@ -18,19 +18,6 @@ const addNumericColumns = ({scopedObject, row, inflation}) => {
     });
     scopedObject['credito_original'] = scopedObject['credito_presupuestado'];
     scopedObject['credito_original_ajustado'] = scopedObject['credito_presupuestado_ajustado'];
-};
-
-const capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-};
-
-const normalizeName = (name) => {
-    const deburredName = _.deburr(name);
-    if (deburredName.toUpperCase() === deburredName) {
-        const lowerCaseName = deburredName.toLowerCase();
-        return capitalizeFirstLetter(lowerCaseName)
-    }
-    return deburredName;
 };
 
 const processRowIntoObject = ({row, dbObject, inflation}) => {
