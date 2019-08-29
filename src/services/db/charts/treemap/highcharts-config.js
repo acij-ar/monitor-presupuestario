@@ -19,7 +19,7 @@ module.exports = ({ data, name, color }) => ({
             dataLabels: {
                 enabled: true
             },
-            borderWidth: 3
+            borderWidth: 1
         }],
     }],
     tooltip: {
@@ -56,5 +56,8 @@ module.exports = ({ data, name, color }) => ({
             animation: false,
             turboThreshold: 0,
         },
+        treemap: {
+            borderWidth: 0
+        }
     },
 });
