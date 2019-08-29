@@ -16,7 +16,7 @@ const groupResultsByNameAndTable = ({results}) => {
     const groupedResults = {};
     results.map(({name, year, id, entity_type: entityType}) => {
         if (!groupedResults[id]) {
-            groupedResults[id] = {name, id, entityType, years: []};
+            groupedResults[id] = {name, id, entityType, years: [], value: name};
         }
         groupedResults[id].years.push(year)
     });
