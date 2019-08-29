@@ -1,0 +1,13 @@
+#monitor-config-group-entities-trigger {
+  position: absolute;
+  right: 0;
+  top: -2px;
+  transform: translateY(-100%);
+  font-size: 11px;
+  cursor: pointer;
+  color: #3d64de;
+
+  &.disabled {
+    color: #999;
+  }
+}

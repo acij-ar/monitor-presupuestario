@@ -1,3 +1,5 @@
+@import './components/group-entities';
+
 .monitor-config-bar {
   position: sticky;
   width: 100%;
@@ -22,9 +24,13 @@
   .monitor-config-bar-entities-select {
     flex: 1;
     max-width: 40%;
-    margin: 10px 20px;
+    margin: 18px 20px;
     display: inline-block;
     text-align: left;
     color: #333;
+  }
+
+  .monitor-config-bar-entities-select {
+    position: relative;
   }
 }
