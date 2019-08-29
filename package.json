@@ -25,6 +25,8 @@
     "axios": "^0.19.0",
     "better-sqlite3": "^5.4.2",
     "body-parser": "^1.19.0",
+    "color": "^3.1.2",
+    "compression": "^1.7.4",
     "cookie-parser": "^1.4.4",
     "count-lines-in-file": "^1.1.0",
     "css-loader": "^2.1.1",

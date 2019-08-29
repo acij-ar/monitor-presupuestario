@@ -2,12 +2,14 @@ require("@babel/polyfill");
 
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const compression = require('compression');
 const path = require('path');
 const appRouter = require('./app');
 const apiRouter = require('./api');
 
 const app = express();
 
+app.use(compression());
 app.use(cookieParser());
 
 // TODO: configure cache maxAge and inmutable after js and css files have hashed filenames
