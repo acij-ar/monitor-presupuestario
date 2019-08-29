@@ -1,15 +1,15 @@
 const React = require('react');
 const Select = require('react-select').default;
-const availableBudgets = require('../../helpers/available-budgets');
+const availableYears = require('../../../helpers/available-years');
 
-const BudgetSelect = ({value, onChange}) => (
+const YearSelect = ({ value, onChange}) => (
     <Select
-        placeholder="Tipos de presupuesto"
+        placeholder="Años disponibles"
         value={value}
-        options={availableBudgets}
+        options={availableYears}
         onChange={onChange}
         isSearchable
-        className="monitor-config-bar-budgets-select"
+        className="monitor-config-bar-years-select"
         isMulti
         closeMenuOnSelect={false}
         styles={{
@@ -18,4 +18,4 @@ const BudgetSelect = ({value, onChange}) => (
     />
 );
 
-module.exports = BudgetSelect;
+module.exports = YearSelect;

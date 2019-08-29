@@ -1,8 +1,6 @@
 const React = require('react');
 const Page = require('../../components/page');
-const EntitySelect = require('./components/config-bar/entity-select');
-const YearSelect = require('./components/config-bar/year-select');
-const BudgetSelect = require('./components/config-bar/budget-select');
+const ConfigBar = require('./components/config-bar');
 const SingleChart = require('./components/charts/single-chart');
 const CarrouselChart = require('./components/charts/carrousel-chart');
 require('./index.scss');
@@ -50,13 +48,14 @@ class App extends React.Component {
           </div>
         </div>
 
-        <div className="monitor-config-bar">
-          <div className="monitor-config-bar-content">
-            <EntitySelect value={selectedEntities} onChange={this.onSelectedEntitiesChange}/>
-            <YearSelect value={selectedYears} onChange={this.onSelectedYearsChange}/>
-            <BudgetSelect value={selectedBudgets} onChange={this.onSelectedBudgetsChange}/>
-          </div>
-        </div>
+        <ConfigBar
+          selectedYears={selectedYears}
+          selectedBudgets={selectedBudgets}
+          selectedEntities={selectedEntities}
+          onSelectedEntitiesChange={this.onSelectedEntitiesChange}
+          onSelectedYearsChange={this.onSelectedYearsChange}
+          onSelectedBudgetsChange={this.onSelectedBudgetsChange}
+        />
 
         <CarrouselChart
           endpoint="/api/db/treemap"

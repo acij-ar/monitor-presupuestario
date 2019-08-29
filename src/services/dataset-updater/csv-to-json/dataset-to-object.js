@@ -12,6 +12,7 @@ const numericColumns = datasets.columns
     .map(({name}) => name);
 
 const addNumericColumns = ({scopedObject, row, inflation}) => {
+    // TODO: since no longer saving un-adjusted budgets in db, remove them
     numericColumns.map(column => {
         scopedObject[column] += row[column];
         scopedObject[`${column}_ajustado`] += row[column] * inflation;
