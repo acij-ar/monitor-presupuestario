@@ -1,4 +1,5 @@
-@import 'components/charts/index';
+@import 'components/charts/base-chart/index';
+@import 'components/charts/carrousel-chart/index';
 
 .monitor-config-bar {
   position: sticky;

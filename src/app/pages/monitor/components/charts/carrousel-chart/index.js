@@ -1,5 +1,5 @@
 const React = require('react');
-const Chart = require('./chart');
+const Chart = require('../base-chart');
 const Chevron = require('./chevron');
 
 class CarrouselChart extends React.Component {
