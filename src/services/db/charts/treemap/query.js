@@ -12,15 +12,15 @@ module.exports = ({selectedYear, selectedBudget, selectedEntity}) => {
         FROM presupuestos 
         JOIN relaciones ON relaciones.child_id = presupuestos.entity_id
         JOIN entidades ON presupuestos.entity_id = entidades.id 
-        WHERE relaciones.parent_id = ? AND presupuestos.year = ?
-    `).all(entity.id, year);
+        WHERE relaciones.parent_id = ? AND presupuestos.year = ? AND relaciones.child_id != ?
+    `).all(entity.id, year, entity.id);
     const name = `${entity.name} - ${year} ${budgetName}`;
 
     const tree = {};
     const getId = (row) => {
         const { tableId, parentId } = row;
-        if (tableId === entity.id) {
-            row.id = `id_${entity.id}`;
+        if (parentId === entity.id) {
+            row.id = `id_${tableId}`;
         } else {
             row.id = `${tree[parentId].id}_${tableId}`;
             row.parent = tree[parentId].id;
