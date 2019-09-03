@@ -64,7 +64,7 @@ const updateOriginalBudgetForYear = async ({filePath, year}) => {
 module.exports = async () => {
     console.log('Updating original budgets');
     const updatePromises = files
-        .filter(({isOriginalDataset}) => isOriginalDataset)
+        .filter(({isOriginalDataset, filePath}) => isOriginalDataset && fs.existsSync(filePath))
         .map(updateOriginalBudgetForYear);
     await Promise.all(updatePromises);
 };

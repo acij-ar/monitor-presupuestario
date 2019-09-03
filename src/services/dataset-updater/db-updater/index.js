@@ -17,11 +17,13 @@ module.exports = async () => {
 
     yearFiles.map(file => {
         const {jsonPath, year} = file;
-        const jsonContent = fs.readFileSync(jsonPath);
-        const jsonDB = {'Presupuesto total': JSON.parse(jsonContent)};
-        const yearInflation = inflation[year];
-        console.log(`Updating year ${year} in db`);
-        updateInDB({jsonDB, statements, year, yearInflation});
+        if (fs.existsSync(jsonPath)) {
+            const jsonContent = fs.readFileSync(jsonPath);
+            const jsonDB = {'Presupuesto total': JSON.parse(jsonContent)};
+            const yearInflation = inflation[year];
+            console.log(`Updating year ${year} in db`);
+            updateInDB({jsonDB, statements, year, yearInflation});
+        }
     });
 
     console.log('Finished updating db');
