@@ -3,6 +3,7 @@ const markAllChildrenAsPossiblyModified = require('./mark-children');
 const updateBudgetInObject = require('./update-budget-in-object');
 const {datasets: { files }} = require('../../../config');
 const fs = require('fs');
+const CSVWriteStream = require('csv-write-stream');
 
 module.exports = async ({filePath, year, errorsPath}) => {
   const dataset = [];
@@ -26,8 +27,11 @@ module.exports = async ({filePath, year, errorsPath}) => {
   const newJsonContent = JSON.stringify(jsonObject, null, 2);
   fs.writeFileSync(jsonPath, newJsonContent);
   if (errors.length) {
-    const errorsJsonContent = JSON.stringify(errors, null, 2);
-    fs.writeFileSync(errorsPath, errorsJsonContent);
+    const outputStream = fs.createWriteStream(errorsPath);
+    const csvWriter = CSVWriteStream({headers: Object.keys(errors[0])});
+    csvWriter.pipe(outputStream);
+    errors.map(error => csvWriter.write(error));
+    csvWriter.end();
     console.log(`${errors.length} errors for ${year}`)
   }
 };

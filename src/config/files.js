@@ -153,6 +153,6 @@ module.exports = [
         isOriginalDataset: true,
         rawPath: path.join(rawDataFolderPath, 'presupuesto-original-2019.csv'),
         filePath: path.join(finalFolderPath, 'presupuesto-original-2019.csv'),
-        errorsPath: path.join(errorsFolderPath, 'presupuesto-original-2019.json')
+        errorsPath: path.join(errorsFolderPath, 'presupuesto-original-2019.csv')
     }
 ];
