@@ -1,6 +1,5 @@
 const {datasets} = require('../../../config');
 const dataset2Object = require('./dataset-to-object');
-const loadInflationDataset = require('../db-updater/load-inflation-dataset');
 const fs = require('fs');
 
 const files = datasets.files.filter(({isYearDataset}) => isYearDataset);
@@ -14,8 +13,8 @@ const initObject = () => {
         dbObject[year] = {dependencias: {}};
         numericColumns.map(column => {
             dbObject[year][column] = 0;
-            dbObject[year][`${column}_ajustado`] = 0;
-        })
+        });
+        dbObject[year].credito_original = 0;
     });
     return dbObject;
 };
@@ -23,14 +22,12 @@ const initObject = () => {
 module.exports = async () => {
     console.log('Processing csv files into db.json');
     const dbObject = initObject();
-    const inflation = await loadInflationDataset();
     const processDataset = ({filePath, jsonPath, year}) => {
         if (fs.existsSync(filePath)) {
             return dataset2Object({
                 jsonPath,
                 filePath,
                 dbObject: dbObject[year],
-                inflation: inflation[year]
             })
         } else {
             return Promise.resolve();

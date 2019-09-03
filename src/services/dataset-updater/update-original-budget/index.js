@@ -2,7 +2,6 @@ const fs = require('fs');
 const readCSV = require('../../../utils/read-csv');
 const _ = require('lodash');
 const {datasets: { files }} = require('../../../config');
-const loadInflationDataset = require('../db-updater/load-inflation-dataset');
 
 const markAllChildrenAsPossiblyModified = (jsonObject) => {
     if (jsonObject.dependencias) {
@@ -13,12 +12,11 @@ const markAllChildrenAsPossiblyModified = (jsonObject) => {
     }
 };
 
-const updateBudgetInObject = ({correction, jsonObject, inflation}) => {
+const updateBudgetInObject = ({correction, jsonObject}) => {
     const budgetCorrection = parseInt(correction.aumento);
     let targetObject = jsonObject;
     if (!isNaN(budgetCorrection)) {
         targetObject.credito_original += budgetCorrection;
-        targetObject.credito_original_ajustado += budgetCorrection * inflation;
     }
     ['jurisdiccion', 'entidad', 'programa', 'actividad'].map(category => {
         const targetName = _.deburr(correction[category]);
@@ -26,7 +24,6 @@ const updateBudgetInObject = ({correction, jsonObject, inflation}) => {
             targetObject = targetObject.dependencias[targetName];
             if (!isNaN(budgetCorrection)) {
                 targetObject.credito_original += budgetCorrection;
-                targetObject.credito_original_ajustado += budgetCorrection * inflation;
             }
         } else if (targetName) {
             console.log(`Warning: can't find ${JSON.stringify(correction, null, 2)}`)
@@ -46,13 +43,11 @@ const updateOriginalBudgetForYear = async ({filePath, year}) => {
         path: filePath,
         onData: row => dataset.push(row),
     });
-    const inflationDataset = await loadInflationDataset();
-    const inflation = inflationDataset[year];
     const {jsonPath} = files.find(file => file.isYearDataset && year === file.year);
     const jsonContent = fs.readFileSync(jsonPath);
     const jsonObject = JSON.parse(jsonContent);
     dataset.map(correction => {
-        const targetObject = updateBudgetInObject({correction, jsonObject, inflation});
+        const targetObject = updateBudgetInObject({correction, jsonObject});
         if (correction.marcar_hijos_con_posible_reasignacion) {
             markAllChildrenAsPossiblyModified(targetObject)
         }

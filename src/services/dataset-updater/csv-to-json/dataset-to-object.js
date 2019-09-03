@@ -11,19 +11,15 @@ const numericColumns = datasets.columns
     .filter(({isNumeric}) => isNumeric)
     .map(({name}) => name);
 
-const addNumericColumns = ({scopedObject, row, inflation}) => {
-    // TODO: since no longer saving un-adjusted budgets in db, remove them
+const addNumericColumns = ({scopedObject, row}) => {
     numericColumns.map(column => {
         scopedObject[column] += row[column];
-        scopedObject[`${column}_ajustado`] += row[column] * inflation;
     });
-    scopedObject['credito_original'] = scopedObject['credito_presupuestado'];
-    scopedObject['credito_original_ajustado'] = scopedObject['credito_presupuestado_ajustado'];
 };
 
-const processRowIntoObject = ({row, dbObject, inflation}) => {
+const processRowIntoObject = ({row, dbObject}) => {
     let scopedObject = dbObject;
-    addNumericColumns({row, scopedObject, inflation});
+    addNumericColumns({row, scopedObject});
     scopedObject = scopedObject.dependencias;
     categories.map((category, index) => {
         const rawName = row[category];
@@ -35,24 +31,22 @@ const processRowIntoObject = ({row, dbObject, inflation}) => {
             }
             numericColumns.map(column => {
                 scopedObject[entityName][column] = 0;
-                scopedObject[entityName][`${column}_ajustado`] = 0;
                 scopedObject[entityName]['credito_original'] = 0;
-                scopedObject[entityName]['credito_original_ajustado'] = 0;
             })
         }
-        addNumericColumns({row, scopedObject: scopedObject[entityName], inflation});
+        addNumericColumns({row, scopedObject: scopedObject[entityName]});
         scopedObject = scopedObject[entityName].dependencias;
     })
 };
 
-module.exports = async ({filePath, dbObject, inflation, jsonPath}) => {
+module.exports = async ({filePath, dbObject, jsonPath}) => {
     await readCSV({
         path: filePath,
         onData: (row) => {
             numericColumns.map(column => {
                 row[column] = parseInt(row[column]);
             });
-            processRowIntoObject({row, dbObject, inflation})
+            processRowIntoObject({row, dbObject})
         }
     });
     const dbString = JSON.stringify(dbObject, null, 2);
