@@ -146,6 +146,16 @@ module.exports = [
         filePath: path.join(finalFolderPath, 'inflacion.csv'),
     },
     {
+        id: '1NsyiqXXxbZed6s_eKmQof_W-9XcTwrn1',
+        filename: 'presupuesto-original-2018.csv',
+        year: 2018,
+        isYearDataset: false,
+        isOriginalDataset: true,
+        rawPath: path.join(rawDataFolderPath, 'presupuesto-original-2018.csv'),
+        filePath: path.join(finalFolderPath, 'presupuesto-original-2018.csv'),
+        errorsPath: path.join(errorsFolderPath, 'presupuesto-original-2018.csv')
+    },
+    {
         id: '1_5fJeKOXZYk-na7PR2j30oJDIOOt8rSM',
         filename: 'presupuesto-original-2019.csv',
         year: 2019,
