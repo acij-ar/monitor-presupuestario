@@ -1,4 +1,5 @@
-const resetDB = require('../../db/reset-db');
+const createTables = require('../../db/management/create-tables');
+const deleteTables = require('../../db/management/delete-tables');
 const fs = require('fs');
 const {datasets: {files}} = require('../../../config');
 const loadInflationDataset = require('./load-inflation-dataset');
@@ -9,7 +10,8 @@ const yearFiles = files.filter(file => file.isYearDataset);
 
 module.exports = async () => {
     console.log('Started updating db');
-    resetDB();
+    deleteTables();
+    createTables();
     const inflation = await loadInflationDataset();
     const statements = prepareStatements();
 

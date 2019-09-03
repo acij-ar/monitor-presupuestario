@@ -1,5 +1,8 @@
 require("@babel/polyfill");
 
+const createTables = require('./services/db/management/create-tables');
+createTables();
+
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');

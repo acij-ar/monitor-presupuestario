@@ -1,17 +1,14 @@
-const db = require('./index');
+const db = require('../index');
 
 module.exports = () => {
-    db.prepare('DROP TABLE IF EXISTS relaciones').run();
-    db.prepare('DROP TABLE IF EXISTS presupuestos').run();
-    db.prepare('DROP TABLE IF EXISTS entidades').run();
-    db.prepare(`CREATE TABLE entidades(
+  db.prepare(`CREATE TABLE IF NOT EXISTS entidades(
         id              INTEGER PRIMARY KEY AUTOINCREMENT,
         name            TEXT NOT NULL,
         entity_type     TEXT NOT NULL,
         parent_id       INTEGER NOT NULL,
         UNIQUE(name, parent_id)
     )`).run();
-    db.prepare(`CREATE TABLE presupuestos(
+  db.prepare(`CREATE TABLE IF NOT EXISTS presupuestos(
         id                                          INTEGER PRIMARY KEY AUTOINCREMENT,
         entity_id                                   INTEGER NOT NULL,
         year                                        INTEGER NOT NULL,
@@ -25,7 +22,7 @@ module.exports = () => {
         CONSTRAINT foreign_key_entity FOREIGN KEY (entity_id) REFERENCES entidades (id),
         UNIQUE(year, entity_id)
     )`).run();
-    db.prepare(`CREATE TABLE relaciones(
+  db.prepare(`CREATE TABLE IF NOT EXISTS relaciones(
         id              INTEGER PRIMARY KEY AUTOINCREMENT,
         parent_id       INTEGER NOT NULL,
         child_id        INTEGER NOT NULL,
