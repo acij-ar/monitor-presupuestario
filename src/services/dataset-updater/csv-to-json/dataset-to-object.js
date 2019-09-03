@@ -1,7 +1,7 @@
 const fs = require('fs');
 const readCSV = require('../../../utils/read-csv');
 const {datasets} = require('../../../config');
-const normalizeName = require('./normalize-name');
+const normalizeName = require('../../../utils/normalize-name');
 
 const categories = datasets.columns
     .filter(({categoryLevel}) => typeof categoryLevel === 'number')

@@ -1,4 +1,4 @@
-const _ = require('lodash');
+const normalizeName = require('../../../utils/normalize-name');
 
 module.exports = ({correction, jsonObject}) => {
   const budgetCorrection = parseInt(correction.aumento) + parseInt(correction.credito_original);
@@ -8,7 +8,7 @@ module.exports = ({correction, jsonObject}) => {
   }
   let found = true;
   ['jurisdiccion', 'entidad', 'programa', 'actividad'].map(category => {
-    const targetName = _.deburr(correction[category]);
+    const targetName = normalizeName(correction[category]);
     if (targetName && targetObject.dependencias[targetName]) {
       targetObject = targetObject.dependencias[targetName];
       if (!isNaN(budgetCorrection)) {

@@ -1,6 +1,6 @@
 const elasticlunr = require('elasticlunr');
 const db = require('../db');
-const _ = require('lodash');
+const normalizeName = require('../../utils/normalize-name');
 const resultsToListForSelect = require('../helpers/results-to-list-for-select');
 
 // TODO configure language https://github.com/MihaiValentin/lunr-languages
@@ -17,7 +17,7 @@ class SearchService {
     }
 
     search(searchString) {
-        const deburredSearchString = _.deburr(searchString);
+        const deburredSearchString = normalizeName(searchString);
         const refResults = this.index.search(deburredSearchString, {expand: true});
         return refResults
             .filter(result => result.score > 0.1) // TODO validate
