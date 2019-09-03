@@ -6,6 +6,7 @@ module.exports = ({correction, jsonObject}) => {
   if (!isNaN(budgetCorrection)) {
     targetObject.credito_original += budgetCorrection;
   }
+  let found = true;
   ['jurisdiccion', 'entidad', 'programa', 'actividad'].map(category => {
     const targetName = _.deburr(correction[category]);
     if (targetName && targetObject.dependencias[targetName]) {
@@ -14,13 +15,14 @@ module.exports = ({correction, jsonObject}) => {
         targetObject.credito_original += budgetCorrection;
       }
     } else if (targetName) {
-      console.log(`Warning: can't find ${JSON.stringify(correction, null, 2)}`);
-      console.log(targetName);
-      console.log(JSON.stringify(Object.keys(targetObject.dependencias), null, 2))
+      found = false;
     }
   });
   if (isNaN(budgetCorrection)) {
     targetObject.credito_original_posiblemente_modificado = true;
   }
-  return targetObject;
+  return {
+    targetObject,
+    found,
+  };
 };

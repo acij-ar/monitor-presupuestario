@@ -4,6 +4,7 @@ const dataFolderPath = path.join(__dirname, '..', '..', 'data');
 const rawDataFolderPath = path.join(dataFolderPath, 'raw');
 const finalFolderPath = path.join(dataFolderPath, 'cleaned');
 const jsonFolderPath = path.join(dataFolderPath, 'json');
+const errorsFolderPath = path.join(dataFolderPath, 'errors');
 
 module.exports = [
     {
@@ -152,5 +153,6 @@ module.exports = [
         isOriginalDataset: true,
         rawPath: path.join(rawDataFolderPath, 'presupuesto-original-2019.csv'),
         filePath: path.join(finalFolderPath, 'presupuesto-original-2019.csv'),
+        errorsPath: path.join(errorsFolderPath, 'presupuesto-original-2019.json')
     }
 ];
