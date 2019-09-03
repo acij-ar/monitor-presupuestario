@@ -1,8 +1,8 @@
-const csv = require('fast-csv');
 const fs = require('fs');
 const CSVWriteStream = require('csv-write-stream');
 const { datasets: { columns } } = require('../../../config');
 const parseNumericValue = require('./parse-numeric-value');
+const readCSV = require('../../../utils/read-csv');
 
 module.exports = ({rawPath, filePath}) => {
     console.log(`Cleaning file ${rawPath}`);
@@ -12,18 +12,14 @@ module.exports = ({rawPath, filePath}) => {
     const csvWriter = CSVWriteStream({headers});
     csvWriter.pipe(outputStream);
 
-    return new Promise(resolve => {
-        fs.createReadStream(rawPath)
-            .pipe(csv.parse({headers: true}))
-            .on('data', row => {
-                numeric_columns.map(columnName => row[columnName] = parseNumericValue(row[columnName]));
-                csvWriter.write(row);
-            })
-            .on('end', () => {
-                csvWriter.end();
-                console.log(`Finished cleaning file ${filePath}`);
-                resolve();
-            });
-
-    })
+    return readCSV({
+        path: rawPath,
+        onData: (row) => {
+            numeric_columns.map(columnName => row[columnName] = parseNumericValue(row[columnName]));
+            csvWriter.write(row);
+        }
+    }).then(() => {
+        csvWriter.end();
+        console.log(`Finished cleaning file ${filePath}`);
+    });
 };

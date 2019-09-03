@@ -1,5 +1,5 @@
 const fs = require('fs');
-const csv = require('fast-csv');
+const readCSV = require('../../../utils/read-csv');
 const {datasets} = require('../../../config');
 const normalizeName = require('./normalize-name');
 
@@ -46,19 +46,15 @@ const processRowIntoObject = ({row, dbObject, inflation}) => {
 };
 
 module.exports = async ({filePath, dbObject, inflation, jsonPath}) => {
-    await new Promise(resolve => (
-        fs.createReadStream(filePath)
-            .pipe(csv.parse({headers: true}))
-            .on('data', row => {
-                numericColumns.map(column => {
-                    row[column] = parseInt(row[column]);
-                });
-                processRowIntoObject({row, dbObject, inflation})
-            })
-            .on('end', () => {
-                resolve();
-            })
-    ));
+    await readCSV({
+        path: filePath,
+        onData: (row) => {
+            numericColumns.map(column => {
+                row[column] = parseInt(row[column]);
+            });
+            processRowIntoObject({row, dbObject, inflation})
+        }
+    });
     const dbString = JSON.stringify(dbObject, null, 2);
     fs.writeFileSync(jsonPath, dbString);
     console.log(`Finished processing ${jsonPath}`);
