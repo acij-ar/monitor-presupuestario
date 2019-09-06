@@ -28,6 +28,7 @@ module.exports = async () => {
                 jsonPath,
                 filePath,
                 dbObject: dbObject[year],
+                year,
             })
         } else {
             return Promise.resolve();

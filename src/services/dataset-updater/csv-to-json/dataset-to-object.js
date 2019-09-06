@@ -11,15 +11,18 @@ const numericColumns = datasets.columns
     .filter(({isNumeric}) => isNumeric)
     .map(({name}) => name);
 
-const addNumericColumns = ({scopedObject, row}) => {
+const addNumericColumns = ({scopedObject, row, year}) => {
     numericColumns.map(column => {
         scopedObject[column] += row[column];
     });
+    if (year < 2016) {
+        scopedObject.credito_original += row.credito_presupuestado
+    }
 };
 
-const processRowIntoObject = ({row, dbObject}) => {
+const processRowIntoObject = ({row, dbObject, year}) => {
     let scopedObject = dbObject;
-    addNumericColumns({row, scopedObject});
+    addNumericColumns({row, scopedObject, year});
     scopedObject = scopedObject.dependencias;
     categories.map((category, index) => {
         const rawName = row[category];
@@ -39,14 +42,14 @@ const processRowIntoObject = ({row, dbObject}) => {
     })
 };
 
-module.exports = async ({filePath, dbObject, jsonPath}) => {
+module.exports = async ({filePath, dbObject, jsonPath, year}) => {
     await readCSV({
         path: filePath,
         onData: (row) => {
             numericColumns.map(column => {
                 row[column] = parseInt(row[column]);
             });
-            processRowIntoObject({row, dbObject})
+            processRowIntoObject({row, dbObject, year})
         }
     });
     const dbString = JSON.stringify(dbObject, null, 2);
