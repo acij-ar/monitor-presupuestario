@@ -37,7 +37,7 @@ const processRowIntoObject = ({row, dbObject, year}) => {
                 scopedObject[entityName]['credito_original'] = 0;
             })
         }
-        addNumericColumns({row, scopedObject: scopedObject[entityName]});
+        addNumericColumns({row, scopedObject: scopedObject[entityName], year});
         scopedObject = scopedObject[entityName].dependencias;
     })
 };
