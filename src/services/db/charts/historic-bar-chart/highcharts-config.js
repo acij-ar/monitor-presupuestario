@@ -18,12 +18,22 @@ module.exports = ({years, series}) => _.merge({
     }
   },
   tooltip: {
-    headerFormat: '<span style="font-size:12px">{point.key}</span><table>',
-    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-      '<td style="padding:0 0 0 10px; text-align: right"><b>$ {point.y:,.0f}</b></td></tr>',
-    footerFormat: '</table>',
-    shared: true,
-    useHTML: true
+    headerFormat: `
+      <span style="font-size:12px">
+        {point.key}
+      </span>
+      <table>
+    `,
+    pointFormat: `
+      <tr>
+        <td style="color:{series.color};padding:0">
+          {series.name}: 
+        </td>
+        <td style="padding:0 0 0 10px; text-align: right">
+          <b>$ {point.y:,.0f}</b>
+        </td>
+      </tr>
+    `,
   },
   series,
 }, highchartsBaseConfig);

@@ -1,5 +1,3 @@
-`http://monitorpresupuestario.acij.org.ar/acerca-de`;
-
 module.exports = {
   exporting: {
     buttons: {
@@ -33,5 +31,18 @@ module.exports = {
   },
   credits: {
     enabled: false
+  },
+  tooltip: {
+    shared: true,
+    useHTML: true,
+    footerFormat: `
+      </table>
+      <br>
+      <p style="white-space: normal; font-size: 11px;">
+        La información se encuentra ajustada por inflación y ha sido sistematizada por ACIJ a partir de los 
+        datos y documentos oficiales que publica el Estado Nacional. La metodologia utilizada para el ajuste 
+        por inflación se encuentran disponibles en monitorpresupuestario.acij.org.ar/acerca-de
+      </p>
+    `,
   },
 };
