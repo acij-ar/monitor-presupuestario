@@ -3,6 +3,7 @@ const axios = require('axios');
 const ReactHighcharts = require('react-highcharts');
 const ShareButtons = require('./share-buttons');
 const _ = require('lodash');
+const highchartsBaseConfig = require('./highcharts-base-config');
 
 class Chart extends React.Component {
   constructor(props) {
@@ -25,7 +26,10 @@ class Chart extends React.Component {
   downloadChartData() {
     const {data} = this.props;
     axios.post(this.props.endpoint, data)
-      .then(response => this.setState({config: response.data, showBadRequestMsg: false}))
+      .then(response => {
+        const config = _.merge(response.data, highchartsBaseConfig);
+        this.setState({config, showBadRequestMsg: false});
+      })
       .catch(error => {
         if (error && error.response && error.response.status === 400) {
           this.setState({showBadRequestMsg: true});

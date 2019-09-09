@@ -14,7 +14,8 @@ module.exports = ({selectedYear, selectedBudget, selectedEntity}) => {
         JOIN entidades ON presupuestos.entity_id = entidades.id 
         WHERE relaciones.parent_id = ? AND presupuestos.year = ? AND relaciones.child_id != ?
     `).all(entity.id, year, entity.id);
-    const name = `${entity.name} - ${year} ${budgetName}`;
+    const titleSuffix = `${year} ${budgetName}`;
+    const name = `${entity.name} - ${titleSuffix}`;
 
     const tree = {};
     const getId = (row) => {
@@ -30,5 +31,5 @@ module.exports = ({selectedYear, selectedBudget, selectedEntity}) => {
         tree[tableId] = row;
     };
     data.map(getId);
-    return {name, data, color};
+    return {name, data, color, titleSuffix};
 };
