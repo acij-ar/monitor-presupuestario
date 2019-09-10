@@ -12,7 +12,7 @@ module.exports = {
       },
       load: function () {
         if (this.options.chart.forExport) {
-          this.renderer.image('http://monitorpresupuestario.acij.org.ar/static/logo.png', 10, 10, 120, 40)
+          this.renderer.image('http://monitorpresupuestario.acij.org.ar/static/logo.png', 1070, 10, 120, 40)
             .add();
         }
       }
