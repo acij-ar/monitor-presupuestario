@@ -7,7 +7,6 @@ module.exports = {
           const titleParts = this.series[0].name.split('-');
           const titleSuffix = titleParts.pop();
           const entityName = this.series[0].nodeMap[this.series[0].rootNode].name || titleParts.join('');
-          console.log(entityName);
           this.setTitle({text: `${entityName} - ${titleSuffix}`});
         }
       },

@@ -3,7 +3,7 @@ const {components} = require('react-select');
 const ReactTooltip = require('react-tooltip');
 
 const MultiValueContainer = props => {
-  props.innerProps['data-tip'] = props.data.name;
+  props.innerProps['data-tip'] = props.data.label;
   return (
     <React.Fragment>
       <components.MultiValueContainer {...props} />
