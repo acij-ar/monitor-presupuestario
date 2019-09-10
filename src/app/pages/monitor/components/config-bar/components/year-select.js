@@ -1,6 +1,7 @@
 const React = require('react');
 const Select = require('react-select').default;
 const availableYears = require('../../../helpers/available-years');
+const MultiValueContainer = require('./multi-value-container');
 
 const YearSelect = ({ value, onChange}) => (
     <Select
@@ -15,6 +16,7 @@ const YearSelect = ({ value, onChange}) => (
         styles={{
             valueContainer: provided => ({ ...provided, flexWrap: 'nowrap'})
         }}
+        components={{ MultiValueContainer }}
     />
 );
 

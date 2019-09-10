@@ -2,6 +2,7 @@ const React = require('react');
 const AsyncSelect = require('react-select/async').default;
 const axios = require('axios');
 const GroupEntities = require('./group-entities');
+const MultiValueContainer = require('./multi-value-container');
 
 class EntitySelect extends React.Component {
   constructor(props) {
@@ -49,6 +50,7 @@ class EntitySelect extends React.Component {
           styles={{
             valueContainer: provided => ({...provided, flexWrap: 'nowrap'})
           }}
+          components={{ MultiValueContainer }}
         />
         <GroupEntities selected={value} />
       </div>

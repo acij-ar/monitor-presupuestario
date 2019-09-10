@@ -1,6 +1,7 @@
 const React = require('react');
 const Select = require('react-select').default;
 const availableBudgets = require('../../../helpers/available-budgets');
+const MultiValueContainer = require('./multi-value-container');
 
 const BudgetSelect = ({value, onChange}) => (
     <Select
@@ -15,6 +16,7 @@ const BudgetSelect = ({value, onChange}) => (
         styles={{
             valueContainer: provided => ({ ...provided, flexWrap: 'nowrap'})
         }}
+        components={{ MultiValueContainer }}
     />
 );
 
