@@ -36,4 +36,11 @@ module.exports = ({years, series, titleText}) => _.merge({
     `,
   },
   series,
+  exporting: {
+    chartOptions: {
+      subtitle: {
+        text: `Este gráfico contiene información presupuestaria sobre ${titleText} para ${years.join(', ')}. La información se encuentra ajustada por inflación y ha sido sistematizada por ACIJ a partir de los datos y documentos oficiales que publica el Estado Nacional. Los índices utilizados para el ajuste por inflación se encuentran disponibles en monitorpresupuestario.acij.org.ar/acerca-de. Para más información consulte monitorpresupuestario.acij.org.ar`
+      }
+    }
+  }
 }, highchartsBaseConfig);

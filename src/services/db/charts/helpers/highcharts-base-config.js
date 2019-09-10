@@ -15,6 +15,17 @@ module.exports = {
         ],
       },
     },
+    sourceWidth: 1200,
+    sourceHeight: 600,
+    chartOptions: {
+      chart: {
+        spacingTop: 20,
+        spacingBottom: 60,
+      },
+      subtitle: {
+        verticalAlign: 'bottom',
+      },
+    },
   },
   plotOptions: {
     series: {
