@@ -4,8 +4,10 @@ module.exports = {
       redraw: function () {
         const isTreemap = this.series && this.series[0] && this.series[0].type === 'treemap';
         if (isTreemap) {
-          const entityName = this.series[0].nodeMap[this.series[0].rootNode].name || 'Presupuesto total';
-          const titleSuffix = this.series[0].name;
+          const titleParts = this.series[0].name.split('-');
+          const titleSuffix = titleParts.pop();
+          const entityName = this.series[0].nodeMap[this.series[0].rootNode].name || titleParts.join('');
+          console.log(entityName);
           this.setTitle({text: `${entityName} - ${titleSuffix}`});
         }
       },

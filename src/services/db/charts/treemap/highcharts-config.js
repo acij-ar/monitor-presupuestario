@@ -1,12 +1,12 @@
 const highchartsBaseConfig = require('../helpers/highcharts-base-config');
 const _ = require('lodash');
 
-module.exports = ({data, name, color, titleSuffix}) => _.merge({
+module.exports = ({data, name, color}) => _.merge({
   series: [{
     type: 'treemap',
     layoutAlgorithm: 'squarified',
     color,
-    name: titleSuffix,
+    name,
     data,
     allowDrillToNode: true,
     dataLabels: {
