@@ -1,7 +1,7 @@
 const React = require('react');
 const AsyncSelect = require('react-select/async').default;
 const axios = require('axios');
-const GroupEntitiesTrigger = require('./group-entities-trigger');
+const GroupEntitiesTrigger = require('./group-entities/trigger');
 const MultiValueContainer = require('./multi-value-container');
 
 class EntitySelect extends React.Component {
