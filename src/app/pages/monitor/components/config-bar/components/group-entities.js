@@ -1,24 +1,12 @@
 const React = require('react');
 
-class GroupEntities extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-    this.showGroups = this.showGroups.bind(this);
-  }
-
-  showGroups() {
-
-  }
-
+class GroupEntities extends React.PureComponent {
   render() {
     const { selected } = this.props;
-    const enabled = selected && selected.length > 2;
     return (
       <React.Fragment>
-        <a onClick={this.showGroups} id="monitor-config-group-entities-trigger" className={enabled ? 'enabled' : 'disabled'}>
-          Agrupar
-        </a>
+        <input type="checkbox" id="monitor-config-group-entities-switch" />
+        <div id="monitor-config-group-entitie-container" />
       </React.Fragment>
     )
   }

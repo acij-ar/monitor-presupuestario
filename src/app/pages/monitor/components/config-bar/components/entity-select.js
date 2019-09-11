@@ -1,7 +1,7 @@
 const React = require('react');
 const AsyncSelect = require('react-select/async').default;
 const axios = require('axios');
-const GroupEntities = require('./group-entities');
+const GroupEntitiesTrigger = require('./group-entities-trigger');
 const MultiValueContainer = require('./multi-value-container');
 
 class EntitySelect extends React.Component {
@@ -52,7 +52,7 @@ class EntitySelect extends React.Component {
           }}
           components={{ MultiValueContainer }}
         />
-        <GroupEntities selected={value} />
+        <GroupEntitiesTrigger selected={value} />
       </div>
     )
   }
