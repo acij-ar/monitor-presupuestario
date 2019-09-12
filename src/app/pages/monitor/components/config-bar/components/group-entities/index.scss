@@ -1,31 +1,10 @@
-#monitor-config-group-entities-trigger {
-  position: absolute;
-  right: 0;
-  top: -2px;
-  transform: translateY(-100%);
-  font-size: 11px;
-  cursor: pointer;
-  color: #3d64de;
-
-  &.disabled {
-    color: #999;
-  }
-}
-
-#monitor-config-group-entities-switch {
-  position: fixed;
-  top: -999px;
-  left: -999px;
-}
+@import './trigger';
+@import './drag-and-drop-list';
 
 #monitor-config-group-entities-container {
   width: 100%;
   height: 300px;
   display: none;
-}
-
-#monitor-config-group-entities-switch:checked + #monitor-config-group-entities-container {
-  display: block;
 }
 
 #monitor-config-group-entities-content {
