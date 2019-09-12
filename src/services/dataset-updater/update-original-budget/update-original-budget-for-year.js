@@ -16,7 +16,7 @@ module.exports = async ({filePath, year, errorsPath}) => {
   const jsonObject = JSON.parse(jsonContent);
   const errors = [];
   dataset.map(correction => {
-    const {targetObject, found} = updateBudgetInObject({correction, jsonObject});
+    const {targetObject, found} = updateBudgetInObject({correction, jsonObject, year});
     if (found && correction.marcar_hijos_con_posible_reasignacion === 'si') {
       markAllChildrenAsPossiblyModified(targetObject)
     }

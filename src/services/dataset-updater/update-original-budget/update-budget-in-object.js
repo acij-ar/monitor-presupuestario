@@ -21,13 +21,16 @@ const findBestMatch = (targetName, dependencies) => {
   return null;
 };
 
-module.exports = ({correction, jsonObject}) => {
+module.exports = ({correction, jsonObject, year}) => {
   const budgetCorrection = getBudgetCorrention(correction);
   let targetObject = jsonObject;
   targetObject.credito_original += budgetCorrection;
   let found = true;
   ['jurisdiccion', 'entidad', 'programa', 'actividad'].map(category => {
-    const targetName = normalizeName(correction[category]);
+    if ([2016, 2017].includes(year) && ['programa', 'actividad'].includes(category) && correction[category]) {
+      correction[category] = correction[category].replace(/^\d+ - /, '');
+    }
+    const targetName = normalizeName(correction[category] || '');
     const bestMatch = findBestMatch(targetName, targetObject.dependencias);
     if (targetName && bestMatch && targetObject.dependencias[bestMatch]) {
       targetObject = targetObject.dependencias[bestMatch];
