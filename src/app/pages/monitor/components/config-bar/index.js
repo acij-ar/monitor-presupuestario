@@ -6,17 +6,19 @@ const GroupEntities = require('./components/group-entities');
 
 class ConfigBar extends React.PureComponent {
   render() {
+    const { props } = this;
     return (
-      <React.Fragment>
-        <div className="monitor-config-bar">
-          <div className="monitor-config-bar-content">
-            <EntitySelect value={this.props.selectedEntities} onChange={this.props.onSelectedEntitiesChange}/>
-            <YearSelect value={this.props.selectedYears} onChange={this.props.onSelectedYearsChange}/>
-            <BudgetSelect value={this.props.selectedBudgets} onChange={this.props.onSelectedBudgetsChange}/>
-          </div>
+      <div className="monitor-config-bar">
+        <div className="monitor-config-bar-content">
+          <EntitySelect value={props.selectedEntities} onChange={props.onSelectedEntitiesChange}/>
+          <YearSelect value={props.selectedYears} onChange={props.onSelectedYearsChange}/>
+          <BudgetSelect value={props.selectedBudgets} onChange={props.onSelectedBudgetsChange}/>
         </div>
-        <GroupEntities selected={this.props.selectedEntities} />
-      </React.Fragment>
+        {
+          props.selectedEntities && props.selectedEntities.length > 1 ?
+            <GroupEntities selected={props.selectedEntities} /> : null
+        }
+      </div>
     )
   }
 }
