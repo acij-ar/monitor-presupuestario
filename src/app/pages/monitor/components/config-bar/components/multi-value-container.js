@@ -7,7 +7,7 @@ const MultiValueContainer = props => {
   return (
     <React.Fragment>
       <components.MultiValueContainer {...props} />
-      <ReactTooltip />
+      <ReactTooltip/>
     </React.Fragment>
   );
 };

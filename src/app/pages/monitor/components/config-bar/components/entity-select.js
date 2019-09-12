@@ -51,6 +51,8 @@ class EntitySelect extends React.Component {
             valueContainer: provided => ({...provided, flexWrap: 'nowrap'})
           }}
           components={{ MultiValueContainer }}
+          getOptionLabel={option => option.label}
+          getOptionValue={option => option.id}
         />
         <GroupEntitiesTrigger selected={value} />
       </div>
