@@ -3,6 +3,24 @@
   border: dashed 3px #ddd;
   min-height: 33px;
   padding: 5px;
+  position: relative;
+
+  &:before {
+    content: 'No agrupdos';
+  }
+}
+
+.monitor-config-group-horizontal,
+.monitor-config-group-vertical {
+  &:before {
+    color: #666;
+    position: absolute;
+    top: -2px;
+    left: 5px;
+    transform: translate(0, -50%);
+    background: white;
+    padding: 0 5px;
+  }
 }
 
 .monitor-config-group-vertical-container {
@@ -17,6 +35,15 @@
   border: dashed 3px #ddd;
   min-height: 100px;
   padding: 5px;
+  position: relative;
+
+  &:first-child:before {
+    content: 'Grupo 1'
+  }
+
+  &:nth-child(2):before {
+    content: 'Grupo 2'
+  }
 }
 
 .monitor-config-group-vertical + .monitor-config-group-vertical {
