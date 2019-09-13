@@ -24,7 +24,7 @@ module.exports = ({selectedYears, selectedBudgets, selectedEntities}) => {
       seriesAreGrouped = seriesAreGrouped || !!groupId;
       const budgetByYear = {};
       results.map(result => budgetByYear[result.year] = result[budget.value]);
-      years.map(year => serie.data.push(budgetByYear[year] || 0));
+      years.map(year => serie.data.push(budgetByYear[year] || null));
       series.push(serie);
     });
   });
