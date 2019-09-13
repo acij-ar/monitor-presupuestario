@@ -49,9 +49,26 @@ class GroupEntities extends React.Component {
         <div id="monitor-config-group-entities-container">
           <div id="monitor-config-group-entities-content">
             <DragDropContext onDragEnd={this.onDragEnd}>
-              <DragAndDropList id="nonGroupedItems" type="horizontal" items={this.state.nonGroupedItems}/>
-              <DragAndDropList id="firstGroupItems" type="vertical" items={this.state.firstGroupItems} />
-              <DragAndDropList id="secondGroupItems" type="vertical" items={this.state.secondGroupItems} />
+              <DragAndDropList
+                id="nonGroupedItems"
+                items={this.state.nonGroupedItems}
+                direction="horizontal"
+                className="monitor-config-group-horizontal"
+              />
+              <div className="monitor-config-group-vertical-container">
+                <DragAndDropList
+                  id="firstGroupItems"
+                  items={this.state.firstGroupItems}
+                  direction="vertical"
+                  className="monitor-config-group-vertical"
+                />
+                <DragAndDropList
+                  id="secondGroupItems"
+                  items={this.state.secondGroupItems}
+                  direction="vertical"
+                  className="monitor-config-group-vertical"
+                />
+              </div>
             </DragDropContext>
           </div>
         </div>

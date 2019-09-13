@@ -1,0 +1,40 @@
+.monitor-config-group-horizontal {
+  margin-bottom: 20px;
+  border: dashed 3px #ddd;
+  min-height: 44px;
+  padding: 5px;
+}
+
+.monitor-config-group-vertical-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.monitor-config-group-vertical {
+  display: flex;
+  flex: 1;
+  height: auto;
+  border: dashed 3px #ddd;
+  min-height: 100px;
+  padding: 5px;
+}
+
+.monitor-config-group-vertical + .monitor-config-group-vertical {
+  margin-left: 20px;
+}
+
+.monitor-config-group-horizontal-dragging-over,
+.monitor-config-group-vertical-dragging-over {
+  border-color: #aaa;
+}
+
+.monitor-config-group-item {
+  background: #e6e6e6;
+  color: hsl(0,0%,20%);
+  padding: 3px 6px;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 2px;
+  margin: 5px;
+}
+
