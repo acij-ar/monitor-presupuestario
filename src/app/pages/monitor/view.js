@@ -20,7 +20,7 @@ class App extends React.Component {
   }
 
   onGroupsChange() {
-      this.setState(this.state);
+    this.setState(this.state);
   }
 
   onSelectedEntitiesChange(selectedEntities) {

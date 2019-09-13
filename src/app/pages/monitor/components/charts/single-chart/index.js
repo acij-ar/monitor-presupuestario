@@ -1,7 +1,7 @@
 const React = require('react');
 const Chart = require('../base-chart');
 
-class SingleChart extends React.PureComponent {
+class SingleChart extends React.Component {
   render() {
     const {selectedYears, selectedBudgets, selectedEntities, endpoint} = this.props;
     const data = {selectedYears, selectedBudgets, selectedEntities};

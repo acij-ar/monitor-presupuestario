@@ -16,7 +16,8 @@ class Chart extends React.Component {
   }
 
   componentDidUpdate() {
-    if (this.props !== this.state.props) {
+    const newDataSnapshot = JSON.stringify(this.props.data);
+    if (this.dataSnapshot !== newDataSnapshot) {
       this.state.props = this.props;
       this.setState(this.state);
       this.downloadChartData();
@@ -25,6 +26,7 @@ class Chart extends React.Component {
 
   downloadChartData() {
     const {data} = this.props;
+    this.dataSnapshot = JSON.stringify(data);
     axios.post(this.props.endpoint, data)
       .then(response => {
         const config = _.merge(response.data, highchartsBaseConfig);
