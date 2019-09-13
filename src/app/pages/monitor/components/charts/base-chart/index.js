@@ -1,7 +1,6 @@
 const React = require('react');
 const axios = require('axios');
 const ReactHighcharts = require('react-highcharts');
-const ShareButtons = require('./share-buttons');
 const _ = require('lodash');
 const highchartsBaseConfig = require('./highcharts-base-config');
 
@@ -44,12 +43,7 @@ class Chart extends React.Component {
       <div className="monitor-chart-bad-request">
         No se han encontrado datos para la combinación años y dependencias seleccionadas.
       </div> :
-      this.state.config ?
-        <React.Fragment>
-          <ShareButtons/>
-          <ReactHighcharts config={this.state.config}/>
-        </React.Fragment> :
-        null
+      this.state.config ? <ReactHighcharts config={this.state.config}/> : null
   }
 }
 
