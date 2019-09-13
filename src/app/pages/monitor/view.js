@@ -16,6 +16,11 @@ class App extends React.Component {
     this.onSelectedEntitiesChange = this.onSelectedEntitiesChange.bind(this);
     this.onSelectedYearsChange = this.onSelectedYearsChange.bind(this);
     this.onSelectedBudgetsChange = this.onSelectedBudgetsChange.bind(this);
+    this.onGroupsChange = this.onGroupsChange.bind(this);
+  }
+
+  onGroupsChange() {
+      this.setState(this.state);
   }
 
   onSelectedEntitiesChange(selectedEntities) {
@@ -39,6 +44,7 @@ class App extends React.Component {
   render() {
     const {title, description} = this.props;
     const {selectedYears, selectedBudgets, selectedEntities} = this.state;
+    const hasGroupedEntities = selectedEntities && selectedEntities.filter(entity => entity.groupId).length > 1;
     return (
       <Page>
         <div className="monitor-highlight">
@@ -55,14 +61,18 @@ class App extends React.Component {
           onSelectedEntitiesChange={this.onSelectedEntitiesChange}
           onSelectedYearsChange={this.onSelectedYearsChange}
           onSelectedBudgetsChange={this.onSelectedBudgetsChange}
+          onGroupsChange={this.onGroupsChange}
         />
 
-        <CarrouselChart
-          endpoint="/api/db/treemap"
-          selectedYears={selectedYears}
-          selectedBudgets={selectedBudgets}
-          selectedEntities={selectedEntities}
-        />
+        {
+          hasGroupedEntities ? null :
+            <CarrouselChart
+              endpoint="/api/db/treemap"
+              selectedYears={selectedYears}
+              selectedBudgets={selectedBudgets}
+              selectedEntities={selectedEntities}
+            />
+        }
 
         <SingleChart
           endpoint="/api/db/historic-bar-chart"

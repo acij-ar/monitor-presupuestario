@@ -21,12 +21,16 @@ class GroupEntities extends React.Component {
       firstGroupItems: [],
       secondGroupItems: [],
     };
+    state.nonGroupedItems.concat(state.firstGroupItems).concat(state.secondGroupItems).map(item => { item.groupId = null });
     props.selected.map(item => {
       if (state.firstGroupItems.includes(item)) {
+        item.groupId = 1;
         newState.firstGroupItems.push(item);
       } else if (state.secondGroupItems.includes(item)) {
+        item.groupId = 2;
         newState.secondGroupItems.push(item);
       } else {
+        item.groupId = null;
         newState.nonGroupedItems.push(item);
       }
     });
@@ -57,6 +61,10 @@ class GroupEntities extends React.Component {
       this.state[source.droppableId] = result[source.droppableId];
       this.state[destination.droppableId] = result[destination.droppableId];
     }
+    this.state.nonGroupedItems.map(item => { item.groupId = null });
+    this.state.firstGroupItems.map(item => { item.groupId = 1 });
+    this.state.secondGroupItems.map(item => { item.groupId = 2 });
+    this.props.onGroupsChange();
     this.setState(this.state);
   };
 

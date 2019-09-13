@@ -20,7 +20,7 @@ class ConfigBar extends React.PureComponent {
         </div>
         {
           props.selectedEntities && props.selectedEntities.length > 1 ?
-            <GroupEntities selected={props.selectedEntities} /> : null
+            <GroupEntities selected={props.selectedEntities} onGroupsChange={props.onGroupsChange} /> : null
         }
       </div>
     )
