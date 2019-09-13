@@ -11,13 +11,14 @@ module.exports = ({selectedYears, selectedBudgets, selectedEntities}) => {
   const entities = selectedEntities || [{name: 'Presupuesto total', id: 1}];
 
   const series = [];
-  entities.map(({name, id}, index) => {
+  entities.map(({name, id, groupId}, index) => {
     const results = db.prepare(`SELECT year, ${budgetsValues} FROM entidades JOIN presupuestos ON entidades.id = entity_id WHERE entidades.id = ? ORDER BY year ASC`).all(id);
     selectedBudgets.map(budget => {
       const serie = {
         name: `${name} - ${budget.label}`,
         data: [],
         color: entities.length > 1 ? patternFill({pathNumber: index, strokeColor: budget.color}) : budget.color,
+        stack: groupId ? `grouped-${budget.value}-${groupId}` : `ungrouped-${budget.value}-${id}`,
       };
       const budgetByYear = {};
       results.map(result => budgetByYear[result.year] = result[budget.value]);
