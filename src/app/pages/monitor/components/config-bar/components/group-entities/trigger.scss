@@ -1,14 +1,26 @@
-#monitor-config-group-entities-trigger {
+#monitor-config-group-entities-trigger,
+#monitor-config-group-entities-disabled-trigger {
   position: absolute;
   right: 0;
   top: -2px;
   transform: translateY(-100%);
   font-size: 11px;
+}
+
+#monitor-config-group-entities-trigger {
   cursor: pointer;
   color: #3d64de;
 
   &:before {
     content: 'Agrupar'
+  }
+}
+
+#monitor-config-group-entities-disabled-trigger {
+  color: #aaa;
+
+  .monitor-config-group-trigger-tooltip {
+    width: 240px;
   }
 }
 
