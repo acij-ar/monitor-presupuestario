@@ -9,6 +9,10 @@ class ConfigBar extends React.PureComponent {
     const { props } = this;
     return (
       <div className="monitor-config-bar">
+        {
+          props.selectedEntities && props.selectedEntities.length > 1 ?
+            <input type="checkbox" id="monitor-config-group-entities-switch" /> : null
+        }
         <div className="monitor-config-bar-content">
           <EntitySelect value={props.selectedEntities} onChange={props.onSelectedEntitiesChange}/>
           <YearSelect value={props.selectedYears} onChange={props.onSelectedYearsChange}/>

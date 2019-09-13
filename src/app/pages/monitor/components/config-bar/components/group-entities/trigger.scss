@@ -7,8 +7,8 @@
   cursor: pointer;
   color: #3d64de;
 
-  &.disabled {
-    color: #999;
+  &:before {
+    content: 'Agrupar'
   }
 }
 
@@ -18,6 +18,12 @@
   left: -999px;
 }
 
-#monitor-config-group-entities-switch:checked + #monitor-config-group-entities-container {
+#monitor-config-group-entities-switch:checked ~ #monitor-config-group-entities-container {
   display: block;
+}
+
+#monitor-config-group-entities-switch:checked ~ .monitor-config-bar-content #monitor-config-group-entities-trigger {
+  &:before {
+    content: 'Ocultar'
+  }
 }

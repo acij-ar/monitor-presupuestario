@@ -62,35 +62,32 @@ class GroupEntities extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        <input type="checkbox" id="monitor-config-group-entities-switch" />
-        <div id="monitor-config-group-entities-container">
-          <div id="monitor-config-group-entities-content">
-            <DragDropContext onDragEnd={this.onDragEnd}>
+      <div id="monitor-config-group-entities-container">
+        <div id="monitor-config-group-entities-content">
+          <DragDropContext onDragEnd={this.onDragEnd}>
+            <DragAndDropList
+              id="nonGroupedItems"
+              items={this.state.nonGroupedItems}
+              direction="horizontal"
+              className="monitor-config-group-horizontal"
+            />
+            <div className="monitor-config-group-vertical-container">
               <DragAndDropList
-                id="nonGroupedItems"
-                items={this.state.nonGroupedItems}
-                direction="horizontal"
-                className="monitor-config-group-horizontal"
+                id="firstGroupItems"
+                items={this.state.firstGroupItems}
+                direction="vertical"
+                className="monitor-config-group-vertical"
               />
-              <div className="monitor-config-group-vertical-container">
-                <DragAndDropList
-                  id="firstGroupItems"
-                  items={this.state.firstGroupItems}
-                  direction="vertical"
-                  className="monitor-config-group-vertical"
-                />
-                <DragAndDropList
-                  id="secondGroupItems"
-                  items={this.state.secondGroupItems}
-                  direction="vertical"
-                  className="monitor-config-group-vertical"
-                />
-              </div>
-            </DragDropContext>
-          </div>
+              <DragAndDropList
+                id="secondGroupItems"
+                items={this.state.secondGroupItems}
+                direction="vertical"
+                className="monitor-config-group-vertical"
+              />
+            </div>
+          </DragDropContext>
         </div>
-      </React.Fragment>
+      </div>
     )
   }
 }
