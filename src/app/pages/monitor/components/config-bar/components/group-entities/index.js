@@ -15,6 +15,24 @@ class GroupEntities extends React.Component {
     this.onDragEnd = this.onDragEnd.bind(this);
   }
 
+  static getDerivedStateFromProps(props, state) {
+    const newState = {
+      nonGroupedItems: [],
+      firstGroupItems: [],
+      secondGroupItems: [],
+    };
+    props.selected.map(item => {
+      if (state.firstGroupItems.includes(item)) {
+        newState.firstGroupItems.push(item);
+      } else if (state.secondGroupItems.includes(item)) {
+        newState.secondGroupItems.push(item);
+      } else {
+        newState.nonGroupedItems.push(item);
+      }
+    });
+    return newState
+  }
+
   onDragEnd(result) {
     const { source, destination } = result;
 
