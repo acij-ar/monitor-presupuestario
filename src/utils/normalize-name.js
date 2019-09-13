@@ -5,7 +5,7 @@ const capitalizeFirstLetter = (string) => {
 };
 
 module.exports = (name) => {
-  const deburredName = _.deburr(name.replace(/\s\s+/g, ' ').replace(/"/g, '\''));
+  const deburredName = _.deburr(name.trim().replace(/\s\s+/g, ' ').replace(/"/g, '\''));
   if (deburredName.toUpperCase() === deburredName) {
     const lowerCaseName = deburredName.toLowerCase();
     return capitalizeFirstLetter(lowerCaseName)
