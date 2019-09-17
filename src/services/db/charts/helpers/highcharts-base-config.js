@@ -58,6 +58,7 @@ module.exports = {
     `,
   },
   legend: {
-    itemWidth: 500
+    itemWidth: 500,
+    maxHeight: 75,
   }
 };
