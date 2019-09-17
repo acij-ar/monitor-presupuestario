@@ -12,13 +12,14 @@ module.exports = ({selectedYears, selectedBudgets, selectedEntities}) => {
 
   const series = [];
   let seriesAreGrouped = false;
-  entities.map(({label, id, groupId}, index) => {
+  entities.map(({label, id, groupId, unified}, index) => {
     const results = db.prepare(`SELECT year, ${budgetsValues} FROM entidades JOIN presupuestos ON entidades.id = entity_id WHERE entidades.id = ? ORDER BY year ASC`).all(id);
+    const pathNumber = unified ? groupId - 1 : index;
     selectedBudgets.map(budget => {
       const serie = {
         name: `${label} - ${budget.label}`,
         data: [],
-        color: entities.length > 1 ? patternFill({pathNumber: index, strokeColor: budget.color}) : budget.color,
+        color: entities.length > 1 ? patternFill({pathNumber, strokeColor: budget.color}) : budget.color,
         stack: groupId ? `grouped-${budget.value}-${groupId}` : `ungrouped-${budget.value}-${id}`,
       };
       seriesAreGrouped = seriesAreGrouped || !!groupId;
