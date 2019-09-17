@@ -57,4 +57,7 @@ module.exports = {
       </p>
     `,
   },
+  legend: {
+    itemWidth: 500
+  }
 };
