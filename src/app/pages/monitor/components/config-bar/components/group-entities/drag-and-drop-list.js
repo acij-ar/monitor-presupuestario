@@ -3,7 +3,7 @@ const { Droppable, Draggable } = require('react-beautiful-dnd');
 
 class DragAndDropList extends React.PureComponent {
   render() {
-    const { id, items, className, direction } = this.props;
+    const { id, items, className, direction, onUnify } = this.props;
     return (
       <Droppable droppableId={id} direction={direction}>
         {(provided, {isDraggingOver}) => (
@@ -32,6 +32,12 @@ class DragAndDropList extends React.PureComponent {
               ))}
               {provided.placeholder}
             </div>
+            { onUnify && (
+              <label className={`${className}-unification-checkbox`}>
+                Unificar
+                <input type="checkbox" onChange={onUnify} />
+              </label>
+            ) }
           </div>
         )}
       </Droppable>

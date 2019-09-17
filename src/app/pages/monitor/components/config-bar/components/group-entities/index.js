@@ -22,6 +22,7 @@ class GroupEntities extends React.Component {
       secondGroupItems: [],
     };
     state.nonGroupedItems.concat(state.firstGroupItems).concat(state.secondGroupItems).map(item => { item.groupId = null });
+    // TODO: reset unification items
     props.selected.map(item => {
       if (state.firstGroupItems.includes(item)) {
         item.groupId = 1;
@@ -35,6 +36,13 @@ class GroupEntities extends React.Component {
       }
     });
     return newState
+  }
+
+  unifyGroups(shouldBeUnified, group) {
+    console.log(`unify ${group}? : ${shouldBeUnified}`);
+    // TODO: imapct items
+    this.props.onGroupsChange();
+    this.setState(this.state);
   }
 
   onDragEnd(result) {
@@ -85,12 +93,14 @@ class GroupEntities extends React.Component {
                 items={this.state.firstGroupItems}
                 direction="vertical"
                 className="monitor-config-group-vertical"
+                onUnify={e => this.unifyGroups(e.target.checked, 'firstGroupItems')}
               />
               <DragAndDropList
                 id="secondGroupItems"
                 items={this.state.secondGroupItems}
                 direction="vertical"
                 className="monitor-config-group-vertical"
+                onUnify={e => this.unifyGroups(e.target.checked, 'secondGroupItems')}
               />
             </div>
           </DragDropContext>
