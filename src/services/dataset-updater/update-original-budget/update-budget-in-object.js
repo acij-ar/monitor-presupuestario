@@ -24,8 +24,11 @@ const findBestMatch = (targetName, dependencies) => {
 module.exports = ({correction, jsonObject, year}) => {
   const budgetCorrection = getBudgetCorrention(correction);
   let targetObject = jsonObject;
-  targetObject.credito_original += budgetCorrection;
   let found = true;
+  if (!budgetCorrection) {
+    return { found };
+  }
+  targetObject.credito_original += budgetCorrection;
   ['jurisdiccion', 'entidad', 'programa', 'actividad'].map(category => {
     if ([2016, 2017].includes(year) && ['programa', 'actividad'].includes(category) && correction[category]) {
       correction[category] = correction[category].replace(/^\d+ - /, '');
