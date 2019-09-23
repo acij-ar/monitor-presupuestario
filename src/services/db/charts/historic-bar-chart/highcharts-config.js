@@ -30,7 +30,7 @@ module.exports = ({years, series, titleText}) => _.merge({
           {series.name}: 
         </td>
         <td style="padding:0 0 0 10px; text-align: right">
-          <b>$ {point.y:,.0f}</b>
+          <b>$ {point.tooltipY:,.0f}</b>
         </td>
       </tr>
     `,
