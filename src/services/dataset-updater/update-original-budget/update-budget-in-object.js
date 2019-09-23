@@ -1,5 +1,6 @@
 const {datasets} = require('../../../config');
 const normalizeName = require('../../../utils/normalize-name');
+const findBestMatch = require('./find-best-match');
 const numericColumns = datasets.columns
   .filter(({isNumeric}) => isNumeric)
   .map(({name}) => name);
@@ -10,15 +11,6 @@ const getBudgetCorrention = (correction) => {
   const original = parseInt(correction.credito_original);
   const originalOrZero = isNaN(original) ? 0 : original;
   return originalOrZero + increaseOrZero;
-};
-
-const findBestMatch = (targetName, dependencies) => {
-  if (dependencies) {
-    const normalizedTargetName = normalizeName(targetName.toLowerCase());
-    const dependenciesNames = Object.keys(dependencies);
-    return dependenciesNames.find(name => normalizeName(name.toLocaleLowerCase()) === normalizedTargetName);
-  }
-  return null;
 };
 
 module.exports = ({correction, jsonObject, year}) => {
