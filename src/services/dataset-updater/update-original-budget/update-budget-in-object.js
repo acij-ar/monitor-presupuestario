@@ -1,5 +1,6 @@
 const {datasets} = require('../../../config');
 const normalizeName = require('../../../utils/normalize-name');
+const findBestMatch = require('./find-best-match');
 const numericColumns = datasets.columns
   .filter(({isNumeric}) => isNumeric)
   .map(({name}) => name);
@@ -12,20 +13,14 @@ const getBudgetCorrention = (correction) => {
   return originalOrZero + increaseOrZero;
 };
 
-const findBestMatch = (targetName, dependencies) => {
-  if (dependencies) {
-    const normalizedTargetName = normalizeName(targetName.toLowerCase());
-    const dependenciesNames = Object.keys(dependencies);
-    return dependenciesNames.find(name => normalizeName(name.toLocaleLowerCase()) === normalizedTargetName);
-  }
-  return null;
-};
-
 module.exports = ({correction, jsonObject, year}) => {
   const budgetCorrection = getBudgetCorrention(correction);
   let targetObject = jsonObject;
-  targetObject.credito_original += budgetCorrection;
   let found = true;
+  if (!budgetCorrection) {
+    return { found };
+  }
+  targetObject.credito_original += budgetCorrection;
   ['jurisdiccion', 'entidad', 'programa', 'actividad'].map(category => {
     if ([2016, 2017].includes(year) && ['programa', 'actividad'].includes(category) && correction[category]) {
       correction[category] = correction[category].replace(/^\d+ - /, '');

@@ -34,6 +34,7 @@
     "elasticlunr": "^0.9.5",
     "express": "^4.17.0",
     "fast-csv": "^3.1.0",
+    "fast-levenshtein": "^2.0.6",
     "googleapis": "^39.2.0",
     "node-sass": "^4.12.0",
     "postcss-loader": "^3.0.0",
