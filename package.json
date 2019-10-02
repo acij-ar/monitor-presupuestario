@@ -41,6 +41,7 @@
     "react": "^16.8.6",
     "react-beautiful-dnd": "^11.0.5",
     "react-dom": "^16.8.6",
+    "react-ga": "^2.6.0",
     "react-highcharts": "^16.0.2",
     "react-select": "^3.0.4",
     "react-tooltip": "^3.11.1",
