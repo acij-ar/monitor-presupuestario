@@ -3,5 +3,5 @@ const highchartsConfig = require('./highcharts-config');
 
 module.exports = ({selectedYears, selectedBudgets, selectedEntities}) => {
   const {years, series, titleText} = query({selectedYears, selectedBudgets, selectedEntities});
-  return highchartsConfig({years, series, titleText})
+  return highchartsConfig({years, series, titleText});
 };

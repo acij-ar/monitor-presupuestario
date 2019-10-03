@@ -1,5 +1,4 @@
 const express = require('express');
-const React = require('react');
 
 const { render: renderHome } = require('./pages/home');
 const { render: renderMonitor } = require('./pages/monitor');

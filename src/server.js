@@ -1,4 +1,4 @@
-require("@babel/polyfill");
+require('@babel/polyfill');
 
 const createTables = require('./services/db/management/create-tables');
 createTables();

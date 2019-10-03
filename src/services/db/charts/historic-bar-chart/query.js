@@ -30,7 +30,7 @@ module.exports = ({selectedYears, selectedBudgets, selectedEntities}) => {
         const modified = budget.value === 'credito_original' && result.credito_original_posiblemente_modificado;
         const budgetAmount = result[budget.value];
         maxBudget = Math.max(maxBudget, budgetAmount);
-        budgetByYear[result.year] = { color, y: budgetAmount, modified, tooltipY: budgetAmount }
+        budgetByYear[result.year] = { color, y: budgetAmount, modified, tooltipY: budgetAmount };
       });
       years.map(year => serie.data.push(budgetByYear[year] || null));
       series.push(serie);
@@ -44,7 +44,7 @@ module.exports = ({selectedYears, selectedBudgets, selectedEntities}) => {
         point.tooltipY = null;
         point.color = 'rgba(0, 0, 0, 0.1)';
       }
-    })
+    });
   });
 
   const titleText = seriesAreGrouped ? 'Seleccion de programas agrupados segun referencias' : entities.map(({name}) => name).join(', ');
@@ -53,5 +53,5 @@ module.exports = ({selectedYears, selectedBudgets, selectedEntities}) => {
     years,
     series,
     titleText,
-  }
+  };
 };

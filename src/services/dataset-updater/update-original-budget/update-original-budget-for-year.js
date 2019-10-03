@@ -18,7 +18,7 @@ module.exports = async ({filePath, year, errorsPath}) => {
   dataset.map(correction => {
     const {targetObject, found} = updateBudgetInObject({correction, jsonObject, year});
     if (found && correction.marcar_hijos_con_posible_reasignacion === 'si') {
-      markAllChildrenAsPossiblyModified(targetObject)
+      markAllChildrenAsPossiblyModified(targetObject);
     }
     if (!found) {
       errors.push(correction);
@@ -32,6 +32,6 @@ module.exports = async ({filePath, year, errorsPath}) => {
     csvWriter.pipe(outputStream);
     errors.map(error => csvWriter.write(error));
     csvWriter.end();
-    console.log(`${errors.length} errors for ${year}`)
+    console.log(`${errors.length} errors for ${year}`);
   }
 };

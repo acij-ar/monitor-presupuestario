@@ -8,7 +8,7 @@ module.exports = (name) => {
   const deburredName = _.deburr(name.trim().replace(/\s\s+/g, ' ').replace(/"/g, '\''));
   if (deburredName.toUpperCase() === deburredName) {
     const lowerCaseName = deburredName.toLowerCase();
-    return capitalizeFirstLetter(lowerCaseName)
+    return capitalizeFirstLetter(lowerCaseName);
   }
   return deburredName;
 };

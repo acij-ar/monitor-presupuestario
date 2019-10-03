@@ -12,7 +12,7 @@ module.exports = ({data, name, color}) => _.merge({
     dataLabels: {
       enabled: false,
       style: {
-        textOverflow: "ellipsis",
+        textOverflow: 'ellipsis',
         textOutline: 'none',
       }
     },

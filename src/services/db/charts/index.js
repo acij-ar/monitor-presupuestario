@@ -1,4 +1,4 @@
 module.exports = {
-    treemap: require('./treemap'),
-    historicBarchart: require('./historic-bar-chart'),
+  treemap: require('./treemap'),
+  historicBarchart: require('./historic-bar-chart'),
 };
