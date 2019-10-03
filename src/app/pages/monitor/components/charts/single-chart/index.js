@@ -6,12 +6,12 @@ class SingleChart extends React.Component {
     const {selectedYears, selectedBudgets, selectedEntities, endpoint} = this.props;
     const data = {selectedYears, selectedBudgets, selectedEntities};
     return (
-      <div className={`monitor-content monitor-chart-container`}>
-        <div className={`monitor-chart`}>
+      <div className={'monitor-content monitor-chart-container'}>
+        <div className={'monitor-chart'}>
           <Chart data={data} endpoint={endpoint} />
         </div>
       </div>
-    )
+    );
   }
 }
 

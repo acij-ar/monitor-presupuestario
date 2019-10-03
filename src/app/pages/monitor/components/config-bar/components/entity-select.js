@@ -15,13 +15,13 @@ class EntitySelect extends React.Component {
 
   componentDidMount() {
     axios.get('/api/db/default-search-list').then(response => {
-      this.setState({options: response.data})
-    })
+      this.setState({options: response.data});
+    });
   }
 
   static onInputSearch(searchInput) {
     if (searchInput.trim().length < 2) {
-      return Promise.resolve([])
+      return Promise.resolve([]);
     }
     if (this.cancellationSource) {
       this.cancellationSource.cancel();
@@ -32,8 +32,8 @@ class EntitySelect extends React.Component {
     return axios.get('/api/db/search', {params, cancelToken})
       .then(response => {
         this.cancellationSource = null;
-        return response.data
-      })
+        return response.data;
+      });
   }
 
   trackSelection(selectedEntities) {
@@ -78,7 +78,7 @@ class EntitySelect extends React.Component {
         />
         <GroupEntitiesTrigger selected={value} />
       </div>
-    )
+    );
   }
 }
 

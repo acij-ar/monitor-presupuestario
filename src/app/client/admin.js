@@ -3,6 +3,6 @@ const ReactDOM = require('react-dom');
 const Admin = require('../pages/admin/view');
 
 ReactDOM.hydrate(
-    <Admin {...window.__INITIAL__DATA__}/>,
-    document.getElementById('root')
+  <Admin {...window.__INITIAL__DATA__}/>,
+  document.getElementById('root')
 );

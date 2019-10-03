@@ -7,7 +7,7 @@ class ShareButtons extends React.PureComponent {
     return (
       <div className="monitor-share-buttons">
         <a className="resp-sharing-button__link" aria-label="" target="_blank" rel="noopener"
-           href={`https://facebook.com/sharer/sharer.php?u=${siteUrl}&quote=${shareText}`}>
+          href={`https://facebook.com/sharer/sharer.php?u=${siteUrl}&quote=${shareText}`}>
           <div className="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
             <div aria-hidden="true" className="resp-sharing-button__icon resp-sharing-button__icon--solid">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -19,7 +19,7 @@ class ShareButtons extends React.PureComponent {
         </a>
 
         <a className="resp-sharing-button__link" target="_blank" rel="noopener" aria-label=""
-           href={`https://twitter.com/intent/tweet/?text=${shareText}&url=${siteUrl}`}>
+          href={`https://twitter.com/intent/tweet/?text=${shareText}&url=${siteUrl}`}>
           <div className="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
             <div aria-hidden="true" className="resp-sharing-button__icon resp-sharing-button__icon--solid">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -30,7 +30,7 @@ class ShareButtons extends React.PureComponent {
           </div>
         </a>
       </div>
-    )
+    );
   }
 }
 

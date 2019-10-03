@@ -23,7 +23,7 @@ class ConfigBar extends React.PureComponent {
             <GroupEntities selected={props.selectedEntities} onGroupsChange={props.onGroupsChange} /> : null
         }
       </div>
-    )
+    );
   }
 }
 

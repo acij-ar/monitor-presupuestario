@@ -26,7 +26,7 @@ class App extends React.Component {
   onSelectedEntitiesChange(selectedEntities) {
     this.setState({
       selectedEntities: selectedEntities && selectedEntities.length ? selectedEntities : null,
-    })
+    });
   }
 
   onSelectedYearsChange(selectedYears) {
@@ -82,7 +82,7 @@ class App extends React.Component {
         />
 
         <div className="monitor-content">
-        {selectedEntities && selectedEntities.length > 0 ?
+          {selectedEntities && selectedEntities.length > 0 ?
             <div className="monitor-disclaimer">
               Estas jurisdicciones, entidades, actividades y programas pueden tener cambios en su contenido a lo
               largo del tiempo. Para tener certeza sobre la comparabilidad de los programas es necesario consultar

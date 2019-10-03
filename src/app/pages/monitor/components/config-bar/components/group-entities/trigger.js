@@ -18,7 +18,7 @@ class GroupEntitiesTrigger extends React.PureComponent {
           Agrupar
           <ReactTooltip className="monitor-config-group-trigger-tooltip"/>
         </span>
-    )
+    );
   }
 }
 

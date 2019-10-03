@@ -44,16 +44,16 @@ class GroupEntities extends React.Component {
         newState.nonGroupedItems.push(item);
       }
     });
-    return newState
+    return newState;
   }
 
   unifyGroups(shouldBeUnified, group) {
     if (group === 'firstGroupItems') {
-      this.state.firstGroupItems.map(item => { item.unified = shouldBeUnified });
-      this.state.firstGroupUnified = shouldBeUnified
+      this.state.firstGroupItems.map(item => { item.unified = shouldBeUnified; });
+      this.state.firstGroupUnified = shouldBeUnified;
     } else {
-      this.state.secondGroupItems.map(item => { item.unified = shouldBeUnified });
-      this.state.secondGroupUnified = shouldBeUnified
+      this.state.secondGroupItems.map(item => { item.unified = shouldBeUnified; });
+      this.state.secondGroupUnified = shouldBeUnified;
     }
     this.props.onGroupsChange();
     this.setState(this.state);
@@ -83,12 +83,12 @@ class GroupEntities extends React.Component {
       this.state[source.droppableId] = result[source.droppableId];
       this.state[destination.droppableId] = result[destination.droppableId];
     }
-    this.state.nonGroupedItems.map(item => { item.groupId = null });
-    this.state.firstGroupItems.map(item => { item.groupId = 1 });
-    this.state.secondGroupItems.map(item => { item.groupId = 2 });
+    this.state.nonGroupedItems.map(item => { item.groupId = null; });
+    this.state.firstGroupItems.map(item => { item.groupId = 1; });
+    this.state.secondGroupItems.map(item => { item.groupId = 2; });
     this.props.onGroupsChange();
     this.setState(this.state);
-  };
+  }
 
   render() {
     return (
@@ -120,7 +120,7 @@ class GroupEntities extends React.Component {
           </DragDropContext>
         </div>
       </div>
-    )
+    );
   }
 }
 

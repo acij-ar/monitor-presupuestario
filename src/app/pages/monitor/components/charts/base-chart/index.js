@@ -43,7 +43,7 @@ class Chart extends React.Component {
       <div className="monitor-chart-bad-request">
         No se han encontrado datos para la combinación años y dependencias seleccionadas.
       </div> :
-      this.state.config ? <ReactHighcharts config={this.state.config}/> : null
+      this.state.config ? <ReactHighcharts config={this.state.config}/> : null;
   }
 }
 

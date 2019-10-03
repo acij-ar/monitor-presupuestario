@@ -5,15 +5,15 @@ const DatasetForm = require('./components/datasets-form');
 require('./index.scss');
 
 const App = ({ texts, datasets }) => (
-    <Page>
-        <div className="monitor-highlight">
-            <div className="monitor-content">
-                <h1>Admin</h1>
-            </div>
-        </div>
-        <DatasetForm datasets={datasets}/>
-        <TextsForm texts={texts}/>
-    </Page>
+  <Page>
+    <div className="monitor-highlight">
+      <div className="monitor-content">
+        <h1>Admin</h1>
+      </div>
+    </div>
+    <DatasetForm datasets={datasets}/>
+    <TextsForm texts={texts}/>
+  </Page>
 );
 
 module.exports = App;

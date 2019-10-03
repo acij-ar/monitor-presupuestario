@@ -41,7 +41,7 @@ class DragAndDropList extends React.PureComponent {
           </div>
         )}
       </Droppable>
-    )
+    );
   }
 }
 
