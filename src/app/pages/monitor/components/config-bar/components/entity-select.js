@@ -37,7 +37,7 @@ class EntitySelect extends React.Component {
   }
 
   trackSelection(selectedEntities) {
-    const labels = selectedEntities.map(entity => entity.label);
+    const labels = selectedEntities ? selectedEntities.map(entity => entity.label) : [];
     labels.map(label => {
       if (!this.lastSelection.includes(label)) {
         Analytics.event({
