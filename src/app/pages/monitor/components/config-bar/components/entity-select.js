@@ -3,11 +3,14 @@ const AsyncSelect = require('react-select/async').default;
 const axios = require('axios');
 const GroupEntitiesTrigger = require('./group-entities/trigger');
 const MultiValueContainer = require('./multi-value-container');
+const Analytics = require('../../../../../components/analytics');
 
 class EntitySelect extends React.Component {
   constructor(props) {
     super(props);
     this.state = {options: []};
+    this.onChange = this.onChange.bind(this);
+    this.lastSelection = [];
   }
 
   componentDidMount() {
@@ -33,14 +36,33 @@ class EntitySelect extends React.Component {
       })
   }
 
+  trackSelection(selectedEntities) {
+    const labels = selectedEntities.map(entity => entity.label);
+    labels.map(label => {
+      if (!this.lastSelection.includes(label)) {
+        Analytics.event({
+          category: 'Config bar change',
+          action: 'Entity selection',
+          label,
+        });
+      }
+    });
+    this.lastSelection = labels;
+  }
+
+  onChange(selectedEntities) {
+    this.trackSelection(selectedEntities);
+    this.props.onChange(selectedEntities);
+  }
+
   render() {
-    const {value, onChange} = this.props;
+    const {value} = this.props;
     return (
       <div className="monitor-config-bar-entities-select">
         <AsyncSelect
           placeholder="Dependencias del presupuesto"
           value={value}
-          onChange={onChange}
+          onChange={this.onChange}
           defaultOptions={this.state.options}
           loadOptions={EntitySelect.onInputSearch}
           isSearchable
