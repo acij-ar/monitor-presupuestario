@@ -7,7 +7,8 @@
     "watch": "webpack --watch --mode development",
     "build": "webpack --mode development",
     "dist": "webpack --mode production",
-    "start-dev": "nodemon $NODE_DEBUG_OPTION dist/server.js"
+    "start-dev": "nodemon $NODE_DEBUG_OPTION dist/server.js",
+    "lint": "eslint src/** *.js"
   },
   "repository": {
     "type": "git",
@@ -52,6 +53,8 @@
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
+    "eslint": "^6.5.1",
+    "eslint-plugin-react": "^7.15.1",
     "mini-css-extract-plugin": "^0.6.0",
     "nodemon": "^1.19.0",
     "webpack": "^4.32.0",
