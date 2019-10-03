@@ -49,12 +49,6 @@ module.exports = {
     useHTML: true,
     footerFormat: `
       </table>
-      <br>
-      <p style="white-space: normal; font-size: 11px;">
-        La información se encuentra ajustada por inflación y ha sido sistematizada por ACIJ a partir de los 
-        datos y documentos oficiales que publica el Estado Nacional. La metodologia utilizada para el ajuste 
-        por inflación se encuentran disponibles en la sección Acerca de
-      </p>
     `,
   },
   legend: {

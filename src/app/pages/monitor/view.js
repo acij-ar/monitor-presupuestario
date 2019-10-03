@@ -81,16 +81,21 @@ class App extends React.Component {
           selectedEntities={selectedEntities}
         />
 
+        <div className="monitor-content">
         {selectedEntities && selectedEntities.length > 0 ?
-          <div className="monitor-content">
             <div className="monitor-disclaimer">
               Estas jurisdicciones, entidades, actividades y programas pueden tener cambios en su contenido a lo
               largo del tiempo. Para tener certeza sobre la comparabilidad de los programas es necesario consultar
               las acciones y resultados proyectados y llevados adelante en la ley de presupuesto, la cuenta de
               inversión y los informes de seguimiento físico financiero
-            </div>
-          </div> : null}
+            </div> : null}
 
+          <div className="monitor-disclaimer">
+            La información se encuentra ajustada por inflación y ha sido sistematizada por ACIJ a partir de los
+            datos y documentos oficiales que publica el Estado Nacional. La metodologia utilizada para el ajuste
+            por inflación se encuentran disponibles en la sección Acerca de
+          </div>
+        </div>
       </Page>
     );
   }
