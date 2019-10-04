@@ -1,4 +1,5 @@
 const React = require('react');
+const PropTypes = require('prop-types');
 
 class Chevron extends React.PureComponent {
   render() {
@@ -16,5 +17,9 @@ class Chevron extends React.PureComponent {
     );
   }
 }
+
+Chevron.propTypes = {
+  direction: PropTypes.oneOf(['right', 'left']).isRequired
+};
 
 module.exports = Chevron;
