@@ -4,6 +4,7 @@ const axios = require('axios');
 const GroupEntitiesTrigger = require('./group-entities/trigger');
 const MultiValueContainer = require('./multi-value-container');
 const Analytics = require('../../../../../components/analytics');
+const PropTypes = require('prop-types');
 
 class EntitySelect extends React.Component {
   constructor(props) {
@@ -70,7 +71,13 @@ class EntitySelect extends React.Component {
           isMulti
           closeMenuOnSelect={false}
           styles={{
-            valueContainer: provided => ({...provided, flexWrap: 'nowrap'})
+            valueContainer: provided => ({...provided, flexWrap: 'nowrap'}),
+            clearIndicator: provided => ({
+              ...provided,
+              borderLeft: 'solid 1px',
+              margin: '8px 0 8px 12px',
+              padding: '0 8px',
+            }),
           }}
           components={{ MultiValueContainer }}
           getOptionLabel={option => option.label}
@@ -81,5 +88,10 @@ class EntitySelect extends React.Component {
     );
   }
 }
+
+EntitySelect.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.array,
+};
 
 module.exports = EntitySelect;
