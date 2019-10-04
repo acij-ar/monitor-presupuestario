@@ -1,9 +1,14 @@
 const highchartsBaseConfig = require('../helpers/highcharts-base-config');
 const _ = require('lodash');
 
-module.exports = ({years, series, titleText}) => _.merge({
+module.exports = ({years, series, titleText, subtitleText}) => _.merge({}, highchartsBaseConfig,{
   chart: {type: 'column', height: '400px'},
   title: {text: titleText},
+  subtitle: {
+    text: subtitleText,
+    verticalAlign: 'bottom',
+    align: 'center',
+  },
   xAxis: {
     categories: years,
     crosshair: true
@@ -43,4 +48,4 @@ module.exports = ({years, series, titleText}) => _.merge({
       }
     }
   }
-}, highchartsBaseConfig);
+});

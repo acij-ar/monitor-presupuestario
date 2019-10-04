@@ -12,6 +12,7 @@ module.exports = ({selectedYears, selectedBudgets, selectedEntities}) => {
 
   const series = [];
   let seriesAreGrouped = false;
+  const modifiedSeries = [];
   let maxBudget = 1;
   entities.map(({label, id, groupId, unified}, index) => {
     const results = db.prepare(`SELECT year, ${budgetsValues}, credito_original_posiblemente_modificado FROM entidades JOIN presupuestos ON entidades.id = entity_id WHERE entidades.id = ? ORDER BY year ASC`).all(id);
@@ -28,6 +29,9 @@ module.exports = ({selectedYears, selectedBudgets, selectedEntities}) => {
       const budgetByYear = {};
       results.map(result => {
         const modified = budget.value === 'credito_original' && result.credito_original_posiblemente_modificado;
+        if (modified && !modifiedSeries.includes(label)) {
+          modifiedSeries.push(label);
+        }
         const budgetAmount = result[budget.value];
         maxBudget = Math.max(maxBudget, budgetAmount);
         budgetByYear[result.year] = { color, y: budgetAmount, modified, tooltipY: budgetAmount };
@@ -48,10 +52,12 @@ module.exports = ({selectedYears, selectedBudgets, selectedEntities}) => {
   });
 
   const titleText = seriesAreGrouped ? 'Seleccion de programas agrupados segun referencias' : entities.map(({name}) => name).join(', ');
+  const subtitleText = modifiedSeries.length ? `La ley de presupuesto contiene reasignaciones para ${modifiedSeries.join(', ')}, cuya distribución no fue detallada. Por eso no podemos graficar el presupuesto original a este nivel.` : '';
 
   return {
     years,
     series,
     titleText,
+    subtitleText,
   };
 };
