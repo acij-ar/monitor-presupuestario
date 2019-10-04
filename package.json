@@ -63,6 +63,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "peerDependencies": {
-    "lodash": "*"
+    "lodash": "*",
+    "prop-types": "^15.0.0"
   }
 }

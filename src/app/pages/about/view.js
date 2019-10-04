@@ -1,5 +1,6 @@
 const React = require('react');
 const Page = require('../../components/page');
+const PropTypes = require('prop-types');
 require('./index.scss');
 
 const App = ({ rights, methodology, information, dictionary }) => (
@@ -33,7 +34,7 @@ const App = ({ rights, methodology, information, dictionary }) => (
 
     <div className="monitor-content monitor-about-publicacion">
       <h2>{ information.title }</h2>
-      <div dangerouslySetInnerHTML={{__html: methodology.content}} />
+      <div dangerouslySetInnerHTML={{__html: information.content}} />
     </div>
 
     <div className="monitor-content monitor-about-glosario">
@@ -42,5 +43,24 @@ const App = ({ rights, methodology, information, dictionary }) => (
     </div>
   </Page>
 );
+
+App.propTypes = {
+  rights: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+  }).isRequired,
+  methodology: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+  }).isRequired,
+  information: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+  }).isRequired,
+  dictionary: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 module.exports = App;
