@@ -27,17 +27,17 @@ const Header = () => (
           </a>
         </li>
         <li id="twitter">
-          <a href="https://twitter.com/ACIJargentina" target="_blank">
+          <a href="https://twitter.com/ACIJargentina" target="_blank" rel="noopener noreferrer">
             <img src="/static/twitter.svg" alt="twitter"/>
           </a>
         </li>
         <li id="facebook">
-          <a href="https://www.facebook.com/ACIJ.ORG" target="_blank">
+          <a href="https://www.facebook.com/ACIJ.ORG" target="_blank" rel="noopener noreferrer">
             <img src="/static/facebook.svg" alt="facebook"/>
           </a>
         </li>
         <li id="github">
-          <a href="https://github.com/acij-ar/monitor-presupuestario" target="_blank">
+          <a href="https://github.com/acij-ar/monitor-presupuestario" target="_blank" rel="noopener noreferrer">
             <img src="/static/github.svg" alt="github"/>
           </a>
         </li>

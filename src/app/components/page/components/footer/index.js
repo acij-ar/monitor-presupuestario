@@ -7,7 +7,7 @@ const Footer = () => (
       <a href="/">
         <img id="footer-logo" src="/static/logo.png" alt="Monitor presupuestario" />
       </a>
-      <a href="http://acij.org.ar/" target="_blank">
+      <a href="http://acij.org.ar/" target="_blank" rel="noopener noreferrer">
         <img id="footer-acij" src="/static/logo-acij.png" alt="ACIJ" />
       </a>
       <div id="footer-information">

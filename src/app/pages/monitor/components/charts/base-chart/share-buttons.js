@@ -6,7 +6,7 @@ class ShareButtons extends React.PureComponent {
     const shareText = `Esta información ha sido sistematizada por @ACIJargentina a partir de los datos y documentos oficiales que publica el Estado Nacional en su sitio de Presupuesto Abierto y de la Oficina Nacional de Presupuesto. Para más información consulte ${siteUrl}`;
     return (
       <div className="monitor-share-buttons">
-        <a className="resp-sharing-button__link" aria-label="" target="_blank" rel="noopener"
+        <a className="resp-sharing-button__link" aria-label="" target="_blank" rel="noopener noreferrer"
           href={`https://facebook.com/sharer/sharer.php?u=${siteUrl}&quote=${shareText}`}>
           <div className="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
             <div aria-hidden="true" className="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -18,7 +18,7 @@ class ShareButtons extends React.PureComponent {
           </div>
         </a>
 
-        <a className="resp-sharing-button__link" target="_blank" rel="noopener" aria-label=""
+        <a className="resp-sharing-button__link" target="_blank" rel="noopener noreferrer" aria-label=""
           href={`https://twitter.com/intent/tweet/?text=${shareText}&url=${siteUrl}`}>
           <div className="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
             <div aria-hidden="true" className="resp-sharing-button__icon resp-sharing-button__icon--solid">
