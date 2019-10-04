@@ -18,8 +18,7 @@ class TextsForm extends React.Component {
   }
 
   onPasswordChange(event) {
-    this.state.password = event.target.value;
-    this.setState(this.state);
+    this.setState({ password: event.target.value });
   }
 
   onKeyDown(e) {
@@ -30,19 +29,26 @@ class TextsForm extends React.Component {
 
   attemptLogin() {
     const {password} = this.state;
-    this.state.waitingResponse = true;
-    this.state.loginError = false;
-    this.setState(this.state);
+    this.setState({
+      waitingResponse: true,
+      loginSuccessfull: false,
+      loginError: false,
+    });
     axios.post('/api/admin/login', {password})
       .then(() => {
-        this.state.loginSuccessfull = true;
-        this.setState(this.state);
+        this.setState({
+          loginSuccessfull: true,
+          waitingResponse: false,
+          loginError: false,
+        });
         window.location.href = '/admin';
       })
       .catch(() => {
-        this.state.loginError = true;
-        this.state.waitingResponse = false;
-        this.setState(this.state);
+        this.setState({
+          loginSuccessfull: false,
+          loginError: true,
+          waitingResponse: false,
+        });
       });
   }
 
