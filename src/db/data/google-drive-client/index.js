@@ -1,5 +1,5 @@
 const fs = require('fs');
-const readline = require('readline');
+const readFromStandardInput = require('./read-from-standard-input');
 const {google} = require('googleapis');
 const oauthClient = require('./oauth-client');
 const {getToken, saveToken} = require('./token');
@@ -14,7 +14,7 @@ class GoogleDriveClient {
       const scopes = ['https://www.googleapis.com/auth/drive.readonly', 'https://www.googleapis.com/auth/drive.metadata.readonly'];
       const authUrl = oAuth2Client.generateAuthUrl({access_type: 'offline', scope: scopes, prompt: 'consent'});
       console.log('Authorize this app by visiting this url:', authUrl);
-      const code = await GoogleDriveClient.codeFromStandardInput();
+      const code = await readFromStandardInput();
       const token = await GoogleDriveClient.getTokenFromCode(oAuth2Client, code);
       oAuth2Client.setCredentials(token);
       saveToken(token);
@@ -30,19 +30,6 @@ class GoogleDriveClient {
           return reject(err);
         }
         resolve(token);
-      });
-    });
-  }
-
-  static codeFromStandardInput() {
-    return new Promise(resolve => {
-      const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout,
-      });
-      rl.question('Enter the code from that page here: ', (code) => {
-        rl.close();
-        resolve(code);
       });
     });
   }
