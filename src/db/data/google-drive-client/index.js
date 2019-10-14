@@ -1,15 +1,13 @@
 const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
-const path = require('path');
 const oauthClient = require('./oauth-client');
-
-const token_path = path.join(__dirname, 'token.json');
+const {getToken, saveToken} = require('./token');
 
 class GoogleDriveClient {
   async init() {
     const oAuth2Client = oauthClient();
-    const token = GoogleDriveClient.getToken();
+    const token = getToken();
     if (token) {
       oAuth2Client.setCredentials(token);
     } else {
@@ -19,19 +17,9 @@ class GoogleDriveClient {
       const code = await GoogleDriveClient.codeFromStandardInput();
       const token = await GoogleDriveClient.getTokenFromCode(oAuth2Client, code);
       oAuth2Client.setCredentials(token);
-      fs.writeFileSync(token_path, JSON.stringify(token));
-      console.log('Token stored to', token_path);
+      saveToken(token);
     }
     this.client = google.drive({version: 'v3', auth: oAuth2Client});
-  }
-
-  static getToken() {
-    let token;
-    if (fs.existsSync(token_path)) {
-      const tokenContent = fs.readFileSync(token_path);
-      token = JSON.parse(tokenContent);
-    }
-    return token;
   }
 
   static getTokenFromCode(auth, code) {
@@ -59,7 +47,7 @@ class GoogleDriveClient {
     });
   }
 
-  downloadFile({ fileId, outputPath }) {
+  downloadFile({fileId, outputPath}) {
     console.log(`Downloading ${fileId} to ${outputPath}`);
     const dest = fs.createWriteStream(outputPath);
     return new Promise((resolve, reject) => {
