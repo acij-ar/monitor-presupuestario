@@ -6,7 +6,7 @@ const token_path = path.join(__dirname, 'token.json');
 const getToken = () => {
   let token = null;
   if (fs.existsSync(token_path)) {
-    const tokenContent = fs.readFileSync(token_path);
+    const tokenContent = fs.readFileSync(token_path).toString();
     token = JSON.parse(tokenContent);
   }
   return token;
