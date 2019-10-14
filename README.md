@@ -4,15 +4,20 @@
 
 ## Setup
 
-### Dependencias
+### Ambiente y dependencias
 
-nvm use
-npm i
+El proyecto está hecho utilizando node. Para utilizar la version de node correspondiente
+al proyecto, se recomienda utilizar [nvm](https://github.com/nvm-sh/nvm). Una vez instalado
+nvm, ejecutar `nvm use` en la carpeta raiz del proyecto para asegurarse de utilizar la
+version de node correspondiente. 
+
+Una vez instalado node, se deben instalar las dependencias del proyecto via npm. Ejecutar
+`npm install` en la carpeta raiz del proyecto.
 
 ### Datos y configuración
 
-Descarga de datos
 Config de googleapis
+Descarga de datos
 
 ## TODO list
 
