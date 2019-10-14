@@ -3,36 +3,46 @@ const driveClient = require('./drive-client');
 
 class GoogleDriveClient {
   async init() {
-    this.client = await driveClient();
+    this._client = await driveClient();
+    console.log('Google drive initialized successfully');
   }
 
   downloadFile({fileId, outputPath}) {
     console.log(`Downloading ${fileId} to ${outputPath}`);
     const dest = fs.createWriteStream(outputPath);
-    return new Promise((resolve, reject) => {
-      this.client.files.get(
-        {fileId, alt: 'media'},
-        {responseType: 'stream'},
-        (err, res) => {
-          if (err) {
-            throw err;
-          }
-          res.data
-            .on('end', () => {
-              console.log(`File ${fileId} downloaded successfully`);
-              resolve();
-            })
-            .on('error', reject)
-            .pipe(dest);
+    const file = {fileId, alt: 'media'};
+    const options = {responseType: 'stream'};
+    const downloadFilePromiseHandler = (resolve, reject) => {
+      const driveClientCallback = (err, res) => {
+        if (err) {
+          return reject(err);
         }
-      );
-    });
+        res.data
+          .on('end', () => {
+            console.log(`File ${fileId} downloaded successfully`);
+            resolve();
+          })
+          .on('error', reject)
+          .pipe(dest);
+      };
+      this._client.files.get(file, options, driveClientCallback);
+    };
+    return new Promise(downloadFilePromiseHandler);
+  }
+
+  listFilesInFolder({folderId}) {
+    const params = {
+      fields: 'files(id, name, md5Checksum)',
+      q: `${folderId} in parents`,
+    };
+    const listFilesInFolderPromiseHandler = (resolve, reject) => {
+      const listFilesCallback = (err, res) => (err ? reject(err) : resolve(res.data.files));
+      this._client.files.list(params, listFilesCallback);
+    };
+    return new Promise(listFilesInFolderPromiseHandler);
   }
 }
 
-const googleDriveClient = new GoogleDriveClient;
-googleDriveClient.init();
+module.exports = GoogleDriveClient;
 
-module.exports = googleDriveClient;
-
-// client.client.files.list({ fields: 'files(id, name, md5Checksum)', q: '\'1CwdEQNMpgUvMjL-Cok2n16vT55F2AT52\' in parents' }, (err, res) => { console.log(res.data.files); });
+// 1CwdEQNMpgUvMjL-Cok2n16vT55F2AT52
