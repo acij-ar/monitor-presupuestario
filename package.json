@@ -9,7 +9,9 @@
     "dist": "webpack --mode production",
     "start-dev": "nodemon $NODE_DEBUG_OPTION dist/server.js",
     "lint": "eslint src/** *.js",
-    "test": "jest",
+    "test:lint": "npm run lint",
+    "test:jest": "jest",
+    "test": "npm run test:jest && npm run test:lint",
     "google-drive": "node src/db/data/google-drive-client/init.js"
   },
   "repository": {

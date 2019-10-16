@@ -10,10 +10,6 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:jest/recommended",
   ],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
   "parser": "babel-eslint",
   "settings": {
     "react": {
@@ -30,22 +26,4 @@ module.exports = {
     "react",
     "jest"
   ],
-  "rules": {
-    "indent": [
-      "error",
-      2
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ]
-  }
 };
