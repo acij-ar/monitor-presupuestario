@@ -34,7 +34,7 @@ class GoogleDriveClient {
   listFilesInFolder({folderId}) {
     const params = {
       fields: 'files(id, name, md5Checksum)',
-      q: `${folderId} in parents`,
+      q: `'${folderId}' in parents`,
     };
     const listFilesInFolderPromiseHandler = (resolve, reject) => {
       const listFilesCallback = (err, res) => (err ? reject(err) : resolve(res.data.files));
@@ -45,5 +45,3 @@ class GoogleDriveClient {
 }
 
 module.exports = GoogleDriveClient;
-
-// 1CwdEQNMpgUvMjL-Cok2n16vT55F2AT52
