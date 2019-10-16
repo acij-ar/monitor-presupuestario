@@ -70,7 +70,7 @@ describe('Google drive client', () => {
     await client.init();
     client.listFilesInFolder(({ folderId: 'folder-id-that-sucess' }))
       .then((response) => {
-        expect(response.data.files).toEqual(['file1', 'file2']);
+        expect(response).toEqual(['file1', 'file2']);
         done();
       });
   });
@@ -79,7 +79,7 @@ describe('Google drive client', () => {
     const client = new GoogleDriveClient;
     await client.init();
     client.listFilesInFolder(({ folderId: 'folder-id-that-errors' }))
-      .then((error) => {
+      .catch((error) => {
         expect(error).toBe('some-error');
         done();
       });
