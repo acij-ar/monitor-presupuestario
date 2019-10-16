@@ -20,6 +20,8 @@ describe('fileStatus method', () => {
     const status = await fileStatus({ filename, expectedMD5 });
     expect(status.exists).toBeTruthy();
     expect(status.upToDate).toBeTruthy();
+    expect(status.expectedMD5).toBe('abc123');
+    expect(status.currentMD5).toBe('abc123');
     done();
   });
 
@@ -29,6 +31,8 @@ describe('fileStatus method', () => {
     const status = await fileStatus({ filename, expectedMD5 });
     expect(status.exists).toBeTruthy();
     expect(status.upToDate).toBeFalsy();
+    expect(status.expectedMD5).toBe('abc123');
+    expect(status.currentMD5).toBe('890zyx');
     done();
   });
 
@@ -38,6 +42,8 @@ describe('fileStatus method', () => {
     const status = await fileStatus({ filename, expectedMD5 });
     expect(status.exists).toBeFalsy();
     expect(status.upToDate).toBeFalsy();
+    expect(status.expectedMD5).toBe('abc123');
+    expect(status.currentMD5).toBeNull();
     done();
   });
 });
