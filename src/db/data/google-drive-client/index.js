@@ -1,14 +1,15 @@
 const fs = require('fs');
 const driveClient = require('./drive-client');
+const logger = require('../../../utils/logger');
 
 class GoogleDriveClient {
   async init() {
     this._client = await driveClient();
-    console.log('Google drive initialized successfully');
+    logger.info('Google drive initialized successfully');
   }
 
   downloadFile({fileId, outputPath}) {
-    console.log(`Downloading ${fileId} to ${outputPath}`);
+    logger.info(`Downloading ${fileId} to ${outputPath}`);
     const dest = fs.createWriteStream(outputPath);
     const file = {fileId, alt: 'media'};
     const options = {responseType: 'stream'};
@@ -19,7 +20,7 @@ class GoogleDriveClient {
         }
         res.data
           .on('end', () => {
-            console.log(`File ${fileId} downloaded successfully`);
+            logger.info(`File ${fileId} downloaded successfully`);
             resolve();
           })
           .on('error', reject)

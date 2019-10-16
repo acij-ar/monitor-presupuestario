@@ -4,6 +4,7 @@ const readFromStandardInput = require('./read-from-standard-input');
 const {getToken, saveToken} = require('./token');
 const getTokenFromCode = require('./get-token-from-code');
 const scopes = ['https://www.googleapis.com/auth/drive.readonly', 'https://www.googleapis.com/auth/drive.metadata.readonly'];
+const logger = require('../../../utils/logger');
 
 module.exports = async () => {
   const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirect_uris[0]);
@@ -12,7 +13,7 @@ module.exports = async () => {
     oAuth2Client.setCredentials(token);
   } else {
     const authUrl = oAuth2Client.generateAuthUrl({access_type: 'offline', scope: scopes, prompt: 'consent'});
-    console.log('Authorize this app by visiting this url:', authUrl);
+    logger.info('Authorize this app by visiting this url:', authUrl);
     const code = await readFromStandardInput();
     const token = await getTokenFromCode(oAuth2Client, code);
     oAuth2Client.setCredentials(token);

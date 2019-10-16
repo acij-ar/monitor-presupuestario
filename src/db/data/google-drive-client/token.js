@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const logger = require('../../../utils/logger');
 
 const token_path = path.join(__dirname, 'token.json');
 
@@ -14,7 +15,7 @@ const getToken = () => {
 
 const saveToken = (token) => {
   fs.writeFileSync(token_path, JSON.stringify(token));
-  console.log('Token stored to', token_path);
+  logger.info('Token stored to', token_path);
 };
 
 module.exports = {
