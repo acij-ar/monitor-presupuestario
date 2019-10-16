@@ -14,7 +14,12 @@ Una vez instalado node, se deben instalar las dependencias del proyecto via npm.
 
 ### Datos y configuración
 
-Config de googleapis
+Los datos del sitio son obtenidos desde google drive. Para el correcto funcionamiento de este flujo es necesario
+configurar las credenciales para la api de google.
+- Entrar a [google console credentials](https://console.developers.google.com/apis/credentials) y descargar las 
+credenciales de la app a usar. Copiar el contenido de este json en `src/db/data/google-drive-client/credentials.json`.
+- Ejecutar el comando `npm run google-drive` y seguir las instrucciones de la consola
+
 Descarga de datos
 
 ## TODO list
@@ -61,7 +66,7 @@ Horizontally choosing different or all the entities at the same level and compar
 
 ### Setup
 
-https://console.developers.google.com/apis/credentials
+
 
 
 ### Testing and code style
