@@ -11,3 +11,4 @@ credentials.json
 settings.yaml
 token.json
 coverage
+*.csv
