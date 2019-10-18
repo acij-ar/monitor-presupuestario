@@ -44,3 +44,4 @@ npm run test:jest
 
 npm run dist
 pm2 config
+nginx
