@@ -3,6 +3,13 @@ const GoogleDriveClient = require('../google-drive-client');
 const fileStatus = require('./file-status');
 const logger = require('../../../utils/logger');
 
+/**
+ * Compares the md5 checksum of the files listed in ./files with
+ * the md5 cheksum of the files uploaded in google drive.
+ *
+ * @returns {Promise<FileStatus[]>}
+ */
+
 module.exports = async () => {
   const driveClient = new GoogleDriveClient();
   await driveClient.init();
