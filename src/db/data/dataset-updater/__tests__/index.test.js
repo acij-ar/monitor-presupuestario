@@ -1,7 +1,7 @@
 const mockCompareAllFiles = jest.fn()
   .mockReturnValueOnce([{upToDate: false, filename: 'filename.csv', id: 'abc123'}])
   .mockReturnValueOnce([{upToDate: true}]);
-jest.mock('../compare-all-files', () => mockCompareAllFiles);
+jest.mock('../../dataset-status/compare-all-files', () => mockCompareAllFiles);
 
 const mockDownloadFile = jest.fn();
 const mockInit = jest.fn();
