@@ -9,6 +9,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:jest/recommended",
+    "plugin:jsdoc/recommended"
   ],
   "parser": "babel-eslint",
   "settings": {
@@ -24,6 +25,7 @@ module.exports = {
   },
   "plugins": [
     "react",
-    "jest"
+    "jest",
+    "jsdoc"
   ],
 };
