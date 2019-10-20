@@ -1,5 +1,10 @@
 const readline = require('readline');
 
+/**
+ * Reads code from standard input
+ *
+ * @returns {Promise<string>} - Promise that resolves with code from stdin
+ */
 module.exports = () => (
   new Promise(resolve => {
     const rl = readline.createInterface({

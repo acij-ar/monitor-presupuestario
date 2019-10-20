@@ -6,6 +6,19 @@ const getTokenFromCode = require('./get-token-from-code');
 const scopes = ['https://www.googleapis.com/auth/drive.readonly', 'https://www.googleapis.com/auth/drive.metadata.readonly'];
 const logger = require('../../../utils/logger');
 
+/**
+ * @typedef {object} GoogleDriveClient
+ * @property {object} files - Files client methods
+ * @property {Function} files.get - Downloads file
+ * @property {Function} files.list - Lists the files in a drive folder
+ */
+
+/**
+ * Initializes the google drive client from the googleapis lib
+ *
+ * @returns {GoogleDriveClient}
+ */
+
 module.exports = async () => {
   const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirect_uris[0]);
   const token = getToken();
