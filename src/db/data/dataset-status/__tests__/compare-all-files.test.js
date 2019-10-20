@@ -9,7 +9,7 @@ jest.mock('../../google-drive-client', () => (
 const mockFileStatus = { exists: true, upToDate: false };
 jest.mock('../file-status', () => async () => mockFileStatus);
 jest.mock('../../../../utils/logger', () => ({ info: jest.fn() }));
-jest.mock('../files', () => [{ id: '123' }]);
+jest.mock('../../files', () => [{ id: '123' }]);
 
 const compareAllFiles = require('../compare-all-files');
 

@@ -5,7 +5,7 @@ describe('Files config', () => {
     expect(Array.isArray(files)).toBeTruthy();
     files.map(file => {
       expect(typeof file.id).toBe('string');
-      expect(typeof file.filename).toBe('string');
+      expect(typeof file.path).toBe('string');
     })
   })
 });

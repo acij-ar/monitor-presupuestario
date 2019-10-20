@@ -7,17 +7,14 @@ jest.mock('md5-file/promise', () => (filename) => {
     throw 'file doesnt exist'
   }
 });
-jest.mock('path', () => ({
-  join: (...args) => args[args.length-1],
-}));
 
 const fileStatus = require('../file-status');
 
 describe('fileStatus method', () => {
   it('should handle up to date files', async (done) => {
-    const filename = 'up-to-date-file';
+    const filePath = 'up-to-date-file';
     const expectedMD5 = 'abc123';
-    const status = await fileStatus({ filename, expectedMD5 });
+    const status = await fileStatus({ filePath, expectedMD5 });
     expect(status.exists).toBeTruthy();
     expect(status.upToDate).toBeTruthy();
     expect(status.expectedMD5).toBe('abc123');
@@ -26,9 +23,9 @@ describe('fileStatus method', () => {
   });
 
   it('should handle outdated files', async (done) => {
-    const filename = 'outdated-file';
+    const filePath = 'outdated-file';
     const expectedMD5 = 'abc123';
-    const status = await fileStatus({ filename, expectedMD5 });
+    const status = await fileStatus({ filePath, expectedMD5 });
     expect(status.exists).toBeTruthy();
     expect(status.upToDate).toBeFalsy();
     expect(status.expectedMD5).toBe('abc123');
@@ -37,9 +34,9 @@ describe('fileStatus method', () => {
   });
 
   it('should handle files that doesnt exist', async (done) => {
-    const filename = 'file-that-doesnt-exist';
+    const filePath = 'file-that-doesnt-exist';
     const expectedMD5 = 'abc123';
-    const status = await fileStatus({ filename, expectedMD5 });
+    const status = await fileStatus({ filePath, expectedMD5 });
     expect(status.exists).toBeFalsy();
     expect(status.upToDate).toBeFalsy();
     expect(status.expectedMD5).toBe('abc123');

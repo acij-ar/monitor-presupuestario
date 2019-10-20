@@ -1,4 +1,4 @@
-const files = require('./files');
+const files = require('../files');
 const GoogleDriveClient = require('../google-drive-client');
 const fileStatus = require('./file-status');
 const logger = require('../../../utils/logger');
@@ -19,7 +19,7 @@ module.exports = async () => {
 
   const fileStatusPromises = files.map(localFile => {
     const { md5Checksum: expectedMD5 } = filesInDriveFolder.find(fileInDriveFolder => fileInDriveFolder.id === localFile.id );
-    return fileStatus({ filename: localFile.filename, expectedMD5 }).then(result => ({...result, ...localFile}));
+    return fileStatus({ filePath: localFile.path, expectedMD5 }).then(result => ({...result, ...localFile}));
   });
 
   return Promise.all(fileStatusPromises);

@@ -1,5 +1,4 @@
 const md5File = require('md5-file/promise');
-const path = require('path');
 
 /**
  * @typedef {object} FileStatus
@@ -15,7 +14,7 @@ const path = require('path');
  * with the md5 checksum of the google drive file
  *
  * @param {object} file - The file to be checked
- * @param {string} file.filename - Filename of the local file
+ * @param {string} file.filePath - Path to local file
  * @param {string} file.expectedMD5 - MD5 checksum of the google drive file
  * @returns {FileStatus}
  *
@@ -23,11 +22,10 @@ const path = require('path');
  *     fileStatus({ filename: 'dataset.csv', expectedMD5: '123abc' })
  */
 
-module.exports = async ({ filename, expectedMD5 }) => {
+module.exports = async ({ filePath, expectedMD5 }) => {
   let exists, upToDate, currentMD5;
-  const pathToFile = path.join(__dirname, '..', 'datasets', filename);
   try {
-    currentMD5 = await md5File(pathToFile);
+    currentMD5 = await md5File(filePath);
     exists = true;
     upToDate = currentMD5 === expectedMD5;
   } catch {

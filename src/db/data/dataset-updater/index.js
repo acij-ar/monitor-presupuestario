@@ -1,4 +1,3 @@
-const path = require('path');
 const compareAllFiles = require('../dataset-status/compare-all-files');
 const GoogleDriveClient = require('../google-drive-client');
 const logger = require('../../../utils/logger');
@@ -16,7 +15,7 @@ module.exports = async () => {
   const driveClient = new GoogleDriveClient();
   await driveClient.init();
   const downloadPromises = outdatedFiles.map(file => {
-    const outputPath = path.join(__dirname, '..', 'datasets', file.filename);
+    const outputPath = file.path;
     return driveClient.downloadFile({ fileId: file.id, outputPath })
   });
   await Promise.all(downloadPromises);
