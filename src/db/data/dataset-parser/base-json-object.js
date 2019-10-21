@@ -1,3 +1,8 @@
+/**
+ * Returns the base object used for the json file of each year
+ *
+ * @returns {object} - Base object for json file of each year
+ */
 module.exports = () => ({
   dependencias: {},
   credito_presupuestado: 0,
