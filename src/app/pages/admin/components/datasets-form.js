@@ -1,6 +1,7 @@
 const React = require('react');
 const axios = require('axios');
 require('./dataset-form.scss');
+const DatasetTable = require('./dataset-table');
 
 class DatasetForm extends React.Component {
   constructor(props) {
@@ -9,23 +10,29 @@ class DatasetForm extends React.Component {
       processingDataset: false,
       updateError: false,
       saveSuccessfull: false,
-      datasets: this.props.datasets,
+      datasets: [],
       step: null,
     };
     this.checkStatus = this.checkStatus.bind(this);
   }
 
+  componentDidMount() {
+    this.checkStatus();
+  }
+
   updateDataset(dataset) {
-    this.state.processingDataset = true;
-    this.state.updateError = false;
-    this.state.saveSuccessfull = false;
-    this.setState(this.state);
+    this.setState({
+      processingDataset: true,
+      updateError: false,
+      saveSuccessfull: false,
+    });
     axios.post(`/api/admin/update_dataset/${dataset}`)
       .then(this.checkStatus)
       .catch(() => {
-        this.state.processingDataset = false;
-        this.state.updateError = true;
-        this.setState(this.state);
+        this.setState({
+          processingDataset: false,
+          updateError: true,
+        });
       });
   }
 
@@ -54,31 +61,7 @@ class DatasetForm extends React.Component {
       <div className="monitor-content monitor-admin">
         <div className="monitor-admin-page-section">
           <h2>Datasets</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Dataset</th>
-                <th>Número de filas</th>
-                <th>Última actualización</th>
-                <th/>
-              </tr>
-            </thead>
-            <tbody>
-              {datasets.map(({filename, lastModified, lines}) => (
-                <tr key={filename}>
-                  <td>{filename}</td>
-                  <td>{lines || '-'}</td>
-                  <td>{lastModified || '-'}</td>
-                  <td>
-                    <button onClick={() => this.updateDataset(filename)} disabled={processingDataset}>
-                      {lines ? 'Actualizar' : 'Descargar'}
-                    </button>
-                  </td>
-                </tr>
-
-              ))}
-            </tbody>
-          </table>
+          { datasets.length ? <DatasetTable datasets={datasets} /> : 'Cargando...' }
           <div>
             {processingDataset && this.state.step}
             {saveSuccessfull && 'Descarga exitosa ✅'}
