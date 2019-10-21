@@ -39,6 +39,10 @@ npm run test:jest
 
 - Proptypes en todos los componentes (+ forzar errores por proptypes?)
 - E2E tests
+- Mejorar script `npm run download-datasets`. Si alguna descarga falla, reitentar
+- Cache de estaticos. Builds con hashs en filenames + cache en nginx
+- Newrelic
+- Migrar a typescript?
 
 ## Producción
 
