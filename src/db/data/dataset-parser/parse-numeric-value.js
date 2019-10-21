@@ -1,3 +1,14 @@
+/**
+ * Parses string representations of numbers where each unit represents a million
+ * and the decimal separator is ","
+ * Examples:
+ * "1" is equivalent to 1000000 (1e6)
+ * "0,123456" is equivalent to 123456
+ * "0,0000001" is equivalent to 0.1
+ *
+ * @param {string} numericString - String representing a number
+ * @returns {number} - Parsed value of the input string
+ */
 module.exports = (numericString) => {
   if (numericString.includes(',')) {
     const [ integerString, decimalString ] = numericString.split(',');
