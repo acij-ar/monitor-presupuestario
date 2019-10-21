@@ -6,6 +6,7 @@ describe('Files config', () => {
     files.map(file => {
       expect(typeof file.id).toBe('string');
       expect(typeof file.path).toBe('string');
+      expect(typeof file.filename).toBe('string');
     })
   })
 });

@@ -28,7 +28,7 @@ const countLines = require('./count-lines');
  *     fileStatus({ filename: 'dataset.csv', expectedMD5: '123abc' })
  */
 
-module.exports = async ({ path, id, expectedMD5 }) => {
+module.exports = async ({ path, id, filename, expectedMD5 }) => {
   let exists, upToDate, currentMD5, lastModified, lines;
   try {
     lastModified = fs.statSync(path).mtime.toISOString();
@@ -45,6 +45,7 @@ module.exports = async ({ path, id, expectedMD5 }) => {
   }
   return {
     id,
+    filename,
     path,
     exists,
     upToDate,
