@@ -1,4 +1,4 @@
-const compareAllFiles = require('../dataset-status/compare-all-files');
+const compareAllFiles = require('../dataset-status');
 const GoogleDriveClient = require('../google-drive-client');
 const logger = require('../../../utils/logger');
 

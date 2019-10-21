@@ -11,7 +11,7 @@ jest.mock('../file-status', () => async () => mockFileStatus);
 jest.mock('../../../../utils/logger', () => ({ info: jest.fn() }));
 jest.mock('../../files', () => [{ id: '123' }]);
 
-const compareAllFiles = require('../compare-all-files');
+const compareAllFiles = require('..');
 
 describe('Compare all files', () => {
   it('should return file status for each file in drive', async (done) => {

@@ -1,5 +1,5 @@
 const datasetUpdater = require('../../../services/dataset-updater');
-const datasetsStats = require('../../../services/dataset-stats');
+const datasetsStats = require('../../../db/data/dataset-status');
 
 const updateDataset = (req, res) => {
   const {filename} = req.params;

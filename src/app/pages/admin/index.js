@@ -3,7 +3,6 @@ const ReactDOMServer = require('react-dom/server');
 const Admin = require('./view');
 const layout = require('../../components/layout');
 const Texts = require('../../../services/texts');
-const datasetsStats = require('../../../services/dataset-stats');
 const userIsLoggedIn = require('../../../services/authentication/user-is-logged');
 
 const authenticate = (req, res, next) => {
@@ -17,7 +16,6 @@ const authenticate = (req, res, next) => {
 const render = async (req, res) => {
   res.locals.props = {
     texts: Texts.content,
-    datasets: await datasetsStats(),
   };
   const html = layout({
     renderedComponent: ReactDOMServer.renderToString(<Admin {...res.locals.props} />),
