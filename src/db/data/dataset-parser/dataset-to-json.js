@@ -4,6 +4,7 @@ const readCSV = require('../../../utils/read-csv');
 const baseJSONObject = require('./base-json-object');
 const parseRow = require('./parse-row');
 const processRowIntoObject = require('./process-row-into-object');
+const logger = require('../../../utils/logger');
 
 module.exports = async ({path, year}) => {
   const dbObject = baseJSONObject();
@@ -17,5 +18,5 @@ module.exports = async ({path, year}) => {
   const dbString = JSON.stringify(dbObject, null, 2);
   const outputPath = join(__dirname, '..', 'datasets', `${year}.json`);
   fs.writeFileSync(outputPath, dbString);
-  console.log(`Finished processing ${path}`);
+  logger.info(`Finished processing ${path}`);
 };
