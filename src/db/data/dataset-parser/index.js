@@ -9,7 +9,11 @@ const logger = require('../../../utils/logger');
  */
 module.exports = async () => {
   logger.info('Processing csv files into db.json');
-  const yearFiles = files.filter(({baseDataset}) => baseDataset);
-  const processPromises = yearFiles.map(datasetToJSON);
-  await Promise.all(processPromises);
+  const baseFiles = files.filter(({baseDataset}) => baseDataset);
+  const originalBudgetFiles = files.filter(({hasOriginalBudget}) => hasOriginalBudget);
+  const baseDatasetsProcessPromises = baseFiles.map((baseFile) => {
+    const originalBudgetFile = originalBudgetFiles.find(({year}) => baseFile.year === year);
+    return datasetToJSON({ baseFile, originalBudgetFile });
+  });
+  await Promise.all(baseDatasetsProcessPromises);
 };

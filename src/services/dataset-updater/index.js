@@ -1,7 +1,6 @@
 const datasetUpdater = require('../../db/data/dataset-updater');
 const datasetParser = require('../../db/data/dataset-parser');
 const dbUpdater = require('./db-updater');
-const updateOriginalBudget = require('./update-original-budget');
 
 class DatasetUpdater {
   constructor() {
@@ -14,17 +13,14 @@ class DatasetUpdater {
       return;
     }
     this.processing = true;
-    this.step = 'Descargando (paso 1 de 5)';
+    this.step = 'Descargando (paso 1 de 3)';
     await datasetUpdater();
 
-    this.step = 'Convirtiendo CSVs a JSON (paso 3 de 5)';
+    this.step = 'Convirtiendo CSVs a JSON (paso 2 de 3)';
     await datasetParser();
 
-    //this.step = 'Actualizando presupuesto original (paso 4 de 5)';
-    //await updateOriginalBudget();
-
-    //this.step = 'Actualizando base de datos (paso 5 de 5)';
-    //await dbUpdater();
+    this.step = 'Actualizando base de datos (paso 3 de 3)';
+    await dbUpdater();
 
     this.processing = false;
     this.step = null;
