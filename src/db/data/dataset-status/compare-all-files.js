@@ -19,7 +19,7 @@ module.exports = async () => {
 
   const fileStatusPromises = files.map(localFile => {
     const { md5Checksum: expectedMD5 } = filesInDriveFolder.find(fileInDriveFolder => fileInDriveFolder.id === localFile.id );
-    return fileStatus({ filePath: localFile.path, expectedMD5 }).then(result => ({...result, ...localFile}));
+    return fileStatus({ path: localFile.path, expectedMD5 }).then(result => ({...result, ...localFile}));
   });
 
   return Promise.all(fileStatusPromises);

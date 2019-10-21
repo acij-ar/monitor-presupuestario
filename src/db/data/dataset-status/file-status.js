@@ -1,4 +1,6 @@
+const fs = require('fs');
 const md5File = require('md5-file/promise');
+const countLines = require('./count-lines');
 
 /**
  * @typedef {object} FileStatus
@@ -6,6 +8,10 @@ const md5File = require('md5-file/promise');
  * @property {boolean} upToDate - Indicates if the file is up to date with its google drive counterpart
  * @property {string} currentMD5 - MD5 checksum of the local file
  * @property {string} expectedMD5 - MD5 checksum of the google drive file
+ * @property {string} path - Path to file
+ * @property {string} id - Google drive id of file
+ * @property {string} lastModified - Date of last modification of local file
+ * @property {number} lines - Number of lines in local file
  */
 
 /**
@@ -14,7 +20,7 @@ const md5File = require('md5-file/promise');
  * with the md5 checksum of the google drive file
  *
  * @param {object} file - The file to be checked
- * @param {string} file.filePath - Path to local file
+ * @param {string} file.path - Path to local file
  * @param {string} file.expectedMD5 - MD5 checksum of the google drive file
  * @returns {FileStatus}
  *
@@ -22,16 +28,27 @@ const md5File = require('md5-file/promise');
  *     fileStatus({ filename: 'dataset.csv', expectedMD5: '123abc' })
  */
 
-module.exports = async ({ filePath, expectedMD5 }) => {
-  let exists, upToDate, currentMD5;
+module.exports = async ({ path, id, expectedMD5 }) => {
+  let exists, upToDate, currentMD5, lastModified, lines;
   try {
-    currentMD5 = await md5File(filePath);
+    lastModified = fs.statSync(path).mtime.toISOString();
+    lines = await countLines(path);
+    currentMD5 = await md5File(path);
     exists = true;
     upToDate = currentMD5 === expectedMD5;
   } catch {
+    lastModified = null;
+    lines = null;
     exists = false;
     upToDate = false;
     currentMD5 = null;
   }
-  return { exists, upToDate, expectedMD5, currentMD5 };
+  return {
+    id,
+    path,
+    exists,
+    upToDate,
+    lastModified,
+    lines,
+  };
 };
