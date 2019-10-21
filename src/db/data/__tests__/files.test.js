@@ -7,6 +7,7 @@ describe('Files config', () => {
       expect(typeof file.id).toBe('string');
       expect(typeof file.path).toBe('string');
       expect(typeof file.filename).toBe('string');
+      expect(typeof file.baseDataset).toBe('boolean');
     })
   })
 });
