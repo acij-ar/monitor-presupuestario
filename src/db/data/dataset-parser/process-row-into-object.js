@@ -1,5 +1,3 @@
-const fs = require('fs');
-const readCSV = require('../../../utils/read-csv');
 const {datasets} = require('../../../config');
 const normalizeName = require('../../../utils/normalize-name');
 
@@ -20,7 +18,7 @@ const addNumericColumns = ({scopedObject, row, year}) => {
   }
 };
 
-const processRowIntoObject = ({row, dbObject, year}) => {
+module.exports = ({row, dbObject, year}) => {
   let scopedObject = dbObject;
   addNumericColumns({row, scopedObject, year});
   scopedObject = scopedObject.dependencias;
@@ -42,17 +40,3 @@ const processRowIntoObject = ({row, dbObject, year}) => {
   });
 };
 
-module.exports = async ({filePath, dbObject, jsonPath, year}) => {
-  await readCSV({
-    path: filePath,
-    onData: (row) => {
-      numericColumns.map(column => {
-        row[column] = parseInt(row[column]);
-      });
-      processRowIntoObject({row, dbObject, year});
-    }
-  });
-  const dbString = JSON.stringify(dbObject, null, 2);
-  fs.writeFileSync(jsonPath, dbString);
-  console.log(`Finished processing ${jsonPath}`);
-};
