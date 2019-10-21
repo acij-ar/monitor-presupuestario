@@ -7,30 +7,31 @@ class DatasetForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      processingDataset: false,
+      processingDatasets: false,
       updateError: false,
       saveSuccessfull: false,
       datasets: [],
       step: null,
     };
     this.checkStatus = this.checkStatus.bind(this);
+    this.updateDatasets = this.updateDatasets.bind(this);
   }
 
   componentDidMount() {
-    this.checkStatus();
+    axios.get('/api/admin/dataset_job_status').then(({ data }) => this.setState({ datasets: data.result }))
   }
 
-  updateDataset(dataset) {
+  updateDatasets() {
     this.setState({
-      processingDataset: true,
+      processingDatasets: true,
       updateError: false,
       saveSuccessfull: false,
     });
-    axios.post(`/api/admin/update_dataset/${dataset}`)
+    axios.post(`/api/admin/update_datasets`)
       .then(this.checkStatus)
       .catch(() => {
         this.setState({
-          processingDataset: false,
+          processingDatasets: false,
           updateError: true,
         });
       });
@@ -42,7 +43,7 @@ class DatasetForm extends React.Component {
         if (data.result) {
           this.setState({
             datasets: data.result,
-            processingDataset: false,
+            processingDatasets: false,
             saveSuccessfull: true,
           });
         } else {
@@ -56,14 +57,19 @@ class DatasetForm extends React.Component {
   }
 
   render() {
-    const {datasets, processingDataset, updateError, saveSuccessfull} = this.state;
+    const {datasets, processingDatasets, updateError, saveSuccessfull} = this.state;
+    const canUpdate = datasets.length && datasets.find(dataset => !dataset.isUpToDate);
     return (
       <div className="monitor-content monitor-admin">
         <div className="monitor-admin-page-section">
           <h2>Datasets</h2>
           { datasets.length ? <DatasetTable datasets={datasets} /> : 'Cargando...' }
+          { canUpdate ?
+            <button disabled={processingDatasets} onClick={this.updateDatasets}>
+              Actualizar datasets
+            </button> : null }
           <div>
-            {processingDataset && this.state.step}
+            {processingDatasets && this.state.step}
             {saveSuccessfull && 'Descarga exitosa ✅'}
             {updateError && 'Error al descargar ❌'}
           </div>
