@@ -1,4 +1,4 @@
-require('@babel/polyfill');
+require('@babel/polyfill'); // TODO: is this required in the server?
 
 const createTables = require('./services/db/management/create-tables');
 createTables();
@@ -30,5 +30,6 @@ app.use('/static', staticMiddleware);
 app.use('/', appRouter);
 app.use('/api', apiRouter);
 
-app.listen(8080);
-logger.info('Listening http://localhost:8080');
+const port = process.env.PORT || 8080;
+app.listen(port);
+logger.info(`Listening http://localhost:${port}`);
