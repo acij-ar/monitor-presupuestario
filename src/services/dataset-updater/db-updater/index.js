@@ -5,11 +5,12 @@ const {datasets: {files}} = require('../../../config');
 const loadInflationDataset = require('./load-inflation-dataset');
 const prepareStatements = require('./prepare-statements');
 const updateInDB = require('./update-in-db');
+const logger = require('../../../utils/logger');
 
 const yearFiles = files.filter(file => file.isYearDataset);
 
 module.exports = async () => {
-  console.log('Started updating db');
+  logger.info('Started updating db');
   deleteTables();
   createTables();
   const inflation = await loadInflationDataset();
@@ -21,10 +22,10 @@ module.exports = async () => {
       const jsonContent = fs.readFileSync(jsonPath);
       const jsonDB = {'Presupuesto total': JSON.parse(jsonContent)};
       const yearInflation = inflation[year];
-      console.log(`Updating year ${year} in db`);
+      logger.info(`Updating year ${year} in db`);
       updateInDB({jsonDB, statements, year, yearInflation});
     }
   });
 
-  console.log('Finished updating db');
+  logger.info('Finished updating db');
 };

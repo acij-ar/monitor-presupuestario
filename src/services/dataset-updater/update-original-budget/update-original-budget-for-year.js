@@ -4,6 +4,7 @@ const updateBudgetInObject = require('./update-budget-in-object');
 const {datasets: { files }} = require('../../../config');
 const fs = require('fs');
 const CSVWriteStream = require('csv-write-stream');
+const logger = require('../../../utils/logger');
 
 module.exports = async ({filePath, year, errorsPath}) => {
   const dataset = [];
@@ -32,6 +33,6 @@ module.exports = async ({filePath, year, errorsPath}) => {
     csvWriter.pipe(outputStream);
     errors.map(error => csvWriter.write(error));
     csvWriter.end();
-    console.log(`${errors.length} errors for ${year}`);
+    logger.error(`${errors.length} errors for ${year}`);
   }
 };
