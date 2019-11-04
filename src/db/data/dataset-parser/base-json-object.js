@@ -12,5 +12,5 @@ module.exports = (canHaveChildDependencies = true) => ({
   credito_devengado: 0,
   credito_pagado: 0,
   credito_original: 0,
-  rows: [],
+  filas: [],
 });

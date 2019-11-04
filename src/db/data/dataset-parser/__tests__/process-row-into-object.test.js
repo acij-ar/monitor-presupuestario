@@ -27,7 +27,8 @@ describe('Process row into object script', () => {
       credito_devengado: 0,
       credito_pagado: 0,
       credito_original: 0,
-      dependencias: {}
+      dependencias: {},
+      filas: [],
     };
     processRowIntoObject({ row, year, dbObject });
     expect(mockNormalizeName.mock.calls).toEqual([['Ministerio de Ambiente'], ['Secretaria de nubes'], ['Interes de lluvia'], ['Paraguas para el pueblo']]);
@@ -38,6 +39,7 @@ describe('Process row into object script', () => {
       credito_devengado: 456,
       credito_pagado: 678,
       credito_original: 123,
+      filas: [],
       dependencias: {
         'Ministerio de Ambiente': {
           credito_presupuestado: 123,
@@ -46,6 +48,7 @@ describe('Process row into object script', () => {
           credito_devengado: 456,
           credito_pagado: 678,
           credito_original: 123,
+          filas: [],
           dependencias: {
             'Secretaria de nubes': {
               credito_presupuestado: 123,
@@ -54,6 +57,7 @@ describe('Process row into object script', () => {
               credito_devengado: 456,
               credito_pagado: 678,
               credito_original: 123,
+              filas: [],
               dependencias: {
                 'Interes de lluvia': {
                   credito_presupuestado: 123,
@@ -62,6 +66,7 @@ describe('Process row into object script', () => {
                   credito_devengado: 456,
                   credito_pagado: 678,
                   credito_original: 123,
+                  filas: [],
                   dependencias: {
                     'Paraguas para el pueblo': {
                       credito_presupuestado: 123,
@@ -71,6 +76,7 @@ describe('Process row into object script', () => {
                       credito_pagado: 678,
                       credito_original: 123,
                       dependencias: undefined,
+                      filas: [],
                     }
                   }
                 }
@@ -102,6 +108,7 @@ describe('Process row into object script', () => {
       credito_devengado: 40,
       credito_pagado: 50,
       credito_original: 60,
+      filas: [],
       dependencias: {
         'Ministerio de tierra': {
           credito_presupuestado: 10,
@@ -111,6 +118,7 @@ describe('Process row into object script', () => {
           credito_pagado: 50,
           credito_original: 60,
           dependencias: {},
+          filas: [],
         }
       }
     };
@@ -123,6 +131,7 @@ describe('Process row into object script', () => {
       credito_devengado: 496,
       credito_pagado: 728,
       credito_original: 60,
+      filas: [],
       dependencias: {
         'Ministerio de tierra': {
           credito_presupuestado: 133,
@@ -131,6 +140,7 @@ describe('Process row into object script', () => {
           credito_devengado: 496,
           credito_pagado: 728,
           credito_original: 60,
+          filas: [],
           dependencias: {
             'Secretaria de llanuras': {
               credito_presupuestado: 123,
@@ -139,6 +149,7 @@ describe('Process row into object script', () => {
               credito_devengado: 456,
               credito_pagado: 678,
               credito_original: 0,
+              filas: [],
               dependencias: {
                 'Interes de la pampa': {
                   credito_presupuestado: 123,
@@ -147,6 +158,7 @@ describe('Process row into object script', () => {
                   credito_devengado: 456,
                   credito_pagado: 678,
                   credito_original: 0,
+                  filas: [],
                   dependencias: {
                     'Vacas para el pueblo': {
                       credito_presupuestado: 123,
@@ -156,6 +168,7 @@ describe('Process row into object script', () => {
                       credito_pagado: 678,
                       credito_original: 0,
                       dependencias: undefined,
+                      filas: [],
                     }
                   }
                 }

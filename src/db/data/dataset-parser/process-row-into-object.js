@@ -1,4 +1,5 @@
 const normalizeName = require('../../../utils/normalize-name');
+const baseJSONObject = require('./base-json-object');
 
 /**
  * Adds the different budget types from the parsed row from the dataset
@@ -21,23 +22,6 @@ const addNumericColumns = ({scopedObject, row, year}) => {
 };
 
 /**
- * Returns an empty object to be used as the base object of each
- * dependency in the final year json
- *
- * @param {boolean} canHaveChildDependencies - Wheter or not the dependency can have sub dependencies
- * @returns {object} - Empty object to be used with each dependency
- */
-const emptyObject = (canHaveChildDependencies) => ({
-  credito_presupuestado: 0,
-  credito_vigente: 0,
-  credito_comprometido: 0,
-  credito_devengado: 0,
-  credito_pagado: 0,
-  credito_original: 0,
-  dependencias: canHaveChildDependencies ? {} : undefined,
-});
-
-/**
  * Iterates through the different sub-dependencies of the row and adds its budgets
  * to the js object that represents the budget of the year
  *
@@ -54,7 +38,7 @@ module.exports = ({row, dbObject, year}) => {
   dependenciesTypes.map((dependencyType, index) => {
     const rawName = row[dependencyType];
     const entityName = normalizeName(rawName);
-    scopedObject[entityName] = scopedObject[entityName] || emptyObject(index !== dependenciesTypes.length - 1);
+    scopedObject[entityName] = scopedObject[entityName] || baseJSONObject(index !== dependenciesTypes.length - 1);
     addNumericColumns({row, scopedObject: scopedObject[entityName], year});
     scopedObject = scopedObject[entityName].dependencias;
   });

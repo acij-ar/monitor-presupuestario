@@ -11,7 +11,7 @@ describe('Base json object', () => {
       credito_devengado: 0,
       credito_pagado: 0,
       credito_original: 0,
-      rows: [],
+      filas: [],
     };
     expect(baseObject).toEqual(expectedObject);
   });
@@ -25,7 +25,7 @@ describe('Base json object', () => {
       credito_devengado: 0,
       credito_pagado: 0,
       credito_original: 0,
-      rows: [],
+      filas: [],
     };
     expect(baseObject).toEqual(expectedObject);
   })
