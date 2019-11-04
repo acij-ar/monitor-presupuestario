@@ -26,7 +26,7 @@ module.exports = async () => {
     oAuth2Client.setCredentials(token);
   } else {
     const authUrl = oAuth2Client.generateAuthUrl({access_type: 'offline', scope: scopes, prompt: 'consent'});
-    logger.info('Authorize this app by visiting this url:', authUrl);
+    logger.info(`Authorize this app by visiting this url: ${authUrl}`);
     const code = await readFromStandardInput();
     const token = await getTokenFromCode(oAuth2Client, code);
     oAuth2Client.setCredentials(token);
