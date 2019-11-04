@@ -2,7 +2,8 @@ class Logger {
   log(level, msg) {
     if (process.env.NODE_ENV !== 'test') {
       const timestamp = (new Date).toISOString().slice(0, 19);
-      console.log(`[${timestamp}] [${level}] ${msg}`);
+      const serverName = process.env.MONIT_LOG_NAME || 'SERVER';
+      console.log(`[${timestamp}] [${serverName}] [${level}] ${msg}`);
     }
   }
 

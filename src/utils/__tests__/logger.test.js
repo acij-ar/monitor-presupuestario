@@ -20,12 +20,12 @@ describe('Logger', () => {
   it('should print msg with INFO tag', () => {
     process.env.NODE_ENV = 'dev';
     logger.info('info msg');
-    expect(consoleLogSpy).toHaveBeenCalledWith('[2017-12-10T03:00:00] [INFO] info msg')
+    expect(consoleLogSpy).toHaveBeenCalledWith('[2017-12-10T03:00:00] [SERVER] [INFO] info msg')
   });
 
   it('should print msg with ERROR tag', () => {
     process.env.NODE_ENV = 'dev';
     logger.error('error msg');
-    expect(consoleLogSpy).toHaveBeenCalledWith('[2017-12-10T03:00:00] [ERROR] error msg')
+    expect(consoleLogSpy).toHaveBeenCalledWith('[2017-12-10T03:00:00] [SERVER] [ERROR] error msg')
   });
 });
