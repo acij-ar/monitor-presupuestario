@@ -8,6 +8,7 @@ describe('Files config', () => {
       expect(typeof file.path).toBe('string');
       expect(typeof file.filename).toBe('string');
       expect(typeof file.inflation).toBe('boolean');
+      expect(typeof file.numberUnitsAreMillions).toBe('boolean');
     })
   })
 });
