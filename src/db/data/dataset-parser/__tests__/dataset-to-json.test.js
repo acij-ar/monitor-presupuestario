@@ -17,21 +17,21 @@ describe('Dataset to json', () => {
   });
 
   it('should iterate through csv file calling parseRow and processRowIntoObject for each row', async (done) => {
-    await datasetToJSON({ files: [{ path: './path/to/file.csv', year: 2019 }], inflationFile: { path: 'inflation.csv' } });
+    await datasetToJSON({ files: [{ path: './path/to/file.csv', year: 2019 }], inflation: 1 });
     expect(mockBaseJSONObject).toHaveBeenCalledTimes(1);
     expect(mockProcessCSVIntoObject).toHaveBeenCalledTimes(1);
-    expect(mockProcessCSVIntoObject.mock.calls).toEqual([[{file: { path: './path/to/file.csv', year: 2019 }, dbObject: {thisObject: 'base-json-object'}, inflationFile: { path: 'inflation.csv' }}]]);
+    expect(mockProcessCSVIntoObject.mock.calls).toEqual([[{file: { path: './path/to/file.csv', year: 2019 }, dbObject: {thisObject: 'base-json-object'}, inflation: 1}]]);
     expect(mockWriteFileSync).toHaveBeenCalledTimes(1);
     expect(mockWriteFileSync.mock.calls[0][1]).toEqual('{\n  "thisObject": "base-json-object"\n}');
     done();
   });
 
   it('should handle baseFile and originalBudgetFile', async (done) => {
-    await datasetToJSON({ files: [{ path: './path/to/file.csv', year: 2019 }, { path: 'path-to-original-file.csv' }], inflationFile: { path: 'inflation.csv' } });
+    await datasetToJSON({ files: [{ path: './path/to/file.csv', year: 2019 }, { path: 'path-to-original-file.csv' }], inflation: 2 });
     expect(mockBaseJSONObject).toHaveBeenCalledTimes(1);
     expect(mockProcessCSVIntoObject).toHaveBeenCalledTimes(2);
-    expect(mockProcessCSVIntoObject.mock.calls[0][0]).toEqual({file: { path: './path/to/file.csv', year: 2019 }, dbObject: {thisObject: 'base-json-object'}, inflationFile: { path: 'inflation.csv' }});
-    expect(mockProcessCSVIntoObject.mock.calls[1][0]).toEqual({file: { path: 'path-to-original-file.csv' }, dbObject: {thisObject: 'base-json-object'}, inflationFile: { path: 'inflation.csv' }});
+    expect(mockProcessCSVIntoObject.mock.calls[0][0]).toEqual({file: { path: './path/to/file.csv', year: 2019 }, dbObject: {thisObject: 'base-json-object'}, inflation: 2});
+    expect(mockProcessCSVIntoObject.mock.calls[1][0]).toEqual({file: { path: 'path-to-original-file.csv' }, dbObject: {thisObject: 'base-json-object'}, inflation: 2});
     expect(mockWriteFileSync).toHaveBeenCalledTimes(1);
     expect(mockWriteFileSync.mock.calls[0][1]).toEqual('{\n  "thisObject": "base-json-object"\n}');
     done();

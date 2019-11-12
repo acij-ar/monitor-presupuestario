@@ -9,14 +9,14 @@ const logger = require('../../../utils/logger');
  *
  * @param {object} params - Object with params
  * @param {Array} params.files - Array with dataset attrs objects
- * @param {object} params.inflationFile - Object with the inflation dataset attrs
+ * @param {number} params.inflation - Inflation for the corresponding files
  * @returns {Promise<void>} - Promise that resolves when the process is done
  */
-module.exports = async ({ files, inflationFile }) => {
+module.exports = async ({ files, inflation }) => {
   const dbObject = baseJSONObject();
   for (let i=0; i<files.length; i++) {
     const file = files[i];
-    await processCSVIntoObject({ file, dbObject, inflationFile });
+    await processCSVIntoObject({ file, dbObject, inflation });
     logger.info(`Finished processing ${file.path}`);
   }
   const dbString = JSON.stringify(dbObject, null, 2);
