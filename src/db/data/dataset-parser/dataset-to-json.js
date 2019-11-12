@@ -7,21 +7,20 @@ const logger = require('../../../utils/logger');
 /**
  * Process a csv file into a json file
  *
- * @param {object } params - Object with params
- * @param {object} params.baseFile - Object with attrs of the base file
- * @param {object} [params.originalBudgetFile] - Object with attrs of the file containing the original budget (optional)
+ * @param {object} params - Object with params
+ * @param {Array} params.files - Array with dataset attrs objects
+ * @param {object} params.inflationFile - Object with the inflation dataset attrs
  * @returns {Promise<void>} - Promise that resolves when the process is done
  */
-module.exports = async ({ baseFile, originalBudgetFile }) => {
+module.exports = async ({ files, inflationFile }) => {
   const dbObject = baseJSONObject();
-  await processCSVIntoObject({ file: baseFile, dbObject, });
-  logger.info(`Finished processing ${baseFile.path}`);
-  if (originalBudgetFile) {
-    await processCSVIntoObject({ file: originalBudgetFile, dbObject, });
-    logger.info(`Finished processing ${originalBudgetFile.path}`);
+  for (let i=0; i<files.length; i++) {
+    const file = files[i];
+    await processCSVIntoObject({ file, dbObject, inflationFile });
+    logger.info(`Finished processing ${file.path}`);
   }
   const dbString = JSON.stringify(dbObject, null, 2);
-  const outputPath = join(__dirname, '..', 'datasets', `${baseFile.year}.json`);
+  const outputPath = join(__dirname, '..', 'datasets', `${files[0].year}.json`);
   fs.writeFileSync(outputPath, dbString);
   logger.info(`Finished writing ${outputPath}`);
 };

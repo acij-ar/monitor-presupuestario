@@ -2,6 +2,10 @@ const datasetToJSON = require('./dataset-to-json');
 const files = require('../files');
 const logger = require('../../../utils/logger');
 
+const inflationFile = files.find(file => file.inflation);
+const years = [];
+files.map(file => file.year && years.indexOf(file.year) === -1 ? years.push(file.year) : null);
+
 /**
  * Process each baseDataset file into their json file equivalent
  *
@@ -9,11 +13,9 @@ const logger = require('../../../utils/logger');
  */
 module.exports = async () => {
   logger.info('Processing csv files into db.json');
-  const baseFiles = files.filter(({baseDataset}) => baseDataset);
-  const originalBudgetFiles = files.filter(({hasOriginalBudget}) => hasOriginalBudget);
-  const baseDatasetsProcessPromises = baseFiles.map((baseFile) => {
-    const originalBudgetFile = originalBudgetFiles.find(({year}) => baseFile.year === year);
-    return datasetToJSON({ baseFile, originalBudgetFile });
-  });
-  await Promise.all(baseDatasetsProcessPromises);
+  for (let i=0; i<years.length; i++) {
+    const year = years[i];
+    const yearFiles = files.filter(file => file.year === year);
+    await datasetToJSON({ files: yearFiles, inflationFile })
+  }
 };
