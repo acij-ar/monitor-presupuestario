@@ -18,6 +18,7 @@ module.exports = async () => {
     const outputPath = file.path;
     return driveClient.downloadFile({ fileId: file.id, outputPath })
   });
+  // TODO: add try catch for when downloads fail
   await Promise.all(downloadPromises);
   logger.info('All files updated');
 };
