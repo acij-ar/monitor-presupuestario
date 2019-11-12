@@ -20,7 +20,7 @@ describe('Process CSV into object script', () => {
       credito_original: 0,
       credito_presupuestado: 0,
     };
-    const file = { path: 'file-path', year: 2019, numberUnitsAreMillions: true };
+    const file = { path: 'file-path', year: 2019, numberUnitsAreMillions: true, usePresupuestadoAsOriginal: false };
     processCSVIntoObject({ dbObject, file, inflation: 1 });
     expect(mockReadCSV).toHaveBeenCalledTimes(1);
     expect(mockReadCSV.mock.calls[0][0]).toEqual({ path: 'file-path', onData: expect.any(Function) });
@@ -29,8 +29,8 @@ describe('Process CSV into object script', () => {
     expect(typeof onDataCallback).toBe('function');
     onDataCallback('mock-row');
     expect(mockParseRow).toHaveBeenCalledTimes(1);
-    expect(mockParseRow.mock.calls[0][0]).toEqual({row: 'mock-row', numberUnitsAreMillions: true});
+    expect(mockParseRow.mock.calls[0][0]).toEqual({row: 'mock-row', numberUnitsAreMillions: true, usePresupuestadoAsOriginal: false, inflation: 1});
     expect(mockProcessRowIntoObject).toHaveBeenCalledTimes(1);
-    expect(mockProcessRowIntoObject.mock.calls).toEqual([[{row: 'parsed-row', dbObject, year: 2019, inflation: 1}]]);
+    expect(mockProcessRowIntoObject.mock.calls).toEqual([[{row: 'parsed-row', dbObject, year: 2019}]]);
   });
 });
