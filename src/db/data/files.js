@@ -9,6 +9,7 @@ const files = [
     year: 2007,
     inflation: false,
     numberUnitsAreMillions: true,
+    usePresupuestadoAsOriginal: true,
   },
   { 
     filename: 'credito-historico-anual-2008.csv',
@@ -16,6 +17,7 @@ const files = [
     year: 2008,
     inflation: false,
     numberUnitsAreMillions: true,
+    usePresupuestadoAsOriginal: true,
   },
   { 
     filename: 'credito-historico-anual-2009.csv',
@@ -23,6 +25,7 @@ const files = [
     year: 2009,
     inflation: false,
     numberUnitsAreMillions: true,
+    usePresupuestadoAsOriginal: true,
   },
   { 
     filename: 'credito-historico-anual-2010.csv',
@@ -30,6 +33,7 @@ const files = [
     year: 2010,
     inflation: false,
     numberUnitsAreMillions: true,
+    usePresupuestadoAsOriginal: true,
   },
   { 
     filename: 'credito-historico-anual-2011.csv',
@@ -37,6 +41,7 @@ const files = [
     year: 2011,
     inflation: false,
     numberUnitsAreMillions: true,
+    usePresupuestadoAsOriginal: true,
   },
   { 
     filename: 'credito-historico-anual-2012.csv',
@@ -44,6 +49,7 @@ const files = [
     year: 2012,
     inflation: false,
     numberUnitsAreMillions: true,
+    usePresupuestadoAsOriginal: true,
   },
   { 
     filename: 'credito-historico-anual-2013.csv',
@@ -51,6 +57,7 @@ const files = [
     year: 2013,
     inflation: false,
     numberUnitsAreMillions: true,
+    usePresupuestadoAsOriginal: true,
   },
   { 
     filename: 'credito-historico-anual-2014.csv',
@@ -58,6 +65,7 @@ const files = [
     year: 2014,
     inflation: false,
     numberUnitsAreMillions: true,
+    usePresupuestadoAsOriginal: true,
   },
   { 
     filename: 'credito-historico-anual-2015.csv',
@@ -65,6 +73,7 @@ const files = [
     year: 2015,
     inflation: false,
     numberUnitsAreMillions: true,
+    usePresupuestadoAsOriginal: true,
   },
   { 
     filename: 'credito-historico-anual-2016.csv',
@@ -72,6 +81,7 @@ const files = [
     year: 2016,
     inflation: false,
     numberUnitsAreMillions: true,
+    usePresupuestadoAsOriginal: false,
   },
   { 
     filename: 'credito-historico-anual-2017.csv',
@@ -79,6 +89,7 @@ const files = [
     year: 2017,
     inflation: false,
     numberUnitsAreMillions: true,
+    usePresupuestadoAsOriginal: false,
   },
   { 
     filename: 'credito-anual-2018.csv',
@@ -86,6 +97,7 @@ const files = [
     year: 2018,
     inflation: false,
     numberUnitsAreMillions: true,
+    usePresupuestadoAsOriginal: false,
   },
   { 
     filename: 'credito-anual-2019.csv',
@@ -93,6 +105,7 @@ const files = [
     year: 2019,
     inflation: false,
     numberUnitsAreMillions: true,
+    usePresupuestadoAsOriginal: false,
   },
   {
     filename: 'inflacion.csv',
@@ -100,6 +113,7 @@ const files = [
     year: null,
     inflation: true,
     numberUnitsAreMillions: false,
+    usePresupuestadoAsOriginal: false,
   },
   { 
     filename: 'presupuesto-original-2016.csv',
@@ -107,6 +121,7 @@ const files = [
     year: 2016,
     inflation: false,
     numberUnitsAreMillions: false,
+    usePresupuestadoAsOriginal: false,
   },
   { 
     filename: 'presupuesto-original-2017.csv',
@@ -114,6 +129,7 @@ const files = [
     year: 2017,
     inflation: false,
     numberUnitsAreMillions: false,
+    usePresupuestadoAsOriginal: false,
   },
   { 
     filename: 'presupuesto-original-2018.csv',
@@ -121,6 +137,7 @@ const files = [
     year: 2018,
     inflation: false,
     numberUnitsAreMillions: false,
+    usePresupuestadoAsOriginal: false,
   },
   { 
     filename: 'presupuesto-original-2019.csv',
@@ -128,6 +145,7 @@ const files = [
     year: 2019,
     inflation: false,
     numberUnitsAreMillions: false,
+    usePresupuestadoAsOriginal: false,
   }
 ];
 
