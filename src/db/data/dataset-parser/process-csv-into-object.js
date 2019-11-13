@@ -11,12 +11,12 @@ const processRowIntoObject = require('./process-row-into-object');
  * @param {number} params.inflation - Inflation for the corresponding file
  * @returns {Promise<void>} - Promise that resolves when the process is done
  */
-module.exports = ({ dbObject, file: { path, year, numberUnitsAreMillions, usePresupuestadoAsOriginal }, inflation }) => (
+module.exports = ({ dbObject, file: { filename, path, numberUnitsAreMillions, usePresupuestadoAsOriginal }, inflation }) => (
   readCSV({
     path,
-    onData: (row) => {
-      const parsedRow = parseRow({row, numberUnitsAreMillions, usePresupuestadoAsOriginal, inflation});
-      processRowIntoObject({row: parsedRow, dbObject, year});
+    onData: (row, rowIndex) => {
+      const parsedRow = parseRow({filename, row, rowIndex, numberUnitsAreMillions, usePresupuestadoAsOriginal, inflation});
+      processRowIntoObject({row: parsedRow, dbObject});
     }
   })
 );
