@@ -146,6 +146,14 @@ const files = [
     inflation: false,
     numberUnitsAreMillions: false,
     usePresupuestadoAsOriginal: false,
+  },
+  {
+    filename: 'proyecto-presupuesto-2020.csv',
+    id: '1Roxcyhg5UgaC-XuO2qNTHrRw4FItin_w',
+    year: 2020,
+    inflation: false,
+    numberUnitsAreMillions: false,
+    usePresupuestadoAsOriginal: false,
   }
 ];
 
