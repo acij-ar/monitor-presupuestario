@@ -29,5 +29,6 @@ app.use('/static', staticMiddleware);
 app.use('/', appRouter);
 app.use('/api', apiRouter);
 
-app.listen(8080);
-console.log('Listening https://localhost:8080');
+const port = process.env.PORT || 8080;
+app.listen(port);
+console.log(`Listening https://localhost:${port}`);
