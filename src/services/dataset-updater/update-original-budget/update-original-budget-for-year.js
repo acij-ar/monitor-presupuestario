@@ -14,11 +14,11 @@ module.exports = async ({filePath, year}) => {
   });
   const {jsonPath} = files.find(file => year === file.year && file.jsonPath);
   let jsonObject;
-  if (fs.existsSync(jsonPath)) {
+  if (fs.existsSync(jsonPath) && year !== 2020) {
     const jsonContent = fs.readFileSync(jsonPath);
     jsonObject = JSON.parse(jsonContent);
   } else {
-    jsonObject = { dependencias: {} };
+    jsonObject = { dependencias: {}, credito_original: 0 };
     numericColumns.map(column => {
       jsonObject[column] = 0;
     });
