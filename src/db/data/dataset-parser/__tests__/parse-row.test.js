@@ -61,12 +61,12 @@ describe('Parse row', () => {
           inflation: 2,
           rowIndex: 123,
         },
-        pen:  {
-          actividad: 'actividad_',
-          entidad: 'entidad nombre',
-          jurisdiccion: 'nombre jurisdiccion',
-          programa: 'programa',
-        },
+        pen:  [
+          { type: 'jurisdiccion', name: 'nombre jurisdiccion' },
+          { type: 'entidad', name: 'entidad nombre' },
+          { type: 'programa', name: 'programa' },
+          { type: 'actividad', name: 'actividad_' },
+        ],
         unadjusted:  {
           aumento: 0,
           comprometido: 345444000,
@@ -125,12 +125,12 @@ describe('Parse row', () => {
           inflation: 2,
           rowIndex: 123,
         },
-        pen:  {
-          actividad: 'actividad_',
-          entidad: 'entidad nombre',
-          jurisdiccion: 'nombre jurisdiccion',
-          programa: 'programa',
-        },
+        pen:  [
+          { type: 'jurisdiccion', name: 'nombre jurisdiccion' },
+          { type: 'entidad', name: 'entidad nombre' },
+          { type: 'programa', name: 'programa' },
+          { type: 'actividad', name: 'actividad_' },
+        ],
         unadjusted:  {
           aumento: 345,
           comprometido: 0,

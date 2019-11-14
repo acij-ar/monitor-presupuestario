@@ -33,12 +33,12 @@ module.exports = ({row, numberUnitsAreMillions, usePresupuestadoAsOriginal, infl
     raw: row,
     parsed: {
       marcarHijosConPosibleReasignacion,
-      pen: {
-        jurisdiccion,
-        entidad,
-        programa,
-        actividad,
-      },
+      pen: [
+        { type: 'jurisdiccion', name: jurisdiccion },
+        { type: 'entidad', name: entidad },
+        { type: 'programa', name: programa },
+        { type: 'actividad', name: actividad },
+      ],
       origin: {
         filename,
         rowIndex,
