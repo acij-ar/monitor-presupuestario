@@ -153,7 +153,6 @@ module.exports = [
     isOriginalDataset: true,
     rawPath: path.join(rawDataFolderPath, 'presupuesto-original-2016.csv'),
     filePath: path.join(finalFolderPath, 'presupuesto-original-2016.csv'),
-    errorsPath: path.join(errorsFolderPath, 'presupuesto-original-2016.csv'),
   },
   {
     id: '1gNFuCwq97L4svplUWAT06JyBe2AVcCTg',
@@ -163,7 +162,6 @@ module.exports = [
     isOriginalDataset: true,
     rawPath: path.join(rawDataFolderPath, 'presupuesto-original-2017.csv'),
     filePath: path.join(finalFolderPath, 'presupuesto-original-2017.csv'),
-    errorsPath: path.join(errorsFolderPath, 'presupuesto-original-2017.csv'),
   },
   {
     id: '1NsyiqXXxbZed6s_eKmQof_W-9XcTwrn1',
@@ -173,7 +171,6 @@ module.exports = [
     isOriginalDataset: true,
     rawPath: path.join(rawDataFolderPath, 'presupuesto-original-2018.csv'),
     filePath: path.join(finalFolderPath, 'presupuesto-original-2018.csv'),
-    errorsPath: path.join(errorsFolderPath, 'presupuesto-original-2018.csv'),
   },
   {
     id: '1_5fJeKOXZYk-na7PR2j30oJDIOOt8rSM',
@@ -183,6 +180,15 @@ module.exports = [
     isOriginalDataset: true,
     rawPath: path.join(rawDataFolderPath, 'presupuesto-original-2019.csv'),
     filePath: path.join(finalFolderPath, 'presupuesto-original-2019.csv'),
-    errorsPath: path.join(errorsFolderPath, 'presupuesto-original-2019.csv'),
+  },
+  {
+    id: '1Roxcyhg5UgaC-XuO2qNTHrRw4FItin_w',
+    filename: 'proyecto-presupuesto-2020.csv',
+    year: 2020,
+    isYearDataset: false,
+    isOriginalDataset: true,
+    rawPath: path.join(rawDataFolderPath, 'presupuesto-original-2020.csv'),
+    filePath: path.join(finalFolderPath, 'presupuesto-original-2020.csv'),
+    jsonPath: path.join(jsonFolderPath, '2020.json'),
   }
 ];

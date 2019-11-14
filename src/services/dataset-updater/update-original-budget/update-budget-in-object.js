@@ -16,10 +16,6 @@ const getBudgetCorrention = (correction) => {
 module.exports = ({correction, jsonObject, year}) => {
   const budgetCorrection = getBudgetCorrention(correction);
   let targetObject = jsonObject;
-  let found = true;
-  if (!budgetCorrection) {
-    return { found };
-  }
   targetObject.credito_original += budgetCorrection;
   ['jurisdiccion', 'entidad', 'programa', 'actividad'].map(category => {
     if ([2016, 2017].includes(year) && ['programa', 'actividad'].includes(category) && correction[category]) {
@@ -35,18 +31,27 @@ module.exports = ({correction, jsonObject, year}) => {
     } else if(targetName.toLowerCase().includes('erogaciones')) {
       targetObject.dependencias[targetName] = {
         dependencias: {}
-      };
+      } ;
       targetObject = targetObject.dependencias[targetName];
       numericColumns.map(col => {
         targetObject[col] = 0;
       });
       targetObject.credito_original = budgetCorrection;
     } else if (targetName) {
-      found = false;
+      targetObject.dependencias[targetName] = {};
+      if (category !== 'actividad') {
+        targetObject.dependencias[targetName].dependencias = {};
+      }
+      numericColumns.map(column => {
+        targetObject.dependencias[targetName][column] = 0;
+      });
+      targetObject = targetObject.dependencias[targetName];
+      if (!isNaN(budgetCorrection)) {
+        targetObject.credito_original = (targetObject.credito_original || 0) + budgetCorrection;
+      }
     }
   });
   return {
     targetObject,
-    found,
   };
 };
