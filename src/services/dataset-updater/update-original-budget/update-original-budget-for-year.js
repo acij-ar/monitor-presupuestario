@@ -1,38 +1,36 @@
 const readCSV = require('../../../utils/read-csv');
 const markAllChildrenAsPossiblyModified = require('./mark-children');
 const updateBudgetInObject = require('./update-budget-in-object');
-const {datasets: { files }} = require('../../../config');
+const {datasets: { files, columns }} = require('../../../config');
 const fs = require('fs');
-const CSVWriteStream = require('csv-write-stream');
 const logger = require('../../../utils/logger');
 
-module.exports = async ({filePath, year, errorsPath}) => {
+const numericColumns = columns.filter(({isNumeric}) => isNumeric).map(({name}) => name);
+
+module.exports = async ({filePath, year}) => {
   const dataset = [];
   await readCSV({
     path: filePath,
     onData: row => dataset.push(row),
   });
-  const {jsonPath} = files.find(file => file.isYearDataset && year === file.year);
-  const jsonContent = fs.readFileSync(jsonPath);
-  const jsonObject = JSON.parse(jsonContent);
-  const errors = [];
+  const {jsonPath} = files.find(file => year === file.year && file.jsonPath);
+  let jsonObject;
+  if (fs.existsSync(jsonPath) && year !== 2020) {
+    const jsonContent = fs.readFileSync(jsonPath);
+    jsonObject = JSON.parse(jsonContent);
+  } else {
+    jsonObject = { dependencias: {}, credito_original: 0 };
+    numericColumns.map(column => {
+      jsonObject[column] = 0;
+    });
+  }
   dataset.map(correction => {
-    const {targetObject, found} = updateBudgetInObject({correction, jsonObject, year});
-    if (found && correction.marcar_hijos_con_posible_reasignacion === 'si') {
+    const {targetObject} = updateBudgetInObject({correction, jsonObject, year});
+    if (correction.marcar_hijos_con_posible_reasignacion === 'si') {
       markAllChildrenAsPossiblyModified(targetObject);
-    }
-    if (!found) {
-      errors.push(correction);
     }
   });
   const newJsonContent = JSON.stringify(jsonObject, null, 2);
   fs.writeFileSync(jsonPath, newJsonContent);
-  if (errors.length) {
-    const outputStream = fs.createWriteStream(errorsPath);
-    const csvWriter = CSVWriteStream({headers: Object.keys(errors[0])});
-    csvWriter.pipe(outputStream);
-    errors.map(error => csvWriter.write(error));
-    csvWriter.end();
-    logger.error(`${errors.length} errors for ${year}`);
-  }
+  logger.info(`Updated ${jsonPath} with original budgets`);
 };

@@ -7,7 +7,7 @@ const prepareStatements = require('./prepare-statements');
 const updateInDB = require('./update-in-db');
 const logger = require('../../../utils/logger');
 
-const yearFiles = files.filter(file => file.isYearDataset);
+const yearFiles = files.filter(file => file.jsonPath);
 
 module.exports = async () => {
   logger.info('Started updating db');
@@ -21,7 +21,7 @@ module.exports = async () => {
     if (fs.existsSync(jsonPath)) {
       const jsonContent = fs.readFileSync(jsonPath);
       const jsonDB = {'Presupuesto total': JSON.parse(jsonContent)};
-      const yearInflation = inflation[year];
+      const yearInflation = inflation[year] || 1;
       logger.info(`Updating year ${year} in db`);
       updateInDB({jsonDB, statements, year, yearInflation});
     }

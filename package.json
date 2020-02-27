@@ -44,7 +44,7 @@
     "fast-levenshtein": "^2.0.6",
     "googleapis": "^44.0.0",
     "md5-file": "^4.0.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "postcss-loader": "^3.0.0",
     "react": "^16.8.6",
     "react-beautiful-dnd": "^11.0.5",
