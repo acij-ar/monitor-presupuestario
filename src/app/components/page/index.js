@@ -1,4 +1,5 @@
 const React = require('react');
+const PropTypes = require('prop-types');
 const Header = require('./components/header');
 const Footer = require('./components/footer');
 const Analytics = require('../analytics');
@@ -22,6 +23,10 @@ class Page extends React.Component {
     );
   }
 }
+
+Page.propTypes = {
+  children: PropTypes.node,
+};
 
 module.exports = Page;
 

@@ -1,4 +1,5 @@
 const React = require('react');
+const PropTypes = require('prop-types');
 const Page = require('../../components/page');
 const ConfigBar = require('./components/config-bar');
 const SingleChart = require('./components/charts/single-chart');
@@ -100,5 +101,10 @@ class App extends React.Component {
     );
   }
 }
+
+App.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
 
 module.exports = App;
