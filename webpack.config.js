@@ -5,6 +5,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // TODO: autobind class methods
 // TODO: content hash as part of the filenames of the css and js files. Find a way to connect the hashes with the layout
 
+// TODO: separate vendor libs into vendor script lib
+
 const rules = [{
   test: /\.scss$/,
   use: [
