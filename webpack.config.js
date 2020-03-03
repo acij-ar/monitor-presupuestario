@@ -55,6 +55,7 @@ const serverConfig = {
 
 const clientConfig = {
   target: 'web',
+  devtool: 'source-map',
   entry: {
     'home': path.resolve(__dirname, 'src/app/client/home'),
     'monitor': path.resolve(__dirname, 'src/app/client/monitor'),
