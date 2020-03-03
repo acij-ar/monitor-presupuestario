@@ -14,7 +14,7 @@ module.exports = async ({filePath, year}) => {
   });
   const {jsonPath} = files.find(file => year === file.year && file.jsonPath);
   let jsonObject;
-  if (fs.existsSync(jsonPath) && year !== 2020) {
+  if (fs.existsSync(jsonPath)) {
     const jsonContent = fs.readFileSync(jsonPath);
     jsonObject = JSON.parse(jsonContent);
   } else {
