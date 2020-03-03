@@ -1,4 +1,5 @@
 const React = require('react');
+const PropTypes = require('prop-types');
 const EntitySelect = require('./components/entity-select');
 const YearSelect = require('./components/year-select');
 const BudgetSelect = require('./components/budget-select');
@@ -26,5 +27,15 @@ class ConfigBar extends React.PureComponent {
     );
   }
 }
+
+ConfigBar.propTypes = {
+  selectedEntities: PropTypes.array,
+  selectedYears: PropTypes.array,
+  selectedBudgets: PropTypes.array,
+  onSelectedEntitiesChange: PropTypes.func.isRequired,
+  onSelectedYearsChange: PropTypes.func.isRequired,
+  onSelectedBudgetsChange: PropTypes.func.isRequired,
+  onGroupsChange: PropTypes.func.isRequired,
+};
 
 module.exports = ConfigBar;

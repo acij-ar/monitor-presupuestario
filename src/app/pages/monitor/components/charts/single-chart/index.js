@@ -1,4 +1,5 @@
 const React = require('react');
+const PropTypes = require('prop-types');
 const Chart = require('../base-chart');
 
 class SingleChart extends React.Component {
@@ -14,6 +15,13 @@ class SingleChart extends React.Component {
     );
   }
 }
+
+SingleChart.propTypes = {
+  selectedEntities: PropTypes.array,
+  selectedYears: PropTypes.array,
+  selectedBudgets: PropTypes.array,
+  endpoint: PropTypes.string.isRequired,
+};
 
 module.exports = SingleChart;
 
