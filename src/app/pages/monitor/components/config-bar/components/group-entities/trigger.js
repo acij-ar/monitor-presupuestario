@@ -1,5 +1,6 @@
 const React = require('react');
 const ReactTooltip = require('react-tooltip');
+const PropTypes = require('prop-types');
 
 class GroupEntitiesTrigger extends React.PureComponent {
   render() {
@@ -21,5 +22,9 @@ class GroupEntitiesTrigger extends React.PureComponent {
     );
   }
 }
+
+GroupEntitiesTrigger.propTypes = {
+  selected: PropTypes.array,
+};
 
 module.exports = GroupEntitiesTrigger;

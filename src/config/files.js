@@ -4,7 +4,6 @@ const dataFolderPath = path.join(__dirname, '..', '..', 'data');
 const rawDataFolderPath = path.join(dataFolderPath, 'raw');
 const finalFolderPath = path.join(dataFolderPath, 'cleaned');
 const jsonFolderPath = path.join(dataFolderPath, 'json');
-const errorsFolderPath = path.join(dataFolderPath, 'errors');
 
 module.exports = [
   {
@@ -138,6 +137,16 @@ module.exports = [
     jsonPath: path.join(jsonFolderPath, '2019.json'),
   },
   {
+    id: '1g3tB_urO_RN-VXxmAvXqQd42vEnYOagc',
+    filename: '2020.csv',
+    year: 2020,
+    isYearDataset: true,
+    isOriginalDataset: false,
+    rawPath: path.join(rawDataFolderPath, '2020.csv'),
+    filePath: path.join(finalFolderPath, '2020.csv'),
+    jsonPath: path.join(jsonFolderPath, '2020.json'),
+  },
+  {
     id: '1XvWj4sCcL5vNnEJoyrst8DCwzHK4dHtM',
     filename: 'inflacion.csv',
     isYearDataset: false,
@@ -189,6 +198,5 @@ module.exports = [
     isOriginalDataset: true,
     rawPath: path.join(rawDataFolderPath, 'presupuesto-original-2020.csv'),
     filePath: path.join(finalFolderPath, 'presupuesto-original-2020.csv'),
-    jsonPath: path.join(jsonFolderPath, '2020.json'),
-  }
+  },
 ];
