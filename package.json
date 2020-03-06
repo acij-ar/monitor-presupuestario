@@ -39,6 +39,8 @@
     "css-loader": "^2.1.1",
     "csv-write-stream": "^2.0.0",
     "elasticlunr": "^0.9.5",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "express": "^4.17.0",
     "express-manifest-helpers": "^0.6.0",
     "fast-csv": "^3.1.0",
