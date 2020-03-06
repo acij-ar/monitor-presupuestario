@@ -9,6 +9,8 @@ module.exports = {
   transform: {
     '^.+\\.[t|j]sx?$': '<rootDir>/node_modules/babel-jest',
   },
+  setupFiles: ['<rootDir>/jest.setup.js'],
   testEnvironment: 'node',
   verbose: true,
+  snapshotSerializers: ["enzyme-to-json/serializer"],
 };
