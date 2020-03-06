@@ -7,7 +7,7 @@ class TextsForm extends React.Component {
     this.state = {
       username: '',
       password: '',
-      loginSuccessfull: false,
+      loginSuccessful: false,
       loginError: false,
       waitingResponse: false,
     };
@@ -17,36 +17,35 @@ class TextsForm extends React.Component {
   }
 
   onPasswordChange(event) {
-    this.state.password = event.target.value;
-    this.setState(this.state);
+    this.setState({ password: event.target.value });
   }
 
-  onKeyDown(e) {
+  async onKeyDown(e) {
     if(e.key === 'Enter') {
-      this.attemptLogin();
+      await this.attemptLogin();
     }
   }
 
-  attemptLogin() {
+  async attemptLogin() {
     const {password} = this.state;
-    this.state.waitingResponse = true;
-    this.state.loginError = false;
-    this.setState(this.state);
-    axios.post('/api/admin/login', {password})
-      .then(() => {
-        this.state.loginSuccessfull = true;
-        this.setState(this.state);
-        window.location.href = '/admin';
-      })
-      .catch(() => {
-        this.state.loginError = true;
-        this.state.waitingResponse = false;
-        this.setState(this.state);
-      });
+    this.setState({ waitingResponse: true, loginSuccessful: false, loginError: false });
+    let loginSuccessful = false;
+    try {
+      await axios.post('/api/admin/login', {password});
+      loginSuccessful = true;
+    } catch (error) {
+      console.log(error);
+    }
+    if (loginSuccessful) {
+      this.setState({ loginSuccessful: true, waitingResponse: false });
+      window.location.href = '/admin';
+    } else {
+      this.setState({ loginError: true, waitingResponse: false });
+    }
   }
 
   render() {
-    const {password, waitingResponse, loginSuccessfull, loginError} = this.state;
+    const {password, waitingResponse, loginSuccessful, loginError} = this.state;
     return (
       <div className="monitor-content monitor-login">
         <div className="monitor-login-page-section">
@@ -61,7 +60,7 @@ class TextsForm extends React.Component {
           />
           <button onClick={this.attemptLogin} disabled={waitingResponse}>Ingresar</button>
           <span className="monitor-login-feedback">
-            {loginSuccessfull && '✅'}
+            {loginSuccessful && '✅'}
             {loginError && '❌'}
           </span>
         </div>

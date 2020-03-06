@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login form component should fail login + snapshot 1`] = `
+<div
+  className="monitor-content monitor-login"
+>
+  <div
+    className="monitor-login-page-section"
+  >
+    <h2>
+      Ingresar
+    </h2>
+    Contraseña
+    <input
+      autoFocus={true}
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      type="password"
+      value="invalid-password"
+    />
+    <button
+      disabled={false}
+      onClick={[Function]}
+    >
+      Ingresar
+    </button>
+    <span
+      className="monitor-login-feedback"
+    >
+      ❌
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Login form component should login successfully after clicking button + snapshot 1`] = `
+<div
+  className="monitor-content monitor-login"
+>
+  <div
+    className="monitor-login-page-section"
+  >
+    <h2>
+      Ingresar
+    </h2>
+    Contraseña
+    <input
+      autoFocus={true}
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      type="password"
+      value="password456"
+    />
+    <button
+      disabled={false}
+      onClick={[Function]}
+    >
+      Ingresar
+    </button>
+    <span
+      className="monitor-login-feedback"
+    >
+      ✅
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Login form component should login successfully after pressing enter + snapshot 1`] = `
+<div
+  className="monitor-content monitor-login"
+>
+  <div
+    className="monitor-login-page-section"
+  >
+    <h2>
+      Ingresar
+    </h2>
+    Contraseña
+    <input
+      autoFocus={true}
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      type="password"
+      value="password123"
+    />
+    <button
+      disabled={false}
+      onClick={[Function]}
+    >
+      Ingresar
+    </button>
+    <span
+      className="monitor-login-feedback"
+    >
+      ✅
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Login form component should match snapshot for empty state 1`] = `
+<div
+  className="monitor-content monitor-login"
+>
+  <div
+    className="monitor-login-page-section"
+  >
+    <h2>
+      Ingresar
+    </h2>
+    Contraseña
+    <input
+      autoFocus={true}
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      type="password"
+      value=""
+    />
+    <button
+      disabled={false}
+      onClick={[Function]}
+    >
+      Ingresar
+    </button>
+    <span
+      className="monitor-login-feedback"
+    />
+  </div>
+</div>
+`;
