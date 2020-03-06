@@ -1,3 +1,5 @@
+// TODO: find a better way to persist this changes in the repo
+
 const fs = require('fs');
 const path = require('path');
 
