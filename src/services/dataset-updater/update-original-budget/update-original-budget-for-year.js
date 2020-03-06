@@ -3,6 +3,7 @@ const markAllChildrenAsPossiblyModified = require('./mark-children');
 const updateBudgetInObject = require('./update-budget-in-object');
 const {datasets: { files, columns }} = require('../../../config');
 const fs = require('fs');
+const logger = require('../../../utils/logger');
 
 const numericColumns = columns.filter(({isNumeric}) => isNumeric).map(({name}) => name);
 
@@ -31,5 +32,5 @@ module.exports = async ({filePath, year}) => {
   });
   const newJsonContent = JSON.stringify(jsonObject, null, 2);
   fs.writeFileSync(jsonPath, newJsonContent);
-  console.log(`Updated ${jsonPath} with original budgets`);
+  logger.info(`Updated ${jsonPath} with original budgets`);
 };
