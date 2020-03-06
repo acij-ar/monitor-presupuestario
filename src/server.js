@@ -8,6 +8,7 @@ const logger = require('./utils/logger');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
+const morgan = require('morgan');
 const path = require('path');
 const appRouter = require('./app');
 const apiRouter = require('./api');
@@ -17,6 +18,7 @@ const app = express();
 
 app.use(compression());
 app.use(cookieParser());
+app.use(morgan('dev'));
 
 const clientFolderPath = path.join(__dirname, '..', 'dist');
 const staticFolderPath = path.join(__dirname, '..', 'public');
