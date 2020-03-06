@@ -1,3 +1,4 @@
+require('@babel/polyfill');
 const ReactHighcharts = require('react-highcharts');
 require('highcharts/modules/treemap')(ReactHighcharts.Highcharts);
 require('highcharts/modules/exporting')(ReactHighcharts.Highcharts);
