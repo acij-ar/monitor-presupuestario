@@ -10,7 +10,8 @@ const render = (req, res) => {
   };
   const html = layout({
     renderedComponent: ReactDOMServer.renderToString(<About {...res.locals.props} />),
-    clientName: 'about',
+    scripts: [res.locals.assetPath('about.js')],
+    styles: [res.locals.assetPath('about.css')],
     props: res.locals.props,
   });
   res.send(html);

@@ -40,6 +40,7 @@
     "csv-write-stream": "^2.0.0",
     "elasticlunr": "^0.9.5",
     "express": "^4.17.0",
+    "express-manifest-helpers": "^0.6.0",
     "fast-csv": "^3.1.0",
     "fast-levenshtein": "^2.0.6",
     "googleapis": "^44.0.0",
@@ -70,7 +71,8 @@
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "webpack": "^4.32.0",
-    "webpack-cli": "^3.3.2"
+    "webpack-cli": "^3.3.2",
+    "webpack-manifest-plugin": "^2.2.0"
   },
   "peerDependencies": {
     "lodash": "*",

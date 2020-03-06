@@ -21,7 +21,8 @@ const render = async (req, res) => {
   };
   const html = layout({
     renderedComponent: ReactDOMServer.renderToString(<Admin {...res.locals.props} />),
-    clientName: 'admin',
+    scripts: [res.locals.assetPath('admin.js')],
+    styles: [res.locals.assetPath('admin.css')],
     props: res.locals.props,
   });
   res.send(html);

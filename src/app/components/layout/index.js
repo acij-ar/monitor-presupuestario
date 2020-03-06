@@ -1,4 +1,4 @@
-const layout = ({ renderedComponent, clientName, props }) => `
+const layout = ({ renderedComponent, scripts, styles, props }) => `
 <!doctype html>
 <html lang="es-ar">
 <head>
@@ -12,12 +12,12 @@ const layout = ({ renderedComponent, clientName, props }) => `
     <script>window.__INITIAL__DATA__ = ${JSON.stringify(props)}</script>
     
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
-    <link rel="stylesheet" href="/static/${clientName}.css"/>
+    <link rel="stylesheet" href="/static/${styles[0]}"/>
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="root">${renderedComponent}</div>
-    <script src="/static/${clientName}.js"></script>
+    <script src="/static/${scripts[0]}"></script>
 </body>
 </html>
 `;

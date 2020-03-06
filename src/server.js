@@ -11,6 +11,7 @@ const compression = require('compression');
 const path = require('path');
 const appRouter = require('./app');
 const apiRouter = require('./api');
+const manifestHelpers = require('express-manifest-helpers').default;
 
 const app = express();
 
@@ -27,6 +28,9 @@ const staticFolderPath = path.join(__dirname, '..', 'public');
 const staticMiddleware = express.static(staticFolderPath, {maxAge: '1y', immutable: true});
 app.use('/static', staticMiddleware);
 
+const manifestPath = `${path.join(__dirname, '..', 'dist', 'manifest.json')}`;
+const manifestMiddleware = manifestHelpers({ manifestPath });
+app.use(manifestMiddleware);
 
 app.use('/', appRouter);
 app.use('/api', apiRouter);
