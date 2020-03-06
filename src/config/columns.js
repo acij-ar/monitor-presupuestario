@@ -1,4 +1,4 @@
-// TODO: all uses of the credito_* columns should come from here
+// TODO: not sure if all uses of the credito_* columns should come from here
 
 module.exports = [
   {
