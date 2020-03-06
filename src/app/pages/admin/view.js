@@ -2,7 +2,6 @@ const React = require('react');
 const Page = require('../../components/page');
 const TextsForm = require('./components/texts-form');
 const DatasetForm = require('./components/datasets-form');
-require('./index.scss');
 
 const App = ({ texts }) => (
   <Page>

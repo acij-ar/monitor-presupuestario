@@ -1,3 +1,5 @@
+const mockRegister = jest.fn();
+jest.mock('@babel/register', () => mockRegister);
 const mockPolyfill = jest.fn();
 jest.mock('@babel/polyfill', () => mockPolyfill());
 const mockCreateTables = jest.fn();
@@ -16,6 +18,10 @@ const mockCookieParser = jest.fn(() => 'cookie-parser-middleware');
 jest.mock('cookie-parser', () => mockCookieParser);
 const mockCompression = jest.fn(() => 'compression-middleware');
 jest.mock('compression', () => mockCompression);
+const mockMorgan = jest.fn(() => 'morgan-middleware');
+jest.mock('morgan', () => mockMorgan);
+const mockManifestHelper = jest.fn(() => 'manifest-helper-middleware');
+jest.mock('express-manifest-helpers', () => ({ default: mockManifestHelper}));
 jest.mock('../app', () => 'app-router');
 jest.mock('../api', () => 'api-router');
 const path = require('path');
@@ -23,7 +29,8 @@ const path = require('path');
 describe('Server script', () => {
   require('../server');
 
-  it('should include polyfills', () => {
+  it('should include babel dependencies', () => {
+    expect(mockRegister).toHaveBeenCalledTimes(1);
     expect(mockPolyfill).toHaveBeenCalledTimes(1);
   });
 
@@ -34,7 +41,7 @@ describe('Server script', () => {
   it('should register static folders', () => {
     const distPath = path.join(__dirname, '..', '..', 'dist');
     const publicPath = path.join(__dirname, '..', '..', 'public');
-    expect(mockStatic).toHaveBeenCalledWith(distPath);
+    expect(mockStatic).toHaveBeenCalledWith(distPath, {maxAge: '1y', immutable: true});
     expect(mockStatic).toHaveBeenCalledWith(publicPath, {maxAge: '1y', immutable: true});
     expect(mockUse).toHaveBeenCalledWith('/static', distPath);
     expect(mockUse).toHaveBeenCalledWith('/static', publicPath);
@@ -48,6 +55,8 @@ describe('Server script', () => {
   it('should register controllers', () => {
     expect(mockUse).toHaveBeenCalledWith('cookie-parser-middleware');
     expect(mockUse).toHaveBeenCalledWith('compression-middleware');
+    expect(mockUse).toHaveBeenCalledWith('morgan-middleware');
+    expect(mockUse).toHaveBeenCalledWith('manifest-helper-middleware');
   });
 
   it('should run server in port 8080 by default', () => {

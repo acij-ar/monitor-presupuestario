@@ -4,7 +4,6 @@ const Page = require('../../components/page');
 const ConfigBar = require('./components/config-bar');
 const SingleChart = require('./components/charts/single-chart');
 const CarrouselChart = require('./components/charts/carrousel-chart');
-require('./index.scss');
 
 class App extends React.Component {
   constructor(props) {

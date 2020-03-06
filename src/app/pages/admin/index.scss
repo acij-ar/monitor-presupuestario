@@ -1,3 +1,5 @@
+@import '../../components/page/index';
+
 .monitor-admin {
   color: #444;
 
@@ -21,3 +23,5 @@
 .monitor-admin-page-section {
   margin-bottom: 20px;
 }
+
+@import './components/dataset-form';

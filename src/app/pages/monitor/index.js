@@ -9,7 +9,8 @@ const render = (req, res) => {
   res.locals.props = {title, description};
   const html = layout({
     renderedComponent: ReactDOMServer.renderToString(<Monitor {...res.locals.props} />),
-    clientName: 'monitor',
+    scripts: [res.locals.assetPath('monitor.js')],
+    styles: [res.locals.assetPath('monitor.css')],
     props: res.locals.props,
   });
   res.send(html);

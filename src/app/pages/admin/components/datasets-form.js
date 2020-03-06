@@ -1,6 +1,5 @@
 const React = require('react');
 const axios = require('axios');
-require('./dataset-form.scss');
 const DatasetTable = require('./dataset-table');
 
 class DatasetForm extends React.Component {

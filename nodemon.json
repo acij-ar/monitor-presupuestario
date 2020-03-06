@@ -3,8 +3,7 @@
   "ignore": [
     "data/**/*",
     "devops/**/*",
-    "public/**/*",
-    "src/**/*"
+    "public/**/*"
   ],
   "events": {
     "restart": "echo \"App restarted due to changes in: '$FILENAME'\""

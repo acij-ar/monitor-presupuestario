@@ -1,8 +1,8 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const Admin = require('../pages/admin/view');
+const Login = require('./view');
 
 ReactDOM.hydrate(
-  <Admin {...window.__INITIAL__DATA__}/>,
+  <Login {...window.__INITIAL__DATA__}/>,
   document.getElementById('root')
 );

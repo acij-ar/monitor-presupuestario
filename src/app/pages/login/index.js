@@ -15,7 +15,8 @@ const redirectIfAlreadyLoggedIn = (req, res, next) => {
 const render = async (req, res) => {
   const html = layout({
     renderedComponent: ReactDOMServer.renderToString(<Login {...res.locals.props} />),
-    clientName: 'login',
+    scripts: [res.locals.assetPath('login.js')],
+    styles: [res.locals.assetPath('login.css')],
     props: res.locals.props,
   });
   res.send(html);
