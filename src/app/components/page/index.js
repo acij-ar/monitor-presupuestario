@@ -3,7 +3,6 @@ const PropTypes = require('prop-types');
 const Header = require('./components/header');
 const Footer = require('./components/footer');
 const Analytics = require('../analytics');
-require('./index.scss');
 
 class Page extends React.Component {
   componentDidMount() {

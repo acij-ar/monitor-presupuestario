@@ -31,7 +31,7 @@ ReactHighcharts.Highcharts.SVGElement.prototype.textProps.push('textOverflow');
 
 const React = require('react');
 const ReactDOM = require('react-dom');
-const Monitor = require('../pages/monitor/view');
+const Monitor = require('./view');
 
 ReactDOM.hydrate(
   <Monitor {...window.__INITIAL__DATA__}/>,

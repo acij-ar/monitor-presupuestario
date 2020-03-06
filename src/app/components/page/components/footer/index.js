@@ -1,5 +1,4 @@
 const React = require('react');
-require('./index.scss');
 
 const Footer = () => (
   <div id="footer">

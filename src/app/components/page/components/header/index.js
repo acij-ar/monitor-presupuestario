@@ -1,5 +1,4 @@
 const React = require('react');
-require('./index.scss');
 
 // TODO: improve click-ability of mobile menu
 const Header = () => (

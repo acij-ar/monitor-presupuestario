@@ -1,5 +1,5 @@
-// TODO: use @babel/register and avoid transpiling server code
-require('@babel/polyfill'); // TODO: is this required in the server?
+require('@babel/register')();
+require('@babel/polyfill');
 
 const createTables = require('./services/db/management/create-tables');
 createTables();

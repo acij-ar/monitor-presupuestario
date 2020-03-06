@@ -1,7 +1,6 @@
 const React = require('react');
 const Page = require('../../components/page');
 const PropTypes = require('prop-types');
-require('./index.scss');
 
 const App = ({ rights, methodology, information, dictionary }) => (
   <Page>

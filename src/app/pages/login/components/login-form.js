@@ -1,6 +1,5 @@
 const React = require('react');
 const axios = require('axios');
-require('./login-form.scss');
 
 class TextsForm extends React.Component {
   constructor(props) {
