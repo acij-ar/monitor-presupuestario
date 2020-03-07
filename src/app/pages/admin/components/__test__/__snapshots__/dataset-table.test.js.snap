@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dataset table should match snapshot 1`] = `
+<table>
+  <thead>
+    <tr>
+      <th>
+        Dataset
+      </th>
+      <th>
+        Número de filas
+      </th>
+      <th>
+        Última actualización
+      </th>
+      <th>
+        Al dia con google drive
+      </th>
+      <th />
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      key="2007.csv"
+    >
+      <td>
+        2007.csv
+      </td>
+      <td>
+        98162
+      </td>
+      <td>
+        2020-03-02T19:16:34.003Z
+      </td>
+      <td>
+        ✅
+      </td>
+    </tr>
+    <tr
+      key="2008.csv"
+    >
+      <td>
+        2008.csv
+      </td>
+      <td>
+        -
+      </td>
+      <td>
+        -
+      </td>
+      <td>
+        ❌
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

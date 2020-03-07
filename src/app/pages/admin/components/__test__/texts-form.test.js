@@ -5,7 +5,7 @@ const { shallow } = require('enzyme');
 
 const TextsForm = require('../texts-form');
 
-describe('Texts formn', () => {
+describe('Texts form', () => {
   const props = {
     texts: {
       "monitor": {

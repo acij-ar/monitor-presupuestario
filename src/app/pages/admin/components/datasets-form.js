@@ -1,85 +1,75 @@
 const React = require('react');
 const axios = require('axios');
+const DatasetTable = require('./dataset-table');
 
 class DatasetForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      processingDataset: false,
+      processingDatasets: false,
       updateError: false,
       saveSuccessfull: false,
-      datasets: this.props.datasets,
+      datasets: [],
       step: null,
     };
     this.checkStatus = this.checkStatus.bind(this);
+    this.updateDatasets = this.updateDatasets.bind(this);
   }
 
-  updateDataset(dataset) {
-    this.state.processingDataset = true;
-    this.state.updateError = false;
-    this.state.saveSuccessfull = false;
-    this.setState(this.state);
-    axios.post(`/api/admin/update_dataset/${dataset}`)
-      .then(this.checkStatus)
-      .catch(() => {
-        this.state.processingDataset = false;
-        this.state.updateError = true;
-        this.setState(this.state);
+  async componentDidMount() {
+    const { data } = await axios.get('/api/admin/dataset_job_status');
+    this.setState({ datasets: data.result });
+  }
+
+  async updateDatasets() {
+    this.setState({
+      processingDatasets: true,
+      updateError: false,
+      saveSuccessfull: false,
+    });
+    try {
+      await axios.post('/api/admin/update_datasets');
+      this.checkStatus();
+    } catch(e) {
+      this.setState({
+        processingDatasets: false,
+        updateError: true,
       });
+    }
   }
 
-  checkStatus() {
-    axios.get('/api/admin/dataset_job_status')
-      .then(({data}) => {
-        if (data.result) {
-          this.setState({
-            datasets: data.result,
-            processingDataset: false,
-            saveSuccessfull: true,
-          });
-        } else {
-          setTimeout(this.checkStatus, 5e3);
-          this.setState({step: data.step});
-        }
-      })
-      .catch(() => {
+  async checkStatus() {
+    try {
+      const { data } = await axios.get('/api/admin/dataset_job_status');
+      if (data && data.result) {
+        this.setState({
+          datasets: data.result,
+          processingDatasets: false,
+          saveSuccessfull: true,
+        });
+      } else {
         setTimeout(this.checkStatus, 5e3);
-      });
+        this.setState({step: data.step});
+      }
+    } catch(e) {
+      setTimeout(this.checkStatus, 5e3);
+    }
   }
 
   render() {
-    const {datasets, processingDataset, updateError, saveSuccessfull} = this.state;
+    const {datasets, processingDatasets, updateError, saveSuccessfull} = this.state;
+    const canUpdate = datasets.length && datasets.find(dataset => !dataset.isUpToDate);
     return (
       <div className="monitor-content monitor-admin">
         <div className="monitor-admin-page-section">
           <h2>Datasets</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Dataset</th>
-                <th>Número de filas</th>
-                <th>Última actualización</th>
-                <th/>
-              </tr>
-            </thead>
-            <tbody>
-              {datasets.map(({filename, lastModified, lines}) => (
-                <tr key={filename}>
-                  <td>{filename}</td>
-                  <td>{lines || '-'}</td>
-                  <td>{lastModified || '-'}</td>
-                  <td>
-                    <button onClick={() => this.updateDataset(filename)} disabled={processingDataset}>
-                      {lines ? 'Actualizar' : 'Descargar'}
-                    </button>
-                  </td>
-                </tr>
-
-              ))}
-            </tbody>
-          </table>
+          { datasets.length ? <DatasetTable datasets={datasets} /> : 'Cargando...' }
+          { canUpdate ?
+            <button disabled={processingDatasets} onClick={this.updateDatasets}>
+              Actualizar datasets
+            </button> : null }
           <div>
-            {processingDataset && this.state.step}
+            {processingDatasets && this.state.step}
             {saveSuccessfull && 'Descarga exitosa ✅'}
             {updateError && 'Error al descargar ❌'}
           </div>

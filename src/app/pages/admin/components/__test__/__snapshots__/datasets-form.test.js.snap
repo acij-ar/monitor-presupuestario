@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dataset form should match snapshot when got datasets 1`] = `
+<div
+  className="monitor-content monitor-admin"
+>
+  <div
+    className="monitor-admin-page-section"
+  >
+    <h2>
+      Datasets
+    </h2>
+    <Component
+      datasets={
+        Array [
+          Object {},
+        ]
+      }
+    />
+    <button
+      disabled={false}
+      onClick={[Function]}
+    >
+      Actualizar datasets
+    </button>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`Dataset form should match snapshot when loading 1`] = `
+<div
+  className="monitor-content monitor-admin"
+>
+  <div
+    className="monitor-admin-page-section"
+  >
+    <h2>
+      Datasets
+    </h2>
+    Cargando...
+    <div />
+  </div>
+</div>
+`;
+
+exports[`Dataset form should possitive feedback when the process finished 1`] = `
+<div
+  className="monitor-content monitor-admin"
+>
+  <div
+    className="monitor-admin-page-section"
+  >
+    <h2>
+      Datasets
+    </h2>
+    <Component
+      datasets={
+        Array [
+          Object {},
+        ]
+      }
+    />
+    <button
+      disabled={true}
+      onClick={[Function]}
+    >
+      Actualizar datasets
+    </button>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`Dataset form should retry when the process still is running 1`] = `
+<div
+  className="monitor-content monitor-admin"
+>
+  <div
+    className="monitor-admin-page-section"
+  >
+    <h2>
+      Datasets
+    </h2>
+    <Component
+      datasets={
+        Array [
+          Object {},
+        ]
+      }
+    />
+    <button
+      disabled={true}
+      onClick={[Function]}
+    >
+      Actualizar datasets
+    </button>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`Dataset form should show negative feedback when fails to trigger the dataset update 1`] = `
+<div
+  className="monitor-content monitor-admin"
+>
+  <div
+    className="monitor-admin-page-section"
+  >
+    <h2>
+      Datasets
+    </h2>
+    <Component
+      datasets={
+        Array [
+          Object {},
+        ]
+      }
+    />
+    <button
+      disabled={false}
+      onClick={[Function]}
+    >
+      Actualizar datasets
+    </button>
+    <div>
+      Error al descargar ❌
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dataset form should show possitive feedback after triggering the dataset update 1`] = `
+<div
+  className="monitor-content monitor-admin"
+>
+  <div
+    className="monitor-admin-page-section"
+  >
+    <h2>
+      Datasets
+    </h2>
+    <Component
+      datasets={
+        Array [
+          Object {},
+        ]
+      }
+    />
+    <button
+      disabled={true}
+      onClick={[Function]}
+    >
+      Actualizar datasets
+    </button>
+    <div />
+  </div>
+</div>
+`;

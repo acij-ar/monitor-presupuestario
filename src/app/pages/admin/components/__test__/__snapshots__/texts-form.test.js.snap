@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Texts formn should match snapshot 1`] = `
+exports[`Texts form should match snapshot 1`] = `
 <div
   className="monitor-content monitor-admin"
 >
@@ -106,7 +106,7 @@ exports[`Texts formn should match snapshot 1`] = `
 </div>
 `;
 
-exports[`Texts formn should post new text changes and show negative feedback when fails 1`] = `
+exports[`Texts form should post new text changes and show negative feedback when fails 1`] = `
 <div
   className="monitor-content monitor-admin"
 >
@@ -215,7 +215,7 @@ exports[`Texts formn should post new text changes and show negative feedback whe
 </div>
 `;
 
-exports[`Texts formn should post new text changes and show possitive feedback when success 1`] = `
+exports[`Texts form should post new text changes and show possitive feedback when success 1`] = `
 <div
   className="monitor-content monitor-admin"
 >
