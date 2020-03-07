@@ -1,0 +1,325 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Texts formn should match snapshot 1`] = `
+<div
+  className="monitor-content monitor-admin"
+>
+  <div
+    className="monitor-admin-page-section"
+  >
+    <h2>
+      Monitor
+    </h2>
+    <h3>
+      Título
+    </h3>
+    <input
+      id="monitor-title"
+      onChange={[Function]}
+      value="Titulo Monitor"
+    />
+    <h3>
+      Descripción
+    </h3>
+    <textarea
+      id="monitor-description"
+      onChange={[Function]}
+      value="Descripción Monitor"
+    />
+  </div>
+  <div
+    className="monitor-admin-page-section"
+  >
+    <h2>
+      Acerca de
+    </h2>
+    <h3>
+      Presupuesto para los derechos
+    </h3>
+    <input
+      id="rights-title"
+      onChange={[Function]}
+      value="Titulo derechos"
+    />
+    <h3>
+      Contenido
+    </h3>
+    <textarea
+      id="rights-content"
+      onChange={[Function]}
+      value="Contenido derechos"
+    />
+    <h3>
+      Metodologia
+    </h3>
+    <input
+      id="methodology-title"
+      onChange={[Function]}
+      value="Titulo metodologia"
+    />
+    <h3>
+      Contenido
+    </h3>
+    <textarea
+      id="methodology-content"
+      onChange={[Function]}
+      value="Contenido metodologia"
+    />
+    <h3>
+      Publicación de la información
+    </h3>
+    <input
+      id="information-title"
+      onChange={[Function]}
+      value="Titulo información"
+    />
+    <h3>
+      Contenido
+    </h3>
+    <textarea
+      id="information-content"
+      onChange={[Function]}
+      value="Contenido informacion"
+    />
+    <h3>
+      Glosario
+    </h3>
+    <input
+      id="dictionary-title"
+      onChange={[Function]}
+      value="Titulo Glosario"
+    />
+    <h3>
+      Contenido
+    </h3>
+    <textarea
+      id="dictionary-content"
+      onChange={[Function]}
+      value="Contenido glosario"
+    />
+  </div>
+  <button
+    onClick={[Function]}
+  >
+    Guardar
+  </button>
+</div>
+`;
+
+exports[`Texts formn should post new text changes and show negative feedback when fails 1`] = `
+<div
+  className="monitor-content monitor-admin"
+>
+  <div
+    className="monitor-admin-page-section"
+  >
+    <h2>
+      Monitor
+    </h2>
+    <h3>
+      Título
+    </h3>
+    <input
+      id="monitor-title"
+      onChange={[Function]}
+      value="new-monitor-title"
+    />
+    <h3>
+      Descripción
+    </h3>
+    <textarea
+      id="monitor-description"
+      onChange={[Function]}
+      value="new-monitor-description"
+    />
+  </div>
+  <div
+    className="monitor-admin-page-section"
+  >
+    <h2>
+      Acerca de
+    </h2>
+    <h3>
+      Presupuesto para los derechos
+    </h3>
+    <input
+      id="rights-title"
+      onChange={[Function]}
+      value="new-rights-title"
+    />
+    <h3>
+      Contenido
+    </h3>
+    <textarea
+      id="rights-content"
+      onChange={[Function]}
+      value="new-rights-description"
+    />
+    <h3>
+      Metodologia
+    </h3>
+    <input
+      id="methodology-title"
+      onChange={[Function]}
+      value="new-methodology-title"
+    />
+    <h3>
+      Contenido
+    </h3>
+    <textarea
+      id="methodology-content"
+      onChange={[Function]}
+      value="new-methodology-description"
+    />
+    <h3>
+      Publicación de la información
+    </h3>
+    <input
+      id="information-title"
+      onChange={[Function]}
+      value="new-information-title"
+    />
+    <h3>
+      Contenido
+    </h3>
+    <textarea
+      id="information-content"
+      onChange={[Function]}
+      value="new-information-description"
+    />
+    <h3>
+      Glosario
+    </h3>
+    <input
+      id="dictionary-title"
+      onChange={[Function]}
+      value="new-dictionary-title"
+    />
+    <h3>
+      Contenido
+    </h3>
+    <textarea
+      id="dictionary-content"
+      onChange={[Function]}
+      value="new-dictionary-description"
+    />
+  </div>
+  <button
+    onClick={[Function]}
+  >
+    Guardar
+  </button>
+  <span>
+    ❌
+  </span>
+</div>
+`;
+
+exports[`Texts formn should post new text changes and show possitive feedback when success 1`] = `
+<div
+  className="monitor-content monitor-admin"
+>
+  <div
+    className="monitor-admin-page-section"
+  >
+    <h2>
+      Monitor
+    </h2>
+    <h3>
+      Título
+    </h3>
+    <input
+      id="monitor-title"
+      onChange={[Function]}
+      value="new-monitor-title"
+    />
+    <h3>
+      Descripción
+    </h3>
+    <textarea
+      id="monitor-description"
+      onChange={[Function]}
+      value="new-monitor-description"
+    />
+  </div>
+  <div
+    className="monitor-admin-page-section"
+  >
+    <h2>
+      Acerca de
+    </h2>
+    <h3>
+      Presupuesto para los derechos
+    </h3>
+    <input
+      id="rights-title"
+      onChange={[Function]}
+      value="new-rights-title"
+    />
+    <h3>
+      Contenido
+    </h3>
+    <textarea
+      id="rights-content"
+      onChange={[Function]}
+      value="new-rights-description"
+    />
+    <h3>
+      Metodologia
+    </h3>
+    <input
+      id="methodology-title"
+      onChange={[Function]}
+      value="new-methodology-title"
+    />
+    <h3>
+      Contenido
+    </h3>
+    <textarea
+      id="methodology-content"
+      onChange={[Function]}
+      value="new-methodology-description"
+    />
+    <h3>
+      Publicación de la información
+    </h3>
+    <input
+      id="information-title"
+      onChange={[Function]}
+      value="new-information-title"
+    />
+    <h3>
+      Contenido
+    </h3>
+    <textarea
+      id="information-content"
+      onChange={[Function]}
+      value="new-information-description"
+    />
+    <h3>
+      Glosario
+    </h3>
+    <input
+      id="dictionary-title"
+      onChange={[Function]}
+      value="new-dictionary-title"
+    />
+    <h3>
+      Contenido
+    </h3>
+    <textarea
+      id="dictionary-content"
+      onChange={[Function]}
+      value="new-dictionary-description"
+    />
+  </div>
+  <button
+    onClick={[Function]}
+  >
+    Guardar
+  </button>
+  <span>
+    ✅
+  </span>
+</div>
+`;

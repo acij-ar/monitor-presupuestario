@@ -1,5 +1,6 @@
 const React = require('react');
 const axios = require('axios');
+const PropTypes = require('prop-types');
 
 class TextsForm extends React.Component {
   constructor(props) {
@@ -10,24 +11,23 @@ class TextsForm extends React.Component {
     this.saveTexts = this.saveTexts.bind(this);
   }
 
-  onTextChange() {
-    this.state.saveError = false;
-    this.state.saveSuccessfull = false;
-    this.setState(this.state);
+  resetSavedTextsState() {
+    this.setState({
+      saveError: false,
+      saveSuccessfull: false,
+    });
   }
 
-  saveTexts() {
-    this.onTextChange();
-    const texts = this.state.texts;
-    axios.post('/api/admin/texts', { texts })
-      .then(() => {
-        this.state.saveSuccessfull = true;
-        this.setState(this.state);
-      })
-      .catch(() => {
-        this.state.saveError = true;
-        this.setState(this.state);
-      });
+  async saveTexts() {
+    this.resetSavedTextsState();
+    const { texts } = this.state;
+    try {
+      await axios.post('/api/admin/texts', { texts });
+      this.setState({ saveSuccessfull: true });
+    } catch (e) {
+      console.log(e);
+      this.setState({ saveError: true });
+    }
   }
 
   render() {
@@ -37,61 +37,61 @@ class TextsForm extends React.Component {
         <div className="monitor-admin-page-section">
           <h2>Monitor</h2>
           <h3>Título</h3>
-          <input value={texts.monitor.title} onChange={e => {
+          <input id="monitor-title" value={texts.monitor.title} onChange={e => {
             this.state.texts.monitor.title = e.target.value;
-            this.onTextChange();
+            this.resetSavedTextsState();
           }}/>
           <h3>Descripción</h3>
-          <textarea value={texts.monitor.description} onChange={e => {
+          <textarea id="monitor-description" value={texts.monitor.description} onChange={e => {
             this.state.texts.monitor.description = e.target.value;
-            this.onTextChange();
+            this.resetSavedTextsState();
           }}/>
         </div>
 
         <div className="monitor-admin-page-section">
           <h2>Acerca de</h2>
           <h3>Presupuesto para los derechos</h3>
-          <input value={texts.about.rights.title} onChange={e => {
+          <input id="rights-title" value={texts.about.rights.title} onChange={e => {
             this.state.texts.about.rights.title = e.target.value;
-            this.onTextChange();
+            this.resetSavedTextsState();
           }}/>
           <h3>Contenido</h3>
-          <textarea value={texts.about.rights.content} onChange={e => {
+          <textarea id="rights-content" value={texts.about.rights.content} onChange={e => {
             this.state.texts.about.rights.content = e.target.value;
-            this.onTextChange();
+            this.resetSavedTextsState();
           }}/>
 
           <h3>Metodologia</h3>
-          <input value={texts.about.methodology.title} onChange={e => {
+          <input id="methodology-title" value={texts.about.methodology.title} onChange={e => {
             this.state.texts.about.methodology.title = e.target.value;
-            this.onTextChange();
+            this.resetSavedTextsState();
           }}/>
           <h3>Contenido</h3>
-          <textarea value={texts.about.methodology.content} onChange={e => {
+          <textarea id="methodology-content" value={texts.about.methodology.content} onChange={e => {
             this.state.texts.about.methodology.content = e.target.value;
-            this.onTextChange();
+            this.resetSavedTextsState();
           }}/>
 
           <h3>Publicación de la información</h3>
-          <input value={texts.about.information.title} onChange={e => {
+          <input id="information-title" value={texts.about.information.title} onChange={e => {
             this.state.texts.about.information.title = e.target.value;
-            this.onTextChange();
+            this.resetSavedTextsState();
           }}/>
           <h3>Contenido</h3>
-          <textarea value={texts.about.information.content} onChange={e => {
+          <textarea id="information-content" value={texts.about.information.content} onChange={e => {
             this.state.texts.about.information.content = e.target.value;
-            this.onTextChange();
+            this.resetSavedTextsState();
           }}/>
 
           <h3>Glosario</h3>
-          <input value={texts.about.dictionary.title} onChange={e => {
+          <input id="dictionary-title" value={texts.about.dictionary.title} onChange={e => {
             this.state.texts.about.dictionary.title = e.target.value;
-            this.onTextChange();
+            this.resetSavedTextsState();
           }}/>
           <h3>Contenido</h3>
-          <textarea value={texts.about.dictionary.content} onChange={e => {
+          <textarea id="dictionary-content" value={texts.about.dictionary.content} onChange={e => {
             this.state.texts.about.dictionary.content = e.target.value;
-            this.onTextChange();
+            this.resetSavedTextsState();
           }}/>
         </div>
 
@@ -103,5 +103,32 @@ class TextsForm extends React.Component {
     );
   }
 }
+
+TextsForm.propTypes = {
+  texts: PropTypes.shape({
+    monitor: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+    }).isRequired,
+    about: PropTypes.shape({
+      rights: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired,
+      }).isRequired,
+      methodology: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired,
+      }).isRequired,
+      information: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired,
+      }).isRequired,
+      dictionary: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 module.exports = TextsForm;
