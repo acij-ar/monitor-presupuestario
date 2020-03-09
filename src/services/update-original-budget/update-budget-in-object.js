@@ -1,5 +1,5 @@
-const {datasets} = require('../../../config');
-const normalizeName = require('../../../utils/normalize-name');
+const {datasets} = require('../../config');
+const normalizeName = require('../../utils/normalize-name');
 const findBestMatch = require('./find-best-match');
 const numericColumns = datasets.columns
   .filter(({isNumeric}) => isNumeric)

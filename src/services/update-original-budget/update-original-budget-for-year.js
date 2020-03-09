@@ -1,9 +1,9 @@
-const readCSV = require('../../../utils/read-csv');
+const readCSV = require('../../utils/read-csv');
 const markAllChildrenAsPossiblyModified = require('./mark-children');
 const updateBudgetInObject = require('./update-budget-in-object');
-const {datasets: { files, columns }} = require('../../../config');
+const {datasets: { files, columns }} = require('../../config');
 const fs = require('fs');
-const logger = require('../../../utils/logger');
+const logger = require('../../utils/logger');
 
 const numericColumns = columns.filter(({isNumeric}) => isNumeric).map(({name}) => name);
 

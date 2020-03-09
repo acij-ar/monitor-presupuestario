@@ -1,5 +1,5 @@
 const levenshtein = require('fast-levenshtein');
-const normalizeName = require('../../../utils/normalize-name');
+const normalizeName = require('../../utils/normalize-name');
 
 module.exports = (targetName, dependencies) => {
   if (dependencies) {
