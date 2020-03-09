@@ -1,4 +1,4 @@
-const datasetsStats = require('../../../services/dataset-updater/dataset-status');
+const datasetsStats = require('../../../services/dataset-status');
 const datasetUpdater = require('../../../services/dataset-updater');
 
 module.exports = async (req, res) => {

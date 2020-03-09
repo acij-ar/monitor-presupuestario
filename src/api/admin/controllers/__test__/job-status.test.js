@@ -1,5 +1,5 @@
 const mockDatasetsStats = jest.fn();
-jest.mock('../../../../services/dataset-updater/dataset-status', () => mockDatasetsStats);
+jest.mock('../../../../services/dataset-status', () => mockDatasetsStats);
 const mockDatasetUpdater = {};
 jest.mock('../../../../services/dataset-updater', () => mockDatasetUpdater);
 
