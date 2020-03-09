@@ -2,7 +2,6 @@ const path = require('path');
 
 const dataFolderPath = path.join(__dirname, '..', '..', 'data');
 const rawDataFolderPath = path.join(dataFolderPath, 'raw');
-const finalFolderPath = path.join(dataFolderPath, 'cleaned');
 const jsonFolderPath = path.join(dataFolderPath, 'json');
 
 module.exports = [
@@ -12,8 +11,7 @@ module.exports = [
     year: 2007,
     isYearDataset: true,
     isOriginalDataset: false,
-    rawPath: path.join(rawDataFolderPath, '2007.csv'),
-    filePath: path.join(finalFolderPath, '2007.csv'),
+    path: path.join(rawDataFolderPath, '2007.csv'),
     jsonPath: path.join(jsonFolderPath, '2007.json'),
   },
   {
@@ -22,8 +20,7 @@ module.exports = [
     year: 2008,
     isYearDataset: true,
     isOriginalDataset: false,
-    rawPath: path.join(rawDataFolderPath, '2008.csv'),
-    filePath: path.join(finalFolderPath, '2008.csv'),
+    path: path.join(rawDataFolderPath, '2008.csv'),
     jsonPath: path.join(jsonFolderPath, '2008.json'),
   },
   {
@@ -32,8 +29,7 @@ module.exports = [
     year: 2009,
     isYearDataset: true,
     isOriginalDataset: false,
-    rawPath: path.join(rawDataFolderPath, '2009.csv'),
-    filePath: path.join(finalFolderPath, '2009.csv'),
+    path: path.join(rawDataFolderPath, '2009.csv'),
     jsonPath: path.join(jsonFolderPath, '2009.json'),
   },
   {
@@ -42,8 +38,7 @@ module.exports = [
     year: 2010,
     isYearDataset: true,
     isOriginalDataset: false,
-    rawPath: path.join(rawDataFolderPath, '2010.csv'),
-    filePath: path.join(finalFolderPath, '2010.csv'),
+    path: path.join(rawDataFolderPath, '2010.csv'),
     jsonPath: path.join(jsonFolderPath, '2010.json'),
   },
   {
@@ -52,8 +47,7 @@ module.exports = [
     year: 2011,
     isYearDataset: true,
     isOriginalDataset: false,
-    rawPath: path.join(rawDataFolderPath, '2011.csv'),
-    filePath: path.join(finalFolderPath, '2011.csv'),
+    path: path.join(rawDataFolderPath, '2011.csv'),
     jsonPath: path.join(jsonFolderPath, '2011.json'),
   },
   {
@@ -62,8 +56,7 @@ module.exports = [
     year: 2012,
     isYearDataset: true,
     isOriginalDataset: false,
-    rawPath: path.join(rawDataFolderPath, '2012.csv'),
-    filePath: path.join(finalFolderPath, '2012.csv'),
+    path: path.join(rawDataFolderPath, '2012.csv'),
     jsonPath: path.join(jsonFolderPath, '2012.json'),
   },
   {
@@ -72,8 +65,7 @@ module.exports = [
     year: 2013,
     isYearDataset: true,
     isOriginalDataset: false,
-    rawPath: path.join(rawDataFolderPath, '2013.csv'),
-    filePath: path.join(finalFolderPath, '2013.csv'),
+    path: path.join(rawDataFolderPath, '2013.csv'),
     jsonPath: path.join(jsonFolderPath, '2013.json'),
   },
   {
@@ -82,8 +74,7 @@ module.exports = [
     year: 2014,
     isYearDataset: true,
     isOriginalDataset: false,
-    rawPath: path.join(rawDataFolderPath, '2014.csv'),
-    filePath: path.join(finalFolderPath, '2014.csv'),
+    path: path.join(rawDataFolderPath, '2014.csv'),
     jsonPath: path.join(jsonFolderPath, '2014.json'),
   },
   {
@@ -92,8 +83,7 @@ module.exports = [
     year: 2015,
     isYearDataset: true,
     isOriginalDataset: false,
-    rawPath: path.join(rawDataFolderPath, '2015.csv'),
-    filePath: path.join(finalFolderPath, '2015.csv'),
+    path: path.join(rawDataFolderPath, '2015.csv'),
     jsonPath: path.join(jsonFolderPath, '2015.json'),
   },
   {
@@ -102,8 +92,7 @@ module.exports = [
     year: 2016,
     isYearDataset: true,
     isOriginalDataset: false,
-    rawPath: path.join(rawDataFolderPath, '2016.csv'),
-    filePath: path.join(finalFolderPath, '2016.csv'),
+    path: path.join(rawDataFolderPath, '2016.csv'),
     jsonPath: path.join(jsonFolderPath, '2016.json'),
   },
   {
@@ -112,8 +101,7 @@ module.exports = [
     year: 2017,
     isYearDataset: true,
     isOriginalDataset: false,
-    rawPath: path.join(rawDataFolderPath, '2017.csv'),
-    filePath: path.join(finalFolderPath, '2017.csv'),
+    path: path.join(rawDataFolderPath, '2017.csv'),
     jsonPath: path.join(jsonFolderPath, '2017.json'),
   },
   {
@@ -122,8 +110,7 @@ module.exports = [
     year: 2018,
     isYearDataset: true,
     isOriginalDataset: false,
-    rawPath: path.join(rawDataFolderPath, '2018.csv'),
-    filePath: path.join(finalFolderPath, '2018.csv'),
+    path: path.join(rawDataFolderPath, '2018.csv'),
     jsonPath: path.join(jsonFolderPath, '2018.json'),
   },
   {
@@ -132,8 +119,7 @@ module.exports = [
     year: 2019,
     isYearDataset: true,
     isOriginalDataset: false,
-    rawPath: path.join(rawDataFolderPath, '2019.csv'),
-    filePath: path.join(finalFolderPath, '2019.csv'),
+    path: path.join(rawDataFolderPath, '2019.csv'),
     jsonPath: path.join(jsonFolderPath, '2019.json'),
   },
   {
@@ -142,8 +128,7 @@ module.exports = [
     year: 2020,
     isYearDataset: true,
     isOriginalDataset: false,
-    rawPath: path.join(rawDataFolderPath, '2020.csv'),
-    filePath: path.join(finalFolderPath, '2020.csv'),
+    path: path.join(rawDataFolderPath, '2020.csv'),
     jsonPath: path.join(jsonFolderPath, '2020.json'),
   },
   {
@@ -151,8 +136,7 @@ module.exports = [
     filename: 'inflacion.csv',
     isYearDataset: false,
     isOriginalDataset: false,
-    rawPath: path.join(rawDataFolderPath, 'inflacion.csv'),
-    filePath: path.join(finalFolderPath, 'inflacion.csv'),
+    path: path.join(rawDataFolderPath, 'inflacion.csv'),
   },
   {
     id: '1vISO7WCVQnHGxNlKXe-QWaWa_6t12CjV',
@@ -160,8 +144,7 @@ module.exports = [
     year: 2016,
     isYearDataset: false,
     isOriginalDataset: true,
-    rawPath: path.join(rawDataFolderPath, 'presupuesto-original-2016.csv'),
-    filePath: path.join(finalFolderPath, 'presupuesto-original-2016.csv'),
+    path: path.join(rawDataFolderPath, 'presupuesto-original-2016.csv'),
   },
   {
     id: '1gNFuCwq97L4svplUWAT06JyBe2AVcCTg',
@@ -169,8 +152,7 @@ module.exports = [
     year: 2017,
     isYearDataset: false,
     isOriginalDataset: true,
-    rawPath: path.join(rawDataFolderPath, 'presupuesto-original-2017.csv'),
-    filePath: path.join(finalFolderPath, 'presupuesto-original-2017.csv'),
+    path: path.join(rawDataFolderPath, 'presupuesto-original-2017.csv'),
   },
   {
     id: '1NsyiqXXxbZed6s_eKmQof_W-9XcTwrn1',
@@ -178,8 +160,7 @@ module.exports = [
     year: 2018,
     isYearDataset: false,
     isOriginalDataset: true,
-    rawPath: path.join(rawDataFolderPath, 'presupuesto-original-2018.csv'),
-    filePath: path.join(finalFolderPath, 'presupuesto-original-2018.csv'),
+    path: path.join(rawDataFolderPath, 'presupuesto-original-2018.csv'),
   },
   {
     id: '1_5fJeKOXZYk-na7PR2j30oJDIOOt8rSM',
@@ -187,8 +168,7 @@ module.exports = [
     year: 2019,
     isYearDataset: false,
     isOriginalDataset: true,
-    rawPath: path.join(rawDataFolderPath, 'presupuesto-original-2019.csv'),
-    filePath: path.join(finalFolderPath, 'presupuesto-original-2019.csv'),
+    path: path.join(rawDataFolderPath, 'presupuesto-original-2019.csv'),
   },
   {
     id: '1Roxcyhg5UgaC-XuO2qNTHrRw4FItin_w',
@@ -196,7 +176,6 @@ module.exports = [
     year: 2020,
     isYearDataset: false,
     isOriginalDataset: true,
-    rawPath: path.join(rawDataFolderPath, 'presupuesto-original-2020.csv'),
-    filePath: path.join(finalFolderPath, 'presupuesto-original-2020.csv'),
+    path: path.join(rawDataFolderPath, 'presupuesto-original-2020.csv'),
   },
 ];
