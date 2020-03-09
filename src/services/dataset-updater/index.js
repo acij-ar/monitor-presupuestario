@@ -1,9 +1,8 @@
-const availableDatasets = require('../../config').datasets.files;
-const googleDriveClient = require('./google-drive-client');
-const datasetCleaner = require('./cleaner');
-const csv2json = require('./csv-to-json');
-const dbUpdater = require('./db-updater');
-const updateOriginalBudget = require('./update-original-budget');
+const csv2json = require('../csv-to-json');
+const dbUpdater = require('../db-updater');
+const updateOriginalBudget = require('../update-original-budget');
+const updateFiles = require('./update-files');
+const logger = require('../../utils/logger');
 
 class DatasetUpdater {
   constructor() {
@@ -11,29 +10,29 @@ class DatasetUpdater {
     this.step = null;
   }
 
-  async updateDataset(datasetFilename) {
+  async updateDatasets() {
     if (this.processing) {
       return;
     }
     this.processing = true;
-    this.step = 'Descargando (paso 1 de 5)';
 
-    const dataset = availableDatasets.find(file => file.filename === datasetFilename);
-    const {id: fileId, rawPath} = dataset;
+    try {
+      this.step = 'Descargando (paso 1 de 4)';
+      await updateFiles();
 
-    await googleDriveClient.downloadFile({fileId, outputPath: rawPath});
+      this.step = 'Convirtiendo CSVs a JSON (paso 2 de 4)';
+      await csv2json();
 
-    this.step = 'Limpiando datasets (paso 2 de 5)';
-    await datasetCleaner(dataset);
+      this.step = 'Actualizando presupuesto original (paso 3 de 4)';
+      await updateOriginalBudget();
 
-    this.step = 'Convirtiendo CSVs a JSON (paso 3 de 5)';
-    await csv2json();
-
-    this.step = 'Actualizando presupuesto original (paso 4 de 5)';
-    await updateOriginalBudget();
-
-    this.step = 'Actualizando base de datos (paso 5 de 5)';
-    await dbUpdater();
+      this.step = 'Actualizando base de datos (paso 4 de 4)';
+      await dbUpdater();
+    } catch(e) {
+      logger.error('Error while trying to update the datasets');
+      logger.error(e);
+      // TODO: mark process as errored. (Should be tracking process id?)
+    }
 
     this.processing = false;
     this.step = null;
