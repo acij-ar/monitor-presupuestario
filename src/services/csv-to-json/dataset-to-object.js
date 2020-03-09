@@ -1,7 +1,8 @@
 const fs = require('fs');
-const readCSV = require('../../../utils/read-csv');
-const {datasets} = require('../../../config');
-const normalizeName = require('../../../utils/normalize-name');
+const readCSV = require('../../utils/read-csv');
+const {datasets} = require('../../config');
+const normalizeName = require('../../utils/normalize-name');
+const parseNumericValue = require('../../utils/parse-numeric-value');
 
 const categories = datasets.columns
   .filter(({categoryLevel}) => typeof categoryLevel === 'number')
@@ -13,10 +14,10 @@ const numericColumns = datasets.columns
 
 const addNumericColumns = ({scopedObject, row, year}) => {
   numericColumns.map(column => {
-    scopedObject[column] += row[column];
+    scopedObject[column] += parseNumericValue(row[column]);
   });
   if (year < 2016) {
-    scopedObject.credito_original += row.credito_presupuestado;
+    scopedObject.credito_original += parseNumericValue(row.credito_presupuestado);
   }
 };
 
@@ -42,9 +43,9 @@ const processRowIntoObject = ({row, dbObject, year}) => {
   });
 };
 
-module.exports = async ({filePath, dbObject, jsonPath, year}) => {
+module.exports = async ({path, dbObject, jsonPath, year}) => {
   await readCSV({
-    path: filePath,
+    path,
     onData: (row) => {
       numericColumns.map(column => {
         row[column] = parseInt(row[column]);

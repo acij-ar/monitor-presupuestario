@@ -1,4 +1,4 @@
-const {datasets} = require('../../../config');
+const {datasets} = require('../../config');
 const dataset2Object = require('./dataset-to-object');
 const fs = require('fs');
 
@@ -22,11 +22,11 @@ const initObject = () => {
 module.exports = async () => {
   console.log('Processing csv files into db.json');
   const dbObject = initObject();
-  const processDataset = ({filePath, jsonPath, year}) => {
-    if (fs.existsSync(filePath)) {
+  const processDataset = ({path, jsonPath, year}) => {
+    if (fs.existsSync(path)) {
       return dataset2Object({
         jsonPath,
-        filePath,
+        path,
         dbObject: dbObject[year],
         year,
       });

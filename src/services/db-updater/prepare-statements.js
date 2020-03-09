@@ -1,4 +1,4 @@
-const db = require('../../db');
+const db = require('../db');
 
 module.exports = () => {
   const searchEntity = db.prepare('SELECT id FROM entidades WHERE name = ? AND parent_id = ?');

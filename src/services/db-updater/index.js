@@ -1,11 +1,11 @@
-const createTables = require('../../db/management/create-tables');
-const deleteTables = require('../../db/management/delete-tables');
+const createTables = require('../db/management/create-tables');
+const deleteTables = require('../db/management/delete-tables');
 const fs = require('fs');
-const {datasets: {files}} = require('../../../config');
+const {datasets: {files}} = require('../../config');
 const loadInflationDataset = require('./load-inflation-dataset');
 const prepareStatements = require('./prepare-statements');
 const updateInDB = require('./update-in-db');
-const logger = require('../../../utils/logger');
+const logger = require('../../utils/logger');
 
 const yearFiles = files.filter(file => file.jsonPath);
 
