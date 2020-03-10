@@ -1,3 +1,5 @@
+// TODO: this should be imported from the config?
+
 module.exports = [
   /*
     {

@@ -1,3 +1,6 @@
+// TODO: this should be imported from the config?
+// TODO: why have both "label" and "value"?
+
 module.exports = [
   {label: '2020', value: '2020'},
   {label: '2019', value: '2019'},
