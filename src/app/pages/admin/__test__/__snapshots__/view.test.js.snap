@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Admin page should match snapshot 1`] = `
+<Page>
+  <div
+    className="monitor-highlight"
+  >
+    <div
+      className="monitor-content"
+    >
+      <h1>
+        Admin
+      </h1>
+    </div>
+  </div>
+  <Component />
+  <Component
+    texts={
+      Object {
+        "mock": "tetxs-for-the-admin",
+      }
+    }
+  />
+</Page>
+`;

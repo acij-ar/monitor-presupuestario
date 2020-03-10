@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page should match snapshot 1`] = `
+<Page>
+  <a
+    href="/monitor"
+    id="home-link"
+  >
+    <img
+      alt="Monitor presupuestario"
+      id="background-768"
+      src="/static/portada-768.jpg"
+    />
+    <div
+      id="background-1920"
+    />
+  </a>
+</Page>
+`;
