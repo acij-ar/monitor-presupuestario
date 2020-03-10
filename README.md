@@ -1,63 +1,64 @@
-# Monitor Presupuestario
+# [monitorpresupuestario.acij.org.ar](http://monitorpresupuestario.acij.org.ar/)
 
-Sitio del Monitor Presupuestario: [monitorpresupuestario.acij.org.ar](http://monitorpresupuestario.acij.org.ar/)
+## Estructura de carpetas
 
-## TODO list
+```
+.
+├── coverage                    # Carpeta auto generada al correr tests unitarios
+├── devops                      # Scripts de bash y archivos de configuración para levantar
+|                                 el proyecto en el servidor productivo
+├── dist                        # Archivos generados por webpack
+├── node_modules                # Dependencias
+├── public                      # Archivos públicos estáticos
+└── src                         # Archivos de desarrollo del proyecto
+    ├── api
+    ├── app
+    └── db
+```
 
-### Site features
+## Configuraciones iniciales y setup de proyecto
 
-- Showcase different graphs or analysis that can draw conclusions from
-- Different preloaded analysis to choose from.
-- Save locally (using for ex local storage) any custom analysis o comparisions the user creates
-- Save locally any custom setting the user changes by either using local storage or cookies 
-- Everything the user creates should be shareable in social media
-- Webmobile support
-- Search inspiration in similar sites
-- If there are multiple settings that can be changed at any moment, consider using a sticky header that follows the 
-user with settings. It can also be several sticky headers that follow the user only when a specific graph is showing
-- Global switch toggle for inflation adjustment 
-- Global switch toggle for font size 
-- Improve favicon legibility 
-- Add link to the google spreadsheet used as DB
+### Ambiente y dependencias
 
-### Graphs an analysis
+El proyecto está hecho utilizando node. Para utilizar la version de node correspondiente
+al proyecto, se recomienda utilizar [nvm](https://github.com/nvm-sh/nvm). Una vez instalado
+nvm, ejecutar `nvm use` en la carpeta raiz del proyecto para asegurarse de utilizar la
+version de node correspondiente. 
 
-- Histogram of budget amounts
-- Histogram of programs, activities or entities 
-- Some kind of subentities distribution
-- Tell stories both vertically and horizontally. Vertically choosing a hierarchichal entity an analysing it bottom dowm.
-Horizontally choosing different or all the entities at the same level and comparing them.
-- Venn diagrams to compare the same entity in two different years
-- Animated treemap? 
+Una vez instalado node, se deben instalar las dependencias del proyecto via npm. Ejecutar
+`npm install` en la carpeta raiz del proyecto.
 
-### Development
-- Server side rendering react. [Article](https://dev.to/marvelouswololo/how-to-server-side-render-react-hydrate-it-on-the-client-and-combine-client-and-server-routes-1a3p).
-[Another article](https://medium.com/front-end-weekly/adding-a-server-side-rendering-support-for-an-existing-react-application-using-express-and-webpack-5a3d60cf9762)
-- Pass props to react client
-- Process manager for express vs linux service
-- Nginx proxy_pass to react server only in /test
-- Webpack.
-    - Polyfills
-    - Analytics
-    - Newrelic
-- Google spreadsheet integration
-- Import components from old site version? [nuxt-buefy](https://buefy.github.io/#/documentation) 
-- Import icons from old site version? : Font awesome and Material design icons
+### Datos y configuración
 
-### Setup
+TODO
 
-https://console.developers.google.com/apis/credentials
+## Desarrollo
 
+npm run build
+npm run watch
+npm run start-dev
 
-### Testing and code style
+### Tests y lint
 
-- Eslint integration
-- Proptypes
-- Unit tests
+npm run test
+npm run lint
+npm run test:jest
+
+### TODOs
+
+- Proptypes en todos los componentes (+ forzar errores por proptypes?)
 - E2E tests
+- Mejorar script `npm run download-datasets`. Si alguna descarga falla, reitentar
+- Cache de estaticos. Builds con hashs en filenames + cache en nginx
+- Newrelic
+- Migrar a typescript?
+- Resetear index de busqueda despues de una actualización de la db
+- Soportar archivos csv separados por ;
+- Revisar espacio libre del servidor
+- Mejorar config de pm2
 
-## Other links
+## Producción
 
-- [Cuántos ministros tuvo cada presidente](https://www.cronista.com/economiapolitica/Gabinete-corto-o-ampliado-cuantos-ministros-tuvo-cada-presidente-desde-1983-20180904-0033.html)
-- Charts: [Recharts](http://recharts.org/en-US), [Nivo](https://nivo.rocks/), [React vis](https://uber.github.io/react-vis/),
-[Victory](https://formidable.com/open-source/victory/), [React Charts2](https://github.com/jerairrest/react-chartjs-2)
+npm run dist
+pm2 config
+nginx
