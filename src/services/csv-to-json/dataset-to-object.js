@@ -3,6 +3,7 @@ const readCSV = require('../../utils/read-csv');
 const {datasets} = require('../../config');
 const normalizeName = require('../../utils/normalize-name');
 const parseNumericValue = require('../../utils/parse-numeric-value');
+const logger = require('../../utils/logger');
 
 const categories = datasets.columns
   .filter(({categoryLevel}) => typeof categoryLevel === 'number')
@@ -46,14 +47,9 @@ const processRowIntoObject = ({row, dbObject, year}) => {
 module.exports = async ({path, dbObject, jsonPath, year}) => {
   await readCSV({
     path,
-    onData: (row) => {
-      numericColumns.map(column => {
-        row[column] = parseInt(row[column]);
-      });
-      processRowIntoObject({row, dbObject, year});
-    }
+    onData: (row) => processRowIntoObject({row, dbObject, year}),
   });
   const dbString = JSON.stringify(dbObject, null, 2);
   fs.writeFileSync(jsonPath, dbString);
-  console.log(`Finished processing ${jsonPath}`);
+  logger.info(`Finished processing ${jsonPath}`);
 };

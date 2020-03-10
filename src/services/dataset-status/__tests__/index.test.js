@@ -15,9 +15,9 @@ const compareAllFiles = require('..');
 
 describe('Compare all files', () => {
   it('should return file status for each file in drive', async (done) => {
-    mockFileStatus.mockReturnValueOnce(Promise.resolve({ exists: true, upToDate: false }));
+    mockFileStatus.mockReturnValueOnce(Promise.resolve({ exists: true, upToDate: false, id: '123' }));
     const fileComparisions = await compareAllFiles();
-    expect(fileComparisions).toEqual([{id: '123', exists: true, upToDate: false, path: 'path/to/file', filename: 'filename.csv'}]);
+    expect(fileComparisions).toEqual([{id: '123', exists: true, upToDate: false}]);
     expect(mockFileStatus).toHaveBeenCalledWith({id: '123', expectedMD5: 'asd', path: 'path/to/file', filename: 'filename.csv'});
     done();
   });

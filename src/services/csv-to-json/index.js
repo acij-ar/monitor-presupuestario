@@ -1,6 +1,7 @@
 const {datasets} = require('../../config');
 const dataset2Object = require('./dataset-to-object');
 const fs = require('fs');
+const logger = require('../../utils/logger');
 
 const files = datasets.files.filter(({isYearDataset}) => isYearDataset);
 const numericColumns = datasets.columns
@@ -20,7 +21,7 @@ const initObject = () => {
 };
 
 module.exports = async () => {
-  console.log('Processing csv files into db.json');
+  logger.info('Processing csv files json files');
   const dbObject = initObject();
   const processDataset = ({path, jsonPath, year}) => {
     if (fs.existsSync(path)) {

@@ -7,10 +7,10 @@ const logger = require('../../utils/logger');
 
 const numericColumns = columns.filter(({isNumeric}) => isNumeric).map(({name}) => name);
 
-module.exports = async ({filePath, year}) => {
+module.exports = async ({path, year}) => {
   const dataset = [];
   await readCSV({
-    path: filePath,
+    path,
     onData: row => dataset.push(row),
   });
   const {jsonPath} = files.find(file => year === file.year && file.jsonPath);
