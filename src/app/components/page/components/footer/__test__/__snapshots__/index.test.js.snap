@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component should match snapshot 1`] = `
+<div
+  id="footer"
+>
+  <div
+    id="footer-content"
+  >
+    <a
+      href="/"
+    >
+      <img
+        alt="Monitor presupuestario"
+        id="footer-logo"
+        src="/static/logo.png"
+      />
+    </a>
+    <a
+      href="http://acij.org.ar/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <img
+        alt="ACIJ"
+        id="footer-acij"
+        src="/static/logo-acij.png"
+      />
+    </a>
+    <div
+      id="footer-information"
+    >
+      <a
+        href="mailto:info@acij.org.ar"
+      >
+        info@acij.org.ar
+      </a>
+      <div>
+        Tel (+54 11) 4381-2371
+      </div>
+      <div>
+        Av. de Mayo 1161, 1 piso
+      </div>
+      <div>
+        (C1085ABB) Bs As, Argentina
+      </div>
+      <a
+        href="http://acij.org.ar/"
+      >
+        acij.org.ar
+      </a>
+    </div>
+  </div>
+</div>
+`;
