@@ -1,3 +1,4 @@
+// TODO: Maybe it could be useful to add a column with links to each file at google drive
 const React = require('react');
 const PropTypes = require('prop-types');
 

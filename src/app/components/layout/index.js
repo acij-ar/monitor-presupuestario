@@ -1,25 +1,37 @@
-const layout = ({ renderedComponent, scripts, styles, props }) => `
-<!doctype html>
-<html lang="es-ar">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-          content="Monitor presupuestario es una plataforma en la que encontrarás información de los diferentes organismos, ministerios, secretarías, programas y actividades presupuestarias desde el año 2007 hasta la actualidad y podrás monitorear la asignación y ejecución del presupuesto naciona">
+const React = require('react');
+const PropTypes = require('prop-types');
 
+const Layout = ({ children, scripts, styles, componentProps }) => (
+  <html lang="es-ar">
+  <head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Monitor presupuestario es una plataforma en la que encontrarás información de los diferentes organismos, ministerios, secretarías, programas y actividades presupuestarias desde el año 2007 hasta la actualidad y podrás monitorear la asignación y ejecución del presupuesto naciona" />
     <title>Monitor presupuestario</title>
-    
-    <script>window.__INITIAL__DATA__ = ${JSON.stringify(props)}</script>
-    
-    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
-    <link rel="stylesheet" href="/static/${styles[0]}"/>
-    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div id="root">${renderedComponent}</div>
-    <script src="/static/${scripts[0]}"></script>
-</body>
-</html>
-`;
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
 
-module.exports = layout;
+    { styles.map(href => <link key={href} rel="stylesheet" href={`/static/${styles[0]}`} />) }
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root">{ children }</div>
+    <script dangerouslySetInnerHTML={{ __html: `window.__INITIAL__DATA__=${JSON.stringify(componentProps)};` }} />
+    { scripts.map(src => <script key={src} src={`/static/${scripts[0]}`} />) }
+  </body>
+  </html>
+);
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+  scripts: PropTypes.arrayOf(PropTypes.string),
+  styles: PropTypes.arrayOf(PropTypes.string),
+  componentProps: PropTypes.object,
+};
+
+Layout.defaultProps = {
+  scripts: [],
+  styles: [],
+  componentProps: null,
+};
+
+module.exports = Layout;

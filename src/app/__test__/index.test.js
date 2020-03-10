@@ -1,20 +1,23 @@
 const mockGet = jest.fn();
 jest.mock('express', () => ({ Router: () => ({ get: mockGet }) }));
-jest.mock('../pages/home', () => ({ render: 'home-render-controller'}));
-jest.mock('../pages/monitor', () => ({ render: 'monitor-render-controller'}));
-jest.mock('../pages/about', () => ({ render: 'about-render-controller'}));
-jest.mock('../pages/admin', () => ({ render: 'admin-render-controller', authenticate: 'admin-authenticate-controller' }));
-jest.mock('../pages/login', () => ({ render: 'login-render-controller', redirectIfAlreadyLoggedIn: 'redirect-login-controller' }));
+jest.mock('../pages/home', () => 'home-render-controller');
+jest.mock('../pages/monitor', () => 'monitor-render-controller');
+jest.mock('../pages/about', () => 'about-render-controller');
+jest.mock('../pages/admin', () => 'admin-render-controller');
+jest.mock('../pages/login', () => 'login-render-controller');
+jest.mock('../controllers/render', () => 'render-controller');
+jest.mock('../controllers/authenticate', () => 'admin-authenticate-controller');
+jest.mock('../controllers/redirect-if-logged-in', () => 'redirect-login-controller');
 
 describe('App router', () => {
   it('should register routes', () => {
     const router = require('..');
 
     expect(router).toEqual({ get: mockGet });
-    expect(mockGet).toHaveBeenCalledWith('/', 'home-render-controller');
-    expect(mockGet).toHaveBeenCalledWith('/monitor', 'monitor-render-controller');
-    expect(mockGet).toHaveBeenCalledWith('/acerca-de', 'about-render-controller');
-    expect(mockGet).toHaveBeenCalledWith('/admin', 'admin-authenticate-controller', 'admin-render-controller');
-    expect(mockGet).toHaveBeenCalledWith('/login', 'redirect-login-controller', 'login-render-controller');
+    expect(mockGet).toHaveBeenCalledWith('/', 'home-render-controller', 'render-controller');
+    expect(mockGet).toHaveBeenCalledWith('/monitor', 'monitor-render-controller', 'render-controller');
+    expect(mockGet).toHaveBeenCalledWith('/acerca-de', 'about-render-controller', 'render-controller');
+    expect(mockGet).toHaveBeenCalledWith('/admin', 'admin-authenticate-controller', 'admin-render-controller', 'render-controller');
+    expect(mockGet).toHaveBeenCalledWith('/login', 'redirect-login-controller', 'login-render-controller', 'render-controller');
   });
 });

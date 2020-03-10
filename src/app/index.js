@@ -1,17 +1,20 @@
 const express = require('express');
 
-const { render: renderHome } = require('./pages/home');
-const { render: renderMonitor } = require('./pages/monitor');
-const { render: renderAbout } = require('./pages/about');
-const { render: renderAdmin, authenticate } = require('./pages/admin');
-const { render: renderLogin, redirectIfAlreadyLoggedIn } = require('./pages/login');
+const home = require('./pages/home');
+const monitor = require('./pages/monitor');
+const about = require('./pages/about');
+const admin = require('./pages/admin');
+const login = require('./pages/login');
+const render = require('./controllers/render');
+const authenticate = require('./controllers/authenticate');
+const redirectIfLoggedIn = require('./controllers/redirect-if-logged-in');
 
 const router = express.Router();
 
-router.get('/', renderHome);
-router.get('/monitor', renderMonitor);
-router.get('/acerca-de', renderAbout);
-router.get('/admin', authenticate, renderAdmin);
-router.get('/login', redirectIfAlreadyLoggedIn, renderLogin);
+router.get('/', home, render);
+router.get('/monitor', monitor, render);
+router.get('/acerca-de', about, render);
+router.get('/admin', authenticate, admin, render);
+router.get('/login', redirectIfLoggedIn, login, render);
 
 module.exports = router;

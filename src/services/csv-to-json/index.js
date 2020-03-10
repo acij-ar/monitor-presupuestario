@@ -32,6 +32,7 @@ module.exports = async () => {
         year,
       });
     } else {
+      logger.error(`File not found: ${path}`);
       return Promise.resolve();
     }
   };
