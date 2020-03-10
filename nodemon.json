@@ -4,7 +4,8 @@
     "data/**/*",
     "devops/**/*",
     "public/**/*",
-    "**/*.json"
+    "**/*.json",
+    "**/__test__/*"
   ],
   "events": {
     "restart": "echo \"App restarted due to changes in: '$FILENAME'\""
