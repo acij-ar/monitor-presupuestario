@@ -12,10 +12,34 @@
 ├── node_modules                # Dependencias
 ├── public                      # Archivos públicos estáticos
 └── src                         # Archivos de desarrollo del proyecto
-    ├── api
-    ├── app
-    └── db
+    ├── api                     # Routers y controllers de express para la API expuesta al mundo
+    ├── app                     # Routers, controllers de express, componentes de react y estilos 
+    |                             para las páginas del sitio
+    ├── config                  # Archivos de configuración
+    ├── services                # Scripts para rutinas y servicios del server
+    └── utils                   # Helpers
 ```
+
+## Estructura del proyecto
+
+El proyecto consta de un servidor de [Express](https://expressjs.com/) que sirve un sitio armado usando
+[React](https://reactjs.org/). Las distintas páginas del sitio se renderizan en el servidor y en el cliente se
+hidratan sus componentes. Los archivos del clientes se transpilan usando [Webpack](https://webpack.js.org/)
+y [Babel](https://babeljs.io/). Los archivos del servidor se transpilan on-the-fly por
+[@babel/register](https://babeljs.io/docs/en/babel-register).
+
+La base de datos está armada sobre [sqlite](https://www.sqlite.org/index.html) via el conector de node 
+[better-sqlite3](https://www.npmjs.com/package/better-sqlite3). La db se arma utilizando datasets que son 
+publicados por [Presupuesto Abierto](https://www.presupuestoabierto.gob.ar/sici/datos-abiertos#) (del Ministerio 
+de Economia de Argentina). Estos archivos estan guardados - a modo de mirror - en una carpeta de google-drive. Los
+archivos se descargan desde esta carpeta utilizando [googleapis](https://www.npmjs.com/package/googleapis).
+Se utiliza [elasticlunr](https://www.npmjs.com/package/elasticlunr) para busquedas dentro del cliente.  
+
+En el sitio web, los datos son graficados utilizando [Highcarts](https://www.highcharts.com/) via la dependencia 
+[react-highcharts](https://www.npmjs.com/package/react-highcharts). 
+
+Los tests unitarios están armados utilizando [jest](https://jestjs.io/) y [enzyme](https://enzymejs.github.io/enzyme/).
+Se utiliza [estlint](https://eslint.org/) como linter de JS
 
 ## Configuraciones iniciales y setup de proyecto
 
@@ -64,6 +88,8 @@ del archivo de configuración de pm2 está en `devops/ecosystem.config.js`
 del archivo de configuración de nginx está en `devops/nginx.conf`
 
 ## Datos y configuración
+
+
 
 ### Tests y lint
 
