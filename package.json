@@ -12,7 +12,7 @@
     "test:lint": "npm run lint",
     "test:jest": "jest",
     "test": "npm run test:jest && npm run test:lint",
-    "google-drive": "node src/db/data/google-drive-client/init.js",
+    "google-drive-setup": "node src/db/data/google-drive-client/init.js",
     "download-datasets": "node src/db/data/dataset-updater/download-datasets.js"
   },
   "repository": {
