@@ -8,10 +8,9 @@
     "build": "webpack --mode development",
     "dist": "webpack --mode production",
     "start-dev": "nodemon src/server.js",
-    "lint": "eslint src/** *.js",
-    "test:lint": "npm run lint",
-    "test:jest": "jest",
-    "test": "npm run test:jest && npm run test:lint",
+    "test:lint": "eslint src/** *.js",
+    "test:unit": "jest",
+    "test": "npm run test:unit && npm run test:lint",
     "google-drive-setup": "node src/db/data/google-drive-client/init.js",
     "download-datasets": "node src/db/data/dataset-updater/download-datasets.js"
   },

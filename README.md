@@ -87,15 +87,15 @@ del archivo de configuración de pm2 está en `devops/ecosystem.config.js`
 - Delante del servidor de node hay un nginx que rutea entre el ambiente productivo y el ambiente de test. una copia 
 del archivo de configuración de nginx está en `devops/nginx.conf`
 
-## Datos y configuración
+## Datasets y admin
 
 
 
 ### Tests y lint
 
-npm run test
-npm run lint
-npm run test:jest
+Los tests del proyecto pueden ser ejecutados via `npm run test`. Este comando corre tanto los tests unitarios como el
+linter del proyecto. Para ejecutar solo los tests unitaros ejecutar `npm run test:jest` y para ejecutar solo el linter
+`npm run test:lint` 
 
 ### TODOs
 
