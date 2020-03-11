@@ -89,30 +89,12 @@ del archivo de configuración de nginx está en `devops/nginx.conf`
 
 ## Datasets y admin
 
-
+Una vez levantado el sitio, entrar con el navegador a `/admin` y loguearse usando la contraseña configurada en 
+`src/services/authentication/credentials.json`. Esta página sirve para actualizar los datasets descargados en el 
+sitio y para actualizar los textos que se muestran en las distintas secciónes. 
 
 ### Tests y lint
 
 Los tests del proyecto pueden ser ejecutados via `npm run test`. Este comando corre tanto los tests unitarios como el
 linter del proyecto. Para ejecutar solo los tests unitaros ejecutar `npm run test:jest` y para ejecutar solo el linter
 `npm run test:lint` 
-
-### TODOs
-
-- Proptypes en todos los componentes (+ forzar errores por proptypes?)
-- E2E tests
-- Mejorar script `npm run download-datasets`. Si alguna descarga falla, reitentar
-- Cache de estaticos. Builds con hashs en filenames + cache en nginx
-- Newrelic
-- Migrar a typescript?
-- Resetear index de busqueda despues de una actualización de la db
-- Soportar archivos csv separados por ;
-- Revisar espacio libre del servidor
-- Mejorar config de pm2
-
-## Producción
-
-npm run dist
-pm2 config
-nginx
-
