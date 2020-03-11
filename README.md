@@ -74,8 +74,7 @@ mediante los siguientes pasos:
 
 - Todos los archivos .js y .css para los navegadores pueden ser generados via `npm run build` o `npm run watch`. Este
 ultimo comando queda ejecutandose y escuchando cambios a los archivos para volver a buildear ante cualquier cambio.
-- El servidor de desarrollo puede levantarse con el comando `npm run start-dev`. Esto levanta un servidor en el puerto
-8080. 
+- El servidor de desarrollo puede levantarse con el comando `npm run start-dev`. Esto levanta un servidor en el puerto 8080. 
 
 ## Ambiente prod
 
@@ -91,7 +90,39 @@ del archivo de configuración de nginx está en `devops/nginx.conf`
 
 Una vez levantado el sitio, entrar con el navegador a `/admin` y loguearse usando la contraseña configurada en 
 `src/services/authentication/credentials.json`. Esta página sirve para actualizar los datasets descargados en el 
-sitio y para actualizar los textos que se muestran en las distintas secciónes. 
+sitio y para actualizar los textos que se muestran en las distintas secciónes. Al momento de disparar una
+actualización de los datasets desde el admin, se ejecutan los pasos 2 a 4 de la siguiente sección _"Ciclo de vida de los datos"_. 
+
+### Datasets
+
+El servidor maneja 3 tipos distintos de datasets:
+- **Datasets de gasto anual**: Son archivos .csv publicados por la página oficial del Ministerio de Economia de Argentina.
+Reflejan la estructura jerarquica de los distintos organismos del estado y posee información de las partidas 
+presupuestarias asignadas a cada organismo segun distintos criterios. 
+- **Datasets de proyecto de ley**: son archivos .csv anuales que solo contienen las diferencias del presupuesto respecto al
+proyecto de ley para cada año. La elaboración es de ACIJ. La estructura de estos datasets copian la estructura de los
+datasets publicados por el Ministerio, para que luego sea posible integrar ambos.  
+- **Dataset de inflación**: es un único archivo .csv generado por ACIJ. Refleja la inflación anual de la Argentina
+
+### Ciclo de vida de los datos
+
+El ciclo de vida de los archivos consta de las siguientes partes:
+
+1. **De Presupuesto Abierto a Google Drive**. Los datasets son publicados por
+[Presupuesto Abierto](https://www.presupuestoabierto.gob.ar/sici/datos-abiertos#), página oficial del
+Ministerio de Economia de Argentina. Estos dataset deben ser descargados manualmente para luego ser subidos a drive.
+Como unica excepción, el archivo de inflación anual es generado por ACIJ y subido a la misma carpeta de drive.
+Los ids de estos archivos estan en `src/config/files.js`.
+2. **De Drive a archivos .csv locales**. El servicio ubicado en `src/services/dataset-updater/update-files.js` se
+encarga de comparar los archivos locales contra los archivos de google-drive y descargar los archivos que estén
+desactualizados. Los datasets descargados son ubicados en `data/raw`.
+3. **De .csv a .json**. Los archivos descargados de drive son convertidos de formato .csv a formato .json para
+reflejar mejor la estructura jerarquica del estado argentino. El servicio encargado de esta conversión está ubicado
+en `src/services/csv-to-json`. Luego de este proceso, el servicio `src/services/update-original-budget` actualiza
+la información del proyecto de ley de presupuesto para los años donde esté disponible. Los archivos .json generados
+son guardados en `data/json`
+4. **De .json a sqlite**. Los archivos .json son guardados en una base de datos de sqlite. El servicio encargado de 
+esta conversión se encuentra en `src/services/db-updater/`. La db se guarda en `data/db.sqlite3` 
 
 ### Tests y lint
 
