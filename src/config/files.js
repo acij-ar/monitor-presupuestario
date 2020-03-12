@@ -169,13 +169,5 @@ module.exports = [
     isYearDataset: false,
     isOriginalDataset: true,
     path: path.join(rawDataFolderPath, 'presupuesto-original-2019.csv'),
-  },
-  {
-    id: '1Roxcyhg5UgaC-XuO2qNTHrRw4FItin_w',
-    filename: 'proyecto-presupuesto-2020.csv',
-    year: 2020,
-    isYearDataset: false,
-    isOriginalDataset: true,
-    path: path.join(rawDataFolderPath, 'presupuesto-original-2020.csv'),
-  },
+  }
 ];

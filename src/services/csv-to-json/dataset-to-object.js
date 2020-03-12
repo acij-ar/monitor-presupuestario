@@ -17,7 +17,7 @@ const addNumericColumns = ({scopedObject, row, year}) => {
   numericColumns.map(column => {
     scopedObject[column] += parseNumericValue(row[column]);
   });
-  if (year < 2016) {
+  if (year < 2016) { // TODO: avoid this hardcoded value
     scopedObject.credito_original += parseNumericValue(row.credito_presupuestado);
   }
 };
