@@ -11,8 +11,8 @@
     "test:lint": "eslint src/** *.js",
     "test:unit": "jest",
     "test": "npm run test:unit && npm run test:lint",
-    "google-drive-setup": "node src/db/data/google-drive-client/init.js",
-    "download-datasets": "node src/db/data/dataset-updater/download-datasets.js"
+    "google-drive-setup": "node src/services/google-drive-client/init.js",
+    "download-datasets": "node src/services/dataset-updater/download-datasets.js"
   },
   "repository": {
     "type": "git",
