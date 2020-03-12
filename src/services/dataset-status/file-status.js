@@ -33,7 +33,7 @@ module.exports = async ({ path, id, filename, expectedMD5 }) => {
   try {
     lastModified = fs.statSync(path).mtime.toISOString();
     lines = await countLines(path);
-    currentMD5 = await md5File(path);
+    currentMD5 = await md5File(path); // TODO: this is very slow. Find a workaround to speed up the process
     exists = true;
     upToDate = currentMD5 === expectedMD5;
   } catch {
