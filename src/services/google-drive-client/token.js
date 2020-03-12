@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const logger = require('../../utils/logger');
 
-const token_path = path.join(__dirname, 'token.json');
+const token_path = path.join(__dirname, 'token.json'); // TODO: raise exception if file doesn't exist?
 
 /**
  * Returns the token object stored in the filesystem if exists.
