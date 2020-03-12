@@ -14,11 +14,20 @@ class DatasetForm extends React.Component {
     };
     this.checkStatus = this.checkStatus.bind(this);
     this.updateDatasets = this.updateDatasets.bind(this);
+    this.loadInitialState = this.loadInitialState.bind(this);
   }
 
   async componentDidMount() {
-    const { data } = await axios.get('/api/admin/dataset_job_status');
-    this.setState({ datasets: data.result });
+    await this.loadInitialState();
+  }
+
+  async loadInitialState() {
+    try {
+      const { data } = await axios.get('/api/admin/dataset_job_status');
+      this.setState({ datasets: data.result });
+    } catch(e) {
+      setTimeout(this.loadInitialState, 5e3)
+    }
   }
 
   async updateDatasets() {

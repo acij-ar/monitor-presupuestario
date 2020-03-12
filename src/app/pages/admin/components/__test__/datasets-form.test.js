@@ -15,7 +15,7 @@ describe('Dataset form', () => {
   });
 
   it('should match snapshot when loading', async () => {
-    mockGet.mockReturnValueOnce(Promise.resolve({ data: { result: [] } }));
+    mockGet.mockReturnValueOnce(Promise.reject());
     const wrapper = await shallow(<DatasetForm />);
     expect(wrapper).toMatchSnapshot();
     expect(mockGet).toHaveBeenCalledWith('/api/admin/dataset_job_status');
