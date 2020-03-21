@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 const mockPost = jest.fn();
 jest.mock('axios', () => ({ post: mockPost }));
 
@@ -8,6 +12,7 @@ const LoginForm = require('../login-form');
 
 describe('Login form component', () => {
   beforeEach(() => {
+    Object.defineProperty(window, 'location', { value: {} });
     mockPost.mockClear();
   });
 
