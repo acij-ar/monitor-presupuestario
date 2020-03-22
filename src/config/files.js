@@ -4,6 +4,13 @@ const dataFolderPath = path.join(__dirname, '..', '..', 'data');
 const rawDataFolderPath = path.join(dataFolderPath, 'raw');
 const jsonFolderPath = path.join(dataFolderPath, 'json');
 
+/*
+* TODO: this config file has mixed content.
+*   It has information about the source datasets that are downlaoded from the google drive folder
+*   and it also has information about the generated json files
+*   Find a better way to handle both 
+* */
+
 module.exports = [
   {
     id: '1cTGxXnGG1nvVwW4BXhk7jrX1LeAHp3tb',
@@ -12,6 +19,7 @@ module.exports = [
     isYearDataset: true,
     isOriginalDataset: false,
     path: path.join(rawDataFolderPath, '2007.csv'),
+    md5Path: path.join(rawDataFolderPath, '2007.csv.md5'),
     jsonPath: path.join(jsonFolderPath, '2007.json'),
   },
   {
@@ -21,6 +29,7 @@ module.exports = [
     isYearDataset: true,
     isOriginalDataset: false,
     path: path.join(rawDataFolderPath, '2008.csv'),
+    md5Path: path.join(rawDataFolderPath, '2008.csv.md5'),
     jsonPath: path.join(jsonFolderPath, '2008.json'),
   },
   {
@@ -30,6 +39,7 @@ module.exports = [
     isYearDataset: true,
     isOriginalDataset: false,
     path: path.join(rawDataFolderPath, '2009.csv'),
+    md5Path: path.join(rawDataFolderPath, '2009.csv.md5'),
     jsonPath: path.join(jsonFolderPath, '2009.json'),
   },
   {
@@ -39,6 +49,7 @@ module.exports = [
     isYearDataset: true,
     isOriginalDataset: false,
     path: path.join(rawDataFolderPath, '2010.csv'),
+    md5Path: path.join(rawDataFolderPath, '2010.csv.md5'),
     jsonPath: path.join(jsonFolderPath, '2010.json'),
   },
   {
@@ -48,6 +59,7 @@ module.exports = [
     isYearDataset: true,
     isOriginalDataset: false,
     path: path.join(rawDataFolderPath, '2011.csv'),
+    md5Path: path.join(rawDataFolderPath, '2011.csv.md5'),
     jsonPath: path.join(jsonFolderPath, '2011.json'),
   },
   {
@@ -57,6 +69,7 @@ module.exports = [
     isYearDataset: true,
     isOriginalDataset: false,
     path: path.join(rawDataFolderPath, '2012.csv'),
+    md5Path: path.join(rawDataFolderPath, '2012.csv.md5'),
     jsonPath: path.join(jsonFolderPath, '2012.json'),
   },
   {
@@ -66,6 +79,7 @@ module.exports = [
     isYearDataset: true,
     isOriginalDataset: false,
     path: path.join(rawDataFolderPath, '2013.csv'),
+    md5Path: path.join(rawDataFolderPath, '2013.csv.md5'),
     jsonPath: path.join(jsonFolderPath, '2013.json'),
   },
   {
@@ -75,6 +89,7 @@ module.exports = [
     isYearDataset: true,
     isOriginalDataset: false,
     path: path.join(rawDataFolderPath, '2014.csv'),
+    md5Path: path.join(rawDataFolderPath, '2014.csv.md5'),
     jsonPath: path.join(jsonFolderPath, '2014.json'),
   },
   {
@@ -84,6 +99,7 @@ module.exports = [
     isYearDataset: true,
     isOriginalDataset: false,
     path: path.join(rawDataFolderPath, '2015.csv'),
+    md5Path: path.join(rawDataFolderPath, '2015.csv.md5'),
     jsonPath: path.join(jsonFolderPath, '2015.json'),
   },
   {
@@ -93,6 +109,7 @@ module.exports = [
     isYearDataset: true,
     isOriginalDataset: false,
     path: path.join(rawDataFolderPath, '2016.csv'),
+    md5Path: path.join(rawDataFolderPath, '2016.csv.md5'),
     jsonPath: path.join(jsonFolderPath, '2016.json'),
   },
   {
@@ -102,6 +119,7 @@ module.exports = [
     isYearDataset: true,
     isOriginalDataset: false,
     path: path.join(rawDataFolderPath, '2017.csv'),
+    md5Path: path.join(rawDataFolderPath, '2017.csv.md5'),
     jsonPath: path.join(jsonFolderPath, '2017.json'),
   },
   {
@@ -111,6 +129,7 @@ module.exports = [
     isYearDataset: true,
     isOriginalDataset: false,
     path: path.join(rawDataFolderPath, '2018.csv'),
+    md5Path: path.join(rawDataFolderPath, '2018.csv.md5'),
     jsonPath: path.join(jsonFolderPath, '2018.json'),
   },
   {
@@ -120,6 +139,7 @@ module.exports = [
     isYearDataset: true,
     isOriginalDataset: false,
     path: path.join(rawDataFolderPath, '2019.csv'),
+    md5Path: path.join(rawDataFolderPath, '2019.csv.md5'),
     jsonPath: path.join(jsonFolderPath, '2019.json'),
   },
   {
@@ -129,6 +149,7 @@ module.exports = [
     isYearDataset: true,
     isOriginalDataset: false,
     path: path.join(rawDataFolderPath, '2020.csv'),
+    md5Path: path.join(rawDataFolderPath, '2020.csv.md5'),
     jsonPath: path.join(jsonFolderPath, '2020.json'),
   },
   {
@@ -137,6 +158,7 @@ module.exports = [
     isYearDataset: false,
     isOriginalDataset: false,
     path: path.join(rawDataFolderPath, 'inflacion.csv'),
+    md5Path: path.join(rawDataFolderPath, 'inflacion.csv.md5'),
   },
   {
     id: '1vISO7WCVQnHGxNlKXe-QWaWa_6t12CjV',
@@ -145,6 +167,7 @@ module.exports = [
     isYearDataset: false,
     isOriginalDataset: true,
     path: path.join(rawDataFolderPath, 'presupuesto-original-2016.csv'),
+    md5Path: path.join(rawDataFolderPath, 'presupuesto-original-2016.csv.md5'),
   },
   {
     id: '1gNFuCwq97L4svplUWAT06JyBe2AVcCTg',
@@ -153,6 +176,7 @@ module.exports = [
     isYearDataset: false,
     isOriginalDataset: true,
     path: path.join(rawDataFolderPath, 'presupuesto-original-2017.csv'),
+    md5Path: path.join(rawDataFolderPath, 'presupuesto-original-2017.csv.md5'),
   },
   {
     id: '1NsyiqXXxbZed6s_eKmQof_W-9XcTwrn1',
@@ -161,6 +185,7 @@ module.exports = [
     isYearDataset: false,
     isOriginalDataset: true,
     path: path.join(rawDataFolderPath, 'presupuesto-original-2018.csv'),
+    md5Path: path.join(rawDataFolderPath, 'presupuesto-original-2018.csv.md5'),
   },
   {
     id: '1_5fJeKOXZYk-na7PR2j30oJDIOOt8rSM',
@@ -169,5 +194,6 @@ module.exports = [
     isYearDataset: false,
     isOriginalDataset: true,
     path: path.join(rawDataFolderPath, 'presupuesto-original-2019.csv'),
+    md5Path: path.join(rawDataFolderPath, 'presupuesto-original-2019.csv.md5'),
   }
 ];

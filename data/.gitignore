@@ -3,3 +3,4 @@
 *.json
 *.sqlite3-journal
 .~lock*
+*.md5
