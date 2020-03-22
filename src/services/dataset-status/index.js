@@ -18,9 +18,8 @@ module.exports = async () => {
   logger.info('Got file status from google drive folder');
 
   const fileStatusPromises = files.map(localFile => {
-    const { id, path, filename } = localFile;
-    const { md5Checksum: expectedMD5 } = filesInDriveFolder.find(fileInDriveFolder => fileInDriveFolder.id === id );
-    return fileStatus({ id, path, filename, expectedMD5 });
+    const { md5Checksum: expectedMD5 } = filesInDriveFolder.find(fileInDriveFolder => fileInDriveFolder.id === localFile.id );
+    return fileStatus({ ...localFile, expectedMD5 });
   });
 
   return Promise.all(fileStatusPromises);

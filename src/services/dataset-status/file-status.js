@@ -1,6 +1,6 @@
 const fs = require('fs');
-const md5File = require('md5-file/promise');
 const countLines = require('./count-lines');
+const readFile = require('../../utils/read-file');
 
 /**
  * @typedef {object} FileStatus
@@ -28,15 +28,15 @@ const countLines = require('./count-lines');
  *     fileStatus({ filename: 'dataset.csv', expectedMD5: '123abc' })
  */
 
-module.exports = async ({ path, id, filename, expectedMD5 }) => {
+module.exports = async ({ path, md5Path, id, filename, expectedMD5 }) => {
   let exists, upToDate, currentMD5, lastModified, lines;
   try {
     lastModified = fs.statSync(path).mtime.toISOString();
     lines = await countLines(path);
-    currentMD5 = await md5File(path); // TODO: this is very slow. Find a workaround to speed up the process
+    currentMD5 = await readFile(md5Path);
     exists = true;
     upToDate = currentMD5 === expectedMD5;
-  } catch {
+  } catch (e) {
     lastModified = null;
     lines = null;
     exists = false;
@@ -47,6 +47,7 @@ module.exports = async ({ path, id, filename, expectedMD5 }) => {
     id,
     filename,
     path,
+    md5Path,
     exists,
     upToDate,
     lastModified,
