@@ -7,7 +7,6 @@ const DatasetTable = ({datasets}) => (
     <thead>
     <tr>
       <th>Dataset</th>
-      <th>Número de filas</th>
       <th>Última actualización</th>
       <th>Al dia con google drive</th>
       <th/>

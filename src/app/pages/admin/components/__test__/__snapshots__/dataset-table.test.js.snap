@@ -8,9 +8,6 @@ exports[`Dataset table should match snapshot 1`] = `
         Dataset
       </th>
       <th>
-        Número de filas
-      </th>
-      <th>
         Última actualización
       </th>
       <th>
