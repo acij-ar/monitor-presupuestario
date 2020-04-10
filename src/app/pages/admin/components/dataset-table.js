@@ -14,10 +14,9 @@ const DatasetTable = ({datasets}) => (
     </tr>
     </thead>
     <tbody>
-    {datasets.map(({filename, upToDate, lastModified, lines }) => (
+    {datasets.map(({filename, upToDate, lastModified }) => (
       <tr key={filename}>
         <td>{filename}</td>
-        <td>{lines || '-'}</td>
         <td>{lastModified || '-'}</td>
         <td>{upToDate ? '✅' : '❌'}</td>
       </tr>
@@ -31,7 +30,6 @@ DatasetTable.propTypes = {
     filename: PropTypes.string.isRequired,
     upToDate: PropTypes.bool.isRequired,
     lastModified: PropTypes.string,
-    lines: PropTypes.number,
   })).isRequired,
 };
 

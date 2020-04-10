@@ -27,9 +27,6 @@ exports[`Dataset table should match snapshot 1`] = `
         2007.csv
       </td>
       <td>
-        98162
-      </td>
-      <td>
         2020-03-02T19:16:34.003Z
       </td>
       <td>
@@ -41,9 +38,6 @@ exports[`Dataset table should match snapshot 1`] = `
     >
       <td>
         2008.csv
-      </td>
-      <td>
-        -
       </td>
       <td>
         -

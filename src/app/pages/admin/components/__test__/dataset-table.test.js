@@ -11,13 +11,11 @@ describe('Dataset table', () => {
           filename: '2007.csv',
           upToDate: true,
           lastModified: '2020-03-02T19:16:34.003Z',
-          lines: 98162,
         },
         {
           filename: '2008.csv',
           upToDate: false,
           lastModified: null,
-          lines: null,
         },
       ]
     };

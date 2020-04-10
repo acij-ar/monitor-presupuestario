@@ -10,7 +10,6 @@ const readFile = require('../../utils/read-file');
  * @property {string} path - Path to file
  * @property {string} id - Google drive id of file
  * @property {string} lastModified - Date of last modification of local file
- * @property {number} lines - Number of lines in local file
  */
 
 /**
@@ -28,7 +27,7 @@ const readFile = require('../../utils/read-file');
  */
 
 module.exports = async ({ path, md5Path, id, filename, expectedMD5 }) => {
-  let exists, upToDate, currentMD5, lastModified, lines;
+  let exists, upToDate, currentMD5, lastModified;
   try {
     lastModified = fs.statSync(path).mtime.toISOString();
     currentMD5 = await readFile(md5Path);
