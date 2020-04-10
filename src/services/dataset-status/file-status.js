@@ -1,5 +1,4 @@
 const fs = require('fs');
-const countLines = require('./count-lines');
 const readFile = require('../../utils/read-file');
 
 /**
@@ -32,13 +31,11 @@ module.exports = async ({ path, md5Path, id, filename, expectedMD5 }) => {
   let exists, upToDate, currentMD5, lastModified, lines;
   try {
     lastModified = fs.statSync(path).mtime.toISOString();
-    lines = await countLines(path);
     currentMD5 = await readFile(md5Path);
     exists = true;
     upToDate = currentMD5 === expectedMD5;
   } catch (e) {
     lastModified = null;
-    lines = null;
     exists = false;
     upToDate = false;
     currentMD5 = null;
@@ -51,6 +48,5 @@ module.exports = async ({ path, md5Path, id, filename, expectedMD5 }) => {
     exists,
     upToDate,
     lastModified,
-    lines,
   };
 };

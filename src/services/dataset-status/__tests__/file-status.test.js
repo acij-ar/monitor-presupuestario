@@ -1,8 +1,6 @@
 const mockReadFile = jest.fn();
 jest.mock('../../../utils/read-file', () => mockReadFile);
 jest.mock('../../../utils/logger', () => ({ error: jest.fn(), info: jest.fn() }));
-const mockCountLines = jest.fn();
-jest.mock('../count-lines', () => mockCountLines);
 const mockStatSync = jest.fn();
 jest.mock('fs', () => ({ statSync: mockStatSync }));
 
@@ -15,7 +13,6 @@ describe('fileStatus method', () => {
 
   it('should handle up to date files', async (done) => {
     mockStatSync.mockReturnValueOnce({ mtime: new Date('2019-01-01 10:01') });
-    mockCountLines.mockReturnValueOnce(123);
     mockReadFile.mockReturnValueOnce('abc123');
     const status = await fileStatus({
       id: 'id-1',
@@ -28,14 +25,12 @@ describe('fileStatus method', () => {
     expect(status.md5Path).toBe('up-to-date-file.csv.md5');
     expect(status.exists).toBeTruthy();
     expect(status.upToDate).toBeTruthy();
-    expect(status.lines).toBe(123);
     expect(status.lastModified).toBe('2019-01-01T13:01:00.000Z');
     done();
   });
 
   it('should handle outdated files', async (done) => {
     mockStatSync.mockReturnValueOnce({ mtime: new Date('1999-01-01 10:01') });
-    mockCountLines.mockReturnValueOnce(234);
     mockReadFile.mockReturnValueOnce('qwe456');
     const status = await fileStatus({
       id: 'id-2',
@@ -48,7 +43,6 @@ describe('fileStatus method', () => {
     expect(status.md5Path).toBe('outdated-file.csv.md5');
     expect(status.exists).toBeTruthy();
     expect(status.upToDate).toBeFalsy();
-    expect(status.lines).toBe(234);
     expect(status.lastModified).toBe('1999-01-01T13:01:00.000Z');
     done();
   });
@@ -63,7 +57,6 @@ describe('fileStatus method', () => {
     expect(status.path).toBe('file-that-doesnt-exist');
     expect(status.exists).toBeFalsy();
     expect(status.upToDate).toBeFalsy();
-    expect(status.lines).toBeNull();
     expect(status.lastModified).toBeNull();
     done();
   });
