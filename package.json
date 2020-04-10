@@ -36,7 +36,6 @@
     "color": "^3.1.2",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.4",
-    "count-lines-in-file": "^1.1.0",
     "css-loader": "^2.1.1",
     "csv-write-stream": "^2.0.0",
     "elasticlunr": "^0.9.5",
