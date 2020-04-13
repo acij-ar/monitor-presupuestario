@@ -16,6 +16,7 @@ module.exports = {
   target: 'web',
   devtool: 'source-map',
   entry: {
+    page: [path.resolve(__dirname, 'src/app/components/page/index.scss')],
     home: assetsForPage('home'),
     monitor: assetsForPage('monitor'),
     about: assetsForPage('about'),
