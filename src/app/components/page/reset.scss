@@ -1,0 +1,16 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+
+  &:visited {
+    color: initial;
+  }
+}
+
+p, h1, h2, h3 {
+  margin: 0;
+}
