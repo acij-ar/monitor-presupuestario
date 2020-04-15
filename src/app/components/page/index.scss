@@ -3,7 +3,7 @@
 body {
   font-family: 'Rubik', sans-serif;
   background: #fafafa;
-  color: #f0f0f0;
+  color: #333;
   font-weight: 300;
 }
 
@@ -24,6 +24,8 @@ body, #root {
       margin-right: auto;
       flex-grow: 1;
       max-width: 1000px;
+      padding-right: 20px;
+      padding-top: 90px;
     }
 
     @import './components/menu/index';

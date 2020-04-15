@@ -1,4 +1,21 @@
 #menu {
   margin-left: auto;
-  width: 200px;
+  flex: 0 0 200px;
+
+  #menu-content {
+    position: sticky;
+    top: 0;
+    padding: 20px;
+  }
+
+  #logo {
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-image: url('/static/logo.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+  }
 }

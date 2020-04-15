@@ -2,7 +2,9 @@ const React = require('react');
 
 const Menu = () => (
   <div id="menu">
-    Menu
+    <div id="menu-content">
+      <a id="logo" href="/" />
+    </div>
   </div>
 );
 
