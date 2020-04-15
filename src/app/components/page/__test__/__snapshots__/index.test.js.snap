@@ -2,13 +2,17 @@
 
 exports[`Page component should match snapshot 1`] = `
 <Fragment>
-  <Header
-    key="header"
-  />
   <div
     id="main"
     key="main"
-  />
+  >
+    <Menu
+      selectedPage="mocked-page"
+    />
+    <div
+      id="content"
+    />
+  </div>
   <Footer
     key="footer"
   />

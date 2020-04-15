@@ -5,7 +5,10 @@ const Home = require('../view');
 
 describe('Home page', () => {
   it('should match snapshot', () => {
-    const wrapper = shallow(<Home />);
+    const props = {
+      pageName: 'home',
+    }
+    const wrapper = shallow(<Home {...props} />);
     expect(wrapper).toMatchSnapshot();
   });
 });

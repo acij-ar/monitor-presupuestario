@@ -16,13 +16,13 @@ describe('Page component', () => {
   });
 
   it('should match snapshot', () => {
-    const wrapper = shallow(<Page />);
+    const wrapper = shallow(<Page pageName="mocked-page" />);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should call the analytics pageview method', () => {
     Object.defineProperty(window, 'location', { value: { pathname: 'mocked-url'} });
-    shallow(<Page />);
+    shallow(<Page pageName="mocked-page" />);
     expect(mockPageview).toHaveBeenCalledTimes(1);
     expect(mockPageview).toHaveBeenCalledWith('mocked-url');
   });

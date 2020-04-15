@@ -16,7 +16,6 @@ describe('About page controller', () => {
     expect(mockNext).toHaveBeenCalledTimes(1);
     expect(mockRes.locals.View).toBe(mockView);
     expect(mockRes.locals.props).toEqual({ mock: 'content'});
-    expect(mockRes.locals.scripts).toEqual(['about.js']);
-    expect(mockRes.locals.styles).toEqual(['about.css']);
+    expect(mockRes.locals.pageName).toBe('about');
   });
 });

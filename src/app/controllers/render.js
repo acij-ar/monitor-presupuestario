@@ -13,7 +13,7 @@ module.exports = (req, res) => {
   ];
   const page = (
     <Layout scripts={scripts} styles={styles} componentProps={props}>
-        <View {...props} />
+        <View {...props} pageName={pageName} />
     </Layout>
   );
   const pageContent = `<!doctype html>${renderToString(page)}`;

@@ -42,11 +42,11 @@ class App extends React.Component {
   }
 
   render() {
-    const {title, description} = this.props;
+    const {title, description, pageName} = this.props;
     const {selectedYears, selectedBudgets, selectedEntities} = this.state;
     const hasGroupedEntities = selectedEntities && selectedEntities.filter(entity => entity.groupId).length > 1;
     return (
-      <Page>
+      <Page pageName={pageName}>
         <div className="monitor-highlight">
           <div className="monitor-content">
             <h1>{title}</h1>
@@ -104,6 +104,7 @@ class App extends React.Component {
 App.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  pageName: PropTypes.string.isRequired,
 };
 
 module.exports = App;

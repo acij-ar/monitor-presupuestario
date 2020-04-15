@@ -9,6 +9,7 @@ const Admin = require('../view');
 describe('Admin page', () => {
   it('should match snapshot', () => {
     const props = {
+      pageName: 'admin',
       texts: { mock: 'tetxs-for-the-admin' },
     };
     const wrapper = shallow(<Admin {...props}/>);

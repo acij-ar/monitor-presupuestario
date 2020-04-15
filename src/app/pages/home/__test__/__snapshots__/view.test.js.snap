@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home page should match snapshot 1`] = `
-<Page>
+<Page
+  pageName="home"
+>
   <a
     href="/monitor"
     id="home-link"

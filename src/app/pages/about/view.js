@@ -2,8 +2,8 @@ const React = require('react');
 const Page = require('../../components/page');
 const PropTypes = require('prop-types');
 
-const App = ({ rights, methodology, information, dictionary }) => (
-  <Page>
+const App = ({ rights, methodology, information, dictionary, pageName }) => (
+  <Page pageName={pageName}>
     <div className="monitor-highlight">
       <div className="monitor-content">
         <h1>Acerca de</h1>
@@ -60,6 +60,7 @@ App.propTypes = {
     title: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
   }).isRequired,
+  pageName: PropTypes.string.isRequired,
 };
 
 module.exports = App;

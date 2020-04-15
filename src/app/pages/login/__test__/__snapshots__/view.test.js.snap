@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Login page should match snapshot 1`] = `
-<Page>
+<Page
+  pageName="home"
+>
   <div
     className="monitor-highlight"
   >

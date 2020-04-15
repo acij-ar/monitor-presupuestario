@@ -1,3 +1,4 @@
+const React = require('react');
 const mockView = () => <div id="mock-page" />;
 jest.mock('../view', () => mockView);
 
@@ -12,7 +13,6 @@ describe('Home page controller', () => {
     homeController(mockReq, mockRes, mockNext);
     expect(mockNext).toHaveBeenCalledTimes(1);
     expect(mockRes.locals.View).toBe(mockView);
-    expect(mockRes.locals.scripts).toEqual(['home.js']);
-    expect(mockRes.locals.styles).toEqual(['home.css']);
+    expect(mockRes.locals.pageName).toBe('home');
   });
 });
