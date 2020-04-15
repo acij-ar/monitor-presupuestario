@@ -3,13 +3,13 @@ const Layout = require('../components/layout');
 const { renderToString } = require('react-dom/server');
 
 module.exports = (req, res) => {
-  const { View, props, assetsName } = res.locals;
+  const { View, props, pageName } = res.locals;
   const scripts = [
-    res.locals.assetPath(`${assetsName}.js`),
+    res.locals.assetPath(`${pageName}.js`),
   ];
   const styles = [
     res.locals.assetPath(`page.css`),
-    res.locals.assetPath(`${assetsName}.css`),
+    res.locals.assetPath(`${pageName}.css`),
   ];
   const page = (
     <Layout scripts={scripts} styles={styles} componentProps={props}>
