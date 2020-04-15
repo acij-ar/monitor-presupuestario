@@ -7,4 +7,17 @@ body {
   font-weight: 300;
 }
 
+body, #root {
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+
+  #main {
+    flex-grow: 1;
+  }
+}
+
 @import './components/footer/index';
