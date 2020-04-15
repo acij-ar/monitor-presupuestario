@@ -10,7 +10,7 @@ exports[`Page component should match snapshot 1`] = `
       selectedPage="mocked-page"
     />
     <div
-      id="content"
+      id="page-content"
     />
   </div>
   <Footer

@@ -17,7 +17,17 @@ body, #root {
 
   #main {
     flex-grow: 1;
-  }
-}
+    padding-bottom: 50px;
+    display: flex;
 
-@import './components/footer/index';
+    #page-content {
+      margin-right: auto;
+      flex-grow: 1;
+      max-width: 1000px;
+    }
+
+    @import './components/menu/index';
+  }
+
+  @import './components/footer/index';
+}

@@ -7,49 +7,55 @@ exports[`Footer component should match snapshot 1`] = `
   <div
     id="footer-content"
   >
-    <a
-      href="/"
+    <span
+      id="acij-initiative"
     >
-      <img
-        alt="Monitor presupuestario"
-        id="footer-logo"
-        src="/static/logo.png"
-      />
-    </a>
+      UNA INICIATIVA DE
+    </span>
     <a
       href="http://acij.org.ar/"
+      id="acij-link"
       rel="noopener noreferrer"
       target="_blank"
     >
       <img
         alt="ACIJ"
-        id="footer-acij"
         src="/static/logo-acij.png"
       />
     </a>
-    <div
-      id="footer-information"
+    <a
+      className="social-link"
+      href="https://twitter.com/ACIJargentina"
+      rel="noopener noreferrer"
+      target="_blank"
     >
-      <a
-        href="mailto:info@acij.org.ar"
-      >
-        info@acij.org.ar
-      </a>
-      <div>
-        Tel (+54 11) 4381-2371
-      </div>
-      <div>
-        Av. de Mayo 1161, 1 piso
-      </div>
-      <div>
-        (C1085ABB) Bs As, Argentina
-      </div>
-      <a
-        href="http://acij.org.ar/"
-      >
-        acij.org.ar
-      </a>
-    </div>
+      <img
+        alt="twitter"
+        src="/static/twitter.svg"
+      />
+    </a>
+    <a
+      className="social-link"
+      href="https://www.facebook.com/ACIJ.ORG"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <img
+        alt="facebook"
+        src="/static/facebook.svg"
+      />
+    </a>
+    <a
+      className="social-link"
+      href="https://github.com/acij-ar/monitor-presupuestario"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <img
+        alt="github"
+        src="/static/github.svg"
+      />
+    </a>
   </div>
 </div>
 `;
