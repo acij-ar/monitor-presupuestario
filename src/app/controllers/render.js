@@ -11,9 +11,13 @@ module.exports = (req, res) => {
     res.locals.assetPath(`page.css`),
     res.locals.assetPath(`${pageName}.css`),
   ];
+  const componentProps = {
+    ...props,
+    pageName,
+  }
   const page = (
-    <Layout scripts={scripts} styles={styles} componentProps={props}>
-        <View {...props} pageName={pageName} />
+    <Layout scripts={scripts} styles={styles} componentProps={componentProps}>
+        <View {...componentProps} pageName={pageName} />
     </Layout>
   );
   const pageContent = `<!doctype html>${renderToString(page)}`;

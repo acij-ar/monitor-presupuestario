@@ -25,7 +25,10 @@ describe('Render controller', () => {
     renderController(mockReq, mockRes);
 
     expect(mockVerifyProps).toHaveBeenCalledWith({
-      componentProps: { mocked: 'props' },
+      componentProps: {
+        mocked: 'props',
+        pageName: 'mocked-page-name',
+      },
       scripts: ['/path/to/mocked-page-name.js'],
       styles: ['/path/to/page.css', '/path/to/mocked-page-name.css'],
     });
