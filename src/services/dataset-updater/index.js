@@ -3,6 +3,7 @@ const dbUpdater = require('../db-updater');
 const updateOriginalBudget = require('../update-original-budget');
 const updateFiles = require('./update-files');
 const logger = require('../../utils/logger');
+const searchService = require('../search');
 
 class DatasetUpdater {
   constructor() {
@@ -28,6 +29,8 @@ class DatasetUpdater {
 
       this.step = 'Actualizando base de datos (paso 4 de 4)';
       await dbUpdater();
+
+      searchService.buildIndex();
     } catch(e) {
       logger.error('Error while trying to update the datasets');
       logger.error(e);

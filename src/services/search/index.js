@@ -7,6 +7,10 @@ const resultsToListForSelect = require('../helpers/results-to-list-for-select');
 
 class SearchService {
   constructor() {
+    this.buildIndex();
+  }
+
+  buildIndex() {
     this.index = elasticlunr();
     this.index.addField('label');
     this.index.setRef('id');
