@@ -18,4 +18,18 @@
     background-repeat: no-repeat;
     margin: 0 auto;
   }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 70px 0;
+
+    li:not(:last-child) {
+      margin-bottom: 20px;
+
+      a {
+        display: block;
+      }
+    }
+  }
 }

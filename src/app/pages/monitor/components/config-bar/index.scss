@@ -1,16 +1,10 @@
 @import './components/group-entities/index';
 
 .monitor-config-bar {
-  position: sticky;
   width: 100%;
-  top: 44px;
   border-bottom: solid 1px #ddd;
   background: white;
   z-index: 2;
-
-  @media (min-width: 768px) {
-    top: 60px;
-  }
 
   .monitor-config-bar-content {
     max-width: 1200px;
