@@ -60,7 +60,7 @@ describe('Dataset form', () => {
   });
 
   it('should possitive feedback when the process finished', async () => {
-    mockGet.mockReturnValueOnce(Promise.resolve({ data: { result: [{}] } }))
+    mockGet.mockReturnValueOnce(Promise.resolve({ data: { result: [{}], lastExecution: { start: '20 min ago', end: '10 min ago', error: 'some-error' } } }))
       .mockReturnValueOnce(Promise.resolve({ data: { result: {} } }));
     mockPost.mockReturnValueOnce(Promise.resolve());
     const wrapper = await shallow(<DatasetForm />);

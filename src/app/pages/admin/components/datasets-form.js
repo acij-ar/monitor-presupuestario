@@ -24,7 +24,10 @@ class DatasetForm extends React.Component {
   async loadInitialState() {
     try {
       const { data } = await axios.get('/api/admin/dataset_job_status');
-      this.setState({ datasets: data.result });
+      this.setState({
+        datasets: data.result,
+        lastExecution: data.lastExecution,
+      });
     } catch(e) {
       setTimeout(this.loadInitialState, 5e3)
     }
@@ -53,6 +56,7 @@ class DatasetForm extends React.Component {
       if (data && data.result) {
         this.setState({
           datasets: data.result,
+          lastExecution: data.lastExecution,
           processingDatasets: false,
           saveSuccessfull: true,
         });
@@ -66,7 +70,7 @@ class DatasetForm extends React.Component {
   }
 
   render() {
-    const {datasets, processingDatasets, updateError, saveSuccessfull} = this.state;
+    const {datasets, processingDatasets, updateError, saveSuccessfull, lastExecution} = this.state;
     const canUpdate = datasets.length && datasets.find(dataset => !dataset.isUpToDate);
     return (
       <div className="monitor-content monitor-admin">
@@ -77,6 +81,11 @@ class DatasetForm extends React.Component {
             <button disabled={processingDatasets} onClick={this.updateDatasets}>
               Actualizar datasets
             </button> : null }
+          { lastExecution && (
+            <p>
+              Ultima actualización: start {lastExecution.start} - end {lastExecution.end} - error? {lastExecution.error}
+            </p>
+          ) }
           <div>
             {processingDatasets && this.state.step}
             {saveSuccessfull && 'Descarga exitosa ✅'}

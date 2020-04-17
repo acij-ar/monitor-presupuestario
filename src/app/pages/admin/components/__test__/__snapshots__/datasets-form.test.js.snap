@@ -67,6 +67,14 @@ exports[`Dataset form should possitive feedback when the process finished 1`] = 
     >
       Actualizar datasets
     </button>
+    <p>
+      Ultima actualización: start 
+      20 min ago
+       - end 
+      10 min ago
+       - error? 
+      some-error
+    </p>
     <div />
   </div>
 </div>

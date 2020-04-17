@@ -19,8 +19,9 @@ describe('Job status controller', () => {
     const mockReq = null;
     const mockRes = { json: jest.fn() };
     mockDatasetUpdater.processing = false;
+    mockDatasetUpdater.lastExecution = 'info-about-last-execution'
     mockDatasetsStats.mockReturnValueOnce(Promise.resolve('some-result-of-the-process'));
     await jobStatusController(mockReq, mockRes);
-    expect(mockRes.json).toHaveBeenCalledWith({ result: 'some-result-of-the-process' });
+    expect(mockRes.json).toHaveBeenCalledWith({ result: 'some-result-of-the-process', lastExecution: 'info-about-last-execution' });
   });
 });
