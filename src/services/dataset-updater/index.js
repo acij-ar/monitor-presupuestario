@@ -16,6 +16,10 @@ class DatasetUpdater {
       return;
     }
     this.processing = true;
+    this.lastExecution = {
+      start: (new Date()).toLocaleString('es-AR'),
+      error: 'no',
+    };
 
     try {
       this.step = 'Descargando (paso 1 de 4)';
@@ -34,9 +38,10 @@ class DatasetUpdater {
     } catch(e) {
       logger.error('Error while trying to update the datasets');
       logger.error(e);
-      // TODO: mark process as errored. (Should be tracking process id?)
+      this.lastExecution.error = e.toString()
     }
 
+    this.lastExecution.end = (new Date()).toLocaleString('es-AR');
     this.processing = false;
     this.step = null;
   }
