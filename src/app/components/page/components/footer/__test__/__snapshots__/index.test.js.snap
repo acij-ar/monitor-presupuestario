@@ -20,7 +20,7 @@ exports[`Footer component should match snapshot 1`] = `
     >
       <img
         alt="ACIJ"
-        src="/static/logo-acij.png"
+        src="/static/logo-acij-small.png"
       />
     </a>
     <a

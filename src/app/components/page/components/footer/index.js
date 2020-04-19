@@ -5,7 +5,7 @@ const Footer = () => (
     <div id="footer-content">
       <span id="acij-initiative">UNA INICIATIVA DE</span>
       <a href="http://acij.org.ar/" target="_blank" rel="noopener noreferrer" id="acij-link">
-        <img src="/static/logo-acij.png" alt="ACIJ"/>
+        <img src="/static/logo-acij-small.png" alt="ACIJ"/>
       </a>
       <a href="https://twitter.com/ACIJargentina" target="_blank" rel="noopener noreferrer" className="social-link">
         <img src="/static/twitter.svg" alt="twitter"/>
