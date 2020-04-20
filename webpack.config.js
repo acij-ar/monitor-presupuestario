@@ -22,6 +22,8 @@ module.exports = {
     about: assetsForPage('about'),
     admin: assetsForPage('admin'),
     login: assetsForPage('login'),
+    doubts: assetsForPage('doubts'),
+    budget: assetsForPage('budget'),
   },
   module: {
     rules: [{

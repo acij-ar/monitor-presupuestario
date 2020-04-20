@@ -8,7 +8,7 @@ const Menu = ({ selectedPage }) => (
 
       <ul id="menu-sections">
         <li>
-          <a href="/" id="menu-link-budget" className={selectedPage === 'budget' ? 'active' : ''}>
+          <a href="/el-presupuesto" id="menu-link-budget" className={selectedPage === 'budget' ? 'active' : ''}>
             El presupuesto
           </a>
         </li>
@@ -23,7 +23,7 @@ const Menu = ({ selectedPage }) => (
           </a>
         </li>
         <li>
-          <a href="/" id="menu-link-doubts" className={selectedPage === 'doubts' ? 'active' : ''}>
+          <a href="/dudas" id="menu-link-doubts" className={selectedPage === 'doubts' ? 'active' : ''}>
             Dudas
           </a>
         </li>
