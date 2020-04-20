@@ -1,3 +1,5 @@
+@import '../../globals';
+
 #menu {
   margin-left: auto;
   flex: 0 0 200px;
@@ -19,17 +21,36 @@
     margin: 0 auto;
   }
 
-  ul {
+  ul#menu-sections {
     list-style: none;
     margin: 0;
     padding: 70px 0;
 
-    li:not(:last-child) {
+    & > li:not(:last-child) {
       margin-bottom: 20px;
+    }
+  }
 
-      a {
-        display: block;
-      }
+  a {
+    display: block;
+
+    &:after {
+      content: '';
+      display: block;
+      background: $green;
+      height: 5px;
+      margin-top: 4px;
+      width: 0;
+      transition: width 200ms;
+    }
+
+    &.active {
+      font-weight: 700;
+    }
+
+    &:hover:after,
+    &.active:after {
+      width: 50px;
     }
   }
 }
