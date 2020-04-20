@@ -6,7 +6,7 @@ const Menu = ({ selectedPage }) => (
     <div id="menu-content">
       <a id="logo" href="/" />
 
-      <ul>
+      <ul id="menu-sections">
         <li>
           <a href="/" id="menu-link-budget" className={selectedPage === 'budget' ? 'active' : ''}>
             El presupuesto
