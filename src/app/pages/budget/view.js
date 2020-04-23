@@ -4,7 +4,32 @@ const PropTypes = require('prop-types');
 
 const App = ({ pageName }) => (
   <Page pageName={pageName}>
-   El presupuesto
+    <div id="budget-main-content">
+
+      <div id="what-is-the-budget">
+        <h1 className="section-title">¿Qué es?</h1>
+        <div className="section-content">
+          <p>
+            El presupuesto del Estado (sea este nacional, provincial, local o municipal) es la mejor manera de conocer las prioridades y compromisos reales de los gobiernos. En él se detalla cómo se planifica generar recursos en un determinado período de tiempo y también cómo se planea usarlos. Cómo, cuándo y cuántos recursos se gastan en cada una de las actividades determina que se alcancen (o no) los objetivos y metas de las distintas políticas públicas, incluídas aquellas determinantes para la garantía de los derechos humanos.
+          </p>
+          <p>
+            Desde el punto de vista de la economía, es usual que se identifiquen tres funciones clave de los presupuestos públicos:
+          </p>
+          <ol>
+            <li>
+              Distribuir recursos para la provisión de bienes y servicios
+            </li>
+            <li>
+              Redistribuir el ingreso y la riqueza
+            </li>
+            <li>
+              Estabilizar la economía.
+            </li>
+          </ol>
+        </div>
+      </div>
+
+    </div>
   </Page>
 );
 

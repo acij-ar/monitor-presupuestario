@@ -1,0 +1,40 @@
+@import '../../components/page/globals';
+
+#budget-main-content {
+  #what-is-the-budget {
+    display: flex;
+
+    .section-title {
+      flex: 0 0 300px;
+      padding-top: 50px;
+      position: relative;
+      color: $purple;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        height: 5px;
+        width: 90%;
+        background: $purple;
+      }
+    }
+
+    .section-content {
+      padding: 50px 0;
+      border-bottom: solid 1px #333;
+      margin-bottom: 50px;
+      line-height: 1.4;
+
+      ol {
+        margin: 0;
+      }
+
+      > :not(:first-child) {
+        margin-top: 1em;
+      }
+    }
+  }
+}
