@@ -49,7 +49,8 @@ const App = ({pageName}) => (
         <li>
           <div>
             <h2>Formulación del Presupuesto.</h2>
-            <p> El Poder Ejecutivo (PEN) envía una propuesta al Congreso el 15 de septiembre de cada año, en donde estima
+            <p> El Poder Ejecutivo (PEN) envía una propuesta al Congreso el 15 de septiembre de cada año, en donde
+              estima
               los recursos, los gastos y la producción de bienes y servicios que requerirá para implementar políticas
               públicas. Esta estimación se hace junto con los Organismos de la Administración Pública Nacional, que
               preparan el anteproyecto, y la Oficina Nacional de Presupuesto, que coordina la formulación final del
@@ -61,7 +62,8 @@ const App = ({pageName}) => (
             <h2>Discusión y aprobación de la Ley</h2>
             <p>El Poder Legislativo es el responsable de discutir el proyecto de ley enviado por el Ejecutivo, realizar
               las
-              modificaciones que le parezcan necesarias, y de aprobar la ley que defina los ingresos y gastos públicos del
+              modificaciones que le parezcan necesarias, y de aprobar la ley que defina los ingresos y gastos públicos
+              del
               año siguiente. Sus pasos son
 
               El proyecto ingresa por la Cámara de Diputadas/os y el debate inicia en la Comisión de Presupuesto y
@@ -70,7 +72,8 @@ const App = ({pageName}) => (
               realizarle modificaciones. Si la Cámara de Diputadas/os dispone aprobar el proyecto de ley, lo remite al
               Senado para su tratamiento.
               El Congreso sanciona la Ley de Presupuesto para el año siguiente.
-              Se transforma en Ley con su promulgación por el Ejecutivo y se publica en el Boletín Oficial. El presupuesto
+              Se transforma en Ley con su promulgación por el Ejecutivo y se publica en el Boletín Oficial. El
+              presupuesto
               aprobado por el Congreso suele denominarse “original” o “sancionado”.</p>
           </div>
         </li>
@@ -89,15 +92,47 @@ const App = ({pageName}) => (
         <li>
           <div>
             <h2>Control y Rendición de cuentas</h2>
-            <p>La ejecución presupuestaria está sujeta a la evaluación realizada por la Oficina Nacional Presupuesto, que
+            <p>La ejecución presupuestaria está sujeta a la evaluación realizada por la Oficina Nacional Presupuesto,
+              que
               analiza trimestralmente si el presupuesto, las actividades y las metas se están implementando tal como
-              fueron diseñadas en la ley de presupuesto, informa el crédito vigente para cada uno de los gastos previstos,
-              cuánto dinero se comprometió y cuánto se ejecutó. La Auditoría General de la Nación lleva adelante controles
-              externos y la Sindicatura General de la Nación y Unidades de Auditoría Interna (UAI) los controles internos
+              fueron diseñadas en la ley de presupuesto, informa el crédito vigente para cada uno de los gastos
+              previstos,
+              cuánto dinero se comprometió y cuánto se ejecutó. La Auditoría General de la Nación lleva adelante
+              controles
+              externos y la Sindicatura General de la Nación y Unidades de Auditoría Interna (UAI) los controles
+              internos
               de la ejecución presupuestaria.</p>
           </div>
         </li>
       </ol>
+
+      <div id="budget-classifications">
+        <h1 className="section-title">Clasificaciones</h1>
+        <div className="section-content">
+          <p>La información presupuestaria contenida en los distintos documentos puede organizarse y clasificarse de
+            muchas formas, que serán más o menos útiles según el análisis que se quiera hacer. Las clasificaciones
+            presupuestarias son formas de agrupar u ordenar los recursos y gastos según diferentes criterios, que
+            responden algunas preguntas básicas: ¿Quién gasta?, ¿En qué se gasta?, ¿Para qué se gasta?, o ¿Dónde se
+            gasta?.</p>
+          <p>El detalle de las clasificaciones se ve en las distintas planillas o tablas, que nos permitirán encontrar
+            con facilidad la información relevante para nuestro análisis. A continuación presentamos las clasificaciones
+            más útiles para conocer rápidamente el presupuesto:</p>
+          <h2>CLASIFICACIÓN DEL GASTO POR CATEGORÍA PROGRAMÁTICA.<br />¿EN QUÉ SE GASTA?</h2>
+          <p>Esta clasificación describe de forma específica los programas o acciones del gobierno. Son propuestas que
+            atienden a una problemática identificada y que tienen objetivos o metas, e insumos determinados. Su análisis
+            permite conocer la asignación de recursos de cada una de las acciones proyectadas en el presupuesto. En
+            orden de magnitud puede tratarse de programas, subprogramas, proyectos, actividades y obras.</p>
+          <h2>CLASIFICACIÓN DEL GASTO POR FINALIDADES Y FUNCIONES.<br />¿PARA QUÉ SE GASTA?</h2>
+          <p>Esta clasificación presenta el gasto público según la naturaleza de los servicios que se brindan a la
+            comunidad, permite identificar los objetivos perseguidos por el gasto público en términos generales y los
+            medios para alcanzarlos. Cuando un gasto tenga potencialmente más de una función, entonces va a clasificarse
+            según la función más relevante o significativa. Esta clasificación (que como siempre tendrá su correlato en
+            una codificación numérica) se organiza en 5 finalidades (identificadas por el primer dígito de la
+            clasificación), y en 30 funciones (identificadas por el segundo dígito). Más información en la sección
+            Acerca De (link a Glosario dentro del Acerca De para conocer todas las finalidades y funciones).</p>
+        </div>
+      </div>
+
 
     </div>
   </Page>

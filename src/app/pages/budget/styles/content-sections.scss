@@ -1,7 +1,8 @@
 @import '../../../components/page/globals';
 
 #what-is-the-budget,
-#budget-cycle {
+#budget-cycle,
+#budget-classifications {
   display: flex;
 
   .section-title {
@@ -41,4 +42,8 @@
   .section-content {
     border-bottom: solid 1px #333;
   }
+}
+
+#budget-classifications h2 {
+  font-size: 1.2em;
 }
