@@ -31,17 +31,32 @@
     }
   }
 
-  a {
+  ul#menu-sections a {
     display: block;
 
     &:after {
       content: '';
       display: block;
-      background: $green;
       height: 5px;
       margin-top: 4px;
       width: 0;
       transition: width 200ms;
+    }
+
+    &#menu-link-budget:after {
+      background: $purple
+    }
+
+    &#menu-link-monitor:after {
+      background: $blue;
+    }
+
+    &#menu-link-about:after {
+      background: $green;
+    }
+
+    &#menu-link-doubts:after {
+      background: $violet;
     }
 
     &.active {
