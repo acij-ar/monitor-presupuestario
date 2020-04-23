@@ -1,0 +1,41 @@
+@import '../../../../components/page/globals';
+
+li > div {
+  background: #fafafa;
+  padding-top: 5px;
+  padding-left: 80px;
+  font-size: 80%;
+  line-height: 1.5;
+  position: relative;
+
+  h2 {
+    margin: 0 0 5px 0;
+  }
+}
+
+li > div:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fafafa;
+  text-shadow: 1px 1px 2px $blue, -1px -1px 2px $blue, -1px 1px 2px $blue, 1px -1px 2px $blue;
+}
+
+li:nth-child(1) > div:before {
+  content: '1'
+}
+
+li:nth-child(2) > div:before {
+  content: '2'
+}
+
+li:nth-child(3) > div:before {
+  content: '3'
+}
+
+li:nth-child(4) > div:before {
+  content: '4'
+}

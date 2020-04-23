@@ -1,0 +1,44 @@
+@import '../../../components/page/globals';
+
+#what-is-the-budget,
+#budget-cycle {
+  display: flex;
+
+  .section-title {
+    flex: 0 0 300px;
+    padding-top: 50px;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      height: 5px;
+      width: 90%;
+      background: $purple;
+    }
+  }
+
+  .section-content {
+    padding: 50px 0;
+    line-height: 1.4;
+
+    ol {
+      margin: 0;
+    }
+
+    > :not(:first-child) {
+      margin-top: 1em;
+    }
+  }
+}
+
+#what-is-the-budget {
+  margin-bottom: 50px;
+
+  .section-content {
+    border-bottom: solid 1px #333;
+  }
+}
