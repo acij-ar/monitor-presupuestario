@@ -4,7 +4,9 @@ const PropTypes = require('prop-types');
 const Menu = ({ selectedPage }) => (
   <div id="menu">
     <div id="menu-content">
-      <a id="logo" href="/" />
+      <a href="/">
+        <img id="logo" src="/static/logo.png" alt="Monitor Presupuestario" title="Monitor Presupuestario" />
+      </a>
 
       <ul id="menu-sections">
         <li>
