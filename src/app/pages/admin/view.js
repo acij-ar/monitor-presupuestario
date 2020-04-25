@@ -1,10 +1,9 @@
 const React = require('react');
 const Page = require('../../components/page');
-const TextsForm = require('./components/texts-form');
 const DatasetForm = require('./components/datasets-form');
 const PropTypes = require('prop-types');
 
-const App = ({ texts, pageName }) => (
+const App = ({ pageName }) => (
   <Page pageName={pageName}>
     <div className="monitor-highlight">
       <div className="monitor-content">
@@ -12,12 +11,10 @@ const App = ({ texts, pageName }) => (
       </div>
     </div>
     <DatasetForm />
-    <TextsForm texts={texts}/>
   </Page>
 );
 
 App.propTypes = {
-  texts: PropTypes.object.isRequired,
   pageName: PropTypes.string.isRequired,
 };
 

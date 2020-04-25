@@ -2,8 +2,6 @@ const React = require('react');
 const mockView = () => <div id="mock-page" />;
 jest.mock('../view', () => mockView);
 
-jest.mock('../../../../services/texts', () => ({ content: { about: { mock: 'content' } } }));
-
 const aboutController = require('..');
 
 describe('About page controller', () => {
@@ -15,7 +13,6 @@ describe('About page controller', () => {
     aboutController(mockReq, mockRes, mockNext);
     expect(mockNext).toHaveBeenCalledTimes(1);
     expect(mockRes.locals.View).toBe(mockView);
-    expect(mockRes.locals.props).toEqual({ mock: 'content'});
     expect(mockRes.locals.pageName).toBe('about');
   });
 });

@@ -1,4 +1,3 @@
-jest.mock('../components/texts-form', () => () => <div id="texts-form" />);
 jest.mock('../components/datasets-form', () => () => <div id="datasets-form" />);
 
 const React = require('react');
@@ -10,7 +9,6 @@ describe('Admin page', () => {
   it('should match snapshot', () => {
     const props = {
       pageName: 'admin',
-      texts: { mock: 'tetxs-for-the-admin' },
     };
     const wrapper = shallow(<Admin {...props}/>);
     expect(wrapper).toMatchSnapshot();

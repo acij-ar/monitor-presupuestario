@@ -16,12 +16,5 @@ exports[`Admin page should match snapshot 1`] = `
     </div>
   </div>
   <Component />
-  <Component
-    texts={
-      Object {
-        "mock": "tetxs-for-the-admin",
-      }
-    }
-  />
 </Page>
 `;
