@@ -79,18 +79,6 @@ const App = ({pageName}) => (
         </li>
         <li>
           <div>
-            <h2>Ejecución Presupuestaria</h2>
-            <p> El Poder Ejecutivo es el encargado de ejecutar el presupuesto sancionado por el Congreso. Las
-              reasignaciones o modificaciones presupuestarias durante su ejecución sólo puede realizarlas el Poder
-              Legislativo, de conformidad con el principio de división de poderes, que le otorga al Congreso la función
-              exclusiva de legislar y fijar anualmente el presupuesto nacional. Sin embargo, el PEN suele incumplir la
-              Constitución, modificar el presupuesto y no implementarlo tal como fue aprobado, sin ninguna consecuencia.
-              El Monitoreo Presupuestario nos permite por lo menos tener una visión clara de estos cambios y levantar la
-              voz al respecto. </p>
-          </div>
-        </li>
-        <li>
-          <div>
             <h2>Control y Rendición de cuentas</h2>
             <p>La ejecución presupuestaria está sujeta a la evaluación realizada por la Oficina Nacional Presupuesto,
               que
@@ -102,6 +90,18 @@ const App = ({pageName}) => (
               externos y la Sindicatura General de la Nación y Unidades de Auditoría Interna (UAI) los controles
               internos
               de la ejecución presupuestaria.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h2>Ejecución Presupuestaria</h2>
+            <p> El Poder Ejecutivo es el encargado de ejecutar el presupuesto sancionado por el Congreso. Las
+              reasignaciones o modificaciones presupuestarias durante su ejecución sólo puede realizarlas el Poder
+              Legislativo, de conformidad con el principio de división de poderes, que le otorga al Congreso la función
+              exclusiva de legislar y fijar anualmente el presupuesto nacional. Sin embargo, el PEN suele incumplir la
+              Constitución, modificar el presupuesto y no implementarlo tal como fue aprobado, sin ninguna consecuencia.
+              El Monitoreo Presupuestario nos permite por lo menos tener una visión clara de estos cambios y levantar la
+              voz al respecto. </p>
           </div>
         </li>
       </ol>
