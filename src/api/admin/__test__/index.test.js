@@ -8,14 +8,12 @@ jest.mock('express', () => ({
 }));
 jest.mock('../controllers/login', () => 'login-controller');
 jest.mock('../controllers/require-login', () => 'require-login-middleware');
-jest.mock('../controllers/update-texts', () => 'update-texts-controller');
 jest.mock('../controllers/job-status', () => 'job-status-controller');
 jest.mock('../controllers/update-datasets', () => 'update-dataset-controller');
 
 describe('Admin api router', () => {
   it('should register admin api controllers and middlewares', () => {
     require('..');
-    expect(mockRouterPost).toHaveBeenCalledWith('/texts', 'require-login-middleware', 'update-texts-controller');
     expect(mockRouterPost).toHaveBeenCalledWith('/update_datasets', 'require-login-middleware', 'update-dataset-controller');
     expect(mockRouterGet).toHaveBeenCalledWith('/dataset_job_status', 'require-login-middleware', 'job-status-controller');
     expect(mockRouterPost).toHaveBeenCalledWith('/login', 'login-controller');
