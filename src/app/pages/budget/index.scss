@@ -5,6 +5,8 @@
     color: $purple;
   }
 
-  @import './styles/content-sections';
-  @import './styles/budget-steps/index';
+  @import './components/index';
+  @import './components/what-is-the-budget/index';
+  @import './components/budget-steps/index';
+  @import './components/budget-classifications/index';
 }
