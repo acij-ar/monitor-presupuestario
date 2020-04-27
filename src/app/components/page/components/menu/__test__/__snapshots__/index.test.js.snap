@@ -1,0 +1,245 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu component should match snapshot for active page about 1`] = `
+<div
+  id="menu"
+>
+  <div
+    id="menu-content"
+  >
+    <a
+      href="/"
+    >
+      <img
+        alt="Monitor Presupuestario"
+        id="logo"
+        src="/static/logo.png"
+        title="Monitor Presupuestario"
+      />
+    </a>
+    <ul
+      id="menu-sections"
+    >
+      <li>
+        <a
+          className=""
+          href="/el-presupuesto"
+          id="menu-link-budget"
+        >
+          El presupuesto
+        </a>
+      </li>
+      <li>
+        <a
+          className=""
+          href="/monitor"
+          id="menu-link-monitor"
+        >
+          Monitor
+        </a>
+      </li>
+      <li>
+        <a
+          className="active"
+          href="/acerca-de"
+          id="menu-link-about"
+        >
+          Acerca de
+        </a>
+      </li>
+      <li>
+        <a
+          className=""
+          href="/dudas"
+          id="menu-link-doubts"
+        >
+          Dudas
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Menu component should match snapshot for active page budget 1`] = `
+<div
+  id="menu"
+>
+  <div
+    id="menu-content"
+  >
+    <a
+      href="/"
+    >
+      <img
+        alt="Monitor Presupuestario"
+        id="logo"
+        src="/static/logo.png"
+        title="Monitor Presupuestario"
+      />
+    </a>
+    <ul
+      id="menu-sections"
+    >
+      <li>
+        <a
+          className="active"
+          href="/el-presupuesto"
+          id="menu-link-budget"
+        >
+          El presupuesto
+        </a>
+      </li>
+      <li>
+        <a
+          className=""
+          href="/monitor"
+          id="menu-link-monitor"
+        >
+          Monitor
+        </a>
+      </li>
+      <li>
+        <a
+          className=""
+          href="/acerca-de"
+          id="menu-link-about"
+        >
+          Acerca de
+        </a>
+      </li>
+      <li>
+        <a
+          className=""
+          href="/dudas"
+          id="menu-link-doubts"
+        >
+          Dudas
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Menu component should match snapshot for active page doubts 1`] = `
+<div
+  id="menu"
+>
+  <div
+    id="menu-content"
+  >
+    <a
+      href="/"
+    >
+      <img
+        alt="Monitor Presupuestario"
+        id="logo"
+        src="/static/logo.png"
+        title="Monitor Presupuestario"
+      />
+    </a>
+    <ul
+      id="menu-sections"
+    >
+      <li>
+        <a
+          className=""
+          href="/el-presupuesto"
+          id="menu-link-budget"
+        >
+          El presupuesto
+        </a>
+      </li>
+      <li>
+        <a
+          className=""
+          href="/monitor"
+          id="menu-link-monitor"
+        >
+          Monitor
+        </a>
+      </li>
+      <li>
+        <a
+          className=""
+          href="/acerca-de"
+          id="menu-link-about"
+        >
+          Acerca de
+        </a>
+      </li>
+      <li>
+        <a
+          className="active"
+          href="/dudas"
+          id="menu-link-doubts"
+        >
+          Dudas
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Menu component should match snapshot for active page monitor 1`] = `
+<div
+  id="menu"
+>
+  <div
+    id="menu-content"
+  >
+    <a
+      href="/"
+    >
+      <img
+        alt="Monitor Presupuestario"
+        id="logo"
+        src="/static/logo.png"
+        title="Monitor Presupuestario"
+      />
+    </a>
+    <ul
+      id="menu-sections"
+    >
+      <li>
+        <a
+          className=""
+          href="/el-presupuesto"
+          id="menu-link-budget"
+        >
+          El presupuesto
+        </a>
+      </li>
+      <li>
+        <a
+          className="active"
+          href="/monitor"
+          id="menu-link-monitor"
+        >
+          Monitor
+        </a>
+      </li>
+      <li>
+        <a
+          className=""
+          href="/acerca-de"
+          id="menu-link-about"
+        >
+          Acerca de
+        </a>
+      </li>
+      <li>
+        <a
+          className=""
+          href="/dudas"
+          id="menu-link-doubts"
+        >
+          Dudas
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

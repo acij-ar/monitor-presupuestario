@@ -6,14 +6,37 @@ exports[`Page component should match snapshot 1`] = `
     id="main"
     key="main"
   >
-    <Menu
+    <Component
       selectedPage="mocked-page"
     />
     <div
       id="page-content"
     />
   </div>
-  <Footer
+  <Component
+    key="footer"
+  />
+</Fragment>
+`;
+
+exports[`Page component should match snapshot with children 1`] = `
+<Fragment>
+  <div
+    id="main"
+    key="main"
+  >
+    <Component
+      selectedPage="mocked-page"
+    />
+    <div
+      id="page-content"
+    >
+      <div>
+        Children test component
+      </div>
+    </div>
+  </div>
+  <Component
     key="footer"
   />
 </Fragment>
