@@ -1,11 +1,9 @@
-@import '../../../components/page/globals';
+@import '../page/globals';
 
-#what-is-the-budget,
-#budget-cycle,
-#budget-classifications {
+.content-section {
   display: flex;
 
-  .section-title {
+  .content-section-title {
     flex: 0 0 300px;
     padding-top: 50px;
     position: relative;
@@ -18,21 +16,15 @@
       display: block;
       height: 5px;
       width: 90%;
-      background: $purple;
     }
   }
 
-  .section-content {
+  .content-section-content {
     padding: 50px 0;
     line-height: 1.4;
-
-    ol {
-      margin: 0;
-    }
 
     > :not(:first-child) {
       margin-top: 1em;
     }
   }
 }
-

@@ -1,11 +1,15 @@
 @import '../../components/page/globals';
+@import '../../components/content-section/index';
 
 #budget-main-content {
   h1, h2 {
     color: $purple;
   }
 
-  @import './components/index';
+  .content-section-title:before {
+    background: $purple;
+  }
+
   @import './components/what-is-the-budget/index';
   @import './components/budget-steps/index';
   @import './components/budget-classifications/index';
