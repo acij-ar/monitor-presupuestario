@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Doubt component should match snapshot 1`] = `
+<div
+  className="doubt"
+>
+  <label>
+    <input
+      defaultChecked={false}
+      name="doubts"
+      type="radio"
+    />
+    <ContentSection
+      title="Mocked doubt title"
+    >
+      Mocked doubt content
+    </ContentSection>
+  </label>
+</div>
+`;
