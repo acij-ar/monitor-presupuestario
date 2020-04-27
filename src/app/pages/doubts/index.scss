@@ -5,10 +5,8 @@
     color: $violet;
   }
 
-  .content-section-title:before {
-    background: $violet;
-  }
-
-
   @import './components/main-content/index';
+  @import './components/doubt/index';
+  @import './components/doubts/index';
+
 }

@@ -1,0 +1,23 @@
+@import '../../../../components/content-section/index';
+
+.doubt {
+  input {
+    display: none;
+  }
+
+  .content-section {
+    border-top: solid 3px $violet;
+
+    .content-section-title:before {
+      content: none;
+    }
+
+    .content-section-content {
+      display: none;
+    }
+  }
+
+  input:checked + .content-section .content-section-content {
+    display: block;
+  }
+}
