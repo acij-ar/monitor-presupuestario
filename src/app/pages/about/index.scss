@@ -1,87 +1,13 @@
-.monitor-highlight h1 {
-  margin: 0;
-}
+@import '../../components/content-section/index';
 
-.monitor-about-radio-button {
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-}
-
-.monitor-about-menu {
-  padding: 12px;
-  color: #777;
-
-  label {
-    cursor: pointer;
-    display: inline-block;
-    padding: 0 0 12px 0;
-    margin: 0 12px 0 0;
-    border-bottom: solid 1px #ccc;
-
-    &:hover {
-      color: #333;
-      border-bottom-color: #333;
-    }
-  }
-}
-
-#monitor-about-presupuesto:checked ~ .monitor-about-menu > [for="monitor-about-presupuesto"],
-#monitor-about-metodologia:checked ~ .monitor-about-menu > [for="monitor-about-metodologia"],
-#monitor-about-publicacion:checked ~ .monitor-about-menu > [for="monitor-about-publicacion"],
-#monitor-about-glosario:checked ~ .monitor-about-menu > [for="monitor-about-glosario"] {
-  color: #333;
-  border-bottom-color: #333;
-}
-
-.monitor-about-bugdet,
-.monitor-about-metodologia,
-.monitor-about-publicacion,
-.monitor-about-glosario {
-  display: none;
-  padding: 12px 12px 32px 12px;
-  color: #333;
-
-  p {
-    margin-bottom: 12px;
+#about-main-content {
+  h1, h2 {
+    color: $green;
   }
 
-  ul {
-    margin: 12px 0;
-    list-style: none;
-    padding: 0;
-
-    li {
-      margin-bottom: 12px;
-      position: relative;
-      padding: 0 0 0 12px;
-
-      &:before {
-        content: '';
-        border-radius: 50%;
-        width: 5px;
-        height: 5px;
-        background: #fe01df;
-        position: absolute;
-        left: 3px;
-        top: 6px;
-      }
-    }
+  .content-section-title:before {
+    background: $green;
   }
-}
 
-#monitor-about-presupuesto:checked ~ .monitor-about-bugdet {
-  display: block;
-}
-
-#monitor-about-metodologia:checked ~ .monitor-about-metodologia {
-  display: block;
-}
-
-#monitor-about-publicacion:checked ~ .monitor-about-publicacion {
-  display: block;
-}
-
-#monitor-about-glosario:checked ~ .monitor-about-glosario {
-  display: block;
+  @import './components/main-content/index';
 }
