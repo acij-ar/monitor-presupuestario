@@ -1,0 +1,9 @@
+@import '../../../../components/content-section/index';
+
+#about-acij {
+  border-top: solid 3px $green;
+
+  .content-section-title:before {
+    content: none;
+  }
+}

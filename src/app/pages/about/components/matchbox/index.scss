@@ -1,0 +1,14 @@
+@import '../../../../components/content-section/index';
+
+#about-matchbox {
+  border-top: solid 3px $green;
+  margin-bottom: 50px;
+
+  .content-section-content {
+    border-bottom: solid 1px #333;
+  }
+
+  .content-section-title:before {
+    content: none;
+  }
+}
