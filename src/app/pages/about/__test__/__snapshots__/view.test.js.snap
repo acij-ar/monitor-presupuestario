@@ -4,6 +4,13 @@ exports[`About page should match snapshot 1`] = `
 <Page
   pageName="about"
 >
-  Acerca de
+  <div
+    id="about-main-content"
+  >
+    <AboutMainContent />
+    <AboutACIJ />
+    <AboutMatchbox />
+    <AboutMethodology />
+  </div>
 </Page>
 `;
