@@ -20,4 +20,8 @@
   input:checked + .content-section .content-section-content {
     display: block;
   }
+
+  input:not(:checked) + .content-section {
+    cursor: pointer;
+  }
 }
