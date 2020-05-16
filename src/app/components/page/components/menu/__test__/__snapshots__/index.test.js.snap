@@ -13,7 +13,7 @@ exports[`Menu component should match snapshot for active page about 1`] = `
       <img
         alt="Monitor Presupuestario"
         id="logo"
-        src="/static/logo.png"
+        src="/static/logo.svg"
         title="Monitor Presupuestario"
       />
     </a>
@@ -74,7 +74,7 @@ exports[`Menu component should match snapshot for active page budget 1`] = `
       <img
         alt="Monitor Presupuestario"
         id="logo"
-        src="/static/logo.png"
+        src="/static/logo.svg"
         title="Monitor Presupuestario"
       />
     </a>
@@ -135,7 +135,7 @@ exports[`Menu component should match snapshot for active page doubts 1`] = `
       <img
         alt="Monitor Presupuestario"
         id="logo"
-        src="/static/logo.png"
+        src="/static/logo.svg"
         title="Monitor Presupuestario"
       />
     </a>
@@ -196,7 +196,7 @@ exports[`Menu component should match snapshot for active page monitor 1`] = `
       <img
         alt="Monitor Presupuestario"
         id="logo"
-        src="/static/logo.png"
+        src="/static/logo.svg"
         title="Monitor Presupuestario"
       />
     </a>

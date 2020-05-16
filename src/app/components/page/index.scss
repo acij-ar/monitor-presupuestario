@@ -17,15 +17,17 @@ body, #root {
 
   main {
     flex-grow: 1;
-    padding-bottom: 50px;
-    display: flex;
+    padding: 0 50px 50px 50px;
+
+    #main-content {
+      display: flex;
+      max-width: 1340px;
+      margin: 0 auto;
+    }
 
     #page-content {
-      margin-right: auto;
-      flex-grow: 1;
-      max-width: 1000px;
-      padding-right: 20px;
-      padding-top: 140px;
+      flex: 0 0 83%;
+      padding-top: 180px;
     }
 
     @import './components/menu/index';

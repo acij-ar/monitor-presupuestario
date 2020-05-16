@@ -14,9 +14,11 @@ class Page extends React.Component {
     return (
       <React.Fragment>
         <main>
-          <Menu selectedPage={pageName}/>
-          <div id="page-content">
-            {children}
+          <div id="main-content">
+            <Menu selectedPage={pageName}/>
+            <div id="page-content">
+              {children}
+            </div>
           </div>
         </main>
         <Footer/>

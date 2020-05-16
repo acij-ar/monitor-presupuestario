@@ -5,7 +5,7 @@ const Menu = ({ selectedPage }) => (
   <div id="menu">
     <div id="menu-content">
       <a href="/">
-        <img id="logo" src="/static/logo.png" alt="Monitor Presupuestario" title="Monitor Presupuestario" />
+        <img id="logo" src="/static/logo.svg" alt="Monitor Presupuestario" title="Monitor Presupuestario" />
       </a>
 
       <ul id="menu-sections">

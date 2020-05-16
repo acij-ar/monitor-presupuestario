@@ -2,17 +2,17 @@
 
 #menu {
   margin-left: auto;
-  flex: 0 0 (100% / 12 * 3);
+  flex: 0 0 17%;
 
   #menu-content {
     position: sticky;
     top: 0;
-    padding: 20px;
+    padding-top: 70px;
   }
 
   #logo {
     display: inline-block;
-    height: 50px;
+    height: 62px;
   }
 
   ul#menu-sections {

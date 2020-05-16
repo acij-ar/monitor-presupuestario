@@ -3,12 +3,16 @@
 exports[`Page component should match snapshot 1`] = `
 <Fragment>
   <main>
-    <Component
-      selectedPage="mocked-page"
-    />
     <div
-      id="page-content"
-    />
+      id="main-content"
+    >
+      <Component
+        selectedPage="mocked-page"
+      />
+      <div
+        id="page-content"
+      />
+    </div>
   </main>
   <Component />
 </Fragment>
@@ -17,14 +21,18 @@ exports[`Page component should match snapshot 1`] = `
 exports[`Page component should match snapshot with children 1`] = `
 <Fragment>
   <main>
-    <Component
-      selectedPage="mocked-page"
-    />
     <div
-      id="page-content"
+      id="main-content"
     >
-      <div>
-        Children test component
+      <Component
+        selectedPage="mocked-page"
+      />
+      <div
+        id="page-content"
+      >
+        <div>
+          Children test component
+        </div>
       </div>
     </div>
   </main>
