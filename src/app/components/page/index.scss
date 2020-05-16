@@ -17,7 +17,7 @@ body, #root {
 
   main {
     flex-grow: 1;
-    padding: 0 50px 50px 50px;
+    padding: 0 3.5% 50px 3.5%;
 
     #main-content {
       display: flex;
@@ -26,7 +26,7 @@ body, #root {
     }
 
     #page-content {
-      flex: 0 0 83%;
+      flex-basis: 83%;
       padding-top: 180px;
     }
 

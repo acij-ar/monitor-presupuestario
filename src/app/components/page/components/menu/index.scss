@@ -2,23 +2,23 @@
 
 #menu {
   margin-left: auto;
-  flex: 0 0 17%;
+  flex-basis: 17%;
 
   #menu-content {
     position: sticky;
     top: 0;
-    padding-top: 70px;
+    padding-top: 30%;
   }
 
   #logo {
     display: inline-block;
-    height: 62px;
+    width: 85%;
   }
 
   ul#menu-sections {
     list-style: none;
     margin: 0;
-    padding: 70px 0;
+    padding: 66% 0;
 
     & > li:not(:last-child) {
       margin-bottom: 20px;
