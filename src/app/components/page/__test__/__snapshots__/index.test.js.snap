@@ -2,29 +2,21 @@
 
 exports[`Page component should match snapshot 1`] = `
 <Fragment>
-  <div
-    id="main"
-    key="main"
-  >
+  <main>
     <Component
       selectedPage="mocked-page"
     />
     <div
       id="page-content"
     />
-  </div>
-  <Component
-    key="footer"
-  />
+  </main>
+  <Component />
 </Fragment>
 `;
 
 exports[`Page component should match snapshot with children 1`] = `
 <Fragment>
-  <div
-    id="main"
-    key="main"
-  >
+  <main>
     <Component
       selectedPage="mocked-page"
     />
@@ -35,9 +27,7 @@ exports[`Page component should match snapshot with children 1`] = `
         Children test component
       </div>
     </div>
-  </div>
-  <Component
-    key="footer"
-  />
+  </main>
+  <Component />
 </Fragment>
 `;

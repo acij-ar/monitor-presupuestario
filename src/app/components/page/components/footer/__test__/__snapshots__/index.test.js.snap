@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer component should match snapshot 1`] = `
-<div
-  id="footer"
->
+<footer>
   <div
     id="footer-content"
   >
@@ -57,5 +55,5 @@ exports[`Footer component should match snapshot 1`] = `
       />
     </a>
   </div>
-</div>
+</footer>
 `;

@@ -13,13 +13,13 @@ class Page extends React.Component {
     const {children, pageName} = this.props;
     return (
       <React.Fragment>
-        <div id="main" key="main">
-          <Menu selectedPage={pageName} />
+        <main>
+          <Menu selectedPage={pageName}/>
           <div id="page-content">
             {children}
           </div>
-        </div>
-        <Footer key="footer"/>
+        </main>
+        <Footer/>
       </React.Fragment>
     );
   }

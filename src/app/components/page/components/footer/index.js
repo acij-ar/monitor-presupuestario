@@ -1,7 +1,7 @@
 const React = require('react');
 
 const Footer = () => (
-  <div id="footer">
+  <footer>
     <div id="footer-content">
       <span id="acij-initiative">UNA INICIATIVA DE</span>
       <a href="http://acij.org.ar/" target="_blank" rel="noopener noreferrer" id="acij-link">
@@ -17,7 +17,7 @@ const Footer = () => (
         <img src="/static/github.svg" alt="github"/>
       </a>
     </div>
-  </div>
+  </footer>
 );
 
 module.exports = Footer;
