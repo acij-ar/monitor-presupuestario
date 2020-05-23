@@ -10,8 +10,8 @@
 
   @import './circle.scss';
 
-  li {
-    width: 45%;
+  > li {
+    width: 50%;
     box-sizing: border-box;
 
     &:before {
