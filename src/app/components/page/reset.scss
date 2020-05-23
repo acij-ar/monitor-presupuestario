@@ -20,3 +20,8 @@ h1, h2, h3, h4 {
 ol {
   margin: 0;
 }
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
