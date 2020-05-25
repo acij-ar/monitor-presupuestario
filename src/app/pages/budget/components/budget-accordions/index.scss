@@ -1,0 +1,56 @@
+@import '../../../../components/page/globals';
+
+.budget-accordion {
+  input {
+    position: fixed;
+    top: -999px;
+    left: -999px;
+  }
+
+  label {
+    display: block;
+    background: #FF00E1;
+    color: white;
+    font-size: 40px;
+    border-bottom: 4px solid white;
+    padding: 10px;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+      background: darken($purple, 5%);
+    }
+  }
+
+  .content-section {
+    display: none;
+  }
+
+  input:checked ~ .content-section {
+    display: flex;
+    border-top: solid 4px $purple;
+  }
+
+  input:checked ~ label {
+    display: none;
+  }
+
+ .content-section-title {
+   &:before {
+     content: none;
+   }
+
+   h2 {
+     background: #FF00E1;
+     color: white;
+     display: inline;
+     font-size: 30px;
+   }
+
+   h3 {
+     font-size: 21px;
+     line-height: 25px;
+     margin: 8px 0 1em 0;
+   }
+ }
+}

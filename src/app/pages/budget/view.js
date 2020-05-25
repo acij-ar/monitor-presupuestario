@@ -5,6 +5,9 @@ const WhatIsTheBudget = require('./components/what-is-the-budget');
 const BudgetCycle = require('./components/budget-cycle');
 const BudgetSteps = require('./components/budget-steps');
 const BudgetClassifications = require('./components/budget-classifications');
+const BudgetSpentAccordion = require('./components/budget-accordions/budget-spent');
+const BudgetWhatForAccordion = require('./components/budget-accordions/budget-what-for');
+const BudgetWhoAccordion = require('./components/budget-accordions/budget-who');
 
 const App = ({pageName}) => (
   <Page pageName={pageName}>
@@ -13,6 +16,9 @@ const App = ({pageName}) => (
       <BudgetCycle />
       <BudgetSteps />
       <BudgetClassifications />
+      <BudgetSpentAccordion />
+      <BudgetWhatForAccordion />
+      <BudgetWhoAccordion />
     </div>
   </Page>
 );
