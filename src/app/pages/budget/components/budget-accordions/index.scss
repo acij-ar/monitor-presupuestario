@@ -23,11 +23,15 @@
   }
 
   .content-section {
-    display: none;
+    transition: max-height 400ms;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
   }
 
   input:checked ~ .content-section {
-    display: flex;
+    opacity: 1;
+    max-height: 50em;
     border-top: solid 4px $purple;
   }
 
