@@ -7,6 +7,8 @@
     flex: 0 0 31%;
     padding: 50px 20px 50px 0;
     position: relative;
+    font-size: 40px;
+    line-height: 43px;
 
     &:before {
       content: '';
@@ -21,7 +23,8 @@
 
   .content-section-content {
     padding: 50px 0;
-    line-height: 1.4;
+    font-size: 21px;
+    line-height: 40px;
 
     > :not(:first-child) {
       margin-top: 1em;
