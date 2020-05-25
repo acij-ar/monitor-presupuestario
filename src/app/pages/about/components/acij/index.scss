@@ -3,6 +3,10 @@
 #about-acij {
   border-top: solid 3px $green;
 
+  h1 {
+    font-size: 20px;
+  }
+
   .content-section-title:before {
     content: none;
   }
