@@ -9,6 +9,7 @@ const BudgetSpentAccordion = require('./components/budget-accordions/budget-spen
 const BudgetWhatForAccordion = require('./components/budget-accordions/budget-what-for');
 const BudgetWhoAccordion = require('./components/budget-accordions/budget-who');
 const BudgetInflation = require('./components/budget-inflation');
+const BudgetAnalysis = require('./components/budget-analysis');
 
 const App = ({pageName}) => (
   <Page pageName={pageName}>
@@ -21,6 +22,7 @@ const App = ({pageName}) => (
       <BudgetWhatForAccordion />
       <BudgetWhoAccordion />
       <BudgetInflation />
+      <BudgetAnalysis />
     </div>
   </Page>
 );
