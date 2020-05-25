@@ -3,14 +3,13 @@ const ContentSection = require('../../../../components/content-section');
 
 const AboutACIJ = () => (
   <ContentSection id="about-acij" title="ACIJ">
-    <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
-      type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-      remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
-      of Lorem Ipsum.
-    </p>
+    <p>La Asociación Civil por la Igualdad y la Justicia (ACIJ) es una organización apartidaria, sin fines de lucro,
+      dedicada a la defensa de los derechos de los grupos más desfavorecidos de la sociedad y el fortalecimiento de la
+      democracia en Argentina.</p>
+    <p>Fundada en 2002, ACIJ tiene por objetivos defender la efectiva vigencia de la Constitución Nacional y los
+      principios del estado de derecho, promover el cumplimiento de las leyes que protegen a los grupos desaventajados y
+      la erradicación de toda práctica discriminatoria, así como también contribuir al desarrollo de prácticas
+      participativas y deliberativas de la democracia.</p>
   </ContentSection>
 );
 
