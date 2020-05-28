@@ -11,7 +11,10 @@ const ContentSection = ({title, children, ...props}) => (
 );
 
 ContentSection.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
+  ]).isRequired,
   children: PropTypes.node.isRequired,
 }
 
