@@ -13,12 +13,16 @@
     }
 
     .content-section-content {
-      display: none;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 500ms;
     }
   }
 
   input:checked + .content-section .content-section-content {
-    display: block;
+    opacity: 1;
+    max-height: 50em;
   }
 
   input:not(:checked) + .content-section {

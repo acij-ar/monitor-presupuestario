@@ -5,7 +5,7 @@ const ContentSection = require('../../../../components/content-section');
 const Doubt = ({title, checked, children}) => (
   <div className="doubt">
     <label>
-      <input type="radio" name="doubts" defaultChecked={checked} />
+      <input type="checkbox" defaultChecked={checked} />
       <ContentSection title={title}>
         {children}
       </ContentSection>
