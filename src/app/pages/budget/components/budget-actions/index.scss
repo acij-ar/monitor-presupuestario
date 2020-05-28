@@ -1,0 +1,36 @@
+@import '../../../../components/page/globals';
+
+#budget-actions {
+  border-top: $blue solid 4px;
+  margin: 50px 0;
+
+  h1 {
+    margin: 30px 0;
+    color: $blue;
+    font-size: 49px;
+  }
+
+  a {
+    cursor: pointer;
+    font-size: 27px;
+    display: inline-block;
+    border: solid 2px;
+    padding: 10px 30px;
+    margin-right: 30px;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  #budget-explore-link {
+    color: white;
+    background: $blue;
+    border-color: $blue;
+  }
+
+  #budget-compare-link {
+    border-color: $violet;
+    color: $violet;
+  }
+}

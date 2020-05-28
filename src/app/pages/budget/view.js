@@ -12,6 +12,7 @@ const BudgetChart = require('./components/budget-chart');
 const BudgetInflation = require('./components/budget-inflation');
 const BudgetAnalysis = require('./components/budget-analysis');
 const BudgetExampleAnalysis = require('./components/budget-example-analysis');
+const BudgetActions = require('./components/budget-actions');
 
 const App = ({pageName}) => (
   <Page pageName={pageName}>
@@ -27,6 +28,7 @@ const App = ({pageName}) => (
       <BudgetInflation />
       <BudgetAnalysis />
       <BudgetExampleAnalysis />
+      <BudgetActions />
     </div>
   </Page>
 );
