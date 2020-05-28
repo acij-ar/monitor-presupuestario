@@ -2,7 +2,11 @@ const React = require('react');
 const BudgetAccordion = require('./accordion');
 
 const BudgetWho = () => (
-  <BudgetAccordion smallTitle="¿QUIÉN GASTA?" longTitle="CLASIFICACIÓN INSTITUCIONAL.">
+  <BudgetAccordion
+    id="budget-who"
+    smallTitle="¿QUIÉN GASTA?"
+    longTitle="CLASIFICACIÓN INSTITUCIONAL."
+  >
     <p>En esta clasificación se organizan los gastos según la estructura del gobierno, y de acuerdo con las
       instituciones y áreas responsables de la ejecución. Las instituciones y áreas se organizan según distintos
       criterios y a cada uno de ellos se les asigna un código numérico. Hay varios niveles que identifican con precisión

@@ -2,10 +2,10 @@ const React = require('react');
 const ContentSection = require('../../../../components/content-section');
 const PropTypes = require('prop-types');
 
-const BudgetAccordion = ({longTitle, smallTitle, children}) => (
-  <div className="budget-accordion">
-    <input id={smallTitle} type="checkbox" />
-    <label htmlFor={smallTitle}>{smallTitle}</label>
+const BudgetAccordion = ({id, longTitle, smallTitle, children}) => (
+  <div id={id} className="budget-accordion">
+    <input id={`${id}_checkbox`} type="checkbox" />
+    <label htmlFor={`${id}_checkbox`}>{smallTitle}</label>
     <ContentSection
       title={(
         <div>
@@ -20,6 +20,7 @@ const BudgetAccordion = ({longTitle, smallTitle, children}) => (
 );
 
 BudgetAccordion.propTypes = {
+  id: PropTypes.string.isRequired,
   longTitle: PropTypes.string.isRequired,
   smallTitle: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,

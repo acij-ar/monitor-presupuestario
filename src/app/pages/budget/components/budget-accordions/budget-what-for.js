@@ -2,7 +2,11 @@ const React = require('react');
 const BudgetAccordion = require('./accordion');
 
 const BudgetWhatFor = () => (
-  <BudgetAccordion smallTitle="¿PARA QUÉ SE GASTA?" longTitle="CLASIFICACIÓN DEL GASTO POR FINALIDADES Y FUNCIONES.">
+  <BudgetAccordion
+    id="budget-what-for"
+    smallTitle="¿PARA QUÉ SE GASTA?"
+    longTitle="CLASIFICACIÓN DEL GASTO POR FINALIDADES Y FUNCIONES."
+  >
     <p>Esta clasificación presenta el gasto público según la naturaleza de los servicios que se brindan a la
       comunidad, permite identificar los objetivos perseguidos por el gasto público en términos generales y los medios
       para alcanzarlos.</p>
