@@ -1,41 +1,71 @@
 @import '../../../globals';
 
-& {
+a {
+  cursor: pointer;
+}
+
+& > a {
   position: relative;
+  padding-bottom: 20px;
+
+  &:after {
+    content: '';
+    display: block;
+    height: 5px;
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 0;
+    transition: width 200ms;
+  }
+
+  &:hover:after,
+  &.active:after {
+    width: 50px;
+  }
+
+  &.active {
+    font-weight: 900;
+  }
+
 }
 
-&:after {
-  content: '';
-  display: block;
-  height: 5px;
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 0;
-  transition: width 200ms;
+& > #menu-link-budget {
+  &:after {
+    background: $purple;
+  }
+
+  & + ul a:hover {
+    color: $purple;
+  }
 }
 
-&:hover:after,
-&.active:after {
-  width: 50px;
+& > #menu-link-monitor {
+  &:after {
+    background: $blue;
+  }
+
+  & + ul a:hover {
+    color: $blue;
+  }
 }
 
-&#menu-link-budget:after {
-  background: $purple
+& > #menu-link-about {
+  &:after {
+    background: $green;
+  }
+
+  & + ul a:hover {
+    color: $green;
+  }
 }
 
-&#menu-link-monitor:after {
-  background: $blue;
-}
+& > #menu-link-doubts {
+  &:after {
+    background: $violet;
+  }
 
-&#menu-link-about:after {
-  background: $green;
-}
-
-&#menu-link-doubts:after {
-  background: $violet;
-}
-
-&.active {
-  font-weight: 900;
+  & + ul a:hover {
+    color: $violet;
+  }
 }

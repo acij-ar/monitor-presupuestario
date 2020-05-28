@@ -17,17 +17,16 @@
 
   ul#menu-sections {
     float: right;
-    list-style: none;
-    margin: 0;
-    padding: 0;
     line-height: 42px;
 
-    li {
+    & > li {
       display: inline-block;
       margin-left: 2em;
 
-      a {
-        @import './link-border';
+      @import './link-border';
+
+      a + ul {
+        display: none;
       }
     }
   }

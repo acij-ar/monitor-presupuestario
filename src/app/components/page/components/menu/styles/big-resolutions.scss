@@ -14,17 +14,28 @@
   }
 
   ul#menu-sections {
-    list-style: none;
-    margin: 0;
     padding: 66% 0;
 
-    a {
-      display: block;
+    & > li {
       @import './link-border';
-    }
 
-    li:not(:last-child) {
-      margin-bottom: 2em;
+      a {
+        display: block;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 1.5em;
+      }
+
+      a + ul {
+        display: none;
+      }
+
+      a.active + ul {
+        display: block;
+        font-size: 10px;
+        line-height: 2em;
+      }
     }
   }
 }

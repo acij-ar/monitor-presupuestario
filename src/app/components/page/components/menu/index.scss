@@ -1,5 +1,11 @@
 #menu {
   font-size: 13.66px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 @media (max-width: 599px) {
