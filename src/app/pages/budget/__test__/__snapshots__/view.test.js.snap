@@ -11,6 +11,14 @@ exports[`Budget page should match snapshot 1`] = `
     <BudgetCycle />
     <BudgetSteps />
     <BudgetClassifications />
+    <BudgetSpent />
+    <BudgetWhatFor />
+    <BudgetWho />
+    <BudgetChart />
+    <BudgetInflation />
+    <BudgetAnalysis />
+    <BudgetExampleAnalysis />
+    <BudgetActions />
   </div>
 </Page>
 `;

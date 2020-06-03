@@ -28,6 +28,44 @@ exports[`Menu component should match snapshot for active page about 1`] = `
         >
           El presupuesto
         </a>
+        <SubMenu
+          pageSections={
+            Array [
+              Object {
+                "id": "what-is-the-budget",
+                "name": "¿Qué es?",
+              },
+              Object {
+                "id": "budget-cycle",
+                "name": "El ciclo del presupuesto",
+              },
+              Object {
+                "id": "budget-classifications",
+                "name": "Clasificaciones",
+              },
+              Object {
+                "id": "budget-spent",
+                "name": "¿En qué se gasta?",
+              },
+              Object {
+                "id": "budget-what-for",
+                "name": "¿Para qué se gasta?",
+              },
+              Object {
+                "id": "budget-who",
+                "name": "¿Quién gasta?",
+              },
+              Object {
+                "id": "budget-inflation",
+                "name": "Ajuste de inflación",
+              },
+              Object {
+                "id": "budget-analysis",
+                "name": "Análisis presupuestario",
+              },
+            ]
+          }
+        />
       </li>
       <li>
         <a
@@ -37,6 +75,9 @@ exports[`Menu component should match snapshot for active page about 1`] = `
         >
           Monitor
         </a>
+        <SubMenu
+          pageSections={Array []}
+        />
       </li>
       <li>
         <a
@@ -46,6 +87,28 @@ exports[`Menu component should match snapshot for active page about 1`] = `
         >
           Acerca de
         </a>
+        <SubMenu
+          pageSections={
+            Array [
+              Object {
+                "id": "about-main-content",
+                "name": "El Monitor Presupuestario",
+              },
+              Object {
+                "id": "about-acij",
+                "name": "ACIJ",
+              },
+              Object {
+                "id": "about-matchbox",
+                "name": "Matchbox",
+              },
+              Object {
+                "id": "about-methodology",
+                "name": "Metodología",
+              },
+            ]
+          }
+        />
       </li>
       <li>
         <a
@@ -89,6 +152,44 @@ exports[`Menu component should match snapshot for active page budget 1`] = `
         >
           El presupuesto
         </a>
+        <SubMenu
+          pageSections={
+            Array [
+              Object {
+                "id": "what-is-the-budget",
+                "name": "¿Qué es?",
+              },
+              Object {
+                "id": "budget-cycle",
+                "name": "El ciclo del presupuesto",
+              },
+              Object {
+                "id": "budget-classifications",
+                "name": "Clasificaciones",
+              },
+              Object {
+                "id": "budget-spent",
+                "name": "¿En qué se gasta?",
+              },
+              Object {
+                "id": "budget-what-for",
+                "name": "¿Para qué se gasta?",
+              },
+              Object {
+                "id": "budget-who",
+                "name": "¿Quién gasta?",
+              },
+              Object {
+                "id": "budget-inflation",
+                "name": "Ajuste de inflación",
+              },
+              Object {
+                "id": "budget-analysis",
+                "name": "Análisis presupuestario",
+              },
+            ]
+          }
+        />
       </li>
       <li>
         <a
@@ -98,6 +199,9 @@ exports[`Menu component should match snapshot for active page budget 1`] = `
         >
           Monitor
         </a>
+        <SubMenu
+          pageSections={Array []}
+        />
       </li>
       <li>
         <a
@@ -107,6 +211,28 @@ exports[`Menu component should match snapshot for active page budget 1`] = `
         >
           Acerca de
         </a>
+        <SubMenu
+          pageSections={
+            Array [
+              Object {
+                "id": "about-main-content",
+                "name": "El Monitor Presupuestario",
+              },
+              Object {
+                "id": "about-acij",
+                "name": "ACIJ",
+              },
+              Object {
+                "id": "about-matchbox",
+                "name": "Matchbox",
+              },
+              Object {
+                "id": "about-methodology",
+                "name": "Metodología",
+              },
+            ]
+          }
+        />
       </li>
       <li>
         <a
@@ -150,6 +276,44 @@ exports[`Menu component should match snapshot for active page doubts 1`] = `
         >
           El presupuesto
         </a>
+        <SubMenu
+          pageSections={
+            Array [
+              Object {
+                "id": "what-is-the-budget",
+                "name": "¿Qué es?",
+              },
+              Object {
+                "id": "budget-cycle",
+                "name": "El ciclo del presupuesto",
+              },
+              Object {
+                "id": "budget-classifications",
+                "name": "Clasificaciones",
+              },
+              Object {
+                "id": "budget-spent",
+                "name": "¿En qué se gasta?",
+              },
+              Object {
+                "id": "budget-what-for",
+                "name": "¿Para qué se gasta?",
+              },
+              Object {
+                "id": "budget-who",
+                "name": "¿Quién gasta?",
+              },
+              Object {
+                "id": "budget-inflation",
+                "name": "Ajuste de inflación",
+              },
+              Object {
+                "id": "budget-analysis",
+                "name": "Análisis presupuestario",
+              },
+            ]
+          }
+        />
       </li>
       <li>
         <a
@@ -159,6 +323,9 @@ exports[`Menu component should match snapshot for active page doubts 1`] = `
         >
           Monitor
         </a>
+        <SubMenu
+          pageSections={Array []}
+        />
       </li>
       <li>
         <a
@@ -168,6 +335,28 @@ exports[`Menu component should match snapshot for active page doubts 1`] = `
         >
           Acerca de
         </a>
+        <SubMenu
+          pageSections={
+            Array [
+              Object {
+                "id": "about-main-content",
+                "name": "El Monitor Presupuestario",
+              },
+              Object {
+                "id": "about-acij",
+                "name": "ACIJ",
+              },
+              Object {
+                "id": "about-matchbox",
+                "name": "Matchbox",
+              },
+              Object {
+                "id": "about-methodology",
+                "name": "Metodología",
+              },
+            ]
+          }
+        />
       </li>
       <li>
         <a
@@ -211,6 +400,44 @@ exports[`Menu component should match snapshot for active page monitor 1`] = `
         >
           El presupuesto
         </a>
+        <SubMenu
+          pageSections={
+            Array [
+              Object {
+                "id": "what-is-the-budget",
+                "name": "¿Qué es?",
+              },
+              Object {
+                "id": "budget-cycle",
+                "name": "El ciclo del presupuesto",
+              },
+              Object {
+                "id": "budget-classifications",
+                "name": "Clasificaciones",
+              },
+              Object {
+                "id": "budget-spent",
+                "name": "¿En qué se gasta?",
+              },
+              Object {
+                "id": "budget-what-for",
+                "name": "¿Para qué se gasta?",
+              },
+              Object {
+                "id": "budget-who",
+                "name": "¿Quién gasta?",
+              },
+              Object {
+                "id": "budget-inflation",
+                "name": "Ajuste de inflación",
+              },
+              Object {
+                "id": "budget-analysis",
+                "name": "Análisis presupuestario",
+              },
+            ]
+          }
+        />
       </li>
       <li>
         <a
@@ -220,6 +447,9 @@ exports[`Menu component should match snapshot for active page monitor 1`] = `
         >
           Monitor
         </a>
+        <SubMenu
+          pageSections={Array []}
+        />
       </li>
       <li>
         <a
@@ -229,6 +459,28 @@ exports[`Menu component should match snapshot for active page monitor 1`] = `
         >
           Acerca de
         </a>
+        <SubMenu
+          pageSections={
+            Array [
+              Object {
+                "id": "about-main-content",
+                "name": "El Monitor Presupuestario",
+              },
+              Object {
+                "id": "about-acij",
+                "name": "ACIJ",
+              },
+              Object {
+                "id": "about-matchbox",
+                "name": "Matchbox",
+              },
+              Object {
+                "id": "about-methodology",
+                "name": "Metodología",
+              },
+            ]
+          }
+        />
       </li>
       <li>
         <a

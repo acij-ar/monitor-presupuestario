@@ -7,8 +7,7 @@ exports[`Doubt component should match snapshot 1`] = `
   <label>
     <input
       defaultChecked={false}
-      name="doubts"
-      type="radio"
+      type="checkbox"
     />
     <ContentSection
       title="Mocked doubt title"
