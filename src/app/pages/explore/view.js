@@ -1,10 +1,11 @@
 const React = require('react');
 const Page = require('../../components/page');
 const PropTypes = require('prop-types');
+const MonitorMainSection = require('../../components/monitor/main-section');
 
 const App = ({ pageName }) => (
   <Page pageName={pageName}>
-    Explorar
+    <MonitorMainSection selectedSection="explore" />
   </Page>
 );
 
