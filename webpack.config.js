@@ -18,7 +18,8 @@ module.exports = {
   entry: {
     page: [path.resolve(__dirname, 'src/app/components/page/index.scss')],
     home: assetsForPage('home'),
-    monitor: assetsForPage('monitor'),
+    explore: assetsForPage('explore'),
+    compare: assetsForPage('compare'),
     about: assetsForPage('about'),
     admin: assetsForPage('admin'),
     login: assetsForPage('login'),
