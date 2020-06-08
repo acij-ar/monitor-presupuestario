@@ -14,16 +14,14 @@ const redirectIfLoggedIn = require('./controllers/redirect-if-logged-in');
 
 const router = express.Router();
 
-router.get('/', home);
+router.get('/', home, render);
 router.get('/monitor', (req, res) => res.redirect('/monitor/explorar'));
-router.get('/monitor/explorar', explore);
-router.get('/monitor/comparar', compare);
-router.get('/acerca-de', about);
-router.get('/admin', authenticate, admin);
-router.get('/login', redirectIfLoggedIn, login);
-router.get('/dudas', doubts);
-router.get('/el-presupuesto', budget);
-
-router.use(render);
+router.get('/monitor/explorar', explore, render);
+router.get('/monitor/comparar', compare, render);
+router.get('/acerca-de', about, render);
+router.get('/admin', authenticate, admin, render);
+router.get('/login', redirectIfLoggedIn, login, render);
+router.get('/dudas', doubts, render);
+router.get('/el-presupuesto', budget, render);
 
 module.exports = router;
