@@ -10,9 +10,9 @@ const openAccordion = (id) => {
 
 const SubMenu = ({pageSections}) => (
   <ul>
-    {pageSections.map(({name, id}) => (
+    {pageSections.map(({name, id, href}) => (
       <li key={id}>
-        <a href={`#${id}`} onClick={() => openAccordion(id)}>
+        <a href={href || `#${id}`} onClick={() => openAccordion(id)}>
           {name}
         </a>
       </li>

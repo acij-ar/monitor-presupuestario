@@ -14,7 +14,8 @@ const submenus = {
     { name: 'Análisis presupuestario', id: 'budget-analysis' },
   ],
   monitor: [
-    // TODO
+    { name: 'Explorar', id: 'explore-menu-link', href: '/monitor/explorar' },
+    { name: 'Comparar', id: 'compare-menu-link', href: '/monitor/comparar' },
   ],
   about: [
     { name: 'El Monitor Presupuestario', id: 'about-main-content' },
@@ -39,7 +40,7 @@ const Menu = ({ selectedPage }) => (
           <SubMenu pageSections={submenus.budget} />
         </li>
         <li>
-          <a href="/monitor" id="menu-link-monitor" className={selectedPage === 'monitor' ? 'active' : ''}>
+          <a href="/monitor" id="menu-link-monitor" className={['compare', 'explore'].includes(selectedPage) ? 'active' : ''}>
             Monitor
           </a>
           <SubMenu pageSections={submenus.monitor} />
