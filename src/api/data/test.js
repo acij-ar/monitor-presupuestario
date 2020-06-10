@@ -102,15 +102,47 @@ module.exports = async (req, res, next) => {
       value: 29
     });
 
-    //output
     res.json({
-      entidades: Array.from(entidades),
-      jurisdicciones: Array.from(jurisdicciones),
-      programas: Array.from(programas),
-      proyectos: Array.from(proyectos),
-      actividades: Array.from(actividades),
-      data: sunburst_data
-    });
+      chart: {
+        height: '100%'
+      },
+
+      title: {
+        text: 'Explorar Presupuesto'
+      },
+      subtitle : {
+        text :'Crédito Presupuestado'
+      },
+      series: [{
+        type: "sunburst",
+        data: sunburst_data,
+        allowDrillToNode: true,
+        cursor: 'pointer',
+        dataLabels: {
+          format: '{point.label}',
+          rotationMode: 'circular'
+        },
+        levels: [{
+          level: 1,
+          color: "#97addd"
+        },
+          {
+            level:2,
+            color : "#b8cdca",
+
+          },
+          {
+            level:3,
+            color : "#e46e6e",
+
+          }]
+
+      }],
+      tooltip: {
+        headerFormat: "",
+        pointFormat: '{point.name}: <b>{point.value}M</b>'
+      }
+    })
 
   } catch (e) {
     console.log(e);
@@ -118,3 +150,4 @@ module.exports = async (req, res, next) => {
   }
 
 };
+

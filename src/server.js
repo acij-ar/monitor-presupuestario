@@ -22,10 +22,8 @@ app.use(morgan('dev'));
 
 const clientFolderPath = path.join(__dirname, '..', 'dist');
 const staticFolderPath = path.join(__dirname, '..', 'public');
-const testFolderPath = __dirname+'/public_tests';
 app.use('/static', express.static(clientFolderPath, {maxAge: '1y', immutable: true}));
 app.use('/static', express.static(staticFolderPath, {maxAge: '1y', immutable: true}));
-app.use('/tests', express.static(testFolderPath, {maxAge: '1y', immutable: true}));
 
 const manifestPath = path.join(__dirname, '..', 'dist', 'manifest.json');
 const manifestMiddleware = manifestHelpers({ manifestPath });
