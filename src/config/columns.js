@@ -1,4 +1,4 @@
-// TODO: not sure if all uses of the credito_* columns should come from here
+// TODO: probably this should die after data management refactor
 
 module.exports = [
   {

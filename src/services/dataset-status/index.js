@@ -1,3 +1,5 @@
+// TODO: probably this folder should die after data management refactor
+
 const files = require('../../config/files');
 const GoogleDriveClient = require('../google-drive-client');
 const fileStatus = require('./file-status');

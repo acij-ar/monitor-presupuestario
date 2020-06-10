@@ -1,3 +1,5 @@
+// TODO: probably this folder should die after data management refactor
+
 const csv2json = require('../csv-to-json');
 const dbUpdater = require('../db-updater');
 const updateOriginalBudget = require('../update-original-budget');

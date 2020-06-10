@@ -1,3 +1,5 @@
+// TODO: probably this folder should die after data management refactor
+
 const elasticlunr = require('elasticlunr');
 const db = require('../db');
 const normalizeName = require('../../utils/normalize-name');

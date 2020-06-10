@@ -1,3 +1,5 @@
+// TODO: probably this folder should die after data management refactor
+
 const _ = require('lodash');
 
 const updateLabelsWithYearsAndTableName = ({results}) => {

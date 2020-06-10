@@ -1,3 +1,5 @@
+// TODO: probably this folder should die after data management refactor
+
 const createTables = require('../db/management/create-tables');
 const deleteTables = require('../db/management/delete-tables');
 const fs = require('fs');

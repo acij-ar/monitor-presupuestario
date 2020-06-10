@@ -1,3 +1,5 @@
+// TODO: probably this folder should die after data management refactor
+
 const {datasets} = require('../../config');
 const dataset2Object = require('./dataset-to-object');
 const fs = require('fs');
