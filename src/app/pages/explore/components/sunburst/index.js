@@ -19,11 +19,9 @@ class Sunburst extends React.Component {
 
   render() {
     return (
-      <figure className="highcharts-figure">
+      <div id="sunburst-chart">
         { this.state.data ? <ReactHighcharts config={this.state.data}/> : null }
-        <p className="highcharts-description">
-        </p>
-      </figure>
+      </div>
     )
   }
 }
