@@ -1,20 +1,11 @@
 const React = require('react');
-const axios = require('axios');
+const Chart = require('../../../../components/chart');
 const ReactHighcharts = require('react-highcharts');
 
-class Sunburst extends React.Component {
+class Sunburst extends Chart {
   constructor(props) {
     super(props);
-    this.state = {};
-  }
-
-  componentDidMount() {
-    this.downloadChartData();
-  }
-
-  downloadChartData() {
-    axios.get('/api/data/test.json')
-      .then(({ data }) => this.setState({ data }));
+    this.dataUrl = '/api/data/test.json';
   }
 
   render() {
