@@ -1,0 +1,12 @@
+#monitor-explorer {
+  display: flex;
+  flex-direction: column;
+
+  .monitor-explorer-chart-row {
+    display: flex;
+
+    & > * {
+      flex: 0 0 50%;
+    }
+  }
+}

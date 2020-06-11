@@ -1,5 +1,5 @@
 const React = require('react');
-const Chart = require('../../../../components/chart');
+const Chart = require('../../../../../../components/chart');
 const ReactHighcharts = require('react-highcharts');
 
 class Sunburst extends Chart {
