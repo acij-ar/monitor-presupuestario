@@ -1,0 +1,51 @@
+@import '../../../../../../../components/page/globals.scss';
+
+.entity-selector-wrapper {
+  flex: 0 0 20%;
+  padding-right: 35px;
+
+  select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    display: block;
+    width: 100%;
+    font-size: 17px;
+    font-weight: 400;
+    margin: 10px 0;
+    padding: 10px 0;
+    border: none;
+    border-bottom: solid 2px;
+    box-shadow: none;
+    background: transparent;
+    outline: none;
+
+    &#entity-form-jurisdiccion {
+      color: $jurisdiccion;
+      border-bottom-color: $jurisdiccion;
+    }
+
+    &#entity-form-entidad {
+      color: $entidad;
+      border-bottom-color: $entidad;
+    }
+
+    &#entity-form-programa {
+      color: $program;
+      border-bottom-color: $program;
+    }
+
+    &#entity-form-actividad {
+      color: $activity;
+      border-bottom-color: $activity;
+    }
+
+    &#entity-form-funcion {
+      color: $function;
+      border-bottom-color: $function;
+    }
+  }
+
+}
+

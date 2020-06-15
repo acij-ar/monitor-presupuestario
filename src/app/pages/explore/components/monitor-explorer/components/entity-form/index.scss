@@ -30,4 +30,9 @@
       flex: 0 0 20%;
     }
   }
+
+  #monitor-explore-selectors {
+    display: flex;
+    @import './selector/index';
+  }
 }

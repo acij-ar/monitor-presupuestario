@@ -2,7 +2,7 @@ const React = require('react');
 const Chart = require('../../../../../../components/chart');
 const ReactHighcharts = require('react-highcharts');
 
-class Sunburst extends Chart {
+class EntitySunburst extends Chart {
   constructor(props) {
     super(props);
     this.dataUrl = '/api/data/test.json';
@@ -17,4 +17,4 @@ class Sunburst extends Chart {
   }
 }
 
-module.exports = Sunburst;
+module.exports = EntitySunburst;
