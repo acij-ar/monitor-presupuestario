@@ -21,6 +21,8 @@ const EntityForm = () => (
       <EntitySelector id="entity-form-actividad" name="Actividad" options={[{}]} />
       <EntitySelector id="entity-form-funcion" name="Función" options={[{}]} />
     </div>
+    <div id="monitor-settings-selectors">
+    </div>
   </div>
 )
 

@@ -2,8 +2,8 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 const Selector = ({ id, name, options }) => (
-  <div className="entity-selector-wrapper">
-    <select id={id}>
+  <div className="entity-selector-wrapper" id={id}>
+    <select id={`${id}-select`}>
       <option disabled selected>{name}</option>
       {
         options.map(({ name: optionName }) => (
