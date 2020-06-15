@@ -11,7 +11,6 @@ const Layout = ({ children, scripts, styles, componentProps }) => (
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
 
     { styles.map(href => <link key={href} rel="stylesheet" href={`/static/${href}`} />) }
-    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700,900&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="root">{ children }</div>
