@@ -1,5 +1,5 @@
 const React = require('react');
-const EntityForm = require('./components/entity-form');
+const ExploreForm = require('./components/explore-form');
 const EntitySunburst = require('./components/entity-sunburst');
 const EntityDetail = require('./components/entity-detail');
 const EntityHierarchy = require('./components/entity-hierarchy');
@@ -8,7 +8,7 @@ const EntityTimeseries = require('./components/entity-timeseries');
 
 const MonitorExplorer = () => (
   <div id="monitor-explorer">
-    <EntityForm />
+    <ExploreForm />
     <div className="monitor-explorer-chart-row">
       <EntityDetail />
       <EntitySunburst />

@@ -1,0 +1,39 @@
+.selector-wrapper {
+  display: inline-block;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    border-bottom: solid 2px;
+    border-right: solid 2px;
+    transform: translateY(-50%) translateY(-4px) rotate(45deg);
+  }
+
+  select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    display: block;
+    color: inherit;
+    width: 100%;
+    font-size: 17px;
+    font-weight: 400;
+    margin: 10px 0;
+    padding: 10px 30px 10px 0;
+    border: none;
+    border-bottom: solid 2px;
+    box-shadow: none;
+    background: transparent;
+    outline: none;
+    text-overflow: ellipsis;
+  }
+
+  @import './specific-colors';
+}
+

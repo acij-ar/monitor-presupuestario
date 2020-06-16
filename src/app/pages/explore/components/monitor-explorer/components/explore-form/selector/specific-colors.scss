@@ -1,0 +1,64 @@
+@import '../../../../../../../components/page/globals.scss';
+
+&#entity-form-jurisdiccion {
+  color: $jurisdiccion;
+  &:after {
+    border-color: $jurisdiccion;
+  }
+  select {
+    border-bottom-color: $jurisdiccion;
+  }
+}
+
+&#entity-form-entidad {
+  color: $entidad;
+  &:after {
+    border-color: $entidad;
+  }
+  select {
+    border-bottom-color: $entidad;
+  }
+}
+
+&#entity-form-programa {
+  color: $program;
+  &:after {
+    border-color: $program;
+  }
+  select {
+    border-bottom-color: $program;
+  }
+}
+
+&#entity-form-actividad {
+  color: $activity;
+  &:after {
+    border-color: $activity;
+  }
+  select {
+    border-bottom-color: $activity;
+  }
+}
+
+&#entity-form-funcion {
+  color: $function;
+  &:after {
+    border-color: $function;
+  }
+  select {
+    border-bottom-color: $function;
+  }
+}
+
+&#setting-form-years,
+&#setting-form-budgets,
+&#setting-form-inlfation {
+  color: $blue;
+  &:after {
+    border-color: $blue;
+  }
+  select {
+    border: solid 2px $blue;
+    padding-left: 10px;
+  }
+}
