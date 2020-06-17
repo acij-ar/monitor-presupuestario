@@ -1,10 +1,10 @@
 const express = require('express');
 const testDataController = require('./test');
-const entitiesController = require('./entities');
+const optionsController = require('./options');
 
 const router = express.Router();
 
 router.get('/test.json', testDataController);
-router.get('/entities', entitiesController);
+router.get('/options', optionsController);
 
 module.exports = router;
