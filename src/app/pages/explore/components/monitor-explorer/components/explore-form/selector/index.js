@@ -6,8 +6,8 @@ const Selector = ({ id, name, options }) => (
     <select id={`${id}-select`}>
       <option disabled selected>{name}</option>
       {
-        options.map(({ name: optionName }) => (
-          <option key={optionName}>{optionName}</option>
+        options && options.map(({ name: optionName, value }) => (
+          <option key={optionName} value={value}>{optionName}</option>
         ))
       }
     </select>

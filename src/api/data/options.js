@@ -21,11 +21,11 @@ const getEntities = async () => {
   })
 
   return {
-    jurisdicciones: Array.from(jurisdicciones).map(convertToOption),
-    entidades: Array.from(entidades).map(convertToOption),
-    programas: Array.from(programas).map(convertToOption),
-    actividades: Array.from(actividades).map(convertToOption),
-    funciones: Array.from(funciones).map(convertToOption),
+    jurisdictions: Array.from(jurisdicciones).map(convertToOption),
+    entities: Array.from(entidades).map(convertToOption),
+    programs: Array.from(programas).map(convertToOption),
+    activities: Array.from(actividades).map(convertToOption),
+    functions: Array.from(funciones).map(convertToOption),
   }
 };
 
