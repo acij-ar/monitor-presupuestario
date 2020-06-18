@@ -4,6 +4,21 @@ const axios = require('axios');
 
 const { useEffect, useState } = React;
 
+const getMostRecentYear = (options) => {
+  if (!options || options.length === 0) return null;
+  return options.sort((a, b) => b.value - a.value)[0].value;
+}
+
+const getDefaultBudget = (options) => {
+  if (!options || options.length === 0) return null;
+  return 'Original';
+}
+
+const getDefaultInflation = (options) => {
+  if (!options || options.length === 0) return null;
+  return 'Ajustado'
+}
+
 const ExploreForm = () => {
   const [options, setOptions] = useState({});
   const fetchData = async () => {
@@ -48,7 +63,7 @@ const ExploreForm = () => {
           name="Años disponibles"
           options={options.years}
           onChange={e => updateSelected({ year: e.target.value})}
-          value={selected.year}
+          value={selected.year || getMostRecentYear(options.years)}
         />
       </div>
       <div id="monitor-explore-selector-labels-what">
@@ -72,14 +87,14 @@ const ExploreForm = () => {
           name="Tipos de presup."
           options={options.budgets}
           onChange={e => updateSelected({ budget: e.target.value})}
-          value={selected.budget}
+          value={selected.budget || getDefaultBudget(options.budgets)}
         />
         <Selector
           id="setting-form-inlfation"
-          name="Ajus. por inflación"
+          name="Ajuste por inflación"
           options={options.inflation}
           onChange={e => updateSelected({ inflation: e.target.value})}
-          value={selected.inflation}
+          value={selected.inflation || getDefaultInflation(options.inflation)}
         />
       </div>
     </div>

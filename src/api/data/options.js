@@ -41,7 +41,7 @@ const getOptions = async () => {
   return {
     ...entities,
     budgets: ['Original', 'Vigente', 'Devengado'].map(convertToOption),
-    inflation: ['Ajustada', 'Sin ajustar'].map(convertToOption),
+    inflation: ['Ajustado', 'Sin ajustar'].map(convertToOption),
     years: await getYears(),
   }
 };
