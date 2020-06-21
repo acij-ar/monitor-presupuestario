@@ -2,8 +2,6 @@ const mockRegister = jest.fn();
 jest.mock('@babel/register', () => mockRegister);
 const mockPolyfill = jest.fn();
 jest.mock('@babel/polyfill', () => mockPolyfill());
-const mockCreateTables = jest.fn();
-jest.mock('../services/db/management/create-tables', () => mockCreateTables);
 
 const mockUse = jest.fn();
 const mockListen = jest.fn();
@@ -32,10 +30,6 @@ describe('Server script', () => {
   it('should include babel dependencies', () => {
     expect(mockRegister).toHaveBeenCalledTimes(1);
     expect(mockPolyfill).toHaveBeenCalledTimes(1);
-  });
-
-  it('should initiaize db', () => {
-    expect(mockCreateTables).toHaveBeenCalledTimes(1);
   });
 
   it('should register static folders', () => {

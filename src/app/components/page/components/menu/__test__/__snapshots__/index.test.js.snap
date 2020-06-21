@@ -76,7 +76,20 @@ exports[`Menu component should match snapshot for active page about 1`] = `
           Monitor
         </a>
         <SubMenu
-          pageSections={Array []}
+          pageSections={
+            Array [
+              Object {
+                "href": "/monitor/explorar",
+                "id": "explore-menu-link",
+                "name": "Explorar",
+              },
+              Object {
+                "href": "/monitor/comparar",
+                "id": "compare-menu-link",
+                "name": "Comparar",
+              },
+            ]
+          }
         />
       </li>
       <li>
@@ -200,7 +213,20 @@ exports[`Menu component should match snapshot for active page budget 1`] = `
           Monitor
         </a>
         <SubMenu
-          pageSections={Array []}
+          pageSections={
+            Array [
+              Object {
+                "href": "/monitor/explorar",
+                "id": "explore-menu-link",
+                "name": "Explorar",
+              },
+              Object {
+                "href": "/monitor/comparar",
+                "id": "compare-menu-link",
+                "name": "Comparar",
+              },
+            ]
+          }
         />
       </li>
       <li>
@@ -324,7 +350,20 @@ exports[`Menu component should match snapshot for active page doubts 1`] = `
           Monitor
         </a>
         <SubMenu
-          pageSections={Array []}
+          pageSections={
+            Array [
+              Object {
+                "href": "/monitor/explorar",
+                "id": "explore-menu-link",
+                "name": "Explorar",
+              },
+              Object {
+                "href": "/monitor/comparar",
+                "id": "compare-menu-link",
+                "name": "Comparar",
+              },
+            ]
+          }
         />
       </li>
       <li>
@@ -441,14 +480,27 @@ exports[`Menu component should match snapshot for active page monitor 1`] = `
       </li>
       <li>
         <a
-          className="active"
+          className=""
           href="/monitor"
           id="menu-link-monitor"
         >
           Monitor
         </a>
         <SubMenu
-          pageSections={Array []}
+          pageSections={
+            Array [
+              Object {
+                "href": "/monitor/explorar",
+                "id": "explore-menu-link",
+                "name": "Explorar",
+              },
+              Object {
+                "href": "/monitor/comparar",
+                "id": "compare-menu-link",
+                "name": "Comparar",
+              },
+            ]
+          }
         />
       </li>
       <li>

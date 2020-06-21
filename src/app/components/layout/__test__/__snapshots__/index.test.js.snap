@@ -29,10 +29,6 @@ exports[`Layout component should match snapshot 1`] = `
       key="http://style.css"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css?family=Rubik:400,500,700,900&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <div

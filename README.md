@@ -1,5 +1,7 @@
 # [monitorpresupuestario.acij.org.ar](http://monitorpresupuestario.acij.org.ar/)
 
+<!-- TODO: actualizar readme antes de cerrar el rediseño -->
+
 ## Estructura de carpetas
 
 ```

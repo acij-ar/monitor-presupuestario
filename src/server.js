@@ -1,9 +1,6 @@
 require('@babel/register')();
 require('@babel/polyfill');
 
-const createTables = require('./services/db/management/create-tables');
-createTables();
-
 const logger = require('./utils/logger');
 const express = require('express');
 const cookieParser = require('cookie-parser');

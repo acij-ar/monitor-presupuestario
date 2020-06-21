@@ -8,7 +8,6 @@ jest.mock('express', () => ({
   json: () => 'json-middleware',
 }));
 jest.mock('../admin', () => 'admin-router');
-jest.mock('../db', () => 'db-router');
 jest.mock('../ping-controller', () => 'ping-controller');
 
 describe('Api main router', () => {
@@ -16,7 +15,6 @@ describe('Api main router', () => {
     require('..');
     expect(mockRouterUse).toHaveBeenCalledWith('json-middleware');
     expect(mockRouterUse).toHaveBeenCalledWith('/admin', 'admin-router');
-    expect(mockRouterUse).toHaveBeenCalledWith('/db', 'db-router');
     expect(mockRouterGet).toHaveBeenCalledWith('/ping', 'ping-controller');
   });
 });
