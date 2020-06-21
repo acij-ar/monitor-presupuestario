@@ -2,21 +2,6 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const Selector = require('./selector');
 
-const getMostRecentYear = (options) => {
-  if (!options || options.length === 0) return null;
-  return options.sort((a, b) => b.value - a.value)[0].value;
-}
-
-const getDefaultBudget = (options) => {
-  if (!options || options.length === 0) return null;
-  return 'Original';
-}
-
-const getDefaultInflation = (options) => {
-  if (!options || options.length === 0) return null;
-  return 'Ajustado'
-}
-
 const ExploreForm = ({ options, updateSelected, selected }) => (
   <div id="monitor-explore-selector">
     <div id="monitor-explore-selector-labels-who">
@@ -50,7 +35,7 @@ const ExploreForm = ({ options, updateSelected, selected }) => (
         name="Años disponibles"
         options={options.years}
         onChange={e => updateSelected({ year: e.target.value})}
-        value={selected.year || getMostRecentYear(options.years)}
+        value={selected.year}
       />
     </div>
     <div id="monitor-explore-selector-labels-what">
@@ -74,14 +59,14 @@ const ExploreForm = ({ options, updateSelected, selected }) => (
         name="Tipos de presup."
         options={options.budgets}
         onChange={e => updateSelected({ budget: e.target.value})}
-        value={selected.budget || getDefaultBudget(options.budgets)}
+        value={selected.budget}
       />
       <Selector
         id="setting-form-inlfation"
         name="Ajuste por inflación"
         options={options.inflation}
         onChange={e => updateSelected({ inflation: e.target.value})}
-        value={selected.inflation || getDefaultInflation(options.inflation)}
+        value={selected.inflation}
       />
     </div>
   </div>
@@ -94,7 +79,7 @@ ExploreForm.propTypes = {
     entity: PropTypes.string,
     program: PropTypes.string,
     activity: PropTypes.string,
-    year: PropTypes.string,
+    year: PropTypes.number,
     function: PropTypes.string,
     budget: PropTypes.string,
     inflation: PropTypes.string,

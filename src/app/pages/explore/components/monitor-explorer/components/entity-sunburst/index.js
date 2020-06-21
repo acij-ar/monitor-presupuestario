@@ -9,8 +9,10 @@ const EntitySunburst = ({ params }) => {
   const [config, setConfig] = useState(null);
 
   useEffect(() => {
-    axios.get('/api/data/test.json', { params })
-      .then(({ data }) => setConfig(data));
+    if (params && params.year) {
+      axios.get('/api/data/sunburst', { params })
+        .then(({ data }) => setConfig(data));
+    }
   }, [params]);
 
   return (
@@ -26,12 +28,11 @@ EntitySunburst.propTypes = {
     entity: PropTypes.string,
     program: PropTypes.string,
     activity: PropTypes.string,
-    year: PropTypes.string,
+    year: PropTypes.number,
     function: PropTypes.string,
     budget: PropTypes.string,
     inflation: PropTypes.string,
   }),
 };
-
 
 module.exports = EntitySunburst;
