@@ -1,11 +1,8 @@
-const MYSQLConnection = require('./mysql-connection');
+const sunburstQuery = require('./query');
+const highchartsOptions = require('./highcharts-options');
 
 module.exports = async (req, res, next) => {
   try {
-    const db_connection = MYSQLConnection();
-    //make a test query
-
-    //mapa de unicos
     var jurisdicciones = new Set();
     var entidades = new Set();
     var programas = new Set();
@@ -16,20 +13,7 @@ module.exports = async (req, res, next) => {
     var level = 1;
 
 
-    //traer todos los objetos de la funcion seleccionada
-    //TODO: parametrizar en uri
-    var funcion = 'Agricultura';
-    var ejercicio = 2019;
-
-    var qry = 'SELECT * FROM monitor.simplificado WHERE funcion_desc = ? AND ejercicio = ?;';
-    const [rows] = await db_connection.promise().query(qry, [funcion, ejercicio]);
-
-    //console.log(rows[10]);
-
-    //close the connection
-    db_connection.end();
-
-    //extraer uniques
+    const rows = await sunburstQuery(req.query);
     rows.forEach(function (item) {
 
       jurisdicciones.add(item.jurisdiccion_desc);
@@ -48,7 +32,7 @@ module.exports = async (req, res, next) => {
     sunburst_data.push({
       id: '0.0',
       parent: '',
-      label: funcion
+      label: 'root'
     });
 
     //jurisdicciones
@@ -102,52 +86,11 @@ module.exports = async (req, res, next) => {
       value: 29
     });
 
-    res.json({
-      chart: {
-        height: '100%'
-      },
-
-      title: {
-        text: 'Explorar Presupuesto'
-      },
-      subtitle : {
-        text :'Crédito Presupuestado'
-      },
-      series: [{
-        type: "sunburst",
-        data: sunburst_data,
-        allowDrillToNode: true,
-        cursor: 'pointer',
-        dataLabels: {
-          format: '{point.label}',
-          rotationMode: 'circular'
-        },
-        levels: [{
-          level: 1,
-          color: "#97addd"
-        },
-          {
-            level:2,
-            color : "#b8cdca",
-
-          },
-          {
-            level:3,
-            color : "#e46e6e",
-
-          }]
-
-      }],
-      tooltip: {
-        headerFormat: "",
-        pointFormat: '{point.name}: <b>{point.value}M</b>'
-      }
-    })
+    const response = highchartsOptions(sunburst_data);
+    res.json(response);
 
   } catch (e) {
-    console.log(e);
     next(e);
   }
-
 };
 

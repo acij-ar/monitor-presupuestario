@@ -1,10 +1,12 @@
 const express = require('express');
-const testDataController = require('./test');
+const sunburstDataController = require('./sunburst');
+const detailDataController = require('./detail');
 const optionsController = require('./options');
 
 const router = express.Router();
 
-router.get('/test.json', testDataController);
+router.get('/sunburst', sunburstDataController);
+router.get('/detail', detailDataController);
 router.get('/options', optionsController);
 
 module.exports = router;
