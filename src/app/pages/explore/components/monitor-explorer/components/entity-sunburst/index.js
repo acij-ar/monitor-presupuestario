@@ -1,20 +1,37 @@
 const React = require('react');
-const Chart = require('../../../../../../components/chart');
+const PropTypes = require('prop-types');
 const ReactHighcharts = require('react-highcharts');
+const axios = require('axios');
 
-class EntitySunburst extends Chart {
-  constructor(props) {
-    super(props);
-    this.dataUrl = '/api/data/test.json';
-  }
+const { useEffect, useState } = React;
 
-  render() {
-    return (
-      <div id="sunburst-chart">
-        { this.state.data ? <ReactHighcharts config={this.state.data}/> : null }
-      </div>
-    )
-  }
+const EntitySunburst = ({ params }) => {
+  const [config, setConfig] = useState(null);
+
+  useEffect(() => {
+    axios.get('/api/data/test.json', { params })
+      .then(({ data }) => setConfig(data));
+  }, [params]);
+
+  return (
+    <div id="sunburst-chart">
+      { config ? <ReactHighcharts config={config}/> : null }
+    </div>
+  )
 }
+
+EntitySunburst.propTypes = {
+  params: PropTypes.shape({
+    jurisdiction: PropTypes.string,
+    entity: PropTypes.string,
+    program: PropTypes.string,
+    activity: PropTypes.string,
+    year: PropTypes.string,
+    function: PropTypes.string,
+    budget: PropTypes.string,
+    inflation: PropTypes.string,
+  }),
+};
+
 
 module.exports = EntitySunburst;
