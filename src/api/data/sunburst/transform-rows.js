@@ -1,6 +1,11 @@
 const getSelectedBudget = (params, row) => {
-  // TODO
-  return row.credito_presupuestado;
+  const budgetColumns = {
+    'Original': 'credito_presupuestado',
+    'Vigente': 'credito_vigente',
+    'Devengado': 'credito_devengado',
+  };
+  const selectedBudget = budgetColumns[params.budget];
+  return row[selectedBudget];
 };
 
 const row2obj = (row, baseObj, key, budget) => {
