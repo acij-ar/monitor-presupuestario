@@ -1,16 +1,7 @@
+const baseHighchartsOptions = require('../helpers/base-highchart-options');
+
 module.exports = (data) => ({
-  chart: {
-    height: '100%',
-    backgroundColor: 'transparent',
-  },
-  exporting: {
-    enabled: false,
-  },
-  credits: {
-    enabled: false,
-  },
-  title: null,
-  subtitle: null,
+  ...baseHighchartsOptions,
   series: [
     {
       type: 'sunburst',
