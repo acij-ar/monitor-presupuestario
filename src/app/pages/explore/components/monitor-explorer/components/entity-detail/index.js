@@ -5,7 +5,7 @@ const axios = require('axios');
 const { useEffect, useState } = React;
 
 const EntityDetail = ({ params }) => {
-  const [detail, setDetail] = useState(null);
+  const [detail, setDetail] = useState({});
 
   useEffect(() => {
     axios.get('/api/data/detail', { params })
@@ -14,44 +14,76 @@ const EntityDetail = ({ params }) => {
 
   return (
     <div id="monitor-explorer-entity-detail">
-      <div id="monitor-explorer-entity-detail-jurisdiction-name">
-        Nombre jurisdicción
-      </div>
-      <div id="monitor-explorer-entity-detail-jurisdiction-value">
-        % del presupuesto total
-      </div>
+      {
+        detail.jurisdiction ?
+          <React.Fragment>
+            <div id="monitor-explorer-entity-detail-jurisdiction-name">
+              {detail.jurisdiction.name}
+            </div>
+            <div id="monitor-explorer-entity-detail-jurisdiction-value">
+              {detail.jurisdiction.percentage} del presupuesto total
+            </div>
+          </React.Fragment> : null
+      }
 
-      <div id="monitor-explorer-entity-detail-entity-name">
-        &gt; Nombre entidad
-      </div>
-      <div id="monitor-explorer-entity-detail-entity-value">
-        % del presupuesto total <span>J</span>
-      </div>
+      {
+        detail.entity ?
+          <React.Fragment>
+            <div id="monitor-explorer-entity-detail-entity-name">
+              &gt; {detail.entity.name}
+            </div>
+            <div id="monitor-explorer-entity-detail-entity-value">
+              {detail.entity.percentage}% del presupuesto
+            </div>
+          </React.Fragment> : null
+      }
 
-      <div id="monitor-explorer-entity-detail-program-name">
-        &gt; Nombre programa
-      </div>
-      <div id="monitor-explorer-entity-detail-program-value">
-        % del presupuesto total <span>E</span>
-      </div>
+      {
+        detail.program ?
+          <React.Fragment>
+            <div id="monitor-explorer-entity-detail-program-name">
+              &gt; {detail.program.name}
+            </div>
+            <div id="monitor-explorer-entity-detail-program-value">
+              {detail.program.percentage}% del presupuesto
+            </div>
+          </React.Fragment> : null
+      }
 
-      <div id="monitor-explorer-entity-detail-activity-name">
-        &gt; Nombre actividad
-      </div>
-      <div id="monitor-explorer-entity-detail-activity-value">
-        % del presupuesto total <span>P</span>
-      </div>
+      {
+        detail.activity ?
+          <React.Fragment>
+            <div id="monitor-explorer-entity-detail-activity-name">
+              &gt; {detail.activity.name}
+            </div>
+            <div id="monitor-explorer-entity-detail-activity-value">
+              {detail.activity.percentage}% del presupuesto
+            </div>
+          </React.Fragment> : null
+      }
+
+      {
+        detail.total ?
+          <React.Fragment>
+            <div id="monitor-explorer-entity-detail-total-name">
+              Presupuesto total
+            </div>
+            <div id="monitor-explorer-entity-detail-total-value">
+              $ {detail.total}
+            </div>
+          </React.Fragment> : null
+      }
     </div>
   );
 };
 
-EntityDetail.propType = {
+EntityDetail.propTypes = {
   params: PropTypes.shape({
     jurisdiction: PropTypes.string,
     entity: PropTypes.string,
     program: PropTypes.string,
     activity: PropTypes.string,
-    year: PropTypes.string,
+    year: PropTypes.number,
     function: PropTypes.string,
     budget: PropTypes.string,
     inflation: PropTypes.string,
