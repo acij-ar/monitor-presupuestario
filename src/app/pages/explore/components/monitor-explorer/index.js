@@ -31,10 +31,10 @@ const MonitorExplorer = () => {
         <EntitySunburst params={selected} />
       </div>
       <div className="monitor-explorer-chart-row">
-        <EntityHierarchy />
-        <EntityTable />
+        <EntityHierarchy params={selected} />
+        <EntityTable params={selected} />
       </div>
-      <EntityTimeseries />
+      <EntityTimeseries params={selected} />
     </div>
   );
 };
