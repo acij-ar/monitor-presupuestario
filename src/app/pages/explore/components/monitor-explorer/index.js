@@ -5,6 +5,7 @@ const EntityDetail = require('./components/entity-detail');
 const EntityHierarchy = require('./components/entity-hierarchy');
 const EntityTable = require('./components/entity-table');
 const EntityTimeseries = require('./components/entity-timeseries');
+const EntityGoals = require('./components/entity-goals');
 const axios = require('axios');
 const getDefaultSelected = require('./get-default-selected');
 
@@ -27,7 +28,10 @@ const MonitorExplorer = () => {
     <div id="monitor-explorer">
       <ExploreForm options={options} updateSelected={updateSelected} selected={selected} />
       <div className="monitor-explorer-chart-row">
-        <EntityDetail params={selected} />
+        <div>
+          <EntityDetail params={selected} />
+          <EntityGoals params={selected} />
+        </div>
         <EntitySunburst params={selected} />
       </div>
       <div className="monitor-explorer-chart-row">
