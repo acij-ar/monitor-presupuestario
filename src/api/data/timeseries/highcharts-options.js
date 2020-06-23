@@ -1,6 +1,7 @@
 const baseHighchartsOptions = require('../helpers/base-highchart-options');
-module.exports = () => ({
-  ...baseHighchartsOptions,
+const merge = require('lodash/merge');
+
+module.exports = () => merge({
   chart: {
     type: 'column'
   },
@@ -58,4 +59,4 @@ module.exports = () => ({
     data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
 
   }]
-});
+}, baseHighchartsOptions);

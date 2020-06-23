@@ -1,6 +1,6 @@
 module.exports = {
   chart: {
-    height: '100%',
+    height: '500px',
     backgroundColor: 'transparent',
   },
   exporting: {
