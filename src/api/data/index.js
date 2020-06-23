@@ -4,6 +4,7 @@ const detailDataController = require('./detail');
 const optionsController = require('./options');
 const timeseriesDataController = require('./timeseries');
 const hierarchyDataController = require('./hierarchy');
+const goalsController = require('./goals');
 
 const router = express.Router();
 
@@ -12,5 +13,6 @@ router.get('/detail', detailDataController);
 router.get('/timeseries', timeseriesDataController);
 router.get('/hierarchy', hierarchyDataController);
 router.get('/options', optionsController);
+router.get('/goals', goalsController);
 
 module.exports = router;
