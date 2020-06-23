@@ -1,5 +1,5 @@
-const genericQuery = require('./helpers/query');
-const rows2obj = require('./helpers/rows-to-obj');
+const genericQuery = require('../helpers/query');
+const rows2obj = require('../helpers/rows-to-obj');
 
 module.exports = async (req, res, next) => {
   const { jurisdiction, entity, program, activity } = req.query;
