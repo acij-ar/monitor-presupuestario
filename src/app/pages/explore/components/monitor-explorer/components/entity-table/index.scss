@@ -1,0 +1,14 @@
+#monitor-explorer-entity-table {
+  height: 500px;
+  text-align: left;
+  overflow: auto;
+
+  table {
+    table-layout: fixed;
+
+    thead {
+      position: sticky;
+      top: 0;
+    }
+  }
+}
