@@ -3,7 +3,8 @@ const rows2obj = require('../helpers/rows-to-obj');
 const budgetComparison = (a, b) => b.budget - a.budget;
 
 const obj2sunburstData = (baseObj, sunburstData, parentId = '0') => {
-  Object.values(baseObj.children).sort(budgetComparison).forEach((child, index) => {
+  const children = Object.values(baseObj.children).sort(budgetComparison).filter(({ budget }) => budget > 0);
+  children.forEach((child, index) => {
     const id = `${parentId}_${index}`;
     sunburstData.push({
       id,
