@@ -1,22 +1,21 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-const ReactHighcharts = require('react-highcharts');
-const axios = require('axios');
+const chart = require('../../../../../../components/chart');
 
-const { useEffect, useState } = React;
+const { useEffect } = React;
 
 const EntityTimeseries = ({ params }) => {
-  const [config, setConfig] = useState(null);
+  let timeseriesChart;
 
   useEffect(() => {
-    axios.get('/api/data/timeseries', { params })
-      .then(({ data }) => setConfig(data));
+    chart(timeseriesChart, params, '/api/data/timeseries', 'timeseries-chart')
+      .then(outputChart => {
+        timeseriesChart = outputChart;
+      });
   }, [params]);
 
   return (
-    <div id="timeseries-chart">
-      { config ? <ReactHighcharts config={config}/> : null }
-    </div>
+    <div id="timeseries-chart" />
   )
 }
 

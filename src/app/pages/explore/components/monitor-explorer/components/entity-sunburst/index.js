@@ -1,24 +1,23 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-const ReactHighcharts = require('react-highcharts');
-const axios = require('axios');
+const chart = require('../../../../../../components/chart');
 
-const { useEffect, useState } = React;
+const { useEffect } = React;
 
 const EntitySunburst = ({ params }) => {
-  const [config, setConfig] = useState(null);
+  let sunburstChart;
 
   useEffect(() => {
     if (params && params.year) {
-      axios.get('/api/data/sunburst', { params })
-        .then(({ data }) => setConfig(data));
+      chart(sunburstChart, params, '/api/data/sunburst', 'sunburst-chart')
+        .then(outputChart => {
+          sunburstChart = outputChart;
+        });
     }
   }, [params]);
 
   return (
-    <div id="sunburst-chart">
-      { config ? <ReactHighcharts config={config}/> : null }
-    </div>
+    <div id="sunburst-chart" />
   )
 }
 
