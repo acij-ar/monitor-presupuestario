@@ -21,7 +21,8 @@ module.exports = async (params) => {
       actividad_desc,
       funcion_desc,
       ${
-         selectedBudget ? `${selectedBudget} as budget` : 'credito_presupuestado, credito_vigente, credito_devengado'
+         selectedBudget ? `${selectedBudget} as budget` : 
+           `credito_presupuestado as original, credito_vigente as vigente, credito_devengado as devengado`
       }
     FROM monitor.simplificado 
     WHERE 
