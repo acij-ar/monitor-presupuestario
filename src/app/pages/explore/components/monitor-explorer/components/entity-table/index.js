@@ -20,10 +20,12 @@ const EntityTable = ({ params }) => {
       {
         table && table.length > 0 ? <table>
           <thead>
-          <th>Categoria</th>
-          <th>C. Original</th>
-          <th>C. Vigente</th>
-          <th>C. Devengado</th>
+            <tr>
+              <th>Categoria</th>
+              <th>C. Original</th>
+              <th>C. Vigente</th>
+              <th>C. Devengado</th>
+            </tr>
           </thead>
           <tbody>
           {
