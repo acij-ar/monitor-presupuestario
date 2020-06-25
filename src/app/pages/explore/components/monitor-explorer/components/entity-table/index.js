@@ -21,24 +21,32 @@ const EntityTable = ({ params }) => {
         table && table.length > 0 ? <table>
           <thead>
             <tr>
-              <th>Categoria</th>
-              <th>C. Original</th>
-              <th>C. Vigente</th>
-              <th>C. Devengado</th>
+              <th><span>Categoria</span></th>
+              <th><span>C. Original</span></th>
+              <th><span>C. Vigente</span></th>
+              <th><span>C. Devengado</span></th>
             </tr>
           </thead>
           <tbody>
           {
             table.map((row, index) => (
               <tr key={index}>
-                <td>{row.name}</td>
-                <td>$ {row.original.toLocaleString('es')}</td>
-                <td>$ {row.vigente.toLocaleString('es')}</td>
-                <td>$ {row.devengado.toLocaleString('es')}</td>
+                <td><span>{row.name}</span></td>
+                <td><span>$ {row.original.toLocaleString('es')}</span></td>
+                <td><span>$ {row.vigente.toLocaleString('es')}</span></td>
+                <td><span>$ {row.devengado.toLocaleString('es')}</span></td>
               </tr>
             ))
           }
           </tbody>
+          <tfoot>
+            <tr>
+              <th><span/></th>
+              <th><span/></th>
+              <th><span/></th>
+              <th><span/></th>
+            </tr>
+          </tfoot>
         </table> : null
       }
     </div>

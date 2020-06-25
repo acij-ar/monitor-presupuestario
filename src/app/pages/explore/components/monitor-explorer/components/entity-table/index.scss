@@ -1,3 +1,5 @@
+@import '../../../../../../components/page/globals';
+
 #monitor-explorer-entity-table {
   height: 500px;
   text-align: left;
@@ -5,10 +7,72 @@
 
   table {
     table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
 
-    thead {
+    thead th {
       position: sticky;
       top: 0;
+      font-weight: 400;
+      font-size: 14px;
+      background: #fafafa;
+    }
+
+    tbody {
+      font-size: 10px;
+    }
+
+    td, th {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: auto;
+      line-height: 2em;
+
+      &:first-child {
+        width: 40%;
+      }
+
+      span {
+        border-bottom: solid 1px #ccc;
+        border-right: solid 10px transparent;
+        display: block;
+      }
+
+      &:last-child span {
+        border-right: none;
+      }
+    }
+
+    tr:last-child td span {
+      border-bottom: none;
+    }
+
+    tfoot th {
+      position: sticky;
+      bottom: 0;
+
+      span {
+        display: block;
+        border-bottom: solid 3px;
+        border-right: none;
+        margin-right: 5px;
+      }
+
+      &:first-child span {
+        border-bottom-color: #333;
+      }
+
+      &:nth-child(2) span {
+        border-bottom-color: $yellow;
+      }
+
+      &:nth-child(3) span {
+        border-bottom-color: $green;
+      }
+
+      &:last-child span {
+        border-bottom-color: $blue;
+      }
     }
   }
 }
