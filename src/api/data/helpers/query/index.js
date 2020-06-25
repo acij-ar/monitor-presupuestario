@@ -2,7 +2,7 @@ const MYSQLConnection = require('./mysql-connection');
 const columns = require('./columns');
 const conditions = require('./conditions');
 
-module.exports = async (params) => {
+module.exports = async (params={}) => {
   const db_connection = MYSQLConnection();
 
   const { whereConditions, whereParams } = conditions(params);
@@ -10,8 +10,7 @@ module.exports = async (params) => {
     SELECT
       ${columns(params)}
     FROM monitor.simplificado 
-    WHERE 
-      ${whereConditions}
+      ${whereConditions ? `WHERE ${whereConditions}` : ''}
     ;
   `;
   const [rows] = await db_connection.promise().query(qry, whereParams);
