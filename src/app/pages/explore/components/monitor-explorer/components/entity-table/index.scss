@@ -63,15 +63,15 @@
       }
 
       &:nth-child(2) span {
-        border-bottom-color: $yellow;
+        border-bottom-color: $original;
       }
 
       &:nth-child(3) span {
-        border-bottom-color: $green;
+        border-bottom-color: $vigente;
       }
 
       &:last-child span {
-        border-bottom-color: $blue;
+        border-bottom-color: $devengado;
       }
     }
   }
