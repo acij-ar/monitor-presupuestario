@@ -1,4 +1,4 @@
-const MYSQLConnection = require('./mysql-connection');
+const MYSQLConnection = require('./helpers/query/mysql-connection');
 
 const convertToOption = (name) => ({ name, value:name });
 

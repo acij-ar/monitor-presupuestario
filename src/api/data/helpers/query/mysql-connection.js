@@ -1,5 +1,5 @@
 const mysql = require('mysql2');
-const {mysqlconfig: {mysqlconfig}} = require('../../config');
+const {mysqlconfig: {mysqlconfig}} = require('../../../../config');
 
 module.exports = () => {
   let db_connection = mysql.createConnection(mysqlconfig);
