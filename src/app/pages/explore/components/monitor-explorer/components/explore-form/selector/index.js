@@ -22,6 +22,10 @@ Selector.propTypes = {
       PropTypes.string,
       PropTypes.number,
     ]).isRequired,
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]),
   })),
   value: PropTypes.oneOfType([
     PropTypes.string,
