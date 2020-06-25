@@ -1,8 +1,7 @@
-const MYSQLConnection = require('./helpers/query/mysql-connection');
+const MYSQLConnection = require('../helpers/query/mysql-connection');
+const convertToOption = require('./convert-to-option');
 
-const convertToOption = (name) => ({ name, value:name });
-
-const getEntities = async () => {
+module.exports = async () => {
   const jurisdicciones = new Set();
   const entidades = new Set();
   const programas = new Set();
@@ -27,26 +26,4 @@ const getEntities = async () => {
     activities: Array.from(actividades).map(convertToOption),
     functions: Array.from(funciones).map(convertToOption),
   }
-};
-
-const getYears = async () => {
-  const db_connection = MYSQLConnection();
-  const query = 'SELECT DISTINCT(ejercicio) FROM monitor.simplificado;';
-  const [rows] = await db_connection.promise().query(query);
-  return rows.map(({ ejercicio }) => ejercicio).map(convertToOption);
-}
-
-const getOptions = async () => {
-  const entities = await getEntities();
-  return {
-    ...entities,
-    budgets: ['Original', 'Vigente', 'Devengado'].map(convertToOption),
-    inflation: ['Ajustado', 'Sin ajustar'].map(convertToOption),
-    years: await getYears(),
-  }
-};
-
-module.exports = async (req, res) => {
-  const options = await getOptions();
-  res.json(options);
 };
