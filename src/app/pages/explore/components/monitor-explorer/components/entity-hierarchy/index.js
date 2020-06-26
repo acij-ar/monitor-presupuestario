@@ -8,10 +8,12 @@ const EntityHierarchy = ({ params }) => {
   let hierarchyChart;
 
   useEffect(() => {
-    chart(hierarchyChart, params, '/api/data/hierarchy', 'hierarchy-chart')
-      .then(outputChart => {
-        hierarchyChart = outputChart;
-      });
+    if (params && params.year) {
+      chart(hierarchyChart, params, '/api/data/hierarchy', 'hierarchy-chart')
+        .then(outputChart => {
+          hierarchyChart = outputChart;
+        });
+    }
   }, [params]);
 
   return (
