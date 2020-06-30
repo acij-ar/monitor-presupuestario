@@ -47,9 +47,7 @@ const MonitorExplorer = () => {
           <EntityDetail params={params} />
           <EntityGoals params={params} />
         </div>
-        {/*
         <EntitySunburst params={params} />
-        */}
       </div>
       <div className="monitor-explorer-chart-row">
         {/*

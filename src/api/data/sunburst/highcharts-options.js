@@ -19,24 +19,23 @@ module.exports = (data) => merge({}, baseHighchartsOptions, {
         },
         {
           level: 2,
-          color: '#A94EF6',
-
-        },
-        {
-          level: 3,
           color: '#00B0AE',
         },
         {
-          level: 4,
+          level: 3,
           color: '#FF00E1',
         },
         {
-          level: 5,
+          level: 4,
           color: '#8200FF',
         },
         {
-          level: 6,
+          level: 5,
           color: '#BB73FF',
+        },
+        {
+          level: 6,
+          color: '#A94EF6',
         }
       ],
     },

@@ -2,32 +2,32 @@ const rows2obj = require('../helpers/rows-to-obj');
 
 const budgetComparison = (a, b) => b.budget - a.budget;
 
-const obj2sunburstData = (baseObj, sunburstData, parentId = '0') => {
+const obj2sunburstData = (baseObj, sunburstData, maxDepth, depth=0) => {
   const children = Object.values(baseObj.children).sort(budgetComparison).filter(({ budget }) => budget > 0);
-  children.forEach((child, index) => {
-    const id = `${parentId}_${index}`;
+  children.forEach(child => {
     sunburstData.push({
-      id,
-      parent: parentId,
+      id: child.id,
+      parent: baseObj.id,
       name: child.name,
       value: child.budget
     });
-    if (child.children) {
-      obj2sunburstData(child, sunburstData, id);
+    if (child.children && depth < maxDepth) {
+      obj2sunburstData(child, sunburstData, maxDepth, depth+1);
     }
   });
 };
 
-module.exports = (params, rows) => {
-  const baseObj = rows2obj(params, rows);
-  const sunburstData = [
-    {
-      id: '0',
-      parent: '',
-      name: baseObj.name,
-      value: baseObj.budget
-    }
-  ];
-  obj2sunburstData(baseObj, sunburstData);
+const getMaxDepth = (params) => {
+    return params.function ? 7 :
+      params.activity ? 6 :
+        params.program ? 5 :
+          params.entity ? 4 : 3
+}
+
+module.exports = (rows, params) => {
+  const baseObj = rows2obj(rows, { withIds: true, withBudgets: true });
+  const sunburstData = [];
+  const maxDepth = getMaxDepth(params);
+  obj2sunburstData(baseObj, sunburstData, maxDepth);
   return sunburstData;
 };

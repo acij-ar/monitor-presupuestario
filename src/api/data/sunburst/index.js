@@ -5,7 +5,7 @@ const transformRows = require('./transform-rows');
 module.exports = async (req, res, next) => {
   try {
     const rows = await genericQuery(req.query);
-    const sunburstData = transformRows(req.query, rows);
+    const sunburstData = transformRows(rows, req.query);
     const response = highchartsOptions(sunburstData);
     res.json(response);
   } catch (e) {
