@@ -17,7 +17,11 @@ const EntityHierarchy = ({ params }) => {
   }, [params]);
 
   return (
-    <div id="hierarchy-chart" />
+    <div id="hierarchy-chart-container">
+      <div>
+        <div id="hierarchy-chart" />
+      </div>
+    </div>
   )
 }
 

@@ -50,9 +50,7 @@ const MonitorExplorer = () => {
         <EntitySunburst params={params} />
       </div>
       <div className="monitor-explorer-chart-row">
-        {/*
         <EntityHierarchy params={params} />
-        */}
         <EntityTable params={params} />
       </div>
       <EntityTimeseries params={params} />

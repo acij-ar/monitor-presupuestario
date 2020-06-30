@@ -4,6 +4,7 @@
 
   .monitor-explorer-chart-row {
     display: flex;
+    margin-bottom: 20px;
 
     & > * {
       flex: 0 0 50%;
@@ -14,5 +15,6 @@
   @import './components/entity-detail/index';
   @import './components/entity-goals/index';
   @import './components/entity-table/index';
+  @import './components/entity-hierarchy/index';
 
 }
