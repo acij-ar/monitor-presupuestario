@@ -8,25 +8,35 @@ const EntityTimeseries = require('./components/entity-timeseries');
 const EntityGoals = require('./components/entity-goals');
 const axios = require('axios');
 const getDefaultSelected = require('./get-default-selected');
+const transformOptions = require('./helpers/transform-options');
 
 const { useEffect, useState } = React;
 
 const MonitorExplorer = () => {
+  const [rawOptions, setRawOptions] = useState({});
   const [options, setOptions] = useState({});
   const [selected, setSelected] = useState({});
   const updateSelected = newValues => setSelected({ ...selected, ...newValues });
 
   const fetchData = async () => {
     const { data } = await axios.get('/api/data/options');
-    setOptions(data);
+    setRawOptions(data);
+    setOptions(transformOptions(data, null).options);
     const defaultSelected = getDefaultSelected(data);
     setSelected(defaultSelected);
   };
   useEffect(() => { fetchData() }, []);
 
+  const updateSelectedEntity = (newId) => {
+    const { options, selected } = transformOptions(rawOptions, newId);
+    setOptions(options);
+    updateSelected(selected);
+  };
+
   return (
     <div id="monitor-explorer">
-      <ExploreForm options={options} updateSelected={updateSelected} selected={selected} />
+      <ExploreForm options={options} updateSelectedOption={updateSelected} updateSelectedEntity={updateSelectedEntity} selected={selected} />
+      {/*
       <div className="monitor-explorer-chart-row">
         <div>
           <EntityDetail params={selected} />
@@ -39,6 +49,7 @@ const MonitorExplorer = () => {
         <EntityTable params={selected} />
       </div>
       <EntityTimeseries params={selected} />
+      */}
     </div>
   );
 };

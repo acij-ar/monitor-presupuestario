@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
   const options = {
     budgets: ['Original', 'Vigente', 'Devengado'].map(convertToOption),
     inflation: ['Ajustado', 'Sin ajustar'].map(convertToOption),
-    ...entities,
+    entities,
     years,
   }
   res.json(options);

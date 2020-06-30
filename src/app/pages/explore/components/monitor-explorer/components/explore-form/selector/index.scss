@@ -32,6 +32,11 @@
     background: transparent;
     outline: none;
     text-overflow: ellipsis;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
   }
 
   @import './specific-colors';

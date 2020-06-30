@@ -3,11 +3,11 @@ const PropTypes = require('prop-types');
 
 const Selector = ({ id, name, options, value, onChange }) => (
   <div className="selector-wrapper" id={id}>
-    <select id={`${id}-select`} value={value || 'undefined'} onChange={onChange}>
+    <select id={`${id}-select`} value={value || 'undefined'} onChange={onChange} disabled={!options || options.length === 0}>
       <option disabled value="undefined">{name}</option>
       {
-        options && options.map(({ name: optionName, value }) => (
-          <option key={optionName} value={value}>{optionName}</option>
+        options && options.map(({ name: optionName, value, id: optionId }) => (
+          <option key={optionName} value={optionId || value}>{optionName}</option>
         ))
       }
     </select>

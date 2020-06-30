@@ -2,7 +2,7 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const Selector = require('./selector');
 
-const ExploreForm = ({ options, updateSelected, selected }) => (
+const ExploreForm = ({ options, updateSelectedOption, updateSelectedEntity, selected }) => (
   <div id="monitor-explore-selector">
     <div id="monitor-explore-selector-labels-who">
       <h3>¿Quién?</h3>
@@ -10,14 +10,14 @@ const ExploreForm = ({ options, updateSelected, selected }) => (
         id="entity-form-jurisdiccion"
         name="Jurisdicción"
         options={options.jurisdictions}
-        onChange={e => updateSelected({ jurisdiction: e.target.value})}
+        onChange={e => updateSelectedEntity(e.target.value)}
         value={selected.jurisdiction}
       />
       <Selector
         id="entity-form-entidad"
         name="Entidad"
         options={options.entities}
-        onChange={e => updateSelected({ entity: e.target.value})}
+        onChange={e => updateSelectedEntity(e.target.value)}
         value={selected.entity}
       />
     </div>
@@ -27,14 +27,14 @@ const ExploreForm = ({ options, updateSelected, selected }) => (
         id="entity-form-programa"
         name="Programa"
         options={options.programs}
-        onChange={e => updateSelected({ program: e.target.value})}
+        onChange={e => updateSelectedEntity(e.target.value)}
         value={selected.program}
       />
       <Selector
         id="setting-form-years"
         name="Años disponibles"
         options={options.years}
-        onChange={e => updateSelected({ year: e.target.value})}
+        onChange={e => updateSelectedOption({ year: e.target.value})}
         value={selected.year}
       />
     </div>
@@ -44,28 +44,28 @@ const ExploreForm = ({ options, updateSelected, selected }) => (
         id="entity-form-actividad"
         name="Actividad"
         options={options.activities}
-        onChange={e => updateSelected({ activity: e.target.value})}
+        onChange={e => updateSelectedEntity(e.target.value)}
         value={selected.activity}
       />
       <Selector
         id="entity-form-funcion"
         name="Función"
         options={options.functions}
-        onChange={e => updateSelected({ function: e.target.value})}
+        onChange={e => updateSelectedEntity(e.target.value)}
         value={selected.function}
       />
       <Selector
         id="setting-form-budgets"
         name="Tipos de presup."
         options={options.budgets}
-        onChange={e => updateSelected({ budget: e.target.value})}
+        onChange={e => updateSelectedOption({ budget: e.target.value})}
         value={selected.budget}
       />
       <Selector
         id="setting-form-inlfation"
         name="Ajuste por inflación"
         options={options.inflation}
-        onChange={e => updateSelected({ inflation: e.target.value})}
+        onChange={e => updateSelectedOption({ inflation: e.target.value})}
         value={selected.inflation}
       />
     </div>
@@ -73,7 +73,8 @@ const ExploreForm = ({ options, updateSelected, selected }) => (
 );
 
 ExploreForm.propTypes = {
-  updateSelected: PropTypes.func.isRequired,
+  updateSelectedOption: PropTypes.func.isRequired,
+  updateSelectedEntity: PropTypes.func.isRequired,
   selected: PropTypes.shape({
     jurisdiction: PropTypes.string,
     entity: PropTypes.string,
