@@ -8,6 +8,7 @@ const EntityGoals = ({ params }) => {
   const [goals, setGoals] = useState([]);
 
   useEffect(() => {
+    // TODO: cancel request if new params are selected
     axios.get('/api/data/goals', { params })
       .then(({ data }) => setGoals(data));
   }, [params]);

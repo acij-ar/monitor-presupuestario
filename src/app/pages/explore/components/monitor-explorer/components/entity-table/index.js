@@ -10,6 +10,7 @@ const EntityTable = ({ params }) => {
 
   useEffect(() => {
     if (params && params.year) {
+      // TODO: cancel request if new params are selected
       axios.get('/api/data/table', { params })
         .then(({ data }) => setTable(data));
     }

@@ -8,6 +8,7 @@ const EntityDetail = ({ params }) => {
   const [detail, setDetail] = useState({});
 
   useEffect(() => {
+    // TODO: cancel request if new params are selected
     axios.get('/api/data/detail', { params })
       .then(({ data }) => setDetail(data));
   }, [params]);
