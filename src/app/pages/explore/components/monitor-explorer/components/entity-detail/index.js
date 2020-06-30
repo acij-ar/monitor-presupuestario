@@ -33,7 +33,7 @@ const EntityDetail = ({ params }) => {
               &gt; {detail.entity.name}
             </div>
             <div id="monitor-explorer-entity-detail-entity-value">
-              {detail.entity.percentage}% del presupuesto
+              {detail.entity.percentage}% del presupuesto <span className="previous-entity-first-letter">{detail.jurisdiction.name[0]}</span>
             </div>
           </React.Fragment> : null
       }
@@ -45,7 +45,7 @@ const EntityDetail = ({ params }) => {
               &gt; {detail.program.name}
             </div>
             <div id="monitor-explorer-entity-detail-program-value">
-              {detail.program.percentage}% del presupuesto
+              {detail.program.percentage}% del presupuesto <span className="previous-entity-first-letter">{detail.entity.name[0]}</span>
             </div>
           </React.Fragment> : null
       }
@@ -57,7 +57,7 @@ const EntityDetail = ({ params }) => {
               &gt; {detail.activity.name}
             </div>
             <div id="monitor-explorer-entity-detail-activity-value">
-              {detail.activity.percentage}% del presupuesto
+              {detail.activity.percentage}% del presupuesto <span className="previous-entity-first-letter">{detail.program.name[0]}</span>
             </div>
           </React.Fragment> : null
       }
