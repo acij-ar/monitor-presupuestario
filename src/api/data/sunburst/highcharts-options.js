@@ -1,7 +1,7 @@
 const baseHighchartsOptions = require('../helpers/base-highchart-options');
 const merge = require('lodash/merge');
 
-module.exports = (data) => merge({
+module.exports = (data) => merge({}, baseHighchartsOptions, {
   series: [
     {
       type: 'sunburst',
@@ -45,4 +45,4 @@ module.exports = (data) => merge({
     headerFormat: '',
     pointFormat: '{point.name}: <b>{point.value}M</b>',
   },
-}, baseHighchartsOptions);
+});
