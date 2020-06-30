@@ -16,7 +16,11 @@ const MonitorExplorer = () => {
   const [rawOptions, setRawOptions] = useState({});
   const [options, setOptions] = useState({});
   const [selected, setSelected] = useState({});
-  const updateSelected = newValues => setSelected({ ...selected, ...newValues });
+  const [params, setParams] = useState({});
+  const updateSelected = newValues => {
+    setSelected({ ...selected, ...newValues });
+    setParams({ ...selected, ...newValues });
+  };
 
   const fetchData = async () => {
     const { data } = await axios.get('/api/data/options');
@@ -28,9 +32,10 @@ const MonitorExplorer = () => {
   useEffect(() => { fetchData() }, []);
 
   const updateSelectedEntity = (newId) => {
-    const { options, selected } = transformOptions(rawOptions, newId);
+    const { options, selectedIds, selectedNames } = transformOptions(rawOptions, newId);
     setOptions(options);
-    updateSelected(selected);
+    setSelected({...selected, ...selectedIds});
+    setParams({...selected, ...selectedNames});
   };
 
   return (
@@ -48,8 +53,8 @@ const MonitorExplorer = () => {
         <EntityHierarchy params={selected} />
         <EntityTable params={selected} />
       </div>
-      <EntityTimeseries params={selected} />
       */}
+      <EntityTimeseries params={params} />
     </div>
   );
 };

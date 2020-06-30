@@ -15,7 +15,7 @@ const hierarchySingular = [
   'function',
 ]
 
-const convertToOptions = (entitiesOptions, selected, entitiesObj, newId, depth=0) => {
+const convertToOptions = (entitiesOptions, selectedIds, selectedNames, entitiesObj, newId, depth=0) => {
   if (!newId && depth > 0) return;
   if (newId && depth + 1 > (newId.match(/_/g) || []).length) return;
   entitiesObj.children.forEach(child => {
@@ -25,10 +25,11 @@ const convertToOptions = (entitiesOptions, selected, entitiesObj, newId, depth=0
       entitiesOptions[key].push({ id, name, value: name })
     }
     if (!newId) {
-      convertToOptions(entitiesOptions, selected, child, newId, depth+1)
+      convertToOptions(entitiesOptions, selectedIds, selectedNames, child, newId, depth+1)
     } else if (newId && newId.startsWith(id)) {
-      selected[hierarchySingular[depth]] = id;
-      convertToOptions(entitiesOptions, selected, child, newId, depth+1)
+      selectedIds[hierarchySingular[depth]] = id;
+      selectedNames[hierarchySingular[depth]] = name;
+      convertToOptions(entitiesOptions, selectedIds, selectedNames, child, newId, depth+1)
     }
   })
 };
@@ -43,16 +44,18 @@ const transformEntities = (hierarchyObj, newId) => {
     activities: [],
     functions: [],
   };
-  const selected = { jurisdiction: null, entity: null, program: null, activity: null, function: null };
-  convertToOptions(entitiesOptions, selected, entitiesObj, newId)
+  const selectedIds = { jurisdiction: null, entity: null, program: null, activity: null, function: null };
+  const selectedNames = { jurisdiction: null, entity: null, program: null, activity: null, function: null };
+  convertToOptions(entitiesOptions, selectedIds, selectedNames, entitiesObj, newId)
 
-  return { entitiesOptions, selected }
+  return { entitiesOptions, selectedIds, selectedNames }
 };
 
 module.exports = ({ budgets, inflation, years, entities }, newId) => {
-  const { entitiesOptions, selected } = transformEntities(entities, newId);
+  const { entitiesOptions, selectedIds, selectedNames } = transformEntities(entities, newId);
   return {
-    selected,
+    selectedIds,
+    selectedNames,
     options: {
       budgets,
       inflation,
