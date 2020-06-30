@@ -21,7 +21,7 @@ const EntityDetail = ({ params }) => {
               {detail.jurisdiction.name}
             </div>
             <div id="monitor-explorer-entity-detail-jurisdiction-value">
-              {detail.jurisdiction.percentage} del presupuesto total
+              {detail.jurisdiction.percentage}% del presupuesto total
             </div>
           </React.Fragment> : null
       }
@@ -69,7 +69,7 @@ const EntityDetail = ({ params }) => {
               Presupuesto total
             </div>
             <div id="monitor-explorer-entity-detail-total-value">
-              $ {detail.total}
+              $ {detail.total.toLocaleString('es')}
             </div>
           </React.Fragment> : null
       }

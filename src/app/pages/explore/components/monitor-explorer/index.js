@@ -28,6 +28,7 @@ const MonitorExplorer = () => {
     setOptions(transformOptions(data, null).options);
     const defaultSelected = getDefaultSelected(data);
     setSelected(defaultSelected);
+    setParams(defaultSelected);
   };
   useEffect(() => { fetchData() }, []);
 
@@ -41,19 +42,21 @@ const MonitorExplorer = () => {
   return (
     <div id="monitor-explorer">
       <ExploreForm options={options} updateSelectedOption={updateSelected} updateSelectedEntity={updateSelectedEntity} selected={selected} />
-      {/*
       <div className="monitor-explorer-chart-row">
         <div>
-          <EntityDetail params={selected} />
-          <EntityGoals params={selected} />
+          <EntityDetail params={params} />
+          <EntityGoals params={params} />
         </div>
-        <EntitySunburst params={selected} />
+        {/*
+        <EntitySunburst params={params} />
+        */}
       </div>
       <div className="monitor-explorer-chart-row">
-        <EntityHierarchy params={selected} />
-        <EntityTable params={selected} />
+        {/*
+        <EntityHierarchy params={params} />
+        */}
+        <EntityTable params={params} />
       </div>
-      */}
       <EntityTimeseries params={params} />
     </div>
   );
