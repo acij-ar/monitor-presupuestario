@@ -26,7 +26,7 @@ const convertToOptions = (entitiesOptions, selectedIds, selectedNames, entitiesO
     }
     if (!newId) {
       convertToOptions(entitiesOptions, selectedIds, selectedNames, child, newId, depth+1)
-    } else if (newId && newId.startsWith(id)) {
+    } else if (newId && (newId === id || newId.startsWith(`${id}_`))) {
       selectedIds[hierarchySingular[depth]] = id;
       selectedNames[hierarchySingular[depth]] = name;
       convertToOptions(entitiesOptions, selectedIds, selectedNames, child, newId, depth+1)
