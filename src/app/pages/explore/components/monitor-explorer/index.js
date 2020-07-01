@@ -1,5 +1,5 @@
 const React = require('react');
-const ExploreForm = require('./components/explore-form');
+const MonitorForm = require('../../../../components/monitor-form');
 const EntitySunburst = require('./components/entity-sunburst');
 const EntityDetail = require('./components/entity-detail');
 const EntityHierarchy = require('./components/entity-hierarchy');
@@ -41,7 +41,7 @@ const MonitorExplorer = () => {
 
   return (
     <div id="monitor-explorer">
-      <ExploreForm options={options} updateSelectedOption={updateSelected} updateSelectedEntity={updateSelectedEntity} selected={selected} />
+      <MonitorForm options={options} updateSelectedOption={updateSelected} updateSelectedEntity={updateSelectedEntity} selected={selected} />
       <div className="monitor-explorer-chart-row">
         <div>
           <EntityDetail params={params} />
