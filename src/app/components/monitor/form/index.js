@@ -7,13 +7,13 @@ const transformOptions = require('./helpers/transform-options');
 
 const { useEffect, useState } = React;
 
-const MonitorForm = ({ setParams }) => {
+const MonitorForm = ({ params, setParams }) => {
   const [rawOptions, setRawOptions] = useState({});
   const [options, setOptions] = useState({});
   const [selected, setSelected] = useState({});
   const updateSelected = newValues => {
     setSelected({ ...selected, ...newValues });
-    setParams({ ...selected, ...newValues });
+    setParams({ ...params, ...newValues });
   };
 
   const fetchData = async () => {
@@ -44,6 +44,7 @@ const MonitorForm = ({ setParams }) => {
 };
 
 MonitorForm.propTypes = {
+  params: PropTypes.object.isRequired,
   setParams: PropTypes.func.isRequired,
 };
 

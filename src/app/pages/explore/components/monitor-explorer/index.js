@@ -14,7 +14,7 @@ const MonitorExplorer = () => {
 
   return (
     <div id="monitor-explorer">
-      <MonitorForm setParams={setParams} />
+      <MonitorForm params={params} setParams={setParams} />
       <div className="monitor-explorer-chart-row">
         <div>
           <EntityDetail params={params} />
