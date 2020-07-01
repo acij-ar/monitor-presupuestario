@@ -2,7 +2,7 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const Selector = require('./selector');
 
-const ExploreForm = ({ options, updateSelectedOption, updateSelectedEntity, selected }) => (
+const Selectors = ({ options, updateSelectedOption, updateSelectedEntity, selected }) => (
   <div id="monitor-explore-selector">
     <div id="monitor-explore-selector-labels-who">
       <h3>¿Quién?</h3>
@@ -72,7 +72,7 @@ const ExploreForm = ({ options, updateSelectedOption, updateSelectedEntity, sele
   </div>
 );
 
-ExploreForm.propTypes = {
+Selectors.propTypes = {
   updateSelectedOption: PropTypes.func.isRequired,
   updateSelectedEntity: PropTypes.func.isRequired,
   selected: PropTypes.shape({
@@ -97,4 +97,4 @@ ExploreForm.propTypes = {
   }),
 };
 
-module.exports = ExploreForm;
+module.exports = Selectors;
