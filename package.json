@@ -38,6 +38,7 @@
     "cookie-parser": "^1.4.4",
     "css-loader": "^2.1.1",
     "csv-write-stream": "^2.0.0",
+    "dom-to-image": "^2.6.0",
     "elasticlunr": "^0.9.5",
     "express": "^4.17.0",
     "express-manifest-helpers": "^0.6.0",
