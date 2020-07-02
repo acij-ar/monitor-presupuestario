@@ -1,6 +1,7 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const axios = require('axios');
+const ChartActions = require('../../../../../../components/monitor/chart-actions');
 
 const { useEffect, useState } = React;
 
@@ -17,40 +18,42 @@ const EntityTable = ({ params }) => {
   }, [params]);
 
   return (
-    <div id="monitor-explorer-entity-table">
-      {
-        table && table.length > 0 ? <table>
-          <thead>
-            <tr>
-              <th><span>Categoria</span></th>
-              <th><span>C. Original</span></th>
-              <th><span>C. Vigente</span></th>
-              <th><span>C. Devengado</span></th>
-            </tr>
-          </thead>
-          <tbody>
-          {
-            table.map((row, index) => (
-              <tr key={index}>
-                <td><span>{row.name}</span></td>
-                <td><span>$ {row.original.toLocaleString('es')}</span></td>
-                <td><span>$ {row.vigente.toLocaleString('es')}</span></td>
-                <td><span>$ {row.devengado.toLocaleString('es')}</span></td>
+    <ChartActions>
+      <div id="monitor-explorer-entity-table">
+        {
+          table && table.length > 0 ? <table>
+            <thead>
+              <tr>
+                <th><span>Categoria</span></th>
+                <th><span>C. Original</span></th>
+                <th><span>C. Vigente</span></th>
+                <th><span>C. Devengado</span></th>
               </tr>
-            ))
-          }
-          </tbody>
-          <tfoot>
-            <tr>
-              <th><span/></th>
-              <th><span/></th>
-              <th><span/></th>
-              <th><span/></th>
-            </tr>
-          </tfoot>
-        </table> : null
-      }
-    </div>
+            </thead>
+            <tbody>
+            {
+              table.map((row, index) => (
+                <tr key={index}>
+                  <td><span>{row.name}</span></td>
+                  <td><span>$ {row.original.toLocaleString('es')}</span></td>
+                  <td><span>$ {row.vigente.toLocaleString('es')}</span></td>
+                  <td><span>$ {row.devengado.toLocaleString('es')}</span></td>
+                </tr>
+              ))
+            }
+            </tbody>
+            <tfoot>
+              <tr>
+                <th><span/></th>
+                <th><span/></th>
+                <th><span/></th>
+                <th><span/></th>
+              </tr>
+            </tfoot>
+          </table> : null
+        }
+      </div>
+    </ChartActions>
   );
 };
 

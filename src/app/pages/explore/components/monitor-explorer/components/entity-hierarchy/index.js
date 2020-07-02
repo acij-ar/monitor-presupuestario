@@ -1,5 +1,6 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const ChartActions = require('../../../../../../components/monitor/chart-actions');
 const chart = require('../../../../../../components/chart');
 
 const { useEffect } = React;
@@ -17,11 +18,13 @@ const EntityHierarchy = ({ params }) => {
   }, [params]);
 
   return (
-    <div id="hierarchy-chart-container">
-      <div>
-        <div id="hierarchy-chart" />
+    <ChartActions>
+      <div id="hierarchy-chart-container">
+        <div>
+          <div id="hierarchy-chart" />
+        </div>
       </div>
-    </div>
+    </ChartActions>
   )
 }
 

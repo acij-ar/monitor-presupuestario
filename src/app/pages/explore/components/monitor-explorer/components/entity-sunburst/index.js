@@ -1,6 +1,7 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const chart = require('../../../../../../components/chart');
+const ChartActions = require('../../../../../../components/monitor/chart-actions');
 
 const { useEffect } = React;
 
@@ -17,7 +18,9 @@ const EntitySunburst = ({ params }) => {
   }, [params]);
 
   return (
-    <div id="sunburst-chart" />
+    <ChartActions>
+      <div id="sunburst-chart" />
+    </ChartActions>
   )
 }
 

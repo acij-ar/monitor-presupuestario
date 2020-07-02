@@ -1,6 +1,7 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const chart = require('../../../../../../components/chart');
+const ChartActions = require('../../../../../../components/monitor/chart-actions');
 
 const { useEffect } = React;
 
@@ -15,7 +16,9 @@ const EntityTimeseries = ({ params }) => {
   }, [params]);
 
   return (
-    <div id="timeseries-chart" />
+    <ChartActions>
+      <div id="timeseries-chart" />
+    </ChartActions>
   )
 }
 
