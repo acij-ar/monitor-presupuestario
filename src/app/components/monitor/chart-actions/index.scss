@@ -1,0 +1,36 @@
+@import '../../page/globals';
+
+.chart-actions {
+  text-align: right;
+
+  .chart-actions-export-wrapper {
+    display: inline-block;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      width: 10px;
+      height: 10px;
+      border-bottom: solid 2px white;
+      border-right: solid 2px white;
+      transform: translateY(-50%) translateY(-3px) rotate(45deg);
+    }
+  }
+
+  select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    background: $blue;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    outline: none;
+    width: 170px;
+    font-size: 16px;
+  }
+}

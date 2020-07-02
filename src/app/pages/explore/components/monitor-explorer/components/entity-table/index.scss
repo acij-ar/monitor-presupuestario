@@ -1,9 +1,10 @@
 @import '../../../../../../components/page/globals';
 
 #monitor-explorer-entity-table {
-  height: 500px;
+  max-height: 500px;
   text-align: left;
   overflow: auto;
+  margin-bottom: 20px;
 
   table {
     table-layout: fixed;
