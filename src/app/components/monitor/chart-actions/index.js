@@ -24,6 +24,9 @@ const ChartActions = ({ children }) => {
       domtoimage.toPng(chartNode, imageOptions).then(dataUrl => downloadImage(dataUrl, 'chart.png'))
     } else if (value === 'svg') {
       domtoimage.toSvg(chartNode, imageOptions).then(dataUrl => downloadImage(dataUrl, 'chart.svg'))
+    } else if (value === 'pdf') {
+      const options = { filename: 'chart.pdf' };
+      require('dom-to-pdf')(chartNode, options);
     }
   }
   return (
@@ -37,9 +40,7 @@ const ChartActions = ({ children }) => {
             <option value="undefined">Descargar cómo</option>
             <option value="png">Descargar imagen (PNG)</option>
             <option value="jpg">Descargar imagen (JPG)</option>
-            {/*
             <option value="pdf">Descargar imagen (PDF)</option>
-            */}
             <option value="svg">Descargar imagen (SVG)</option>
             {/*
             <option value="csv">Descargar datos (CSV)</option>
