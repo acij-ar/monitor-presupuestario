@@ -3,20 +3,22 @@ const PropTypes = require('prop-types');
 const chart = require('../../../../../../components/chart');
 const ChartActions = require('../../../../../../components/monitor/chart-actions');
 
-const { useEffect } = React;
+const { useEffect, useState } = React;
 
 const EntityTimeseries = ({ params }) => {
   let timeseriesChart;
+  const [actionVisible, setVisible] = useState(false);
 
   useEffect(() => {
     chart(timeseriesChart, params, '/api/data/timeseries', 'timeseries-chart')
       .then(outputChart => {
         timeseriesChart = outputChart;
+        setVisible(true)
       });
   }, [params]);
 
   return (
-    <ChartActions>
+    <ChartActions visible={actionVisible}>
       <div id="timeseries-chart" />
     </ChartActions>
   )

@@ -3,22 +3,24 @@ const PropTypes = require('prop-types');
 const chart = require('../../../../../../components/chart');
 const ChartActions = require('../../../../../../components/monitor/chart-actions');
 
-const { useEffect } = React;
+const { useEffect, useState } = React;
 
 const EntitySunburst = ({ params }) => {
   let sunburstChart;
+  const [actionVisible, setVisible] = useState(false);
 
   useEffect(() => {
     if (params && params.year) {
       chart(sunburstChart, params, '/api/data/sunburst', 'sunburst-chart')
         .then(outputChart => {
           sunburstChart = outputChart;
+          setVisible(true)
         });
     }
   }, [params]);
 
   return (
-    <ChartActions>
+    <ChartActions visible={actionVisible}>
       <div id="sunburst-chart" />
     </ChartActions>
   )

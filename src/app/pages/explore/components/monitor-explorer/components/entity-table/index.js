@@ -8,17 +8,22 @@ const { useEffect, useState } = React;
 
 const EntityTable = ({ params }) => {
   const [table, setTable] = useState({});
+  const [actionVisible, setVisible] = useState(false);
 
   useEffect(() => {
     if (params && params.year) {
       // TODO: cancel request if new params are selected
       axios.get('/api/data/table', { params })
-        .then(({ data }) => setTable(data));
+        .then(({ data }) => {
+          setTable(data);
+          setVisible(true)
+        });
+
     }
   }, [params]);
 
   return (
-    <ChartActions>
+    <ChartActions visible={actionVisible}>
       <div id="monitor-explorer-entity-table">
         {
           table && table.length > 0 ? <table>

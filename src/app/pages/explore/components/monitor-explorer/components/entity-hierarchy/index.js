@@ -3,22 +3,24 @@ const PropTypes = require('prop-types');
 const ChartActions = require('../../../../../../components/monitor/chart-actions');
 const chart = require('../../../../../../components/chart');
 
-const { useEffect } = React;
+const { useEffect, useState } = React;
 
 const EntityHierarchy = ({ params }) => {
   let hierarchyChart;
+  const [actionVisible, setVisible] = useState(false);
 
   useEffect(() => {
     if (params && params.year) {
       chart(hierarchyChart, params, '/api/data/hierarchy', 'hierarchy-chart')
         .then(outputChart => {
           hierarchyChart = outputChart;
+          setVisible(true)
         });
     }
   }, [params]);
 
   return (
-    <ChartActions>
+    <ChartActions visible={actionVisible}>
       <div id="hierarchy-chart-container">
         <div>
           <div id="hierarchy-chart" />
