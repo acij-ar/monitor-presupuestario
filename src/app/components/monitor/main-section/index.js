@@ -6,7 +6,7 @@ const MonitorMainSection = ({selectedSection}) => (
     <h1>Monitor</h1>
     <p>Para conocer las prioridades y compromisos reales de los gobiernos la mejor herramienta es su presupuesto. Mirá
       cómo, cuándo y cuántos recursos se gastan -o no- en garantizar derechos. Podés ver las siguientes categorías:
-      jurisdicción, entidad, programa y actividad (así como sus metas físicas cuando existen) y funciones, elegir un año
+      jurisdicción, entidad, programa y actividad (así como sus metas físicas cuando existen), elegir un año
       o un periodo, y el tipo de presupuesto; original (el sancionado por el congreso), vigente o devengado.
       En la sección de Comparar, podés cotejar programas, actividades o dependencias entre
       sí en un mismo año o a lo largo de un periodo. La información se puede visualizar como la publica el gobierno o

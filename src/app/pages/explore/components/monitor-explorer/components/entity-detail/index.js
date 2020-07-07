@@ -85,7 +85,6 @@ EntityDetail.propTypes = {
     program: PropTypes.string,
     activity: PropTypes.string,
     year: PropTypes.number,
-    function: PropTypes.string,
     budget: PropTypes.string,
     inflation: PropTypes.string,
   }),
