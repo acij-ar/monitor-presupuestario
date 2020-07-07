@@ -2,19 +2,9 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const axios = require('axios');
 const ChartActions = require('../../../../../../components/monitor/chart-actions');
+const generateDataForSheet = require('./generate-data-for-sheet');
 
 const { useEffect, useState } = React;
-
-const generateDataForSheet = (tableData) => {
-  const header = ['Categoria', 'C. Original', 'C. Vigente', 'C. Devengado'];
-  const rows = tableData.map((row) => ({
-    'Categoria': row.name,
-    'C. Original': row.original,
-    'C. Vigente': row.vigente,
-    'C. Devengado': row.devengado,
-  }));
-  return [rows, {header}]
-}
 
 const EntityTable = ({ params }) => {
   const [table, setTable] = useState({});
