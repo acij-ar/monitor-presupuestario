@@ -5,22 +5,33 @@ const ChartActions = require('../../../../../../components/monitor/chart-actions
 
 const { useEffect, useState } = React;
 
+const generateDataForSheet = (chartData) => {
+  if (chartData) {
+    // TODO: generate data for sunburst
+  }
+  const header = [];
+  const rows = [];
+  return [rows, {header}]
+}
+
 const EntitySunburst = ({ params }) => {
   let sunburstChart;
   const [actionVisible, setVisible] = useState(false);
+  const [chartData, setData] = useState(null);
 
   useEffect(() => {
     if (params && params.year) {
       chart(sunburstChart, params, '/api/data/sunburst', 'sunburst-chart')
-        .then(outputChart => {
-          sunburstChart = outputChart;
+        .then(({ chart, data }) => {
+          sunburstChart = chart;
           setVisible(true)
+          setData(data);
         });
     }
   }, [params]);
 
   return (
-    <ChartActions visible={actionVisible}>
+    <ChartActions visible={actionVisible} generateDataForSheet={() => generateDataForSheet(chartData)}>
       <div id="sunburst-chart" />
     </ChartActions>
   )

@@ -9,5 +9,6 @@ module.exports = (chart, params, url, elementId) => (
       } else {
         chart = Highcharts.chart(elementId, data);
       }
+      return {chart, data}
     })
 )

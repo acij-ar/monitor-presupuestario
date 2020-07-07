@@ -5,20 +5,31 @@ const ChartActions = require('../../../../../../components/monitor/chart-actions
 
 const { useEffect, useState } = React;
 
+const generateDataForSheet = (chartData) => {
+  if (chartData) {
+    // TODO: generate data for timeseries
+  }
+  const header = [];
+  const rows = [];
+  return [rows, {header}]
+}
+
 const EntityTimeseries = ({ params }) => {
   let timeseriesChart;
   const [actionVisible, setVisible] = useState(false);
+  const [chartData, setData] = useState(null);
 
   useEffect(() => {
     chart(timeseriesChart, params, '/api/data/timeseries', 'timeseries-chart')
-      .then(outputChart => {
-        timeseriesChart = outputChart;
+      .then(({ chart, data }) => {
+        timeseriesChart = chart;
         setVisible(true)
+        setData(data);
       });
   }, [params]);
 
   return (
-    <ChartActions visible={actionVisible}>
+    <ChartActions visible={actionVisible} generateDataForSheet={() => generateDataForSheet(chartData)}>
       <div id="timeseries-chart" />
     </ChartActions>
   )

@@ -28,7 +28,6 @@ const EntityTable = ({ params }) => {
           setTable(data);
           setVisible(true)
         });
-
     }
   }, [params]);
 
