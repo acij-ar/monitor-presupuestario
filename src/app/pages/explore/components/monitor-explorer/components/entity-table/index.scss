@@ -1,7 +1,7 @@
 @import '../../../../../../components/page/globals';
 
 #monitor-explorer-entity-table {
-  max-height: 500px;
+  max-height: 1000px;
   text-align: left;
   overflow: auto;
   margin-bottom: 20px;
@@ -31,7 +31,7 @@
       vertical-align: bottom;
 
       &:first-child {
-        width: 40%;
+        width: 55%;
       }
 
       span {

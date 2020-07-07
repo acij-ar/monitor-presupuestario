@@ -23,10 +23,8 @@ const MonitorExplorer = () => {
         </div>
         <EntitySunburst params={params} />
       </div>
-      <div className="monitor-explorer-chart-row">
-        <EntityHierarchy params={params} />
-        <EntityTable params={params} />
-      </div>
+      <EntityHierarchy params={params} />
+      <EntityTable params={params} />
       <EntityTimeseries params={params} />
       <InflationDisclaimer params={params} />
     </div>
