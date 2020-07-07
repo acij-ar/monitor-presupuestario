@@ -2,17 +2,9 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const chart = require('../../../../../../components/chart');
 const ChartActions = require('../../../../../../components/monitor/chart-actions');
+const generateDataForSheet = require('./generate-data-for-sheet');
 
 const { useEffect, useState } = React;
-
-const generateDataForSheet = (chartData) => {
-  if (chartData) {
-    // TODO: generate data for sunburst
-  }
-  const header = [];
-  const rows = [];
-  return [rows, {header}]
-}
 
 const EntitySunburst = ({ params }) => {
   let sunburstChart;
