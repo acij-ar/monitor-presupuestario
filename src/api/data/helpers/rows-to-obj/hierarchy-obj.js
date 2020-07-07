@@ -7,7 +7,6 @@ const hierarchy = [
   'entidad_desc',
   'programa_desc',
   'actividad_desc',
-  'funcion_desc',
 ];
 
 module.exports = (rows, options) => {
