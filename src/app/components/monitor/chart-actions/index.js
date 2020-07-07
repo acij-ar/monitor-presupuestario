@@ -1,28 +1,17 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-const domtoimage = require('dom-to-image');
-const downloadImage = require('./download-image');
-
+const exportFile = require('./export-file');
 const { useRef } = React;
 
-const ChartActions = ({ children, visible }) => {
+const ChartActions = ({ children, visible, generateDataForSheet }) => {
   const chartContainer = useRef(null);
 
   const onChange = (e) => {
     const { value } = e.target;
     const chartNode = chartContainer.current;
-    const imageOptions = { bgcolor: '#fafafa' };
-    if (value === 'jpg') {
-      domtoimage.toJpeg(chartNode, imageOptions).then(dataUrl => downloadImage(dataUrl, 'chart.jpg'))
-    } else if (value === 'png') {
-      domtoimage.toPng(chartNode, imageOptions).then(dataUrl => downloadImage(dataUrl, 'chart.png'))
-    } else if (value === 'svg') {
-      domtoimage.toSvg(chartNode, imageOptions).then(dataUrl => downloadImage(dataUrl, 'chart.svg'))
-    } else if (value === 'pdf') {
-      const options = { filename: 'chart.pdf' };
-      require('dom-to-pdf')(chartNode, options);
-    }
+    exportFile(value, chartNode, generateDataForSheet);
   }
+
   return (
     <div className="chart-with-actions">
       <div className="chart-container" ref={chartContainer}>
@@ -37,10 +26,8 @@ const ChartActions = ({ children, visible }) => {
               <option value="jpg">Descargar imagen (JPG)</option>
               <option value="pdf">Descargar imagen (PDF)</option>
               <option value="svg">Descargar imagen (SVG)</option>
-              {/*
-                <option value="csv">Descargar datos (CSV)</option>
-                <option value="xls">Descargar datos (XLS)</option>
-            */}
+              <option value="csv">Descargar datos (CSV)</option>
+              <option value="xlsx">Descargar datos (XLS)</option>
             </select>
           </div>
         </div>
@@ -52,6 +39,7 @@ const ChartActions = ({ children, visible }) => {
 ChartActions.propTypes = {
   children: PropTypes.node.isRequired,
   visible: PropTypes.bool.isRequired,
+  generateDataForSheet: PropTypes.func.isRequired,
 }
 
 module.exports = ChartActions;
