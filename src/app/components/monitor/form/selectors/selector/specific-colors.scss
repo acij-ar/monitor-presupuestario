@@ -40,16 +40,6 @@
   }
 }
 
-&#entity-form-funcion {
-  color: $function;
-  &:after {
-    border-color: $function;
-  }
-  select {
-    border-bottom-color: $function;
-  }
-}
-
 &#setting-form-years,
 &#setting-form-budgets,
 &#setting-form-inlfation {

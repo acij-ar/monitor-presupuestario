@@ -20,6 +20,13 @@ const Selectors = ({ options, updateSelectedOption, updateSelectedEntity, select
         onChange={e => updateSelectedEntity(e.target.value)}
         value={selected.entity}
       />
+      <Selector
+        id="setting-form-years"
+        name="Años disponibles"
+        options={options.years}
+        onChange={e => updateSelectedOption({ year: e.target.value})}
+        value={selected.year}
+      />
     </div>
     <div id="monitor-explore-selector-labels-reason">
       <h3>¿Para qué?</h3>
@@ -31,11 +38,11 @@ const Selectors = ({ options, updateSelectedOption, updateSelectedEntity, select
         value={selected.program}
       />
       <Selector
-        id="setting-form-years"
-        name="Años disponibles"
-        options={options.years}
-        onChange={e => updateSelectedOption({ year: e.target.value})}
-        value={selected.year}
+        id="setting-form-budgets"
+        name="Tipos de presup."
+        options={options.budgets}
+        onChange={e => updateSelectedOption({ budget: e.target.value})}
+        value={selected.budget}
       />
     </div>
     <div id="monitor-explore-selector-labels-what">
@@ -46,20 +53,6 @@ const Selectors = ({ options, updateSelectedOption, updateSelectedEntity, select
         options={options.activities}
         onChange={e => updateSelectedEntity(e.target.value)}
         value={selected.activity}
-      />
-      <Selector
-        id="entity-form-funcion"
-        name="Función"
-        options={options.functions}
-        onChange={e => updateSelectedEntity(e.target.value)}
-        value={selected.function}
-      />
-      <Selector
-        id="setting-form-budgets"
-        name="Tipos de presup."
-        options={options.budgets}
-        onChange={e => updateSelectedOption({ budget: e.target.value})}
-        value={selected.budget}
       />
       <Selector
         id="setting-form-inlfation"
@@ -81,7 +74,6 @@ Selectors.propTypes = {
     program: PropTypes.string,
     activity: PropTypes.string,
     year: PropTypes.number,
-    function: PropTypes.string,
     budget: PropTypes.string,
     inflation: PropTypes.string,
   }),
@@ -91,7 +83,6 @@ Selectors.propTypes = {
     programs: PropTypes.array,
     activities: PropTypes.array,
     years: PropTypes.array,
-    functions: PropTypes.array,
     budgets: PropTypes.array,
     inflation: PropTypes.array,
   }),

@@ -4,7 +4,6 @@ const hierarchyPlural = [
   'entities',
   'programs',
   'activities',
-  'functions',
 ];
 
 const hierarchySingular = [
@@ -12,7 +11,6 @@ const hierarchySingular = [
   'entity',
   'program',
   'activity',
-  'function',
 ]
 
 const convertToOptions = (entitiesOptions, selectedIds, selectedNames, entitiesObj, newId, depth=0) => {
@@ -42,10 +40,9 @@ const transformEntities = (hierarchyObj, newId) => {
     entities: [],
     programs: [],
     activities: [],
-    functions: [],
   };
-  const selectedIds = { jurisdiction: null, entity: null, program: null, activity: null, function: null };
-  const selectedNames = { jurisdiction: null, entity: null, program: null, activity: null, function: null };
+  const selectedIds = { jurisdiction: null, entity: null, program: null, activity: null };
+  const selectedNames = { jurisdiction: null, entity: null, program: null, activity: null };
   convertToOptions(entitiesOptions, selectedIds, selectedNames, entitiesObj, newId)
 
   return { entitiesOptions, selectedIds, selectedNames }

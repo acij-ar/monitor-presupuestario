@@ -16,21 +16,26 @@
     }
   }
 
-  #monitor-explore-selector-labels-who,
-  #monitor-explore-selector-labels-what {
-    flex: 0 0 (11 / 29 * 100%);
+  #monitor-explore-selector-labels-who {
+    flex: 0 0 (5.5 / 11.5 * 100%);
 
     .selector-wrapper {
-      width: 5 / 11 * 100%;
+      width: 2.5 / 5.5 * 100%;
 
       &:nth-child(2n) {
         margin-right: 1 / 11 * 100%;
       }
+
+      &:last-child {
+        margin-left: 3 / 5.5 * 100%;
+        margin-right: 0;
+      }
     }
   }
 
-  #monitor-explore-selector-labels-reason {
-    flex: 0 0 (5 / 29 * 100%);
+  #monitor-explore-selector-labels-reason,
+  #monitor-explore-selector-labels-what {
+    flex: 0 0 (2.5 / 11.5 * 100%);
 
     .selector-wrapper {
       width: 100%;
