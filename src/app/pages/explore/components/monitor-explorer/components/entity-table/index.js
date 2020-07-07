@@ -5,6 +5,16 @@ const ChartActions = require('../../../../../../components/monitor/chart-actions
 
 const { useEffect, useState } = React;
 
+const generateDataForSheet = (tableData) => {
+  const header = ['Categoria', 'C. Original', 'C. Vigente', 'C. Devengado'];
+  const rows = tableData.map((row) => ({
+    'Categoria': row.name,
+    'C. Original': row.original,
+    'C. Vigente': row.vigente,
+    'C. Devengado': row.devengado,
+  }));
+  return [rows, {header}]
+}
 
 const EntityTable = ({ params }) => {
   const [table, setTable] = useState({});
@@ -23,7 +33,7 @@ const EntityTable = ({ params }) => {
   }, [params]);
 
   return (
-    <ChartActions visible={actionVisible}>
+    <ChartActions visible={actionVisible} generateDataForSheet={() => generateDataForSheet(table)}>
       <div id="monitor-explorer-entity-table">
         {
           table && table.length > 0 ? <table>
