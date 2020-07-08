@@ -10,10 +10,11 @@ const hierarchy = [
 ];
 
 module.exports = (rows, options) => {
-  const { withBudgets } = options;
+  const { withBudgets, maxDepth } = options;
   const baseObj = getBaseObj({name: 'Presupuesto'}, withBudgets);
 
-  const row2obj = (row, baseObj, key) => {
+  const row2obj = (row, baseObj, key, index) => {
+    if (maxDepth && index > maxDepth) return;
     const name = row[key];
     let child = baseObj.children.find(child => child.name === name)
     if (!child) {
@@ -25,7 +26,7 @@ module.exports = (rows, options) => {
   };
   rows.forEach((row) => {
     if (withBudgets) sumBudgets(row, baseObj);
-    hierarchy.reduce((acumm, level) => row2obj(row, acumm, level), baseObj);
+    hierarchy.reduce((acumm, level, index) => row2obj(row, acumm, level, index), baseObj);
   });
   return baseObj;
 }
