@@ -11,11 +11,19 @@ const NodeTemplate = require('./node-template');
 const { useEffect, useState } = React;
 
 const generateDataForSheet = (chartData) => {
-  if (chartData) {
-    // TODO: generate data for hierarchy (better after getting the chart working)
-  }
   const header = [];
   const rows = [];
+  if (chartData) {
+    const navigateNodes = (node, rowSoFar={}) => {
+      if (header.indexOf(node.key) === -1) {
+        header.push(node.key)
+      }
+      rowSoFar[node.key] = node.name;
+      rows.push(rowSoFar);
+      node.children.map(child => navigateNodes(child, {...rowSoFar}))
+    }
+    navigateNodes(chartData.children[0]);
+  }
   return [rows, {header}]
 }
 
