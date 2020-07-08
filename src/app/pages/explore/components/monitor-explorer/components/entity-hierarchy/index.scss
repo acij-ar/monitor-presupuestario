@@ -1,3 +1,5 @@
+@import '../../../../../../components/page/globals';
+
 #hierarchy-chart-container {
   max-height: 500px;
   position: relative;
@@ -22,11 +24,35 @@
     background-color: #555;
   }
 
-  .orgchart ul li .oc-node:hover {
+  .orgchart ul li .oc-node:hover,
+  .orgchart ul li .oc-node.selected {
     background: none;
   }
 
   .orgchart ul {
     justify-content: center;
+  }
+
+  .org-node {
+    padding: 2px 4px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #eee;
+  }
+
+  .org-node-jurisdiccion_desc {
+    background: #00b0aeb8;
+  }
+
+  .org-node-entidad_desc {
+    background: #ff00e1a8;
+  }
+
+  .org-node-programa_desc {
+    background: #8200ff9e;
+  }
+
+  .org-node-actividad_desc {
+    background: #bb73ff8a;
   }
 }

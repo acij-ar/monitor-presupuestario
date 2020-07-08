@@ -30,6 +30,11 @@ const EntityHierarchy = ({ params }) => {
         .then(({ data }) => {
           setData(data);
           setVisible(true)
+          setTimeout(() => {
+            const container = document.querySelector('.orgchart-container');
+            const content = document.querySelector('.orgchart');
+            container.scrollLeft = (content.offsetWidth - container.offsetWidth) / 2;
+          }, 200)
         });
     }
   }, [params]);
