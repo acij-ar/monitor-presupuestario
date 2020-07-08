@@ -18,14 +18,10 @@ const MonitorExplorer = () => {
       <MonitorForm params={params} setParams={setParams} />
       <div className="monitor-explorer-chart-row">
         <div>
-          <EntityDetail params={params} />
           <EntityGoals params={params} />
         </div>
-        <EntitySunburst params={params} />
       </div>
       <EntityHierarchy params={params} />
-      <EntityTable params={params} />
-      <EntityTimeseries params={params} />
       <InflationDisclaimer params={params} />
     </div>
   );

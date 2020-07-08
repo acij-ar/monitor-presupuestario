@@ -1,7 +1,12 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const ChartActions = require('../../../../../../components/monitor/chart-actions');
-const chart = require('../../../../../../components/chart');
+const axios = require('axios');
+let OrganizationChart;
+if (global.window) {
+  OrganizationChart = require('@dabeng/react-orgchart').default;
+}
+const NodeTemplate = require('./node-template');
 
 const { useEffect, useState } = React;
 
@@ -15,17 +20,16 @@ const generateDataForSheet = (chartData) => {
 }
 
 const EntityHierarchy = ({ params }) => {
-  let hierarchyChart;
   const [actionVisible, setVisible] = useState(false);
   const [chartData, setData] = useState(null);
 
   useEffect(() => {
     if (params && params.year) {
-      chart(hierarchyChart, params, '/api/data/hierarchy', 'hierarchy-chart')
-        .then(({ chart, data }) => {
-          hierarchyChart = chart;
-          setVisible(true);
+      // TODO: cancel request if new params are selected
+      axios.get('/api/data/hierarchy', { params })
+        .then(({ data }) => {
           setData(data);
+          setVisible(true)
         });
     }
   }, [params]);
@@ -33,9 +37,11 @@ const EntityHierarchy = ({ params }) => {
   return (
     <ChartActions visible={actionVisible} generateDataForSheet={() => generateDataForSheet(chartData)}>
       <div id="hierarchy-chart-container">
-        <div>
-          <div id="hierarchy-chart" />
-        </div>
+        {chartData && <OrganizationChart
+          collapsible={false}
+          datasource={chartData}
+          NodeTemplate={NodeTemplate}
+        />}
       </div>
     </ChartActions>
   )
