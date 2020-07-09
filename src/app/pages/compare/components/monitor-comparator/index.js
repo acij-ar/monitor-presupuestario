@@ -1,0 +1,22 @@
+const React = require('react');
+const MonitorForm = require('../../../../components/monitor/form');
+const InflationDisclaimer = require('../../../../components/monitor/inflation-disclaimer');
+const EntitiesNightingaleRose = require('./components/entities-nightingale-rose');
+const EntitiesTimeseriesArea = require('./components/entities-timeseries-area');
+
+const { useState } = React;
+
+const MonitorExplorer = () => {
+  const [params, setParams] = useState({});
+
+  return (
+    <div id="monitor-comparator">
+      <MonitorForm params={params} setParams={setParams} />
+      <EntitiesNightingaleRose params={params} />
+      <EntitiesTimeseriesArea params={params} />
+      <InflationDisclaimer params={params} />
+    </div>
+  );
+};
+
+module.exports = MonitorExplorer;

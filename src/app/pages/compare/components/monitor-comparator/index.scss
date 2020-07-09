@@ -1,0 +1,8 @@
+#monitor-comparator {
+  display: flex;
+  flex-direction: column;
+
+  @import '../../../../components/monitor/form/index';
+  @import '../../../../components/monitor/inflation-disclaimer/index';
+  @import '../../../../components/monitor/chart-actions/index';
+}
