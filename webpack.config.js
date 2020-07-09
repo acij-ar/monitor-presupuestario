@@ -26,6 +26,11 @@ module.exports = {
     doubts: assetsForPage('doubts'),
     budget: assetsForPage('budget'),
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   module: {
     rules: [{
       test: /\.s?css$/,
