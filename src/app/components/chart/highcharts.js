@@ -1,6 +1,7 @@
 const Highcharts = require('highcharts');
 
 if (global.window) {
+  require('highcharts/highcharts-more')(Highcharts);
   require('highcharts/modules/sunburst')(Highcharts);
   require('highcharts/modules/sankey')(Highcharts);
   require('highcharts/modules/organization')(Highcharts);

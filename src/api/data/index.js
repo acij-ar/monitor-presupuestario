@@ -7,6 +7,7 @@ const timeseriesCompareDataController = require('./timeseries-compare');
 const hierarchyDataController = require('./hierarchy');
 const goalsController = require('./goals');
 const tableController = require('./table');
+const nightingaleController = require('./nightingale');
 
 const router = express.Router();
 
@@ -18,5 +19,6 @@ router.get('/hierarchy', hierarchyDataController);
 router.get('/options', optionsController);
 router.get('/goals', goalsController);
 router.get('/table', tableController);
+router.get('/nightingale', nightingaleController);
 
 module.exports = router;
