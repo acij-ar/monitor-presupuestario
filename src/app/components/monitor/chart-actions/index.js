@@ -3,12 +3,14 @@ const PropTypes = require('prop-types');
 const exportFile = require('./export-file');
 const { useRef } = React;
 
-const ChartActions = ({ children, visible, generateDataForSheet, imageTypesEnabled, dataTypesEnabled }) => {
+const ChartActions = ({ children, visible, generateDataForSheet, imageTypesEnabled, dataTypesEnabled, customSelector }) => {
   const chartContainer = useRef(null);
 
   const onChange = (e) => {
     const { value } = e.target;
-    const chartNode = chartContainer.current;
+    const chartNode = customSelector ?
+      chartContainer.current.querySelector(customSelector) :
+      chartContainer.current;
     exportFile(value, chartNode, generateDataForSheet);
   }
 
@@ -50,11 +52,13 @@ ChartActions.propTypes = {
   generateDataForSheet: PropTypes.func.isRequired,
   imageTypesEnabled: PropTypes.bool,
   dataTypesEnabled: PropTypes.bool,
+  customSelector: PropTypes.string,
 }
 
 ChartActions.defaultProps = {
   imageTypesEnabled: true,
   dataTypesEnabled: true,
+  customSelector: null,
 }
 
 module.exports = ChartActions;

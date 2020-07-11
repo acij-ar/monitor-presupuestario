@@ -48,7 +48,7 @@ const EntityHierarchy = ({ params }) => {
   }, [params]);
 
   return (
-    <ChartActions visible={actionVisible} generateDataForSheet={() => generateDataForSheet(chartData)}>
+    <ChartActions visible={actionVisible} generateDataForSheet={() => generateDataForSheet(chartData)} customSelector='.orgchart'>
       <div id="hierarchy-chart-container">
         {chartData && <OrganizationChart
           collapsible={false}
