@@ -18,15 +18,20 @@ const MonitorMainSection = ({selectedSection}) => (
     <h2>¿Qué querés hacer hoy?</h2>
     <a href="/monitor/explorar" id="monitor-main-section-explore-link">EXPLORAR EL PRESUPUESTO</a>
     <a href="/monitor/comparar" id="monitor-main-section-compare-link">COMPARAR</a>
-    <p>
-      <strong>Texto introductorio</strong>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
-      type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-      remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
-      of Lorem Ipsum
-    </p>
+    {
+      selectedSection === 'explore' ?
+        <p>
+          Esta sección te ayudará a ver mejor la composición del presupuesto nacional y conocer cómo se distribuye en
+          cada año. La visualización que ves al inicio muestra el 100% del presupuesto. A partir de ahí podés filtrar a
+          través de sus Jurisdicciones, Entidades, Programas y Actividades. Podés ir más adentro en cada círculo de la
+          visualización para conocer mejor la distribución.
+        </p> :
+        <p>
+          El Comparador te permite seleccionar los filtros de exploración, pero también cruzar la información y poder
+          cotejar cómo cambia a través de los años y cuáles son las diferencias entre el dinero asignado a los distintos
+          programas y actividades.
+        </p>
+    }
   </div>
 );
 

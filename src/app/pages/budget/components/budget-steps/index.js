@@ -14,7 +14,7 @@ const BudgetSteps = () => (
     </li>
     <li>
       <div>
-        <h2>Discusión y aprobación de la Ley</h2>
+        <h2>Discusión y aprobación de la Ley.</h2>
         <p>El Poder Legislativo es el responsable de discutir el proyecto de ley enviado por el Ejecutivo, realizar las
           modificaciones que le parezcan necesarias, y de aprobar la ley que defina los ingresos y gastos públicos del
           año siguiente. Sus pasos son
@@ -36,7 +36,7 @@ const BudgetSteps = () => (
     </li>
     <li>
       <div>
-        <h2>Control y Rendición de cuentas</h2>
+        <h2>Control y Rendición de cuentas.</h2>
         <p>La ejecución presupuestaria está sujeta a la evaluación realizada por la Oficina Nacional Presupuesto, que
           analiza trimestralmente si el presupuesto, las actividades y las metas se están implementando tal como fueron
           diseñadas en la ley de presupuesto, informa el crédito vigente para cada uno de los gastos previstos, cuánto
@@ -47,7 +47,7 @@ const BudgetSteps = () => (
     </li>
     <li>
       <div>
-        <h2>Ejecución Presupuestaria</h2>
+        <h2>Ejecución Presupuestaria.</h2>
         <p>El Poder Ejecutivo es el encargado de ejecutar el presupuesto sancionado por el Congreso. Las reasignaciones
           o modificaciones presupuestarias durante su ejecución sólo puede realizarlas el Poder Legislativo, de
           conformidad con el principio de división de poderes, que le otorga al Congreso la función exclusiva de
