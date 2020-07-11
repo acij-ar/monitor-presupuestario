@@ -4,7 +4,7 @@ const PropTypes = require('prop-types');
 
 const BudgetAccordion = ({id, longTitle, smallTitle, children}) => (
   <div id={id} className="budget-accordion">
-    <input id={`${id}_checkbox`} type="checkbox" />
+    <input id={`${id}_checkbox`} type="radio" name="budget-accordion" />
     <label htmlFor={`${id}_checkbox`}>{smallTitle}</label>
     <ContentSection
       title={(
