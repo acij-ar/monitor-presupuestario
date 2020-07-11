@@ -3,7 +3,7 @@ const PropTypes = require('prop-types');
 const exportFile = require('./export-file');
 const { useRef } = React;
 
-const ChartActions = ({ children, visible, generateDataForSheet }) => {
+const ChartActions = ({ children, visible, generateDataForSheet, imageTypesEnabled, dataTypesEnabled }) => {
   const chartContainer = useRef(null);
 
   const onChange = (e) => {
@@ -22,12 +22,20 @@ const ChartActions = ({ children, visible, generateDataForSheet }) => {
           <div className="chart-actions-export-wrapper">
             <select value="undefined" onChange={onChange}>
               <option value="undefined">Descargar cómo</option>
-              <option value="png">Descargar imagen (PNG)</option>
-              <option value="jpg">Descargar imagen (JPG)</option>
-              <option value="pdf">Descargar imagen (PDF)</option>
-              <option value="svg">Descargar imagen (SVG)</option>
-              <option value="csv">Descargar datos (CSV)</option>
-              <option value="xlsx">Descargar datos (XLS)</option>
+              {
+                imageTypesEnabled && <React.Fragment>
+                  <option value="png">Descargar imagen (PNG)</option>
+                  <option value="jpg">Descargar imagen (JPG)</option>
+                  <option value="pdf">Descargar imagen (PDF)</option>
+                  <option value="svg">Descargar imagen (SVG)</option>
+                </React.Fragment>
+              }
+              {
+                dataTypesEnabled && <React.Fragment>
+                  <option value="csv">Descargar datos (CSV)</option>
+                  <option value="xlsx">Descargar datos (XLS)</option>
+                </React.Fragment>
+              }
             </select>
           </div>
         </div>
@@ -40,6 +48,13 @@ ChartActions.propTypes = {
   children: PropTypes.node.isRequired,
   visible: PropTypes.bool.isRequired,
   generateDataForSheet: PropTypes.func.isRequired,
+  imageTypesEnabled: PropTypes.bool,
+  dataTypesEnabled: PropTypes.bool,
+}
+
+ChartActions.defaultProps = {
+  imageTypesEnabled: true,
+  dataTypesEnabled: true,
 }
 
 module.exports = ChartActions;

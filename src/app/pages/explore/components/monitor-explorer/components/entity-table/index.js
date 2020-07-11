@@ -22,7 +22,7 @@ const EntityTable = ({ params }) => {
   }, [params]);
 
   return (
-    <ChartActions visible={actionVisible} generateDataForSheet={() => generateDataForSheet(table)}>
+    <ChartActions visible={actionVisible} generateDataForSheet={() => generateDataForSheet(table)} imageTypesEnabled={false}>
       <div id="monitor-explorer-entity-table">
         {
           table && table.length > 0 ? <table>
