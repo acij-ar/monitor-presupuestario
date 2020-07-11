@@ -1,3 +1,5 @@
+const sortBy = require('lodash/sortBy');
+
 // TODO: react to year changes
 const hierarchyPlural = [
   'jurisdictions',
@@ -14,8 +16,6 @@ const hierarchySingular = [
 ]
 
 const convertToOptions = (entitiesOptions, selectedIds, selectedNames, entitiesObj, newId, depth=0) => {
-  if (!newId && depth > 0) return;
-  if (newId && depth + 1 > (newId.match(/_/g) || []).length) return;
   entitiesObj.children.forEach(child => {
     const { id, name } = child;
     const key = hierarchyPlural[depth];
@@ -27,6 +27,8 @@ const convertToOptions = (entitiesOptions, selectedIds, selectedNames, entitiesO
     } else if (newId && (newId === id || newId.startsWith(`${id}_`))) {
       selectedIds[hierarchySingular[depth]] = id;
       selectedNames[hierarchySingular[depth]] = name;
+      convertToOptions(entitiesOptions, selectedIds, selectedNames, child, newId, depth+1)
+    } else if (id.startsWith(`${newId}_`)) {
       convertToOptions(entitiesOptions, selectedIds, selectedNames, child, newId, depth+1)
     }
   })
@@ -45,7 +47,16 @@ const transformEntities = (hierarchyObj, newId) => {
   const selectedNames = { jurisdiction: null, entity: null, program: null, activity: null };
   convertToOptions(entitiesOptions, selectedIds, selectedNames, entitiesObj, newId)
 
-  return { entitiesOptions, selectedIds, selectedNames }
+  return {
+    entitiesOptions: {
+      jurisdictions: sortBy(entitiesOptions.jurisdictions, 'name'),
+      entities: sortBy(entitiesOptions.entities, 'name'),
+      programs: sortBy(entitiesOptions.programs, 'name'),
+      activities: sortBy(entitiesOptions.activities, 'name'),
+    },
+    selectedIds,
+    selectedNames
+  }
 };
 
 module.exports = ({ budgets, inflation, years, entities }, newId) => {
