@@ -41,4 +41,29 @@
     margin: 20px 0;
   }
 
+  #home-actions {
+    a {
+      cursor: pointer;
+      font-size: 27px;
+      display: inline-block;
+      border: solid 2px;
+      padding: 10px 30px;
+      margin-right: 30px;
+      font-weight: 500;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+
+    #budget-link {
+      border-color: $purple;
+      color: $purple;
+    }
+
+    #budget-explore-link {
+      border-color: $blue;
+      color: $blue;
+    }
+  }
 }

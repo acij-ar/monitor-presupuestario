@@ -14,6 +14,10 @@ const App = ({pageName}) => (
       el presupuesto nacional desde el año 2007 para realizar tu propio monitoreo sobre cómo se distribuyen los recursos
       del Estado en la Argentina.
     </p>
+    <div id="home-actions">
+      <a id="budget-link" href="/el-presupuesto">Conocer el presupuesto</a>
+      <a id="budget-explore-link" href="/monitor/explorar">Ir al Monitor</a>
+    </div>
   </Page>
 );
 
