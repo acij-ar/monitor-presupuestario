@@ -42,6 +42,6 @@ module.exports = (data) => merge({}, baseHighchartsOptions, {
   ],
   tooltip: {
     headerFormat: '',
-    pointFormat: '{point.name}: <b>{point.value}M</b>',
+    pointFormat: '{point.type}<br /><b>{point.name}</b><br />{point.budgetType}: <b>$ {point.value}</b>',
   },
 });
