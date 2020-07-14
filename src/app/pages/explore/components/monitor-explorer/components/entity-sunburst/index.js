@@ -23,7 +23,7 @@ const EntitySunburst = ({ params }) => {
   }, [params]);
 
   return (
-    <ChartActions visible={actionVisible} generateDataForSheet={() => generateDataForSheet(chartData)}>
+    <ChartActions visible={actionVisible} generateDataForSheet={() => generateDataForSheet(chartData, params)}>
       <div id="sunburst-chart" />
     </ChartActions>
   )
