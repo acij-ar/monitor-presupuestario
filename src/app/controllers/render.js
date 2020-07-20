@@ -4,7 +4,10 @@ const { renderToString } = require('react-dom/server');
 
 module.exports = (req, res) => {
   const { View, props, pageName } = res.locals;
-  const scripts = res.locals.getJavascripts().filter(name => name.includes(pageName));
+  const scripts = [
+    res.locals.assetPath(`vendor.js`),
+    ...res.locals.getJavascripts().filter(name => name.includes(pageName))
+  ];
   const styles = [
     res.locals.assetPath(`page.css`),
     ...res.locals.getStylesheets().filter(name => name.includes(pageName)),
