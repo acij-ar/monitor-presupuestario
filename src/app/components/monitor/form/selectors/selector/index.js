@@ -1,6 +1,7 @@
 const React = require('react');
 const Select = require('react-select').default;
 const PropTypes = require('prop-types');
+const styles = require('./styles');
 
 const Selector = ({ id, name, options, value, onChange }) => {
   const disabled = !options || options.length === 0;
@@ -14,6 +15,7 @@ const Selector = ({ id, name, options, value, onChange }) => {
         onChange={onChange}
         isSearchable
         closeMenuOnSelect
+        styles={styles}
       />
     </div>
   )

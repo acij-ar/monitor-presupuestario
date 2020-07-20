@@ -2,41 +2,37 @@
 
 &#entity-form-jurisdiccion {
   color: $jurisdiccion;
+  border-bottom: solid 2px $jurisdiccion;
+
   &:after {
     border-color: $jurisdiccion;
-  }
-  select {
-    border-bottom-color: $jurisdiccion;
   }
 }
 
 &#entity-form-entidad {
   color: $entidad;
+  border-bottom: solid 2px $entidad;
+
   &:after {
     border-color: $entidad;
-  }
-  select {
-    border-bottom-color: $entidad;
   }
 }
 
 &#entity-form-programa {
   color: $program;
+  border-bottom: solid 2px $program;
+
   &:after {
     border-color: $program;
-  }
-  select {
-    border-bottom-color: $program;
   }
 }
 
 &#entity-form-actividad {
   color: $activity;
+  border-bottom: solid 2px $activity;
+
   &:after {
     border-color: $activity;
-  }
-  select {
-    border-bottom-color: $activity;
   }
 }
 
@@ -44,11 +40,10 @@
 &#setting-form-budgets,
 &#setting-form-inlfation {
   color: $blue;
+  border: solid 2px $blue;
+  margin-top: 10px;
+
   &:after {
     border-color: $blue;
-  }
-  select {
-    border: solid 2px $blue;
-    padding-left: 10px;
   }
 }

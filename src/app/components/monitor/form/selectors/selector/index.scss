@@ -14,33 +14,8 @@
     transform: translateY(-50%) translateY(-4px) rotate(45deg);
   }
 
-  &.selector-wrapper-disabled:after {
+  &.selector-wrapper-disabled {
     opacity: 0.4;
-  }
-
-  select {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-
-    display: block;
-    color: inherit;
-    width: 100%;
-    font-size: 17px;
-    font-weight: 400;
-    margin: 10px 0;
-    padding: 10px 30px 10px 0;
-    border: none;
-    border-bottom: solid 2px;
-    box-shadow: none;
-    background: transparent;
-    outline: none;
-    text-overflow: ellipsis;
-
-    &:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
-    }
   }
 
   @import './specific-colors';
