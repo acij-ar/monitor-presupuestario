@@ -9,6 +9,7 @@ module.exports = (req, res) => {
     ...res.locals.getJavascripts().filter(name => name.includes(pageName))
   ];
   const styles = [
+    res.locals.assetPath(`vendor.css`),
     res.locals.assetPath(`page.css`),
     ...res.locals.getStylesheets().filter(name => name.includes(pageName)),
   ];
