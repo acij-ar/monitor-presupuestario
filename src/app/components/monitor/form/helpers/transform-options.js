@@ -20,7 +20,7 @@ const convertToOptions = (entitiesOptions, selectedIds, selectedNames, entitiesO
     const { id, name } = child;
     const key = hierarchyPlural[depth];
     if (!entitiesOptions[key].find(savedEntity => savedEntity.name === name)) {
-      entitiesOptions[key].push({ id, name, value: name })
+      entitiesOptions[key].push({ id, name, label: name, value: name })
     }
     if (!newId) {
       convertToOptions(entitiesOptions, selectedIds, selectedNames, child, newId, depth+1)

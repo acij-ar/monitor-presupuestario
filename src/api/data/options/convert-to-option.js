@@ -1,1 +1,1 @@
-module.exports = (name) => ({ name, value:name });
+module.exports = (name) => ({ label: name, value: name });

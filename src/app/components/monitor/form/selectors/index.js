@@ -10,21 +10,21 @@ const Selectors = ({ options, updateSelectedOption, updateSelectedEntity, select
         id="entity-form-jurisdiccion"
         name="Jurisdicción"
         options={options.jurisdictions}
-        onChange={e => updateSelectedEntity(e.target.value)}
+        onChange={e => updateSelectedEntity(e.id)}
         value={selected.jurisdiction}
       />
       <Selector
         id="entity-form-entidad"
         name="Entidad"
         options={options.entities}
-        onChange={e => updateSelectedEntity(e.target.value)}
+        onChange={e => updateSelectedEntity(e.id)}
         value={selected.entity}
       />
       <Selector
         id="setting-form-years"
         name="Años disponibles"
         options={options.years}
-        onChange={e => updateSelectedOption({ year: e.target.value})}
+        onChange={e => updateSelectedOption({ year: e.value})}
         value={selected.year}
       />
     </div>
@@ -34,14 +34,14 @@ const Selectors = ({ options, updateSelectedOption, updateSelectedEntity, select
         id="entity-form-programa"
         name="Programa"
         options={options.programs}
-        onChange={e => updateSelectedEntity(e.target.value)}
+        onChange={e => updateSelectedEntity(e.id)}
         value={selected.program}
       />
       <Selector
         id="setting-form-budgets"
         name="Tipos de presup."
         options={options.budgets}
-        onChange={e => updateSelectedOption({ budget: e.target.value})}
+        onChange={e => updateSelectedOption({ budget: e.value})}
         value={selected.budget}
       />
     </div>
@@ -51,14 +51,14 @@ const Selectors = ({ options, updateSelectedOption, updateSelectedEntity, select
         id="entity-form-actividad"
         name="Actividad"
         options={options.activities}
-        onChange={e => updateSelectedEntity(e.target.value)}
+        onChange={e => updateSelectedEntity(e.id)}
         value={selected.activity}
       />
       <Selector
         id="setting-form-inlfation"
         name="Ajuste por inflación"
         options={options.inflation}
-        onChange={e => updateSelectedOption({ inflation: e.target.value})}
+        onChange={e => updateSelectedOption({ inflation: e.value})}
         value={selected.inflation}
       />
     </div>
