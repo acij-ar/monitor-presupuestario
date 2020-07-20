@@ -25,6 +25,7 @@ module.exports = {
     login: assetsForPage('login'),
     doubts: assetsForPage('doubts'),
     budget: assetsForPage('budget'),
+    glosary: assetsForPage('glosary'),
   },
   optimization: {
     splitChunks: {
