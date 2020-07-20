@@ -31,7 +31,8 @@ a {
 
 }
 
-& > #menu-link-budget {
+& > #menu-link-budget,
+& > #menu-link-glosary {
   &:after {
     background: $purple;
   }

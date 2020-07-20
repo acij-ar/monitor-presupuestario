@@ -56,6 +56,11 @@ const Menu = ({ selectedPage }) => (
             Dudas
           </a>
         </li>
+        <li>
+          <a href="/glosario" id="menu-link-glosary" className={selectedPage === 'glosary' ? 'active' : ''}>
+            Glosario
+          </a>
+        </li>
       </ul>
     </div>
   </div>
