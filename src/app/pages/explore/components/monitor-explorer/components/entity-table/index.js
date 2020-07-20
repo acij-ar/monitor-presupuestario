@@ -22,13 +22,13 @@ const EntityTable = ({ params }) => {
   }, [params]);
 
   return (
-    <ChartActions visible={actionVisible} generateDataForSheet={() => generateDataForSheet(table)} imageTypesEnabled={false}>
+    <ChartActions visible={actionVisible} generateDataForSheet={() => generateDataForSheet(table, params)} imageTypesEnabled={false}>
       <div id="monitor-explorer-entity-table">
         {
-          table && table.length > 0 ? <table>
+          table && table.rows && table.rows.length > 0 ? <table>
             <thead>
               <tr>
-                <th><span>Categoria</span></th>
+                <th><span>{table.header.name}</span></th>
                 <th><span>C. Original</span></th>
                 <th><span>C. Vigente</span></th>
                 <th><span>C. Devengado</span></th>
@@ -36,7 +36,7 @@ const EntityTable = ({ params }) => {
             </thead>
             <tbody>
             {
-              table.map((row, index) => (
+              table.rows.map((row, index) => (
                 <tr key={index}>
                   <td><span>{row.name}</span></td>
                   <td><span>$ {row.original.toLocaleString('es')}</span></td>
