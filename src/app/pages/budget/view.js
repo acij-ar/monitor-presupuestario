@@ -8,10 +8,10 @@ const BudgetClassifications = require('./components/budget-classifications');
 const BudgetSpentAccordion = require('./components/budget-accordions/budget-spent');
 const BudgetWhatForAccordion = require('./components/budget-accordions/budget-what-for');
 const BudgetWhoAccordion = require('./components/budget-accordions/budget-who');
-const BudgetChart = require('./components/budget-chart');
+// const BudgetChart = require('./components/budget-chart');
 const BudgetInflation = require('./components/budget-inflation');
 const BudgetAnalysis = require('./components/budget-analysis');
-const BudgetExampleAnalysis = require('./components/budget-example-analysis');
+// const BudgetExampleAnalysis = require('./components/budget-example-analysis');
 const BudgetActions = require('./components/budget-actions');
 
 const App = ({pageName}) => (
@@ -24,10 +24,10 @@ const App = ({pageName}) => (
       <BudgetSpentAccordion />
       <BudgetWhatForAccordion />
       <BudgetWhoAccordion />
-      <BudgetChart />
+      { /* <BudgetChart /> */ }
       <BudgetInflation />
       <BudgetAnalysis />
-      <BudgetExampleAnalysis />
+      { /* <BudgetExampleAnalysis /> */ }
       <BudgetActions />
     </div>
   </Page>
