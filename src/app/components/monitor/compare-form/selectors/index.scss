@@ -4,12 +4,14 @@
   display: inline-block;
   width: 40%;
   text-align: right;
+  margin: 0;
 
   .selector-wrapper {
-    width: 42%;
+    width: 46%;
     text-align: left;
+    margin: 0;
 
-    &:first-child {
+    &#setting-form-years {
       margin: 0 4%;
     }
   }

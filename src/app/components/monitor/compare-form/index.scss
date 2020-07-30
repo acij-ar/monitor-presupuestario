@@ -1,2 +1,8 @@
 @import './lists/index';
 @import './selectors/index';
+@import './groups/index';
+
+#compare-group-and-selectors {
+  display: flex;
+  margin: 20px 0;
+}

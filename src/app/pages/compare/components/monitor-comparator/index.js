@@ -11,7 +11,7 @@ const MonitorExplorer = () => {
 
   return (
     <div id="monitor-comparator">
-      <MonitorForm params={params} setParams={setParams} type="comparator" />
+      <MonitorForm setParams={setParams} type="comparator" />
       <EntitiesNightingaleRose params={params} />
       <EntitiesTimeseriesArea params={params} />
       <InflationDisclaimer params={params} />
