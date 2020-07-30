@@ -7,7 +7,7 @@ const transformOptions = require('./helpers/transform-options');
 
 const { useEffect, useState } = React;
 
-const MonitorForm = ({ params, setParams }) => {
+const ExploreForm = ({ params, setParams }) => {
   const [rawOptions, setRawOptions] = useState({});
   const [options, setOptions] = useState({});
   const [selected, setSelected] = useState({});
@@ -43,9 +43,9 @@ const MonitorForm = ({ params, setParams }) => {
   );
 };
 
-MonitorForm.propTypes = {
+ExploreForm.propTypes = {
   params: PropTypes.object.isRequired,
   setParams: PropTypes.func.isRequired,
 };
 
-module.exports = MonitorForm;
+module.exports = ExploreForm;

@@ -1,5 +1,5 @@
 const React = require('react');
-const MonitorForm = require('../../../../components/monitor/form');
+const ExploreForm = require('../../../../components/monitor/explore-form');
 const InflationDisclaimer = require('../../../../components/monitor/inflation-disclaimer');
 const EntitySunburst = require('./components/entity-sunburst');
 const EntityDetail = require('./components/entity-detail');
@@ -15,7 +15,7 @@ const MonitorExplorer = () => {
 
   return (
     <div id="monitor-explorer">
-      <MonitorForm params={params} setParams={setParams} />
+      <ExploreForm params={params} setParams={setParams} />
       <div className="monitor-explorer-chart-row">
         <div>
           <EntityDetail params={params} />

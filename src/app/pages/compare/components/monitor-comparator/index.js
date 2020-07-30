@@ -1,5 +1,5 @@
 const React = require('react');
-const MonitorForm = require('../../../../components/monitor/form');
+const MonitorForm = require('../../../../components/monitor/compare-form');
 const InflationDisclaimer = require('../../../../components/monitor/inflation-disclaimer');
 const EntitiesNightingaleRose = require('./components/entities-nightingale-rose');
 const EntitiesTimeseriesArea = require('./components/entities-timeseries-area');
@@ -11,7 +11,7 @@ const MonitorExplorer = () => {
 
   return (
     <div id="monitor-comparator">
-      <MonitorForm params={params} setParams={setParams} />
+      <MonitorForm params={params} setParams={setParams} type="comparator" />
       <EntitiesNightingaleRose params={params} />
       <EntitiesTimeseriesArea params={params} />
       <InflationDisclaimer params={params} />
