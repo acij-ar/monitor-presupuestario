@@ -1,6 +1,6 @@
-const getYears = require('./years');
+const getYears = require('../years');
 const getEntities = require('./entities');
-const convertToOption = require('./convert-to-option');
+const convertToOption = require('../convert-to-option');
 
 
 module.exports = async (req, res) => {

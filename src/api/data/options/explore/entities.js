@@ -1,5 +1,5 @@
-const MYSQLConnection = require('../helpers/query/mysql-connection');
-const rows2obj = require('../helpers/rows-to-obj');
+const MYSQLConnection = require('../../helpers/query/mysql-connection');
+const rows2obj = require('../../helpers/rows-to-obj');
 
 module.exports = async () => {
 

@@ -1,7 +1,7 @@
 const express = require('express');
 const sunburstDataController = require('./sunburst');
 const detailDataController = require('./detail');
-const optionsController = require('./options');
+const optionsExploreController = require('./options/explore');
 const timeseriesDataController = require('./timeseries');
 const timeseriesCompareDataController = require('./timeseries-compare');
 const hierarchyDataController = require('./hierarchy');
@@ -16,7 +16,7 @@ router.get('/detail', detailDataController);
 router.get('/timeseries', timeseriesDataController);
 router.get('/timeseries-compare', timeseriesCompareDataController);
 router.get('/hierarchy', hierarchyDataController);
-router.get('/options', optionsController);
+router.get('/options/explore', optionsExploreController);
 router.get('/goals', goalsController);
 router.get('/table', tableController);
 router.get('/nightingale', nightingaleController);

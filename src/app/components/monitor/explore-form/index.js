@@ -17,7 +17,7 @@ const ExploreForm = ({ params, setParams }) => {
   };
 
   const fetchData = async () => {
-    const { data } = await axios.get('/api/data/options');
+    const { data } = await axios.get('/api/data/options/explore');
     setRawOptions(data);
     setOptions(transformOptions(data, null).options);
     const defaultSelected = getDefaultSelected(data);
