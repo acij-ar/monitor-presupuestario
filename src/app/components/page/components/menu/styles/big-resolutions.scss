@@ -20,7 +20,8 @@
       @import './link-border';
 
       a {
-        display: block;
+        display: inline-block;
+        padding-right: 20px;
       }
 
       &:not(:last-child) {
