@@ -7,4 +7,5 @@ module.exports = {
   singleValue: (provided) => ({ ...provided, color: 'inherit' }),
   dropdownIndicator: () => ({ display: 'none' }),
   indicatorSeparator: () => ({ display: 'none' }),
+  clearIndicator: () => ({ display: 'none' }),
 }

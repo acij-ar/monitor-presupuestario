@@ -1,0 +1,16 @@
+@import '../../explore-form/selectors/index';
+
+#monitor-explore-selector {
+  display: inline-block;
+  width: 40%;
+  text-align: right;
+
+  .selector-wrapper {
+    width: 42%;
+    text-align: left;
+
+    &:first-child {
+      margin: 0 4%;
+    }
+  }
+}
