@@ -1,6 +1,5 @@
 const React = require('react');
 const Page = require('../../components/page');
-const DatasetForm = require('./components/datasets-form');
 const PropTypes = require('prop-types');
 
 const App = ({ pageName }) => (
