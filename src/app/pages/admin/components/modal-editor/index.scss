@@ -1,0 +1,66 @@
+@import '../../../../components/page/globals';
+
+.admin-modal {
+  position: absolute;
+  max-width: 800px;
+  max-height: 80vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  outline: none;
+  background: #fafafa;
+  padding: 40px;
+  border-radius: 4px;
+}
+
+.admin-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+.admin-modal {
+  input, textarea {
+    background: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+    outline: none;
+    display: block;
+    min-width: 500px
+  }
+
+  input {
+    border: none;
+    border-bottom: solid 1px #ddd;
+  }
+
+  textarea {
+    border: solid 1px #ddd;
+    min-height: 150px;
+  }
+}
+
+.admin-modal-actions {
+  text-align: right;
+
+  button {
+    background: none;
+    font-size: 16px;
+    margin-left: 10px;
+    padding: 8px 16px;
+    border: none;
+
+    &.admin-modal-cancel {
+      color: $blue;
+    }
+
+    &.admin-modal-save {
+      background: $blue;
+      color: white;
+    }
+  }
+}

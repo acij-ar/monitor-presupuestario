@@ -1,7 +1,7 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const Page = require('../../components/page');
-const AdminList = require('./components/admin-list');
+const AdminList = require('./components/list');
 
 const App = ({ pageName }) => (
   <Page pageName={pageName}>

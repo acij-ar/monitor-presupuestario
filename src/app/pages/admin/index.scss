@@ -7,3 +7,7 @@ h2 {
   margin-bottom: 20px;
   font-size: 20px;
 }
+
+@import './components/list/index';
+@import './components/list-entry/index';
+@import './components/modal-editor/index';

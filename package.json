@@ -55,6 +55,7 @@
     "react-beautiful-dnd": "^11.0.5",
     "react-dom": "^16.8.6",
     "react-ga": "^2.6.0",
+    "react-modal": "^3.11.2",
     "react-select": "3.0.4",
     "react-tooltip": "3.11.1",
     "xlsx": "^0.16.3"
