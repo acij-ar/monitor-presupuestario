@@ -1,12 +1,6 @@
-const MYSQLConnection = require('../../data/helpers/query/mysql-connection');
+const { getTerms } = require('./helpers/get-entries');
 const { saveTerm } = require('./helpers/save-entry');
-
-const getTerms = async () => {
-  const db_connection = MYSQLConnection();
-  const query = 'SELECT * FROM glosario;';
-  const [faqs] = await db_connection.promise().query(query);
-  return faqs;
-}
+const { deleteTerm } = require('./helpers/delete-entry');
 
 const getTermsController = async (req, res) => {
   const terms = await getTerms();
@@ -19,4 +13,10 @@ const saveTermsController = async (req, res) => {
   res.json(entries);
 }
 
-module.exports = { getTermsController, saveTermsController };
+const deleteTermsController = async (req, res) => {
+  await deleteTerm(req.body);
+  const entries = await getTerms();
+  res.json(entries);
+}
+
+module.exports = { getTermsController, saveTermsController, deleteTermsController };

@@ -1,12 +1,6 @@
-const MYSQLConnection = require('../../data/helpers/query/mysql-connection');
+const { getDoubts } = require('./helpers/get-entries');
 const { saveDoubt } = require('./helpers/save-entry');
-
-const getDoubts = async () => {
-  const db_connection = MYSQLConnection();
-  const query = 'SELECT * FROM faq;';
-  const [terms] = await db_connection.promise().query(query);
-  return terms;
-}
+const { deleteDoubt } = require('./helpers/delete-entry');
 
 const getDoubtsController = async (req, res) => {
   const terms = await getDoubts();
@@ -19,4 +13,10 @@ const saveDoubtsController = async (req, res) => {
   res.json(entries);
 }
 
-module.exports = { getDoubtsController, saveDoubtsController };
+const deleteDoubtsController = async (req, res) => {
+  await deleteDoubt(req.body);
+  const entries = await getDoubts();
+  res.json(entries);
+}
+
+module.exports = { getDoubtsController, saveDoubtsController, deleteDoubtsController };
