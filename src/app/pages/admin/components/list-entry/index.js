@@ -13,19 +13,17 @@ const AdminEntryEditor = ({ type, onUpdate, entry }) => {
   const openModal = () => setShowModal(true);
   const onCloseModal = () => setShowModal(false);
 
-  const adminEntry = entry || { name: 'Agregar' }
-
   return (
     <div className="admin-entry-editor">
       <span onClick={openModal} className="admin-entry-edito-trigger">
-        {adminEntry.name}
+        {entry && (entry.pregunta || entry.palabra) || 'Agregar'}
       </span>
       <ModalEditor
         isOpen={modalIsOpen}
         onUpdate={onUpdate}
         onCloseModal={onCloseModal}
         type={type}
-        adminEntry={adminEntry}
+        entry={entry}
       />
     </div>
   );

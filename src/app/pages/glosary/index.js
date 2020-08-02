@@ -3,7 +3,7 @@ const MYSQLConnection = require('../../../api/data/helpers/query/mysql-connectio
 
 module.exports = async (req, res, next) => {
   const db_connection = MYSQLConnection();
-  const query = 'SELECT * FROM glosario;';
+  const query = 'SELECT palabra as name, significado as definition FROM glosario;';
   const [terms] = await db_connection.promise().query(query);
   res.locals.props = { terms };
   res.locals.pageName = 'glosary';

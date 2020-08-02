@@ -1,7 +1,7 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-const getFromDB = require('../helpers/get-from-db');
 const AdminEntryEditor = require('../list-entry');
+const axios = require('axios');
 
 const { useEffect, useState } = React;
 
@@ -10,7 +10,7 @@ const AdminList = ({ type, title }) => {
 
   useEffect(() => {
     const loadFromDB = async () => {
-      const entries = await getFromDB(type);
+      const { data: entries } = await axios.get(`/api/admin/${type}`);
       setEntries(entries);
     };
     loadFromDB();

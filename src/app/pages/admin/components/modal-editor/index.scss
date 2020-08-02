@@ -53,9 +53,21 @@
     margin-left: 10px;
     padding: 8px 16px;
     border: none;
+    outline: none;
+    cursor: pointer;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
 
     &.admin-modal-cancel {
       color: $blue;
+    }
+
+    &.admin-modal-delete {
+      background: $orange;
+      color: white;
     }
 
     &.admin-modal-save {

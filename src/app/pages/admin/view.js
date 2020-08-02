@@ -8,8 +8,8 @@ const App = ({ pageName }) => (
     <div className="monitor-highlight">
       <div className="monitor-content">
         <h1>Admin</h1>
-        <AdminList type="doubts" title="Glosario" />
-        <AdminList type="glosary" title="Dudas" />
+        <AdminList type="doubts" title="Dudas" />
+        <AdminList type="glosary" title="Glosario" />
       </div>
     </div>
   </Page>
