@@ -6,6 +6,7 @@ const Lists = require('./lists');
 const Groups = require('./groups');
 const Selectors = require('./selectors');
 const getDefaultSelected = require('./helpers/get-default-selected');
+const sortBy = require('lodash/sortBy');
 
 const { useEffect, useState } = React;
 
@@ -34,29 +35,39 @@ const CompareForm = ({ setParams }) => {
       [removed] = groups[groupIndex].splice(index, 1);
     } else {
       [removed] = options.entities[droppableId].splice(index, 1);
-      setOptions(options);
     }
     return removed;
   }
 
   const insertItem = (item, destination) => {
-    const groupIndex = destination.droppableId === 'compare-group-0' ? 0 : 1;
-    groups[groupIndex].push(item);
-    setGroups(groups);
+    if (destination.droppableId.startsWith('compare-group')) {
+      const groupIndex = destination.droppableId === 'compare-group-0' ? 0 : 1;
+      groups[groupIndex].push(item);
+    } else {
+      options.entities[destination.droppableId].push(item);
+      options.entities[destination.droppableId] = sortBy(options.entities[destination.droppableId], 'name')
+    }
   }
 
   const onDragEnd = ({ source, destination }) => {
     if (!destination) return;
     const item = extractItemFrom(source);
+    item.source = item.source || source;
     insertItem(item, destination);
+    setOptions({ ...options });
+    setGroups([ ...groups ]);
+  }
+
+  const onRemoveItem = ({ destination, droppableId, index }) => {
+    onDragEnd({ source: { droppableId, index }, destination: { droppableId: destination } })
   }
 
   return (
     <div id="monitor-compare-form">
       <DragDropContext onDragEnd={onDragEnd}>
-        <Lists options={options} selected={selected} />
+        <Lists options={options} />
         <div id="compare-group-and-selectors">
-          <Groups groups={groups} />
+          <Groups groups={groups} onRemoveItem={onRemoveItem} />
           <Selectors options={options} selected={selected} updateSelected={updateSelectedOption} />
         </div>
       </DragDropContext>

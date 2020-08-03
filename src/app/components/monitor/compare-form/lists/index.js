@@ -2,7 +2,7 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const List = require('./list');
 
-const Lists = ({ options, selected }) => {
+const Lists = ({ options }) => {
   const lists = [
     { name: 'Jurisdicciones', id: 'jurisdictions' },
     { name: 'Entidades', id: 'entities' },
@@ -24,7 +24,6 @@ const Lists = ({ options, selected }) => {
 
 Lists.propTypes = {
   options: PropTypes.object.isRequired,
-  selected: PropTypes.object.isRequired,
 }
 
 module.exports = Lists;
