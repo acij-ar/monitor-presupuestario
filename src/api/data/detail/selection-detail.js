@@ -20,8 +20,6 @@ const getPercentage = async (key, params, previousTotal) => {
     const { budget } = rowParseInt(row);
     total += budget;
   })
-  console.log(total);
-  console.log(previousTotal.total);
   const percentage = (total * 100 / previousTotal.total);
   return {
     name: params[key],

@@ -9,8 +9,10 @@ const EntityGoals = ({ params }) => {
 
   useEffect(() => {
     // TODO: cancel request if new params are selected
-    axios.get('/api/data/goals', { params })
-      .then(({ data }) => setGoals(data));
+    if (params && params.program && !params.activity) {
+      axios.get('/api/data/goals', { params })
+        .then(({ data }) => setGoals(data));
+    }
   }, [params]);
 
   return goals && goals.length > 0 ? (
