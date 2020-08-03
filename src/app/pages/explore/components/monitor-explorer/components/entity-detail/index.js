@@ -9,8 +9,10 @@ const EntityDetail = ({ params }) => {
 
   useEffect(() => {
     // TODO: cancel request if new params are selected
-    axios.get('/api/data/detail', { params })
-      .then(({ data }) => setDetail(data));
+    if (params && params.year) {
+      axios.get('/api/data/detail', { params })
+        .then(({ data }) => setDetail(data));
+    }
   }, [params]);
 
   return (
