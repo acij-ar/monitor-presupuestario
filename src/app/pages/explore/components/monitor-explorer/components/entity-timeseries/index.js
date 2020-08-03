@@ -12,12 +12,14 @@ const EntityTimeseries = ({ params }) => {
   const [chartData, setData] = useState(null);
 
   useEffect(() => {
-    chart(timeseriesChart, params, '/api/data/timeseries', 'timeseries-chart')
-      .then(({ chart, data }) => {
-        timeseriesChart = chart;
-        setVisible(true)
-        setData(data);
-      });
+    if (params && params.inflation) {
+      chart(timeseriesChart, params, '/api/data/timeseries', 'timeseries-chart')
+        .then(({ chart, data }) => {
+          timeseriesChart = chart;
+          setVisible(true)
+          setData(data);
+        });
+    }
   }, [params]);
 
   return (

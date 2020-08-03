@@ -7,14 +7,14 @@ module.exports = async (req, res) => {
   const years = {};
   rows.forEach(({ ejercicio_presupuestario, original, vigente, devengado }) => {
     if (years[ejercicio_presupuestario]) {
-      years[ejercicio_presupuestario].original += original;
-      years[ejercicio_presupuestario].vigente += vigente;
-      years[ejercicio_presupuestario].devengado += devengado;
+      years[ejercicio_presupuestario].original += parseInt(original);
+      years[ejercicio_presupuestario].vigente += parseInt(vigente);
+      years[ejercicio_presupuestario].devengado += parseInt(devengado);
     } else {
       years[ejercicio_presupuestario] = {
-        original,
-        vigente,
-        devengado
+        original: parseInt(original),
+        vigente: parseInt(vigente),
+        devengado: parseInt(devengado),
       }
     }
   });
