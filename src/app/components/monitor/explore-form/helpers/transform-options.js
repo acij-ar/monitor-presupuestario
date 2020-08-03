@@ -34,8 +34,9 @@ const convertToOptions = (entitiesOptions, selectedIds, selectedNames, entitiesO
   })
 };
 
-const transformEntities = (hierarchyObj, newId) => {
-  const { children: [entitiesObj] } = hierarchyObj
+const transformEntities = ({ entities, newId, year }) => {
+  const { children: entitiesByYear } = entities
+  const entitiesObj = entitiesByYear.find(({name}) => name === year);
 
   const entitiesOptions = {
     jurisdictions: [],
@@ -59,8 +60,9 @@ const transformEntities = (hierarchyObj, newId) => {
   }
 };
 
-module.exports = ({ budgets, inflation, years, entities }, newId) => {
-  const { entitiesOptions, selectedIds, selectedNames } = transformEntities(entities, newId);
+module.exports = ({ rawOptions, newId, year }) => {
+  const { budgets, inflation, years, entities } = rawOptions;
+  const { entitiesOptions, selectedIds, selectedNames } = transformEntities({ entities, newId , year});
   return {
     selectedIds,
     selectedNames,
