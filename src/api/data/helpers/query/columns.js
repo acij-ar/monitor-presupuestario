@@ -1,11 +1,23 @@
 const getSelectedBudget = (params) => {
   const budgetColumns = {
-    'Original': 'credito_presupuestado as budget',
-    'Vigente': 'credito_vigente as budget',
-    'Devengado': 'credito_devengado as budget',
-    'all': 'credito_presupuestado as original, credito_vigente as vigente, credito_devengado as devengado'
+    'Original': {
+      'Ajustado': 'credito_presupuestado_infl as budget',
+      'Sin ajustar': 'credito_presupuestado as budget',
+    },
+    'Vigente': {
+      'Ajustado': 'credito_vigente_infl as budget',
+      'Sin ajustar': 'credito_vigente as budget',
+    },
+    'Devengado': {
+      'Ajustado': 'credito_devengado_infl as budget',
+      'Sin ajustar': 'credito_devengado as budget',
+    },
+    'all': {
+      'Ajustado': 'credito_presupuestado_infl as original, credito_vigente_infl as vigente, credito_devengado_infl as devengado',
+      'Sin ajustar': 'credito_presupuestado as original, credito_vigente as vigente, credito_devengado as devengado',
+    }
   };
-  return budgetColumns[params.budget];
+  return budgetColumns[params.budget][params.inflation];
 };
 
 module.exports = (params) => {
