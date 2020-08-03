@@ -3,7 +3,7 @@ module.exports = (params) => {
   const queryParams = [];
 
   if (params.year) {
-    conditions.push('ejercicio = ?');
+    conditions.push('ejercicio_presupuestario = ?');
     queryParams.push(params.year);
   }
   if (params.jurisdiction) {

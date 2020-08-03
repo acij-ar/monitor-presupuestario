@@ -5,13 +5,13 @@ const sortBy = require('lodash/sortBy');
 module.exports = async (req, res) => {
   const rows = await genericQuery({ ... req.query, budget: 'all', year: null });
   const years = {};
-  rows.forEach(({ ejercicio, original, vigente, devengado }) => {
-    if (years[ejercicio]) {
-      years[ejercicio].original += original;
-      years[ejercicio].vigente += vigente;
-      years[ejercicio].devengado += devengado;
+  rows.forEach(({ ejercicio_presupuestario, original, vigente, devengado }) => {
+    if (years[ejercicio_presupuestario]) {
+      years[ejercicio_presupuestario].original += original;
+      years[ejercicio_presupuestario].vigente += vigente;
+      years[ejercicio_presupuestario].devengado += devengado;
     } else {
-      years[ejercicio] = {
+      years[ejercicio_presupuestario] = {
         original,
         vigente,
         devengado

@@ -2,7 +2,7 @@ const sumBudgets = require('./sum-budgets');
 const getBaseObj = require('./base-obj');
 
 const hierarchy = [
-  'ejercicio',
+  'ejercicio_presupuestario',
   'jurisdiccion_desc',
   'entidad_desc',
   'programa_desc',

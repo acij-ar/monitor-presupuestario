@@ -5,7 +5,7 @@ const getPercentage = async (key, params, previousTotal) => {
     return null;
   }
   const rows = await genericQuery({
-    ejercicio: params.ejercicio,
+    ejercicio_presupuestario: params.ejercicio_presupuestario,
     budget: params.budget,
     jurisdiction: params.jurisdiction,
     entity: ['entity', 'program', 'activity'].includes(key) ? params.entity : null,

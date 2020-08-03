@@ -6,11 +6,11 @@ module.exports = async () => {
   const db_connection = MYSQLConnection();
   const query = `
     SELECT
-      ejercicio, jurisdiccion_desc, entidad_desc, programa_desc, actividad_desc 
+      ejercicio_presupuestario, jurisdiccion_desc, entidad_desc, programa_desc, actividad_desc 
     FROM
       monitor.simplificado
     GROUP BY
-      ejercicio, jurisdiccion_desc, entidad_desc, programa_desc, actividad_desc
+      ejercicio_presupuestario, jurisdiccion_desc, entidad_desc, programa_desc, actividad_desc
     ORDER BY 
       jurisdiccion_desc, entidad_desc, programa_desc, actividad_desc;
   `;

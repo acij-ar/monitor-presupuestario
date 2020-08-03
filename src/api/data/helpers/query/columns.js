@@ -9,7 +9,7 @@ const getSelectedBudget = (params) => {
 };
 
 module.exports = (params) => {
-  const columns = ['ejercicio', 'jurisdiccion_desc', 'entidad_desc', 'programa_desc', 'actividad_desc']
+  const columns = ['ejercicio_presupuestario', 'jurisdiccion_desc', 'entidad_desc', 'programa_desc', 'actividad_desc']
   const selectedBudget = getSelectedBudget(params);
   if (selectedBudget) columns.push(selectedBudget);
   return columns.join(', ');
