@@ -1,3 +1,5 @@
+const rowParseInt = require('../helpers/row-parse-int');
+
 module.exports = (rows, params) => {
   const detailLevel = params.program || params.activity ? 'actividad_desc' :
     params.entity ? 'programa_desc' :
@@ -5,7 +7,7 @@ module.exports = (rows, params) => {
   const categories = {};
   rows.forEach(row => {
     const name = row[detailLevel];
-    const {original, vigente, devengado} = row;
+    const {original, vigente, devengado} = rowParseInt(row);
     if (categories[name]) {
       categories[name].original += original;
       categories[name].vigente += vigente;
