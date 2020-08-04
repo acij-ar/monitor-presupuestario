@@ -9,8 +9,11 @@ const hierarchyDataController = require('./hierarchy');
 const goalsController = require('./goals');
 const tableController = require('./table');
 const nightingaleController = require('./nightingale');
+const { getCache, saveCache } = require('./cache');
 
 const router = express.Router();
+
+router.use(getCache);
 
 router.get('/sunburst', sunburstDataController);
 router.get('/detail', detailDataController);
@@ -22,5 +25,7 @@ router.get('/options/compare', optionsCompareController);
 router.get('/goals', goalsController);
 router.get('/table', tableController);
 router.get('/nightingale', nightingaleController);
+
+router.use(saveCache);
 
 module.exports = router;

@@ -3,13 +3,13 @@ const getEntities = require('./entities');
 const convertToOption = require('../convert-to-option');
 
 
-module.exports = async (req, res) => {
+module.exports = async (req, res, next) => {
   const [entities, years] = await Promise.all([getEntities(), getYears()]);
-  const options = {
+  res.locals.response = {
     budgets: ['Original', 'Vigente', 'Devengado'].map(convertToOption),
     inflation: ['Ajustado', 'Sin ajustar'].map(convertToOption),
     entities,
     years,
   }
-  res.json(options);
+   next();
 };

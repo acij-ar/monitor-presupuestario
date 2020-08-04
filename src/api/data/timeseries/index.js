@@ -3,7 +3,7 @@ const genericQuery = require('../helpers/query');
 const rowParseInt = require('../helpers/row-parse-int');
 const sortBy = require('lodash/sortBy');
 
-module.exports = async (req, res) => {
+module.exports = async (req, res, next) => {
   const rows = await genericQuery({ ... req.query, budget: 'all', year: null });
   const years = {};
   rows.forEach((row) => {
@@ -24,7 +24,7 @@ module.exports = async (req, res) => {
     data.vigente.push(vigente);
     data.devengado.push(devengado);
   })
-  const response = highchartsOptions(categories, data);
-  res.json(response);
+  res.locals.response = highchartsOptions(categories, data);
+  next();
 };
 

@@ -6,8 +6,8 @@ module.exports = async (req, res, next) => {
     const rows = await genericQuery({ ...req.query, activity: null });
     const maxDepth = req.query.activity || req.query.program ? 4 :
       req.query.entity ? 3 : req.query.jurisdiction ? 2 : 1
-    const response = rows2obj(rows, { withBudgets: false, withIds: true, maxDepth });
-    res.json(response);
+    res.locals.response = rows2obj(rows, { withBudgets: false, withIds: true, maxDepth });
+    next();
   } catch (e) {
     next(e);
   }

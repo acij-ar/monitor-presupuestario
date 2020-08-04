@@ -6,10 +6,11 @@ module.exports = async (req, res, next) => {
     const rowsData = await genericQuery({ ... req.query, activity: null, budget: 'all' });
     const rows = transformRows(rowsData, req.query);
     const haderName = req.query.program ? 'Actividad' : req.query.entity ? 'Programa' : req.query.jurisdiction ? 'Entidad' : 'Jurisdicción';
-    res.json({
+    res.locals.response = {
       rows,
       header: { name: haderName }
-    });
+    };
+    next();
   } catch (e) {
     next(e);
   }

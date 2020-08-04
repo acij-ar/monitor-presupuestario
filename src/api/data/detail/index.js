@@ -8,8 +8,8 @@ module.exports = async (req, res, next) => {
       budget: req.query.budget,
       year: req.query.year,
     });
-    const response = req.query.jurisdiction ? await selectionDetail(req.query, totalBudget) : totalBudget
-    res.json(response);
+    res.locals.response = req.query.jurisdiction ? await selectionDetail(req.query, totalBudget) : totalBudget
+    next();
   } catch (e) {
     next(e);
   }

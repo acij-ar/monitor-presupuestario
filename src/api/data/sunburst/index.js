@@ -6,8 +6,8 @@ module.exports = async (req, res, next) => {
   try {
     const rows = await genericQuery(req.query);
     const sunburstData = transformRows(rows, req.query);
-    const response = highchartsOptions(sunburstData);
-    res.json(response);
+    res.locals.response = highchartsOptions(sunburstData);
+    next();
   } catch (e) {
     next(e);
   }
