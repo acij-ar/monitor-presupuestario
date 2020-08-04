@@ -1,6 +1,7 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const Selector = require('./selector');
+const ResetButton = require('./reset-button');
 
 const Selectors = ({ options, updateSelectedOption, updateSelectedEntity, selected }) => (
   <div id="monitor-explore-selector">
@@ -20,6 +21,7 @@ const Selectors = ({ options, updateSelectedOption, updateSelectedEntity, select
         onChange={e => updateSelectedEntity(e.id)}
         value={selected.entity}
       />
+      <ResetButton selected={selected} updateSelectedEntity={updateSelectedEntity} />
       <Selector
         id="setting-form-years"
         name="Años disponibles"

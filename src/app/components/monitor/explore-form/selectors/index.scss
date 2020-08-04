@@ -19,16 +19,12 @@
   #monitor-explore-selector-labels-who {
     flex: 0 0 (5.5 / 11.5 * 100%);
 
-    .selector-wrapper {
+    .selector-wrapper,
+    #monitor-explore-reset {
       width: 2.5 / 5.5 * 100%;
 
       &:nth-child(2n) {
         margin-right: 1 / 11 * 100%;
-      }
-
-      &:last-child {
-        margin-left: 3 / 5.5 * 100%;
-        margin-right: 0;
       }
     }
   }
@@ -43,4 +39,5 @@
   }
 
   @import './selector/index';
+  @import './reset-button/index';
 }

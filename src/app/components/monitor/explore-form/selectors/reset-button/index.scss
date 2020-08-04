@@ -1,0 +1,18 @@
+#monitor-explore-reset {
+  background: none;
+  height: 42px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: solid 2px #ddd;
+  opacity: 0.7;
+  outline: none;
+
+  &:enabled {
+    opacity: 1;
+    border-color: #888;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
