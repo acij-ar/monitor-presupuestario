@@ -3,7 +3,7 @@ const getEntities = require('./entities');
 const convertToOption = require('../convert-to-option');
 
 
-module.exports = async (req, res) => {
+module.exports = async (req, res, next) => {
   const [entities, years] = await Promise.all([getEntities(), getYears()]);
   res.locals.response = {
     budgets: ['Original', 'Vigente', 'Devengado'].map(convertToOption),
