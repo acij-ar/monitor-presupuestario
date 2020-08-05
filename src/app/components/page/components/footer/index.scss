@@ -6,7 +6,7 @@ footer {
   color: white;
 
   #footer-content {
-    max-width: 1200px;
+    max-width: 1340px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -18,14 +18,15 @@ footer {
     #acij-link {
       margin: 0 auto 0 10px;
       img {
-        width: 120px;
+        width: 160px;
+        margin: 10px 0 -10px 0;
       }
     }
 
     .social-link {
       margin-left: 20px;
       img {
-        width: 30px;
+        width: 40px;
       }
     }
   }
