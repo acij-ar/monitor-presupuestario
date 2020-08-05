@@ -4,7 +4,7 @@ const PropTypes = require('prop-types');
 
 const App = ({pageName}) => (
   <Page pageName={pageName}>
-    <h1>Monitor presupuestario</h1>
+    <h1>Monitor<br />Presupuestario</h1>
     <p>
       Te damos la bienvenida al Monitor Presupuestario, una plataforma donde podrás conocer y explorar los datos sobre
       el presupuesto nacional desde el año 2007 para realizar tu propio monitoreo sobre cómo se distribuyen los recursos
