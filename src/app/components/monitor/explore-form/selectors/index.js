@@ -57,7 +57,7 @@ const Selectors = ({ options, updateSelectedOption, updateSelectedEntity, select
         value={selected.activity}
       />
       <Selector
-        id="setting-form-inlfation"
+        id="setting-form-inflation"
         name="Ajuste por inflación"
         options={options.inflation}
         onChange={e => updateSelectedOption({ inflation: e.value})}

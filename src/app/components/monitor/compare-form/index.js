@@ -62,13 +62,25 @@ const CompareForm = ({ setParams }) => {
     onDragEnd({ source: { droppableId, index }, destination: { droppableId: destination } })
   }
 
+  const resetSelection = () => {
+    [...groups[0], ...groups[1]].map(item => insertItem(item, item.source))
+    setOptions({ ...options });
+    setGroups([[], []]);
+  }
+
   return (
     <div id="monitor-compare-form">
       <DragDropContext onDragEnd={onDragEnd}>
         <Lists options={options} />
         <div id="compare-group-and-selectors">
           <Groups groups={groups} onRemoveItem={onRemoveItem} />
-          <Selectors options={options} selected={selected} updateSelected={updateSelectedOption} />
+          <Selectors
+            options={options}
+            selected={selected}
+            updateSelected={updateSelectedOption}
+            resetSelection={resetSelection}
+            groups={groups}
+          />
         </div>
       </DragDropContext>
     </div>

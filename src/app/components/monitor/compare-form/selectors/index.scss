@@ -1,4 +1,5 @@
 @import '../../explore-form/selectors/index';
+@import './reset-button/index';
 
 #monitor-explore-selector {
   display: inline-block;
@@ -15,4 +16,10 @@
       margin: 0 4%;
     }
   }
+
+  #monitor-compare-reset {
+    width: 46%;
+    margin: 0 4%;
+  }
+
 }

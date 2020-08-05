@@ -1,9 +1,10 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const Selector = require('../../explore-form/selectors/selector');
+const ResetButton = require('./reset-button');
 const SelectorMulti = require('./selector-multi');
 
-const Selectors = ({ options, selected, updateSelected }) => (
+const Selectors = ({ options, selected, updateSelected, groups, resetSelection }) => (
   <div id="monitor-explore-selector">
     <SelectorMulti
       id="setting-form-years"
@@ -19,8 +20,9 @@ const Selectors = ({ options, selected, updateSelected }) => (
       onChange={e => updateSelected({ budget: e.value })}
       value={selected.budget}
     />
+    <ResetButton groups={groups} resetSelection={resetSelection} />
     <Selector
-      id="setting-form-inlfation"
+      id="setting-form-inflation"
       name="Ajuste por inflación"
       options={options.inflation}
       onChange={e => updateSelected({ inflation: e.value })}
@@ -33,6 +35,8 @@ Selectors.propTypes = {
   options: PropTypes.object,
   selected: PropTypes.object,
   updateSelected: PropTypes.func.isRequired,
+  resetSelection: PropTypes.func.isRequired,
+  groups: PropTypes.array.isRequired,
 };
 
 Selectors.defaultProps = {
