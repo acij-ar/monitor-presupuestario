@@ -15,3 +15,4 @@ coverage
 **/datasets/*.json
 wireframes
 build/
+tmp-static/
