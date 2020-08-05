@@ -15,22 +15,47 @@
     font-size: 27px;
     display: inline-block;
     border: solid 2px;
-    padding: 10px 30px;
+    padding: 20px 30px;
     margin-right: 30px;
+    position: relative;
+    transition: all 200ms;
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 0;
+      top: 0;
+      left: 0;
+      transition: all 200ms;
+      z-index: -1
+    }
 
     &:hover {
       opacity: 0.9;
+      color: white!important;
+
+      &:before {
+        width: 100%;
+      }
     }
   }
 
   #budget-explore-link {
-    color: white;
-    background: $blue;
     border-color: $blue;
+    color: $blue;
+
+    &:before {
+      background: $blue;
+    }
   }
 
   #budget-compare-link {
     border-color: $violet;
     color: $violet;
+
+    &:before {
+      background: $violet;
+    }
   }
 }
