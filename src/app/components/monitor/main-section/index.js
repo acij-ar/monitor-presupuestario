@@ -2,7 +2,7 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 const MonitorMainSection = ({selectedSection}) => (
-  <div className={`monitor-main-section monitor-main-section-${selectedSection}`}>
+  <div className={`monitor-main-section`}>
     <h1>Monitor</h1>
     <p>Para conocer las prioridades y compromisos reales de los gobiernos la mejor herramienta es su presupuesto. Mirá
       cómo, cuándo y cuántos recursos se gastan -o no- en garantizar derechos. Podés ver las siguientes categorías:

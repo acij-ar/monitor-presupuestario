@@ -39,35 +39,45 @@
     padding: 10px 30px;
     margin-right: 30px;
     margin-bottom: 40px;
+    position: relative;
+    transition: all 200ms;
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 0;
+      top: 0;
+      left: 0;
+      transition: all 200ms;
+      z-index: -1
+    }
 
     &:hover {
-      opacity: 0.9;
+      color: white!important;
+
+      &:before {
+        width: 100%;
+      }
     }
   }
 
-  &.monitor-main-section-explore {
-    #monitor-main-section-explore-link {
-      color: white;
+  #monitor-main-section-explore-link {
+    border-color: $blue;
+    color: $blue;
+
+    &:before {
       background: $blue;
-      border-color: $blue;
-    }
-
-    #monitor-main-section-compare-link {
-      border-color: $violet;
-      color: $violet;
     }
   }
 
-  &.monitor-main-section-compare {
-    #monitor-main-section-explore-link {
-      border-color: $blue;
-      color: $blue;
-    }
+  #monitor-main-section-compare-link {
+    border-color: $violet;
+    color: $violet;
 
-    #monitor-main-section-compare-link {
-      color: white;
+    &:before {
       background: $violet;
-      border-color: $violet;
     }
   }
+
 }
