@@ -1,9 +1,7 @@
-const MYSQLConnection = require('../../helpers/query/mysql-connection');
+const dbConnection = require('../../helpers/query/mysql-connection');
 const rows2obj = require('../../helpers/rows-to-obj');
 
 module.exports = async () => {
-
-  const db_connection = MYSQLConnection();
   const query = `
     SELECT
       ejercicio_presupuestario, jurisdiccion_desc, entidad_desc, programa_desc, actividad_desc 
@@ -14,6 +12,6 @@ module.exports = async () => {
     ORDER BY 
       jurisdiccion_desc, entidad_desc, programa_desc, actividad_desc;
   `;
-  const [rows] = await db_connection.promise().query(query);
+  const [rows] = await dbConnection.query(query);
   return rows2obj(rows, { withBudgets: false, withIds: true});
 };

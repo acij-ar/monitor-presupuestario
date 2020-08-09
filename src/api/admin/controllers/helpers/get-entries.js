@@ -1,16 +1,14 @@
-const MYSQLConnection = require('../../../data/helpers/query/mysql-connection');
+const dbConnection = require('../../../data/helpers/query/mysql-connection');
 
 const getTerms = async () => {
-  const db_connection = MYSQLConnection();
   const query = 'SELECT * FROM glosario;';
-  const [faqs] = await db_connection.promise().query(query);
+  const [faqs] = await dbConnection.query(query);
   return faqs;
 }
 
 const getDoubts = async () => {
-  const db_connection = MYSQLConnection();
   const query = 'SELECT * FROM faq;';
-  const [terms] = await db_connection.promise().query(query);
+  const [terms] = await dbConnection.query(query);
   return terms;
 }
 

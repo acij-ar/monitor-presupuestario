@@ -1,9 +1,8 @@
-const MYSQLConnection = require('../../helpers/query/mysql-connection');
+const dbConnection = require('../../helpers/query/mysql-connection');
 
 const getDistinct = async (column) => {
-  const db_connection = MYSQLConnection();
   const query = `SELECT DISTINCT(${column}) as name FROM monitor.simplificado ORDER BY ${column} ASC;`
-  const [rows] = await db_connection.promise().query(query);
+  const [rows] = await dbConnection.query(query);
   return rows;
 }
 

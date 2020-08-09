@@ -1,10 +1,8 @@
-const MYSQLConnection = require('./mysql-connection');
+const dbConnection = require('./mysql-connection');
 const columns = require('./columns');
 const conditions = require('./conditions');
 
 module.exports = async (params={}) => {
-  const db_connection = MYSQLConnection();
-
   const { whereConditions, whereParams } = conditions(params);
   const qry = `
     SELECT
@@ -13,8 +11,6 @@ module.exports = async (params={}) => {
       ${whereConditions ? `WHERE ${whereConditions}` : ''}
     ;
   `;
-  const [rows] = await db_connection.promise().query(qry, whereParams);
-  db_connection.end();
-
+  const [rows] = await dbConnection.query(qry, whereParams);
   return rows;
 };
