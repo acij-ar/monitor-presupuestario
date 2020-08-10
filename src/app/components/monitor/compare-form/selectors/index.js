@@ -10,8 +10,8 @@ const Selectors = ({ options, selected, updateSelected, groups, resetSelection }
       id="setting-form-years"
       name="Año"
       options={options.years}
-      onChange={year => updateSelected({ year })}
-      value={selected.year}
+      onChange={years => updateSelected({ years })}
+      value={selected.years}
     />
     <Selector
       id="setting-form-budgets"

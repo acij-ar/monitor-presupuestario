@@ -8,6 +8,7 @@ const Selectors = require('./selectors');
 const getDefaultSelected = require('./helpers/get-default-selected');
 const extractItem = require('./helpers/extract-item');
 const insertItem = require('./helpers/insert-item');
+const updateParams = require('./helpers/update-params');
 
 const { useEffect, useState } = React;
 
@@ -21,15 +22,14 @@ const CompareForm = ({ setParams }) => {
     setOptions(data);
     const defaultSelected = getDefaultSelected(data);
     setSelected(defaultSelected);
-    setParams({
-      ...defaultSelected,
-      years: defaultSelected.map(({ value }) => value),
-    });
+    updateParams(setParams, defaultSelected, groups)
   };
   useEffect(() => { fetchData() }, []);
 
   const updateSelectedOption = (newSelectedOption) => {
-    setSelected({ ...selected, ...newSelectedOption });
+    const newSelectedOptions = { ...selected, ...newSelectedOption };
+    setSelected(newSelectedOptions);
+    updateParams(setParams, newSelectedOptions, groups);
   }
 
   const onDragEnd = ({ source, destination }) => {
@@ -39,6 +39,7 @@ const CompareForm = ({ setParams }) => {
     insertItem(item, destination, options, groups);
     setOptions({ ...options });
     setGroups([ ...groups ]);
+    updateParams(setParams, selected, groups);
   }
 
   const onRemoveItem = ({ destination, droppableId, index }) => {
@@ -48,7 +49,9 @@ const CompareForm = ({ setParams }) => {
   const resetSelection = () => {
     [...groups[0], ...groups[1]].map(item => insertItem(item, item.source, options, groups))
     setOptions({ ...options });
-    setGroups([[], []]);
+    const emptyGroups = [[], []];
+    setGroups(emptyGroups);
+    updateParams(setParams, selected, emptyGroups);
   }
 
   return (
@@ -64,7 +67,7 @@ const CompareForm = ({ setParams }) => {
             resetSelection={resetSelection}
             groups={groups}
           />
-        </div>
+        </div>9
       </DragDropContext>
     </div>
   );
