@@ -1,17 +1,16 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-const axios = require('axios');
+const DataClient = require('../../../../../../components/data-client');
 
 const { useEffect, useState } = React;
+const dataClient = new DataClient('/api/data/detail');
 
 const EntityDetail = ({ params }) => {
   const [detail, setDetail] = useState({});
 
   useEffect(() => {
-    // TODO: cancel request if new params are selected
     if (params && params.year) {
-      axios.get('/api/data/detail', { params })
-        .then(({ data }) => setDetail(data));
+      dataClient.get(params, setDetail)
     }
   }, [params]);
 
