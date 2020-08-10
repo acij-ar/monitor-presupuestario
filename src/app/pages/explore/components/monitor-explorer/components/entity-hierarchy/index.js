@@ -5,6 +5,7 @@ const DataClient = require('../../../../../../components/data-client');
 const OrganizationChart = require('./organization-chart');
 const NodeTemplate = require('./node-template');
 const generateDataForSheet = require('./generate-data-for-sheet');
+const LoadingOverlay = require('../../../../../../components/loading-overlay');
 
 const { useEffect, useState } = React;
 const dataClient = new DataClient({ url: '/api/data/hierarchy' });
@@ -12,8 +13,10 @@ const dataClient = new DataClient({ url: '/api/data/hierarchy' });
 const EntityHierarchy = ({ params }) => {
   const [actionVisible, setVisible] = useState(false);
   const [chartData, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const dataCallback = (data) => {
+    setLoading(false);
     setData(data);
     setVisible(true)
     setTimeout(() => {
@@ -25,20 +28,23 @@ const EntityHierarchy = ({ params }) => {
 
   useEffect(() => {
     if (params && params.year) {
+      setLoading(true);
       dataClient.get(params, dataCallback);
     }
   }, [params]);
 
   return (
-    <ChartActions visible={actionVisible} generateDataForSheet={() => generateDataForSheet(chartData)} customSelector='.orgchart'>
-      <div id="hierarchy-chart-container">
-        {chartData && <OrganizationChart
-          collapsible={false}
-          datasource={chartData}
-          NodeTemplate={NodeTemplate}
-        />}
-      </div>
-    </ChartActions>
+    <LoadingOverlay loading={loading}>
+      <ChartActions visible={actionVisible} generateDataForSheet={() => generateDataForSheet(chartData)} customSelector='.orgchart'>
+        <div id="hierarchy-chart-container">
+          {chartData && <OrganizationChart
+            collapsible={false}
+            datasource={chartData}
+            NodeTemplate={NodeTemplate}
+          />}
+        </div>
+      </ChartActions>
+    </LoadingOverlay>
   )
 }
 
