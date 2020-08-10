@@ -2,7 +2,7 @@ const FileSystemCache = require('file-system-cache').default;
 const path = require('path');
 const stringify = require('fast-json-stable-stringify');
 
-const cacheFolder = path.join(__dirname, '..', '..', '..', 'tmp-static');
+const cacheFolder = path.join(__dirname, '..', '..', '..', 'cache');
 const cache = FileSystemCache({ basePath: cacheFolder });
 
 const getKeyForRequest = (req) => `${req.baseUrl}${req.path}${stringify(req.query)}`
