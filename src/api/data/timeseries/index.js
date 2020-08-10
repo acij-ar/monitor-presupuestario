@@ -1,13 +1,12 @@
 const highchartsOptions = require('./highcharts-options');
 const genericQuery = require('../helpers/query');
-const rowParseInt = require('../helpers/row-parse-int');
 const sortBy = require('lodash/sortBy');
 
 module.exports = async (req, res, next) => {
   const rows = await genericQuery({ ... req.query, budget: 'all', year: null });
   const years = {};
   rows.forEach((row) => {
-    const { ejercicio_presupuestario, original, vigente, devengado } = rowParseInt(row);
+    const { ejercicio_presupuestario, original, vigente, devengado } = row;
     if (years[ejercicio_presupuestario]) {
       years[ejercicio_presupuestario].original += original;
       years[ejercicio_presupuestario].vigente += vigente;

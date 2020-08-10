@@ -1,5 +1,4 @@
 const genericQuery = require('../helpers/query');
-const rowParseInt = require('../helpers/row-parse-int');
 
 const getPercentage = async (key, params, previousTotal) => {
   if (!params[key]) {
@@ -17,7 +16,7 @@ const getPercentage = async (key, params, previousTotal) => {
   });
   let total = 0;
   rows.forEach(row => {
-    const { budget } = rowParseInt(row);
+    const { budget } = row;
     total += budget;
   })
   const percentage = (total * 100 / previousTotal.total);
