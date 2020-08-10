@@ -9,12 +9,13 @@ const LoadingOverlay = ({ children, loading }) => (
 );
 
 LoadingOverlay.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   loading: PropTypes.bool,
 };
 
 LoadingOverlay.defaultProps = {
   loading: false,
+  children: null,
 };
 
 module.exports = LoadingOverlay;
