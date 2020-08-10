@@ -1,49 +1,31 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const ChartActions = require('../../../../../../components/monitor/chart-actions');
-const axios = require('axios');
-let OrganizationChart;
-if (global.window) {
-  OrganizationChart = require('@dabeng/react-orgchart').default;
-}
+const DataClient = require('../../../../../../components/data-client');
+const OrganizationChart = require('./organization-chart');
 const NodeTemplate = require('./node-template');
+const generateDataForSheet = require('./generate-data-for-sheet');
 
 const { useEffect, useState } = React;
-
-const generateDataForSheet = (chartData) => {
-  const header = [];
-  const rows = [];
-  if (chartData) {
-    const navigateNodes = (node, rowSoFar={}) => {
-      if (header.indexOf(node.key) === -1) {
-        header.push(node.key)
-      }
-      rowSoFar[node.key] = node.name;
-      rows.push(rowSoFar);
-      node.children.map(child => navigateNodes(child, {...rowSoFar}))
-    }
-    navigateNodes(chartData.children[0]);
-  }
-  return [rows, {header}]
-}
+const dataClient = new DataClient('/api/data/hierarchy');
 
 const EntityHierarchy = ({ params }) => {
   const [actionVisible, setVisible] = useState(false);
   const [chartData, setData] = useState(null);
 
+  const dataCallback = (data) => {
+    setData(data);
+    setVisible(true)
+    setTimeout(() => {
+      const container = document.querySelector('.orgchart-container');
+      const content = document.querySelector('.orgchart');
+      container.scrollLeft = (content.offsetWidth - container.offsetWidth) / 2;
+    }, 200)
+  };
+
   useEffect(() => {
     if (params && params.year) {
-      // TODO: cancel request if new params are selected
-      axios.get('/api/data/hierarchy', { params })
-        .then(({ data }) => {
-          setData(data);
-          setVisible(true)
-          setTimeout(() => {
-            const container = document.querySelector('.orgchart-container');
-            const content = document.querySelector('.orgchart');
-            container.scrollLeft = (content.offsetWidth - container.offsetWidth) / 2;
-          }, 200)
-        });
+      dataClient.get(params, dataCallback);
     }
   }, [params]);
 
