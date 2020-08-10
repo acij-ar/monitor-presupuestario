@@ -1,23 +1,24 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-const axios = require('axios');
+const DataClient = require('../../../../../../components/data-client');
 const ChartActions = require('../../../../../../components/monitor/chart-actions');
 const generateDataForSheet = require('./generate-data-for-sheet');
 
 const { useEffect, useState } = React;
+const dataClient = new DataClient('/api/data/table');
 
 const EntityTable = ({ params }) => {
   const [table, setTable] = useState({});
   const [actionVisible, setVisible] = useState(false);
 
+  const dataCallback = (data) => {
+    setTable(data);
+    setVisible(true)
+  };
+
   useEffect(() => {
     if (params && params.year) {
-      // TODO: cancel request if new params are selected
-      axios.get('/api/data/table', { params })
-        .then(({ data }) => {
-          setTable(data);
-          setVisible(true)
-        });
+      dataClient.get(params, dataCallback);
     }
   }, [params]);
 
