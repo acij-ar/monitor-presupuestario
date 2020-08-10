@@ -6,6 +6,7 @@ const Lists = require('./lists');
 const Groups = require('./groups');
 const Selectors = require('./selectors');
 const getDefaultSelected = require('./helpers/get-default-selected');
+const extractItem = require('./helpers/extract-item');
 const sortBy = require('lodash/sortBy');
 
 const { useEffect, useState } = React;
@@ -20,23 +21,15 @@ const CompareForm = ({ setParams }) => {
     setOptions(data);
     const defaultSelected = getDefaultSelected(data);
     setSelected(defaultSelected);
-    setParams(defaultSelected);
+    setParams({
+      ...defaultSelected,
+      years: defaultSelected.map(({ value }) => value),
+    });
   };
   useEffect(() => { fetchData() }, []);
 
   const updateSelectedOption = (newSelectedOption) => {
     setSelected({ ...selected, ...newSelectedOption });
-  }
-
-  const extractItemFrom = ({ droppableId, index }) => {
-    let removed;
-    if (droppableId.startsWith('compare-group')) {
-      const groupIndex = droppableId === 'compare-group-0' ? 0 : 1;
-      [removed] = groups[groupIndex].splice(index, 1);
-    } else {
-      [removed] = options.entities[droppableId].splice(index, 1);
-    }
-    return removed;
   }
 
   const insertItem = (item, destination) => {
@@ -51,7 +44,7 @@ const CompareForm = ({ setParams }) => {
 
   const onDragEnd = ({ source, destination }) => {
     if (!destination) return;
-    const item = extractItemFrom(source);
+    const item = extractItem(groups, options, source);
     item.source = item.source || source;
     insertItem(item, destination);
     setOptions({ ...options });
