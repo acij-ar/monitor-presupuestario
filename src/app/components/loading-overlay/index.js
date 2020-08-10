@@ -2,10 +2,9 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 const LoadingOverlay = ({ children, loading }) => (
-  loading ?
-  <div className="loading-wrapper">
+  <div className={loading ? 'loading-wrapper' : ''}>
     {children}
-  </div> : children
+  </div>
 );
 
 LoadingOverlay.propTypes = {
