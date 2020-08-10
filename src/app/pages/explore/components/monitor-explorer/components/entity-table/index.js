@@ -5,7 +5,7 @@ const ChartActions = require('../../../../../../components/monitor/chart-actions
 const generateDataForSheet = require('./generate-data-for-sheet');
 
 const { useEffect, useState } = React;
-const dataClient = new DataClient('/api/data/table');
+const dataClient = new DataClient({ url: '/api/data/table' });
 
 const EntityTable = ({ params }) => {
   const [table, setTable] = useState({});

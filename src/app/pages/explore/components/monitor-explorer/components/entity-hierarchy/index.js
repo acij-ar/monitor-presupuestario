@@ -7,7 +7,7 @@ const NodeTemplate = require('./node-template');
 const generateDataForSheet = require('./generate-data-for-sheet');
 
 const { useEffect, useState } = React;
-const dataClient = new DataClient('/api/data/hierarchy');
+const dataClient = new DataClient({ url: '/api/data/hierarchy' });
 
 const EntityHierarchy = ({ params }) => {
   const [actionVisible, setVisible] = useState(false);

@@ -1,24 +1,24 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-const chart = require('../../../../../../components/chart');
+const DataClient = require('../../../../../../components/data-client');
 const ChartActions = require('../../../../../../components/monitor/chart-actions');
 const generateDataForSheet = require('./generate-data-for-sheet');
 
 const { useEffect, useState } = React;
+const dataClient = new DataClient({ url: '/api/data/sunburst', highchartsSelector: 'sunburst-chart' });
 
 const EntitySunburst = ({ params }) => {
-  let sunburstChart;
   const [actionVisible, setVisible] = useState(false);
   const [chartData, setData] = useState(null);
 
+  const dataCallback = (data) => {
+    setVisible(true)
+    setData(data);
+  }
+
   useEffect(() => {
     if (params && params.year) {
-      chart(sunburstChart, params, '/api/data/sunburst', 'sunburst-chart')
-        .then(({ chart, data }) => {
-          sunburstChart = chart;
-          setVisible(true)
-          setData(data);
-        });
+      dataClient.get(params, dataCallback)
     }
   }, [params]);
 

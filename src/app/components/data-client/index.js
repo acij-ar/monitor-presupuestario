@@ -1,10 +1,13 @@
 const axios = require('axios');
+const Highcharts = require('./highcharts');
 
 const CancelToken = axios.CancelToken;
 
 class DataClient {
-  constructor(url) {
+  constructor({ url, highchartsSelector }) {
     this.url = url;
+    this.highchartsSelector = highchartsSelector;
+    this.highchartsChart = null;
     this.activeRequest = null
   }
 
@@ -15,14 +18,28 @@ class DataClient {
 
     this.activeRequest = CancelToken.source();
     const cancelToken = this.activeRequest.token;
+
     try {
       const { data } = await axios.get(this.url, { params, cancelToken });
       this.activeRequest = null;
+      if (this.highchartsSelector) this.createOrUpdateChart(data);
       callback(data)
     } catch (err) {
-      if (!axios.isCancel(err)) {
-        console.log(err);
-      }
+      this.handleError(err);
+    }
+  }
+
+  handleError(err) {
+    if (!axios.isCancel(err)) {
+      console.error(err);
+    }
+  }
+
+  createOrUpdateChart(data) {
+    if (this.highchartsChart) {
+      this.highchartsChart.update(data);
+    } else {
+      this.highchartsChart = Highcharts.chart(this.highchartsSelector, data);
     }
   }
 }

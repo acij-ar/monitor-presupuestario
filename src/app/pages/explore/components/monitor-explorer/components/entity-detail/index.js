@@ -3,7 +3,7 @@ const PropTypes = require('prop-types');
 const DataClient = require('../../../../../../components/data-client');
 
 const { useEffect, useState } = React;
-const dataClient = new DataClient('/api/data/detail');
+const dataClient = new DataClient({ url: '/api/data/detail' });
 
 const EntityDetail = ({ params }) => {
   const [detail, setDetail] = useState({});
