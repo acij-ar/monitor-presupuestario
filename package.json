@@ -78,6 +78,7 @@
   },
   "peerDependencies": {
     "lodash": "*",
-    "prop-types": "^15.0.0"
+    "prop-types": "^15.0.0",
+    "qs": "^6.0.0"
   }
 }

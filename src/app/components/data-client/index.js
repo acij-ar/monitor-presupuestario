@@ -1,5 +1,6 @@
 const axios = require('axios');
 const Highcharts = require('./highcharts');
+const querystring = require('qs')
 
 const CancelToken = axios.CancelToken;
 
@@ -20,7 +21,8 @@ class DataClient {
     const cancelToken = this.activeRequest.token;
 
     try {
-      const { data } = await axios.get(this.url, { params, cancelToken });
+      const url = `${this.url}?${querystring.stringify(params)}`;
+      const { data } = await axios.get(url, { cancelToken });
       this.activeRequest = null;
       if (this.highchartsSelector) this.createOrUpdateChart(data);
       callback(data)

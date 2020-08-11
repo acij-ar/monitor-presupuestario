@@ -20,7 +20,7 @@ const EntitiesTimeseriesArea = ({ params }) => {
   }
 
   useEffect(() => {
-    const atLeastOneItemInGroups = params && params.groups && params.groups.length > 0 && (params.groups[0].length > 0 || params.groups[1].length > 0);
+    const atLeastOneItemInGroups = params && params.groups && params.groups.length > 0;
     if (atLeastOneItemInGroups) {
       setLoading(true);
       dataClient.get(params, dataCallback)
