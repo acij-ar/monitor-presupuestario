@@ -20,9 +20,14 @@ const EntitiesTimeseriesArea = ({ params }) => {
   }
 
   useEffect(() => {
-    // TODO: validate at least one group present
-    setLoading(true);
-    dataClient.get(params, dataCallback)
+    const atLeastOneItemInGroups = params && params.groups && params.groups.length > 0 && (params.groups[0].length > 0 || params.groups[1].length > 0);
+    if (atLeastOneItemInGroups) {
+      setLoading(true);
+      dataClient.get(params, dataCallback)
+    } else {
+      setVisible(false);
+      dataClient.destroyChart();
+    }
   }, [params]);
 
   return (
@@ -36,13 +41,10 @@ const EntitiesTimeseriesArea = ({ params }) => {
 
 EntitiesTimeseriesArea.propTypes = {
   params: PropTypes.shape({
-    jurisdiction: PropTypes.string,
-    entity: PropTypes.string,
-    program: PropTypes.string,
-    activity: PropTypes.string,
-    year: PropTypes.number,
+    years: PropTypes.array,
     budget: PropTypes.string,
     inflation: PropTypes.string,
+    groups: PropTypes.array,
   }),
 };
 

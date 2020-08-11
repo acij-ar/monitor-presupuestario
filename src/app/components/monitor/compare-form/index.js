@@ -67,7 +67,7 @@ const CompareForm = ({ setParams }) => {
             resetSelection={resetSelection}
             groups={groups}
           />
-        </div>9
+        </div>
       </DragDropContext>
     </div>
   );

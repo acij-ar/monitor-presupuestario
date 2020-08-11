@@ -42,6 +42,13 @@ class DataClient {
       this.highchartsChart = Highcharts.chart(this.highchartsSelector, data);
     }
   }
+
+  destroyChart() {
+    if (this.highchartsChart) {
+      this.highchartsChart.destroy();
+      this.highchartsChart = null;
+    }
+  }
 }
 
 module.exports = DataClient;
