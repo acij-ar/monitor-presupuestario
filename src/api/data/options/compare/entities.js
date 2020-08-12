@@ -12,17 +12,17 @@ const getDistinctJurisdictions = () => getDistinct(
 )
 
 const getDistinctEntities = () => getDistinct(
-  'ANY_VALUE(jurisdiccion_desc) as jurisdiccion_desc, entidad_desc',
+  'MAX(jurisdiccion_desc) as jurisdiccion_desc, entidad_desc',
   'entidad_desc',
 )
 
 const getDistinctPrograms = () => getDistinct(
-  'ANY_VALUE(jurisdiccion_desc) as jurisdiccion_desc, ANY_VALUE(entidad_desc) as entidad_desc, programa_desc',
+  'MAX(jurisdiccion_desc) as jurisdiccion_desc, MAX(entidad_desc) as entidad_desc, programa_desc',
   'programa_desc',
 )
 
 const getDistinctActivities = () => getDistinct(
-  'ANY_VALUE(jurisdiccion_desc) as jurisdiccion_desc, ANY_VALUE(entidad_desc) as entidad_desc, ANY_VALUE(programa_desc) as programa_desc, actividad_desc',
+  'MAX(jurisdiccion_desc) as jurisdiccion_desc, MAX(entidad_desc) as entidad_desc, MAX(programa_desc) as programa_desc, actividad_desc',
   'actividad_desc',
 )
 
