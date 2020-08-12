@@ -5,11 +5,12 @@ const querystring = require('qs')
 const CancelToken = axios.CancelToken;
 
 class DataClient {
-  constructor({ url, highchartsSelector }) {
+  constructor({ url, highchartsSelector, destroyChartBeforeUpdate }) {
     this.url = url;
     this.highchartsSelector = highchartsSelector;
     this.highchartsChart = null;
     this.activeRequest = null
+    this.destroyChartBeforeUpdate = destroyChartBeforeUpdate;
   }
 
   async get(params, callback) {
@@ -38,6 +39,10 @@ class DataClient {
   }
 
   createOrUpdateChart(data) {
+    if (this.highchartsChart && this.destroyChartBeforeUpdate) {
+      this.destroyChart();
+    }
+
     if (this.highchartsChart) {
       this.highchartsChart.update(data);
     } else {

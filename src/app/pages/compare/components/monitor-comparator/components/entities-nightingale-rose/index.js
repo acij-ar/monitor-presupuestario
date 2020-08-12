@@ -6,7 +6,11 @@ const generateDataForSheet = require('./generate-data-for-sheet');
 const LoadingOverlay = require('../../../../../../components/loading-overlay');
 
 const { useEffect, useState } = React;
-const dataClient = new DataClient({ url: '/api/data/nightingale', highchartsSelector: 'nightingale-compare-chart' });
+const dataClient = new DataClient({
+  url: '/api/data/nightingale',
+  highchartsSelector: 'nightingale-compare-chart',
+  destroyChartBeforeUpdate: true,
+});
 
 const EntitiesNightingaleRose = ({ params }) => {
   const [actionVisible, setVisible] = useState(false);
