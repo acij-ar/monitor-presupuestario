@@ -5,22 +5,28 @@ module.exports = (params) => {
   if (params.year) {
     conditions.push('ejercicio_presupuestario = ?');
     queryParams.push(params.year);
+  } else if (params.years) {
+    const yearConditions = params.years.map(year => {
+      queryParams.push(year);
+      return 'ejercicio_presupuestario = ?'
+    })
+    conditions.push(`(${yearConditions.join(' OR ')})`)
   }
-  if (params.jurisdiction) {
+  if (params.jurisdiction || params.jurisdiccion_desc) {
     conditions.push('jurisdiccion_desc = ?');
-    queryParams.push(params.jurisdiction);
+    queryParams.push(params.jurisdiction || params.jurisdiccion_desc);
   }
-  if (params.entity) {
+  if (params.entity || params.entidad_desc) {
     conditions.push('entidad_desc = ?');
-    queryParams.push(params.entity);
+    queryParams.push(params.entity || params.entidad_desc);
   }
-  if (params.program) {
+  if (params.program || params.programa_desc) {
     conditions.push('programa_desc = ?');
-    queryParams.push(params.program);
+    queryParams.push(params.program || params.programa_desc);
   }
-  if (params.activity) {
+  if (params.activity || params.actividad_desc) {
     conditions.push('actividad_desc = ?');
-    queryParams.push(params.activity);
+    queryParams.push(params.activity || params.actividad_desc);
   }
 
   return {

@@ -19,22 +19,12 @@ module.exports = (categories, data) => merge({}, baseHighchartsOptions, {
       fillOpacity: 0.5
     }
   },
-  xAxis: {
-    categories: [
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
-      'Sunday'
-    ],
-  },
+  xAxis: { categories },
   series: [{
-    name: 'John',
-    data: [3, 4, 3, 5, 4, 10, 12]
+    name: 'Grupo 1',
+    data: data[0],
   }, {
-    name: 'Jane',
-    data: [1, 3, 4, 3, 3, 5, 4]
+    name: 'Grupo 2',
+    data: data[1],
   }]
 });
