@@ -1,14 +1,13 @@
 const baseHighchartsOptions = require('../helpers/base-highchart-options');
 const merge = require('lodash/merge');
 
-module.exports = (categories, data) => merge({}, baseHighchartsOptions, {
+module.exports = (categories, series) => merge({}, baseHighchartsOptions, {
   chart: {
     polar: true,
     type: 'column',
-    margin: [0, 0, -200, 0],//top, right, bottom, left
   },
   xAxis: {
-    categories: ['Apr-1855', 'May-1855', 'Jun-1855', 'Jul-1855', 'Aug-1855', 'Sep-1855', 'Oct-1855', 'Nov-1855', 'Dec-1855', 'Jan-1856', 'Feb-1856', 'Mar-1856'],
+    categories: categories,
     gridLineWidth: 0,
     lineWidth: 0,
     labels: {
@@ -31,7 +30,7 @@ module.exports = (categories, data) => merge({}, baseHighchartsOptions, {
     borderWidth: 1,
   },
   pane: {
-    size: 700,
+    size: 500,
     startAngle: -90,
   },
   tooltip: {
@@ -47,9 +46,5 @@ module.exports = (categories, data) => merge({}, baseHighchartsOptions, {
       groupPadding: 0,
     },
   },
-  series: [
-    {name: 'Disease', data: [477, 508, 802, 382, 483, 189, 128, 178, 91, 42, 24, 15], color: '#AAB9C1'},
-    {name: 'Other', data: [57, 37, 31, 33, 25, 20, 18, 32, 28, 48, 19, 35], color: '#AFA292'},
-    {name: 'Wound', data: [48, 49, 209, 134, 164, 276, 53, 33, 18, 2, 0, 0], color: '#D7B6A7'},
-  ],
+  series,
 });
