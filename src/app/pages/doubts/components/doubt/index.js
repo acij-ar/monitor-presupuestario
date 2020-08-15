@@ -2,25 +2,17 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const ContentSection = require('../../../../components/content-section');
 
-const Doubt = ({title, checked, children}) => (
+const Doubt = ({title, children}) => (
   <div className="doubt">
-    <label>
-      <input type="checkbox" defaultChecked={checked} />
-      <ContentSection title={title}>
-        {children}
-      </ContentSection>
-    </label>
+    <ContentSection title={title}>
+      {children}
+    </ContentSection>
   </div>
 );
 
 Doubt.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
-  checked: PropTypes.bool,
-}
-
-Doubt.defaultProps = {
-  checked: false,
 }
 
 module.exports = Doubt;

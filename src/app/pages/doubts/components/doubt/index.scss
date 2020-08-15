@@ -1,31 +1,11 @@
 @import '../../../../components/content-section/index';
 
 .doubt {
-  input {
-    display: none;
-  }
-
   .content-section {
     border-top: solid 3px $violet;
 
     .content-section-title:before {
       content: none;
     }
-
-    .content-section-content {
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition: all 500ms;
-    }
-  }
-
-  input:checked + .content-section .content-section-content {
-    opacity: 1;
-    max-height: 50em;
-  }
-
-  input:not(:checked) + .content-section {
-    cursor: pointer;
   }
 }
