@@ -28,7 +28,7 @@ const EntitySunburst = ({ params }) => {
 
   return (
     <LoadingOverlay loading={loading}>
-      <ChartActions visible={actionVisible} generateDataForSheet={() => generateDataForSheet(chartData, params)}>
+      <ChartActions visible={actionVisible} generateDataForSheet={() => generateDataForSheet(chartData, params)} imageTypesEnabled={false}>
         <div id="sunburst-chart" />
       </ChartActions>
     </LoadingOverlay>
