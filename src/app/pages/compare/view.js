@@ -5,7 +5,7 @@ const MonitorMainSection = require('../../components/monitor/main-section');
 const MonitorComparator = require('./components/monitor-comparator');
 
 const App = ({pageName}) => (
-  <Page pageName={pageName}>
+  <Page pageName={pageName} selectedSubSection="compare-menu-link">
     <MonitorMainSection selectedSection="compare" />
     <MonitorComparator />
   </Page>

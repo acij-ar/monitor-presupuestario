@@ -5,7 +5,7 @@ const MonitorMainSection = require('../../components/monitor/main-section');
 const MonitorExplorer = require('./components/monitor-explorer');
 
 const App = ({ pageName }) => (
-  <Page pageName={pageName}>
+  <Page pageName={pageName} selectedSubSection="explore-menu-link">
     <MonitorMainSection selectedSection="explore" />
     <MonitorExplorer />
   </Page>

@@ -10,12 +10,12 @@ class Page extends React.Component {
   }
 
   render() {
-    const {children, pageName} = this.props;
+    const {children, pageName, selectedSubSection} = this.props;
     return (
       <React.Fragment>
         <main>
           <div id="main-content">
-            <Menu selectedPage={pageName}/>
+            <Menu selectedPage={pageName} selectedSubSection={selectedSubSection} />
             <div id="page-content">
               {children}
             </div>
@@ -30,6 +30,7 @@ class Page extends React.Component {
 Page.propTypes = {
   children: PropTypes.node,
   pageName: PropTypes.string.isRequired,
+  selectedSubSection: PropTypes.string,
 };
 
 module.exports = Page;

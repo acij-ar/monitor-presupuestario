@@ -25,7 +25,7 @@ const submenus = {
   ]
 }
 
-const Menu = ({ selectedPage }) => (
+const Menu = ({ selectedPage, selectedSubSection }) => (
   <div id="menu">
     <div id="menu-content">
       <a href="/">
@@ -43,7 +43,7 @@ const Menu = ({ selectedPage }) => (
           <a href="/monitor" id="menu-link-monitor" className={['compare', 'explore'].includes(selectedPage) ? 'active' : ''}>
             Monitor
           </a>
-          <SubMenu pageSections={submenus.monitor} />
+          <SubMenu pageSections={submenus.monitor} selectedSubSection={selectedSubSection} />
         </li>
         <li>
           <a href="/acerca-de" id="menu-link-about" className={selectedPage === 'about' ? 'active' : ''}>
@@ -68,6 +68,7 @@ const Menu = ({ selectedPage }) => (
 
 Menu.propTypes = {
   selectedPage: PropTypes.string.isRequired,
+  selectedSubSection: PropTypes.string,
 }
 
 module.exports = Menu;
