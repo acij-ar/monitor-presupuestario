@@ -37,7 +37,8 @@ a {
     background: $purple;
   }
 
-  & + ul a:hover {
+  & + ul a:hover,
+  & + ul a.active {
     color: $purple;
   }
 }
@@ -47,7 +48,8 @@ a {
     background: $blue;
   }
 
-  & + ul a:hover {
+  & + ul a:hover,
+  & + ul a.active {
     color: $blue;
   }
 }
@@ -57,7 +59,8 @@ a {
     background: $green;
   }
 
-  & + ul a:hover {
+  & + ul a:hover,
+  & + ul a.active {
     color: $green;
   }
 }
@@ -67,7 +70,8 @@ a {
     background: $violet;
   }
 
-  & + ul a:hover {
+  & + ul a:hover,
+  & + ul a.active {
     color: $violet;
   }
 }

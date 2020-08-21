@@ -2,7 +2,7 @@ const React = require('react');
 const ContentSection = require('../../../../components/content-section');
 
 const BudgetCycle = () => (
-  <ContentSection id="budget-cycle" title="El ciclo del presupuesto">
+  <ContentSection id="budget-cycle-introduction" title="El ciclo del presupuesto">
     <p>El presupuesto del Estado pasa por distintas etapas, antes, durante y después de lo que se suele denominar
       “ejercicio fiscal”. Este término alude al periodo de 12 meses en los que se ejecuta un determinado
       presupuesto.</p>

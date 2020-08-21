@@ -13,25 +13,36 @@ const BudgetInflation = require('./components/budget-inflation');
 const BudgetAnalysis = require('./components/budget-analysis');
 // const BudgetExampleAnalysis = require('./components/budget-example-analysis');
 const BudgetActions = require('./components/budget-actions');
+const activeSectionScroll = require('./active-section-scroll');
 
-const App = ({pageName}) => (
-  <Page pageName={pageName}>
-    <div id="budget-main-content">
-      <WhatIsTheBudget />
-      <BudgetCycle />
-      <BudgetSteps />
-      <BudgetClassifications />
-      <BudgetSpentAccordion />
-      <BudgetWhatForAccordion />
-      <BudgetWhoAccordion />
-      { /* <BudgetChart /> */ }
-      <BudgetInflation />
-      <BudgetAnalysis />
-      { /* <BudgetExampleAnalysis /> */ }
-      <BudgetActions />
-    </div>
-  </Page>
-);
+const { useEffect } = React;
+
+const App = ({pageName}) => {
+  useEffect(() => {
+    window.addEventListener('scroll', activeSectionScroll());
+  }, []);
+
+  return (
+    <Page pageName={pageName}>
+      <div id="budget-main-content">
+        <WhatIsTheBudget />
+        <div id="budget-cycle">
+          <BudgetCycle />
+          <BudgetSteps />
+        </div>
+        <BudgetClassifications />
+        <BudgetSpentAccordion />
+        <BudgetWhatForAccordion />
+        <BudgetWhoAccordion />
+        { /* <BudgetChart /> */ }
+        <BudgetInflation />
+        <BudgetAnalysis />
+        { /* <BudgetExampleAnalysis /> */ }
+        <BudgetActions />
+      </div>
+    </Page>
+  )
+};
 
 App.propTypes = {
   pageName: PropTypes.string.isRequired,
