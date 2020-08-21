@@ -1,6 +1,10 @@
 @import '../../components/page/globals';
 
 #root main #page-content {
+  padding-top: 10%;
+}
+
+#root main #page-content {
   h1 {
     font-size: 83px;
     color: $blue;
