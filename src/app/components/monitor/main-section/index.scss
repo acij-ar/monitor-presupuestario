@@ -1,7 +1,7 @@
 @import '../../page/globals';
 
 #root main #page-content {
-  padding-top: 14%;
+  padding-top: 10%;
 
 }
 
@@ -11,6 +11,10 @@
     color: $blue;
     font-weight: 500;
     margin-bottom: 10px;
+
+    span {
+      font-weight: 300;
+    }
   }
 
   p {

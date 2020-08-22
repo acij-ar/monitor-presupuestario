@@ -42,31 +42,43 @@
     display: none;
   }
 
- .content-section-title {
-   &:before {
-     content: none;
-   }
+  .content-section-title {
+    &:before {
+      content: none;
+    }
 
-   h2 {
-     font-size: 19px;
-     line-height: 30px;
-     white-space: nowrap;
+    h2 {
+      font-size: 19px;
+      line-height: 30px;
+      white-space: nowrap;
 
-     span {
-       background: #FF00E1;
-       color: white;
+      span {
+        background: #FF00E1;
+        color: white;
 
-     }
-   }
+      }
+    }
 
-   h3 {
-     font-size: 20px;
-     line-height: 25px;
-     margin: 8px 0 1em 0;
-   }
- }
+    h3 {
+      font-size: 20px;
+      line-height: 25px;
+      margin: 8px 0 0 0;
+    }
+  }
+
+  .content-section-content {
+    font-size: 15px;
+    line-height: 22px;
+    hyphens: auto;
+  }
 }
 
 #budget-who {
-  margin-bottom: 50px;
+  .content-section {
+    margin-bottom: 50px;
+    .content-section-title,
+    .content-section-content {
+      padding-bottom: 0;
+    }
+  }
 }

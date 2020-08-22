@@ -14,7 +14,7 @@
   }
 
   ul#menu-sections {
-    padding: 66% 0;
+    padding: 46% 0;
 
     & > li {
       @import './link-border';
@@ -34,7 +34,7 @@
 
       a.active + ul {
         display: block;
-        font-size: 10px;
+        font-size: 13px;
         line-height: 2em;
       }
     }
