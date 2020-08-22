@@ -1,11 +1,7 @@
-@import '../../../../components/content-section/index';
+@import '../../../../components/page/globals';
 
 #doubts-main-content {
   margin-bottom: 50px;
-
-  .content-section-content {
-    border-bottom: solid 1px #333;
-  }
 
   .content-section-title:before {
     background: $violet;

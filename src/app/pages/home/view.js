@@ -11,7 +11,7 @@ const App = ({pageName}) => (
       del Estado en la Argentina.
     </p>
     <div id="home-actions">
-      <a id="budget-link" href="/el-presupuesto">Conocer el presupuesto</a>
+      <a id="budget-link" href="/el-presupuesto">¿Qué es el presupuesto?</a>
       <a id="budget-explore-link" href="/monitor/explorar">Ir al Monitor</a>
     </div>
   </Page>

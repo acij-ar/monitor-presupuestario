@@ -2,7 +2,7 @@ const React = require('react');
 const ContentSection = require('../../../../components/content-section');
 
 const BudgetClassifications = () => (
-  <ContentSection id="budget-classifications" title="Clasificaciones">
+  <ContentSection id="budget-classifications-main-content" title="Clasificaciones">
     <p>La información presupuestaria contenida en los distintos documentos puede organizarse y clasificarse de muchas
       formas, que serán más o menos útiles según el análisis que se quiera hacer. Las clasificaciones presupuestarias
       son formas de agrupar u ordenar los recursos y gastos según diferentes criterios, que responden algunas preguntas

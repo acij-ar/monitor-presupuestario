@@ -5,9 +5,9 @@ li > div {
   padding-top: 5px;
   padding-left: 100px;
   font-size: 12px;
-  line-height: 19px;
+  line-height: 16px;
   position: relative;
-  text-align: justify;
+  hyphens: auto;
 
   h2 {
     margin: 0;

@@ -30,10 +30,12 @@ const App = ({pageName}) => {
           <BudgetCycle />
           <BudgetSteps />
         </div>
-        <BudgetClassifications />
-        <BudgetSpentAccordion />
-        <BudgetWhatForAccordion />
-        <BudgetWhoAccordion />
+        <div id="budget-classifications">
+          <BudgetClassifications />
+          <BudgetSpentAccordion />
+          <BudgetWhatForAccordion />
+          <BudgetWhoAccordion />
+        </div>
         { /* <BudgetChart /> */ }
         <BudgetInflation />
         <BudgetAnalysis />

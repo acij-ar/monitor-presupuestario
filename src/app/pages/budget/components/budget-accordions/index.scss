@@ -1,6 +1,8 @@
 @import '../../../../components/page/globals';
 
 .budget-accordion {
+  margin-left: 31%;
+
   input {
     position: fixed;
     top: -999px;
@@ -11,14 +13,15 @@
     display: block;
     background: #FF00E1;
     color: white;
-    font-size: 40px;
+    font-size: 30px;
     border-bottom: 4px solid white;
     padding: 10px;
     font-weight: 500;
     cursor: pointer;
 
     &:hover {
-      background: darken($purple, 5%);
+      background: none;
+      color: #FF00E1;
     }
   }
 
@@ -45,16 +48,25 @@
    }
 
    h2 {
-     background: #FF00E1;
-     color: white;
-     display: inline;
-     font-size: 30px;
+     font-size: 19px;
+     line-height: 30px;
+     white-space: nowrap;
+
+     span {
+       background: #FF00E1;
+       color: white;
+
+     }
    }
 
    h3 {
-     font-size: 21px;
+     font-size: 20px;
      line-height: 25px;
      margin: 8px 0 1em 0;
    }
  }
+}
+
+#budget-who {
+  margin-bottom: 50px;
 }

@@ -9,8 +9,8 @@ const BudgetAccordion = ({id, longTitle, smallTitle, children}) => (
     <ContentSection
       title={(
         <div>
+          <h2><span>{smallTitle}</span></h2>
           <h3>{longTitle}</h3>
-          <h2>{smallTitle}</h2>
         </div>
       )}
     >

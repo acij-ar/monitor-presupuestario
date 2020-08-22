@@ -3,9 +3,6 @@ module.exports = () => {
     '#what-is-the-budget',
     '#budget-cycle',
     '#budget-classifications',
-    '#budget-spent',
-    '#budget-what-for',
-    '#budget-who',
     '#budget-inflation',
     '#budget-analysis',
   ].map(id => [document.querySelector(id), document.querySelector(`#menu a[href="${id}"]`)]);
