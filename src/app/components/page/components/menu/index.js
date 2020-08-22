@@ -15,7 +15,7 @@ const submenus = {
     { name: 'Comparar', id: 'compare-menu-link', href: '/monitor/comparar' },
   ],
   about: [
-    { name: 'El Monitor Presupuestario', id: 'about-main-content' },
+    { name: 'El Monitor Presupuestario', id: 'about-main' },
     { name: 'ACIJ', id: 'about-acij' },
     { name: 'Matchbox', id: 'about-matchbox' },
     { name: 'Metodología', id: 'about-methodology' },

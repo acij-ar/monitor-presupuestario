@@ -13,13 +13,21 @@ const BudgetInflation = require('./components/budget-inflation');
 const BudgetAnalysis = require('./components/budget-analysis');
 // const BudgetExampleAnalysis = require('./components/budget-example-analysis');
 const BudgetActions = require('./components/budget-actions');
-const activeSectionScroll = require('./active-section-scroll');
+const activeSectionScroll = require('../../components/page/components/menu/active-section-scroll');
 
 const { useEffect } = React;
 
+const elementSelectors = [
+  '#what-is-the-budget',
+  '#budget-cycle',
+  '#budget-classifications',
+  '#budget-inflation',
+  '#budget-analysis',
+];
+
 const App = ({pageName}) => {
   useEffect(() => {
-    window.addEventListener('scroll', activeSectionScroll());
+    window.addEventListener('scroll', activeSectionScroll(elementSelectors));
   }, []);
 
   return (

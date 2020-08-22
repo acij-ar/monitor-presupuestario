@@ -2,7 +2,7 @@ const React = require('react');
 const ContentSection = require('../../../../components/content-section');
 
 const AboutMainContent = () => (
-  <ContentSection id="about-main-content" title="El Monitor Presupuestario">
+  <ContentSection id="about-main" title="El Monitor Presupuestario">
     <p>Desde la Asociación Civil por la Igualdad y la Justicia (ACIJ), creamos el Monitor presupuestario con el objetivo
       de promover el acceso a información presupuestaria de manera sencilla, desagregada y accesible, y así contribuir a
       mejorar las posibilidades de análisis, incidencia e impacto en las acciones tendientes a visibilizar situaciones

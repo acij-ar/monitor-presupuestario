@@ -1,11 +1,8 @@
-module.exports = () => {
-  const elements = [
-    '#what-is-the-budget',
-    '#budget-cycle',
-    '#budget-classifications',
-    '#budget-inflation',
-    '#budget-analysis',
-  ].map(id => [document.querySelector(id), document.querySelector(`#menu a[href="${id}"]`)]);
+module.exports = (elementSelectors) => {
+  const elements = elementSelectors.map(id => [
+    document.querySelector(id),
+    document.querySelector(`#menu a[href="${id}"]`)
+  ]);
   return () => {
     const windowHeightMidPoint = window.innerHeight / 2;
     elements.forEach(([element, menuElement]) => {
