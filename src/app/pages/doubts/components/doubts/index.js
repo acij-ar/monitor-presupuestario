@@ -5,7 +5,7 @@ const Doubt = require('../doubt');
 const Doubts = ({ faqs }) => (
   <React.Fragment>
     { faqs.map(({ pregunta, respuesta }, index) => (
-      <Doubt key={index} title={pregunta}>
+      <Doubt key={index} title={pregunta} index={index}>
         { respuesta }
       </Doubt>
     )) }
