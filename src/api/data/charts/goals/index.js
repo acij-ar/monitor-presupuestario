@@ -1,4 +1,4 @@
-const dbConnection = require('../helpers/query/mysql-connection');
+const dbConnection = require('../../db/mysql-connection');
 
 module.exports = async (req, res, next) => {
   const query = `SELECT * FROM metas_fisicas_s WHERE jurisdiccion_desc = ? AND programa_desc = ? AND ejercicio_presupuestario = ?;`;
