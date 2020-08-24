@@ -17,7 +17,7 @@ const getSelectedBudget = (params) => {
       'Sin ajustar': 'credito_presupuestado as original, credito_vigente as vigente, credito_devengado as devengado',
     }
   };
-  return budgetColumns[params.budget][params.inflation];
+  return budgetColumns[params.budget || 'all'][params.inflation];
 };
 
 module.exports = (params, targetTable) => {

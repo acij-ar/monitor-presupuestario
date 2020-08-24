@@ -27,16 +27,10 @@ const obj2sunburstData = (baseObj, sunburstData, budgetType, maxDepth, depth = 0
   });
 };
 
-const getMaxDepth = (params) => {
-  return params.activity ? 6 :
-    params.program ? 5 :
-      params.entity ? 4 : 3;
-};
-
 module.exports = (rows, params) => {
   const baseObj = rows2obj(rows, {withIds: true, withBudgets: true});
   const sunburstData = [];
-  const maxDepth = getMaxDepth(params);
+  const maxDepth = params.entity ? 4 : 3;
   const budgetType = `Presupuesto ${params.budget.toLowerCase()}`
   obj2sunburstData(baseObj, sunburstData, budgetType, maxDepth);
   return sunburstData;
