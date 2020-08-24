@@ -1,6 +1,6 @@
 const express = require('express');
 const sunburstDataController = require('./sunburst');
-const detailDataController = require('./detail');
+const detailDataController = require('./charts/detail');
 const optionsExploreController = require('./options/explore');
 const optionsCompareController = require('./options/compare');
 const timeseriesDataController = require('./timeseries');

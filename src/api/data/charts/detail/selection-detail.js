@@ -1,10 +1,10 @@
-const genericQuery = require('../helpers/query');
+const budgetQuery = require('../../db/budget-query');
 
 const getPercentage = async (key, params, previousTotal) => {
   if (!params[key]) {
     return null;
   }
-  const rows = await genericQuery({
+  const [{ budget: total }] = await budgetQuery({
     ejercicio_presupuestario: params.ejercicio_presupuestario,
     budget: params.budget,
     inflation: params.inflation,
@@ -14,11 +14,6 @@ const getPercentage = async (key, params, previousTotal) => {
     program: ['program', 'activity'].includes(key) ? params.program : null,
     activity: ['activity'].includes(key) ? params.activity : null,
   });
-  let total = 0;
-  rows.forEach(row => {
-    const { budget } = row;
-    total += budget;
-  })
   const percentage = (total * 100 / previousTotal.total);
   return {
     name: params[key],
