@@ -1,19 +1,13 @@
 const highchartsOptions = require('./highcharts-options');
-const genericQuery = require('../helpers/query');
+const budgetQuery = require('../../db/budget-query');
 const sortBy = require('lodash/sortBy');
 
 module.exports = async (req, res, next) => {
-  const rows = await genericQuery({ ... req.query, budget: 'all', year: null });
+  const rows = await budgetQuery({ ... req.query, budget: 'all', year: null });
   const years = {};
   rows.forEach((row) => {
     const { ejercicio_presupuestario, original, vigente, devengado } = row;
-    if (years[ejercicio_presupuestario]) {
-      years[ejercicio_presupuestario].original += original;
-      years[ejercicio_presupuestario].vigente += vigente;
-      years[ejercicio_presupuestario].devengado += devengado;
-    } else {
-      years[ejercicio_presupuestario] = { original, vigente, devengado }
-    }
+    years[ejercicio_presupuestario] = { original, vigente, devengado }
   });
   const categories = [];
   const data = { original: [], vigente: [], devengado: [] };
