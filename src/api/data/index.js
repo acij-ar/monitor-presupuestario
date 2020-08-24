@@ -8,7 +8,7 @@ const timeseriesCompareDataController = require('./timeseries-compare');
 const hierarchyDataController = require('./charts/hierarchy');
 const goalsController = require('./charts/goals');
 const tableController = require('./charts/table');
-const nightingaleController = require('./nightingale');
+const nightingaleController = require('./charts/nightingale');
 const { getCache, saveCache } = require('./cache');
 
 const router = express.Router();
