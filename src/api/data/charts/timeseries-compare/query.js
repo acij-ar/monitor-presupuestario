@@ -1,9 +1,9 @@
 const flatten = require('lodash/flatten');
-const genericQuery = require('../helpers/query');
+const budgetQuery = require('../../db/budget-query');
 
 const rowsForGroup = async (groupName, params) => {
   const groupParams = params.groups.filter(item => item.group === groupName);
-  const groupRowsPromises = groupParams.map(group => genericQuery({
+  const groupRowsPromises = groupParams.map(group => budgetQuery({
     ...params,
     ...group,
   }))
