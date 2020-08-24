@@ -1,5 +1,5 @@
 const Glosary = require('./view');
-const dbConnection = require('../../../api/data/helpers/query/mysql-connection');
+const dbConnection = require('../../../api/data/db/mysql-connection');
 
 module.exports = async (req, res, next) => {
   const query = 'SELECT palabra as name, significado as definition FROM glosario;';

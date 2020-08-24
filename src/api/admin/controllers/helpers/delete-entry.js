@@ -1,4 +1,4 @@
-const dbConnection = require('../../../data/helpers/query/mysql-connection');
+const dbConnection = require('../../../data/db/mysql-connection');
 
 const deleteTerm = (entry) => {
   const { id } = entry;

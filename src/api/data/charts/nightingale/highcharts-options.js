@@ -1,4 +1,4 @@
-const baseHighchartsOptions = require('../../helpers/base-highchart-options');
+const baseHighchartsOptions = require('../base-highchart-options');
 const merge = require('lodash/merge');
 
 module.exports = (categories, series) => merge({}, baseHighchartsOptions, {

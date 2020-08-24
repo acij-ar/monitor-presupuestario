@@ -1,4 +1,4 @@
-const dbConnection = require('../helpers/query/mysql-connection');
+const dbConnection = require('../db/mysql-connection');
 const convertToOption = require('./convert-to-option');
 
 module.exports = async () => {

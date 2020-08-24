@@ -1,4 +1,4 @@
-const dbConnection = require('../../helpers/query/mysql-connection');
+const dbConnection = require('../../db/mysql-connection');
 
 const getDistinct = async (columns, table, order) => {
   const query = `SELECT ${columns} FROM ${table} GROUP BY ${order} ORDER BY ${order} ASC;`
