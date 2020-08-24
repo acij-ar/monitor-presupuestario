@@ -1,4 +1,4 @@
-const rows2obj = require('../helpers/rows-to-obj');
+const rows2obj = require('../../helpers/rows-to-obj');
 
 const budgetComparison = (a, b) => b.budget - a.budget;
 
