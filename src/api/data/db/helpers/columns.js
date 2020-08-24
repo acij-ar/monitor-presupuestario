@@ -20,12 +20,12 @@ const getSelectedBudget = (params) => {
   return budgetColumns[params.budget][params.inflation];
 };
 
-module.exports = (params) => {
+module.exports = (params, targetTable) => {
   const columns = ['ejercicio_presupuestario']
-  if (params.jurisdiction) columns.push('jurisdiccion_desc')
-  if (params.entity) columns.push('entidad_desc')
-  if (params.program) columns.push('programa_desc')
-  if (params.activity) columns.push('actividad_desc')
+  if (['jurisdiccion_mv', 'entidad_mv', 'programa_mv', 'actividad_mv'].includes(targetTable)) columns.push('jurisdiccion_desc')
+  if (['entidad_mv', 'programa_mv', 'actividad_mv'].includes(targetTable)) columns.push('entidad_desc')
+  if (['programa_mv', 'actividad_mv'].includes(targetTable)) columns.push('programa_desc')
+  if (['actividad_mv'].includes(targetTable)) columns.push('actividad_desc')
   const selectedBudget = getSelectedBudget(params);
   if (selectedBudget) columns.push(selectedBudget);
   return columns.join(', ');
