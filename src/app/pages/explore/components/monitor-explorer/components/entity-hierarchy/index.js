@@ -1,7 +1,7 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const ChartActions = require('../../../../../../components/monitor/chart-actions');
-const DataClient = require('../../../../../../components/data-client');
+const DataClient = require('../../../../../../helpers/data-client');
 const OrganizationChart = require('./organization-chart');
 const NodeTemplate = require('./node-template');
 const generateDataForSheet = require('./generate-data-for-sheet');
@@ -30,6 +30,8 @@ const EntityHierarchy = ({ params }) => {
     if (params && params.year) {
       setLoading(true);
       dataClient.get(params, dataCallback);
+    } else {
+      dataClient.cancelRequest();
     }
   }, [params]);
 

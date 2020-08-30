@@ -14,10 +14,7 @@ class DataClient {
   }
 
   async get(params, callback) {
-    if (this.activeRequest) {
-      this.activeRequest.cancel()
-    }
-
+    this.cancelRequest();
     this.activeRequest = CancelToken.source();
     const cancelToken = this.activeRequest.token;
 
@@ -29,6 +26,12 @@ class DataClient {
       callback(data)
     } catch (err) {
       this.handleError(err);
+    }
+  }
+
+  cancelRequest() {
+    if (this.activeRequest) {
+      this.activeRequest.cancel()
     }
   }
 

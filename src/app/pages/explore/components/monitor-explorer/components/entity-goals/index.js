@@ -1,6 +1,6 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-const DataClient = require('../../../../../../components/data-client');
+const DataClient = require('../../../../../../helpers/data-client');
 const LoadingOverlay = require('../../../../../../components/loading-overlay');
 
 const { useEffect, useState } = React;
@@ -20,6 +20,7 @@ const EntityGoals = ({ params }) => {
       setLoading(true)
       dataClient.get(params, dataCallback)
     } else {
+      dataClient.cancelRequest();
       setGoals(null);
     }
   }, [params]);

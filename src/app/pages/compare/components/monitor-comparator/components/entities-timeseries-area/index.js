@@ -1,6 +1,6 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-const DataClient = require('../../../../../../components/data-client');
+const DataClient = require('../../../../../../helpers/data-client');
 const ChartActions = require('../../../../../../components/monitor/chart-actions');
 const generateDataForSheet = require('./generate-data-for-sheet');
 const LoadingOverlay = require('../../../../../../components/loading-overlay');
@@ -25,6 +25,7 @@ const EntitiesTimeseriesArea = ({ params }) => {
       setLoading(true);
       dataClient.get(params, dataCallback)
     } else {
+      dataClient.cancelRequest();
       setVisible(false);
       dataClient.destroyChart();
     }
