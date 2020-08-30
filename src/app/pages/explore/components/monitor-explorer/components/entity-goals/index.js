@@ -37,7 +37,12 @@ const EntityGoals = ({ params }) => {
               Metas físicas
             </div>
             <ul>
-              { goals.map(goal => <li key={goal}>{goal}</li>)}
+              <li id="monitor-explorer-entity-goals-composition">
+                <strong>Medición</strong>. Unidad: (cantidad ejecutada) de (cantidad programada)
+              </li>
+              { goals.map(goal => <li key={goal}>
+                <strong>{goal.measure}</strong>. {goal.unit}: {goal.execution} de {goal.expected}
+              </li>)}
             </ul>
           </div>
         </div>
