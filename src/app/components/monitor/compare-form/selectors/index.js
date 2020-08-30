@@ -1,6 +1,6 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-const Selector = require('../../explore-form/selectors/selector');
+const Selector = require('../../../selector');
 const ResetButton = require('./reset-button');
 const SelectorMulti = require('./selector-multi');
 

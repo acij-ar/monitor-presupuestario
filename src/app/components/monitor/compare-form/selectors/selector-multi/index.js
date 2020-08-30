@@ -1,7 +1,7 @@
 const React = require('react');
 const Select = require('react-select').default;
 const PropTypes = require('prop-types');
-const styles = require('../../../explore-form/selectors/selector/styles');
+const styles = require('../../../../selector/styles');
 
 const SelectorMulti = ({ id, name, options, value, onChange }) => {
   const disabled = !options || options.length === 0;
