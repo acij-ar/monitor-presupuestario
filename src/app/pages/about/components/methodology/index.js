@@ -6,7 +6,7 @@ const AboutMethodology = () => (
     <p>Para desarrollar el Monitor presupuestario utilizamos la información provista por el Ministerio de Economía de la
       Nación, específicamente los dataset de Crédito y Gasto completo (distribución anual acumulada de los créditos
       presupuestarios con clasificadores completos) desde el año 2007 al año 2020, disponible en el sitio
-      www..presupuestoabierto.gob.ar .</p>
+      www.presupuestoabierto.gob.ar .</p>
     <p>En los años 2015 a 2019, el presupuesto original que se muestra, refleja los datos del presupuesto aprobado por
       el Congreso Nacional. Para alcanzar dichos datos, cuya publicación en datos abiertos no es facilitada por el poder
       legislativo, hemos revisado manualmente los proyectos de ley de presupuesto cuyos dataset si se publican, para
