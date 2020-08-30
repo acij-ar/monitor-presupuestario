@@ -2,16 +2,16 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const Selector = require('../../../selector');
 const ResetButton = require('./reset-button');
-const SelectorMulti = require('./selector-multi');
 
 const Selectors = ({ options, selected, updateSelected, groups, resetSelection }) => (
   <div id="monitor-explore-selector">
-    <SelectorMulti
+    <Selector
       id="setting-form-years"
       name="Año"
       options={options.years}
       onChange={years => updateSelected({ years })}
       value={selected.years}
+      isMulti
     />
     <Selector
       id="setting-form-budgets"

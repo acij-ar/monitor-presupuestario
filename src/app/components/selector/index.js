@@ -3,18 +3,22 @@ const Select = require('react-select').default;
 const PropTypes = require('prop-types');
 const styles = require('./styles');
 
-const Selector = ({ id, name, options, value, onChange }) => {
+const findValue = (options, value) => options && value && options.find(({label, id}) => label === value || id === value);
+
+const Selector = ({ id, name, options, value, onChange, isMulti }) => {
   const disabled = !options || options.length === 0;
+  const selectedValue = isMulti ? value : findValue(options, value);
   return (
     <div className={`selector-wrapper ${disabled ? 'selector-wrapper-disabled' : ''}`} id={id}>
       <Select
         isDisabled={disabled}
+        isMulti={isMulti}
         placeholder={name}
-        value={options && value && options.find(({label, id}) => label === value || id === value)}
+        value={selectedValue}
         options={options}
         onChange={onChange}
         isSearchable
-        closeMenuOnSelect
+        closeMenuOnSelect={!isMulti}
         styles={styles}
       />
     </div>
@@ -38,7 +42,13 @@ Selector.propTypes = {
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
+    PropTypes.array
   ]),
+  isMulti: PropTypes.bool,
 };
+
+Selector.defaultProps = {
+  isMulti: false,
+}
 
 module.exports = Selector;
