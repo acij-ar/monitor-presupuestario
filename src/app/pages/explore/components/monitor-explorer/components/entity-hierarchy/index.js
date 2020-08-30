@@ -1,6 +1,6 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-const ChartActions = require('../../../../../../components/monitor/chart-actions');
+const ChartActions = require('../../../../../../components/chart-actions');
 const DataClient = require('../../../../../../helpers/data-client');
 const OrganizationChart = require('./organization-chart');
 const NodeTemplate = require('./node-template');

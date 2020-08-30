@@ -1,6 +1,6 @@
 const React = require('react');
 const MonitorForm = require('../../../../components/monitor/compare-form');
-const InflationDisclaimer = require('../../../../components/monitor/inflation-disclaimer');
+const InflationDisclaimer = require('../../../../components/inflation-disclaimer');
 const EntitiesNightingaleRose = require('./components/entities-nightingale-rose');
 const EntitiesTimeseriesArea = require('./components/entities-timeseries-area');
 
