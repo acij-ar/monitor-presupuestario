@@ -1,43 +1,10 @@
-#monitor-explore-selector {
+@import '../../../entities-selectors/index';
+@import './reset-button/index';
+
+#monitor-explore-selectors {
   margin: 20px 0;
-  display: flex;
-  justify-content: space-between;
+}
 
-  #monitor-explore-selector-labels-who,
-  #monitor-explore-selector-labels-what,
-  #monitor-explore-selector-labels-reason {
-
-    h3 {
-      flex: 0 0 100%;
-      font-size: 12px;
-      line-height: 20px;
-      display: block;
-      border-bottom: solid 1px #555;
-    }
-  }
-
-  #monitor-explore-selector-labels-who {
-    flex: 0 0 (5.5 / 11.5 * 100%);
-
-    .selector-wrapper,
-    #monitor-explore-reset {
-      width: 2.5 / 5.5 * 100%;
-
-      &:nth-child(2n) {
-        margin-right: 1 / 11 * 100%;
-      }
-    }
-  }
-
-  #monitor-explore-selector-labels-reason,
-  #monitor-explore-selector-labels-what {
-    flex: 0 0 (2.5 / 11.5 * 100%);
-
-    .selector-wrapper {
-      width: 100%;
-    }
-  }
-
-  @import '../../../selector/index';
-  @import './reset-button/index';
+#setting-form-years {
+  margin-right: 0!important;
 }

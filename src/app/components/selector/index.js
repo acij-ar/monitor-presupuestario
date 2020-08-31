@@ -11,6 +11,7 @@ const Selector = ({ id, name, options, value, onChange, isMulti }) => {
   return (
     <div className={`selector-wrapper ${disabled ? 'selector-wrapper-disabled' : ''}`} id={id}>
       <Select
+        instanceId={`react-select-${id}-input`}
         isDisabled={disabled}
         isMulti={isMulti}
         placeholder={name}
