@@ -1,44 +1,22 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const DataClient = require('../../../../../../helpers/data-client');
-const ChartActions = require('../../../../../../components/chart-actions');
 const generateDataForSheet = require('./generate-data-for-sheet');
-const LoadingOverlay = require('../../../../../../components/loading-overlay');
+const BaseCompareChart = require('../base-chart');
 
-const { useEffect, useState } = React;
-const dataClient = new DataClient({ url: '/api/data/timeseries-compare', highchartsSelector: 'timeseries-compare-chart' });
+const dataClient = new DataClient({
+  url: '/api/data/timeseries-compare',
+  highchartsSelector: 'timeseries-compare-chart'
+});
 
-const EntitiesTimeseriesArea = ({ params }) => {
-  const [actionVisible, setVisible] = useState(false);
-  const [chartData, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  const dataCallback = (data) => {
-    setLoading(false);
-    setVisible(true)
-    setData(data);
-  }
-
-  useEffect(() => {
-    const atLeastOneItemInGroups = params && params.groups && params.groups.length > 0;
-    if (atLeastOneItemInGroups) {
-      setLoading(true);
-      dataClient.get(params, dataCallback)
-    } else {
-      dataClient.cancelRequest();
-      setVisible(false);
-      dataClient.destroyChart();
-    }
-  }, [params]);
-
-  return (
-    <LoadingOverlay loading={loading}>
-      <ChartActions visible={actionVisible} generateDataForSheet={() => generateDataForSheet(chartData)}>
-        <div id="timeseries-compare-chart" />
-      </ChartActions>
-    </LoadingOverlay>
-  )
-}
+const EntitiesTimeseriesArea = ({ params }) => (
+  <BaseCompareChart
+    params={params}
+    dataClient={dataClient}
+    generateDataForSheet={generateDataForSheet}
+    chartId="timeseries-compare-chart"
+  />
+)
 
 EntitiesTimeseriesArea.propTypes = {
   params: PropTypes.shape({
