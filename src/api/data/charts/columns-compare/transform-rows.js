@@ -23,8 +23,8 @@ module.exports = (groupRows) => {
   const categories = sortBy(years).map(year => year.toString());
 
   const series = [];
+  const patternNumbers = {};
   groupRows.forEach((groupRows, index) => {
-    const patternNumbers = {};
     groupRows.forEach(entityRows => {
       if (entityRows.length) {
         const item = entityRows[0];
