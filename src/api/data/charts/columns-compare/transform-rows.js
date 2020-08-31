@@ -32,7 +32,9 @@ module.exports = (groupRows) => {
         const patternNumber = patternNumbers[color] || 0;
         patternNumbers[color] = patternNumber + 1;
         const colorOrPattern = patterns(patternNumber, color);
-        const data = entityRows.map(row => ({ y: row.budget, color: colorOrPattern }));
+        const entityData = {};
+        entityRows.map(row => { entityData[row.ejercicio_presupuestario] = row.budget });
+        const data = years.map(year => ({ y: entityData[year] || 0, color: colorOrPattern }))
         const name = item.actividad_desc || item.programa_desc || item.entidad_desc || item.jurisdiccion_desc
         series.push({ data, stack: `group-${index}`, name, color: colorOrPattern })
       }

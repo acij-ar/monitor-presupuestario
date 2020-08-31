@@ -1,4 +1,5 @@
 const sortBy = require('lodash/sortBy');
+const range = require('lodash/range');
 
 module.exports = (rows) => {
   const years = {};
@@ -8,11 +9,12 @@ module.exports = (rows) => {
     }
     years[ejercicio_presupuestario][index] += budget;
   }))
-  const categories = sortBy(Object.keys(years));
+  const yearsInResults = sortBy(Object.keys(years));
+  const categories = range(Math.min(...yearsInResults), Math.max(...yearsInResults) +1).map(year => year.toString());
   const data = [[], []];
   categories.forEach(year => {
-    data[0].push(years[year][0])
-    data[1].push(years[year][1])
+    data[0].push(years[year][0] || 0);
+    data[1].push(years[year][1] || 0);
   });
   return { categories, data };
 }
