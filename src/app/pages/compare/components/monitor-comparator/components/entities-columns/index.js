@@ -4,17 +4,18 @@ const generateDataForSheet = require('./generate-data-for-sheet');
 const BaseCompareChart = require('../base-chart');
 
 const dataClient = new DataClient({
-  url: '/api/data/timeseries-compare',
-  highchartsSelector: 'timeseries-compare-chart'
+  url: '/api/data/columns-compare',
+  highchartsSelector: 'columns-compare-chart',
+  destroyChartBeforeUpdate: true,
 });
 
-const EntitiesTimeseriesArea = (props) => (
+const EntitiesColumns = (props) => (
   <BaseCompareChart
     {...props}
     dataClient={dataClient}
     generateDataForSheet={generateDataForSheet}
-    chartId="timeseries-compare-chart"
+    chartId="columns-compare-chart"
   />
 )
 
-module.exports = EntitiesTimeseriesArea;
+module.exports = EntitiesColumns;

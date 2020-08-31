@@ -27,7 +27,7 @@ const saveCache = (req, res) => {
   const { response } = res.locals;
   res.json(response);
   const key = getKeyForRequest(req);
-  cache.save([{ key, value: response }]);
+  //cache.save([{ key, value: response }]);
 };
 
 module.exports = { getCache, saveCache };
