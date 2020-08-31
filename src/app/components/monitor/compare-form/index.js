@@ -9,6 +9,7 @@ const extractItem = require('./helpers/extract-item');
 const insertItem = require('./helpers/insert-item');
 const updateParams = require('./helpers/update-params');
 const EntitiesSelectors = require('../../entities-selectors');
+const includes = require('lodash/includes');
 
 const { useEffect, useState } = React;
 
@@ -42,22 +43,33 @@ const CompareForm = ({ setParams }) => {
     updateParams(setParams, selected, groups);
   }
 
-  const onRemoveItem = ({ destination, droppableId, index }) => {
-    onDragEnd({ source: { droppableId, index }, destination: { droppableId: destination } })
+  const onRemoveItem = ({ groupId, index }) => {
+    if (groupId === "compare-group-0") {
+      groups[0].splice(index, 1);
+    } else {
+      groups[1].splice(index, 1);
+    }
+    setGroups(groups);
+    updateParams(setParams, selected, groups);
   }
 
   const resetSelection = () => {
-    [...groups[0], ...groups[1]].map(item => insertItem(item, item.source, options, groups))
-    setOptions({ ...options });
     const emptyGroups = [[], []];
     setGroups(emptyGroups);
     updateParams(setParams, selected, emptyGroups);
   }
 
+  const onItemSelected = (item) => {
+    if (includes(groups[0], item) || includes(groups[1], item)) return;
+    groups[0].push(item);
+    setGroups([ ...groups ]);
+    updateParams(setParams, selected, groups);
+  }
+
   return (
     <div id="monitor-compare-form">
       <DragDropContext onDragEnd={onDragEnd}>
-        <EntitiesSelectors options={options.entities} updateSelectedEntity={(e) => console.log(e)} />
+        <EntitiesSelectors options={options.entities} updateSelectedEntity={onItemSelected} />
         <div id="compare-group-and-selectors">
           <Groups groups={groups} onRemoveItem={onRemoveItem} />
           <Selectors
