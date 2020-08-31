@@ -1,5 +1,6 @@
 const sortBy = require('lodash/sortBy');
 const range = require('lodash/range');
+const patterns = require('./patterns');
 
 const getColorForRow = (row) =>
   row.actividad_desc ? '#BB73FF' :
@@ -23,12 +24,17 @@ module.exports = (groupRows) => {
 
   const series = [];
   groupRows.forEach((groupRows, index) => {
+    const patternNumbers = {};
     groupRows.forEach(entityRows => {
       if (entityRows.length) {
-        const data = entityRows.map(row => ({ y: row.budget, color: getColorForRow(row) }));
         const item = entityRows[0];
+        const color = getColorForRow(item);
+        const patternNumber = patternNumbers[color] || 0;
+        patternNumbers[color] = patternNumber + 1;
+        const colorOrPattern = patterns(patternNumber, color);
+        const data = entityRows.map(row => ({ y: row.budget, color: colorOrPattern }));
         const name = item.actividad_desc || item.programa_desc || item.entidad_desc || item.jurisdiccion_desc
-        series.push({ data, stack: `group-${index}`, name })
+        series.push({ data, stack: `group-${index}`, name, color: colorOrPattern })
       }
     });
   });

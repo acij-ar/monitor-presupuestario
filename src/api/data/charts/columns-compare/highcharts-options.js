@@ -23,6 +23,9 @@ module.exports = (categories, series) => merge({}, baseHighchartsOptions, {
       stacking: 'normal',
     },
   },
+  tooltip: {
+    shared: true,
+  },
   series,
 });
 

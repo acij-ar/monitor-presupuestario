@@ -13,6 +13,7 @@ if (global.window) {
   require('highcharts/modules/exporting')(Highcharts);
   require('highcharts/modules/export-data')(Highcharts);
   require('highcharts/modules/accessibility')(Highcharts);
+  require('highcharts/modules/pattern-fill')(Highcharts);
 }
 
 module.exports = Highcharts
