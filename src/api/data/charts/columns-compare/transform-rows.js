@@ -1,6 +1,12 @@
 const sortBy = require('lodash/sortBy');
 const range = require('lodash/range');
 
+const getColorForRow = (row) =>
+  row.actividad_desc ? '#BB73FF' :
+    row.programa_desc ? '#8200FF' :
+      row.entidad_desc ? '#FF00E1' :
+        '#00B0AE';
+
 module.exports = (groupRows) => {
   const yearsInResults = [];
   groupRows.forEach((groupRows) => {
@@ -18,10 +24,12 @@ module.exports = (groupRows) => {
   const series = [];
   groupRows.forEach((groupRows, index) => {
     groupRows.forEach(entityRows => {
-      const data = entityRows.map(row => ({ y: row.budget, color: '#e600c8' }));
-      const item = entityRows[0];
-      const name = item.actividad_desc || item.programa_desc || item.entidad_desc || item.jurisdiccion_desc
-      series.push({ data, stack: `group-${index}`, name, color: '#e600c8' })
+      if (entityRows.length) {
+        const data = entityRows.map(row => ({ y: row.budget, color: getColorForRow(row) }));
+        const item = entityRows[0];
+        const name = item.actividad_desc || item.programa_desc || item.entidad_desc || item.jurisdiccion_desc
+        series.push({ data, stack: `group-${index}`, name })
+      }
     });
   });
   return { categories, series };
