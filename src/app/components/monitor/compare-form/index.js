@@ -2,13 +2,13 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const axios = require('axios');
 const { DragDropContext } = require('react-beautiful-dnd');
-const Lists = require('./lists');
 const Groups = require('./groups');
 const Selectors = require('./selectors');
 const getDefaultSelected = require('./helpers/get-default-selected');
 const extractItem = require('./helpers/extract-item');
 const insertItem = require('./helpers/insert-item');
 const updateParams = require('./helpers/update-params');
+const EntitiesSelectors = require('../../entities-selectors');
 
 const { useEffect, useState } = React;
 
@@ -57,7 +57,7 @@ const CompareForm = ({ setParams }) => {
   return (
     <div id="monitor-compare-form">
       <DragDropContext onDragEnd={onDragEnd}>
-        <Lists options={options} />
+        <EntitiesSelectors options={options.entities} updateSelectedEntity={(e) => console.log(e)} />
         <div id="compare-group-and-selectors">
           <Groups groups={groups} onRemoveItem={onRemoveItem} />
           <Selectors

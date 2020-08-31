@@ -8,7 +8,7 @@ const Selectors = ({ options, updateSelectedOption, updateSelectedEntity, select
   <div id="monitor-explore-selectors">
     <EntitiesSelectors
       options={options}
-      updateSelectedEntity={updateSelectedEntity}
+      updateSelectedEntity={(e) => updateSelectedEntity(e.id)}
       selected={selected}
     />
     <div className="monitor-selectors">

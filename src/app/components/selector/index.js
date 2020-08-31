@@ -15,7 +15,7 @@ const Selector = ({ id, name, options, value, onChange, isMulti }) => {
         isDisabled={disabled}
         isMulti={isMulti}
         placeholder={name}
-        value={selectedValue}
+        value={selectedValue || null}
         options={options}
         onChange={onChange}
         isSearchable

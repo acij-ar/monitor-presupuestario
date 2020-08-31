@@ -9,16 +9,16 @@ const EntitiesSelectors = ({ options, updateSelectedEntity, selected }) => (
       <Selector
         id="entity-form-jurisdiccion"
         name="Jurisdicción"
-        options={options.jurisdictions}
-        onChange={e => updateSelectedEntity(e.id)}
-        value={selected.jurisdiction}
+        options={options && options.jurisdictions}
+        onChange={updateSelectedEntity}
+        value={selected && selected.jurisdiction}
       />
       <Selector
         id="entity-form-entidad"
         name="Entidad"
-        options={options.entities}
-        onChange={e => updateSelectedEntity(e.id)}
-        value={selected.entity}
+        options={options && options.entities}
+        onChange={updateSelectedEntity}
+        value={selected && selected.entity}
       />
     </div>
     <div className="monitor-selector-labels-reason">
@@ -26,9 +26,9 @@ const EntitiesSelectors = ({ options, updateSelectedEntity, selected }) => (
       <Selector
         id="entity-form-programa"
         name="Programa"
-        options={options.programs}
-        onChange={e => updateSelectedEntity(e.id)}
-        value={selected.program}
+        options={options && options.programs}
+        onChange={updateSelectedEntity}
+        value={selected && selected.program}
       />
     </div>
     <div className="monitor-selector-labels-what">
@@ -36,9 +36,9 @@ const EntitiesSelectors = ({ options, updateSelectedEntity, selected }) => (
       <Selector
         id="entity-form-actividad"
         name="Actividad"
-        options={options.activities}
-        onChange={e => updateSelectedEntity(e.id)}
-        value={selected.activity}
+        options={options && options.activities}
+        onChange={updateSelectedEntity}
+        value={selected && selected.activity}
       />
     </div>
   </div>

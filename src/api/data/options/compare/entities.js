@@ -7,25 +7,25 @@ const getDistinct = async (columns, table, order) => {
 }
 
 const getDistinctJurisdictions = () => getDistinct(
-  'jurisdiccion_desc',
+  'jurisdiccion_desc, jurisdiccion_desc as label',
   'jurisdiccion_mv',
   'jurisdiccion_desc',
 )
 
 const getDistinctEntities = () => getDistinct(
-  'MAX(jurisdiccion_desc) as jurisdiccion_desc, entidad_desc',
+  'MAX(jurisdiccion_desc) as jurisdiccion_desc, entidad_desc, entidad_desc as label',
   'entidad_mv',
   'entidad_desc',
 )
 
 const getDistinctPrograms = () => getDistinct(
-  'MAX(jurisdiccion_desc) as jurisdiccion_desc, MAX(entidad_desc) as entidad_desc, programa_desc',
+  'MAX(jurisdiccion_desc) as jurisdiccion_desc, MAX(entidad_desc) as entidad_desc, programa_desc, programa_desc as label',
   'programa_mv',
   'programa_desc',
 )
 
 const getDistinctActivities = () => getDistinct(
-  'MAX(jurisdiccion_desc) as jurisdiccion_desc, MAX(entidad_desc) as entidad_desc, MAX(programa_desc) as programa_desc, actividad_desc',
+  'MAX(jurisdiccion_desc) as jurisdiccion_desc, MAX(entidad_desc) as entidad_desc, MAX(programa_desc) as programa_desc, actividad_desc, actividad_desc as label',
   'actividad_mv',
   'actividad_desc',
 )
