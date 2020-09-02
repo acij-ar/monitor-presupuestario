@@ -1,5 +1,11 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const fs = require('fs');
+const path = require('path');
+
+const { NODE_ENV } = process.env
+const newrelicInlineScriptPath = path.join(__dirname, 'newrelic.js');
+const newrelicInlineScript = fs.readFileSync(newrelicInlineScriptPath);
 
 const Layout = ({ children, scripts, styles, componentProps }) => (
   <html lang="es-ar">
@@ -10,6 +16,9 @@ const Layout = ({ children, scripts, styles, componentProps }) => (
     <title>Monitor presupuestario</title>
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
 
+    { NODE_ENV === 'production' ?
+      <script type="text/javascript" dangerouslySetInnerHTML={{__html: newrelicInlineScript }} />
+      : null }
     { styles.map(href => <link key={href} rel="stylesheet" href={`/static/${href}`} />) }
   </head>
   <body>
