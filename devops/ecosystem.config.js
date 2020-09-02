@@ -13,6 +13,7 @@ module.exports = {
     env: {
       PORT: "8081",
       MONIT_LOG_NAME: 'TEST-SERVER',
+      NODE_ENV: 'production',
     },
   }],
 };

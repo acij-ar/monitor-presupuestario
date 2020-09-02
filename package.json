@@ -45,6 +45,7 @@
     "highcharts": "^8.1.2",
     "morgan": "^1.9.1",
     "mysql2": "^2.1.0",
+    "newrelic": "^6.13.0",
     "react": "^16.8.6",
     "react-beautiful-dnd": "^11.0.5",
     "react-dom": "^16.8.6",
