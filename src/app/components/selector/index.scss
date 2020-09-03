@@ -21,3 +21,10 @@
   @import './specific-colors';
 }
 
+.monitor-virtualized-menu > div {
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  border: solid 1px #ddd;
+  padding: 5px 0;
+}
