@@ -5,13 +5,15 @@ const { useRef } = React;
 
 const ChartActions = ({ children, visible, generateDataForSheet, imageTypesEnabled, dataTypesEnabled, customSelector }) => {
   const chartContainer = useRef(null);
+  const imageRendererRef = useRef(null);
 
   const onChange = (e) => {
     const { value } = e.target;
     const chartNode = customSelector ?
       chartContainer.current.querySelector(customSelector) :
       chartContainer.current;
-    exportFile(value, chartNode, generateDataForSheet);
+    const imageRendererNode = imageRendererRef.current;
+    exportFile(value, chartNode, imageRendererNode, generateDataForSheet);
   }
 
   return (
@@ -29,7 +31,6 @@ const ChartActions = ({ children, visible, generateDataForSheet, imageTypesEnabl
                   <option value="png">Descargar imagen (PNG)</option>
                   <option value="jpg">Descargar imagen (JPG)</option>
                   <option value="pdf">Descargar imagen (PDF)</option>
-                  <option value="svg">Descargar imagen (SVG)</option>
                 </React.Fragment>
               }
               {
@@ -42,6 +43,12 @@ const ChartActions = ({ children, visible, generateDataForSheet, imageTypesEnabl
           </div>
         </div>
       )}
+      <div className="chart-image-download-renderer-container">
+        <div className="chart-image-download-renderer" ref={imageRendererRef}>
+          <img src="/static/image-download-header.jpg"/>
+          <img className="chart-image-download-placeholder" />
+        </div>
+      </div>
     </div>
   )
 }

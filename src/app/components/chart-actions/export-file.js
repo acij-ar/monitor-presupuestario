@@ -3,6 +3,7 @@ const downloadFile = require('./download-file');
 const XLSX = require('xlsx');
 
 const filenameSuffix = 'monitorpresupuestario.acij.org.ar'
+const imageOptions = { bgcolor: '#fafafa' };
 
 const exportSheet = (data, type) => {
   const ws = XLSX.utils.json_to_sheet(...data);
@@ -11,20 +12,29 @@ const exportSheet = (data, type) => {
   XLSX.writeFile(wb, `${filenameSuffix}.${type}`)
 }
 
-module.exports = (value, chartNode, generateDataForSheet) => {
-  const imageOptions = { bgcolor: '#fafafa' };
-  if (value === 'jpg') {
-    domtoimage.toJpeg(chartNode, imageOptions).then(dataUrl => downloadFile(dataUrl, `${filenameSuffix}.jpg`))
-  } else if (value === 'png') {
-    domtoimage.toPng(chartNode, imageOptions).then(dataUrl => downloadFile(dataUrl, `${filenameSuffix}.png`))
-  } else if (value === 'svg') {
-    domtoimage.toSvg(chartNode, imageOptions).then(dataUrl => downloadFile(dataUrl, `${filenameSuffix}.svg`))
-  } else if (value === 'pdf') {
-    const options = { filename: `${filenameSuffix}.pdf` };
-    require('dom-to-pdf')(chartNode, options);
-  } else if (value === 'csv') {
-    exportSheet(generateDataForSheet(), 'csv');
-  } else if (value === 'xlsx') {
-    exportSheet(generateDataForSheet(), 'xlsx');
+const generateImageFromNode = (fileType, chartNode) => (
+  fileType === 'png' ? domtoimage.toPng(chartNode, imageOptions) : domtoimage.toJpeg(chartNode, imageOptions)
+)
+
+const renderImageForExport = (dataUrl, fileType, imageRendererNode) => {
+  const filename = `${filenameSuffix}.${fileType}`
+  imageRendererNode.querySelector('.chart-image-download-placeholder').src = dataUrl;
+  setTimeout(() => {
+    if (fileType === 'jpg') {
+      domtoimage.toJpeg(imageRendererNode, imageOptions).then(dataUrl => downloadFile(dataUrl, filename))
+    } else if (fileType === 'png') {
+      domtoimage.toPng(imageRendererNode, imageOptions).then(dataUrl => downloadFile(dataUrl, filename))
+    } else if (fileType === 'pdf') {
+      const options = { filename };
+      require('dom-to-pdf')(imageRendererNode, options);
+    }
+  }, 500)
+}
+
+module.exports = (fileType, chartNode, imageRendererNode, generateDataForSheet) => {
+  if (['csv', 'xlsx'].includes(fileType)) {
+    exportSheet(generateDataForSheet(), fileType);
+  } else if (['jpg', 'png', 'pdf'].includes(fileType)) {
+    generateImageFromNode(fileType, chartNode).then(dataUrl => renderImageForExport(dataUrl, fileType, imageRendererNode))
   }
 }

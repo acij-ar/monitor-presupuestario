@@ -38,3 +38,22 @@
     font-size: 16px;
   }
 }
+
+.chart-image-download-renderer-container {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.chart-image-download-renderer {
+  width: 1200px;
+  background: #fafafa;
+
+  img {
+    width: 100%;
+  }
+}
