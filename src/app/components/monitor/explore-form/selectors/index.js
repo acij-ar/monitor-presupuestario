@@ -11,8 +11,9 @@ const Selectors = ({ options, updateSelectedOption, updateSelectedEntity, select
       updateSelectedEntity={(e) => updateSelectedEntity(e.id)}
       selected={selected}
     />
-    <div className="monitor-selectors">
+    <div className="monitor-selectors monitor-selectors-options">
       <div className="monitor-selector-labels-who">
+        <h3>Año</h3>
         <ResetButton selected={selected} updateSelectedEntity={updateSelectedEntity} />
         <Selector
           id="setting-form-years"
@@ -23,6 +24,7 @@ const Selectors = ({ options, updateSelectedOption, updateSelectedEntity, select
         />
       </div>
       <div className="monitor-selector-labels-reason">
+        <h3>Tipo de presupuesto</h3>
         <Selector
           id="setting-form-budgets"
           name="Tipos de presup."
@@ -32,6 +34,7 @@ const Selectors = ({ options, updateSelectedOption, updateSelectedEntity, select
         />
       </div>
       <div className="monitor-selector-labels-what">
+        <h3>Ajuste por inflación</h3>
         <Selector
           id="setting-form-inflation"
           name="Ajuste por inflación"

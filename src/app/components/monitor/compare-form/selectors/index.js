@@ -5,6 +5,17 @@ const ResetButton = require('./reset-button');
 
 const Selectors = ({ options, selected, updateSelected, groups, resetSelection }) => (
   <div id="monitor-explore-selector">
+    <h3 className="selector-budget-title">Tipo de presupuesto</h3>
+    <ResetButton groups={groups} resetSelection={resetSelection} />
+    <Selector
+      id="setting-form-budgets"
+      name="Tipos de presup."
+      options={options.budgets}
+      onChange={e => updateSelected({ budget: e.value })}
+      value={selected.budget}
+    />
+    <h3 className="selector-year-title">Año</h3>
+    <h3 className="selector-inflation-title">Ajuste por inflación</h3>
     <Selector
       id="setting-form-years"
       name="Año"
@@ -13,14 +24,6 @@ const Selectors = ({ options, selected, updateSelected, groups, resetSelection }
       value={selected.years}
       isMulti
     />
-    <Selector
-      id="setting-form-budgets"
-      name="Tipos de presup."
-      options={options.budgets}
-      onChange={e => updateSelected({ budget: e.value })}
-      value={selected.budget}
-    />
-    <ResetButton groups={groups} resetSelection={resetSelection} />
     <Selector
       id="setting-form-inflation"
       name="Ajuste por inflación"

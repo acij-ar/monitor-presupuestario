@@ -23,4 +23,27 @@
     margin: 0 4%;
   }
 
+  h3 {
+    font-size: 12px;
+    line-height: 20px;
+    display: block;
+    border-bottom: solid 1px #555;
+    margin: 10px 0;
+
+    &.selector-budget-title {
+      margin-top: 0;
+      margin-left: 3 / 5.5 * 100%;
+    }
+
+    &.selector-year-title {
+      display: inline-block;
+      margin: 0 4%;
+      width: 46%;
+    }
+
+    &.selector-inflation-title {
+      display: inline-block;
+      width: 46%;
+    }
+  }
 }
