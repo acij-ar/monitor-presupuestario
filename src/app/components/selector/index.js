@@ -2,7 +2,7 @@ const React = require('react');
 const Select = require('react-select').default;
 const PropTypes = require('prop-types');
 const styles = require('./styles');
-const VirtualizedMenu = require('./virtualized-menu');
+const Option = require('./custom-option');
 const { createFilter } = require('react-select');
 
 const findValue = (options, value) => options && value && options.find(({label, id}) => label === value || id === value);
@@ -24,7 +24,7 @@ const Selector = ({ id, name, options, value, onChange, isMulti }) => {
         isSearchable
         closeMenuOnSelect={!isMulti}
         styles={styles}
-        components={{ MenuList: VirtualizedMenu }}
+        components={{ Option }}
         filterOption={filterOption}
       />
     </div>
