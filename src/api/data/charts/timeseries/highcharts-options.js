@@ -1,9 +1,13 @@
 const baseHighchartsOptions = require('../base-highchart-options');
 const merge = require('lodash/merge');
 
-module.exports = (categories, data) => merge({}, baseHighchartsOptions, {
+module.exports = (title, categories, data) => merge({}, baseHighchartsOptions, {
   chart: {
     type: 'column'
+  },
+  title: {
+    text: title,
+    align: 'center',
   },
   xAxis: {
     categories,

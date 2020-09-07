@@ -17,7 +17,8 @@ module.exports = async (req, res, next) => {
     data.vigente.push(vigente);
     data.devengado.push(devengado);
   })
-  res.locals.response = highchartsOptions(categories, data);
+  const title = req.query.activity || req.query.program || req.query.entity || req.query.jurisdiction || `Presupuesto anual ${req.query.year}`
+  res.locals.response = highchartsOptions(title, categories, data);
   next();
 };
 
