@@ -1,0 +1,11 @@
+@import '../../../../components/page/globals';
+
+#budget-analysis {
+  a, a:visited {
+    color: $purple;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
