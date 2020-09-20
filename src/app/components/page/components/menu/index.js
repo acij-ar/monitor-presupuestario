@@ -16,6 +16,7 @@ const submenus = {
   ],
   about: [
     { name: 'El Monitor Presupuestario', id: 'about-main' },
+    { name: 'Análisis presupuestario', id: 'about-budget-analysis' },
     { name: 'ACIJ', id: 'about-acij' },
     { name: 'Matchbox', id: 'about-matchbox' },
     { name: 'Metodología', id: 'about-methodology' },

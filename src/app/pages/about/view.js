@@ -2,6 +2,7 @@ const React = require('react');
 const Page = require('../../components/page');
 const PropTypes = require('prop-types');
 const AboutMainContent = require('./components/main-content');
+const AboutBudgetAnalysis = require('./components/budget-analysis');
 const AboutACIJ = require('./components/acij');
 const AboutMatchbox = require('./components/matchbox');
 const AboutMethodology = require('./components/methodology');
@@ -11,6 +12,7 @@ const { useEffect } = React;
 
 const elementSelectors = [
   '#about-main',
+  '#about-budget-analysis',
   '#about-acij',
   '#about-matchbox',
   '#about-methodology',
@@ -25,6 +27,7 @@ const App = ({pageName}) => {
     <Page pageName={pageName}>
       <div id="about-main-content">
         <AboutMainContent/>
+        <AboutBudgetAnalysis/>
         <AboutACIJ/>
         <AboutMatchbox/>
         <AboutMethodology/>

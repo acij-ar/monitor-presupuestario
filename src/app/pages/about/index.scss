@@ -9,10 +9,15 @@
     background: $green;
   }
 
-  a {
+  a, a:visited {
     color: $green;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
+  @import './components/budget-analysis';
   @import './components/acij/index';
   @import './components/matchbox/index';
 }
