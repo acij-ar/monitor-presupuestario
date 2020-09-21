@@ -1,31 +1,50 @@
+const groupBy = require('lodash/groupBy');
+const sortBy = require('lodash/sortBy');
 const dbConnection = require('../../db/mysql-connection');
 
+const getYearsForGroup = (rowGroup) => {
+  const years = rowGroup.map(row => row.ejercicio_presupuestario);
+  const minYear = Math.min(...years);
+  const maxYear = Math.max(...years);
+  return minYear === maxYear ? minYear.toString() : `${minYear} - ${maxYear}`;
+}
+
 const getDistinct = async (columns, table, order) => {
-  const query = `SELECT ${columns} FROM ${table} GROUP BY ${order} ORDER BY ${order} ASC;`
+  const query = `SELECT ejercicio_presupuestario, ${columns.join(', ')} FROM ${table};`
   const [rows] = await dbConnection.query(query);
-  return rows;
+  const groupedRows = groupBy(rows, row => columns.map(column => row[column]).join('||'));
+  const rowsWithYearLabels = Object.values(groupedRows)
+    .map((rowGroup) => {
+      const finalRow = {};
+      columns.forEach(column => {
+        finalRow[column] = rowGroup[0][column];
+      })
+      finalRow.label = `${rowGroup[0][order]} (${getYearsForGroup(rowGroup)})`
+      return finalRow;
+    });
+  return sortBy(rowsWithYearLabels, 'label');
 }
 
 const getDistinctJurisdictions = () => getDistinct(
-  'jurisdiccion_desc, jurisdiccion_desc as label',
+  ['jurisdiccion_desc'],
   'jurisdiccion_mv',
   'jurisdiccion_desc',
 )
 
 const getDistinctEntities = () => getDistinct(
-  'MAX(jurisdiccion_desc) as jurisdiccion_desc, entidad_desc, entidad_desc as label',
+  ['jurisdiccion_desc', 'entidad_desc'],
   'entidad_mv',
   'entidad_desc',
 )
 
 const getDistinctPrograms = () => getDistinct(
-  'MAX(jurisdiccion_desc) as jurisdiccion_desc, MAX(entidad_desc) as entidad_desc, programa_desc, programa_desc as label',
+  ['jurisdiccion_desc', 'entidad_desc', 'programa_desc'],
   'programa_mv',
   'programa_desc',
 )
 
 const getDistinctActivities = () => getDistinct(
-  'MAX(jurisdiccion_desc) as jurisdiccion_desc, MAX(entidad_desc) as entidad_desc, MAX(programa_desc) as programa_desc, actividad_desc, actividad_desc as label',
+  ['jurisdiccion_desc', 'entidad_desc', 'programa_desc', 'actividad_desc'],
   'actividad_mv',
   'actividad_desc',
 )
