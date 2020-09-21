@@ -3,10 +3,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 
-// TODO: autobind class methods
-
-// TODO: separate vendor libs into vendor script lib
-
 const assetsForPage = (pageName) => ([
   path.resolve(__dirname, 'src/app/pages', pageName, 'client.js'),
   path.resolve(__dirname, 'src/app/pages', pageName, 'index.scss'),
