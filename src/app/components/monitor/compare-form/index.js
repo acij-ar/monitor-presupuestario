@@ -8,6 +8,7 @@ const getDefaultSelected = require('./helpers/get-default-selected');
 const extractItem = require('./helpers/extract-item');
 const insertItem = require('./helpers/insert-item');
 const updateParams = require('./helpers/update-params');
+const filterEntitiesForSelectedYears = require('./helpers/filter-entities-for-selected-years');
 const EntitiesSelectors = require('../../entities-selectors');
 const includes = require('lodash/includes');
 
@@ -17,11 +18,13 @@ const CompareForm = ({ setParams }) => {
   const [options, setOptions] = useState({});
   const [selected, setSelected] = useState({});
   const [groups, setGroups] = useState([[], []]);
+  const [rawData, setData] = useState({});
 
   const fetchData = async () => {
     const { data } = await axios.get('/api/data/options/compare');
-    setOptions(data);
+    setData(data);
     const defaultSelected = getDefaultSelected(data);
+    setOptions(filterEntitiesForSelectedYears(data, defaultSelected));
     setSelected(defaultSelected);
     updateParams(setParams, defaultSelected, groups)
   };
@@ -30,6 +33,7 @@ const CompareForm = ({ setParams }) => {
   const updateSelectedOption = (newSelectedOption) => {
     const newSelectedOptions = { ...selected, ...newSelectedOption };
     setSelected(newSelectedOptions);
+    setOptions(filterEntitiesForSelectedYears(rawData, newSelectedOptions));
     updateParams(setParams, newSelectedOptions, groups);
   }
 

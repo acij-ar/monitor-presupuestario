@@ -13,7 +13,7 @@ const DndList = ({ items, id, isDropDisabled, direction, className, cloaseable, 
       >
         {items.map((item, index) => (
           <Item
-            key={item.actividad_desc || item.programa_desc || item.entidad_desc || item.jurisdiccion_desc}
+            key={item.label}
             item={item}
             index={index}
             id={id}

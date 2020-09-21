@@ -2,8 +2,7 @@ const groupBy = require('lodash/groupBy');
 const sortBy = require('lodash/sortBy');
 const dbConnection = require('../../db/mysql-connection');
 
-const getYearsForGroup = (rowGroup) => {
-  const years = rowGroup.map(row => row.ejercicio_presupuestario);
+const getYearsForGroup = (years) => {
   const minYear = Math.min(...years);
   const maxYear = Math.max(...years);
   return minYear === maxYear ? minYear.toString() : `${minYear} - ${maxYear}`;
@@ -19,7 +18,8 @@ const getDistinct = async (columns, table, order) => {
       columns.forEach(column => {
         finalRow[column] = rowGroup[0][column];
       })
-      finalRow.label = `${rowGroup[0][order]} (${getYearsForGroup(rowGroup)})`
+      finalRow.years = rowGroup.map(row => row.ejercicio_presupuestario)
+      finalRow.label = `${rowGroup[0][order]} (${getYearsForGroup(finalRow.years)})`
       return finalRow;
     });
   return sortBy(rowsWithYearLabels, 'label');
