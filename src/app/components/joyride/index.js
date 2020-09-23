@@ -17,11 +17,30 @@ const MonitorJoyride = (props) => {
   return (
     <Joyride
       continuous
+      showSkipButton
       run={showJoyride}
-      locale={{ back: 'Anterior', close: 'Cerrar', last: 'Finalizar', next: 'Siguiente', skip: 'Saltar' }}
+      locale={{ back: 'Anterior', close: 'Cerrar', last: 'Finalizar', next: 'Siguiente', skip: 'Salir' }}
       steps={props.steps.map(step => ({ ...step, disableBeacon: true }))}
       scrollOffset={200}
       floaterProps={{ disableAnimation: true }}
+      styles={{
+        tooltip: {
+          borderRadius: 0,
+        },
+        buttonBack: {
+          outline: 'none',
+          borderRadius: 0,
+          color: '#0041FF',
+        },
+        buttonNext: {
+          outline: 'none',
+          borderRadius: 0,
+          backgroundColor: '#0041FF',
+        },
+        buttonSkip: {
+          outline: 'none',
+        }
+      }}
     />
   )
 };
