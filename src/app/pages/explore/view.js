@@ -9,9 +9,9 @@ const App = ({ pageName }) => (
   <Page pageName={pageName} selectedSubSection="explore-menu-link">
     <h1 id="monitor-main-title">
       Monitor <span> / explorar</span>
+      <MonitorJoyride steps={steps} cookieName="explore-joyride" />
     </h1>
     <MonitorExplorer />
-    <MonitorJoyride steps={steps} />
   </Page>
 );
 

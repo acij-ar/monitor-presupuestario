@@ -9,9 +9,9 @@ const App = ({pageName}) => (
   <Page pageName={pageName} selectedSubSection="compare-menu-link">
     <h1 id="monitor-main-title">
       Monitor <span> / comparar</span>
+      <MonitorJoyride steps={steps} cookieName="compare-joyride" />
     </h1>
     <MonitorComparator />
-    <MonitorJoyride steps={steps} />
   </Page>
 );
 

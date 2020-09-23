@@ -10,43 +10,59 @@ const MonitorJoyride = (props) => {
 
   useEffect(() => {
     setTimeout(() => {
-      setShow(true);
+      if (!cookies.get(props.cookieName)) {
+        setShow(true);
+        cookies.set(props.cookieName, 'true', { expires: 60 });
+      }
     }, 1e3)
   }, []);
 
+  const onTrouEnd = (status) => {
+    if (status && status.type === 'tour:end') {
+      setShow(false)
+    }
+  }
+
   return (
-    <Joyride
-      continuous
-      showSkipButton
-      run={showJoyride}
-      locale={{ back: 'Anterior', close: 'Cerrar', last: 'Finalizar', next: 'Siguiente', skip: 'Salir' }}
-      steps={props.steps.map(step => ({ ...step, disableBeacon: true }))}
-      scrollOffset={200}
-      floaterProps={{ disableAnimation: true }}
-      styles={{
-        tooltip: {
-          borderRadius: 0,
-        },
-        buttonBack: {
-          outline: 'none',
-          borderRadius: 0,
-          color: '#0041FF',
-        },
-        buttonNext: {
-          outline: 'none',
-          borderRadius: 0,
-          backgroundColor: '#0041FF',
-        },
-        buttonSkip: {
-          outline: 'none',
-        }
-      }}
-    />
+    <React.Fragment>
+      <span className="monitor-joyride-trigger">
+        <span onClick={() => setShow(true)}>?</span>
+      </span>
+      <Joyride
+        continuous
+        showSkipButton
+        run={showJoyride}
+        locale={{ back: 'Anterior', close: 'Cerrar', last: 'Finalizar', next: 'Siguiente', skip: 'Salir' }}
+        steps={props.steps.map(step => ({ ...step, disableBeacon: true }))}
+        scrollOffset={200}
+        floaterProps={{ disableAnimation: true }}
+        callback={onTrouEnd}
+        styles={{
+          tooltip: {
+            borderRadius: 0,
+          },
+          buttonBack: {
+            outline: 'none',
+            borderRadius: 0,
+            color: '#0041FF',
+          },
+          buttonNext: {
+            outline: 'none',
+            borderRadius: 0,
+            backgroundColor: '#0041FF',
+          },
+          buttonSkip: {
+            outline: 'none',
+          }
+        }}
+      />
+    </React.Fragment>
   )
 };
 
 MonitorJoyride.propTypes = {
-  steps: PropTypes.array,
+  steps: PropTypes.array.isRequired,
+  cookieName: PropTypes.string.isRequired,
 }
 
 module.exports = MonitorJoyride;
