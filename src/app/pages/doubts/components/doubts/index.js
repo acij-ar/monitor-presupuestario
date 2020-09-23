@@ -6,7 +6,7 @@ const Doubts = ({ faqs }) => (
   <React.Fragment>
     { faqs.map(({ pregunta, respuesta }, index) => (
       <Doubt key={index} title={pregunta} index={index}>
-        { respuesta }
+        <span dangerouslySetInnerHTML={{__html: respuesta }} />
       </Doubt>
     )) }
   </React.Fragment>

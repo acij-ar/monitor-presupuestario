@@ -5,7 +5,7 @@ const ContentSection = require('../../../components/content-section');
 const Term = ({name, definition}) => (
   <div className="glosary-term">
     <ContentSection title={name}>
-      {definition}
+      <span dangerouslySetInnerHTML={{__html: definition }} />
     </ContentSection>
   </div>
 );
