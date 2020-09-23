@@ -25,8 +25,8 @@ const MonitorJoyride = (props) => {
 
   return (
     <React.Fragment>
-      <span className="monitor-joyride-trigger">
-        <span onClick={() => setShow(true)}>?</span>
+      <span className="monitor-joyride-trigger" onClick={() => setShow(true)}>
+        <span>?</span>
       </span>
       <Joyride
         continuous
@@ -53,7 +53,10 @@ const MonitorJoyride = (props) => {
           },
           buttonSkip: {
             outline: 'none',
-          }
+          },
+          buttonClose: {
+            display: 'none',
+          },
         }}
       />
     </React.Fragment>
