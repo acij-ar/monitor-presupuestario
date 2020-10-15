@@ -1,6 +1,7 @@
 const React = require('react');
 const ExploreForm = require('../../../../components/monitor/explore-form');
 const InflationDisclaimer = require('../../../../components/inflation-disclaimer');
+const ReasignationDisclaimer = require('../../../../components/reasignation-disclaimer');
 const EntitySunburst = require('./components/entity-sunburst');
 const EntityDetail = require('./components/entity-detail');
 const EntityHierarchy = require('./components/entity-hierarchy');
@@ -27,6 +28,7 @@ const MonitorExplorer = () => {
       <EntityTable params={params} />
       <EntityTimeseries params={params} />
       <InflationDisclaimer params={params} />
+      <ReasignationDisclaimer params={params} />
     </div>
   );
 };
