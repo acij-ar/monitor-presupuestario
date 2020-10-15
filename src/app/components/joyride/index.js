@@ -25,9 +25,8 @@ const MonitorJoyride = (props) => {
 
   return (
     <React.Fragment>
-      <span className="monitor-joyride-trigger" onClick={() => setShow(true)}>
-        <span>?</span>
-      </span>
+      <img src="/static/dudar.svg" className="monitor-joyride-trigger" onClick={() => setShow(true)}/>
+
       <Joyride
         continuous
         showSkipButton
