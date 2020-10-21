@@ -16,7 +16,7 @@ const MonitorExplorer = () => {
       <EntitiesColumns params={params} />
       <EntitiesTimeseriesArea params={params} />
       <InflationDisclaimer params={params} />
-      <ReasignationDisclaimer params={params} />
+      { /* <ReasignationDisclaimer params={params} /> */ }
     </div>
   );
 };
