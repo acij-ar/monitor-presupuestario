@@ -1,6 +1,7 @@
 const getMostRecentYear = (options) => {
+  const currentYear = new Date().getFullYear();
   if (!options || options.length === 0) return null;
-  return options.sort((a, b) => b.value - a.value)[0].value;
+  return options.sort((a, b) => b.value - a.value).filter(year => year.value <= currentYear)[0].value;
 }
 
 module.exports = (data) => ({
