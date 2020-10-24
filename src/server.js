@@ -2,7 +2,6 @@ require('./newrelic');
 require('@babel/register')();
 require('@babel/polyfill');
 
-const logger = require('./utils/logger');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
@@ -35,4 +34,4 @@ app.use('/api', apiRouter);
 
 const port = process.env.PORT || 8080;
 app.listen(port);
-logger.info(`Listening http://localhost:${port}`);
+console.log(`Listening http://localhost:${port}`);

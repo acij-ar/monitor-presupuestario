@@ -1,6 +1,5 @@
 const React = require('react');
 const axios = require('axios');
-const logger = require('../../../../utils/logger');
 
 class TextsForm extends React.Component {
   constructor(props) {
@@ -35,7 +34,7 @@ class TextsForm extends React.Component {
       await axios.post('/api/admin/login', {password});
       loginSuccessful = true;
     } catch (error) {
-      logger.error(error);
+      console.error(error);
     }
     if (loginSuccessful) {
       this.setState({ loginSuccessful: true, waitingResponse: false });
