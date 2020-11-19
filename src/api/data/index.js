@@ -9,6 +9,7 @@ const columnsCompareDataController = require('./charts/columns-compare');
 const hierarchyDataController = require('./charts/hierarchy');
 const goalsController = require('./charts/goals');
 const tableController = require('./charts/table');
+const reasignationsController = require('./charts/reasignations');
 const { getCache, saveCache } = require('./cache');
 
 const router = express.Router();
@@ -25,6 +26,7 @@ router.get('/options/explore', optionsExploreController);
 router.get('/options/compare', optionsCompareController);
 router.get('/goals', goalsController);
 router.get('/table', tableController);
+router.get('/reasignations', reasignationsController);
 
 router.use(saveCache);
 

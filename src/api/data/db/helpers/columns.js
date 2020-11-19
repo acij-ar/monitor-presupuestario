@@ -21,6 +21,9 @@ const getSelectedBudget = (params) => {
 };
 
 module.exports = (params, targetTable) => {
+  if (params.reassignationQuery) {
+    return 'modificado'
+  }
   const columns = ['ejercicio_presupuestario']
   if (['jurisdiccion_mv', 'entidad_mv', 'programa_mv', 'actividad_mv'].includes(targetTable)) columns.push('jurisdiccion_desc')
   if (['entidad_mv', 'programa_mv', 'actividad_mv'].includes(targetTable)) columns.push('entidad_desc')
