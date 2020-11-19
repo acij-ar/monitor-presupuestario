@@ -7,7 +7,7 @@
     "watch": "webpack --watch --mode development",
     "build": "webpack --mode development",
     "dist": "webpack --mode production",
-    "start-dev": "nodemon src/server.js",
+    "start-dev": "CACHE=FALSE nodemon src/server.js",
     "test:lint": "eslint src/** *.js",
     "test:unit": "jest",
     "test": "npm run test:unit && npm run test:lint",
