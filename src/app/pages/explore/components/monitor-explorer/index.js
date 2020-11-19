@@ -28,7 +28,7 @@ const MonitorExplorer = () => {
       <EntityTable params={params} />
       <EntityTimeseries params={params} />
       <InflationDisclaimer params={params} />
-      { /* <ReasignationDisclaimer params={params} /> */ }
+      <ReasignationDisclaimer params={params} />
     </div>
   );
 };
