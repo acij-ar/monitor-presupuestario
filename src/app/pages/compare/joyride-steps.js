@@ -10,6 +10,11 @@ module.exports = [
     placement: "bottom",
   },
   {
+    target: '.monitor-selectors',
+    content: 'Cada uno de los selectores muestra la Jurisdicción, Entidad, Programa o Actividad poniendo entre paréntesis los años en que está disponible. Tené en cuenta que, para algunos años, la categoría seleccionada puede haber cambiado de nombre o jurisdicción, y es por eso no la encontrarás en la selección.',
+    placement: "bottom",
+  },
+  {
     target: "#compare-group-list-container",
     content: "Al hacer tu selección, se irá llenando el Grupo 1. Una vez que completes la selección, podés distribuirlos en el grupo 2 para hacer comparaciones.",
     placement: "right",

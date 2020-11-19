@@ -10,6 +10,11 @@ module.exports = [
     placement: "bottom",
   },
   {
+    target: '.monitor-selectors',
+    content: 'Cada uno de los selectores muestra la Jurisdicción, Entidad, Programa o Actividad poniendo entre paréntesis los años en que está disponible. Tené en cuenta que, para algunos años, la categoría seleccionada puede haber cambiado de nombre o jurisdicción, y es por eso no la encontrarás en la selección.',
+    placement: "bottom",
+  },
+  {
     target: "#monitor-explore-reset",
     content: "Si querés volver a empezar, puedes usar el botón de “limpiar búsqueda”",
     placement: "right",
