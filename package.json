@@ -9,8 +9,6 @@
     "dist": "webpack --mode production",
     "start-dev": "CACHE=FALSE nodemon src/server.js",
     "test:lint": "eslint src/** *.js",
-    "test:unit": "jest",
-    "test": "npm run test:unit && npm run test:lint",
     "google-drive-setup": "node src/services/google-drive-client/init.js",
     "download-datasets": "node src/services/dataset-updater/download-datasets.js"
   },
