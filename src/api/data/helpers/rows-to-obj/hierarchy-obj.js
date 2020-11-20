@@ -15,11 +15,17 @@ module.exports = (rows, options) => {
 
   const row2obj = (row, baseObj, key, index) => {
     if (maxDepth && index > maxDepth) return;
-    const name = row[key];
+    const { years, [key]: name } = row;
     let child = baseObj.children.find(child => child.name === name)
     if (!child) {
-      child = getBaseObj({name, key}, withBudgets)
+      child = getBaseObj({name, key, years}, withBudgets)
       baseObj.children.push(child);
+    } else if (years) {
+      years.map(year => {
+        if (!child.years.includes(year)) {
+          child.years.push(year)
+        }
+      })
     }
     if (withBudgets) sumBudgets(row, child);
     return child;
