@@ -1,0 +1,56 @@
+@import '../../../../../../components/page/globals';
+
+#hierarchy-chart-container {
+  position: relative;
+  margin-right: 10px;
+  margin-bottom: 20px;
+
+  .orgchart-container {
+    height: auto;
+  }
+
+  .orgchart, .orgchart-container  {
+    background: none;
+    border: none;
+  }
+
+  li:before {
+    border-color: #555;
+  }
+
+  div:before, div:after {
+    background-color: #555;
+  }
+
+  .orgchart ul li .oc-node:hover,
+  .orgchart ul li .oc-node.selected {
+    background: none;
+  }
+
+  .orgchart ul {
+    justify-content: center;
+  }
+
+  .org-node {
+    padding: 2px 4px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #eee;
+  }
+
+  .org-node-jurisdiccion_desc {
+    background: #00b0aeb8;
+  }
+
+  .org-node-entidad_desc {
+    background: #ff00e1a8;
+  }
+
+  .org-node-programa_desc {
+    background: #8200ff9e;
+  }
+
+  .org-node-actividad_desc {
+    background: #bb73ff8a;
+  }
+}

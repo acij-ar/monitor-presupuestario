@@ -1,0 +1,33 @@
+@import '../page/globals';
+
+.content-section {
+  display: flex;
+
+  .content-section-title {
+    flex: 0 0 31%;
+    padding: 50px 3.1% 50px 0;
+    position: relative;
+    font-size: 35px;
+    line-height: 43px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      height: 5px;
+      width: 90%;
+    }
+  }
+
+  .content-section-content {
+    padding: 50px 0;
+    font-size: 18px;
+    line-height: 26px;
+
+    > :not(:first-child) {
+      margin-top: 1em;
+    }
+  }
+}

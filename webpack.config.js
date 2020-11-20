@@ -3,10 +3,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 
-// TODO: autobind class methods
-
-// TODO: separate vendor libs into vendor script lib
-
 const assetsForPage = (pageName) => ([
   path.resolve(__dirname, 'src/app/pages', pageName, 'client.js'),
   path.resolve(__dirname, 'src/app/pages', pageName, 'index.scss'),
@@ -16,15 +12,31 @@ module.exports = {
   target: 'web',
   devtool: 'source-map',
   entry: {
+    page: [path.resolve(__dirname, 'src/app/components/page/index.scss')],
     home: assetsForPage('home'),
-    monitor: assetsForPage('monitor'),
+    explore: assetsForPage('explore'),
+    compare: assetsForPage('compare'),
     about: assetsForPage('about'),
     admin: assetsForPage('admin'),
     login: assetsForPage('login'),
+    doubts: assetsForPage('doubts'),
+    budget: assetsForPage('budget'),
+    glosary: assetsForPage('glosary'),
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+        },
+      },
+    },
   },
   module: {
     rules: [{
-      test: /\.scss$/,
+      test: /\.s?css$/,
       use: [
         { loader: MiniCssExtractPlugin.loader },
         { loader: 'css-loader' },

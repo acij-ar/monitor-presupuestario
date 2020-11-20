@@ -1,0 +1,28 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+}
+
+p, h1, h2, h3 {
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 500;
+}
+
+ol {
+  margin: 0;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}

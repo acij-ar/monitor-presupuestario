@@ -1,61 +1,43 @@
-html, body {
-  margin: 0;
-  padding: 0;
-}
+@import '../layout/index';
+@import './reset.scss';
 
 body {
   font-family: 'Rubik', sans-serif;
   background: #fafafa;
-  color: #f0f0f0;
-  font-weight: 300;
+  color: #555;
+  font-weight: 400;
 }
 
-a {
-  text-decoration: none;
+body, #root {
+  min-height: 100vh;
 }
 
-.monitor-content {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
-  padding: 32px 12px;
-}
+#root {
+  display: flex;
+  flex-direction: column;
 
-.monitor-highlight {
-  background: #0081ff;
-}
+  main {
+    flex-grow: 1;
+    padding: 0 3.5% 50px 3.5%;
+    background: #fafafa;
 
-p {
-  margin: 0;
-}
+    #main-content {
+      display: flex;
+      max-width: 1340px;
+      margin: 0 auto;
+      @media (max-width: 1000px) {
+        flex-direction: column;
+      }
+    }
 
-h1 {
-  margin: 0 0 20px 0;
-}
+    #page-content {
+      width: 83%;
+      flex: 0 0 83%;
+      padding-top: 18.5%;
+    }
 
-h2 {
-  margin: 0 0 12px 0;
-}
-
-.monitor-link {
-  color: #006dd9;
-  cursor: pointer;
-
-  &:hover {
-    color: #0081ff;
+    @import './components/menu/index';
   }
-}
 
-#main {
-  padding-top: 44px;
+  @import './components/footer/index';
 }
-
-@media (min-width: 768px) {
-  #main {
-    padding-top: 60px;
-  }
-}
-
-@import './components/header/index';
-@import './components/footer/index';

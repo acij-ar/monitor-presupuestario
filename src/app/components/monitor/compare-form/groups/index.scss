@@ -1,0 +1,52 @@
+#compare-group-list-container {
+  width: 60%;
+  display: flex;
+
+  .compare-group-list-container {
+    display: inline-block;
+    width: 48%;
+    position: relative;
+    border: dashed 3px #ddd;
+    padding: 10px 5px;
+
+    &:first-child {
+      margin-right: 4%;
+    }
+  }
+
+  .compare-group-list-title {
+    position: absolute;
+    top: -10px;
+    left: -3px;
+    background: #fafafa;
+    padding-right: 10px;
+  }
+
+  .compare-group-list {
+    min-height: 150px;
+  }
+
+  .compare-group-list-item {
+    font-size: 14px;
+    background: #ddd;
+    display: inline-block;
+    padding: 2px 25px 2px 5px;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      height: 100%;
+      transform: translateY(-50%);
+      cursor: pointer;
+
+      &:hover {
+        background-color: #FFBDAD;
+        color: #DE350B;
+      }
+    }
+  }
+}

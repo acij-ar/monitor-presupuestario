@@ -1,0 +1,22 @@
+@import '../../../../components/page/globals';
+
+#budget-example-analysis {
+  border-top: solid 4px $purple;
+  margin-top: 20px;
+
+  h1 {
+    margin: 20px 0;
+    font-size: 30px;
+    line-height: 48px;
+  }
+
+  #budget-example-analysis-video {
+    background: $purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fafafa;
+    height: 400px;
+    font-size: 3em;
+  }
+}

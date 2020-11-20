@@ -28,4 +28,7 @@ module.exports = {
     "jest",
     "jsdoc"
   ],
+  "rules": {
+    "jsdoc/check-tag-names": ["warn", { "definedTags": ["jest-environment"] }],
+  }
 };

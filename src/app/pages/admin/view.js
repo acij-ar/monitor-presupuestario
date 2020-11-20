@@ -1,23 +1,22 @@
 const React = require('react');
-const Page = require('../../components/page');
-const TextsForm = require('./components/texts-form');
-const DatasetForm = require('./components/datasets-form');
 const PropTypes = require('prop-types');
+const Page = require('../../components/page');
+const AdminList = require('./components/list');
 
-const App = ({ texts }) => (
-  <Page>
+const App = ({ pageName }) => (
+  <Page pageName={pageName}>
     <div className="monitor-highlight">
       <div className="monitor-content">
         <h1>Admin</h1>
+        <AdminList type="doubts" title="Dudas" />
+        <AdminList type="glosary" title="Glosario" />
       </div>
     </div>
-    <DatasetForm />
-    <TextsForm texts={texts}/>
   </Page>
 );
 
 App.propTypes = {
-  texts: PropTypes.object.isRequired,
+  pageName: PropTypes.string.isRequired,
 };
 
 module.exports = App;

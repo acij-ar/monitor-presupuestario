@@ -1,27 +1,78 @@
-@import '../../components/page/index';
+@import '../../components/page/globals';
 
-
-#background-768 {
-  display: block;
-  width: 100%;
+#root main #page-content {
+  padding-top: 10%;
 }
 
-#background-1920 {
+#root main #page-content {
+  h1 {
+    font-size: 83px;
+    color: $blue;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  p {
+    font-size: 30px;
+    line-height: 42px;
+    margin: 40px 0 60px;
+    width: 84%;
+  }
+
+  #home-actions {
+    a {
+      cursor: pointer;
+      font-size: 27px;
+      display: inline-block;
+      border: solid 2px;
+      padding: 20px 30px;
+      margin-right: 30px;
+      font-weight: 500;
+      position: relative;
+      transition: all 200ms;
+      z-index: 1;
+
+      &:before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 0;
+        top: 0;
+        left: 0;
+        transition: all 200ms;
+        z-index: -1
+      }
+
+      &:hover {
+        color: white!important;
+
+        &:before {
+          width: 100%;
+        }
+      }
+    }
+
+    #budget-link {
+      border-color: $purple;
+      color: $purple;
+
+      &:before {
+        background: $purple;
+      }
+    }
+
+    #budget-explore-link {
+      border-color: $blue;
+      color: $blue;
+
+      &:before {
+        background: $blue;
+      }
+    }
+  }
+}
+
+footer {
   display: none;
-}
-
-@media (min-width: 768px) {
-  #background-768 {
-    display: none;
-  }
-
-  #background-1920 {
-    padding-top: 56%;
-    display: block;
-    width: 100%;
-    background-image: url('/static/portada-1920.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
 }

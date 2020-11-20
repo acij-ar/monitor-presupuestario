@@ -1,0 +1,12 @@
+@import '../../components/content-section/index';
+
+#doubts-main-content {
+  h1, h2 {
+    color: $violet;
+  }
+
+  @import './components/main-content/index';
+  @import './components/doubt/index';
+  @import './components/doubts/index';
+
+}

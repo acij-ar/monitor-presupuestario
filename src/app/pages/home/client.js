@@ -1,9 +1,4 @@
-require('@babel/polyfill');
-const React = require('react');
-const ReactDOM = require('react-dom');
-const Home = require('./view');
+const clientInit = require('../../client');
+const View = require('./view');
 
-ReactDOM.hydrate(
-  <Home {...window.__INITIAL__DATA__}/>,
-  document.getElementById('root')
-);
+clientInit(View);

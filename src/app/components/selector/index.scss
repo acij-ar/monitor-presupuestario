@@ -1,0 +1,36 @@
+.selector-wrapper {
+  display: inline-block;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    border-bottom: solid 2px;
+    border-right: solid 2px;
+    transform: translateY(-50%) translateY(-4px) rotate(45deg);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &.selector-wrapper-disabled {
+    opacity: 0.4;
+  }
+
+  @import './specific-colors';
+}
+
+.monitor-virtualized-menu > div {
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  border: solid 1px #ddd;
+  padding: 5px 0;
+}
+
+.selector-custom-option:hover {
+  background: #e6f7ff;
+}

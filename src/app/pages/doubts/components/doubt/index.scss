@@ -1,0 +1,60 @@
+@import '../../../../components/content-section/index';
+
+.doubt {
+  input {
+    position: fixed;
+    top: -999px;
+    left: -999px;
+  }
+
+  label {
+    display: block;
+    background: $violet;
+    color: white;
+    font-size: 25px;
+    border-bottom: 4px solid white;
+    padding: 10px;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+      background: none;
+      color: $violet;
+    }
+  }
+
+
+  .content-section {
+    transition: max-height 400ms;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+
+    a {
+      color: $violet;
+    }
+  }
+
+  input:checked ~ .content-section {
+    opacity: 1;
+    max-height: 50em;
+    border-top: solid 4px $violet;
+  }
+
+  input:checked ~ label {
+    display: none;
+  }
+
+  .content-section {
+    border-top: solid 3px $violet;
+
+    .content-section-title {
+      font-size: 20px;
+      line-height: 30px;
+
+      :before {
+        content: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import '../../../../../../components/page/globals';
+
+#monitor-explorer-entity-detail {
+  #monitor-explorer-entity-detail-jurisdiction-name,
+  #monitor-explorer-entity-detail-entity-name,
+  #monitor-explorer-entity-detail-program-name,
+  #monitor-explorer-entity-detail-activity-name,
+  #monitor-explorer-entity-detail-total-name {
+    font-size: 17px;
+  }
+
+  #monitor-explorer-entity-detail-jurisdiction-name {
+    color: $jurisdiccion;
+  }
+
+  #monitor-explorer-entity-detail-entity-name {
+    color: $entidad;
+  }
+
+  #monitor-explorer-entity-detail-program-name {
+    color: $program;
+  }
+
+  #monitor-explorer-entity-detail-activity-name {
+    color: $activity;
+  }
+
+  #monitor-explorer-entity-detail-jurisdiction-value,
+  #monitor-explorer-entity-detail-entity-value,
+  #monitor-explorer-entity-detail-program-value,
+  #monitor-explorer-entity-detail-activity-value,
+  #monitor-explorer-entity-detail-total-value {
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1.75em;
+    margin-bottom: 0.75em;
+  }
+}

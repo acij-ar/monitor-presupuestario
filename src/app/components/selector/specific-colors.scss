@@ -1,0 +1,49 @@
+@import '../page/globals.scss';
+
+&#entity-form-jurisdiccion {
+  color: $jurisdiccion;
+  border-bottom: solid 2px $jurisdiccion;
+
+  &:after {
+    border-color: $jurisdiccion;
+  }
+}
+
+&#entity-form-entidad {
+  color: $entidad;
+  border-bottom: solid 2px $entidad;
+
+  &:after {
+    border-color: $entidad;
+  }
+}
+
+&#entity-form-programa {
+  color: $program;
+  border-bottom: solid 2px $program;
+
+  &:after {
+    border-color: $program;
+  }
+}
+
+&#entity-form-actividad {
+  color: $activity;
+  border-bottom: solid 2px $activity;
+
+  &:after {
+    border-color: $activity;
+  }
+}
+
+&#setting-form-years,
+&#setting-form-budgets,
+&#setting-form-inflation {
+  color: $blue;
+  border: solid 2px $blue;
+  margin-top: 10px;
+
+  &:after {
+    border-color: $blue;
+  }
+}

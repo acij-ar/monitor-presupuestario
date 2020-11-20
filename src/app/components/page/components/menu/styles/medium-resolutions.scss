@@ -1,0 +1,33 @@
+#menu {
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  box-sizing: border-box;
+  border-bottom: solid 1px #ddd;
+  background: #fafafa;
+  z-index: 1;
+  box-shadow: 0 0 4px -1px rgba(0, 0, 0, 0.5);
+
+  #logo {
+    display: inline-block;
+    height: 42px;
+  }
+
+  ul#menu-sections {
+    float: right;
+    line-height: 42px;
+
+    & > li {
+      display: inline-block;
+      margin-left: 2em;
+
+      @import './link-border';
+
+      a + ul {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-const Header = require('./components/header');
 const Footer = require('./components/footer');
+const Menu = require('./components/menu');
 const Analytics = require('../analytics');
 
 class Page extends React.Component {
@@ -10,14 +10,18 @@ class Page extends React.Component {
   }
 
   render() {
-    const {children} = this.props;
+    const {children, pageName, selectedSubSection} = this.props;
     return (
       <React.Fragment>
-        <Header key="header"/>
-        <div id="main" key="main">
-          {children}
-        </div>
-        <Footer key="footer"/>
+        <main>
+          <div id="main-content">
+            <Menu selectedPage={pageName} selectedSubSection={selectedSubSection} />
+            <div id="page-content">
+              {children}
+            </div>
+          </div>
+        </main>
+        <Footer/>
       </React.Fragment>
     );
   }
@@ -25,6 +29,8 @@ class Page extends React.Component {
 
 Page.propTypes = {
   children: PropTypes.node,
+  pageName: PropTypes.string.isRequired,
+  selectedSubSection: PropTypes.string,
 };
 
 module.exports = Page;
