@@ -30,10 +30,20 @@ body, #root {
       }
     }
 
-    #page-content {
-      width: 83%;
-      flex: 0 0 83%;
-      padding-top: 18.5%;
+    @media (max-width: 1000px) {
+      #page-content {
+        width: 100%;
+        flex: 0 0 100%;
+        padding-top: 20%;
+      }
+    }
+
+    @media (min-width: 1001px) {
+      #page-content {
+        width: 83%;
+        flex: 0 0 83%;
+        padding-top: 18.5%;
+      }
     }
 
     @import './components/menu/index';
