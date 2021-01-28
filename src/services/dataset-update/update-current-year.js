@@ -30,10 +30,11 @@ const dbConnection = mysql.createPool(mysqlconfig);
 	console.log("Descomprimiendo...");
 	let zip = new admzip(dataFolderPath+current_year+'.zip');
 	zip.extractAllTo(dataFolderPath);
+	zip = null;
 
 	//eliminar los registros de las tablas de la base de datos
 	console.log('Limpiando datos anteriores...');
-	var result = await dbConnection.query('CALL clean_data(?);', current_year);
+	await dbConnection.query('CALL clean_data(?);', current_year);
 
 	//lee CSV
 	console.log("Procesando CSV...")
@@ -66,7 +67,7 @@ const dbConnection = mysql.createPool(mysqlconfig);
 		    	credito_devengado_infl: data.credito_devengado.replace(',','.')
     		}
 
-    		var result = await dbConnection.query('INSERT INTO monitor.presupuesto SET ?;', row).catch(function() {
+    		await dbConnection.query('INSERT INTO monitor.presupuesto SET ?;', row).catch(function() {
     			console.log(data);
     			console.log("Error insertando registro en DB");
     		});
@@ -78,13 +79,13 @@ const dbConnection = mysql.createPool(mysqlconfig);
     	console.log('Líneas procesadas: '+rowCount);
     	
     	console.log('Multiplicador...');
-		var result = await dbConnection.query('CALL multiplier(?);', current_year);
+		await dbConnection.query('CALL multiplier(?);', current_year);
 
 		console.log('Materializando vistas...');
-		result = await dbConnection.query('CALL materializer(?);', current_year);
+		await dbConnection.query('CALL materializer(?);', current_year);
 
 		console.log('Ajuste de inflación...');
-		result = await dbConnection.query('CALL inflation_adjust_year(?);', current_year);
+		await dbConnection.query('CALL inflation_adjust_year(?);', current_year);
 
 		console.log("-- FIN --");
 
