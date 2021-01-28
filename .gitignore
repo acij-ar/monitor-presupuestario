@@ -12,7 +12,10 @@ settings.yaml
 token.json
 coverage
 *.csv
+*.zip
 **/datasets/*.json
 wireframes
 build/
 cache/
+data/*.csv
+data/*.zip

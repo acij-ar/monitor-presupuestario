@@ -9,8 +9,7 @@
     "dist": "webpack --mode production",
     "start-dev": "CACHE=FALSE nodemon src/server.js",
     "test:lint": "eslint src/** *.js",
-    "google-drive-setup": "node src/services/google-drive-client/init.js",
-    "download-datasets": "node src/services/dataset-updater/download-datasets.js"
+    "dataset-update": "node src/services/dataset-update/update-current-year.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +28,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.8.6",
     "@dabeng/react-orgchart": "^1.0.0",
+    "adm-zip": "^0.5.2",
     "axios": "^0.21.1",
     "browser-cookies": "^1.2.0",
     "compression": "^1.7.4",
@@ -38,8 +38,11 @@
     "dom-to-pdf": "^0.1.2",
     "express": "^4.17.0",
     "express-manifest-helpers": "^0.6.0",
+    "fast-csv": "^4.3.6",
     "file-system-cache": "^1.0.5",
+    "fstream": "^1.0.12",
     "highcharts": "^8.1.2",
+    "moment": "^2.29.1",
     "morgan": "^1.9.1",
     "mysql2": "^2.1.0",
     "newrelic": "^6.13.0",
