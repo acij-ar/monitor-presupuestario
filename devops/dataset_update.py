@@ -9,6 +9,7 @@ import pandas as pd
 import requests
 import zipfile
 from pathlib import Path
+from os.path import abspath
 
 #conexion con base de datos
 config = configparser.ConfigParser()
@@ -40,9 +41,11 @@ print(current_year)
 
 #paths del dataset
 dataset_url = 'https://www.presupuestoabierto.gob.ar/datasets/'+current_year+'/credito-anual-'+current_year+'.zip'
-dataset_path = Path('../data/').resolve()
-zip_path = Path('../data/credito-anual-'+current_year+'.zip').resolve()
-csv_path = Path('../data/credito-anual-'+current_year+'.csv').resolve()
+
+
+dataset_path = abspath('../data/')
+zip_path = abspath('../data/credito-anual-'+current_year+'.zip')
+csv_path = abspath('../data/credito-anual-'+current_year+'.csv')
 
 #descargar zip
 print("Descargando dataset...")
