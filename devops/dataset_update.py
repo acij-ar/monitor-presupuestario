@@ -62,24 +62,30 @@ del zip_ref
 
 #cleanup
 print("Limpiando data anterior...")
-ops_cursor.execute('CALL clean_data('+current_year+');')
+ops_cursor.callproc('clean_data', (int(current_year),))
 cnx.commit()
 
 #load csv
 print("Procesando CSV...")
-df = pd.read_csv (csv_path, encoding='iso-8859-1')
+df = pd.read_csv (csv_path)
 for index, row in df.iterrows():
 
 
     if str(row['ejercicio_presupuestario']).isnumeric() and str(row['credito_presupuestado']).replace(',','').isnumeric():
 
-        insert_row = ("INSERT INTO presupuesto (ejercicio_presupuestario,actividad_desc,"
-            "programa_desc,entidad_desc,jurisdiccion_desc,credito_presupuestado,credito_vigente,credito_devengado,credito_pagado) "
-            'VALUES('+row['ejercicio_presupuestario']+','+row['actividad_desc']+','+row['programa_desc']+','+row['entidad_desc']+','
-            row['jurisdiccion_desc']+','+str(row['credito_presupuestado']).replace(',','.')+','+str(row['credito_vigente']).replace(',','.')+','+str(row['credito_devengado']).replace(',','.')+','+str(row['credito_pagado']).replace(',','.')+');'
-        )
+        rowdata = {
+            'ejercicio_presupuestario' : row['ejercicio_presupuestario'],
+            'actividad_desc' : row['actividad_desc'],
+            'programa_desc' : row['programa_desc'],
+            'entidad_desc' : row['entidad_desc'],
+            'jurisdiccion_desc' : row['jurisdiccion_desc'],
+            'credito_presupuestado' : str(row['credito_presupuestado']).replace(',','.'),
+            'credito_vigente' : str(row['credito_vigente']).replace(',','.'),
+            'credito_devengado' : str(row['credito_devengado']).replace(',','.'),
+            'credito_pagado' : str(row['credito_pagado']).replace(',','.')
+        }
 
-        insert_cursor.execute(insert_row)
+        insert_cursor.execute(insert_row,rowdata)
         cnx.commit()
 
     else:
@@ -90,15 +96,15 @@ for index, row in df.iterrows():
 del df
 
 print("Multiplicador...")
-ops_cursor.callproc('CALL multiplier('+current_year+')')
+ops_cursor.callproc('multiplier', (int(current_year),))
 cnx.commit()
 
 print("Materializar vistas...")
-ops_cursor.callproc('CALL materializer('+current_year+')')
+ops_cursor.callproc('materializer', (int(current_year),))
 cnx.commit()
 
 print("Ajuste inflacionario...")
-ops_cursor.callproc('CALL inflation_adjust_year('+current_year+')')
+ops_cursor.callproc('inflation_adjust_year', (int(current_year),))
 cnx.commit()
 
 #make operations
