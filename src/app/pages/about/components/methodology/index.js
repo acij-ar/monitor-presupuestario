@@ -16,7 +16,7 @@ const AboutMethodology = () => (
     <p>Temporalmente, en los años 2007 a 2014, bajo el rótulo “Presupuesto Original” se muestra el presupuesto
       distribuido por el Poder Ejecutivo conforme los datos abiertos que sus autoridades publican. Durante el año 2020,
       el Congreso Argentino no ha sancionado un presupuesto mediante una Ley. Siguiendo las previsiones normativas el
-      Poder Ejecutivo, realizó una prórroga del presupuesto 2019, se consigna como presupuesto original, la primer
+      Poder Ejecutivo, realizó una prórroga del presupuesto 2019, se consigna como presupuesto original, la primera
       distribución realizada en dicho proceso.</p>
   </ContentSection>
 );
