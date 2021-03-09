@@ -1,6 +1,6 @@
 const getSelectedBudget = (params) => {
   const budgetColumns = {
-    'Original': {
+    'Inicial': {
       'Ajustado': 'credito_presupuestado_infl as budget',
       'Sin ajustar': 'credito_presupuestado as budget',
     },
