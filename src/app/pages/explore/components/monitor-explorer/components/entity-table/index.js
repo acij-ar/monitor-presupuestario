@@ -37,7 +37,7 @@ const EntityTable = ({ params }) => {
               <thead>
                 <tr>
                   <th><span>{table.header.name}</span></th>
-                  <th><span>C. Original</span></th>
+                  <th><span>C. Inicial</span></th>
                   <th><span>C. Vigente</span></th>
                   <th><span>C. Devengado</span></th>
                 </tr>
