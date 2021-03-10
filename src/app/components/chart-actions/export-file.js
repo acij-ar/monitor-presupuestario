@@ -6,7 +6,7 @@ const filenameSuffix = 'monitorpresupuestario.acij.org.ar'
 const imageOptions = { bgcolor: '#fafafa' };
 
 const exportSheet = (data, type) => {
-  const ws = XLSX.utils.json_to_sheet(...dataUrl);
+  const ws = XLSX.utils.json_to_sheet(...data);
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, "Datos");
   XLSX.writeFile(wb, `${filenameSuffix}.${type}`)
