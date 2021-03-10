@@ -6,6 +6,6 @@ const getMostRecentYear = (options) => {
 
 module.exports = (data) => ({
   inflation: 'Ajustado',
-  budget: 'Inicial',
+  budget: 'Original',
   year: getMostRecentYear(data.years),
 });
