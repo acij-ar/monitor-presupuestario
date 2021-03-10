@@ -16,6 +16,7 @@ const elementSelectors = [
   '#about-acij',
   '#about-matchbox',
   '#about-methodology',
+  '#about-original',
 ];
 
 const App = ({pageName}) => {
@@ -31,6 +32,7 @@ const App = ({pageName}) => {
         <AboutACIJ/>
         <AboutMatchbox/>
         <AboutMethodology/>
+        <AboutOriginal/>
       </div>
     </Page>
   );
