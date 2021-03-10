@@ -17,11 +17,7 @@ const elementSelectors = [
   '#about-acij',
   '#about-matchbox',
   '#about-methodology',
-<<<<<<< HEAD
   '#about-original',
-=======
-  '#about-original'
->>>>>>> 373e128ddf0af468a5e34684c64b12436a2acf64
 ];
 
 const App = ({pageName}) => {
