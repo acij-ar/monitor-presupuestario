@@ -8,7 +8,7 @@ const AboutMethodology = () => (
     los datasets de Presupuesto de gastos y su ejecución detallada - agrupación
     anual 2021 (distribución anual acumulada de los créditos presupuestarios
       con clasificadores completos) desde el año 2007 a la actualidad, disponible
-      en el sitio <a href = "www.presupuestoabierto.gob.ar/sici/datos-abiertos#">www.presupuestoabierto.gob.ar/sici/datos-abiertos#</a></p>
+      en el sitio <a href = "www.presupuestoabierto.gob.ar/sici/datos-abiertos">presupuestoabierto.gob.ar/sici/datos-abiertos</a></p>
     <p>No se incorporan los montos correspondientes al presupuesto original
     (ver <a href="https://monitorpresupuestario.acij.org.ar/glosario">glosario</a>) porque no se publica esta información en datos abiertos.
     Sin embargo, en la sección <a href="https://monitorpresupuestario.acij.org.ar/acerca-de#about-original">"Presupuesto original"</a>, vas a poder
