@@ -7,7 +7,7 @@ const AboutMethodology = () => (
     en datos abiertos, sino que muestra la información correspondiente al presupuesto inicial o distribuido
     por el Poder Ejecutivo al inicio del ciclo presupuestario. Si querés ver los montos originales de los años en que
     el Congreso efectuó modificaciones al Proyecto de Ley de Presupuesto enviado por el Ejecutivo al momento de aprobar la Ley,
-    podés descargar las tablas <a href = "https://github.com/acij-ar/monitor-presupuestario/tree/original-data/presupuesto-original">haciendo click aquí.</a> </p>
+    podés descargar las tablas <a href="https://github.com/acij-ar/monitor-presupuestario/tree/original-data/presupuesto-original" target="_blank">haciendo click aquí.</a> </p>
     <p>Para alcanzar dichos datos, desde ACIJ hemos revisado manualmente los Proyectos de Ley de Presupuesto cuyos dataset sí se publican,
     para plasmar en ellos las modificaciones hechas por el Poder Legislativo y trasladarlas a documentos de excel, y así facilitar
     su procesamiento y sistematización.</p>
