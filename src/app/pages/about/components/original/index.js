@@ -1,7 +1,7 @@
 const React = require('react');
 const ContentSection = require('../../../../components/content-section');
 
-const AboutOriginal = () => (
+const AboutMethodology = () => (
   <ContentSection id="about-original" title="Presupuesto Original">
     <p>El monitor no muestra los presupuestos originales porque esa información no es publicada por el Estado
     en datos abiertos, sino que muestra la información correspondiente al presupuesto inicial o distribuido
@@ -16,4 +16,4 @@ const AboutOriginal = () => (
   </ContentSection>
 );
 
-module.exports = AboutOriginal;
+module.exports = AboutMethodology;
