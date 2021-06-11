@@ -6,6 +6,7 @@ const AboutBudgetAnalysis = require('./components/budget-analysis');
 const AboutACIJ = require('./components/acij');
 const AboutMatchbox = require('./components/matchbox');
 const AboutMethodology = require('./components/methodology');
+const AboutOriginal = require('./components/original');
 const activeSectionScroll = require('../../components/page/components/menu/active-section-scroll');
 
 const { useEffect } = React;
@@ -16,6 +17,7 @@ const elementSelectors = [
   '#about-acij',
   '#about-matchbox',
   '#about-methodology',
+  '#about-original',
 ];
 
 const App = ({pageName}) => {
@@ -31,6 +33,7 @@ const App = ({pageName}) => {
         <AboutACIJ/>
         <AboutMatchbox/>
         <AboutMethodology/>
+        <AboutOriginal/>
       </div>
     </Page>
   );

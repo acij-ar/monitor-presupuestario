@@ -26,7 +26,7 @@ module.exports = [
   },
   {
     target: "#setting-form-budgets",
-    content: "Estos botones te permiten cambiar entre Original, Vigente y Devengado.",
+    content: "Estos botones te permiten cambiar entre Inicial, Vigente y Devengado.",
     placement: "left",
   },
   {

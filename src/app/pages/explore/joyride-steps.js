@@ -36,7 +36,7 @@ module.exports = [
   },
   {
     target: "#timeseries-chart",
-    content: "Debajo, podés ver una visualización en tabla y en gráfico de barras del presupuesto Original, Vigente y Devengado.",
+    content: "Debajo, podés ver una visualización en tabla y en gráfico de barras del presupuesto Inicial, Vigente y Devengado.",
     placement: "top",
   },
   {
