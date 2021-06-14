@@ -1,7 +1,7 @@
 module.exports = [
   {
     target: "#monitor-main-title",
-    content: "Mirá cómo, cuándo y cuántos recursos se gastan -o no- en garantizar derechos. Podés ver las siguientes categorías: jurisdicción, entidad, programa y actividad (así como sus metas físicas cuando existen), elegir un año o un periodo, y el tipo de presupuesto; inicial, vigente o devengado.",
+    content: "Mirá cómo, cuándo y cuántos recursos se gastan -o no- en garantizar derechos. Podés ver las siguientes categorías: jurisdicción, entidad, programa y actividad, elegir un año o un periodo, y el tipo de presupuesto; inicial, vigente o devengado.",
     placement: "bottom",
   },
   {
