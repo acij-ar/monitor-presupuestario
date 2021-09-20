@@ -30,7 +30,7 @@ const BaseCompareChart = ({ params, dataClient, generateDataForSheet, chartId })
 
   return (
     <LoadingOverlay loading={loading}>
-      <ChartActions visible={actionVisible} generateDataForSheet={() => generateDataForSheet(chartData)}>
+      <ChartActions visible={actionVisible} generateDataForSheet={() => generateDataForSheet(chartData, params)}>
         <div id={chartId} />
       </ChartActions>
     </LoadingOverlay>

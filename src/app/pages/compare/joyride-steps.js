@@ -1,7 +1,7 @@
 module.exports = [
   {
     target: "#monitor-main-title",
-    content: "En esta sección podés cotejar programas, actividades o dependencias entre sí en un mismo año o a lo largo de un periodo. Podés ver las siguientes categorías: jurisdicción, entidad, programa y actividad (así como sus metas físicas cuando existen), y el tipo de presupuesto; original (el sancionado por el congreso), vigente o devengado.",
+    content: "En esta sección podés cotejar programas, actividades o dependencias entre sí en un mismo año o a lo largo de un periodo. Podés ver las siguientes categorías: jurisdicción, entidad, programa y actividad, y el tipo de presupuesto; inicial, vigente o devengado.",
     placement: "bottom",
   },
   {
@@ -26,7 +26,7 @@ module.exports = [
   },
   {
     target: "#setting-form-budgets",
-    content: "Estos botones te permiten cambiar entre Original, Vigente y Devengado.",
+    content: "Estos botones te permiten cambiar entre Inicial, Vigente y Devengado.",
     placement: "left",
   },
   {

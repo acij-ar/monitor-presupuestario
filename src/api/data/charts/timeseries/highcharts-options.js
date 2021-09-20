@@ -34,7 +34,7 @@ module.exports = (title, categories, data) => merge({}, baseHighchartsOptions, {
     }
   },
   series: [{
-    name: 'Credito original',
+    name: 'Credito inicial',
     color: '#FFD400',
     data: data.original
   }, {

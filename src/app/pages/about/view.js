@@ -17,7 +17,7 @@ const elementSelectors = [
   '#about-acij',
   '#about-matchbox',
   '#about-methodology',
-  '#about-original'
+  '#about-original',
 ];
 
 const App = ({pageName}) => {
