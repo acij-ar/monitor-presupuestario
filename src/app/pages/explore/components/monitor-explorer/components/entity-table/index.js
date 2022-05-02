@@ -40,6 +40,8 @@ const EntityTable = ({ params }) => {
                   <th><span>C. Inicial</span></th>
                   <th><span>C. Vigente</span></th>
                   <th><span>C. Devengado</span></th>
+                  <th><span>Reasignado</span></th>
+                  <th><span>Ejecución</span></th>
                 </tr>
               </thead>
               <tbody>
@@ -50,9 +52,19 @@ const EntityTable = ({ params }) => {
                     <td><span>$ {row.original.toLocaleString('es')}</span></td>
                     <td><span>$ {row.vigente.toLocaleString('es')}</span></td>
                     <td><span>$ {row.devengado.toLocaleString('es')}</span></td>
+                    <td><span>{row.reasignado.toFixed(2)}%</span></td>
+                    <td><span>{row.ejecucion.toFixed(2)}%</span></td>
                   </tr>
                 ))
               }
+              <tr>
+                <td><span>{table.total.name}</span></td>
+                <td><span>$ {table.total.original.toLocaleString('es')}</span></td>
+                <td><span>$ {table.total.vigente.toLocaleString('es')}</span></td>
+                <td><span>$ {table.total.devengado.toLocaleString('es')}</span></td>
+                <td><span>{table.total.reasignado.toFixed(2)}%</span></td>
+                <td><span>{table.total.ejecucion.toFixed(2)}%</span></td>
+              </tr>
               </tbody>
               <tfoot>
                 <tr>

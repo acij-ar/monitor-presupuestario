@@ -31,7 +31,7 @@
       vertical-align: bottom;
 
       &:first-child {
-        width: 55%;
+        width: 45%;
       }
 
       span {
@@ -42,6 +42,11 @@
 
       &:last-child span {
         border-right: none;
+      }
+
+      &:not(:first-child) span {
+        text-align: right;
+        white-space: nowrap;
       }
     }
 
