@@ -21,3 +21,5 @@ build/
 cache/
 data/*.csv
 data/*.zip
+.env
+mysql-dump
