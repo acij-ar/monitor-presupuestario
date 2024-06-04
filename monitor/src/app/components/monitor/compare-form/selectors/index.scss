@@ -1,0 +1,49 @@
+@import '../../../entities-selectors/index';
+@import './reset-button/index';
+
+#monitor-explore-selector {
+  display: inline-block;
+  width: 40%;
+  text-align: right;
+  margin: 0;
+
+  .selector-wrapper {
+    width: 46%;
+    text-align: left;
+    margin: 0;
+
+    &#setting-form-years {
+      margin: 0 4%;
+      margin-bottom: 10px;
+    }
+  }
+
+  #monitor-compare-reset {
+    width: 46%;
+    margin: 0 4%;
+  }
+
+  h3 {
+    font-size: 12px;
+    line-height: 20px;
+    display: block;
+    border-bottom: solid 1px #555;
+    margin: 10px 0;
+
+    &.selector-budget-title {
+      margin-top: 0;
+      margin-left: 3 / 5.5 * 100%;
+    }
+
+    &.selector-year-title {
+      display: inline-block;
+      margin: 0 4%;
+      width: 46%;
+    }
+
+    &.selector-inflation-title {
+      display: inline-block;
+      width: 46%;
+    }
+  }
+}

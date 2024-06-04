@@ -1,0 +1,84 @@
+@import '../../../../components/page/globals';
+
+.budget-accordion {
+  margin-left: 31%;
+
+  input {
+    position: fixed;
+    top: -999px;
+    left: -999px;
+  }
+
+  label {
+    display: block;
+    background: #FF00E1;
+    color: white;
+    font-size: 30px;
+    border-bottom: 4px solid white;
+    padding: 10px;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+      background: none;
+      color: #FF00E1;
+    }
+  }
+
+  .content-section {
+    transition: max-height 400ms;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  input:checked ~ .content-section {
+    opacity: 1;
+    max-height: 50em;
+    border-top: solid 4px $purple;
+  }
+
+  input:checked ~ label {
+    display: none;
+  }
+
+  .content-section-title {
+    &:before {
+      content: none;
+    }
+
+    h2 {
+      font-size: 19px;
+      line-height: 30px;
+      white-space: nowrap;
+
+      span {
+        background: #FF00E1;
+        color: white;
+
+      }
+    }
+
+    h3 {
+      font-size: 20px;
+      line-height: 25px;
+      margin: 8px 0 0 0;
+    }
+  }
+
+  .content-section-content {
+    font-size: 15px;
+    line-height: 22px;
+    hyphens: auto;
+  }
+}
+
+#budget-who {
+  .content-section {
+    margin-bottom: 50px;
+    .content-section-title,
+    .content-section-content {
+      padding-bottom: 0;
+    }
+  }
+}

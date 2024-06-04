@@ -1,0 +1,19 @@
+@import '../../components/page/globals';
+@import '../../components/content-section/index';
+
+#budget-main-content {
+  h1, h2 {
+    color: $purple;
+  }
+
+  .content-section-title:before {
+    background: $purple;
+  }
+
+  @import './components/budget-steps/index';
+  @import './components/budget-classifications/index';
+  @import './components/budget-accordions/index';
+  @import './components/budget-example-analysis/index';
+  @import './components/budget-analysis/index';
+  @import './components/budget-actions/index';
+}

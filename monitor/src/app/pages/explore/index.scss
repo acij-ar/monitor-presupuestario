@@ -1,0 +1,24 @@
+@import '../../components/page/globals';
+
+#root main #page-content {
+  padding-top: 10%;
+
+}
+
+#monitor-main-title {
+  font-size: 83px;
+  color: $blue;
+  font-weight: 500;
+  padding-bottom: 30px;
+  border-bottom: solid 4px $blue;
+  margin-bottom: 20px;
+  position: relative;
+
+  span {
+    font-weight: 300;
+  }
+}
+
+@import '../../components/loading-overlay/index';
+@import 'components/monitor-explorer/index';
+@import '../../components/joyride/index';

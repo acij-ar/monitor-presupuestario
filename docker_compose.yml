@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+      MYSQL_USER: $MYSQL_USER
+      MYSQL_PASSWORD: $MYSQL_PASSWORD
+      MYSQL_DATABASE: $MYSQL_DATABASE
+    ports:
+      - $MYSQL_LOCAL_PORT:$MYSQL_DOCKER_PORT
+    volumes:
+      - ./mysql-dump:/docker-entrypoint-initdb.d
+
+  app:
+    build: ./monitor
+    restart: unless-stopped
+    env_file: ./.env
+    restart: always
+    environment:
+      MYSQL_USER: $MYSQL_USER
+      MYSQL_PASSWORD: $MYSQL_PASSWORD
+      MYSQL_DATABASE: $MYSQL_DATABASE
+      MYSQL_HOST: db
+    depends_on:
+      - db
+    ports:
+      - $APP_PORT:$APP_DOCKER_PORT
+
+
+  devops:
+    build: ./devops
+    depends_on:
+      - db
+    environment:
+        MYSQL_USER: $MYSQL_USER
+        MYSQL_PASSWORD: $MYSQL_PASSWORD
+        MYSQL_DATABASE: $MYSQL_DATABASE
+        MYSQL_HOST: db

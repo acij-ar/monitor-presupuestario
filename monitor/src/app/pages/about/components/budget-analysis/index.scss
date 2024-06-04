@@ -1,0 +1,13 @@
+@import '../../../../components/content-section/index';
+
+#about-budget-analysis {
+  border-top: solid 3px $green;
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .content-section-title:before {
+    content: none;
+  }
+}

@@ -1,0 +1,33 @@
+@import '../../globals';
+
+footer {
+  background: $green;
+  padding: 20px;
+  color: white;
+
+  #footer-content {
+    max-width: 1340px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+    #acij-initiative {
+      letter-spacing: 3px;
+    }
+
+    #acij-link {
+      margin: 0 auto 0 10px;
+      img {
+        width: 160px;
+        margin: 10px 0 -10px 0;
+      }
+    }
+
+    .social-link {
+      margin-left: 20px;
+      img {
+        width: 40px;
+      }
+    }
+  }
+}

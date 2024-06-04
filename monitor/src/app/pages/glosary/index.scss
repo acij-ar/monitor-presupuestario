@@ -1,0 +1,17 @@
+@import '../../components/content-section/index';
+
+#glosary-main-content {
+  h1, h2 {
+    color: $purple;
+  }
+
+  .content-section-title:before {
+    background: $purple;
+  }
+
+  a {
+    color: $purple;
+  }
+
+  @import './components/term';
+}

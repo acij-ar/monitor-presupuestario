@@ -1,0 +1,9 @@
+@import '../../../../components/page/globals';
+
+#doubts-main-content {
+  margin-bottom: 50px;
+
+  .content-section-title:before {
+    background: $violet;
+  }
+}

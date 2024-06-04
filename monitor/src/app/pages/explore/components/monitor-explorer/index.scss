@@ -1,0 +1,22 @@
+#monitor-explorer {
+  display: flex;
+  flex-direction: column;
+
+  .monitor-explorer-chart-row {
+    display: flex;
+
+    & > * {
+      flex: 0 0 50%;
+    }
+  }
+
+  @import '../../../../components/monitor/explore-form/index';
+  @import '../../../../components/inflation-disclaimer/index';
+  @import '../../../../components/reasignation-disclaimer/index';
+  @import '../../../../components/chart-actions/index';
+  @import './components/entity-detail/index';
+  @import './components/entity-goals/index';
+  @import './components/entity-table/index';
+  @import './components/entity-hierarchy/index';
+
+}

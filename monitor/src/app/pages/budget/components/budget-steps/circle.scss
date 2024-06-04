@@ -1,0 +1,14 @@
+@import '../../../../components/page/globals';
+
+&:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  padding-top: 50%;
+  border: dashed 2px $grass;
+  border-radius: 100%;
+  z-index: -1;
+}

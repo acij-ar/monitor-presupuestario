@@ -11,16 +11,11 @@ import zipfile
 from pathlib import Path
 from os.path import abspath
 
-#conexion con base de datos
-config = configparser.ConfigParser()
-config.read('config.ini')
-db_config = config['database']
-
 cnx = MySQLdb.connect(
-    user=db_config.get('user'), 
-    passwd=db_config.get('password'),
-    host=db_config.get('host'),
-    database=db_config.get('db')
+    user=os.getenv("MYSQL_USER"), 
+    passwd=os.getenv("MYSQL_PASSWORD"),
+    host=os.getenv("MYSQL_HOST"),
+    database=os.getenv("MYSQL_DATABASE")
 )
 
 #cursores
@@ -43,9 +38,9 @@ print(current_year)
 dataset_url = 'https://www.presupuestoabierto.gob.ar/datasets/'+current_year+'/credito-anual-'+current_year+'.zip'
 
 
-dataset_path = abspath('../data/')
-zip_path = abspath('../data/credito-anual-'+current_year+'.zip')
-csv_path = abspath('../data/credito-anual-'+current_year+'.csv')
+dataset_path = abspath('./data/')
+zip_path = abspath('./data/credito-anual-'+current_year+'.zip')
+csv_path = abspath('./data/credito-anual-'+current_year+'.csv')
 
 #descargar zip
 print("Descargando dataset...")

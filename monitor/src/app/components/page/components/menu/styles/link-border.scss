@@ -1,0 +1,93 @@
+@import '../../../globals';
+
+a {
+  cursor: pointer;
+}
+
+& > a {
+  position: relative;
+  padding-bottom: 20px;
+  font-weight: 500;
+
+  &:after {
+    content: '';
+    display: block;
+    height: 5px;
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 0;
+    transition: width 200ms;
+  }
+
+  &:hover:after,
+  &.active:after {
+    width: 50px;
+  }
+
+  &.active {
+
+  }
+
+}
+
+& > #menu-link-budget,
+& > #menu-link-glosary {
+  &.active {
+    color: $purple;
+  }
+
+  &:after {
+    background: $purple;
+  }
+
+  & + ul a:hover,
+  & + ul a.active {
+    color: $purple;
+  }
+}
+
+& > #menu-link-monitor {
+  &.active {
+    color: $blue;
+  }
+
+  &:after {
+    background: $blue;
+  }
+
+  & + ul a:hover,
+  & + ul a.active {
+    color: $blue;
+  }
+}
+
+& > #menu-link-about {
+  &.active {
+    color: $green;
+  }
+
+  &:after {
+    background: $green;
+  }
+
+  & + ul a:hover,
+  & + ul a.active {
+    color: $green;
+  }
+}
+
+& > #menu-link-doubts {
+  &.active {
+    color: $violet;
+  }
+
+  &:after {
+    background: $violet;
+  }
+
+  & + ul a:hover,
+  & + ul a.active {
+    color: $violet;
+  }
+}

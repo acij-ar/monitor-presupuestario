@@ -1,0 +1,24 @@
+@import '../../components/content-section/index';
+
+#about-main-content {
+  h1, h2 {
+    color: $green;
+  }
+
+  .content-section-title:before {
+    background: $green;
+  }
+
+  a, a:visited {
+    color: $green;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @import './components/budget-analysis';
+  @import './components/acij/index';
+  @import './components/matchbox/index';
+  @import './components/original/index';
+}

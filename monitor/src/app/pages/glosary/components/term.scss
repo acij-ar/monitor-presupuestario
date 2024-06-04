@@ -1,0 +1,20 @@
+@import '../../../components/content-section/index';
+
+.glosary-term {
+  .content-section {
+    border-top: solid 3px $purple;
+
+    .content-section-title {
+      color: $purple;
+      font-size: 20px;
+
+      &:before {
+        content: none;
+      }
+    }
+
+    a {
+      color: $purple;
+    }
+  }
+}
