@@ -1,0 +1,148 @@
+.icon-explorar {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('../icons/icon-explorar-celeste.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 5px;
+}
+
+.icon-explorar-verde {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('../icons/icon-explorar-verde.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 5px;
+}
+
+.nav-link.active .icon-explorar {
+  background-image: url('../icons/icon-explorar-naranja.svg');
+}
+
+
+.icon-navegar {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('../icons/icon-navegar-celeste.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 5px;
+}
+
+.icon-navegar-verde {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('../icons/icon-navegar-verde.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 5px;
+}
+
+.nav-link.active .icon-navegar {
+  background-image: url('../icons/icon-navegar-naranja.svg');
+}
+
+.icon-comparar {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('../icons/icon-comparar-celeste.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 5px;
+}
+
+
+.icon-comparar-verde {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('../icons/icon-comparar-verde.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 5px;
+}
+
+.nav-link.active .icon-comparar{
+  background-image: url('../icons/icon-comparar-naranja.svg');
+}
+
+.icon-grafico {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('../icons/icon-grafico-verde.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 5px;
+}
+
+.nav-link.active .icon-grafico{
+  background-image: url('../icons/icon-grafico-naranja.svg');
+}
+
+
+.icon-tabla {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('../icons/icon-tabla-verde.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 5px;
+}
+
+.nav-link.active .icon-tabla{
+  background-image: url('../icons/icon-tabla-naranja.svg');
+}
+
+.icon-ejecucion {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('../icons/icon-ejecucion-verde.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 5px;
+}
+
+.nav-link.active .icon-ejecucion{
+  background-image: url('../icons/icon-ejecucion-naranja.svg');
+}
+
+.icon-resumen {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('../icons/icon-resumen-verde.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 5px;
+}
+
+.nav-link.active .icon-resumen{
+  background-image: url('../icons/icon-resumen-naranja.svg');
+}
+
+.icon-left {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url('../icons/left.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icon-right {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url('../icons/right.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}

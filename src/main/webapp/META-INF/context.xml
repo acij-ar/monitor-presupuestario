@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<Context>
+
+	<Resources cachingAllowed="false" />
+	
+	
+	<Resource name="jdbc/pool" 
+		global="jdbc/pool"
+		type="javax.sql.DataSource" 
+		auth="Container" 
+		username="postgres"
+		password="01234567" 
+		driverClassName="org.postgresql.Driver"
+		url="jdbc:postgresql://localhost:5432/acij"
+		maxIdle="15" 
+		maxTotal="50" 
+		maxWaitMillis="10000" />
+
+	
+
+
+</Context>

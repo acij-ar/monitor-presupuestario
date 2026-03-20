@@ -1,0 +1,162 @@
+ :root{
+      --brand: #0f6a57;           /* verde principal */
+      --brand-2: #1d7d69;         /* borde */
+      --muted: #e6f4f1;           /* fondo claro para active */
+      --text-on-dark: #e8fff8;
+    }
+
+    body { background:#E5EEFF; }
+
+    /* Header / Hero */
+    .hero {
+      background: var(--brand);
+      color: var(--text-on-dark);
+      padding: 1rem 0;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 5rem);
+      line-height: 0.95;
+      margin: 1rem 0 1.25rem;
+      font-weight: 800;
+    }
+    .hero p { max-width: 1100px; }
+
+    /* Tab rail con borde y flecha */
+    .tab-rail{
+      border: 2px solid var(--brand-2);
+      border-radius: .75rem;
+      padding: .25rem;
+      background: #fff;
+    }
+    .tab-rail .nav{
+      justify-content: space-around;
+      flex-wrap: nowrap;
+    }
+	.tab-rail-center{
+      justify-content: center !important;
+    }
+	
+    .tab-rail .nav-link{
+      position: relative;
+      border-radius: .5rem;
+      font-weight: 600;
+      padding: .35rem .75rem;
+      white-space: nowrap;
+      color: var(--brand-2);
+    }
+    .tab-rail .nav-link i{
+      font-size: .95rem;
+      margin-right: .35rem;
+    }
+    .tab-rail .nav-link.active{
+      color: #EB6434;
+	  background:transparent;
+    }
+	
+
+
+    /* Flecha (triángulo doble para simular borde) */
+    .tab-rail .nav-link.active::before,
+    .tab-rail .nav-link.active::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      transform: translateX(-50%);
+      width:0; height:0;
+      border-left:9px solid transparent;
+      border-right:9px solid transparent;
+	  padding-top:-2px;
+    }
+    /* “Borde” */
+    .tab-rail .nav-link.active::before{
+      bottom: -15px;
+      border-top: 9px solid var(--brand-2);
+    }
+    /* Relleno */
+    .tab-rail .nav-link.active::after{
+      bottom: -13px;
+      border-top: 9px solid var(--muted);
+    }
+
+    /* Panel izquierdo (filtros) */
+    .filters-card{
+      background: #0f6a57;
+      color: var(--text-on-dark);
+      border-radius: .75rem;
+      padding: .75rem;
+    }
+    .filters-inner{
+      background:#0f6a57;
+      border-radius:.5rem;
+    }
+    .filters-card h6{
+      font-weight:700; margin:0; font-size:.9rem;
+    }
+    .form-label{
+      font-size:.83rem;
+      opacity:.9;
+      margin-bottom:.15rem;
+    }
+
+    /* Select2: solo línea inferior visible */
+    .select2-container--bootstrap4 .select2-selection{
+      border: none !important;
+      border-bottom: 2px solid #cfe4de !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      height: 38px !important;       /* altura fija */
+      display: flex;
+      align-items: center;           /* centra vertical */
+    }
+    .select2-container--bootstrap4 .select2-selection__rendered{
+      line-height: normal !important;
+      padding-left: 0 !important;
+      color: #fff;
+    }
+    .select2-container--bootstrap4 .select2-selection__arrow{
+      right: 0.25rem;
+    }
+    .select2-dropdown{
+      border-color: var(--brand-2) !important;
+    }
+    .select2-results__option--highlighted{
+      background: var(--brand) !important;
+    }
+
+    /* Chips “tags” */
+    .chip{
+      background:#fff;
+      color:#0f6a57;
+      border-radius:999px;
+      padding:.25rem .5rem;
+      margin:.25rem .25rem 0 0;
+      display:inline-flex;
+      align-items:center;
+      font-size:.8rem;
+      border:1px solid #cfe4de;
+    }
+    .chip .fa-xmark{ margin-left:.35rem; }
+
+    /* Botones */
+    .btn-pill{
+      border-radius: 999px;
+      font-weight:600;
+      padding:.35rem .75rem;
+    }
+    .btn-outline-light{ border-color:#cfe4de; color:#eafff8; }
+    .btn-outline-light:hover{ background:#cfe4de; color:#0f6a57; }
+
+    /* Placeholder de contenido derecho */
+    .content-card{
+      background:transparent;
+
+      min-height: 360px;
+      padding:1rem;
+	  color:#03624C;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 991.98px){
+      .tab-rail .nav{ overflow-x:auto; }
+      .tab-rail .nav-link{ flex:0 0 auto; margin-right:.25rem; }
+    }
